@@ -1,0 +1,14 @@
+# Ignore raw and heavy video files
+raw_clips/
+ready_videos/
+*.mp4
+*.mov
+*.mkv
+*.webm
+
+# Ignore python cache
+__pycache__/
+*.pyc
+
+# Keep code and assets
+!assets/
