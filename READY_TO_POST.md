@@ -5,32 +5,28 @@
 
 ---
 
-## 🎃 Видео 1: `1_Decentraland_Halloweeks_Pumpkin_Ball.mp4`
-- **Длительность**: 17 сек | **Разрешение**: 1080x1920 (9:16 Вертикальный)
-- **Тема**: Официальный Хэллоуин ивент (Pumpkin Ball)
-- **Хук на видео**:  
+## 📦 ПАРТИЯ 1 (Уже залита)
+1. `1_Decentraland_Halloweeks_Pumpkin_Ball.mp4`
+2. `2_Decentraland_Jetpack_Skychaser.mp4`
+3. `3_Decentraland_Dungeons_Of_Antrom.mp4`
+4. `4_Decentraland_Slay_The_Steps.mp4`
+
+---
+
+## 🔥 ПАРТИЯ 2 (Готова к публикации сейчас / вечером)
+
+### 🎃 Видео 5: `5_Decentraland_Halloweeks_Plaza_Makeover.mp4`
+- **Длительность**: 17 сек | **Разрешение**: 1080x1920 (9:16)
+- **Тема**: Хэллоуинский захват центральной площади (Plaza Makeover)
+- **Хук на экране**:  
   `HALLOWEEKS IS LIVE THROUGH NOV 1`  
-  `POV: entering the haunted pumpkin arena`
+  `POV: checking out the Halloween plaza takeover`
 
-### 📱 Текст для TikTok (Copy & Paste):
+#### 📱 Текст для YouTube Shorts (Copy & Paste):
+- **Заголовок**: `Halloween Plaza Takeover in 3D! 🎃 #shorts`
+- **Описание**:
 ```text
-Halloweeks is live through Nov 1. Jump in if you dare 🎃
-Decentraland is a free social gaming world for adults, available on desktop and mobile.
-
-@decentraland_fdn #decentraland #halloweeks #halloween #gaming #adultgaming #fyp #viral
-```
-
-### 📸 Текст для Instagram Reels:
-```text
-Halloweeks is live through Nov 1. Jump in if you dare 🎃
-Decentraland is a free social gaming world for adults, available on desktop and mobile.
-
-@decentraland_foundation #decentraland #halloweeks #halloween #gaming #adultgaming #reels
-```
-
-### 🔴 Текст для YouTube Shorts:
-```text
-Halloweeks is live through Nov 1. Jump in if you dare 🎃
+Halloweeks is live through Nov 1. Check out the Halloween plaza takeover! 🎃
 Decentraland is a free social gaming world for adults, available on desktop and mobile.
 
 @decentraland_foundation #decentraland #halloweeks #halloween #gaming #shorts
@@ -38,101 +34,59 @@ Decentraland is a free social gaming world for adults, available on desktop and 
 
 ---
 
-## 🚀 Видео 2: `2_Decentraland_Jetpack_Skychaser.mp4`
-- **Длительность**: 16 сек | **Разрешение**: 1080x1920 (9:16)
-- **Тема**: Джетпаки и полеты над городом (Skychaser)
-- **Хук на видео**:  
-  `A FREE 3D WORLD FOR ADULTS?`  
-  `flying through the city with a jetpack`
-
-### 📱 Текст для TikTok:
-```text
-Jetpacks and joyrides through the skies. Come hang out 🚀
-Decentraland is a free social gaming world for adults, available on desktop and mobile.
-
-@decentraland_fdn #decentraland #virtualworld #gaming #adultgaming #fyp #skychaser
-```
-
-### 📸 Текст для Instagram Reels:
-```text
-Jetpacks and joyrides through the skies. Come hang out 🚀
-Decentraland is a free social gaming world for adults, available on desktop and mobile.
-
-@decentraland_foundation #decentraland #virtualworld #gaming #adultgaming #reels #skychaser
-```
-
-### 🔴 Текст для YouTube Shorts:
-```text
-Jetpacks and joyrides through the skies. Come hang out 🚀
-Decentraland is a free social gaming world for adults, available on desktop and mobile.
-
-@decentraland_foundation #decentraland #virtualworld #gaming #shorts
-```
-
----
-
-## ⚔️ Видео 3: `3_Decentraland_Dungeons_Of_Antrom.mp4`
+### 🪩 Видео 6: `6_Decentraland_Sunday_Night_Club_Party.mp4`
 - **Длительность**: 17 сек | **Разрешение**: 1080x1920 (9:16)
-- **Тема**: Совместный поход в подземелье с друзьями (Dungeons of Antrom)
-- **Хук на видео**:  
-  `WHEN GAME NIGHT GETS INTENSE`  
-  `dungeon boss battle with the group`
+- **Тема**: Вечеринка и тусовка в клубе (Sunday Night at the Club)
+- **Хук на экране**:  
+  `SUNDAY NIGHT AT THE CLUB WENT CRAZY`  
+  `an adult 3D world with real people`
 
-### 📱 Текст для TikTok:
+#### 📱 Текст для YouTube Shorts:
+- **Заголовок**: `Sunday Night at the Virtual Club 🪩 #shorts`
+- **Описание**:
 ```text
-Game night with the group got a little intense. Come play together ⚔️
+Sunday night went crazy at the club. Come hang out 🪩
 Decentraland is a free social gaming world for adults, available on desktop and mobile.
 
-@decentraland_fdn #decentraland #gamenight #gaming #adultgaming #dungeon #fyp
-```
-
-### 📸 Текст для Instagram Reels:
-```text
-Game night with the group got a little intense. Come play together ⚔️
-Decentraland is a free social gaming world for adults, available on desktop and mobile.
-
-@decentraland_foundation #decentraland #gamenight #gaming #adultgaming #reels
-```
-
-### 🔴 Текст для YouTube Shorts:
-```text
-Game night with the group got a little intense. Come play together ⚔️
-Decentraland is a free social gaming world for adults, available on desktop and mobile.
-
-@decentraland_foundation #decentraland #gamenight #gaming #shorts
+@decentraland_foundation #decentraland #nightclub #virtualparty #adultgaming #shorts
 ```
 
 ---
 
-## 🏃 Видео 4: `4_Decentraland_Slay_The_Steps.mp4`
+### 👻 Видео 7: `7_Decentraland_Halloweeks_Monster_Recon.mp4`
+- **Длительность**: 17 сек | **Разрешение**: 1080x1920 (9:16)
+- **Тема**: Охота на хэллоуинских монстров на арене (Monster Recon Halloween)
+- **Хук на экране**:  
+  `HALLOWEEKS IS LIVE THROUGH NOV 1`  
+  `hunting Halloween monsters in 3D arena`
+
+#### 📱 Текст для YouTube Shorts:
+- **Заголовок**: `Hunting Halloween Monsters! 🎃 #shorts`
+- **Описание**:
+```text
+Halloweeks is live through Nov 1. Monster Recon got updated for Halloween 🎃
+Decentraland is a free social gaming world for adults, available on desktop and mobile.
+
+@decentraland_foundation #decentraland #halloweeks #gaming #adultgaming #shorts
+```
+
+---
+
+### 🚀 Видео 8: `8_Decentraland_Jetpack_Joyrides_Sky.mp4`
 - **Длительность**: 16 сек | **Разрешение**: 1080x1920 (9:16)
-- **Тема**: Паркур-челлендж и падения (Slay the Steps)
-- **Хук на видео**:  
-  `WE LOST EVERY ROUND BUT HAD A BLAST`  
-  `come play together - free on PC and mobile`
+- **Тема**: Полеты на реактивном ранце над городом (Jetpack Joyrides)
+- **Хук на экране**:  
+  `POV: FLYING OVER THE 3D CITY`  
+  `jetpacks in a free social world for adults`
 
-### 📱 Текст для TikTok:
+#### 📱 Текст для YouTube Shorts:
+- **Заголовок**: `Flying Over the 3D City with a Jetpack 🚀 #shorts`
+- **Описание**:
 ```text
-This group lost every round and still had the best time. Come play together 😂
+Jetpacks and joyrides through the skies. Come play together 🚀
 Decentraland is a free social gaming world for adults, available on desktop and mobile.
 
-@decentraland_fdn #decentraland #funnygaming #gaming #adultgaming #gamer #fyp
-```
-
-### 📸 Текст для Instagram Reels:
-```text
-This group lost every round and still had the best time. Come play together 😂
-Decentraland is a free social gaming world for adults, available on desktop and mobile.
-
-@decentraland_foundation #decentraland #funnygaming #gaming #adultgaming #reels
-```
-
-### 🔴 Текст для YouTube Shorts:
-```text
-This group lost every round and still had the best time. Come play together 😂
-Decentraland is a free social gaming world for adults, available on desktop and mobile.
-
-@decentraland_foundation #decentraland #funnygaming #gaming #shorts
+@decentraland_foundation #decentraland #jetpack #gaming #virtualworld #shorts
 ```
 
 ---
