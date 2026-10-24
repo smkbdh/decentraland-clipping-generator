@@ -5,7 +5,7 @@
 
 ---
 
-## 📦 ПАРТИЯ 1 (Уже залита)
+## 📦 ПАРТИЯ 1 (Ролики 1–4)
 1. `1_Decentraland_Halloweeks_Pumpkin_Ball.mp4`
 2. `2_Decentraland_Jetpack_Skychaser.mp4`
 3. `3_Decentraland_Dungeons_Of_Antrom.mp4`
@@ -13,20 +13,28 @@
 
 ---
 
-## 🔥 ПАРТИЯ 2 (Готова к публикации сейчас / вечером)
+## 📦 ПАРТИЯ 2 (Ролики 5–8)
+5. `5_Decentraland_Halloweeks_Plaza_Makeover.mp4`
+6. `6_Decentraland_Sunday_Night_Club_Party.mp4`
+7. `7_Decentraland_Halloweeks_Monster_Recon.mp4`
+8. `8_Decentraland_Jetpack_Joyrides_Sky.mp4`
 
-### 🎃 Видео 5: `5_Decentraland_Halloweeks_Plaza_Makeover.mp4`
+---
+
+## 💥 СВЕЖАЯ ПАРТИЯ 3 (Ролики 9–12) — Готова к выкладке прямо сейчас!
+
+### 🎃 Видео 9: `9_Decentraland_Halloweeks_Events_Showcase.mp4`
 - **Длительность**: 17 сек | **Разрешение**: 1080x1920 (9:16)
-- **Тема**: Хэллоуинский захват центральной площади (Plaza Makeover)
+- **Тема**: Официальный Хэллоуин-ивент и квесты (Halloweeks Events Showcase)
 - **Хук на экране**:  
   `HALLOWEEKS IS LIVE THROUGH NOV 1`  
-  `POV: checking out the Halloween plaza takeover`
+  `exploring Halloween events in 3D`
 
 #### 📱 Текст для YouTube Shorts (Copy & Paste):
-- **Заголовок**: `Halloween Plaza Takeover in 3D! 🎃 #shorts`
+- **Заголовок**: `Halloween Events in 3D World! 🎃 #shorts`
 - **Описание**:
 ```text
-Halloweeks is live through Nov 1. Check out the Halloween plaza takeover! 🎃
+Halloweeks is live through Nov 1. Exploring Halloween events in 3D! 🎃
 Decentraland is a free social gaming world for adults, available on desktop and mobile.
 
 @decentraland_foundation #decentraland #halloweeks #halloween #gaming #shorts
@@ -34,59 +42,59 @@ Decentraland is a free social gaming world for adults, available on desktop and 
 
 ---
 
-### 🪩 Видео 6: `6_Decentraland_Sunday_Night_Club_Party.mp4`
+### 🌸 Видео 10: `10_Decentraland_Cherry_Blossom_Party.mp4`
 - **Длительность**: 17 сек | **Разрешение**: 1080x1920 (9:16)
-- **Тема**: Вечеринка и тусовка в клубе (Sunday Night at the Club)
+- **Тема**: Фестиваль сакуры и DJ-вечеринка (Cherry Blossom Party)
 - **Хук на экране**:  
-  `SUNDAY NIGHT AT THE CLUB WENT CRAZY`  
-  `an adult 3D world with real people`
+  `POV: CHERRY BLOSSOM PARTY IN 3D`  
+  `dancing with people around the world`
 
 #### 📱 Текст для YouTube Shorts:
-- **Заголовок**: `Sunday Night at the Virtual Club 🪩 #shorts`
+- **Заголовок**: `Cherry Blossom Festival in 3D! 🌸 #shorts`
 - **Описание**:
 ```text
-Sunday night went crazy at the club. Come hang out 🪩
+The whole crowd danced through this entire DJ set. Come hang out 🌸
 Decentraland is a free social gaming world for adults, available on desktop and mobile.
 
-@decentraland_foundation #decentraland #nightclub #virtualparty #adultgaming #shorts
+@decentraland_foundation #decentraland #cherryblossom #virtualparty #djset #gaming #shorts
 ```
 
 ---
 
-### 👻 Видео 7: `7_Decentraland_Halloweeks_Monster_Recon.mp4`
+### 🎣 Видео 11: `11_Decentraland_Chill_Fishing_Social.mp4`
 - **Длительность**: 17 сек | **Разрешение**: 1080x1920 (9:16)
-- **Тема**: Охота на хэллоуинских монстров на арене (Monster Recon Halloween)
+- **Тема**: Рыбалка и душевный отдых с друзьями (Chill Fishing Social)
 - **Хук на экране**:  
-  `HALLOWEEKS IS LIVE THROUGH NOV 1`  
-  `hunting Halloween monsters in 3D arena`
+  `FRIDAY NIGHT CHILL & FISHING`  
+  `free social world for adults - come hang out`
 
 #### 📱 Текст для YouTube Shorts:
-- **Заголовок**: `Hunting Halloween Monsters! 🎃 #shorts`
+- **Заголовок**: `Friday Night Virtual Fishing With Friends 🎣 #shorts`
 - **Описание**:
 ```text
-Halloweeks is live through Nov 1. Monster Recon got updated for Halloween 🎃
+They ended the night around the water just talking. Come hang out 🎣
 Decentraland is a free social gaming world for adults, available on desktop and mobile.
 
-@decentraland_foundation #decentraland #halloweeks #gaming #adultgaming #shorts
+@decentraland_foundation #decentraland #gaming #chill #socialgaming #adultgaming #shorts
 ```
 
 ---
 
-### 🚀 Видео 8: `8_Decentraland_Jetpack_Joyrides_Sky.mp4`
-- **Длительность**: 16 сек | **Разрешение**: 1080x1920 (9:16)
-- **Тема**: Полеты на реактивном ранце над городом (Jetpack Joyrides)
+### 🏆 Видео 12: `12_Decentraland_Slay_The_Steps_Tower.mp4`
+- **Длительность**: 17 сек | **Разрешение**: 1080x1920 (9:16)
+- **Тема**: Высотный паркур-челлендж на башне (Slay the Steps Tower)
 - **Хук на экране**:  
-  `POV: FLYING OVER THE 3D CITY`  
-  `jetpacks in a free social world for adults`
+  `POV: ONE STEP AWAY FROM WINNING`  
+  `come play together - free on PC and mobile`
 
 #### 📱 Текст для YouTube Shorts:
-- **Заголовок**: `Flying Over the 3D City with a Jetpack 🚀 #shorts`
+- **Заголовок**: `One Step Away From Winning This Tower! 🏆 #shorts`
 - **Описание**:
 ```text
-Jetpacks and joyrides through the skies. Come play together 🚀
+This group lost every round and still had the best time. Come play together 🏆
 Decentraland is a free social gaming world for adults, available on desktop and mobile.
 
-@decentraland_foundation #decentraland #jetpack #gaming #virtualworld #shorts
+@decentraland_foundation #decentraland #gaming #parkour #gamer #funnygaming #shorts
 ```
 
 ---
