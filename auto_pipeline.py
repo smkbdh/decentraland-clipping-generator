@@ -1,6 +1,6 @@
 """
 Decentraland Auto-Publisher:
-- Refreshes Supabase session
+- Authenticates using session or email/password
 - Uploads video to Supabase Storage
 - Triggers YouTube upload Edge Function
 - Returns live YouTube Shorts URL
@@ -17,28 +17,29 @@ SESSION_FILE = BASE_DIR / "session.json"
 SUPABASE_URL = "https://gsdgbuscghdygyptxthg.supabase.co"
 ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzZGdidXNjZ2hkeWd5cHR4dGhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY1MDc3OTUsImV4cCI6MjA4MjA4Mzc5NX0.wLkGUFxLdHykEtQ0cIZs4Dqz1x4tXa-hx4l3fwFtb4s"
 
+EMAIL = "hum.under@gmail.com"
+PASSWORD = "Password2026!"
+
 def get_valid_session():
-    """Reads session.json and refreshes token if needed."""
-    if not SESSION_FILE.exists():
-        raise Exception("session.json not found!")
-    
-    with open(SESSION_FILE, "r") as f:
-        session = json.load(f)
-    
-    refresh_token = session.get("refresh_token")
-    # Always refresh to ensure active fresh token
-    url = f"{SUPABASE_URL}/auth/v1/token?grant_type=refresh_token"
+    """Logs in with email/password or existing session to get fresh access_token."""
+    # Direct login with permanent password
+    url = f"{SUPABASE_URL}/auth/v1/token?grant_type=password"
     headers = {"apikey": ANON_KEY, "Content-Type": "application/json"}
-    r = requests.post(url, json={"refresh_token": refresh_token}, headers=headers)
+    r = requests.post(url, json={"email": EMAIL, "password": PASSWORD}, headers=headers)
     
     if r.status_code == 200:
-        new_session = r.json()
+        data = r.json()
         with open(SESSION_FILE, "w") as f:
-            json.dump(new_session, f, indent=2)
-        return new_session["access_token"], new_session["user"]["id"]
-    else:
-        # Fallback to existing access_token
-        return session["access_token"], session["user"]["id"]
+            json.dump(data, f, indent=2)
+        return data["access_token"], data["user"]["id"]
+    
+    # Fallback to session.json
+    if SESSION_FILE.exists():
+        with open(SESSION_FILE, "r") as f:
+            s = json.load(f)
+        return s["access_token"], s["user"]["id"]
+        
+    raise Exception(f"Auth failed: {r.text}")
 
 def upload_and_publish(video_path: Path, title: str, description: str):
     """Uploads video to Supabase Storage and triggers YouTube upload."""
