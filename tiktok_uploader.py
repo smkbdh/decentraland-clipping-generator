@@ -93,8 +93,7 @@ def launch_browser(p):
     context = p.chromium.launch_persistent_context(
         user_data_dir=str(PROFILE_DIR),
         headless=False,
-        channel="chrome",  # Uses installed Google Chrome if available, fallback to chromium
-        viewport={"width": 1280, "height": 850},
+        viewport={"width": 1400, "height": 900},
         args=[
             "--disable-blink-features=AutomationControlled",
             "--start-maximized"
@@ -108,13 +107,12 @@ def check_and_wait_for_login(page):
     page.goto(TIKTOK_UPLOAD_URL, wait_until="domcontentloaded", timeout=60000)
     time.sleep(3)
 
-    # Check if login is needed
     while True:
         current_url = page.url.lower()
         if "login" in current_url:
             print("\n⚠️ ВНИМАНИЕ: Требуется вход в TikTok!")
             print("👉 Войдите в свой аккаунт TikTok в открытом окне браузера.")
-            print("⏳ Ожидание успешного входа (профиль сохранится автоматически)...")
+            print("⏳ Ожидание успешного входа...")
             try:
                 page.wait_for_url(lambda u: "login" not in u.lower() and "upload" in u.lower(), timeout=180000)
                 print("✅ Успешный вход обнаружен!")
@@ -123,16 +121,13 @@ def check_and_wait_for_login(page):
             except PlaywrightTimeoutError:
                 print("⏳ Всё ещё ждём авторизацию в браузере...")
         else:
-            # Check if upload dropzone or file input is present
             try:
-                page.wait_for_selector('input[type="file"], [data-e2e="upload_video"], div[class*="upload"]', timeout=5000)
+                page.wait_for_selector('input[type="file"][accept*="video"], button:has-text("Select video")', timeout=6000)
                 print("✅ Сессия активна, страница загрузки готова!")
                 break
             except PlaywrightTimeoutError:
-                # Might still be on a redirect
                 if "login" in page.url.lower():
                     continue
-                print("⏳ Страница загружается...")
                 time.sleep(2)
                 if "upload" in page.url.lower():
                     break
@@ -149,133 +144,113 @@ def upload_single_video(page, item, auto_publish=False):
 
     print(f"\n==========================================")
     print(f"🎬 ЗАГРУЗКА ВИДЕО #{index}: {video_path.name}")
-    print(f"📝 Описание ({len(caption)} символов):\n{caption}")
+    print(f"📝 Описание:\n{caption}")
     print(f"==========================================")
 
-    # Go to upload page if not already there
-    if "tiktokstudio/upload" not in page.url and "creator-center/upload" not in page.url:
+    # Ensure on upload page
+    if "tiktokstudio/upload" not in page.url:
         page.goto(TIKTOK_UPLOAD_URL, wait_until="domcontentloaded", timeout=60000)
-        time.sleep(3)
+        time.sleep(4)
 
-    # Find file input (might be inside an iframe or in main DOM)
+    # Find file input
     print("📤 Выбираем видеофайл...")
-    file_input = None
-    
-    # Try finding input in main page or any iframe
-    for frame in [page] + page.frames:
-        try:
-            inp = frame.locator('input[type="file"]')
-            if inp.count() > 0:
-                file_input = inp.first
-                break
-        except Exception:
-            pass
+    file_input = page.locator('input[type="file"][accept*="video"]').first
+    try:
+        file_input.wait_for(state="attached", timeout=15000)
+        file_input.set_input_files(str(video_path))
+    except Exception as e:
+        print(f"❌ Ошибка выбора файла: {e}")
+        return False
 
-    if not file_input:
-        # Fallback wait
-        try:
-            file_input = page.wait_for_selector('input[type="file"]', timeout=15000)
-        except Exception:
-            print("❌ Не удалось найти поле загрузки файла (input[type='file']).")
-            return False
+    print("⏳ Файл передан, ждём загрузку и появление редактора...")
+    time.sleep(6)
 
-    file_input.set_input_files(str(video_path))
-    print("⏳ Файл передан браузеру, ожидаем загрузку и обработку в TikTok...")
-
-    # Wait for upload completion (usually caption input appears or progress reaches 100%)
-    time.sleep(5)
-
-    # Locate caption / title input
-    print("✍️ Заполняем заголовок и описание...")
-    caption_element = None
-    selectors = [
-        'div[contenteditable="true"]',
-        'div[data-placeholder]',
-        'div.notranslate[contenteditable="true"]',
-        'div[class*="editor"] [contenteditable="true"]',
-        'textarea'
-    ]
-
-    for sel in selectors:
-        try:
-            for frame in [page] + page.frames:
-                el = frame.locator(sel)
-                if el.count() > 0 and el.first.is_visible():
-                    caption_element = el.first
-                    break
-            if caption_element:
-                break
-        except Exception:
-            pass
-
-    if caption_element:
-        try:
-            caption_element.click()
-            time.sleep(0.5)
-            # Select all and delete default text (like filename)
-            page.keyboard.press("Control+A")
-            page.keyboard.press("Backspace")
-            time.sleep(0.5)
-            # Insert caption
-            page.keyboard.insert_text(caption)
+    # Dismiss any tutorial / "Got it" tooltips
+    try:
+        got_it = page.locator('button:has-text("Got it"), button:has-text("Понятно")')
+        if got_it.count() > 0 and got_it.first.is_visible():
+            print("💡 Закрываем подсказку TikTok ('Got it')...")
+            got_it.first.click()
             time.sleep(1)
-            print("✅ Описание успешно вставлено!")
-        except Exception as e:
-            print(f"⚠️ Ошибка при вводе текста описания: {e}")
-    else:
-        print("⚠️ Поле ввода описания не найдено автоматически. Пожалуйста, вставьте вручную при необходимости.")
+    except Exception:
+        pass
 
-    # Wait for video upload to finish and Post button to be active
-    print("⏳ Ожидание завершения обработки видео перед публикацией...")
+    # Fill caption in DraftEditor
+    print("✍️ Заполняем описание ролика...")
+    try:
+        editor = page.locator('div.notranslate.public-DraftEditor-content, div[contenteditable="true"]').first
+        editor.wait_for(state="visible", timeout=15000)
+        editor.click()
+        time.sleep(0.5)
+        page.keyboard.press("Control+A")
+        page.keyboard.press("Backspace")
+        time.sleep(0.5)
+        page.keyboard.insert_text(caption)
+        time.sleep(1)
+        print("✅ Описание успешно добавлено!")
+    except Exception as e:
+        print(f"⚠️ Ошибка ввода описания: {e}")
+
+    # Wait for Post button to become enabled and ready
+    print("⏳ Ожидание готовности кнопки 'Post' (проверка копирайта и загрузки)...")
     post_button = None
-    post_selectors = [
-        'button[data-e2e="post_video_button"]',
-        'button:has-text("Post")',
-        'button:has-text("Опубликовать")',
-        'button:has-text("Publish")'
-    ]
-
-    for _ in range(60):  # wait up to ~2 minutes
-        for sel in post_selectors:
-            try:
-                for frame in [page] + page.frames:
-                    btn = frame.locator(sel)
-                    if btn.count() > 0 and btn.first.is_visible():
-                        if not btn.first.is_disabled():
-                            post_button = btn.first
-                            break
-                if post_button:
+    
+    # EXACT selector for the submit button (not sidebar "Posts" button!)
+    for _ in range(60):
+        # We target the primary action button with exact text 'Post' or 'Опубликовать'
+        btn_candidates = page.locator('button.Button__root--type-primary, button[type="button"]')
+        count = btn_candidates.count()
+        for idx in range(count):
+            candidate = btn_candidates.nth(idx)
+            text = candidate.inner_text().strip()
+            # Must be exactly 'Post' or 'Опубликовать', NOT 'Posts'!
+            if text in ["Post", "Опубликовать", "Publish"]:
+                if candidate.is_visible() and not candidate.is_disabled():
+                    post_button = candidate
                     break
-            except Exception:
-                pass
         if post_button:
             break
         time.sleep(2)
 
     if not post_button:
-        print("⚠️ Кнопка 'Опубликовать' ещё не активна или обрабатывается превью.")
-        print("👉 Проверьте окно браузера и нажмите 'Post' / 'Опубликовать'.")
+        print("⚠️ Кнопка 'Post' ещё недоступна.")
         if not auto_publish:
-            input("Нажмите Enter в этой консоли, когда проверите/опубликуете в браузере...")
+            input("Нажмите кнопку 'Post' вручную в браузере, затем нажмите Enter здесь...")
             return True
         return False
 
-    print("🚀 Кнопка 'Опубликовать' доступна!")
-    if auto_publish:
-        print("Нажимаем 'Опубликовать'...")
-        post_button.click()
-        time.sleep(5)
-        print(f"✅ Видео #{index} отправлено на публикацию!")
-        return True
-    else:
-        print("👀 Режим предпросмотра: видео загружено, описание заполнено.")
-        print("👉 Нажмите кнопку 'Post'/'Опубликовать' в браузере или нажмите Enter в консоли для автоклика.")
-        ans = input("Нажать 'Опубликовать' автоматически? (y/n): ").strip().lower()
-        if ans == 'y' or ans == '':
-            post_button.click()
-            time.sleep(5)
-            print(f"✅ Видео #{index} опубликовано!")
-        return True
+    post_button.scroll_into_view_if_needed()
+    time.sleep(1)
+
+    print("🚀 Нажимаем 'Post'...")
+    post_button.click()
+    print("⏳ Ожидаем подтверждения публикации...")
+
+    # Wait for completion modal or upload another button
+    success = False
+    for _ in range(15):
+        time.sleep(2)
+        # Check if "Manage your posts" or "Upload another video" appeared
+        upload_another = page.locator('button:has-text("Upload another video"), button:has-text("Upload another"), button:has-text("Загрузить другое видео")')
+        if upload_another.count() > 0 and upload_another.first.is_visible():
+            print(f"🎉 ВИДЕО #{index} УСПЕШНО ОПУБЛИКОВАНО В TIKTOK!")
+            success = True
+            upload_another.first.click()
+            time.sleep(3)
+            break
+        
+        # Check for success toast or modal
+        modal_text = page.locator('div[role="dialog"], div[class*="modal"]')
+        if modal_text.count() > 0 and "uploaded" in modal_text.first.inner_text().lower():
+            print(f"🎉 ВИДЕО #{index} УСПЕШНО ОПУБЛИКОВАНО В TIKTOK!")
+            success = True
+            time.sleep(3)
+            break
+
+    if not success:
+        print(f"✅ Видео #{index}: клик отправлен (проверьте статус в окне браузера).")
+
+    return True
 
 
 def main():
@@ -283,7 +258,7 @@ def main():
     parser.add_argument("--login-only", action="store_true", help="Just open browser to log in to TikTok")
     parser.add_argument("--index", type=int, default=None, help="Upload specific video index (1-8)")
     parser.add_argument("--auto-publish", action="store_true", help="Automatically click Publish without manual prompt")
-    parser.add_argument("--delay", type=int, default=30, help="Delay between video uploads in seconds")
+    parser.add_argument("--delay", type=int, default=15, help="Delay between video uploads in seconds")
     args = parser.parse_args()
 
     print("==========================================")
@@ -292,13 +267,12 @@ def main():
 
     with sync_playwright() as p:
         context = launch_browser(p)
-        page = context.new_page()
+        page = context.pages[0] if context.pages else context.new_page()
 
         check_and_wait_for_login(page)
 
         if args.login_only:
             print("\n🎉 Сессия сохранена в папку:", PROFILE_DIR)
-            print("Браузер готов. Закрываем...")
             context.close()
             return
 
@@ -319,8 +293,9 @@ def main():
                 print(f"\n⏳ Пауза перед следующим видео: {args.delay} сек...")
                 time.sleep(args.delay)
 
-        print("\n🎉 Все задачи завершены! Окно браузера остаётся открытым для финальной проверки.")
-        input("Нажмите Enter для закрытия браузера...")
+        print("\n🎉 Все 8 видео обработаны!")
+        print("👉 Проверьте загруженные посты в открытом окне браузера.")
+        input("Нажмите Enter в этой консоли, когда закончите просмотр...")
         context.close()
 
 

@@ -18,5 +18,8 @@ tiktok_browser_profile/
 session.json
 .omc/
 zhavdqwveqve/
-extracted_img_*.png
+*.png
+*.html
+*.txt
+
 
