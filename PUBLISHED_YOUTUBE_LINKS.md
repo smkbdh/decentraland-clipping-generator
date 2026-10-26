@@ -5,33 +5,33 @@
 
 ---
 
-### 🔥 ПАРТИЯ 4 (ВИРУСНЫЕ ХУКИ В НАЧАЛЕ — СВЕЖИЕ ССЫЛКИ):
+### 🔥 ПАРТИЯ 5 (СВЕЖИЕ ХУКИ: ПОСУДА, ТАПОК, БОТТЛ-КИК, ГРЯЗНОЕ ЛИЦО):
 
-1. **Хук 1 (Bumpy Slide $\rightarrow$ Halloween Pumpkin Ball)**:  
-   👉 `https://youtube.com/shorts/r2gZwfCLebc`
+1. **Хук 5 (`Plate Head` $\rightarrow$ Cherry Blossom Festival)**:  
+   👉 `https://youtube.com/shorts/HPLGs6CBCSU`
 
-2. **Хук 2 (Golfer Fall $\rightarrow$ Slay the Steps)**:  
-   👉 `https://youtube.com/shorts/MPMh53eaZN0`
+2. **Хук 6 (`Sandal Throw` $\rightarrow$ Halloween Pumpkin Ball)**:  
+   👉 `https://youtube.com/shorts/WcQilpHSpz8`
 
-3. **Хук 3 (Launch Tackle $\rightarrow$ Jetpack City Flight)**:  
-   👉 `https://youtube.com/shorts/J9uFINcSHgg`
+3. **Хук 7 (`Bottle Kick` $\rightarrow$ Skychaser Jetpacks)**:  
+   👉 `https://youtube.com/shorts/u_L2F7BIX2w`
 
-4. **Хук 4 (Corn Throw $\rightarrow$ Sunday Night Club)**:  
-   👉 `https://youtube.com/shorts/olOy9Y9lKUI`
+4. **Хук 8 (`Dirty Face` $\rightarrow$ Halloween Monster Recon)**:  
+   👉 `https://youtube.com/shorts/JCHsn8VZci8`
 
 ---
 
-### 📦 Предыдущие партии:
+### 📦 ПАРТИЯ 4 (ХУКИ: ГОРКА, ГОЛЬФИСТ, ТАКЛ, КУКУРУЗА):
 
-- `https://youtube.com/shorts/PBrSLWKv8N8` (Halloween Plaza Takeover)
-- `https://youtube.com/shorts/06O3quLJnIc` (Sunday Night Virtual Club)
-- `https://youtube.com/shorts/hjtSshE_I4k` (Hunting Halloween Monsters)
-- `https://youtube.com/shorts/_o-Am7wNjsI` (Flying Over 3D City)
+- `https://youtube.com/shorts/r2gZwfCLebc` (Bumpy Slide $\rightarrow$ Halloween)
+- `https://youtube.com/shorts/MPMh53eaZN0` (Golfer Fall $\rightarrow$ Slay the Steps)
+- `https://youtube.com/shorts/J9uFINcSHgg` (Launch Tackle $\rightarrow$ Jetpacks)
+- `https://youtube.com/shorts/olOy9Y9lKUI` (Corn Throw $\rightarrow$ Club Party)
 
 ---
 
 ### 🛡️ Все ролики на 100% соответствуют ТЗ:
 - Формат 9:16 (1080x1920)
-- Обязательная строка: `Decentraland is a free social gaming world for adults, available on desktop and mobile.`
+- Обязательная фраза: `Decentraland is a free social gaming world for adults, available on desktop and mobile.`
 - Обязательный тег: `@decentraland_foundation`
-- Хэллоуин-строка: `Halloweeks is live through Nov 1.`
+- Хэллоуин-фраза: `Halloweeks is live through Nov 1.`
