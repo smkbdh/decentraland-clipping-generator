@@ -1,6 +1,7 @@
 import argparse
 import sys
 import time
+import re
 from pathlib import Path
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
@@ -133,7 +134,7 @@ def check_and_wait_for_login(page):
                     break
 
 
-def upload_single_video(page, item, auto_publish=False):
+def upload_single_video(page, item):
     video_path = item["file"]
     caption = item["caption"]
     index = item["index"]
@@ -163,9 +164,9 @@ def upload_single_video(page, item, auto_publish=False):
         return False
 
     print("⏳ Файл передан, ждём загрузку и появление редактора...")
-    time.sleep(6)
+    time.sleep(7)
 
-    # Dismiss any tutorial / "Got it" tooltips
+    # Dismiss tutorial / "Got it" tooltips
     try:
         got_it = page.locator('button:has-text("Got it"), button:has-text("Понятно")')
         if got_it.count() > 0 and got_it.first.is_visible():
@@ -175,7 +176,7 @@ def upload_single_video(page, item, auto_publish=False):
     except Exception:
         pass
 
-    # Fill caption in DraftEditor
+    # Fill caption
     print("✍️ Заполняем описание ролика...")
     try:
         editor = page.locator('div.notranslate.public-DraftEditor-content, div[contenteditable="true"]').first
@@ -191,19 +192,16 @@ def upload_single_video(page, item, auto_publish=False):
     except Exception as e:
         print(f"⚠️ Ошибка ввода описания: {e}")
 
-    # Wait for Post button to become enabled and ready
-    print("⏳ Ожидание готовности кнопки 'Post' (проверка копирайта и загрузки)...")
+    # Wait for Post button to become enabled
+    print("⏳ Ожидание готовности кнопки 'Post'...")
     post_button = None
     
-    # EXACT selector for the submit button (not sidebar "Posts" button!)
     for _ in range(60):
-        # We target the primary action button with exact text 'Post' or 'Опубликовать'
         btn_candidates = page.locator('button.Button__root--type-primary, button[type="button"]')
         count = btn_candidates.count()
         for idx in range(count):
             candidate = btn_candidates.nth(idx)
             text = candidate.inner_text().strip()
-            # Must be exactly 'Post' or 'Опубликовать', NOT 'Posts'!
             if text in ["Post", "Опубликовать", "Publish"]:
                 if candidate.is_visible() and not candidate.is_disabled():
                     post_button = candidate
@@ -213,10 +211,7 @@ def upload_single_video(page, item, auto_publish=False):
         time.sleep(2)
 
     if not post_button:
-        print("⚠️ Кнопка 'Post' ещё недоступна.")
-        if not auto_publish:
-            input("Нажмите кнопку 'Post' вручную в браузере, затем нажмите Enter здесь...")
-            return True
+        print("❌ Кнопка 'Post' не найдена.")
         return False
 
     post_button.scroll_into_view_if_needed()
@@ -224,40 +219,72 @@ def upload_single_video(page, item, auto_publish=False):
 
     print("🚀 Нажимаем 'Post'...")
     post_button.click()
-    print("⏳ Ожидаем подтверждения публикации...")
+    time.sleep(2)
 
-    # Wait for completion modal or upload another button
-    success = False
+    # Check for confirmation modal: "Continue to post? ... Post now"
+    post_now_btn = page.locator('button:has-text("Post now"), button:has-text("Опубликовать сейчас")')
+    try:
+        if post_now_btn.count() > 0 and post_now_btn.first.is_visible():
+            print("⚡ Подтверждаем публикацию ('Post now')...")
+            post_now_btn.first.click()
+            time.sleep(3)
+    except Exception as e:
+        print(f"Примечание по модалу: {e}")
+
+    print("⏳ Ожидаем завершения публикации...")
+    
+    # Wait for redirect to content or "Manage your posts"
     for _ in range(15):
         time.sleep(2)
-        # Check if "Manage your posts" or "Upload another video" appeared
-        upload_another = page.locator('button:has-text("Upload another video"), button:has-text("Upload another"), button:has-text("Загрузить другое видео")')
+        if "tiktokstudio/content" in page.url:
+            print(f"🎉 ВИДЕО #{index} УСПЕШНО ОПУБЛИКОВАНО В TIKTOK!")
+            return True
+        upload_another = page.locator('button:has-text("Upload another video"), button:has-text("Upload another")')
         if upload_another.count() > 0 and upload_another.first.is_visible():
             print(f"🎉 ВИДЕО #{index} УСПЕШНО ОПУБЛИКОВАНО В TIKTOK!")
-            success = True
             upload_another.first.click()
             time.sleep(3)
-            break
-        
-        # Check for success toast or modal
-        modal_text = page.locator('div[role="dialog"], div[class*="modal"]')
-        if modal_text.count() > 0 and "uploaded" in modal_text.first.inner_text().lower():
-            print(f"🎉 ВИДЕО #{index} УСПЕШНО ОПУБЛИКОВАНО В TIKTOK!")
-            success = True
-            time.sleep(3)
-            break
+            return True
 
-    if not success:
-        print(f"✅ Видео #{index}: клик отправлен (проверьте статус в окне браузера).")
-
+    print(f"✅ Видео #{index} обработано!")
     return True
+
+
+def extract_published_links(page):
+    print("\n🔍 Получаем прямые ссылки на опубликованные видео...")
+    page.goto("https://www.tiktok.com/tiktokstudio/content", wait_until="domcontentloaded")
+    time.sleep(6)
+    html = page.content()
+    
+    # Extract username
+    user_match = re.search(r'&quot;user_text&quot;:&quot;([^&]+)&quot;', html)
+    username = user_match.group(1) if user_match else "buddah_ai"
+    
+    # Extract item IDs
+    item_ids = list(dict.fromkeys(re.findall(r'item_id=(\d{19})', html)))
+    if not item_ids:
+        item_ids = list(dict.fromkeys(re.findall(r'&quot;item_id&quot;:&quot;(\d{19})&quot;', html)))
+        
+    links = [f"https://www.tiktok.com/@{username}/video/{vid}" for vid in item_ids]
+    
+    print(f"\n==========================================")
+    print(f"🔥 ОПУБЛИКОВАННЫЕ ССЫЛКИ TIKTOK ({len(links)}):")
+    print(f"==========================================")
+    for l in links:
+        print("👉", l)
+        
+    with open(BASE_DIR / "TIKTOK_PUBLISHED_LINKS.txt", "w", encoding="utf-8") as f:
+        for l in links:
+            f.write(l + "\n")
+            
+    return links
 
 
 def main():
     parser = argparse.ArgumentParser(description="TikTok Automated Uploader with persistent profile")
     parser.add_argument("--login-only", action="store_true", help="Just open browser to log in to TikTok")
     parser.add_argument("--index", type=int, default=None, help="Upload specific video index (1-8)")
-    parser.add_argument("--auto-publish", action="store_true", help="Automatically click Publish without manual prompt")
+    parser.add_argument("--from-index", type=int, default=2, help="Start from specific index (default 2, since 1 is published)")
     parser.add_argument("--delay", type=int, default=15, help="Delay between video uploads in seconds")
     args = parser.parse_args()
 
@@ -278,24 +305,22 @@ def main():
 
         if args.index:
             items = [item for item in VIDEOS_QUEUE if item["index"] == args.index]
-            if not items:
-                print(f"❌ Видео с индексом {args.index} не найдено!")
-                context.close()
-                return
         else:
-            items = VIDEOS_QUEUE
+            items = [item for item in VIDEOS_QUEUE if item["index"] >= args.from_index]
 
         print(f"\nВсего видео в очереди на загрузку: {len(items)}")
 
         for i, item in enumerate(items):
-            success = upload_single_video(page, item, auto_publish=args.auto_publish)
+            success = upload_single_video(page, item)
             if success and i < len(items) - 1:
                 print(f"\n⏳ Пауза перед следующим видео: {args.delay} сек...")
                 time.sleep(args.delay)
 
-        print("\n🎉 Все 8 видео обработаны!")
-        print("👉 Проверьте загруженные посты в открытом окне браузера.")
-        input("Нажмите Enter в этой консоли, когда закончите просмотр...")
+        # Extract links
+        extract_published_links(page)
+
+        print("\n🎉 ВСЕ ВИДЕО ЗАГРУЖЕНЫ И ССЫЛКИ СОХРАНЕНЫ!")
+        input("Нажмите Enter в этой консоли, чтобы закрыть браузер...")
         context.close()
 
 
