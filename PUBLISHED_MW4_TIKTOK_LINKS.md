@@ -52,3 +52,34 @@
 ### Видео 10: Clutch Sniper Elimination
 👉 `https://www.tiktok.com/@buddah_ai/video/7701172697300045064`
 
+
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+## 🚀 ПАРТИЯ #3 (ВИДЕО 11 - 15)
+
+### Видео 11: One Squad High Risk Sector
+👉 `https://www.tiktok.com/@buddah_ai/video/7701391808785435912`
+
+### Видео 12: Exfil Under Mortar Fire
+👉 `https://www.tiktok.com/@buddah_ai/video/7701391970329316626`
+
+### Видео 13: Vehicle Escape Speed
+👉 `https://www.tiktok.com/@buddah_ai/video/7701392100780199176`
+
+### Видео 14: Scanning Rooftops Sniper
+👉 `https://www.tiktok.com/@buddah_ai/video/7701392152999349522`
+
+### Видео 15: CQB Squad Wipe
+👉 `https://www.tiktok.com/@buddah_ai/video/7701392338307861778`
+
