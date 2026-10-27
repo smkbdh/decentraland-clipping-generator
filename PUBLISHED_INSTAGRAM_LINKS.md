@@ -11,7 +11,7 @@
 | # | Название ролика | Хук / Ссылка | Статус |
 |---|---|---|---|
 | 1 | Successful Exfil | [https://www.instagram.com/kira.gyal/reel/De_2Kg2T8Y0/](https://www.instagram.com/kira.gyal/reel/De_2Kg2T8Y0/) | ✅ LIVE |
-| 2 | One Squad No Backup | В очереди на публикацию | ⏳ Ожидает |
+| 2 | One Squad No Backup | [https://www.instagram.com/kira.gyal/reel/DfAQ_RzzNtY/](https://www.instagram.com/kira.gyal/reel/DfAQ_RzzNtY/) | ✅ LIVE |
 | 3 | Sniping Moments | В очереди на публикацию | ⏳ Ожидает |
 | 4 | DMZ Hits Different | В очереди на публикацию | ⏳ Ожидает |
 | 5 | Hajin Map Showcase | В очереди на публикацию | ⏳ Ожидает |

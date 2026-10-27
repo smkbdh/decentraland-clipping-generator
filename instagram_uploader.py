@@ -138,30 +138,57 @@ VIDEOS_QUEUE = [
     }
 ]
 
-PUBLISHED_REELS = {}
+def load_published_reels():
+    reels = {}
+    if LINKS_FILE.exists():
+        try:
+            content = LINKS_FILE.read_text(encoding="utf-8")
+            for match in re.finditer(r'\|\s*(\d+)\s*\|.*?\|\s*\[(https://www\.instagram\.com/[^\]]+/reel/[^\]]+)\]', content):
+                reels[int(match.group(1))] = match.group(2)
+        except Exception:
+            pass
+    return reels
+
+PUBLISHED_REELS = load_published_reels()
 
 def update_markdown():
     lines = [
         "# 🔴 LIVE PUBLISHED INSTAGRAM REELS (Call of Duty Campaign)\n\n",
         "Кампания: **Modern Warfare 4 - DMZ Live Clipping**  \n",
-        "Статус: **Опубликовано в Instagram Reels**  \n\n",
-        "---\n\n"
+        "Аккаунт: **[@kira.gyal](https://www.instagram.com/kira.gyal/)**  \n",
+        "Статус: **Публикация активна**  \n\n",
+        "---\n\n",
+        "### Опубликованные ролики (Reels):\n\n",
+        "| # | Название ролика | Хук / Ссылка | Статус |\n",
+        "|---|---|---|---|\n"
     ]
     for item in VIDEOS_QUEUE:
         idx = item["index"]
         url = PUBLISHED_REELS.get(idx)
         if url:
-            lines.append(f"### Видео #{idx}: {item['name']}\n👉 `{url}`\n\n")
+            lines.append(f"| {idx} | {item['name']} | [{url}]({url}) | ✅ LIVE |\n")
+        else:
+            lines.append(f"| {idx} | {item['name']} | В очереди на публикацию | ⏳ Ожидает |\n")
+
+    lines.extend([
+        "\n---\n\n",
+        "### Соответствие правилам кампании Activision:\n",
+        "- ✔️ Хэштеги: `@callofduty` и `#Ad` на отдельной строке\n",
+        "- ✔️ Тематические теги: `#DMZ #CallOfDuty #Gaming`\n",
+        "- ✔️ Формат: Вертикальный 9:16 (1080x1920)\n",
+        "- ✔️ Аудио: Чистый внутриигровой звук DMZ без музыки и без ИИ-голосов\n",
+        "- ✔️ Текст на экране: Официальные слоганы из гайдлайна\n"
+    ])
 
     with open(LINKS_FILE, "w", encoding="utf-8") as f:
         f.writelines(lines)
 
 
-def launch_browser(p):
+def launch_browser(p, headless=True):
     PROFILE_DIR.mkdir(parents=True, exist_ok=True)
     context = p.chromium.launch_persistent_context(
         user_data_dir=str(PROFILE_DIR),
-        headless=False,
+        headless=headless,
         viewport={"width": 1280, "height": 900},
         args=[
             "--disable-blink-features=AutomationControlled",
@@ -236,7 +263,7 @@ def upload_reel(page, item):
     print("1. Нажимаем кнопку 'Создать' / '+'...")
     create_btn = page.locator(
         'svg[aria-label="New post"], svg[aria-label="Create"], svg[aria-label="Новая публикация"], '
-        'a:has-text("Create"), a:has-text("Создать"), span:has-text("Create"), span:has-text("Создать")'
+        'a[href="#"]:has-text("Create"), a:has-text("Create"), a:has-text("Создать")'
     ).first
 
     try:
@@ -247,11 +274,18 @@ def upload_reel(page, item):
         print(f"❌ Ошибка поиска кнопки Создать: {e}")
         return False
 
-    # Check if sub-menu appears (Post vs Live)
-    post_choice = page.locator('span:has-text("Post"), span:has-text("Публикация")')
-    if post_choice.count() > 0 and post_choice.first.is_visible():
-        post_choice.first.click()
+    # Check if submenu with "Post" appeared
+    try:
+        page.evaluate('''() => {
+            const spans = Array.from(document.querySelectorAll('span'));
+            const postSpan = spans.find(s => (s.textContent.trim() === 'Post' || s.textContent.trim() === 'Публикация') && s.offsetParent !== null);
+            if (postSpan) {
+                (postSpan.closest('div[role="button"]') || postSpan.closest('a') || postSpan).click();
+            }
+        }''')
         time.sleep(2)
+    except Exception:
+        pass
 
     # 2. Select file
     print("2. Передаем видеофайл...")
@@ -263,6 +297,7 @@ def upload_reel(page, item):
         time.sleep(5)
     except Exception as e:
         print(f"❌ Ошибка выбора файла: {e}")
+        page.screenshot(path=f"error_file_{index}.png")
         return False
 
     # Dismiss "Video posts are now shared as reels" modal if shown
@@ -371,18 +406,11 @@ def upload_reel(page, item):
         time.sleep(5)
         reels = page.eval_on_selector_all('a[href*="/reel/"]', 'els => els.map(e => e.href)')
         if reels:
-            reel_url = reels[0]
+            known_urls = set(PUBLISHED_REELS.values())
+            new_reels = [r for r in reels if r not in known_urls]
+            reel_url = new_reels[0] if new_reels else reels[0]
     except Exception as e:
         print(f"⚠️ Ошибка поиска ссылки в профиле: {e}")
-
-    if reel_url:
-        PUBLISHED_REELS[index] = reel_url
-        print(f"🔥 ПРЯМАЯ ССЫЛКА НА REEL #{index}: {reel_url}")
-        update_markdown()
-    else:
-        print(f"⚠️ Reel #{index} опубликован, ссылка появится в профиле через несколько секунд.")
-
-    return True
 
     if reel_url:
         PUBLISHED_REELS[index] = reel_url
@@ -400,6 +428,7 @@ def main():
     parser.add_argument("--index", type=int, default=1, help="Video index to upload (1-10)")
     parser.add_argument("--all", action="store_true", help="Upload all videos sequentially with safe delay")
     parser.add_argument("--delay-minutes", type=int, default=20, help="Safe delay in minutes between posts (default 20)")
+    parser.add_argument("--headed", action="store_true", help="Run browser in visible mode")
     args = parser.parse_args()
 
     print("==========================================")
@@ -407,7 +436,7 @@ def main():
     print("==========================================")
 
     with sync_playwright() as p:
-        context = launch_browser(p)
+        context = launch_browser(p, headless=not args.headed)
         page = context.pages[0] if context.pages else context.new_page()
 
         check_and_wait_for_login(page, login_only=args.login_only)
@@ -434,8 +463,9 @@ def main():
                 return
             upload_reel(page, item)
 
-        print("\n🎉 Готово! Браузер остаётся открытым для просмотра.")
-        input("Нажмите Enter в этой консоли, чтобы закрыть окно...")
+        print("\n🎉 Завершено!")
+        if args.headed:
+            input("Нажмите Enter в этой консоли, чтобы закрыть окно...")
         context.close()
 
 
