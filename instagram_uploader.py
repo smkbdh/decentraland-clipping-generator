@@ -297,22 +297,23 @@ def upload_reel(page, item):
 
     # 4. Click "Next" (Далее) to Filter/Trim screen
     print("4. Переход к редактированию (Next)...")
-    next_btn = page.locator('div[role="button"]:has-text("Next"), div[role="button"]:has-text("Далее"), button:has-text("Next"), button:has-text("Далее")').first
+    modal = page.locator('div[role="dialog"]').first
+    next_btn = modal.locator('div[role="button"]:has-text("Next"), div[role="button"]:has-text("Далее"), button:has-text("Next"), button:has-text("Далее")').first
     try:
         next_btn.wait_for(state="visible", timeout=15000)
         next_btn.click()
-        time.sleep(2)
+        time.sleep(3)
     except Exception as e:
         print(f"❌ Ошибка перехода Next 1: {e}")
         return False
 
     # 5. Click "Next" again to Caption screen
     print("5. Переход к описанию (Next)...")
-    next_btn2 = page.locator('div[role="button"]:has-text("Next"), div[role="button"]:has-text("Далее"), button:has-text("Next"), button:has-text("Далее")').first
+    next_btn2 = modal.locator('div[role="button"]:has-text("Next"), div[role="button"]:has-text("Далее"), button:has-text("Next"), button:has-text("Далее")').first
     try:
         next_btn2.wait_for(state="visible", timeout=15000)
         next_btn2.click()
-        time.sleep(2)
+        time.sleep(3)
     except Exception as e:
         print(f"❌ Ошибка перехода Next 2: {e}")
         return False
@@ -320,11 +321,13 @@ def upload_reel(page, item):
     # 6. Fill caption
     print("6. Заполняем описание Reel...")
     try:
-        caption_area = page.locator('div[aria-label*="caption"], div[aria-label*="подпись"], div[contenteditable="true"]').first
+        caption_area = modal.locator('div[aria-label*="caption"], div[aria-label*="подпись"], div[contenteditable="true"]').first
         caption_area.wait_for(state="visible", timeout=15000)
         caption_area.click()
         time.sleep(0.5)
         page.keyboard.insert_text(caption)
+        time.sleep(1)
+        modal.locator('h1, div:has-text("Create new post"), div:has-text("New reel")').first.click(force=True)
         time.sleep(1)
         print("✅ Описание успешно введено!")
     except Exception as e:
@@ -332,7 +335,7 @@ def upload_reel(page, item):
 
     # 7. Click Share (Поделиться)
     print("7. Нажимаем 'Поделиться' (Share)...")
-    share_btn = page.locator('div[role="button"]:has-text("Share"), div[role="button"]:has-text("Поделиться"), button:has-text("Share"), button:has-text("Поделиться")').first
+    share_btn = modal.locator('div[role="button"]:has-text("Share"), div[role="button"]:has-text("Поделиться"), button:has-text("Share"), button:has-text("Поделиться")').first
     try:
         share_btn.wait_for(state="visible", timeout=15000)
         share_btn.click()
@@ -344,14 +347,15 @@ def upload_reel(page, item):
     # 8. Wait for completion
     print("⏳ Ожидание подтверждения публикации от Instagram...")
     success = False
-    for _ in range(45):
+    for _ in range(60):
         time.sleep(2)
         done_text = page.locator(
             'text=Your reel has been shared, '
             'text=Your post has been shared, '
             'text=Видеоролик опубликован, '
             'text=Публикация опубликована, '
-            'text=Поделились'
+            'text=Поделились, '
+            'text=Shared reel'
         )
         if done_text.count() > 0 and done_text.first.is_visible():
             print(f"🎉 REEL #{index} УСПЕШНО ОПУБЛИКОВАН В INSTAGRAM!")
@@ -359,35 +363,26 @@ def upload_reel(page, item):
             break
 
     # 9. Extract link
-    time.sleep(3)
-    # Check if "View post" or direct link is present
-    view_link = page.locator('a[href*="/reel/"], a[href*="/p/"]')
+    time.sleep(4)
     reel_url = None
-    if view_link.count() > 0:
-        href = view_link.first.get_attribute("href")
-        if href:
-            reel_url = "https://www.instagram.com" + href if href.startswith("/") else href
+    try:
+        print("🔍 Открываем страницу Reels профиля для получения прямой ссылки...")
+        page.goto("https://www.instagram.com/kira.gyal/reels/", wait_until="domcontentloaded")
+        time.sleep(5)
+        reels = page.eval_on_selector_all('a[href*="/reel/"]', 'els => els.map(e => e.href)')
+        if reels:
+            reel_url = reels[0]
+    except Exception as e:
+        print(f"⚠️ Ошибка поиска ссылки в профиле: {e}")
 
-    if not reel_url:
-        # Navigate to profile to find top post
-        try:
-            print("🔍 Открываем профиль для получения прямой ссылки...")
-            page.goto("https://www.instagram.com/", wait_until="domcontentloaded")
-            time.sleep(4)
-            profile_btn = page.locator('svg[aria-label="Profile"], svg[aria-label="Профиль"], a[href*="/direct/"] + a').first
-            # Find all links on profile
-            # Or get current user profile link
-            user_link = page.locator('a[href^="/"]:has(img[alt*="profile"])').first
-            if user_link.count() > 0:
-                user_href = user_link.get_attribute("href")
-                page.goto(f"https://www.instagram.com{user_href}", wait_until="domcontentloaded")
-                time.sleep(4)
-                first_post = page.locator('a[href*="/reel/"], a[href*="/p/"]').first
-                if first_post.count() > 0:
-                    phref = first_post.get_attribute("href")
-                    reel_url = f"https://www.instagram.com{phref}"
-        except Exception:
-            pass
+    if reel_url:
+        PUBLISHED_REELS[index] = reel_url
+        print(f"🔥 ПРЯМАЯ ССЫЛКА НА REEL #{index}: {reel_url}")
+        update_markdown()
+    else:
+        print(f"⚠️ Reel #{index} опубликован, ссылка появится в профиле через несколько секунд.")
+
+    return True
 
     if reel_url:
         PUBLISHED_REELS[index] = reel_url
