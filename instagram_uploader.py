@@ -171,37 +171,38 @@ def launch_browser(p):
     return context
 
 
-def check_and_wait_for_login(page):
+def check_and_wait_for_login(page, login_only=False):
     print("\n🌐 Открываем Instagram...")
     page.goto(INSTAGRAM_URL, wait_until="domcontentloaded", timeout=60000)
-    time.sleep(4)
+    time.sleep(3)
 
-    # Check if login is needed
-    while True:
-        current_url = page.url.lower()
-        has_login_input = page.locator('input[name="username"]').count() > 0
-        if "login" in current_url or has_login_input:
-            print("\n⚠️ ВНИМАНИЕ: Требуется вход в Instagram!")
-            print("👉 Войдите в свой Instagram в открытом окне браузера.")
-            print("⏳ Ожидание успешного входа (профиль сохранится навсегда)...")
-            try:
-                page.wait_for_selector('svg[aria-label="Home"], svg[aria-label="Главная"], svg[aria-label="New post"], svg[aria-label="Create"]', timeout=180000)
-                print("✅ Успешный вход в Instagram обнаружен!")
-                time.sleep(3)
-                break
-            except PlaywrightTimeoutError:
-                print("⏳ Всё ещё ждём авторизацию в окне браузера...")
-        else:
-            # Check for home or create icon
-            try:
-                page.wait_for_selector('svg[aria-label="Home"], svg[aria-label="Главная"], svg[aria-label="New post"], svg[aria-label="Create"]', timeout=5000)
-                print("✅ Сессия Instagram активна!")
-                break
-            except PlaywrightTimeoutError:
-                time.sleep(2)
-                if "login" in page.url.lower():
-                    continue
-                break
+    # Check if login form is visible (inputs email/pass or username/password)
+    has_login_fields = (
+        page.locator('input[name="email"], input[name="username"], input[name="pass"], input[name="password"]').count() > 0
+    )
+
+    if login_only:
+        print("\n" + "=" * 65)
+        print("👉 ОКНО БРАУЗЕРА ОТКРЫТО ДЛЯ ВХОДА В INSTAGRAM!")
+        print("1. Введите в окне браузера ваш логин/email и пароль.")
+        print("2. Пройдите проверку (2FA / код по SMS, если требуется).")
+        print("3. Как только откроется лента или профиль — вернитесь сюда.")
+        print("=" * 65 + "\n")
+        input("Нажмите Enter в этой консоли ПОСЛЕ того, как успешно войдёте в аккаунт...")
+        time.sleep(2)
+        print("✅ Профиль и сессия сохранены!")
+        return True
+
+    if has_login_fields:
+        print("\n⚠️ ВНИМАНИЕ: Требуется авторизация в Instagram!")
+        print("👉 Пожалуйста, войдите в свой аккаунт в открывшемся окне браузера.")
+        input("Нажмите Enter в этой консоли после успешного входа в Instagram...")
+        time.sleep(2)
+        print("✅ Авторизация принята, продолжаем загрузку!")
+        return True
+
+    print("✅ Сессия Instagram активна, аккаунт авторизован!")
+    return True
 
 
 def upload_reel(page, item):
@@ -414,7 +415,7 @@ def main():
         context = launch_browser(p)
         page = context.pages[0] if context.pages else context.new_page()
 
-        check_and_wait_for_login(page)
+        check_and_wait_for_login(page, login_only=args.login_only)
 
         if args.login_only:
             print("\n🎉 Сессия Instagram успешно сохранена в папку:", PROFILE_DIR)
