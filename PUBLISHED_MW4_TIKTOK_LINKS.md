@@ -21,3 +21,34 @@
 ### Видео 5: Hajin Map Showcase
 👉 `https://www.tiktok.com/@buddah_ai/video/7701169042878434578`
 
+
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+## 🚀 ПАРТИЯ #2 (ВИДЕО 6 - 10)
+
+### Видео 6: The DMZ Hype Is Real
+👉 `https://www.tiktok.com/@buddah_ai/video/7701172220424506642`
+
+### Видео 7: Crafting 3D Printer
+👉 `https://www.tiktok.com/@buddah_ai/video/7701172315098254599`
+
+### Видео 8: FOB Base Experience
+👉 `https://www.tiktok.com/@buddah_ai/video/7701172445272722695`
+
+### Видео 9: Hajin Looks Amazing
+👉 `https://www.tiktok.com/@buddah_ai/video/7701172586855615751`
+
+### Видео 10: Clutch Sniper Elimination
+👉 `https://www.tiktok.com/@buddah_ai/video/7701172697300045064`
+
