@@ -20,6 +20,11 @@
 | 8 | FOB Base Experience | В очереди на публикацию | ⏳ Ожидает |
 | 9 | Hajin Looks Amazing | В очереди на публикацию | ⏳ Ожидает |
 | 10 | Clutch Sniper Elimination | В очереди на публикацию | ⏳ Ожидает |
+| 11 | One Squad High Risk | В очереди на публикацию | ⏳ Ожидает |
+| 12 | Exfil Under Mortar Fire | В очереди на публикацию | ⏳ Ожидает |
+| 13 | Vehicle Escape Speed | В очереди на публикацию | ⏳ Ожидает |
+| 14 | Scanning Rooftops Sniper | В очереди на публикацию | ⏳ Ожидает |
+| 15 | CQB Squad Wipe | В очереди на публикацию | ⏳ Ожидает |
 
 ---
 

@@ -135,6 +135,66 @@ VIDEOS_QUEUE = [
             "#Ad\n"
             "#DMZ #CallOfDuty #Gaming"
         )
+    },
+    {
+        "index": 11,
+        "name": "One Squad High Risk",
+        "file": VIDEOS_DIR / "MW4_DMZ_Video11_One_Squad_High_Risk.mp4",
+        "caption": (
+            "One Squad. One Chance. No Backup.\n"
+            "Entering the high risk sector with squad comms only.\n\n"
+            "@callofduty\n"
+            "#Ad\n"
+            "#DMZ #CallOfDuty #Gaming"
+        )
+    },
+    {
+        "index": 12,
+        "name": "Exfil Under Mortar Fire",
+        "file": VIDEOS_DIR / "MW4_DMZ_Video12_Exfil_Under_Mortar_Fire.mp4",
+        "caption": (
+            "Could you have made that Exfil.\n"
+            "Chopper extraction under direct mortar fire.\n\n"
+            "@callofduty\n"
+            "#Ad\n"
+            "#DMZ #CallOfDuty #Gaming"
+        )
+    },
+    {
+        "index": 13,
+        "name": "Vehicle Escape Speed",
+        "file": VIDEOS_DIR / "MW4_DMZ_Video13_Vehicle_Escape_Speed.mp4",
+        "caption": (
+            "DMZ is a whole different experience.\n"
+            "High speed tactical evasion through active combat zones.\n\n"
+            "@callofduty\n"
+            "#Ad\n"
+            "#DMZ #CallOfDuty #Gaming"
+        )
+    },
+    {
+        "index": 14,
+        "name": "Scanning Rooftops Sniper",
+        "file": VIDEOS_DIR / "MW4_DMZ_Video14_Scanning_Rooftops_Sniper.mp4",
+        "caption": (
+            "DMZ moments never disappoint.\n"
+            "Spotting enemy operators before they spot us.\n\n"
+            "@callofduty\n"
+            "#Ad\n"
+            "#DMZ #CallOfDuty #Gaming"
+        )
+    },
+    {
+        "index": 15,
+        "name": "CQB Squad Wipe",
+        "file": VIDEOS_DIR / "MW4_DMZ_Video15_CQB_Squad_Wipe.mp4",
+        "caption": (
+            "The DMZ hype is real.\n"
+            "High intensity CQB combat with zero room for error.\n\n"
+            "@callofduty\n"
+            "#Ad\n"
+            "#DMZ #CallOfDuty #Gaming"
+        )
     }
 ]
 
