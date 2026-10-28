@@ -202,3 +202,29 @@
 👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701563491102051592`
 👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
 
+
+
+---
+
+## 🚀 ПАРТИЯ #8 (ВИДЕО 36 - 40) + CONTENT REWARDS SUBMISSIONS
+
+### Видео 36: Stealth perimeter breach with suppressed carbines
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701570338114522386`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 37: Counter sniping enemy rooftop spotters across the zone
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701570481056533768`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 38: Field crafting weapon blueprints on demand
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701570678226619655`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 39: Final countdown to exfil bird liftoff with team
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701570842177637650`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 40: Heavy squad armor push into contested stronghold
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701571009614302472`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
