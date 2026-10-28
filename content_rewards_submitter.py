@@ -16,10 +16,9 @@ def launch_browser(p, headless=False):
     context = p.chromium.launch_persistent_context(
         user_data_dir=str(PROFILE_DIR),
         headless=headless,
-        viewport={"width": 1366, "height": 900},
+        viewport={"width": 1280, "height": 850},
         args=[
-            "--disable-blink-features=AutomationControlled",
-            "--start-maximized"
+            "--disable-blink-features=AutomationControlled"
         ]
     )
     return context
