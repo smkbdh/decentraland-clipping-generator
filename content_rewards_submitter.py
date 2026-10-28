@@ -134,23 +134,12 @@ def main():
             print("\n" + "=" * 65)
             print("👉 ОКНО БРАУЗЕРА ОТКРЫТО!")
             print("1. Войдите в свой аккаунт Content Rewards в открывшемся окне.")
-            print("2. Скрипт сам автоматически обнаружит вход, когда откроется кампания.")
+            print("2. Как только вошли — вернитесь сюда и нажмите Enter.")
             print("=" * 65 + "\n")
-
-            for sec in range(100): # ~5 minutes
-                time.sleep(3)
-                # Indicators of logged in state: Submit clip button, profile avatar, etc.
-                submit_btn = page.locator('button:has-text("Submit clip"), a:has-text("Submit clip")')
-                avatar = page.locator('img[alt*="avatar"], img[src*="avatar"], button[aria-label*="profile"]')
-                current_url = page.url
-
-                if (submit_btn.count() > 0 or avatar.count() > 0) and "login" not in current_url and "auth" not in current_url and "whop.com/oauth" not in current_url:
-                    print(f"\n🎉 ОБНАРУЖЕН УСПЕШНЫЙ ВХОД В CONTENT REWARDS!")
-                    page.screenshot(path="rewards_logged_in.png")
-                    break
-
-            time.sleep(3)
-            print("\n✅ Сессия Content Rewards успешно сохранена в:", PROFILE_DIR)
+            input("Нажмите Enter в этой консоли ПОСЛЕ успешного входа...")
+            time.sleep(2)
+            page.screenshot(path="rewards_logged_in.png")
+            print("\n🎉 Сессия Content Rewards успешно сохранена в:", PROFILE_DIR)
             context.close()
             return
 
