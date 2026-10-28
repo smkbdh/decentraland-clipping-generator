@@ -566,3 +566,29 @@
 👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701608715123838215`
 👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
 
+
+
+---
+
+## 🚀 ПАРТИЯ #22 (ВИДЕО 106 - 110) + CONTENT REWARDS SUBMISSIONS
+
+### Видео 106: Coordinated squad assault deep behind enemy lines
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701610938322996488`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 107: Securing the forward operating base depot under fire
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701611105084378376`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 108: Long range thermal surveillance and precision shots
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701611278418300178`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 109: High speed exfil convoy pushing through patrol lines
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701611453488319751`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 110: Chopper extraction under hostile machinegun barrage
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701611605636828434`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
