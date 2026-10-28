@@ -83,3 +83,34 @@
 ### Видео 15: CQB Squad Wipe
 👉 `https://www.tiktok.com/@buddah_ai/video/7701392338307861778`
 
+
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+## 🚀 ПАРТИЯ #4 (ВИДЕО 16 - 20)
+
+### Видео 16: Sniper Tracking City
+👉 `https://www.tiktok.com/@buddah_ai/video/7701549310604856584`
+
+### Видео 17: Hajin Map Atmosphere
+👉 `https://www.tiktok.com/@buddah_ai/video/7701549431270739208`
+
+### Видео 18: Crafting Tactical Vests
+👉 `https://www.tiktok.com/@buddah_ai/video/7701549551173471506`
+
+### Видео 19: Last Second Exfil Sprint
+👉 `https://www.tiktok.com/@buddah_ai/video/7701549668051750150`
+
+### Видео 20: FOB Custom Loadout
+👉 `https://www.tiktok.com/@buddah_ai/video/7701549788952579335`
+
