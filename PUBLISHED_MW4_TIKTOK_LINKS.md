@@ -852,3 +852,29 @@
 👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701640264854637842`
 👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
 
+
+
+---
+
+## 🚀 ПАРТИЯ #33 (ВИДЕО 161 - 165) + CONTENT REWARDS SUBMISSIONS
+
+### Видео 161: Thermal recon sweep tagging enemy positions
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701642466562411794`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 162: Flanking enemy defenders on the rooftop perimeter
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701642616240229640`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 163: Close quarters room clearing in hot extraction area
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701642782317776146`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 164: Covering squad extraction with heavy suppressive fire
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701642931911822599`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 165: Tactical infiltration through contested territory
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701643105736445202`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
