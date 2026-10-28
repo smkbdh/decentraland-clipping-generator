@@ -19,6 +19,7 @@ __pycache__/
 # Ignore browser sessions and tokens
 tiktok_browser_profile/
 instagram_browser_profile/
+rewards_browser_profile/
 session.json
 
 .omc/
