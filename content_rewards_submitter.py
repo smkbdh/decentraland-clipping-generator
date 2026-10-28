@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent
 PROFILE_DIR = BASE_DIR / "rewards_browser_profile"
 CAMPAIGN_URL = "https://contentrewards.com/c/campaigns/78bd78e4-0ec3-44d7-9f56-122ff7c374bc"
 
-def launch_browser(p, headless=False):
+def launch_browser(p, headless=True):
     PROFILE_DIR.mkdir(parents=True, exist_ok=True)
     context = p.chromium.launch_persistent_context(
         user_data_dir=str(PROFILE_DIR),
@@ -23,131 +23,109 @@ def launch_browser(p, headless=False):
     )
     return context
 
-def check_login(page):
-    # Check if login or sign in button is present or if user profile is visible
-    page.goto(CAMPAIGN_URL, wait_until="domcontentloaded", timeout=45000)
-    time.sleep(3)
+def submit_single_url(page, clip_url):
+    print(f"\n==========================================", flush=True)
+    print(f"🎯 САБМИТ КЛИПА В CONTENT REWARDS:", flush=True)
+    print(f"🔗 {clip_url}", flush=True)
+    print(f"==========================================", flush=True)
 
-def submit_clip(page, clip_url):
-    print(f"\n==========================================")
-    print(f"🎯 САБМИТ КЛИПА В CONTENT REWARDS:")
-    print(f"🔗 {clip_url}")
-    print(f"==========================================")
-
-    # 1. Go to campaign page
-    if page.url != CAMPAIGN_URL:
-        print("1. Открываем страницу кампании...")
+    # 1. Ensure on campaign page
+    if CAMPAIGN_URL not in page.url:
+        print("1. Открываем страницу кампании...", flush=True)
         page.goto(CAMPAIGN_URL, wait_until="domcontentloaded", timeout=45000)
         time.sleep(3)
 
-    # 2. Click "Submit clip" button on the campaign page
-    print("2. Ищем и нажимаем кнопку 'Submit clip' на странице кампании...")
-    submit_trigger = page.locator('button:has-text("Submit clip"), a:has-text("Submit clip")').first
+    # 2. Click "Submit clip" button
+    print("2. Ищем и нажимаем видимую кнопку 'Submit clip'...", flush=True)
     try:
-        submit_trigger.wait_for(state="visible", timeout=15000)
-        submit_trigger.click()
+        trigger = page.locator('button:has-text("Submit clip"):visible').first
+        trigger.wait_for(state="visible", timeout=10000)
+        trigger.click()
         time.sleep(2)
     except Exception as e:
-        print(f"⚠️ Ошибка клика по триггеру Submit clip: {e}")
+        print(f"⚠️ Ошибка при открытии модального окна: {e}", flush=True)
+        return False
 
-    # 3. Enter URL into the modal input
-    print("3. Вводим ссылку на клик в поле ввода...")
+    # 3. Fill URL
+    print("3. Вводим ссылку в модальное окно...", flush=True)
     try:
-        # Input inside the submit modal
-        input_box = page.locator('input[placeholder*="http"], input[type="text"], input[type="url"]').first
-        input_box.wait_for(state="visible", timeout=15000)
-        input_box.click()
-        time.sleep(0.3)
-        input_box.fill("")
-        time.sleep(0.3)
-        input_box.fill(clip_url)
-        time.sleep(2)
-        print("✅ Ссылка вставлена, ожидаем проверку привязанного аккаунта...")
+        inp = page.locator('input[placeholder*="tiktok.com"]').first
+        inp.wait_for(state="visible", timeout=10000)
+        inp.click()
+        inp.fill("")
+        inp.fill(clip_url)
+        print("✅ Ссылка вставлена! Ждём валидацию API...", flush=True)
     except Exception as e:
-        print(f"❌ Ошибка ввода ссылки: {e}")
+        print(f"❌ Поле ввода не найдено: {e}", flush=True)
         page.screenshot(path="submit_error_input.png")
         return False
 
-    # 4. Wait for checks (e.g. green checkmark on "Posted from one of your linked accounts")
+    # 4. Wait for checks
     time.sleep(4)
-    page.screenshot(path="submit_step_checks.png")
 
     # 5. Check the agreement checkbox
-    print("4. Ставим галочку согласия с требованиями...")
+    print("4. Проверяем чекбокс...", flush=True)
     try:
-        checkbox = page.locator(
-            'input[type="checkbox"], '
-            'button[role="checkbox"], '
-            'div[role="checkbox"], '
-            'span:has-text("I\'ve read the requirements"), '
-            'label:has-text("I\'ve read the requirements")'
-        ).first
-        if checkbox.is_visible():
-            checkbox.click()
+        chk = page.locator('label:has-text("I\'ve read the requirements"), input[type="checkbox"]').first
+        if chk.is_visible():
+            chk.click()
             time.sleep(1)
-            print("✅ Чекбокс отмечен!")
+            print("✅ Чекбокс отмечен!", flush=True)
     except Exception as e:
-        print(f"Примечание по чекбоксу: {e}")
+        print(f"Примечание по чекбоксу: {e}", flush=True)
 
-    # 6. Click the orange "Submit clip" button inside modal
-    print("5. Нажимаем финальную кнопку 'Submit clip'...")
-    try:
-        modal_submit = page.locator(
-            'div[role="dialog"] button:has-text("Submit clip"), '
-            'div[role="dialog"] button:has-text("Submit"), '
-            'button.bg-orange-500, '
-            'button:has-text("Submit clip")'
-        ).last
-        modal_submit.wait_for(state="visible", timeout=10000)
-        modal_submit.click()
-        print("🚀 Кнопка сабмита нажата! Ждём подтверждение...")
-        time.sleep(4)
-    except Exception as e:
-        print(f"❌ Ошибка нажатия финального Submit: {e}")
-        page.screenshot(path="submit_error_button.png")
+    page.screenshot(path="submit_ready_check.png")
+
+    # 6. Click final Submit clip button
+    modal_btn = page.locator('button:has-text("Submit clip"):visible').last
+    is_disabled = modal_btn.is_disabled()
+    print(f"Статус кнопки отправки: {'АКТИВНА' if not is_disabled else 'ЗАБЛОКИРОВАНА'}", flush=True)
+
+    if not is_disabled:
+        modal_btn.click()
+        print("🚀 Нажата кнопка сабмита!", flush=True)
+        time.sleep(5)
+        page.screenshot(path="submit_success_screen.png")
+        print("🎉 САБМИТ УСПЕШНО ЗАВЕРШЁН!", flush=True)
+        return True
+    else:
+        print("❌ Кнопка сабмита не активна (возможно клип не прошёл валидацию или уже был отправлен)!", flush=True)
+        page.screenshot(path="submit_failed_screen.png")
+        # Close modal if open
+        cancel_btn = page.locator('button:has-text("Cancel"):visible')
+        if cancel_btn.count() > 0 and cancel_btn.first.is_visible():
+            cancel_btn.first.click()
+            time.sleep(1)
         return False
 
-    page.screenshot(path="submit_step_done.png")
-    print("🎉 КЛИП УСПЕШНО ОТПРАВЛЕН В CONTENT REWARDS!")
-    return True
+def submit_multiple(urls):
+    results = {}
+    with sync_playwright() as p:
+        ctx = launch_browser(p, headless=True)
+        page = ctx.new_page()
+        page.goto(CAMPAIGN_URL, wait_until="domcontentloaded", timeout=45000)
+        time.sleep(3)
 
+        for url in urls:
+            success = submit_single_url(page, url)
+            results[url] = success
+            time.sleep(2)
+
+        ctx.close()
+    return results
 
 def main():
-    parser = argparse.ArgumentParser(description="Content Rewards Clip Submitter")
-    parser.add_argument("--login-only", action="store_true", help="Open browser to log in to Content Rewards")
-    parser.add_argument("--url", type=str, help="Single clip URL to submit")
-    parser.add_argument("--headed", action="store_true", help="Run browser in visible mode")
+    parser = argparse.ArgumentParser(description="Content Rewards Submitter")
+    parser.add_argument("--url", type=str, help="Single URL to submit")
+    parser.add_argument("--list", nargs="+", help="Multiple URLs to submit")
     args = parser.parse_args()
 
-    print("==========================================")
-    print("   CONTENT REWARDS AUTOMATED SUBMITTER    ")
-    print("==========================================")
-
-    with sync_playwright() as p:
-        context = launch_browser(p, headless=not (args.headed or args.login_only))
-        page = context.pages[0] if context.pages else context.new_page()
-
-        if args.login_only:
-            print("\n🌐 Открываем страницу кампании Content Rewards...")
-            page.goto(CAMPAIGN_URL, wait_until="domcontentloaded", timeout=60000)
-            print("\n" + "=" * 65)
-            print("👉 ОКНО БРАУЗЕРА ОТКРЫТО!")
-            print("1. Войдите в свой аккаунт Content Rewards в открывшемся окне.")
-            print("2. Как только вошли — вернитесь сюда и нажмите Enter.")
-            print("=" * 65 + "\n")
-            input("Нажмите Enter в этой консоли ПОСЛЕ успешного входа...")
-            time.sleep(2)
-            page.screenshot(path="rewards_logged_in.png")
-            print("\n🎉 Сессия Content Rewards успешно сохранена в:", PROFILE_DIR)
-            context.close()
-            return
-
-        if args.url:
-            submit_clip(page, args.url)
-            time.sleep(3)
-
-        context.close()
-
+    if args.url:
+        submit_multiple([args.url])
+    elif args.list:
+        submit_multiple(args.list)
+    else:
+        print("Usage: py content_rewards_submitter.py --url <tiktok_url>")
 
 if __name__ == "__main__":
     main()

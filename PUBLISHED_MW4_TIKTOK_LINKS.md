@@ -176,3 +176,29 @@
 ### Видео 30: Final Gear Checks FOB
 👉 `https://www.tiktok.com/@buddah_ai/video/7701553804075945224`
 
+
+
+---
+
+## 🚀 ПАРТИЯ #7 (ВИДЕО 31 - 35) + CONTENT REWARDS SUBMISSIONS
+
+### Видео 31: First Mission Push
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701562728200162578`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 32: FOB Perimeter Breach
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701562922803186952`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 33: Long Range Recon Sniper
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701563101321317650`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 34: Armored Convoy Pursuit
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701563295836196103`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
+### Видео 35: Extraction Timer Panic
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7701563491102051592`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО В CONTENT REWARDS**
+
