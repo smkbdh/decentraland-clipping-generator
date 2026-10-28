@@ -145,3 +145,34 @@
 ### Видео 25: Armored Breach Sector
 👉 `https://www.tiktok.com/@buddah_ai/video/7701551643287915777`
 
+
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+## 🚀 ПАРТИЯ #6 (ВИДЕО 26 - 30)
+
+### Видео 26: Chopper Gunner Cover
+👉 `https://www.tiktok.com/@buddah_ai/video/7701553321219247368`
+
+### Видео 27: Stealth Infiltration Alley
+👉 `https://www.tiktok.com/@buddah_ai/video/7701553447631359250`
+
+### Видео 28: Counter Sniping Rooftops
+👉 `https://www.tiktok.com/@buddah_ai/video/7701553563247463698`
+
+### Видео 29: Field Crafting Blueprints
+👉 `https://www.tiktok.com/@buddah_ai/video/7701553683460279604`
+
+### Видео 30: Final Gear Checks FOB
+👉 `https://www.tiktok.com/@buddah_ai/video/7701553804075945224`
+
