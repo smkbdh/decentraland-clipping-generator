@@ -114,3 +114,34 @@
 ### Видео 20: FOB Custom Loadout
 👉 `https://www.tiktok.com/@buddah_ai/video/7701549788952579335`
 
+
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+## 🚀 ПАРТИЯ #5 (ВИДЕО 21 - 25)
+
+### Видео 21: Fortified Command Breach
+👉 `https://www.tiktok.com/@buddah_ai/video/7701551154617928966`
+
+### Видео 22: High Ground Sniper Kill
+👉 `https://www.tiktok.com/@buddah_ai/video/7701551289401969938`
+
+### Видео 23: Green Smoke Exfil
+👉 `https://www.tiktok.com/@buddah_ai/video/7701551392300829960`
+
+### Видео 24: FOB Firing Range Test
+👉 `https://www.tiktok.com/@buddah_ai/video/7701551520449416455`
+
+### Видео 25: Armored Breach Sector
+👉 `https://www.tiktok.com/@buddah_ai/video/7701551643287915777`
+
