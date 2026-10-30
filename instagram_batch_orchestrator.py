@@ -326,20 +326,12 @@ def main():
             viewport={"width": 1280, "height": 900},
             args=["--disable-blink-features=AutomationControlled"]
         )
-        rewards_ctx = p.chromium.launch_persistent_context(
-            user_data_dir=str(REWARDS_PROFILE),
-            headless=True,
-            viewport={"width": 1280, "height": 850},
-            args=["--disable-blink-features=AutomationControlled"]
-        )
-
-        insta_page = insta_ctx.new_page()
-        rewards_page = rewards_ctx.new_page()
+        insta_page = insta_ctx.pages[0] if insta_ctx.pages else insta_ctx.new_page()
 
         for idx in range(1, target_total + 1):
             video_file = find_video_file(idx)
             if not video_file:
-                print(f"⚠️ Видео #{idx} не найдено в папке!")
+                print(f"⚠️ Видео #{idx} не найдено в папке!", flush=True)
                 continue
 
             caption = get_caption_for_index(idx)
@@ -347,15 +339,24 @@ def main():
             # 1. Upload to Instagram
             reel_url = upload_instagram_reel(insta_page, idx, video_file, caption)
             if not reel_url:
-                print(f"❌ Ошибка публикации Reel #{idx}, повтор через 30с...")
+                print(f"❌ Ошибка публикации Reel #{idx}, повтор через 30с...", flush=True)
                 time.sleep(30)
                 continue
 
             published_reels[idx] = reel_url
 
             # 2. Auto-submit to Content Rewards
+            print(f"🎯 Открываем Content Rewards для сабмита #{idx}...", flush=True)
+            rewards_ctx = p.chromium.launch_persistent_context(
+                user_data_dir=str(REWARDS_PROFILE),
+                headless=True,
+                viewport={"width": 1280, "height": 850},
+                args=["--disable-blink-features=AutomationControlled"]
+            )
+            rewards_page = rewards_ctx.pages[0] if rewards_ctx.pages else rewards_ctx.new_page()
             success = submit_instagram_to_rewards(rewards_page, reel_url, idx)
             submission_statuses[idx] = "✅ ЗАСАБМИЧЕНО" if success else "❌ Ошибка сабмита"
+            rewards_ctx.close()
 
             # 3. Update Markdown & Git push every 5 reels
             update_markdown(published_reels, submission_statuses)
@@ -369,7 +370,6 @@ def main():
                     time.sleep(30)
 
         insta_ctx.close()
-        rewards_ctx.close()
 
     print("\n🏁 ВСЕ РОЛИКИ УСПЕШНО ОПУБЛИКОВАНЫ В INSTAGRAM И ЗАСАБМИЧЕНЫ!")
 
