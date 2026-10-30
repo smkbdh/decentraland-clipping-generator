@@ -700,3 +700,29 @@
 👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702346388679560469`
 👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
 
+
+
+---
+
+## 🚀 ПАРТИЯ #28 (ВИДЕО 136 - 140) + CONTENT REWARDS SUBMISSIONS
+
+### Видео 136: New weapon audio and reload animations hit different
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702348929513590037`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
+### Видео 137: High velocity sniper feed across the perimeter
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702349082806816021`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
+### Видео 138: Tactical breach and clear in close quarters combat
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702349234196057365`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
+### Видео 139: Insane killstreak deployment turning the match
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702349425804414228`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
+### Видео 140: Flanking the enemy squad with suppressed SMG
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702349594860080405`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
