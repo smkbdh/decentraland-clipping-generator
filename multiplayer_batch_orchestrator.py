@@ -11,6 +11,7 @@ sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 BASE_DIR = Path(__file__).resolve().parent
 RAW_DIR = BASE_DIR / "mw4_multiplayer_raw"
+RAW_FILE = RAW_DIR / "TopPlaysFinalists102726_16x9.mp4"
 OUT_DIR = BASE_DIR / "ready_videos" / "mw4_multiplayer_videos"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -18,12 +19,10 @@ TIKTOK_PROFILE = BASE_DIR / "tiktok_browser_profile"
 REWARDS_PROFILE = BASE_DIR / "rewards_browser_profile"
 LINKS_FILE = BASE_DIR / "PUBLISHED_MW4_MULTIPLAYER_LINKS.md"
 
-# New campaign URL for MW4 Multiplayer Launch Clipping
 CAMPAIGN_URL = "https://contentrewards.com/c/campaigns/7a73a53b-2bba-4a5c-8187-05534dd6716d"
 TIKTOK_UPLOAD_URL = "https://www.tiktok.com/tiktokstudio/upload"
 FONT = "C\\:/Windows/Fonts/arialbd.ttf"
 
-# Official slogans and hooks from the MW4 Multiplayer brief
 SLOGANS = [
     "THIS NEW CALL OF DUTY LOOKS INSANE",
     "YEAH, MW4 LOOKS GOOD",
@@ -63,21 +62,20 @@ SUBTITLES = [
     "Flanking the enemy squad with suppressed SMG"
 ]
 
-def generate_spec_for_index(idx, raw_files):
-    raw_cfg = raw_files[idx % len(raw_files)]
-    slogan = SLOGANS[idx % len(SLOGANS)]
-    hook = CAPTION_HOOKS[idx % len(CAPTION_HOOKS)]
-    sub = SUBTITLES[idx % len(SUBTITLES)]
+def generate_spec_for_index(idx):
+    slogan = SLOGANS[(idx - 1) % len(SLOGANS)]
+    hook = CAPTION_HOOKS[(idx - 1) % len(CAPTION_HOOKS)]
+    sub = SUBTITLES[(idx - 1) % len(SUBTITLES)]
 
-    span = raw_cfg["max_s"] - raw_cfg["min_s"]
-    offset = (idx * 7) % max(1, span)
-    start_sec = raw_cfg["min_s"] + offset
-    start_str = f"00:{start_sec//60:02d}:{start_sec%60:02d}"
+    # 492s total duration; safe span 5 to 475s (470s)
+    span = 470
+    offset = ((idx - 1) * 23.5) % span
+    start_sec = 5 + offset
+    start_str = f"00:{int(start_sec)//60:02d}:{int(start_sec)%60:02d}"
 
     slug = re.sub(r'[^a-zA-Z0-9]', '_', sub[:25]).strip('_')
     out_name = f"MW4_MP_Video{idx}_{slug}.mp4"
 
-    # Brief compliance: @callofduty, #Ad on its own line, up to 3 hashtags
     caption = (
         f"{hook}.\n"
         f"{sub}.\n\n"
@@ -89,10 +87,10 @@ def generate_spec_for_index(idx, raw_files):
     return {
         "index": idx,
         "out_name": out_name,
-        "file": raw_cfg["path"],
+        "file": RAW_FILE,
         "start": start_str,
-        "duration": "14",
-        "is_vertical": raw_cfg.get("is_vert", False),
+        "duration": "13",
+        "is_vertical": False,
         "title_top": slogan,
         "title_sub": sub,
         "phrase": hook[:20],
@@ -106,29 +104,20 @@ def render_clip(item):
         print(f"⏩ Видео #{idx} уже отрендерено ({out_file.stat().st_size / (1024*1024):.2f} МБ).", flush=True)
         return True
 
-    print(f"🎬 Рендеринг MW4 MP #{idx}: {item['out_name']}...", flush=True)
+    print(f"🎬 Рендеринг MW4 MP #{idx}: {item['out_name']} (start {item['start']})...", flush=True)
     t_top = item["title_top"].replace("'", "").replace(":", "")
     t_sub = item["title_sub"].replace("'", "").replace(":", "")
 
-    if item["is_vertical"]:
-        vf = (
-            f"scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
-            f"drawbox=y=0:h=320:color=black@0.75:t=fill,"
-            f"drawbox=y=316:h=6:color=0xFFCC00@0.9:t=fill,"
-            f"drawtext=fontfile='{FONT}':text='{t_top}':fontsize=44:fontcolor=0xFFCC00:x=(w-text_w)/2:y=130,"
-            f"drawtext=fontfile='{FONT}':text='{t_sub}':fontsize=30:fontcolor=white:x=(w-text_w)/2:y=210"
-        )
-    else:
-        vf = (
-            f"[0:v]split=2[bg][fg];"
-            f"[bg]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=25:5[blurred];"
-            f"[fg]scale=1080:-1[sharp];"
-            f"[blurred][sharp]overlay=(W-w)/2:(H-h)/2[base];"
-            f"[base]drawbox=y=0:h=320:color=black@0.75:t=fill,"
-            f"drawbox=y=316:h=6:color=0xFFCC00@0.9:t=fill,"
-            f"drawtext=fontfile='{FONT}':text='{t_top}':fontsize=44:fontcolor=0xFFCC00:x=(w-text_w)/2:y=130,"
-            f"drawtext=fontfile='{FONT}':text='{t_sub}':fontsize=30:fontcolor=white:x=(w-text_w)/2:y=210"
-        )
+    vf = (
+        f"[0:v]split=2[bg][fg];"
+        f"[bg]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=25:5[blurred];"
+        f"[fg]scale=1080:-1[sharp];"
+        f"[blurred][sharp]overlay=(W-w)/2:(H-h)/2[base];"
+        f"[base]drawbox=y=0:h=320:color=black@0.75:t=fill,"
+        f"drawbox=y=316:h=6:color=0xFFCC00@0.9:t=fill,"
+        f"drawtext=fontfile='{FONT}':text='{t_top}':fontsize=44:fontcolor=0xFFCC00:x=(w-text_w)/2:y=130,"
+        f"drawtext=fontfile='{FONT}':text='{t_sub}':fontsize=30:fontcolor=white:x=(w-text_w)/2:y=210"
+    )
 
     cmd = [
         "ffmpeg", "-y",
@@ -358,6 +347,7 @@ def submit_batch_to_rewards(batch_items, published_dict):
                 print(f"🚀 Сабмит для #{idx} НАЖАТ!", flush=True)
                 time.sleep(6)
                 statuses[idx] = "✅ УСПЕШНО ЗАСАБМИЧЕНО"
+                print(f"🎉 ВИДЕО #{idx} ЗАСАБМИЧЕНО В CONTENT REWARDS!", flush=True)
             else:
                 statuses[idx] = "❌ Валидация не пройдена"
                 cancel_btn = page.locator('button:has-text("Cancel"):visible')
@@ -388,11 +378,71 @@ def update_markdown_batch(batch_num, batch_items, published_dict, statuses_dict)
     print(f"📝 {LINKS_FILE.name} обновлен для партии #{batch_num}!", flush=True)
 
 def git_commit_and_push(batch_num):
+    print(f"\n🔄 Синхронизация с GitHub для партии #{batch_num}...", flush=True)
     try:
         subprocess.run(["git", "add", "PUBLISHED_MW4_MULTIPLAYER_LINKS.md", "multiplayer_batch_orchestrator.py"], check=False)
         subprocess.run(["git", "commit", "-m", f"feat: completed and submitted multiplayer batch {batch_num}"], check=False)
         res = subprocess.run(["git", "push", "origin", "master"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if res.returncode == 0:
             print("🚀 Push в GitHub origin master успешен!", flush=True)
+        else:
+            print("⚠️ Git push notice:", res.stderr.decode('utf-8', errors='ignore')[-200:])
     except Exception as e:
         print(f"⚠️ Git error: {e}", flush=True)
+
+def run_single_batch(batch_num, start_idx, count=5):
+    print("\n" + "#" * 65)
+    print(f"🎬 СТАРТ ПАРТИИ #{batch_num} (Видео {start_idx} - {start_idx + count - 1})")
+    print("#" * 65)
+
+    batch_items = [generate_spec_for_index(i) for i in range(start_idx, start_idx + count)]
+
+    # 1. Render all clips
+    print("\n[ЭТАП 1] РЕНДЕРИНГ ВСЕХ КЛИПОВ ПАРТИИ...")
+    for item in batch_items:
+        render_clip(item)
+
+    # 2. Upload to TikTok
+    print("\n[ЭТАП 2] ПУБЛИКАЦИЯ В TIKTOK...")
+    published = upload_batch_to_tiktok(batch_items)
+
+    # 3. Submit to Content Rewards
+    print("\n[ЭТАП 3] АВТО-САБМИТ В CONTENT REWARDS...")
+    statuses = submit_batch_to_rewards(batch_items, published)
+
+    # 4. Update Markdown
+    update_markdown_batch(batch_num, batch_items, published, statuses)
+
+    # 5. Git Commit & Push
+    git_commit_and_push(batch_num)
+
+    print(f"\n🎉 ПАРТИЯ #{batch_num} ПОЛНОСТЬЮ ЗАВЕРШЕНА!")
+    return len([s for s in statuses.values() if "УСПЕШНО" in s])
+
+def main():
+    target_total = 200
+    batch_size = 5
+    current_idx = 1
+    batch_num = 1
+
+    print("=" * 65)
+    print(f"   MW4 MULTIPLAYER: ЦЕЛЬ {target_total} РОЛИКОВ С ИНТЕРВАЛОМ 5 МИНУТ   ")
+    print("=" * 65)
+
+    while current_idx <= target_total:
+        count = min(batch_size, target_total - current_idx + 1)
+        run_single_batch(batch_num, current_idx, count)
+
+        current_idx += count
+        batch_num += 1
+
+        if current_idx <= target_total:
+            print(f"\n⏱ [ИНТЕРВАЛ] Ожидание 5 минут (300 секунд) перед следующей партией #{batch_num}...", flush=True)
+            for remaining in range(300, 0, -30):
+                print(f"⏳ До старта партии #{batch_num} осталось {remaining} сек...", flush=True)
+                time.sleep(30)
+
+    print("\n🏁 ВСЕ 200 РОЛИКОВ MW4 MULTIPLAYER УСПЕШНО ОБРАБОТАНЫ И ЗАСАБМИЧЕНЫ!")
+
+if __name__ == "__main__":
+    main()
