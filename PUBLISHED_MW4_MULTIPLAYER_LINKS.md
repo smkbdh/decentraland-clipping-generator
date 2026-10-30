@@ -362,3 +362,29 @@
 👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702303797518880006`
 👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
 
+
+
+---
+
+## 🚀 ПАРТИЯ #15 (ВИДЕО 71 - 75) + CONTENT REWARDS SUBMISSIONS
+
+### Видео 71: High framerate gunfight action in new multiplayer maps
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702306376042712341`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
+### Видео 72: Uncut tactical sprint and slide mechanics breakdown
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702306544767094037`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
+### Видео 73: Clean weapon handling and recoil control showcase
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702306709078936853`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
+### Видео 74: Competitive search and destroy clutch round
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702306873919180052`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
+### Видео 75: Fast paced hardpoint defense under heavy artillery
+👉 TikTok: `https://www.tiktok.com/@buddah_ai/video/7702307036406566165`
+👉 Content Rewards: **✅ УСПЕШНО ЗАСАБМИЧЕНО**
+
