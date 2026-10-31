@@ -74,3 +74,8 @@
 | 63 | MW4 MP Reel v2 #63 | [https://www.instagram.com/kira.gyal/reel/DfLDHOXT3na/](https://www.instagram.com/kira.gyal/reel/DfLDHOXT3na/) | ✅ ЗАСАБМИЧЕНО |
 | 64 | MW4 MP Reel v2 #64 | [https://www.instagram.com/kira.gyal/reel/DfLD1NJTtxl/](https://www.instagram.com/kira.gyal/reel/DfLD1NJTtxl/) | ✅ ЗАСАБМИЧЕНО |
 | 65 | MW4 MP Reel v2 #65 | [https://www.instagram.com/kira.gyal/reel/DfLEjDaTd0N/](https://www.instagram.com/kira.gyal/reel/DfLEjDaTd0N/) | ✅ ЗАСАБМИЧЕНО |
+| 66 | MW4 MP Reel v2 #66 | [https://www.instagram.com/kira.gyal/reel/DfLFRZPTtNg/](https://www.instagram.com/kira.gyal/reel/DfLFRZPTtNg/) | ✅ ЗАСАБМИЧЕНО |
+| 67 | MW4 MP Reel v2 #67 | [https://www.instagram.com/kira.gyal/reel/DfLF_PCTnWX/](https://www.instagram.com/kira.gyal/reel/DfLF_PCTnWX/) | ✅ ЗАСАБМИЧЕНО |
+| 68 | MW4 MP Reel v2 #68 | [https://www.instagram.com/kira.gyal/reel/DfLGs8sT_Ei/](https://www.instagram.com/kira.gyal/reel/DfLGs8sT_Ei/) | ✅ ЗАСАБМИЧЕНО |
+| 69 | MW4 MP Reel v2 #69 | [https://www.instagram.com/kira.gyal/reel/DfLHavsTu8c/](https://www.instagram.com/kira.gyal/reel/DfLHavsTu8c/) | ✅ ЗАСАБМИЧЕНО |
+| 70 | MW4 MP Reel v2 #70 | [https://www.instagram.com/kira.gyal/reel/DfLIIeSTM-7/](https://www.instagram.com/kira.gyal/reel/DfLIIeSTM-7/) | ✅ ЗАСАБМИЧЕНО |
