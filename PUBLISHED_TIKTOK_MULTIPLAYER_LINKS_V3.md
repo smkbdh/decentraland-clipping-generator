@@ -44,3 +44,8 @@
 | 33 | MW4 MP TikTok v3 #33 | [https://www.tiktok.com/@buddah_ai/video/7703258252015897877](https://www.tiktok.com/@buddah_ai/video/7703258252015897877) | ✅ ЗАСАБМИЧЕНО |
 | 34 | MW4 MP TikTok v3 #34 | [https://www.tiktok.com/@buddah_ai/video/7703260013137005845](https://www.tiktok.com/@buddah_ai/video/7703260013137005845) | ✅ ЗАСАБМИЧЕНО |
 | 35 | MW4 MP TikTok v3 #35 | [https://www.tiktok.com/@buddah_ai/video/7703261642196389140](https://www.tiktok.com/@buddah_ai/video/7703261642196389140) | ✅ ЗАСАБМИЧЕНО |
+| 36 | MW4 MP TikTok v3 #36 | [https://www.tiktok.com/@buddah_ai/video/7703263287613394196](https://www.tiktok.com/@buddah_ai/video/7703263287613394196) | ✅ ЗАСАБМИЧЕНО |
+| 37 | MW4 MP TikTok v3 #37 | [https://www.tiktok.com/@buddah_ai/video/7703264945944710421](https://www.tiktok.com/@buddah_ai/video/7703264945944710421) | ✅ ЗАСАБМИЧЕНО |
+| 38 | MW4 MP TikTok v3 #38 | [https://www.tiktok.com/@buddah_ai/video/7703266579156487444](https://www.tiktok.com/@buddah_ai/video/7703266579156487444) | ✅ ЗАСАБМИЧЕНО |
+| 39 | MW4 MP TikTok v3 #39 | [https://www.tiktok.com/@buddah_ai/video/7703268227052227860](https://www.tiktok.com/@buddah_ai/video/7703268227052227860) | ✅ ЗАСАБМИЧЕНО |
+| 40 | MW4 MP TikTok v3 #40 | [https://www.tiktok.com/@buddah_ai/video/7703269852684848390](https://www.tiktok.com/@buddah_ai/video/7703269852684848390) | ✅ ЗАСАБМИЧЕНО |
