@@ -10,3 +10,7 @@
 | # | Ролик | Ссылка на Instagram Reel | Статус в Content Rewards |
 |---|---|---|---|
 | 1 | MW4 MP Reel v3 #1 | [https://www.instagram.com/kira.gyal/reel/DfM6wPGTwDi/](https://www.instagram.com/kira.gyal/reel/DfM6wPGTwDi/) | ✅ ЗАСАБМИЧЕНО |
+| 2 | MW4 MP Reel v3 #2 | [https://www.instagram.com/kira.gyal/reel/DfM7fSdzPQh/](https://www.instagram.com/kira.gyal/reel/DfM7fSdzPQh/) | ✅ ЗАСАБМИЧЕНО |
+| 3 | MW4 MP Reel v3 #3 | [https://www.instagram.com/kira.gyal/reel/DfM8OMhzjEQ/](https://www.instagram.com/kira.gyal/reel/DfM8OMhzjEQ/) | ✅ ЗАСАБМИЧЕНО |
+| 4 | MW4 MP Reel v3 #4 | [https://www.instagram.com/kira.gyal/reel/DfM88JUz3lX/](https://www.instagram.com/kira.gyal/reel/DfM88JUz3lX/) | ✅ ЗАСАБМИЧЕНО |
+| 5 | MW4 MP Reel v3 #5 | [https://www.instagram.com/kira.gyal/reel/DfM9qPRT9-4/](https://www.instagram.com/kira.gyal/reel/DfM9qPRT9-4/) | ✅ ЗАСАБМИЧЕНО |
