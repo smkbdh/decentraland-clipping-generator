@@ -50,50 +50,55 @@ SLOGANS = [
     "NO FILTER NEEDED FOR THIS GAMEPLAY"
 ]
 
-# 20 Realistic Multiplayer Highlight Contexts
+# 20 High-Tech Multiplayer Highlight Contexts
 SUB_CONTEXTS = [
-    "High framerate gunfight action in new multiplayer maps",
-    "Uncut tactical sprint and slide mechanics breakdown",
-    "Clean weapon handling and recoil control showcase",
-    "Competitive search and destroy clutch round",
-    "Fast paced hardpoint defense under heavy artillery",
-    "New weapon audio and reload animations hit different",
-    "High velocity sniper feed across the perimeter",
-    "Tactical breach and clear in close quarters combat",
-    "Insane killstreak deployment turning the match",
-    "Flanking the enemy squad with suppressed SMG",
-    "Akimbo secondary clutch in search and destroy",
-    "Micro recoil adjustment on rapid fire burst",
-    "Point blank shotgun frenzy in tight corridors",
-    "Corner clearing and precision crosshair placement",
-    "Bullet impact physics and particle effects showcase",
-    "Speed reload and aggressive flank attack",
-    "High refresh rate 120 FPS gunfight feed",
-    "Clean iron sight tracking across long distance",
-    "Flick shot reaction time at 240Hz competitive play",
-    "Tactical equipment breach and squad elimination"
+    "120 FPS Max Settings • Uncut Gunplay",
+    "Tactical Sprint & Slide Cancel Breakdown",
+    "Clean Weapon Handling & Recoil Control",
+    "Competitive Search & Destroy Clutch Round",
+    "Fast Paced Hardpoint Defense Showcase",
+    "Crisp Weapon Audio & Tactical Reloads",
+    "High Velocity Sniper Feed Across Perimeter",
+    "Tactical Breach & Close Quarters Combat",
+    "Insane Killstreak Deployment Turning Match",
+    "Flanking Enemy Squad With Suppressed SMG",
+    "Akimbo Secondary Clutch In Search Mode",
+    "Micro Recoil Adjustment On Rapid Burst",
+    "Point Blank Shotgun Action In Corridors",
+    "Precision Corner Clearing & Crosshair Aim",
+    "Bullet Impact Physics & Particle Effects",
+    "Speed Reload & Aggressive Flank Route",
+    "High Refresh Rate 144Hz Gunfight Feed",
+    "Clean Iron Sight Tracking At Long Range",
+    "Flick Shot Reaction Time At 240Hz Play",
+    "Tactical Equipment Breach & Squad Wipe"
 ]
 
-# 15 High-Retention Hooks (Curiosity gaps to maximize watch time)
-RETENTION_HOOKS = [
-    "Wait for the clutch kill at the end... 🎯",
-    "Watch until the final killcam ⚡",
+# 20 Interactive Comment Engagement & Retention Triggers
+ENGAGEMENT_HOOKS = [
+    "Rate this clutch from 1 to 10? 👇",
+    "Which weapon build is this?! 🔥",
+    "Wait for the 3rd elimination... 🤯",
+    "Best slide cancel movement in COD? 👀",
+    "Would you win this 1v3 situation? 🤔",
+    "Is MW4 the best looking COD ever? 💬",
     "Turn sound ON for this audio 🎧",
-    "How did he hit that last shot?! 🤯",
-    "Notice the recoil control here 👀",
-    "Wait for the reaction at the end 🔥",
-    "Cleanest movement you'll see today 💨",
-    "Listen to this reload sound 🔊",
-    "That 3rd elimination was personal 💀",
-    "Wait for the flick at 0:08 ⏱️",
+    "The recoil control here is insane ⚡",
+    "Notice the crosshair placement 👀",
+    "Comment your favorite MW4 loadout 👇",
+    "Wait for the flick shot at 0:08 ⏱️",
+    "That final hitmarker sound... 🔊",
     "Watch the minimap on this play 🗺️",
-    "Can we talk about that tracking?! 🎯",
-    "Look at the bullet velocity here ⚡",
-    "Sound on: the hitmarker audio is insane 🔊",
-    "Wait for the final turnaround 🌪️"
+    "How did he hit that last shot?! 🤯",
+    "Cleanest movement you'll see today 💨",
+    "Can we talk about that recoil control?! 🎯",
+    "Watch until the final killcam ⚡",
+    "Rate this weapon handling 1-10 👇",
+    "Wait for the squad wipe at the end 🔥",
+    "Did you notice the enemy on the flank? 👀"
 ]
 
-# Captions (Genuine gamer captions adhering to FTC & brief)
+# Captions (Natural gamer captions with required tags & #Ad disclosure)
 CAPTION_HOOKS = [
     "The new Call of Duty looks INSANE",
     "MW4 Multiplayer is looking unreal",
@@ -132,7 +137,7 @@ def ensure_video_rendered(idx):
 
     slogan = SLOGANS[(idx - 1) % len(SLOGANS)].replace("'", "").replace(":", "")
     sub_ctx = SUB_CONTEXTS[(idx - 1) % len(SUB_CONTEXTS)].replace("'", "").replace(":", "")
-    retention = RETENTION_HOOKS[(idx - 1) % len(RETENTION_HOOKS)].replace("'", "").replace(":", "")
+    retention = ENGAGEMENT_HOOKS[(idx - 1) % len(ENGAGEMENT_HOOKS)].replace("'", "").replace(":", "")
 
     # Calculate offset across 492s raw video (span 470s)
     span = 470.0
@@ -140,25 +145,30 @@ def ensure_video_rendered(idx):
     start_str = f"00:{int(start_sec)//60:02d}:{int(start_sec)%60:02d}"
     duration = "11.5"
 
-    print(f"🎬 Рендеринг нового ролика #{idx} (start {start_str}, safe zone styling)...", flush=True)
+    print(f"🎬 Рендеринг нового ролика #{idx} (start {start_str}, v3.0 HUD + Audio boost)...", flush=True)
 
-    # Safe Zone Layout:
-    # 1. Top container at y=390 (well below status bar/search bar)
-    # 2. Main hook at y=435 in gold, sub at y=515 in white
-    # 3. Middle sharp gameplay at y=656 to 1264
-    # 4. Bottom retention hook container at y=1330 to 1420 (above IG caption/actions)
+    # v3.0 Visual & Audio Layout:
+    # 1. Top HUD container at y=370-600 (safe zone)
+    # 2. Tagline [ MW4 MULTIPLAYER • TOP PLAYS ] in gold at y=395
+    # 3. Slogan at y=440 in clean bold white
+    # 4. Context line at y=520 in silver #D0D0D0
+    # 5. Middle sharp gameplay at y=656 to 1264
+    # 6. Bottom comment engagement box at y=1330 to 1420 (above IG UI)
+    # 7. Audio boost volume=1.25 for crisp hitmarkers & gunshots
     vf = (
         f"[0:v]split=2[bg][fg];"
         f"[bg]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=20:4[blurred];"
         f"[fg]scale=1080:-1[sharp];"
         f"[blurred][sharp]overlay=(W-w)/2:(H-h)/2[base];"
-        f"[base]drawbox=x=50:y=390:w=980:h=210:color=black@0.82:t=fill,"
-        f"drawbox=x=50:y=390:w=980:h=6:color=0xFFCC00@1.0:t=fill,"
-        f"drawtext=fontfile='{FONT}':text='{slogan}':fontsize=46:fontcolor=0xFFCC00:x=(w-text_w)/2:y=435,"
-        f"drawtext=fontfile='{FONT}':text='{sub_ctx}':fontsize=32:fontcolor=white:x=(w-text_w)/2:y=515,"
-        f"drawbox=x=140:y=1330:w=800:h=90:color=black@0.75:t=fill,"
-        f"drawbox=x=140:y=1416:w=800:h=4:color=0xFFCC00@0.9:t=fill,"
-        f"drawtext=fontfile='{FONT}':text='{retention}':fontsize=30:fontcolor=white:x=(w-text_w)/2:y=1360"
+        f"[base]drawbox=x=40:y=370:w=1000:h=230:color=black@0.85:t=fill,"
+        f"drawbox=x=40:y=370:w=1000:h=6:color=0xFFCC00@1.0:t=fill,"
+        f"drawtext=fontfile='{FONT}':text='[ MW4 MULTIPLAYER • TOP PLAYS ]':fontsize=24:fontcolor=0xFFCC00:x=(w-text_w)/2:y=395,"
+        f"drawtext=fontfile='{FONT}':text='{slogan}':fontsize=46:fontcolor=white:x=(w-text_w)/2:y=440,"
+        f"drawtext=fontfile='{FONT}':text='{sub_ctx}':fontsize=30:fontcolor=0xD0D0D0:x=(w-text_w)/2:y=520,"
+        f"drawbox=x=120:y=1330:w=840:h=90:color=black@0.8:t=fill,"
+        f"drawbox=x=120:y=1416:w=840:h=4:color=0xFFCC00@0.9:t=fill,"
+        f"drawtext=fontfile='{FONT}':text='{retention}':fontsize=32:fontcolor=0xFFCC00:x=(w-text_w)/2:y=1360[vout];"
+        f"[0:a]volume=1.25[aout]"
     )
 
     cmd = [
@@ -167,6 +177,8 @@ def ensure_video_rendered(idx):
         "-t", duration,
         "-i", str(RAW_FILE),
         "-filter_complex", vf,
+        "-map", "[vout]",
+        "-map", "[aout]",
         "-c:v", "libx264",
         "-preset", "ultrafast",
         "-crf", "23",
@@ -181,7 +193,7 @@ def ensure_video_rendered(idx):
     res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if res.returncode == 0 and out_file.exists():
         size_mb = out_file.stat().st_size / (1024 * 1024)
-        print(f"✅ ВИДЕО #{idx} ОТСКРЕЙПЛЕНО И ОТСРЕНДЕРЕНО: {size_mb:.2f} МБ (за {time.time()-t0:.1f}с)", flush=True)
+        print(f"✅ ВИДЕО #{idx} (v3.0) ОТСРЕНДЕРЕНО: {size_mb:.2f} МБ (за {time.time()-t0:.1f}с)", flush=True)
         return out_file
     else:
         print(f"❌ ОШИБКА РЕНДЕРА #{idx}: {res.stderr.decode('utf-8', errors='ignore')[-300:]}", flush=True)
@@ -189,7 +201,7 @@ def ensure_video_rendered(idx):
 
 def upload_instagram_reel(page, idx, video_path, caption):
     print(f"\n==========================================")
-    print(f"🎬 [INSTAGRAM REELS] ЗАГРУЗКА #{idx}")
+    print(f"🎬 [INSTAGRAM REELS v3.0] ЗАГРУЗКА #{idx}")
     print(f"📁 Файл: {video_path.name}")
     print(f"==========================================")
 
@@ -439,10 +451,10 @@ def save_state(published_reels, submission_statuses):
 
 def update_markdown(published_map, status_map):
     lines = [
-        "# 🔴 LIVE PUBLISHED INSTAGRAM REELS (MW4 Multiplayer Campaign - Batch 2 v2.0)\n\n",
+        "# 🔴 LIVE PUBLISHED INSTAGRAM REELS (MW4 Multiplayer Campaign - Batch 3 v3.0)\n\n",
         "Кампания: **Call of Duty - MW4 Multiplayer Launch Clipping**  \n",
         "Аккаунт: **[@kira.gyal](https://www.instagram.com/kira.gyal/)**  \n",
-        "Оптимизация: **Safe-Zone Positioning (y=390-600) + High-Retention Triggers**  \n",
+        "Оптимизация: **v3.0 HUD Badge + Audio Boost + Comment Engagement Triggers**  \n",
         "Статус: **Публикация активна**  \n\n",
         "---\n\n",
         "| # | Ролик | Ссылка на Instagram Reel | Статус в Content Rewards |\n",
@@ -451,15 +463,15 @@ def update_markdown(published_map, status_map):
     for idx in sorted([int(k) for k in published_map.keys()]):
         url = published_map.get(idx) or published_map.get(str(idx))
         stat = status_map.get(idx) or status_map.get(str(idx), "⏳ Обработка")
-        lines.append(f"| {idx} | MW4 MP Reel v2 #{idx} | [{url}]({url}) | {stat} |\n")
+        lines.append(f"| {idx} | MW4 MP Reel v3 #{idx} | [{url}]({url}) | {stat} |\n")
 
     with open(LINKS_FILE, "w", encoding="utf-8") as f:
         f.writelines(lines)
 
 def git_commit_and_push(batch_count):
     try:
-        subprocess.run(["git", "add", "PUBLISHED_INSTAGRAM_MULTIPLAYER_LINKS.md", "instagram_batch_orchestrator.py"], check=False)
-        subprocess.run(["git", "commit", "-m", f"feat: submitted {batch_count} optimized reels to instagram and content rewards"], check=False)
+        subprocess.run(["git", "add", "PUBLISHED_INSTAGRAM_MULTIPLAYER_LINKS.md", "instagram_batch_orchestrator.py", "instagram_orchestrator_state.json"], check=False)
+        subprocess.run(["git", "commit", "-m", f"feat: submitted {batch_count} v3.0 reels to instagram and content rewards"], check=False)
         res = subprocess.run(["git", "push", "origin", "master"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if res.returncode == 0:
             print("🚀 Push в GitHub origin master успешен!", flush=True)
@@ -473,8 +485,8 @@ def main():
     safe_delay_seconds = 180  # 3 minutes between Reels to prevent Instagram action blocks
 
     print("=" * 65)
-    print(f"   INSTAGRAM REELS PIPELINE v2.0: MW4 MULTIPLAYER ({target_total} РОЛИКОВ)   ")
-    print(f"   ОПТИМИЗАЦИЯ: SAFE-ZONE TYPOGRAPHY + HIGH-RETENTION HOOKS   ")
+    print(f"   INSTAGRAM REELS PIPELINE v3.0: MW4 MULTIPLAYER ({target_total} РОЛИКОВ)   ")
+    print(f"   ОПТИМИЗАЦИЯ: HUD BADGE + AUDIO BOOST + COMMENT ENGAGEMENT TRIGGERS   ")
     print("=" * 65)
 
     state = load_state()
@@ -500,7 +512,7 @@ def main():
             if not video_file:
                 print(f"❌ Ошибка рендеринга видео #{idx}, повтор через 10с...", flush=True)
                 time.sleep(10)
-                continue
+                video_file = ensure_video_rendered(idx)
 
             caption = get_caption_for_index(idx)
 
@@ -550,7 +562,7 @@ def main():
 
             if idx < target_total:
                 print(f"\n⏱ [БЕЗОПАСНАЯ ПАУЗА] Ожидание {safe_delay_seconds}с (3 мин) перед следующим Reel...", flush=True)
-                # We can pre-render next video during the pause!
+                # Pre-render next video during the pause
                 next_idx = idx + 1
                 ensure_video_rendered(next_idx)
                 for rem in range(safe_delay_seconds - 25, 0, -30):
@@ -560,7 +572,7 @@ def main():
         insta_ctx.close()
 
     git_commit_and_push(target_total)
-    print("\n🏁 ВСЕ 200 РОЛИКОВ УСПЕШНО ОПУБЛИКОВАНЫ В INSTAGRAM И ЗАСАБМИЧЕНЫ!")
+    print("\n🏁 ВСЕ 200 РОЛИКОВ (v3.0) УСПЕШНО ОПУБЛИКОВАНЫ В INSTAGRAM И ЗАСАБМИЧЕНЫ!")
 
 if __name__ == "__main__":
     main()
