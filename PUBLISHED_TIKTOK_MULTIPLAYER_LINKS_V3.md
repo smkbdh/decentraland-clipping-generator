@@ -28,3 +28,4 @@
 | 17 | MW4 MP TikTok v3 #17 | [https://www.tiktok.com/@buddah_ai/video/7703232382832315669](https://www.tiktok.com/@buddah_ai/video/7703232382832315669) | ✅ ЗАСАБМИЧЕНО |
 | 18 | MW4 MP TikTok v3 #18 | [https://www.tiktok.com/@buddah_ai/video/7703233562765495572](https://www.tiktok.com/@buddah_ai/video/7703233562765495572) | ✅ ЗАСАБМИЧЕНО |
 | 19 | MW4 MP TikTok v3 #19 | [https://www.tiktok.com/@buddah_ai/video/7703234748700691733](https://www.tiktok.com/@buddah_ai/video/7703234748700691733) | ✅ ЗАСАБМИЧЕНО |
+| 20 | MW4 MP TikTok v3 #20 | [https://www.tiktok.com/@buddah_ai/video/7703237132734713109](https://www.tiktok.com/@buddah_ai/video/7703237132734713109) | ✅ ЗАСАБМИЧЕНО |
