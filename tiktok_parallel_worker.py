@@ -108,6 +108,12 @@ def upload_tiktok_video(page, idx, video_path, caption):
         print(f"❌ Ошибка передачи файла: {e}")
         return None
 
+    time.sleep(3)
+    limit_modal = page.locator('text="Couldn\'t upload", text="Не удалось загрузить"')
+    if limit_modal.count() > 0 and limit_modal.first.is_visible():
+        print("⚠️ [TIKTOK DAILY LIMIT] Достигнут суточный лимит загрузок TikTok на аккаунте @buddah_ai!", flush=True)
+        return "RATE_LIMITED"
+
     editor = page.locator('div[contenteditable="true"]').first
     try:
         editor.wait_for(state="visible", timeout=30000)
@@ -116,7 +122,14 @@ def upload_tiktok_video(page, idx, video_path, caption):
         return None
 
     time.sleep(2)
-    editor.click()
+    try:
+        editor.click()
+    except Exception as e:
+        if "Couldn't upload" in str(e) or "Не удалось загрузить" in str(e):
+            print("⚠️ [TIKTOK DAILY LIMIT] Всплыло окно лимита загрузок TikTok!", flush=True)
+            return "RATE_LIMITED"
+        print(f"⚠️ Ошибка клика по редактору: {e}")
+        return None
     page.keyboard.press("Control+A")
     page.keyboard.press("Backspace")
     time.sleep(0.5)
@@ -365,12 +378,21 @@ def main():
 
             # 1. Upload to TikTok with retries
             video_url = None
+            rate_limited = False
             for upload_attempt in range(5):
                 video_url = upload_tiktok_video(tiktok_page, idx, video_file, caption)
+                if video_url == "RATE_LIMITED":
+                    rate_limited = True
+                    break
                 if video_url:
                     break
                 print(f"⚠️ Повтор попытки загрузки TikTok #{idx} ({upload_attempt+1}/5) через 30с...", flush=True)
                 time.sleep(30)
+
+            if rate_limited:
+                print(f"🛑 [TIKTOK] Аккаунт @buddah_ai достиг суточного лимита TikTok. Пауза 2 часа перед проверкой сброса...", flush=True)
+                time.sleep(7200)
+                continue
 
             if not video_url:
                 print(f"❌ Ошибка публикации TikTok #{idx} после 5 попыток!", flush=True)
