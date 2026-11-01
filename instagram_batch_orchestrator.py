@@ -193,8 +193,16 @@ def upload_instagram_reel(page, idx, video_path, caption):
     print(f"📁 Файл: {video_path.name}")
     print(f"==========================================")
 
-    page.goto(INSTAGRAM_URL, wait_until="domcontentloaded", timeout=45000)
-    time.sleep(3)
+    for attempt in range(5):
+        try:
+            page.goto(INSTAGRAM_URL, wait_until="domcontentloaded", timeout=45000)
+            time.sleep(3)
+            break
+        except Exception as e:
+            print(f"⚠️ Ошибка перехода на Instagram (попытка {attempt+1}/5): {e}", flush=True)
+            time.sleep(10)
+    else:
+        return None
 
     dismiss_buttons = page.locator('button:has-text("Not Now"), button:has-text("Не сейчас"), button:has-text("Cancel")')
     if dismiss_buttons.count() > 0 and dismiss_buttons.first.is_visible():
@@ -353,8 +361,16 @@ def submit_instagram_to_rewards(page, reel_url, idx):
     print(f"\n🎯 САБМИТ REEL #{idx} В CONTENT REWARDS:")
     print(f"🔗 {reel_url}")
 
-    page.goto(CAMPAIGN_URL, wait_until="domcontentloaded", timeout=45000)
-    time.sleep(3)
+    for attempt in range(5):
+        try:
+            page.goto(CAMPAIGN_URL, wait_until="domcontentloaded", timeout=45000)
+            time.sleep(3)
+            break
+        except Exception as e:
+            print(f"⚠️ Ошибка перехода на Content Rewards (попытка {attempt+1}/5): {e}", flush=True)
+            time.sleep(10)
+    else:
+        return False
 
     try:
         trigger = page.locator('button:has-text("Submit clip"):visible').first
@@ -488,27 +504,42 @@ def main():
 
             caption = get_caption_for_index(idx)
 
-            # 2. Upload to Instagram
-            reel_url = upload_instagram_reel(insta_page, idx, video_file, caption)
-            if not reel_url:
-                print(f"❌ Ошибка публикации Reel #{idx}, повтор через 30с...", flush=True)
+            # 2. Upload to Instagram with retries
+            reel_url = None
+            for upload_attempt in range(5):
+                reel_url = upload_instagram_reel(insta_page, idx, video_file, caption)
+                if reel_url:
+                    break
+                print(f"⚠️ Повтор попытки загрузки Reel #{idx} ({upload_attempt+1}/5) через 30с...", flush=True)
                 time.sleep(30)
+
+            if not reel_url:
+                print(f"❌ Ошибка публикации Reel #{idx} после 5 попыток!", flush=True)
                 continue
 
             published_reels[idx] = reel_url
 
-            # 3. Auto-submit to Content Rewards
+            # 3. Auto-submit to Content Rewards with retries
             print(f"🎯 Открываем Content Rewards для сабмита #{idx}...", flush=True)
-            rewards_ctx = p.chromium.launch_persistent_context(
-                user_data_dir=str(REWARDS_PROFILE),
-                headless=True,
-                viewport={"width": 1280, "height": 850},
-                args=["--disable-blink-features=AutomationControlled"]
-            )
-            rewards_page = rewards_ctx.pages[0] if rewards_ctx.pages else rewards_ctx.new_page()
-            success = submit_instagram_to_rewards(rewards_page, reel_url, idx)
+            success = False
+            for submit_attempt in range(5):
+                try:
+                    rewards_ctx = p.chromium.launch_persistent_context(
+                        user_data_dir=str(REWARDS_PROFILE),
+                        headless=True,
+                        viewport={"width": 1280, "height": 850},
+                        args=["--disable-blink-features=AutomationControlled"]
+                    )
+                    rewards_page = rewards_ctx.pages[0] if rewards_ctx.pages else rewards_ctx.new_page()
+                    success = submit_instagram_to_rewards(rewards_page, reel_url, idx)
+                    rewards_ctx.close()
+                    if success:
+                        break
+                except Exception as e:
+                    print(f"⚠️ Ошибка контекста rewards #{idx}: {e}", flush=True)
+                time.sleep(15)
+
             submission_statuses[idx] = "✅ ЗАСАБМИЧЕНО" if success else "❌ Ошибка сабмита"
-            rewards_ctx.close()
 
             # Save state & update docs
             save_state(published_reels, submission_statuses)
