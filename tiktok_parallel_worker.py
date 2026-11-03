@@ -8,13 +8,13 @@ import subprocess
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach(), errors="replace")
 
 BASE_DIR = Path(__file__).resolve().parent
 VIDEOS_DIR = BASE_DIR / "ready_videos" / "mw4_multiplayer_videos"
 VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
 
-LINKS_FILE = BASE_DIR / "PUBLISHED_TIKTOK_MULTIPLAYER_LINKS_V3.md"
+LINKS_FILE = BASE_DIR / "PUBLISHED_TIKTOK_MULTIPLAYER_LINKS_V4.md"
 STATE_FILE = BASE_DIR / "tiktok_orchestrator_state.json"
 
 TIKTOK_PROFILE = BASE_DIR / "tiktok_browser_profile"
@@ -23,67 +23,21 @@ REWARDS_PROFILE = BASE_DIR / "rewards_browser_profile"
 CAMPAIGN_URL = "https://contentrewards.com/c/campaigns/7a73a53b-2bba-4a5c-8187-05534dd6716d"
 TIKTOK_UPLOAD_URL = "https://www.tiktok.com/tiktokstudio/upload"
 
-CAPTION_HOOKS = [
-    "The new Call of Duty looks INSANE",
-    "MW4 Multiplayer is looking unreal",
-    "COD Multiplayer has never looked better",
-    "MW4 MP hits different",
-    "COD MP has no business looking this good",
-    "No filter needed for this gameplay",
-    "The graphics are actually crazy",
-    "Yeah, MW4 Multiplayer looks way too clean",
-    "The movement in MW4 MP feels incredible",
-    "Never seen Call of Duty graphics look this realistic",
-    "The weapon animations in MW4 are on another level",
-    "The sound design alone makes this worth playing",
-    "Can't get enough of this gunplay",
-    "This might be the cleanest COD multiplayer yet",
-    "Everything about this movement feels buttery smooth"
-]
-
-SUB_CONTEXTS = [
-    "120 FPS Max Settings • Uncut Gunplay",
-    "Tactical Sprint & Slide Cancel Breakdown",
-    "Clean Weapon Handling & Recoil Control",
-    "Competitive Search & Destroy Clutch Round",
-    "Fast Paced Hardpoint Defense Showcase",
-    "Crisp Weapon Audio & Tactical Reloads",
-    "High Velocity Sniper Feed Across Perimeter",
-    "Tactical Breach & Close Quarters Combat",
-    "Insane Killstreak Deployment Turning Match",
-    "Flanking Enemy Squad With Suppressed SMG",
-    "Akimbo Secondary Clutch In Search Mode",
-    "Micro Recoil Adjustment On Rapid Burst",
-    "Point Blank Shotgun Action In Corridors",
-    "Precision Corner Clearing & Crosshair Aim",
-    "Bullet Impact Physics & Particle Effects",
-    "Speed Reload & Aggressive Flank Route",
-    "High Refresh Rate 144Hz Gunfight Feed",
-    "Clean Iron Sight Tracking At Long Range",
-    "Flick Shot Reaction Time At 240Hz Play",
-    "Tactical Equipment Breach & Squad Wipe"
-]
+import v4_generator
 
 def get_caption_for_index(idx):
-    hook = CAPTION_HOOKS[(idx - 1) % len(CAPTION_HOOKS)]
-    sub = SUB_CONTEXTS[(idx - 1) % len(SUB_CONTEXTS)]
-    return (
-        f"{hook}.\n"
-        f"{sub}.\n\n"
-        f"@callofduty\n"
-        f"#Ad\n"
-        f"#MW4 #CallOfDuty #Gaming"
-    )
+    meta = v4_generator.get_clip_metadata(idx)
+    return meta["caption"]
 
-def find_video_file(idx):
-    matches = list(VIDEOS_DIR.glob(f"MW4_MP_Video{idx}_*.mp4"))
+def find_or_render_video(idx):
+    matches = list(VIDEOS_DIR.glob(f"MW4_MP_v4_Video{idx}_*.mp4"))
     if matches and matches[0].stat().st_size > 1000000:
         return matches[0]
-    return None
+    return v4_generator.render_v4_video(idx)
 
 def upload_tiktok_video(page, idx, video_path, caption):
     print(f"\n==========================================")
-    print(f"🎬 [TIKTOK @buddah_ai] ЗАГРУЗКА #{idx}")
+    print(f"🎬 [TIKTOK @buddah_ai v4.0 NLP] ЗАГРУЗКА #{idx}")
     print(f"📁 Файл: {video_path.name}")
     print(f"==========================================")
 
@@ -255,7 +209,7 @@ def submit_tiktok_to_rewards(page, tiktok_url, idx):
         inp.fill("")
         inp.fill(tiktok_url)
         time.sleep(3)
-        print("✅ Ссылка TikTok вставлена, ждём валидацию API...")
+        print("✅ Ссылка вставлена, ждём валидацию API...")
     except Exception as e:
         print(f"❌ Ошибка ввода ссылки: {e}")
         return False
@@ -273,12 +227,12 @@ def submit_tiktok_to_rewards(page, tiktok_url, idx):
     modal_btn = modal.locator('button:has-text("Submit clip"):visible').last
     if not modal_btn.is_disabled():
         modal_btn.click()
-        print(f"🚀 Сабмит для #{idx} НАЖАТ!")
+        print(f"🚀 Сабмит для TikTok #{idx} НАЖАТ!")
         time.sleep(6)
         print(f"🎉 TIKTOK #{idx} УСПЕШНО ЗАСАБМИЧЕН В CONTENT REWARDS!")
         return True
     else:
-        print(f"❌ Регулярный сабмит #{idx} заблокирован (валидация не прошла)!")
+        print(f"❌ Регулярный сабмит TikTok #{idx} заблокирован (валидация не прошла)!")
         cancel_btn = modal.locator('button:has-text("Cancel"):visible')
         if cancel_btn.count() > 0 and cancel_btn.first.is_visible():
             cancel_btn.first.click()
@@ -305,27 +259,27 @@ def save_state(published_videos, submission_statuses):
 
 def update_markdown(published_map, status_map):
     lines = [
-        "# 🔴 LIVE PUBLISHED TIKTOK VIDEOS (MW4 Multiplayer Campaign - Batch 3 v3.0)\n\n",
+        "# 🔴 LIVE PUBLISHED TIKTOK VIDEOS (MW4 Multiplayer Campaign - Batch 4 v4.0 NLP)\n\n",
         "Кампания: **Call of Duty - MW4 Multiplayer Launch Clipping**  \n",
         "Аккаунт: **[@buddah_ai](https://www.tiktok.com/@buddah_ai)**  \n",
-        "Оптимизация: **v3.0 HUD Badge + Audio Boost + Comment Engagement Triggers**  \n",
+        "Оптимизация: **v4.0 NLP Triggers + Ultra-Bold Impact Font + Emoji Badges + Audio Boost**  \n",
         "Статус: **Публикация активна**  \n\n",
         "---\n\n",
-        "| # | Ролик | Ссылка на TikTok Video | Статус в Content Rewards |\n",
+        "| # | Ролик | Ссылка на TikTok | Статус в Content Rewards |\n",
         "|---|---|---|---|\n"
     ]
     for idx in sorted([int(k) for k in published_map.keys()]):
         url = published_map.get(idx) or published_map.get(str(idx))
         stat = status_map.get(idx) or status_map.get(str(idx), "⏳ Обработка")
-        lines.append(f"| {idx} | MW4 MP TikTok v3 #{idx} | [{url}]({url}) | {stat} |\n")
+        lines.append(f"| {idx} | MW4 MP TikTok v4 #{idx} | [{url}]({url}) | {stat} |\n")
 
     with open(LINKS_FILE, "w", encoding="utf-8") as f:
         f.writelines(lines)
 
 def git_commit_and_push(batch_count):
     try:
-        subprocess.run(["git", "add", "PUBLISHED_TIKTOK_MULTIPLAYER_LINKS_V3.md", "tiktok_parallel_worker.py", "tiktok_orchestrator_state.json"], check=False)
-        subprocess.run(["git", "commit", "-m", f"feat: submitted {batch_count} v3.0 clips to tiktok and content rewards"], check=False)
+        subprocess.run(["git", "add", "PUBLISHED_TIKTOK_MULTIPLAYER_LINKS_V4.md", "tiktok_parallel_worker.py", "tiktok_orchestrator_state.json"], check=False)
+        subprocess.run(["git", "commit", "-m", f"feat: submitted {batch_count} v4.0 NLP clips to tiktok and content rewards"], check=False)
         res = subprocess.run(["git", "push", "origin", "master"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if res.returncode == 0:
             print("🚀 Push в GitHub origin master успешен!", flush=True)
@@ -339,7 +293,7 @@ def main():
     safe_delay_seconds = 210  # 3.5 minutes safe interval for TikTok
 
     print("=" * 65)
-    print(f"   TIKTOK PARALLEL PIPELINE v3.0: MW4 MULTIPLAYER ({target_total} РОЛИКОВ)   ")
+    print(f"   TIKTOK PARALLEL PIPELINE v4.0 NLP: MW4 MULTIPLAYER ({target_total} РОЛИКОВ)   ")
     print(f"   АККАУНТ: @buddah_ai | ПАРАЛЛЕЛЬНО С INSTAGRAM PIPELINE   ")
     print("=" * 65)
 
@@ -361,17 +315,10 @@ def main():
                 print(f"⏩ Ролик #{idx} уже опубликован в TikTok ({published_videos[idx]}), пропускаем.", flush=True)
                 continue
 
-            # Wait for video file to be rendered by the main engine
-            video_file = find_video_file(idx)
-            wait_attempts = 0
-            while not video_file and wait_attempts < 20:
-                print(f"⏳ Ожидание рендеринга видео #{idx} от главного движка (попытка {wait_attempts+1}/20)...", flush=True)
-                time.sleep(15)
-                video_file = find_video_file(idx)
-                wait_attempts += 1
-
+            # Ensure video file is rendered
+            video_file = find_or_render_video(idx)
             if not video_file:
-                print(f"⚠️ Видео #{idx} не найдено, переходим к следующему...", flush=True)
+                print(f"⚠️ Не удалось отрендерить видео #{idx}, переходим к следующему...", flush=True)
                 continue
 
             caption = get_caption_for_index(idx)
@@ -438,7 +385,7 @@ def main():
         tiktok_ctx.close()
 
     git_commit_and_push(target_total)
-    print("\n🏁 ВСЕ 200 РОЛИКОВ (v3.0) УСПЕШНО ОПУБЛИКОВАНЫ В TIKTOK И ЗАСАБМИЧЕНЫ!")
+    print("\n🏁 ВСЕ 200 РОЛИКОВ (v4.0 NLP) УСПЕШНО ОПУБЛИКОВАНЫ В TIKTOK И ЗАСАБМИЧЕНЫ!")
 
 if __name__ == "__main__":
     main()
