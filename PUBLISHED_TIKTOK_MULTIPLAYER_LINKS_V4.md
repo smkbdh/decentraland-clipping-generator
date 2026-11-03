@@ -119,3 +119,8 @@
 | 108 | MW4 MP TikTok v4 #108 | [https://www.tiktok.com/@buddah_ai/video/7704050702741409045](https://www.tiktok.com/@buddah_ai/video/7704050702741409045) | ❌ Ошибка сабмита |
 | 109 | MW4 MP TikTok v4 #109 | [https://www.tiktok.com/@buddah_ai/video/7704052832009227540](https://www.tiktok.com/@buddah_ai/video/7704052832009227540) | ❌ Ошибка сабмита |
 | 110 | MW4 MP TikTok v4 #110 | [https://www.tiktok.com/@buddah_ai/video/7704054953291140372](https://www.tiktok.com/@buddah_ai/video/7704054953291140372) | ❌ Ошибка сабмита |
+| 111 | MW4 MP TikTok v4 #111 | [https://www.tiktok.com/@buddah_ai/video/7704057094529436949](https://www.tiktok.com/@buddah_ai/video/7704057094529436949) | ❌ Ошибка сабмита |
+| 112 | MW4 MP TikTok v4 #112 | [https://www.tiktok.com/@buddah_ai/video/7704059227911752980](https://www.tiktok.com/@buddah_ai/video/7704059227911752980) | ❌ Ошибка сабмита |
+| 113 | MW4 MP TikTok v4 #113 | [https://www.tiktok.com/@buddah_ai/video/7704061359176109333](https://www.tiktok.com/@buddah_ai/video/7704061359176109333) | ❌ Ошибка сабмита |
+| 114 | MW4 MP TikTok v4 #114 | [https://www.tiktok.com/@buddah_ai/video/7704063489777618196](https://www.tiktok.com/@buddah_ai/video/7704063489777618196) | ❌ Ошибка сабмита |
+| 115 | MW4 MP TikTok v4 #115 | [https://www.tiktok.com/@buddah_ai/video/7704065619565612289](https://www.tiktok.com/@buddah_ai/video/7704065619565612289) | ❌ Ошибка сабмита |
