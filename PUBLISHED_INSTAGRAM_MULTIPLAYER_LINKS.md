@@ -49,3 +49,8 @@
 | 38 | MW4 MP Reel v4 #38 | [https://www.instagram.com/kira.gyal/reel/DfRxFZVTS0V/](https://www.instagram.com/kira.gyal/reel/DfRxFZVTS0V/) | ❌ Ошибка сабмита |
 | 39 | MW4 MP Reel v4 #39 | [https://www.instagram.com/kira.gyal/reel/DfRyDrozKnT/](https://www.instagram.com/kira.gyal/reel/DfRyDrozKnT/) | ❌ Ошибка сабмита |
 | 40 | MW4 MP Reel v4 #40 | [https://www.instagram.com/kira.gyal/reel/DfRzCYWz3DI/](https://www.instagram.com/kira.gyal/reel/DfRzCYWz3DI/) | ❌ Ошибка сабмита |
+| 41 | MW4 MP Reel v4 #41 | [https://www.instagram.com/kira.gyal/reel/DfR0Bbgzgd9/](https://www.instagram.com/kira.gyal/reel/DfR0Bbgzgd9/) | ❌ Ошибка сабмита |
+| 42 | MW4 MP Reel v4 #42 | [https://www.instagram.com/kira.gyal/reel/DfR0Bbgzgd9/](https://www.instagram.com/kira.gyal/reel/DfR0Bbgzgd9/) | ❌ Ошибка сабмита |
+| 43 | MW4 MP Reel v4 #43 | [https://www.instagram.com/kira.gyal/reel/DfR1_mPTKWw/](https://www.instagram.com/kira.gyal/reel/DfR1_mPTKWw/) | ❌ Ошибка сабмита |
+| 44 | MW4 MP Reel v4 #44 | [https://www.instagram.com/kira.gyal/reel/DfR3EJsTPwN/](https://www.instagram.com/kira.gyal/reel/DfR3EJsTPwN/) | ❌ Ошибка сабмита |
+| 45 | MW4 MP Reel v4 #45 | [https://www.instagram.com/kira.gyal/reel/DfR38t2TBFz/](https://www.instagram.com/kira.gyal/reel/DfR38t2TBFz/) | ❌ Ошибка сабмита |
