@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Караван Добра — SVG Караоке Клип</title>
+  <style>
+    :root {
+      --bg-dark: #0a0c10;
+      --card-bg: rgba(18, 22, 32, 0.85);
+      --rasta-green: #00ff88;
+      --rasta-yellow: #ffcc00;
+      --rasta-red: #ff3355;
+      --text-main: #f0f4f8;
+      --text-dim: #718096;
+      --accent-glow: rgba(0, 255, 136, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      background: radial-gradient(circle at 50% 20%, #15221b 0%, #080c10 70%);
+    }
+
+    .clip-container {
+      width: 100%;
+      max-width: 960px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      position: relative;
+    }
+
+    .title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 204, 0, 0.1);
+      border: 1px solid rgba(255, 204, 0, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--rasta-yellow);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .track-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #00ff88 0%, #ffcc00 50%, #ff3355 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+
+    .track-subtitle {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+
+    /* Screen with SVG Graphics */
+    .visualizer-screen {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      padding: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--accent-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .svg-canvas {
+      width: 100%;
+      height: 240px;
+      display: block;
+    }
+
+    /* Rotating Reels */
+    .spinning-reel {
+      transform-origin: center;
+      transition: transform 0.1s linear;
+    }
+
+    .is-playing .spinning-reel {
+      animation: spin 3s linear infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Pulsing Speaker rings */
+    @keyframes bassPulse {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.1); opacity: 0.9; }
+    }
+
+    .is-playing .pulse-ring {
+      animation: bassPulse 0.66s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    /* Karaoke Subtitle Window */
+    .karaoke-display {
+      background: rgba(10, 14, 20, 0.7);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      height: 180px;
+      overflow-y: hidden;
+      position: relative;
+      padding: 10px 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .lyrics-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+    }
+
+    .line {
+      font-size: 1.15rem;
+      line-height: 1.4;
+      color: var(--text-dim);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .line:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .line.active {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 0 15px #00ff88, 0 0 30px rgba(0, 255, 136, 0.6);
+      background: rgba(0, 255, 136, 0.08);
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      transform: scale(1.04);
+    }
+
+    .line.active.chorus {
+      color: var(--rasta-yellow);
+      text-shadow: 0 0 15px #ffcc00, 0 0 30px rgba(255, 204, 0, 0.6);
+      background: rgba(255, 204, 0, 0.1);
+      border-color: rgba(255, 204, 0, 0.4);
+    }
+
+    /* Player Controls */
+    .controls-panel {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .progress-bar-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      font-family: monospace;
+    }
+
+    .progress-track {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00ff88, #ffcc00);
+      border-radius: 4px;
+      width: 0%;
+      position: relative;
+    }
+
+    .progress-thumb {
+      position: absolute;
+      right: -6px;
+      top: -4px;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00ff88;
+    }
+
+    .buttons-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .main-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-play {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00ff88, #00cc6a);
+      border: none;
+      color: #05140b;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+      transition: transform 0.1s, box-shadow 0.2s;
+    }
+
+    .btn-play:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 255, 136, 0.6);
+    }
+
+    .btn-play svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    .volume-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+    }
+
+    .volume-slider {
+      accent-color: var(--rasta-green);
+      cursor: pointer;
+      width: 80px;
+    }
+
+    /* Smoke animation canvas */
+    .smoke-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="clip-container" id="clipContainer">
+    <!-- Header -->
+    <div class="header">
+      <div class="title-badge">🌴 Rasta Dub • Jungle Bass • 90 BPM</div>
+      <h1 class="track-title">КАРАВАН ДОБРА</h1>
+      <p class="track-subtitle">Дакота Crew • Official Mastered Audio</p>
+    </div>
+
+    <!-- Animated SVG Stage -->
+    <div class="visualizer-screen" id="screen">
+      <!-- Animated SVG Scene -->
+      <svg class="svg-canvas" viewBox="0 0 900 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="rastaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00ff88" />
+            <stop offset="50%" stop-color="#ffcc00" />
+            <stop offset="100%" stop-color="#ff3355" />
+          </linearGradient>
+
+          <radialGradient id="speakerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00ff88" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#00ff88" stop-opacity="0" />
+          </radialGradient>
+
+          <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        <!-- Background grid lines -->
+        <line x1="0" y1="200" x2="900" y2="200" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+        <line x1="0" y1="220" x2="900" y2="220" stroke="rgba(255,255,255,0.04)" stroke-width="1" />
+
+        <!-- LEFT SUBWOOFER -->
+        <g transform="translate(130, 120)">
+          <!-- Pulsing bass wave rings -->
+          <circle class="pulse-ring" r="85" stroke="#00ff88" stroke-width="2" opacity="0.2" />
+          <circle class="pulse-ring" r="70" stroke="#ffcc00" stroke-width="2" opacity="0.3" />
+          <!-- Speaker frame -->
+          <circle r="55" fill="#151b24" stroke="#253243" stroke-width="4" />
+          <circle r="36" fill="#0d1218" stroke="#00ff88" stroke-width="2" />
+          <circle r="18" fill="#1a2533" />
+          <!-- Speaker cone lines -->
+          <circle r="8" fill="#ffcc00" />
+        </g>
+
+        <!-- CENTER: VINTAGE CASSETTE BOOMBOX -->
+        <g transform="translate(330, 25)">
+          <!-- Cassette chassis -->
+          <rect x="0" y="0" width="240" height="150" rx="12" fill="#121822" stroke="url(#rastaGrad)" stroke-width="3" filter="url(#neonGlow)" />
+          <!-- Window frame -->
+          <rect x="25" y="30" width="190" height="90" rx="8" fill="#090d14" stroke="#223042" stroke-width="2" />
+
+          <!-- Cassette label -->
+          <path d="M 30 35 L 210 35 L 195 65 L 45 65 Z" fill="#ffcc00" opacity="0.85" />
+          <text x="120" y="55" fill="#0a0c10" font-weight="900" font-size="11" text-anchor="middle" letter-spacing="1">CARAVAN OF GOOD • JUNGLE BASS</text>
+
+          <!-- Reel Left -->
+          <g transform="translate(75, 80)">
+            <circle r="22" fill="#1e293b" stroke="#fff" stroke-width="2" />
+            <g class="spinning-reel">
+              <circle r="12" fill="#090d14" />
+              <line x1="-18" y1="0" x2="18" y2="0" stroke="#ffcc00" stroke-width="3" />
+              <line x1="0" y1="-18" x2="0" y2="18" stroke="#ffcc00" stroke-width="3" />
+              <circle r="5" fill="#ff3355" />
+            </g>
+          </g>
+
+          <!-- Tape path between reels -->
+          <line x1="97" y1="88" x2="143" y2="88" stroke="#554433" stroke-width="6" />
+
+          <!-- Reel Right -->
+          <g transform="translate(165, 80)">
+            <circle r="22" fill="#1e293b" stroke="#fff" stroke-width="2" />
+            <g class="spinning-reel">
+              <circle r="12" fill="#090d14" />
+              <line x1="-18" y1="0" x2="18" y2="0" stroke="#00ff88" stroke-width="3" />
+              <line x1="0" y1="-18" x2="0" y2="18" stroke="#00ff88" stroke-width="3" />
+              <circle r="5" fill="#ff3355" />
+            </g>
+          </g>
+        </g>
+
+        <!-- RIGHT SUBWOOFER -->
+        <g transform="translate(770, 120)">
+          <!-- Pulsing bass wave rings -->
+          <circle class="pulse-ring" r="85" stroke="#ff3355" stroke-width="2" opacity="0.2" />
+          <circle class="pulse-ring" r="70" stroke="#ffcc00" stroke-width="2" opacity="0.3" />
+          <!-- Speaker frame -->
+          <circle r="55" fill="#151b24" stroke="#253243" stroke-width="4" />
+          <circle r="36" fill="#0d1218" stroke="#ff3355" stroke-width="2" />
+          <circle r="18" fill="#1a2533" />
+          <!-- Speaker cone lines -->
+          <circle r="8" fill="#ffcc00" />
+        </g>
+
+        <!-- DYNAMIC SPECTRUM BARS (Under Boombox) -->
+        <g id="spectrumBars" transform="translate(270, 190)"></g>
+
+        <!-- Animated Floating Smoke / Fog elements -->
+        <path class="smoke-path" d="M 330 20 Q 320 -10 350 -30 T 380 -60" stroke="rgba(255,255,255,0.15)" stroke-width="8" stroke-linecap="round" fill="none" />
+        <path class="smoke-path" d="M 570 20 Q 590 -10 560 -35 T 540 -70" stroke="rgba(0,255,136,0.2)" stroke-width="10" stroke-linecap="round" fill="none" />
+      </svg>
+    </div>
+
+    <!-- Karaoke Subtitles Stream -->
+    <div class="karaoke-display" id="karaokeBox">
+      <div class="lyrics-stream" id="lyricsStream"></div>
+    </div>
+
+    <!-- Controls Panel -->
+    <div class="controls-panel">
+      <!-- Time Scrubber -->
+      <div class="progress-bar-container">
+        <span id="currentTime">0:00</span>
+        <div class="progress-track" id="progressTrack">
+          <div class="progress-fill" id="progressFill">
+            <div class="progress-thumb"></div>
+          </div>
+        </div>
+        <span id="totalDuration">2:13</span>
+      </div>
+
+      <!-- Button Row -->
+      <div class="buttons-row">
+        <div class="main-controls">
+          <button class="btn-play" id="playBtn" title="Play / Pause">
+            <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="pauseIcon" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+          <div style="font-size:0.9rem; font-weight:600; color:var(--rasta-green);" id="playStatus">Нажмите Play для запуска клипа</div>
+        </div>
+
+        <div class="volume-group">
+          <span>🔊</span>
+          <input type="range" class="volume-slider" id="volSlider" min="0" max="1" step="0.05" value="0.9">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="audioTrack" preload="auto" src="audio.mp3"></audio>
+
+  <script>
+    // Lyrics & Timestamps
+    const lyricsData = [
+      { start: 0.0, end: 9.0, text: "♫ [Интро: Вступление] ♫", type: "intro" },
+      { start: 9.0, end: 14.0, text: "Йо-йо! Врубай кач...", type: "adlib" },
+      { start: 14.0, end: 17.8, text: "Я забываюсь, скрутив блант, во дворах Дакоты", type: "verse" },
+      { start: 17.8, end: 22.0, text: "В умах музыки много, всем наведем погоду", type: "verse" },
+      { start: 22.0, end: 26.5, text: "ИнДаХуд бывалый спросит ганджи, на падике нажигать буду", type: "verse" },
+      { start: 26.5, end: 29.5, text: "Ответ без фальши — есть", type: "verse" },
+      { start: 29.5, end: 34.5, text: "Подходи дунем, да возьмешь с собой, я не скуплюсь на настрой", type: "verse" },
+      { start: 34.5, end: 39.5, text: "Даже голодной весной, постой, не дело дунуть и сбежать, брат", type: "verse" },
+      { start: 39.5, end: 44.5, text: "За дела, за жизнь расскажи, присядь, да не иссякнет твой рай", type: "verse" },
+      { start: 44.5, end: 49.5, text: "Как под откос не пускай, ман взлетай, Джа повéдал нам растафарай", type: "verse" },
+      { start: 49.5, end: 57.0, text: "★ Псам Вавилона не нагнать тут нас ★", type: "chorus" },
+      { start: 57.0, end: 64.5, text: "Пока караван добра везет этот ганджубас ★", type: "chorus" },
+      { start: 64.5, end: 71.5, text: "Джа поможет мне курить и стареть, формула одна приготовления", type: "verse" },
+      { start: 71.5, end: 77.0, text: "Ман, постой, не нуди, дабы мы тут качали под звуки души", type: "verse" },
+      { start: 77.0, end: 81.5, text: "Тепла бомбаклат, взрыв надо миновать дни", type: "verse" },
+      { start: 81.5, end: 85.5, text: "Наше поколение раста в раше, не имеет соблазна: «Как же прожить без ганджи?»", type: "verse" },
+      { start: 85.5, end: 89.5, text: "Даже преграды нет в кашле, я вижу в каждом в диге бессонные ночи", type: "verse" },
+      { start: 89.5, end: 93.0, text: "Ведь 4:20 ждет с напасом к себе в гости", type: "verse" },
+      { start: 93.0, end: 97.0, text: "Мы не прайд, подарим навалóм эмоций вам, навалим идей, волна позитива смеха", type: "verse" },
+      { start: 97.0, end: 101.5, text: "Лавина напала на массу людей. Лица доброты, руки в небо ввысь", type: "verse" },
+      { start: 101.5, end: 107.0, text: "Я — аяман, тот прохожий, что встречает с улыбкой весь мир", type: "verse" },
+      { start: 107.0, end: 113.5, text: "Леса доброты, руки в небо ввысь. Я — аяман, тот прохожий, что встречает с улыбкой весь мир", type: "verse" },
+      { start: 113.5, end: 120.5, text: "★ Псам Вавилона не нагнать тут нас ★", type: "chorus" },
+      { start: 120.5, end: 128.5, text: "Пока караван добра везет этот ганджубас ★", type: "chorus" },
+      { start: 128.5, end: 133.7, text: "♫ [Аутро: Джангл-Бас / Караван Добра] ♫", type: "intro" }
+    ];
+
+    const audio = document.getElementById('audioTrack');
+    const playBtn = document.getElementById('playBtn');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const playStatus = document.getElementById('playStatus');
+    const screen = document.getElementById('screen');
+    const lyricsStream = document.getElementById('lyricsStream');
+    const karaokeBox = document.getElementById('karaokeBox');
+    const progressTrack = document.getElementById('progressTrack');
+    const progressFill = document.getElementById('progressFill');
+    const currentTimeEl = document.getElementById('currentTime');
+    const totalDurationEl = document.getElementById('totalDuration');
+    const volSlider = document.getElementById('volSlider');
+
+    // Spectrum Bars generator in SVG
+    const spectrumGroup = document.getElementById('spectrumBars');
+    const barCount = 28;
+    const bars = [];
+    for (let i = 0; i < barCount; i++) {
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      rect.setAttribute('x', i * 13);
+      rect.setAttribute('y', 0);
+      rect.setAttribute('width', 8);
+      rect.setAttribute('height', 8);
+      rect.setAttribute('rx', 3);
+      rect.setAttribute('fill', i < 9 ? '#00ff88' : i < 19 ? '#ffcc00' : '#ff3355');
+      spectrumGroup.appendChild(rect);
+      bars.push(rect);
+    }
+
+    // Build Karaoke DOM
+    lyricsData.forEach((item, index) => {
+      const lineEl = document.createElement('div');
+      lineEl.className = 'line';
+      if (item.type === 'chorus') lineEl.classList.add('chorus');
+      lineEl.textContent = item.text;
+      lineEl.dataset.index = index;
+      lineEl.addEventListener('click', () => {
+        audio.currentTime = item.start;
+        if (audio.paused) togglePlay();
+      });
+      lyricsStream.appendChild(lineEl);
+    });
+
+    const lineElements = document.querySelectorAll('.line');
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    }
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          playIcon.style.display = 'none';
+          pauseIcon.style.display = 'block';
+          screen.classList.add('is-playing');
+          playStatus.textContent = 'Воспроизведение...';
+          playStatus.style.color = 'var(--rasta-green)';
+        }).catch(err => {
+          console.error(err);
+        });
+      } else {
+        audio.pause();
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+        screen.classList.remove('is-playing');
+        playStatus.textContent = 'Пауза';
+        playStatus.style.color = 'var(--text-dim)';
+      }
+    }
+
+    playBtn.addEventListener('click', togglePlay);
+
+    // Audio timeupdate
+    let activeIdx = -1;
+    audio.addEventListener('timeupdate', () => {
+      const cur = audio.currentTime;
+      const dur = audio.duration || 133.77;
+
+      currentTimeEl.textContent = formatTime(cur);
+      totalDurationEl.textContent = formatTime(dur);
+      const percent = (cur / dur) * 100;
+      progressFill.style.width = `${percent}%`;
+
+      // Update lyrics
+      let currentLineIndex = -1;
+      for (let i = 0; i < lyricsData.length; i++) {
+        if (cur >= lyricsData[i].start && cur < lyricsData[i].end) {
+          currentLineIndex = i;
+          break;
+        }
+      }
+
+      if (currentLineIndex !== -1 && currentLineIndex !== activeIdx) {
+        activeIdx = currentLineIndex;
+        lineElements.forEach((el, idx) => {
+          if (idx === activeIdx) {
+            el.classList.add('active');
+          } else {
+            el.classList.remove('active');
+          }
+        });
+
+        // Center current line in view
+        const targetEl = lineElements[activeIdx];
+        if (targetEl) {
+          const offsetTop = targetEl.offsetTop;
+          const boxHeight = karaokeBox.clientHeight;
+          const elHeight = targetEl.clientHeight;
+          const scrollTarget = offsetTop - (boxHeight / 2) + (elHeight / 2);
+          lyricsStream.style.transform = `translateY(-${Math.max(0, scrollTarget)}px)`;
+        }
+      }
+
+      // Animate simulated spectrum bars when playing
+      if (!audio.paused) {
+        bars.forEach((bar, idx) => {
+          const bassBoost = (idx < 6) ? 1.6 : 1.0;
+          const h = 6 + Math.abs(Math.sin((cur * 8) + idx * 0.45) * 35 * bassBoost);
+          bar.setAttribute('height', Math.min(50, h));
+          bar.setAttribute('y', -h);
+        });
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+      screen.classList.remove('is-playing');
+      playStatus.textContent = 'Завершено';
+    });
+
+    // Scrubber click
+    progressTrack.addEventListener('click', (e) => {
+      const rect = progressTrack.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = pos * (audio.duration || 133.77);
+    });
+
+    // Volume
+    volSlider.addEventListener('input', (e) => {
+      audio.volume = e.target.value;
+    });
+  </script>
+</body>
+</html>

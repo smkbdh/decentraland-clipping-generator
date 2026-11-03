@@ -26,6 +26,7 @@ session.json
 zhavdqwveqve/
 *.png
 *.html
+!mastered_releases/**/*.html
 *.txt
 *.wav
 
