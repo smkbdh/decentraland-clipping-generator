@@ -192,6 +192,16 @@ def submit_tiktok_to_rewards(page, tiktok_url, idx):
     else:
         return False
 
+    # Dismiss any blocking modals like Discord
+    for btn_text in ["Not now", "Cancel", "Close"]:
+        try:
+            b = page.locator(f'button:has-text("{btn_text}")')
+            if b.count() > 0 and b.first.is_visible():
+                b.first.click()
+                time.sleep(1)
+        except Exception:
+            pass
+
     try:
         trigger = page.locator('button:has-text("Submit clip"):visible').first
         trigger.wait_for(state="visible", timeout=10000)
