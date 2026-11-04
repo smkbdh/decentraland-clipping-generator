@@ -149,3 +149,8 @@
 | 138 | MW4 MP Reel v4 #138 | [https://www.instagram.com/kira.gyal/reel/DfVL4LXzq0k/](https://www.instagram.com/kira.gyal/reel/DfVL4LXzq0k/) | ✅ ЗАСАБМИЧЕНО |
 | 139 | MW4 MP Reel v4 #139 | [https://www.instagram.com/kira.gyal/reel/DfVMrQmTqtZ/](https://www.instagram.com/kira.gyal/reel/DfVMrQmTqtZ/) | ✅ ЗАСАБМИЧЕНО |
 | 140 | MW4 MP Reel v4 #140 | [https://www.instagram.com/kira.gyal/reel/DfVMrQmTqtZ/](https://www.instagram.com/kira.gyal/reel/DfVMrQmTqtZ/) | ❌ Ошибка сабмита |
+| 141 | MW4 MP Reel v4 #141 | [https://www.instagram.com/kira.gyal/reel/DfVOh56TwGm/](https://www.instagram.com/kira.gyal/reel/DfVOh56TwGm/) | ✅ ЗАСАБМИЧЕНО |
+| 142 | MW4 MP Reel v4 #142 | [https://www.instagram.com/kira.gyal/reel/DfVPRW5TxyO/](https://www.instagram.com/kira.gyal/reel/DfVPRW5TxyO/) | ✅ ЗАСАБМИЧЕНО |
+| 143 | MW4 MP Reel v4 #143 | [https://www.instagram.com/kira.gyal/reel/DfVQARRzT9h/](https://www.instagram.com/kira.gyal/reel/DfVQARRzT9h/) | ✅ ЗАСАБМИЧЕНО |
+| 144 | MW4 MP Reel v4 #144 | [https://www.instagram.com/kira.gyal/reel/DfVQvAxzQuS/](https://www.instagram.com/kira.gyal/reel/DfVQvAxzQuS/) | ✅ ЗАСАБМИЧЕНО |
+| 145 | MW4 MP Reel v4 #145 | [https://www.instagram.com/kira.gyal/reel/DfVRdSfzYQu/](https://www.instagram.com/kira.gyal/reel/DfVRdSfzYQu/) | ✅ ЗАСАБМИЧЕНО |
