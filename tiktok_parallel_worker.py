@@ -45,6 +45,7 @@ def upload_tiktok_video(playwright, idx, video_path, caption):
     try:
         ctx = playwright.chromium.launch_persistent_context(
             user_data_dir=str(TIKTOK_PROFILE),
+            channel="chrome",
             headless=True,
             viewport={"width": 1280, "height": 850},
             args=["--disable-blink-features=AutomationControlled"]
@@ -192,6 +193,7 @@ def submit_tiktok_to_rewards(playwright, tiktok_url, idx, max_attempts=8):
         try:
             ctx = playwright.chromium.launch_persistent_context(
                 user_data_dir=str(REWARDS_PROFILE),
+                channel="chrome",
                 headless=True,
                 viewport={"width": 1280, "height": 850},
                 args=["--disable-blink-features=AutomationControlled"]

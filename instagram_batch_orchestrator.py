@@ -42,6 +42,7 @@ def upload_instagram_reel(playwright, idx, video_path, caption):
     try:
         ctx = playwright.chromium.launch_persistent_context(
             user_data_dir=str(INSTA_PROFILE),
+            channel="chrome",
             headless=True,
             viewport={"width": 1280, "height": 900},
             args=["--disable-blink-features=AutomationControlled"]
@@ -215,6 +216,7 @@ def submit_to_rewards_with_retries(playwright, reel_url, idx, max_attempts=8):
         try:
             ctx = playwright.chromium.launch_persistent_context(
                 user_data_dir=str(REWARDS_PROFILE),
+                channel="chrome",
                 headless=True,
                 viewport={"width": 1280, "height": 850},
                 args=["--disable-blink-features=AutomationControlled"]
