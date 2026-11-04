@@ -146,13 +146,14 @@ def upload_instagram_reel(playwright, idx, video_path, caption):
         caption_area.click()
         time.sleep(0.5)
         page.keyboard.insert_text(caption)
-        time.sleep(1)
-        modal.locator('h1, div:has-text("Create new post"), div:has-text("New reel")').first.click(force=True)
-        time.sleep(1)
+        time.sleep(1.5)
+        print("✅ Описание успешно введено!")
 
         # 8. Share
         print("7. Нажимаем 'Поделиться' (Share)...")
         share_btn = modal.locator('div[role="button"]:has-text("Share"), div[role="button"]:has-text("Поделиться"), button:has-text("Share"), button:has-text("Поделиться")').first
+        if not share_btn.is_visible():
+            share_btn = page.locator('div[role="button"]:has-text("Share"), div[role="button"]:has-text("Поделиться"), button:has-text("Share"), button:has-text("Поделиться")').first
         share_btn.wait_for(state="visible", timeout=15000)
         share_btn.click()
         print("🚀 Кнопка 'Share' нажата! Ждём обработку и публикацию (до 120 сек)...")
