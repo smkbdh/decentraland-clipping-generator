@@ -32,123 +32,114 @@ def get_caption_for_index(idx):
     meta = v4_generator.get_clip_metadata(idx)
     return meta["caption"]
 
-def upload_instagram_reel(page, idx, video_path, caption):
+def upload_instagram_reel(playwright, idx, video_path, caption):
     print(f"\n==========================================")
-    print(f"🎬 [INSTAGRAM REELS v4.0 NLP] ЗАГРУЗКА #{idx}")
+    print(f"🎬 [INSTAGRAM REELS v4.0] ЗАГРУЗКА #{idx}")
     print(f"📁 Файл: {video_path.name}")
     print(f"==========================================")
 
-    for attempt in range(5):
-        try:
-            page.goto(INSTAGRAM_URL, wait_until="domcontentloaded", timeout=45000)
-            time.sleep(3)
-            break
-        except Exception as e:
-            print(f"⚠️ Ошибка перехода на Instagram (попытка {attempt+1}/5): {e}", flush=True)
-            time.sleep(10)
-    else:
-        return None
-
-    dismiss_buttons = page.locator('button:has-text("Not Now"), button:has-text("Не сейчас"), button:has-text("Cancel")')
-    if dismiss_buttons.count() > 0 and dismiss_buttons.first.is_visible():
-        try:
-            dismiss_buttons.first.click()
-            time.sleep(1)
-        except Exception:
-            pass
-
-    # 1. Click Create (+) button
-    print("1. Нажимаем кнопку 'Создать' / '+'...")
-    create_btn = page.locator(
-        'svg[aria-label="New post"], svg[aria-label="Create"], svg[aria-label="Новая публикация"], '
-        'a[href="#"]:has-text("Create"), a:has-text("Create"), a:has-text("Создать")'
-    ).first
-
+    ctx = None
     try:
+        ctx = playwright.chromium.launch_persistent_context(
+            user_data_dir=str(INSTA_PROFILE),
+            headless=True,
+            viewport={"width": 1280, "height": 900},
+            args=["--disable-blink-features=AutomationControlled"]
+        )
+        page = ctx.pages[0] if ctx.pages else ctx.new_page()
+
+        # 1. Navigate to Instagram
+        for attempt in range(5):
+            try:
+                page.goto(INSTAGRAM_URL, wait_until="domcontentloaded", timeout=45000)
+                time.sleep(3)
+                break
+            except Exception as e:
+                print(f"⚠️ Ошибка перехода на Instagram (попытка {attempt+1}/5): {e}", flush=True)
+                time.sleep(10)
+        else:
+            ctx.close()
+            return None
+
+        # Dismiss popups
+        for _ in range(2):
+            dismiss = page.locator('button:has-text("Not Now"), button:has-text("Не сейчас"), button:has-text("Cancel")')
+            if dismiss.count() > 0 and dismiss.first.is_visible():
+                try:
+                    dismiss.first.click()
+                    time.sleep(1)
+                except Exception:
+                    pass
+
+        # 2. Click Create (+)
+        print("1. Нажимаем кнопку 'Создать' / '+'...")
+        create_btn = page.locator(
+            'svg[aria-label="New post"], svg[aria-label="Create"], svg[aria-label="Новая публикация"], '
+            'a[href="#"]:has-text("Create"), a:has-text("Create"), a:has-text("Создать")'
+        ).first
         create_btn.wait_for(state="visible", timeout=15000)
         create_btn.click()
         time.sleep(2)
-    except Exception as e:
-        print(f"❌ Ошибка поиска кнопки Создать: {e}")
-        return None
 
-    # Handle post submenu
-    try:
-        page.evaluate('''() => {
-            const spans = Array.from(document.querySelectorAll('span'));
-            const postSpan = spans.find(s => (s.textContent.trim() === 'Post' || s.textContent.trim() === 'Публикация') && s.offsetParent !== null);
-            if (postSpan) {
-                (postSpan.closest('div[role="button"]') || postSpan.closest('a') || postSpan).click();
-            }
-        }''')
-        time.sleep(2)
-    except Exception:
-        pass
+        # Handle post submenu
+        try:
+            page.evaluate('''() => {
+                const spans = Array.from(document.querySelectorAll('span'));
+                const postSpan = spans.find(s => (s.textContent.trim() === 'Post' || s.textContent.trim() === 'Публикация') && s.offsetParent !== null);
+                if (postSpan) {
+                    (postSpan.closest('div[role="button"]') || postSpan.closest('a') || postSpan).click();
+                }
+            }''')
+            time.sleep(2)
+        except Exception:
+            pass
 
-    # 2. Select file
-    print("2. Передаем видеофайл...")
-    file_input = page.locator('input[type="file"]').first
-    try:
+        # 3. Select file
+        print("2. Передаем видеофайл...")
+        file_input = page.locator('input[type="file"]').first
         file_input.wait_for(state="attached", timeout=15000)
         file_input.set_input_files(str(video_path))
-        print("📤 Файл передан браузеру! Ждём обработку превью...")
-        time.sleep(5)
-    except Exception as e:
-        print(f"❌ Ошибка выбора файла: {e}")
-        return None
+        print("📤 Файл передан браузеру! Ждём загрузку превью...")
+        time.sleep(6)
 
-    ok_btn = page.locator('button:has-text("OK"), button:has-text("Понятно")')
-    if ok_btn.count() > 0 and ok_btn.first.is_visible():
-        ok_btn.first.click()
-        time.sleep(1)
-
-    # 3. Check 9:16 crop
-    print("3. Проверяем пропорции 9:16...")
-    try:
-        crop_btn = page.locator('svg[aria-label="Select crop"], svg[aria-label="Выбрать кадрирование"]').first
-        if crop_btn.is_visible():
-            crop_btn.click()
+        ok_btn = page.locator('button:has-text("OK"), button:has-text("Понятно")')
+        if ok_btn.count() > 0 and ok_btn.first.is_visible():
+            ok_btn.first.click()
             time.sleep(1)
-            ratio_9_16 = page.locator('button:has-text("9:16"), span:has-text("9:16"), svg[aria-label="9:16"]')
-            if ratio_9_16.count() > 0 and ratio_9_16.first.is_visible():
-                ratio_9_16.first.click()
+
+        # 4. Check 9:16 crop
+        print("3. Проверяем пропорции 9:16...")
+        try:
+            crop_btn = page.locator('svg[aria-label="Select crop"], svg[aria-label="Выбрать кадрирование"]').first
+            if crop_btn.is_visible():
+                crop_btn.click()
                 time.sleep(1)
-            else:
-                orig = page.locator('button:has-text("Original"), span:has-text("Оригинал")')
-                if orig.count() > 0 and orig.first.is_visible():
-                    orig.first.click()
+                ratio_9_16 = page.locator('button:has-text("9:16"), span:has-text("9:16"), svg[aria-label="9:16"]')
+                if ratio_9_16.count() > 0 and ratio_9_16.first.is_visible():
+                    ratio_9_16.first.click()
                     time.sleep(1)
-            crop_btn.click()
-            time.sleep(1)
-    except Exception as e:
-        print(f"⚠️ Кадрирование пропущено: {e}")
+                crop_btn.click()
+                time.sleep(1)
+        except Exception as e:
+            print(f"⚠️ Кадрирование пропущено: {e}")
 
-    # 4. Next 1
-    print("4. Переход далее (Next 1)...")
-    modal = page.locator('div[role="dialog"]').first
-    next_btn = modal.locator('div[role="button"]:has-text("Next"), div[role="button"]:has-text("Далее"), button:has-text("Next"), button:has-text("Далее")').first
-    try:
+        # 5. Next 1
+        print("4. Переход далее (Next 1)...")
+        modal = page.locator('div[role="dialog"]').first
+        next_btn = modal.locator('div[role="button"]:has-text("Next"), div[role="button"]:has-text("Далее"), button:has-text("Next"), button:has-text("Далее")').first
         next_btn.wait_for(state="visible", timeout=15000)
         next_btn.click()
         time.sleep(3)
-    except Exception as e:
-        print(f"❌ Ошибка перехода Next 1: {e}")
-        return None
 
-    # 5. Next 2
-    print("5. Переход далее (Next 2)...")
-    next_btn2 = modal.locator('div[role="button"]:has-text("Next"), div[role="button"]:has-text("Далее"), button:has-text("Next"), button:has-text("Далее")').first
-    try:
+        # 6. Next 2
+        print("5. Переход далее (Next 2)...")
+        next_btn2 = modal.locator('div[role="button"]:has-text("Next"), div[role="button"]:has-text("Далее"), button:has-text("Next"), button:has-text("Далее")').first
         next_btn2.wait_for(state="visible", timeout=15000)
         next_btn2.click()
         time.sleep(3)
-    except Exception as e:
-        print(f"❌ Ошибка перехода Next 2: {e}")
-        return None
 
-    # 6. Fill caption
-    print("6. Заполняем описание Reel...")
-    try:
+        # 7. Fill caption
+        print("6. Заполняем описание Reel...")
         caption_area = modal.locator('div[aria-label*="caption"], div[aria-label*="подпись"], div[contenteditable="true"]').first
         caption_area.wait_for(state="visible", timeout=15000)
         caption_area.click()
@@ -157,121 +148,140 @@ def upload_instagram_reel(page, idx, video_path, caption):
         time.sleep(1)
         modal.locator('h1, div:has-text("Create new post"), div:has-text("New reel")').first.click(force=True)
         time.sleep(1)
-        print("✅ Описание успешно введено!")
-    except Exception as e:
-        print(f"⚠️ Ошибка ввода описания: {e}")
 
-    # 7. Share
-    print("7. Нажимаем 'Поделиться' (Share)...")
-    share_btn = modal.locator('div[role="button"]:has-text("Share"), div[role="button"]:has-text("Поделиться"), button:has-text("Share"), button:has-text("Поделиться")').first
-    try:
+        # 8. Share
+        print("7. Нажимаем 'Поделиться' (Share)...")
+        share_btn = modal.locator('div[role="button"]:has-text("Share"), div[role="button"]:has-text("Поделиться"), button:has-text("Share"), button:has-text("Поделиться")').first
         share_btn.wait_for(state="visible", timeout=15000)
         share_btn.click()
-        print("🚀 Кнопка 'Share' нажата! Ждём публикацию...")
+        print("🚀 Кнопка 'Share' нажата! Ждём обработку и публикацию (до 120 сек)...")
+
+        # 9. Wait for publication confirmation (patient wait up to 120s)
+        shared = False
+        for sec in range(0, 120, 3):
+            time.sleep(3)
+            done_text = page.locator(
+                'text=Your reel has been shared, '
+                'text=Your post has been shared, '
+                'text=Видеоролик опубликован, '
+                'text=Публикация опубликована, '
+                'text=Поделились, '
+                'text=Shared reel'
+            )
+            if done_text.count() > 0 and done_text.first.is_visible():
+                print(f"🎉 REEL #{idx} УСПЕШНО ОПУБЛИКОВАН В INSTAGRAM! (за {sec}с)")
+                shared = True
+                break
+
+        if not shared:
+            print(f"⚠️ Подтверждение публикации не появилось за 120с, проверяем ленту профиля...")
+
+        # 10. Give Instagram CDN 10 seconds to index the new reel
+        time.sleep(10)
+
+        # 11. Retrieve direct Reel URL from reels tab
+        reel_url = None
+        for fetch_attempt in range(4):
+            try:
+                page.goto("https://www.instagram.com/kira.gyal/reels/", wait_until="domcontentloaded", timeout=30000)
+                time.sleep(5)
+                reels = page.eval_on_selector_all('a[href*="/reel/"]', 'els => els.map(e => e.href)')
+                if reels:
+                    reel_url = reels[0]
+                    print(f"🔥 ПРЯМАЯ ССЫЛКА НА REEL #{idx}: {reel_url}")
+                    break
+            except Exception as e:
+                print(f"⚠️ Попытка получения ссылки {fetch_attempt+1}: {e}")
+                time.sleep(5)
+
+        ctx.close()
+        return reel_url
     except Exception as e:
-        print(f"❌ Ошибка нажатия Share: {e}")
+        print(f"❌ Ошибка в процессе загрузки Reel #{idx}: {e}")
+        if ctx:
+            try:
+                ctx.close()
+            except Exception:
+                pass
         return None
 
-    # 8. Wait for finish
-    print("⏳ Ожидание подтверждения публикации...")
-    for _ in range(60):
-        time.sleep(2)
-        done_text = page.locator(
-            'text=Your reel has been shared, '
-            'text=Your post has been shared, '
-            'text=Видеоролик опубликован, '
-            'text=Публикация опубликована, '
-            'text=Поделились, '
-            'text=Shared reel'
-        )
-        if done_text.count() > 0 and done_text.first.is_visible():
-            print(f"🎉 REEL #{idx} УСПЕШНО ОПУБЛИКОВАН В INSTAGRAM!")
-            break
-
-    time.sleep(4)
-    reel_url = None
-    try:
-        page.goto("https://www.instagram.com/kira.gyal/reels/", wait_until="domcontentloaded")
-        time.sleep(5)
-        reels = page.eval_on_selector_all('a[href*="/reel/"]', 'els => els.map(e => e.href)')
-        if reels:
-            reel_url = reels[0]
-            print(f"🔥 ПРЯМАЯ ССЫЛКА НА REEL #{idx}: {reel_url}")
-    except Exception as e:
-        print(f"⚠️ Ошибка поиска ссылки: {e}")
-
-    return reel_url
-
-def submit_instagram_to_rewards(page, reel_url, idx):
+def submit_to_rewards_with_retries(playwright, reel_url, idx, max_attempts=8):
     print(f"\n🎯 САБМИТ REEL #{idx} В CONTENT REWARDS:")
     print(f"🔗 {reel_url}")
 
-    for attempt in range(5):
+    for attempt in range(1, max_attempts + 1):
+        print(f"--- Попытка сабмита #{attempt}/{max_attempts} для Reel #{idx} ---")
+        ctx = None
         try:
-            page.goto(CAMPAIGN_URL, wait_until="domcontentloaded", timeout=45000)
+            ctx = playwright.chromium.launch_persistent_context(
+                user_data_dir=str(REWARDS_PROFILE),
+                headless=True,
+                viewport={"width": 1280, "height": 850},
+                args=["--disable-blink-features=AutomationControlled"]
+            )
+            page = ctx.pages[0] if ctx.pages else ctx.new_page()
+
+            page.goto(CAMPAIGN_URL, wait_until="domcontentloaded", timeout=35000)
             time.sleep(3)
-            break
+
+            # Dismiss any blocking popups
+            for btn_text in ["Not now", "Cancel", "Close"]:
+                try:
+                    b = page.locator(f'button:has-text("{btn_text}")')
+                    if b.count() > 0 and b.first.is_visible():
+                        b.first.click()
+                        time.sleep(1)
+                except Exception:
+                    pass
+
+            trigger = page.locator('button:has-text("Submit clip"):visible').first
+            trigger.wait_for(state="visible", timeout=12000)
+            trigger.click()
+            time.sleep(2)
+
+            modal = page.locator('div[role="dialog"][aria-label="Submit clip"]').first
+            inp = modal.locator('input').first
+            inp.wait_for(state="visible", timeout=10000)
+            inp.click()
+            inp.fill("")
+            inp.fill(reel_url)
+            print("⏳ Ссылка вставлена, ждём валидацию API платформы (до 8 сек)...")
+            time.sleep(5)
+
+            try:
+                chk = modal.locator('label:has-text("I\'ve read the requirements"), input[type="checkbox"]').first
+                if chk.is_visible():
+                    chk.click()
+                    time.sleep(0.5)
+            except Exception:
+                pass
+
+            modal_btn = modal.locator('button:has-text("Submit clip"):visible').last
+            if not modal_btn.is_disabled():
+                modal_btn.click()
+                print(f"🚀 Кнопка сабмита для #{idx} НАЖАТА! Ждём подтверждения...")
+                time.sleep(5)
+                print(f"🎉 REEL #{idx} УСПЕШНО ЗАСАБМИЧЕН В CONTENT REWARDS!")
+                ctx.close()
+                return True
+            else:
+                print(f"⚠️ Кнопка Submit clip заблокирована на попытке {attempt} (API еще проверяет URL). Ждём 15 сек перед повтором...")
+                cancel_btn = modal.locator('button:has-text("Cancel"):visible')
+                if cancel_btn.count() > 0 and cancel_btn.first.is_visible():
+                    cancel_btn.first.click()
+                ctx.close()
+                time.sleep(15)
         except Exception as e:
-            print(f"⚠️ Ошибка перехода на Content Rewards (попытка {attempt+1}/5): {e}", flush=True)
-            time.sleep(10)
-    else:
-        return False
+            print(f"⚠️ Ошибка контекста rewards на попытке {attempt}: {e}")
+            if ctx:
+                try:
+                    ctx.close()
+                except Exception:
+                    pass
+            time.sleep(15)
 
-    # Dismiss any blocking modals like Discord
-    for btn_text in ["Not now", "Cancel", "Close"]:
-        try:
-            b = page.locator(f'button:has-text("{btn_text}")')
-            if b.count() > 0 and b.first.is_visible():
-                b.first.click()
-                time.sleep(1)
-        except Exception:
-            pass
-
-    try:
-        trigger = page.locator('button:has-text("Submit clip"):visible').first
-        trigger.wait_for(state="visible", timeout=10000)
-        trigger.click()
-        time.sleep(2)
-    except Exception as e:
-        print(f"❌ Ошибка открытия модалки: {e}")
-        return False
-
-    try:
-        modal = page.locator('div[role="dialog"][aria-label="Submit clip"]').first
-        inp = modal.locator('input').first
-        inp.wait_for(state="visible", timeout=10000)
-        inp.click()
-        inp.fill("")
-        inp.fill(reel_url)
-        time.sleep(3)
-        print("✅ Ссылка вставлена, ждём валидацию API...")
-    except Exception as e:
-        print(f"❌ Ошибка ввода ссылки: {e}")
-        return False
-
-    try:
-        modal = page.locator('div[role="dialog"][aria-label="Submit clip"]').first
-        chk = modal.locator('label:has-text("I\'ve read the requirements"), input[type="checkbox"]').first
-        if chk.is_visible():
-            chk.click()
-            time.sleep(1)
-    except Exception:
-        pass
-
-    modal = page.locator('div[role="dialog"][aria-label="Submit clip"]').first
-    modal_btn = modal.locator('button:has-text("Submit clip"):visible').last
-    if not modal_btn.is_disabled():
-        modal_btn.click()
-        print(f"🚀 Сабмит для #{idx} НАЖАТ!")
-        time.sleep(6)
-        print(f"🎉 REEL #{idx} УСПЕШНО ЗАСАБМИЧЕН В CONTENT REWARDS!")
-        return True
-    else:
-        print(f"❌ Регулярный сабмит #{idx} заблокирован (валидация не прошла)!")
-        cancel_btn = modal.locator('button:has-text("Cancel"):visible')
-        if cancel_btn.count() > 0 and cancel_btn.first.is_visible():
-            cancel_btn.first.click()
-        return False
+    print(f"❌ Не удалось засабмитить Reel #{idx} после {max_attempts} попыток!")
+    return False
 
 def load_state():
     if STATE_FILE.exists():
@@ -329,7 +339,7 @@ def main():
 
     print("=" * 65)
     print(f"   INSTAGRAM REELS PIPELINE v4.0 NLP: MW4 MULTIPLAYER ({target_total} РОЛИКОВ)   ")
-    print(f"   ОПТИМИЗАЦИЯ: IMPACT ULTRA-BOLD + NLP TRIGGERS + EMOJIS + SAFE MARGINS   ")
+    print(f"   НАДЕЖНЫЙ КОНВЕЙЕР: С ПОВТОРНЫМИ ПОПЫТКАМИ САБМИТА И ОЖИДАНИЕМ ИНДЕКСАЦИИ   ")
     print("=" * 65)
 
     state = load_state()
@@ -337,14 +347,6 @@ def main():
     submission_statuses = {int(k): v for k, v in state.get("submission_statuses", {}).items()}
 
     with sync_playwright() as p:
-        insta_ctx = p.chromium.launch_persistent_context(
-            user_data_dir=str(INSTA_PROFILE),
-            headless=True,
-            viewport={"width": 1280, "height": 900},
-            args=["--disable-blink-features=AutomationControlled"]
-        )
-        insta_page = insta_ctx.pages[0] if insta_ctx.pages else insta_ctx.new_page()
-
         for idx in range(1, target_total + 1):
             if idx in published_reels and submission_statuses.get(idx) == "✅ ЗАСАБМИЧЕНО":
                 print(f"⏩ Ролик #{idx} уже опубликован ({published_reels[idx]}), пропускаем.", flush=True)
@@ -359,10 +361,10 @@ def main():
 
             caption = get_caption_for_index(idx)
 
-            # 2. Upload to Instagram with retries
+            # 2. Upload to Instagram with resilient context & retries
             reel_url = None
             for upload_attempt in range(5):
-                reel_url = upload_instagram_reel(insta_page, idx, video_file, caption)
+                reel_url = upload_instagram_reel(p, idx, video_file, caption)
                 if reel_url:
                     break
                 print(f"⚠️ Повтор попытки загрузки Reel #{idx} ({upload_attempt+1}/5) через 30с...", flush=True)
@@ -374,25 +376,8 @@ def main():
 
             published_reels[idx] = reel_url
 
-            # 3. Auto-submit to Content Rewards with retries
-            print(f"🎯 Открываем Content Rewards для сабмита #{idx}...", flush=True)
-            success = False
-            for submit_attempt in range(5):
-                try:
-                    rewards_ctx = p.chromium.launch_persistent_context(
-                        user_data_dir=str(REWARDS_PROFILE),
-                        headless=True,
-                        viewport={"width": 1280, "height": 850},
-                        args=["--disable-blink-features=AutomationControlled"]
-                    )
-                    rewards_page = rewards_ctx.pages[0] if rewards_ctx.pages else rewards_ctx.new_page()
-                    success = submit_instagram_to_rewards(rewards_page, reel_url, idx)
-                    rewards_ctx.close()
-                    if success:
-                        break
-                except Exception as e:
-                    print(f"⚠️ Ошибка контекста rewards #{idx}: {e}", flush=True)
-                time.sleep(15)
+            # 3. Patient Auto-submit to Content Rewards with retry loop
+            success = submit_to_rewards_with_retries(p, reel_url, idx, max_attempts=8)
 
             submission_statuses[idx] = "✅ ЗАСАБМИЧЕНО" if success else "❌ Ошибка сабмита"
 
@@ -411,8 +396,6 @@ def main():
                 for rem in range(safe_delay_seconds - 25, 0, -30):
                     print(f"⏳ До публикации Reel #{next_idx} осталось {rem}с...", flush=True)
                     time.sleep(30)
-
-        insta_ctx.close()
 
     git_commit_and_push(target_total)
     print("\n🏁 ВСЕ 200 РОЛИКОВ (v4.0 NLP) УСПЕШНО ОПУБЛИКОВАНЫ В INSTAGRAM И ЗАСАБМИЧЕНЫ!")
