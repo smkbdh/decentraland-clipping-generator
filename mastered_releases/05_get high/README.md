@@ -1,4 +1,4 @@
-# Мастеринг трека #5 («Караван добра» / Jungle Bass) для Offstep
+# Релиз: Track 05 — «get high» (Jungle Bass)
 
 ## 1. Технические характеристики готовых WAV:
 - **Частота дискретизации**: `44.1 kHz` (стандарт дистрибуции Offstep / Spotify / Apple Music / Яндекс Музыка / VK Музыка)
@@ -6,6 +6,16 @@
 - **Каналы**: `Stereo`
 - **True Peak**: `-0.7 dBFS` (полная защита от клиппинга и интерсэмпловых искажений при сжатии в AAC/MP3)
 - **Интегрированная громкость (Integrated LUFS)**: `-10.2 LUFS` (исходник был зажат в перегруз до -6.5 LUFS с пиками +1.9 dBFS; трек бережно восстановлен с плотной коммерческой динамикой)
+
+---
+
+## 2. Подготовленные мастер-файлы:
+1. 🔗 [get_high_master_stereo_24bit.wav](get_high_master_stereo_24bit.wav) (24-bit PCM Stereo Master)
+2. 🔗 [get_high_master_stereo_16bit.wav](get_high_master_stereo_16bit.wav) (16-bit PCM Stereo Master)
+3. 🔗 [get_high_master_direct_24bit.wav](get_high_master_direct_24bit.wav) (24-bit PCM Direct Master)
+4. 🔗 [get_high_320kbps.mp3](get_high_320kbps.mp3) (320 kbps MP3 с ID3-тегами)
+
+---
 
 ## 3. Караоке-клипы (SVG + MP4):
 - **Интерактивный SVG Караоке-клип (HTML5 / Web Player)**:
