@@ -1,4 +1,4 @@
-# Релиз: Track 14 — «Continuous Dakota Mix» (3 In 1 Continuous Mix)
+# Релиз: Track 14 — «btrk mix» (3 In 1 Continuous Mix)
 
 ## Профессиональный непрерывный микс и мастеринг для Offstep & Стриминговых платформ
 
@@ -53,6 +53,7 @@
 
 ### Подготовленные мастер-файлы:
 
-1. 🔗 [master_offstep_continuous_mix_24bit.wav](master_offstep_continuous_mix_24bit.wav) (44.1 kHz, 24-bit PCM — флагманский 24-битный мастер непрерывного микса)
-2. 🔗 [master_offstep_continuous_mix_16bit.wav](master_offstep_continuous_mix_16bit.wav) (44.1 kHz, 16-bit PCM с треугольным дизерингом — CD / дистрибьюторский стандарт)
-3. 🔗 [master_offstep_continuous_mix_direct_24bit.wav](master_offstep_continuous_mix_direct_24bit.wav) (44.1 kHz, 24-bit PCM — мастер с оригинальной стереосценой)
+1. 🔗 [btrk_mix_master_24bit.wav](btrk_mix_master_24bit.wav) (44.1 kHz, 24-bit PCM — флагманский 24-битный мастер непрерывного микса)
+2. 🔗 [btrk_mix_master_16bit.wav](btrk_mix_master_16bit.wav) (44.1 kHz, 16-bit PCM с треугольным дизерингом — CD / дистрибьюторский стандарт)
+3. 🔗 [btrk_mix_master_direct_24bit.wav](btrk_mix_master_direct_24bit.wav) (44.1 kHz, 24-bit PCM — мастер с оригинальной стереосценой)
+4. 🔗 [btrk_mix_320kbps.mp3](btrk_mix_320kbps.mp3) (44.1 kHz, 320 kbps MP3 с ID3-метаданными — для сайта и стриминга)

@@ -1,4 +1,4 @@
-# Релиз: Track 12 — «Как жить» (yellowflow, smkbdh — kadgid)
+# Релиз: Track 12 — «каджит» (Yellow Flow, Smoke Buddah)
 
 ## Профессиональный мастеринг для Offstep & Стриминговых платформ
 
@@ -39,6 +39,7 @@
 
 ### Подготовленные мастер-файлы:
 
-1. 🔗 [master_offstep_stereo_24bit.wav](master_offstep_stereo_24bit.wav) (44.1 kHz, 24-bit PCM — флагманский 24-битный мастер с расширенной стереосценой и аналоговым теплом)
-2. 🔗 [master_offstep_stereo_16bit.wav](master_offstep_stereo_16bit.wav) (44.1 kHz, 16-bit PCM с треугольным дизерингом — CD / дистрибьюторский стандарт)
-3. 🔗 [master_offstep_direct_24bit.wav](master_offstep_direct_24bit.wav) (44.1 kHz, 24-bit PCM — мастер с оригинальной стереопанорамой)
+1. 🔗 [каджит_master_stereo_24bit.wav](каджит_master_stereo_24bit.wav) (44.1 kHz, 24-bit PCM — флагманский 24-битный мастер с расширенной стереосценой и аналоговым теплом)
+2. 🔗 [каджит_master_stereo_16bit.wav](каджит_master_stereo_16bit.wav) (44.1 kHz, 16-bit PCM с треугольным дизерингом — CD / дистрибьюторский стандарт)
+3. 🔗 [каджит_master_direct_24bit.wav](каджит_master_direct_24bit.wav) (44.1 kHz, 24-bit PCM — мастер с оригинальной стереопанорамой)
+4. 🔗 [каджит_320kbps.mp3](каджит_320kbps.mp3) (44.1 kHz, 320 kbps MP3 с ID3-метаданными — для сайта и стриминга)

@@ -4,9 +4,10 @@
 
 Все файлы приведены к единым студийным нормативам:
 - **Частота дискретизации**: `44.1 kHz` (несжатый студийный PCM WAV)
-- **Битность**: `24-bit PCM` (основной стриминг-мастер) + `16-bit PCM` (с треугольным дизерингом для CD/legacy)
+- **Битность**: `24-bit PCM` (основной стриминг-мастер) + `16-bit PCM` (с треугольным дизерингом для CD/дистрибуции)
 - **True Peak**: строго `<= -0.70 dBTP` (гарантированная защита от интерсемплового клиппинга при перекодировании в lossy форматы AAC/MP3/Opus)
 - **Громкость**: `-10.0` ... `-11.5 LUFS` (плотный, клубный коммерческий уровень с сохранением дыхания и динамики)
+- **Веб / Стриминг MP3**: к каждому релизу добавлен отдельный мастер **MP3 320 kbps CBR** с полными ID3-тегами для удобной отгрузки на сайт и быстрого онлайн-прослушивания.
 
 ---
 
@@ -22,10 +23,10 @@
 | **06** | [06_Мы всё кидаем в огонь (Время король)](06_Мы%20всё%20кидаем%20в%20огонь%20(Время%20король)/README.md) | «Мы всё кидаем в огонь» (Время король) [v2 Mix] | 01:21 | 140 | -10.5 LUFS | -0.70 dBTP |
 | **07** | [07_Руки тянутся к солнцу (День сурка)](07_Руки%20тянутся%20к%20солнцу%20(День%20сурка)/README.md) | «Руки тянутся к солнцу» (День сурка / Триколор) [2:38 Cut] | 02:38 | 130 | -10.4 LUFS | -0.60 dBTP |
 | **08** | [08_Paradise (one take)](08_Paradise%20(one%20take)/README.md) | «Paradise (one take)» [Vocal De-breathing & Fat Punch] | 02:19 | — | -10.0 LUFS | -0.70 dBTP |
-| **09** | [09_UK2 Beat](09_UK2%20Beat/README.md) | «UK2 Beat» (UK Drill / UK Garage) | 01:46 | 130 | -10.46 LUFS | -0.72 dBTP |
+| **09** | [09_freestyle](09_freestyle/README.md) | «freestyle» (UK Drill / UK Garage) | 01:46 | 130 | -10.46 LUFS | -0.72 dBTP |
 | **10** | [10_Белый балахон (Smoke Buddah, Yellow Flow)](10_Белый%20балахон%20(Smoke%20Buddah,%20Yellow%20Flow)/README.md) | «Белый балахон» (Smoke Buddah feat. Yellow Flow) | 02:46 | 130 | -11.39 LUFS | -0.79 dBTP |
-| **11** | [11_Continuous Beat Tape Mix (4 in 1)](11_Continuous%20Beat%20Tape%20Mix%20(4%20in%201)/README.md) | Continuous Beat Tape Mix (4 трека, Apple Music Crossfade) | 03:39 | 130/98 | -11.21 LUFS | -0.82 dBTP |
-| **12** | [12_Как жить (Yellow Flow, Smoke Buddah)](12_Как%20жить%20(Yellow%20Flow,%20Smoke%20Buddah)/README.md) | «Как жить» (Yellow Flow, Smoke Buddah — kadgid) | 02:05 | 134 | -10.34 LUFS | -0.86 dBTP |
+| **11** | [11_korea mix](11_korea%20mix/README.md) | «korea mix» (Continuous Beat Tape Mix, 4 трека) | 03:39 | 130/98 | -11.21 LUFS | -0.82 dBTP |
+| **12** | [12_каджит](12_каджит/README.md) | «каджит» (Yellow Flow, Smoke Buddah) | 02:05 | 134 | -10.34 LUFS | -0.86 dBTP |
 | **13** | [13_Concrete Jungle (Smoke Buddah, Жёлтый Фло)](13_Concrete%20Jungle%20(Smoke%20Buddah,%20Жёлтый%20Фло)/README.md) | «Concrete Jungle» (Smoke Buddah feat. Жёлтый Фло) | 01:58 | 131 | -10.58 LUFS | -0.85 dBTP |
-| **14** | [14_Continuous Dakota Mix (3 in 1)](14_Continuous%20Dakota%20Mix%20(3%20in%201)/README.md) | Continuous Dakota Mix (3 трека с обрезкой Хам DKT до 50s) | 02:33 | 122 | -10.17 LUFS | -0.74 dBTP |
+| **14** | [14_btrk mix](14_btrk%20mix/README.md) | «btrk mix» (Continuous Dakota Mix, 3 трека) | 02:33 | 122 | -10.17 LUFS | -0.74 dBTP |
 | **15** | [15_Непиликурили (Хам DKT, Дениска SND, ЖэФэ)](15_Непиликурили%20(Хам%20DKT,%20Дениска%20SND,%20ЖэФэ)/README.md) | «непиликурили (и пили угарали)» (Хам, Дениска, ЖэФэ) | 02:18 | — | -10.57 LUFS | -0.86 dBTP |

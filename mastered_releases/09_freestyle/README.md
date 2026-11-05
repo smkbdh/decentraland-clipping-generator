@@ -1,4 +1,4 @@
-# Релиз: Track 09 — «UK2» (130 BPM)
+# Релиз: Track 09 — «freestyle» (130 BPM)
 
 ## Профессиональный мастеринг для Offstep & Стриминговых платформ
 
@@ -38,6 +38,7 @@
 
 ### Подготовленные мастер-файлы:
 
-1. 🔗 [master_offstep_stereo_24bit.wav](master_offstep_stereo_24bit.wav) (44.1 kHz, 24-bit PCM — основной флагманский мастер с расширенной стереобазой и аналоговым теплом)
-2. 🔗 [master_offstep_stereo_16bit.wav](master_offstep_stereo_16bit.wav) (44.1 kHz, 16-bit PCM с треугольным дизерингом — CD / дистрибьюторский стандарт)
-3. 🔗 [master_offstep_direct_24bit.wav](master_offstep_direct_24bit.wav) (44.1 kHz, 24-bit PCM — мастер с оригинальной стереопанорамой)
+1. 🔗 [freestyle_master_stereo_24bit.wav](freestyle_master_stereo_24bit.wav) (44.1 kHz, 24-bit PCM — основной флагманский мастер с расширенной стереобазой и аналоговым теплом)
+2. 🔗 [freestyle_master_stereo_16bit.wav](freestyle_master_stereo_16bit.wav) (44.1 kHz, 16-bit PCM с треугольным дизерингом — CD / дистрибьюторский стандарт)
+3. 🔗 [freestyle_master_direct_24bit.wav](freestyle_master_direct_24bit.wav) (44.1 kHz, 24-bit PCM — мастер с оригинальной стереопанорамой)
+4. 🔗 [freestyle_320kbps.mp3](freestyle_320kbps.mp3) (44.1 kHz, 320 kbps MP3 с ID3-метаданными — для сайта и стриминга)
