@@ -11,11 +11,11 @@ BASE_DIR = Path(r"d:\APP BOTS WEBSITES DEVELOPMENT\test antigravity")
 INSTA_PROFILE = BASE_DIR / "instagram_browser_profile"
 PROXIES = "http://modeler_gZoM0l:01gngx0cg2f1@45.128.156.22:10641"
 
-VIDEO_PATH = BASE_DIR / "scratch" / "smoke_buddah_fast_cuts_hd.mp4"
+VIDEO_PATH = BASE_DIR / "scratch" / "smoke_buddah_rapid_cuts_flawless.mp4"
 
 print("=" * 60)
-print("🚀 ПУБЛИКАЦИЯ 8-SHOT ДИНАМИЧНОГО REEL (FAST CUTS + HD)")
-print("🎬 8 динамичных смен планов (спорткары, ночной город, POV)")
+print("🚀 ПУБЛИКАЦИЯ 11-SHOT ДИНАМИЧНОГО МОНТАЖА (БЕЗ ЗАВИСАНИЙ)")
+print("🎬 11 быстрых планов: спорткары, огни, кокпит, ночной город")
 print("🎵 Трек: Smoke Buddah - Paradise (One Take)")
 print("👤 Аккаунт: @kira.gyal")
 print("=" * 60)
@@ -46,7 +46,7 @@ print(f"✅ Трек из каталога: {track.title} by {track.display_arti
 music_data = cl.clip_music_extra_data(
     track,
     audio_asset_start_time=0,
-    overlap_duration=20500,
+    overlap_duration=22600,
     original_volume=0.0,
     music_volume=1.0,
     product="story_camera_clips_v2"
