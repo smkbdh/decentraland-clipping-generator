@@ -1,179 +1,49 @@
 {
   "rules": {
     "orientation": "STRICT_NATIVE_VERTICAL_1080x1920",
+    "character_policy": "ONLY_BEAUTIFUL_GIRLS_MODELS",
     "forbidden_vibes": [
-      "halloween_creepy_monsters",
+      "creepy_halloween_monsters",
+      "random_guys_dancing",
       "daylight_sunshine",
       "random_sports_soccer",
-      "chess_unrelated_objects",
-      "desert_windmills",
-      "blurry_bw_footage"
+      "chess_unrelated_objects"
     ],
     "approved_vibes": [
+      "aesthetic_girls_neon_night",
+      "girls_in_luxury_sports_cars",
       "tokyo_night_skyline",
-      "neon_aesthetic_portraits",
       "night_car_cruise_supercars",
       "illuminated_highway_drones",
-      "dreamy_bokeh_transitions",
-      "late_night_headphones_listening"
+      "dreamy_bokeh_transitions"
     ]
   },
   "blacklisted_assets": {
-    "51149": {
-      "reason": "Creepy hunchback / werewolf / Halloween monster posture - completely ruins the aesthetic music vibe",
-      "tags": ["creepy", "halloween", "monster"]
-    },
-    "49738": {
-      "reason": "Wooden chess piece - completely unrelated to music / night drive",
-      "tags": ["chess", "random_object"]
-    },
-    "49849": {
-      "reason": "Daylight city view with harsh sun",
-      "tags": ["daylight", "sun"]
-    },
-    "49858": {
-      "reason": "Daylight city skyscrapers with blue sky",
-      "tags": ["daylight"]
-    },
-    "49862": {
-      "reason": "Daylight drone panorama",
-      "tags": ["daylight"]
-    },
-    "51789": {
-      "reason": "Daylight desert with windmills",
-      "tags": ["daylight", "desert"]
-    },
-    "51790": {
-      "reason": "Daylight highway through desert",
-      "tags": ["daylight", "desert"]
-    },
-    "51791": {
-      "reason": "Daylight mountain view",
-      "tags": ["daylight"]
-    },
-    "1860": {
-      "reason": "Daylight steam train with tourist",
-      "tags": ["daylight", "train"]
-    },
-    "21583": {
-      "reason": "Empty daytime sky with zero motion",
-      "tags": ["daylight", "static"]
-    },
-    "2923": {
-      "reason": "Guy balancing soccer ball on forehead",
-      "tags": ["sports", "soccer"]
-    },
-    "39770": {
-      "reason": "Static star field with no dynamic motion",
-      "tags": ["static", "stars"]
-    },
-    "40700": {
-      "reason": "Daylight government building with grass lawn",
-      "tags": ["daylight", "architecture"]
-    },
-    "40701": {
-      "reason": "Daylight corporate building",
-      "tags": ["daylight", "corporate"]
-    },
-    "42458": {
-      "reason": "Blurry black & white out-of-focus footage",
-      "tags": ["blurry", "black_and_white"]
-    },
-    "52427": {
-      "reason": "Daylight mountain road car - breaks night aesthetic",
-      "tags": ["daylight", "mountain"]
-    }
+    "51149": { "reason": "Creepy hunchback / werewolf / Halloween monster posture", "tags": ["creepy", "monster"] },
+    "1240": { "reason": "Guy dancing in blue light - replaced with beautiful girls only", "tags": ["male_character"] },
+    "1238": { "reason": "Guy with purple neon light - replaced with beautiful girls only", "tags": ["male_character"] },
+    "49738": { "reason": "Wooden chess piece - unrelated", "tags": ["random_object"] },
+    "49849": { "reason": "Daylight city view", "tags": ["daylight"] },
+    "51789": { "reason": "Daylight desert windmills", "tags": ["daylight"] },
+    "1860": { "reason": "Daylight steam train", "tags": ["daylight"] },
+    "2923": { "reason": "Guy balancing soccer ball", "tags": ["sports"] },
+    "40700": { "reason": "Daylight building with lawn", "tags": ["daylight"] }
   },
   "approved_assets": {
-    "49878": {
-      "category": "city_skyline",
-      "path": "scratch/fast_cuts/49878.mp4",
-      "description": "Massive Tokyo illuminated skyscraper panorama from high above",
-      "role": "establishing_wide_or_outro"
-    },
-    "40746": {
-      "category": "city_skyline",
-      "path": "scratch/fast_cuts/40746.mp4",
-      "description": "Tokyo neon-lit high-rises and crossing at night",
-      "role": "mid_energy_metropolis"
-    },
-    "40747": {
-      "category": "car_cruise",
-      "path": "scratch/fast_cuts/40747.mp4",
-      "description": "Red sports car driving down modern glass skyscraper avenue at night",
-      "role": "car_drive_action"
-    },
-    "42048": {
-      "category": "action_drone",
-      "path": "scratch/fast_cuts/42048.mp4",
-      "description": "Aerial drone soaring over multi-level highway interchange with light streaks",
-      "role": "scale_and_speed"
-    },
-    "1231": {
-      "category": "neon_aesthetic",
-      "path": "scratch/native_vertical_pool/1231.mp4",
-      "description": "Aesthetic tattooed girl sitting under glowing red neon sign at night",
-      "role": "emotional_connection_human"
-    },
-    "1238": {
-      "category": "mood_vibes",
-      "path": "scratch/native_vertical_pool/1238.mp4",
-      "description": "Guy illuminated by glowing violet neon light tube in dark mood lighting",
-      "role": "stylized_music_vibe"
-    },
-    "1240": {
-      "category": "mood_vibes",
-      "path": "scratch/native_vertical_pool/1240.mp4",
-      "description": "Electric blue monochrome dancing silhouette in rhythm",
-      "role": "rhythmic_energy"
-    },
-    "44678": {
-      "category": "bokeh_lights",
-      "path": "scratch/native_vertical_pool/44678.mp4",
-      "description": "Red and gold bokeh light circles shifting focus smoothly",
-      "role": "cinematic_transition"
-    },
-    "44665": {
-      "category": "bokeh_lights",
-      "path": "scratch/native_vertical_pool/44665.mp4",
-      "description": "Soft cyan and amber night city bokeh lights",
-      "role": "cinematic_transition"
-    },
-    "44669": {
-      "category": "bokeh_lights",
-      "path": "scratch/native_vertical_pool/44669.mp4",
-      "description": "Vertical stream of warm amber and magenta bokeh lights",
-      "role": "cinematic_transition"
-    },
-    "44691": {
-      "category": "car_cruise",
-      "path": "scratch/native_vertical_pool/44691.mp4",
-      "description": "Vertical highway in night mist with speeding car tail lights",
-      "role": "late_night_road"
-    },
-    "44694": {
-      "category": "bokeh_lights",
-      "path": "scratch/native_vertical_pool/44694.mp4",
-      "description": "Cyan, orange and white floating city light orbs",
-      "role": "cinematic_transition"
-    },
-    "44699": {
-      "category": "mood_vibes",
-      "path": "scratch/native_vertical_pool/44699.mp4",
-      "description": "Hypnotic red neon geometric kaleidoscopic patterns",
-      "role": "visual_earcandy"
-    },
-    "51406": {
-      "category": "mood_vibes",
-      "path": "scratch/native_vertical_pool/51406.mp4",
-      "description": "Late night in bed, headphones on, immersed in music in dark room",
-      "role": "intro_or_outro_relatable_vibe"
-    },
-    "42814": {
-      "category": "mood_vibes",
-      "path": "scratch/native_vertical_pool/42814.mp4",
-      "description": "Live rock drummer in stage fog and golden backlight",
-      "role": "musical_intensity"
-    }
-  ]
+    "49878": { "category": "city_skyline", "path": "scratch/fast_cuts/49878.mp4", "role": "tokyo_skyline_establishing" },
+    "40746": { "category": "city_skyline", "path": "scratch/fast_cuts/40746.mp4", "role": "tokyo_neon_skyscrapers" },
+    "40747": { "category": "car_cruise", "path": "scratch/fast_cuts/40747.mp4", "role": "red_sports_car_neon_avenue" },
+    "42048": { "category": "action_drone", "path": "scratch/fast_cuts/42048.mp4", "role": "aerial_highway_interchange" },
+    "1231": { "category": "girl_neon", "path": "scratch/native_vertical_pool/1231.mp4", "role": "brunette_girl_red_neon_sign" },
+    "44558": { "category": "girl_neon", "path": "scratch/girls_vertical_pool/44558.mp4", "role": "blonde_model_close_up_sunglasses" },
+    "44551": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44551.mp4", "role": "girl_reflection_rearview_mirror" },
+    "44555": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44555.mp4", "role": "girl_sitting_on_hood_sports_car" },
+    "44552": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44552.mp4", "role": "girl_inside_cockpit_sports_car" },
+    "44554": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44554.mp4", "role": "girl_opening_car_door_neon" },
+    "44556": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44556.mp4", "role": "girl_walking_past_sports_car" },
+    "51406": { "category": "girl_neon", "path": "scratch/native_vertical_pool/51406.mp4", "role": "girl_listening_headphones_night" },
+    "44678": { "category": "bokeh_lights", "path": "scratch/native_vertical_pool/44678.mp4", "role": "red_gold_bokeh_transition" },
+    "44665": { "category": "bokeh_lights", "path": "scratch/native_vertical_pool/44665.mp4", "role": "cyan_amber_bokeh_transition" },
+    "44691": { "category": "car_cruise", "path": "scratch/native_vertical_pool/44691.mp4", "role": "highway_speed_tail_lights_mist" }
+  }
 }
