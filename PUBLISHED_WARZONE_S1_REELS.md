@@ -10,3 +10,4 @@
 
 | # | Ролик | Ссылка на Instagram Reel | Статус в Content Rewards |
 |---|---|---|---|
+| 1 | Warzone S1 Reel #1 | [https://www.instagram.com/kira.gyal/reel/Dfd5tHVTipP/](https://www.instagram.com/kira.gyal/reel/Dfd5tHVTipP/) | ✅ ЗАСАБМИЧЕНО |
