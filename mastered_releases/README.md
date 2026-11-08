@@ -42,7 +42,7 @@
 | **25** | [25_С высока (DKT)](25_С%20высока%20(DKT)/README.md) | «С высока» (DKT) | 02:42 | 92 | -10.5 LUFS | -0.70 dBTP |
 | **26** | [26_Хаос (DKT)](26_Хаос%20(DKT)/README.md) | «Хаос» (DKT) | 01:46 | 88 | -10.8 LUFS | -0.70 dBTP |
 | **27** | [27_Fantom](27_Fantom/README.md) | «Fantom» (Offstep) | 02:00 | 90 | -10.8 LUFS | -0.70 dBTP |
-| **28** | [28_I Know Melody 96](28_I%20Know%20Melody%2096/README.md) | «I Know Melody 96» (Offstep) | 01:45 | 96 | -10.4 LUFS | -0.70 dBTP |
+| **28** | [28_I Know Melody 96](28_I%20Know%20Melody%2096/README.md) | «I Know Melody 96» (Offstep) [Lo-Fi Vintage Master] | 01:45 | 96 | -10.4 LUFS | -0.70 dBTP |
 | **29** | [29_Любитель WU (YWY & Smoke Buddah)](29_Любитель%20WU%20(YWY%20&%20Smoke%20Buddah)/README.md) | «Любитель WU» (YWY & Smoke Buddah) | 02:21 | 90 | -10.0 LUFS | -0.70 dBTP |
 | **30** | [30_Ин да худ (Жека, Хам)](30_Ин%20да%20худ%20(Жека,%20Хам)/README.md) | «Ин да худ» (Жека, Хам) [Stereo Master] | 01:39 | 90 | -9.7 LUFS | -0.70 dBTP |
 | **31** | [31_Чек за саунд (Жека, Хам)](31_Чек%20за%20саунд%20(Жека,%20Хам)/README.md) | «Чек за саунд» (Жека, Хам) | 02:11 | 92 | -9.9 LUFS | -0.70 dBTP |
