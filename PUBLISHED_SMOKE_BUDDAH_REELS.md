@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (9:16 Full Screen, 9 смен планов каждые 2 сек, 16-18 Mbps)  
-**Опубликовано**: 27 / 30 роликов  
+**Опубликовано**: 30 / 30 роликов  
 
 ---
 
@@ -38,3 +38,6 @@
 | 25 | Clearing my mind with the volume on 100 🔊 | [https://www.instagram.com/reel/Dfe_1nNM-dg/](https://www.instagram.com/reel/Dfe_1nNM-dg/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 26 | When the roads are yours and the music hits... | [https://www.instagram.com/reel/DffAYTvM5jA/](https://www.instagram.com/reel/DffAYTvM5jA/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 27 | POV: finding that one song that gives you chills... | [https://www.instagram.com/reel/DffA5zFMbCa/](https://www.instagram.com/reel/DffA5zFMbCa/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 28 | Nothing beats night highway drives with this... | [https://www.instagram.com/reel/DffBbzjs8To/](https://www.instagram.com/reel/DffBbzjs8To/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 29 | Put this sound on and thank me later 🔥 | [https://www.instagram.com/reel/DffB9lbMXWE/](https://www.instagram.com/reel/DffB9lbMXWE/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 30 | The soundtrack to 3 AM drives alone in the city... | [https://www.instagram.com/reel/DffCgDjM4mw/](https://www.instagram.com/reel/DffCgDjM4mw/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
