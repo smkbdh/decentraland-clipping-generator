@@ -24,49 +24,39 @@ AUDIO_FILE = SCRATCH_DIR / "music_test" / "smoke_buddah_audio.mp4"
 WIDTH = 1080
 HEIGHT = 1920
 
-# Categorized Approved Pools (100% Native Vertical 1080x1920)
+# 100% Strictly Curated & Verified Assets:
+# ZERO Christmas / New Year, ZERO Bokeh Garlands, ZERO Guys, ONLY Gorgeous Models, Luxury Cars & Tokyo Night Skyline
 ASSET_POOLS = {
     "city_skyline": [
-        FAST_CUTS_DIR / "49878.mp4",
-        FAST_CUTS_DIR / "40746.mp4"
+        FAST_CUTS_DIR / "49878.mp4",    # Tokyo skyline panorama from above
+        FAST_CUTS_DIR / "40746.mp4"     # Tokyo neon skyscrapers at night
     ],
     "girl_portraits": [
-        NATIVE_DIR / "1231.mp4",       # Brunette tattooed girl by red neon sign
-        GIRLS_DIR / "44558.mp4",       # Blonde model close-up sunglasses & red lips
-        GIRLS_DIR / "44556.mp4",       # Blonde model profile walking past sports car
-        GIRLS_DIR / "44563.mp4",       # Model portrait in neon
-        GIRLS_DIR / "44564.mp4",       # Close up dynamic model
-        NATIVE_DIR / "51406.mp4"       # Girl in bed with headphones at night
+        NATIVE_DIR / "1231.mp4",        # Brunette tattooed girl by red neon sign
+        GIRLS_DIR / "44558.mp4",        # Blonde model close-up sunglasses & red lipstick
+        GIRLS_DIR / "44556.mp4",        # Blonde model profile walking past sports car
+        GIRLS_DIR / "44560.mp4",        # Blonde model by neon tube in garage
+        NATIVE_DIR / "51406.mp4"        # Girl in bed with headphones at night
     ],
     "girl_car_action": [
-        GIRLS_DIR / "44551.mp4",       # Girl reflection in car rearview mirror
-        GIRLS_DIR / "44552.mp4",       # Girl sitting in sports car cockpit neon
-        GIRLS_DIR / "44553.mp4",       # Girl in side mirror
-        GIRLS_DIR / "44554.mp4",       # Girl opening sports car door in red studio fog
-        GIRLS_DIR / "44555.mp4",       # Girl sitting on hood of sports car vibing
-        GIRLS_DIR / "44557.mp4",       # Car door detail and silhouette
-        GIRLS_DIR / "44559.mp4",       # Girl stepping out of car
-        GIRLS_DIR / "44560.mp4",       # Girl in driver seat smiling
-        GIRLS_DIR / "44561.mp4",       # Car lights and girl silhouette
-        GIRLS_DIR / "44562.mp4"        # Hood angle of girl
+        GIRLS_DIR / "44550.mp4",        # Blonde model in leather jacket with sunglasses
+        GIRLS_DIR / "44551.mp4",        # Girl reflection in car rearview mirror
+        GIRLS_DIR / "44552.mp4",        # Girl sitting in sports car cockpit neon
+        GIRLS_DIR / "44553.mp4",        # Girl reflection in side mirror
+        GIRLS_DIR / "44554.mp4",        # Girl opening sports car door in red studio fog
+        GIRLS_DIR / "44555.mp4",        # Girl sitting on hood of sports car vibing
+        GIRLS_DIR / "44559.mp4",        # Girl in driver seat sunglasses
+        GIRLS_DIR / "44561.mp4"         # Car headlights and girl silhouette
     ],
     "car_motion": [
-        FAST_CUTS_DIR / "40747.mp4",   # Red sports car cruising down neon avenue
-        NATIVE_DIR / "44691.mp4"       # Highway through night mist with speeding lights
+        FAST_CUTS_DIR / "40747.mp4",    # Red sports car cruising down neon avenue
+        NATIVE_DIR / "44691.mp4"        # Highway through night mist with speeding lights
     ],
     "aerial_drone": [
-        FAST_CUTS_DIR / "42048.mp4"    # Aerial highway interchange loop with light streaks
-    ],
-    "bokeh_transitions": [
-        NATIVE_DIR / "44678.mp4",      # Red & gold bokeh circles
-        NATIVE_DIR / "44665.mp4",      # Cyan & amber bokeh circles
-        NATIVE_DIR / "44669.mp4",      # Vertical amber bokeh stream
-        NATIVE_DIR / "44694.mp4",      # Cyan & orange bokeh circles
-        NATIVE_DIR / "44699.mp4"       # Red neon geometric patterns
+        FAST_CUTS_DIR / "42048.mp4"     # Aerial highway interchange loop with light streaks
     ]
 }
 
-# 30 Unique Late-Night Music Hooks
 HOOKS_30 = [
     {"hook": "POV: 2 AM, city lights, feeling this vibe...", "caption": "POV: 2 AM drive with this track on repeat 🌃✨ Tap audio to save! Track: Smoke Buddah — Paradise"},
     {"hook": "Headphones on, world completely muted 🎧", "caption": "Put your headphones on and feel this beat 🎧 Smoke Buddah - Paradise (One Take)"},
@@ -152,34 +142,24 @@ def generate_reel_video(idx):
     overlay = create_overlay_image(idx, hook_text)
     out_video = OUTPUT_DIR / f"SmokeBuddah_GirlsReel_{idx:02d}.mp4"
     
-    rng = random.Random(idx * 777 + 43)
+    rng = random.Random(idx * 888 + 101)
     
-    # Director Arc Slots:
-    # 1. Skyline / Atmosphere (3.36s / 8 beats)
-    # 2. Girl Portrait (1.68s / 4 beats)
-    # 3. Girl Car Action / Pose (1.68s / 4 beats)
-    # 4. Bokeh / Neon Transition (1.68s / 4 beats)
-    # 5. Red Car Cruise (DROP) (1.68s / 4 beats)
-    # 6. Girl on Car / Vibing (1.68s / 4 beats)
-    # 7. Drone Highway Speed (1.68s / 4 beats)
-    # 8. Girl in Cockpit / Interior (1.68s / 4 beats)
-    # 9. Outro Bokeh / Skyline (3.36s / 8 beats)
-    
+    # 9 Pure Director Slots (Only Models in Neon, Luxury Sports Cars & Tokyo Skyline):
     c_skyline = rng.choice(ASSET_POOLS["city_skyline"])
     c_girl1 = rng.choice(ASSET_POOLS["girl_portraits"])
     c_girl_car1 = rng.choice(ASSET_POOLS["girl_car_action"])
-    c_bokeh1 = rng.choice(ASSET_POOLS["bokeh_transitions"])
+    c_girl2 = rng.choice([c for c in ASSET_POOLS["girl_portraits"] if c != c_girl1] or ASSET_POOLS["girl_portraits"])
     c_car = rng.choice(ASSET_POOLS["car_motion"])
-    c_girl_car2 = rng.choice([c for c in ASSET_POOLS["girl_car_action"] if c != c_girl_car1])
+    c_girl_car2 = rng.choice([c for c in ASSET_POOLS["girl_car_action"] if c != c_girl_car1] or ASSET_POOLS["girl_car_action"])
     c_drone = rng.choice(ASSET_POOLS["aerial_drone"])
-    c_girl_cockpit = rng.choice([c for c in ASSET_POOLS["girl_car_action"] if c not in (c_girl_car1, c_girl_car2)])
-    c_outro = rng.choice(ASSET_POOLS["bokeh_transitions"])
+    c_girl_cockpit = rng.choice([c for c in ASSET_POOLS["girl_car_action"] if c not in (c_girl_car1, c_girl_car2)] or ASSET_POOLS["girl_car_action"])
+    c_outro = rng.choice(ASSET_POOLS["city_skyline"])
     
     shots = [
         (c_skyline, rng.uniform(0.5, 3.0), 3.36),
         (c_girl1, rng.uniform(1.0, 4.0), 1.68),
         (c_girl_car1, rng.uniform(0.5, 3.0), 1.68),
-        (c_bokeh1, rng.uniform(1.0, 4.0), 1.68),
+        (c_girl2, rng.uniform(1.0, 4.0), 1.68),
         (c_car, rng.uniform(1.0, 3.0), 1.68),
         (c_girl_car2, rng.uniform(0.5, 3.0), 1.68),
         (c_drone, rng.uniform(1.0, 4.0), 1.68),
@@ -189,7 +169,7 @@ def generate_reel_video(idx):
     
     total_dur = sum(s[2] for s in shots)
     
-    # Audio offset variation
+    # Audio offset variation across 6 points
     audio_offsets = [0, 15, 30, 45, 60, 75]
     audio_ss = audio_offsets[(idx - 1) % len(audio_offsets)]
     
@@ -246,5 +226,5 @@ def generate_reel_video(idx):
     return out_video, total_dur, caption, audio_ss
 
 if __name__ == "__main__":
-    v, d, c, s = generate_reel_video(1)
-    print("Test video ready:", v)
+    v, d, c, s = generate_reel_video(8)
+    print("Test video 8 ready:", v)
