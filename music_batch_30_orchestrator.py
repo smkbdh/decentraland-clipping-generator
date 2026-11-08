@@ -7,9 +7,11 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 from instagrapi import Client
 
-# Force UTF-8 stdout
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+# Safe UTF-8 stdout
+if sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+if sys.stderr.encoding.lower() != 'utf-8':
+    sys.stderr.reconfigure(encoding='utf-8')
 
 BASE_DIR = Path(r"d:\APP BOTS WEBSITES DEVELOPMENT\test antigravity")
 INSTA_PROFILE = BASE_DIR / "instagram_browser_profile"
