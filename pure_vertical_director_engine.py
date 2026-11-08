@@ -81,7 +81,7 @@ def render_pure_vertical_video():
         (POOL_DIR / "44678.mp4", 2.0, 1.68),       # 4. Cinematic red/gold bokeh transition
         (FAST_CUTS_DIR / "40747.mp4", 2.0, 1.68),  # 5. Red sports car cruising down neon avenue
         (FAST_CUTS_DIR / "42048.mp4", 2.0, 1.68),  # 6. Aerial highway interchange light streaks
-        (POOL_DIR / "51149.mp4", 2.0, 1.68),       # 7. Dramatic neo-noir leather jacket figure
+        (POOL_DIR / "44691.mp4", 1.0, 1.68),       # 7. Speeding car taillights through night mist (replacing creepy 51149)
         (POOL_DIR / "1240.mp4", 3.0, 1.68),        # 8. Electric blue silhouette movement
         (FAST_CUTS_DIR / "40746.mp4", 1.5, 3.36),  # 9. Tokyo night high-rises outro
     ]
