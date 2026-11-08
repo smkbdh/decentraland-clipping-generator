@@ -11,3 +11,7 @@
 | # | Ролик | Ссылка на Instagram Reel | Статус в Content Rewards |
 |---|---|---|---|
 | 1 | Warzone S1 Reel #1 | [https://www.instagram.com/kira.gyal/reel/Dfd5tHVTipP/](https://www.instagram.com/kira.gyal/reel/Dfd5tHVTipP/) | ✅ ЗАСАБМИЧЕНО |
+| 2 | Warzone S1 Reel #2 | [https://www.instagram.com/kira.gyal/reel/Dfd6ZeAzRpb/](https://www.instagram.com/kira.gyal/reel/Dfd6ZeAzRpb/) | ✅ ЗАСАБМИЧЕНО |
+| 3 | Warzone S1 Reel #3 | [https://www.instagram.com/kira.gyal/reel/Dfd7FUczZFI/](https://www.instagram.com/kira.gyal/reel/Dfd7FUczZFI/) | ✅ ЗАСАБМИЧЕНО |
+| 4 | Warzone S1 Reel #4 | [https://www.instagram.com/kira.gyal/reel/Dfd7xP4zYKa/](https://www.instagram.com/kira.gyal/reel/Dfd7xP4zYKa/) | ✅ ЗАСАБМИЧЕНО |
+| 5 | Warzone S1 Reel #5 | [https://www.instagram.com/kira.gyal/reel/Dfd8dJNzDZu/](https://www.instagram.com/kira.gyal/reel/Dfd8dJNzDZu/) | ✅ ЗАСАБМИЧЕНО |
