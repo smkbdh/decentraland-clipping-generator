@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (9:16 Full Screen, 9 смен планов каждые 2 сек, 16-18 Mbps)  
-**Опубликовано**: 24 / 30 роликов  
+**Опубликовано**: 27 / 30 роликов  
 
 ---
 
@@ -35,3 +35,6 @@
 | 22 | Can't stop replaying this one take... | [https://www.instagram.com/reel/Dfe-FvOsvFz/](https://www.instagram.com/reel/Dfe-FvOsvFz/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 23 | Driving home after 3 AM with this on... | [https://www.instagram.com/reel/Dfe-v5CMgZk/](https://www.instagram.com/reel/Dfe-v5CMgZk/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 24 | Wet asphalt, neon reflections, and this sound... | [https://www.instagram.com/reel/Dfe_QxQMyWO/](https://www.instagram.com/reel/Dfe_QxQMyWO/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 25 | Clearing my mind with the volume on 100 🔊 | [https://www.instagram.com/reel/Dfe_1nNM-dg/](https://www.instagram.com/reel/Dfe_1nNM-dg/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 26 | When the roads are yours and the music hits... | [https://www.instagram.com/reel/DffAYTvM5jA/](https://www.instagram.com/reel/DffAYTvM5jA/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 27 | POV: finding that one song that gives you chills... | [https://www.instagram.com/reel/DffA5zFMbCa/](https://www.instagram.com/reel/DffA5zFMbCa/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
