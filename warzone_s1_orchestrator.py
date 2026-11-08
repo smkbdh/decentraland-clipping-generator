@@ -75,25 +75,28 @@ def upload_instagram_reel(playwright, idx, video_path, caption):
         # 2. Click Create (+)
         print("1. Нажимаем кнопку 'Создать' / '+'...")
         create_btn = page.locator(
-            'svg[aria-label="New post"], svg[aria-label="Create"], svg[aria-label="Новая публикация"], '
+            'svg[aria-label="Публикация"], svg[aria-label="New post"], svg[aria-label="Create"], '
+            'svg[aria-label="Новая публикация"], svg[aria-label="Создать"], '
+            'div[role="button"]:has(svg[aria-label="Публикация"]), '
             'a[href="#"]:has-text("Create"), a:has-text("Create"), a:has-text("Создать")'
         ).first
         create_btn.wait_for(state="visible", timeout=15000)
         create_btn.click()
         time.sleep(2)
 
-        # Handle post submenu
-        try:
-            page.evaluate('''() => {
-                const spans = Array.from(document.querySelectorAll('span'));
-                const postSpan = spans.find(s => (s.textContent.trim() === 'Post' || s.textContent.trim() === 'Публикация') && s.offsetParent !== null);
-                if (postSpan) {
-                    (postSpan.closest('div[role="button"]') || postSpan.closest('a') || postSpan).click();
-                }
-            }''')
-            time.sleep(2)
-        except Exception:
-            pass
+        # Handle post submenu only if input[type="file"] is not yet visible/attached
+        if page.locator('input[type="file"]').count() == 0:
+            try:
+                page.evaluate('''() => {
+                    const spans = Array.from(document.querySelectorAll('span'));
+                    const postSpan = spans.find(s => (s.textContent.trim() === 'Post' || s.textContent.trim() === 'Публикация') && s.offsetParent !== null);
+                    if (postSpan) {
+                        (postSpan.closest('div[role="button"]') || postSpan.closest('a') || postSpan).click();
+                    }
+                }''')
+                time.sleep(2)
+            except Exception:
+                pass
 
         # 3. Select file
         print("2. Передаем видеофайл...")
