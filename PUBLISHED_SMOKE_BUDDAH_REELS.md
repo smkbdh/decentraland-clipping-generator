@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (9:16 Full Screen, 9 смен планов каждые 2 сек, 16-18 Mbps)  
-**Опубликовано**: 15 / 30 роликов  
+**Опубликовано**: 18 / 30 роликов  
 
 ---
 
@@ -26,3 +26,6 @@
 | 13 | Just me, the road, and this song... | [https://www.instagram.com/reel/Dfe5TocMVGP/](https://www.instagram.com/reel/Dfe5TocMVGP/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 14 | When music matches the exact vibe of the road... | [https://www.instagram.com/reel/Dfe5z4GMG7n/](https://www.instagram.com/reel/Dfe5z4GMG7n/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 15 | Close your eyes and listen to this flow... | [https://www.instagram.com/reel/Dfe6USaM8YD/](https://www.instagram.com/reel/Dfe6USaM8YD/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 16 | Windows down, cold breeze, this track... | [https://www.instagram.com/reel/Dfe60-HslHo/](https://www.instagram.com/reel/Dfe60-HslHo/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 17 | The streets are empty for a reason... | [https://www.instagram.com/reel/Dfe7V5kseQD/](https://www.instagram.com/reel/Dfe7V5kseQD/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 18 | This needs to be in a cyberpunk movie 🌃 | [https://www.instagram.com/reel/Dfe749bMpUX/](https://www.instagram.com/reel/Dfe749bMpUX/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
