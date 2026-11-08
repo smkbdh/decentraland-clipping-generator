@@ -30,3 +30,8 @@
 | 18 | Warzone S1 Reel #18 | [https://www.instagram.com/kira.gyal/reel/DfeFZ4mTiGE/](https://www.instagram.com/kira.gyal/reel/DfeFZ4mTiGE/) | ✅ ЗАСАБМИЧЕНО |
 | 19 | Warzone S1 Reel #19 | [https://www.instagram.com/kira.gyal/reel/DfeGF4rzi5-/](https://www.instagram.com/kira.gyal/reel/DfeGF4rzi5-/) | ✅ ЗАСАБМИЧЕНО |
 | 20 | Warzone S1 Reel #20 | [https://www.instagram.com/kira.gyal/reel/DfeGx0VTFBZ/](https://www.instagram.com/kira.gyal/reel/DfeGx0VTFBZ/) | ✅ ЗАСАБМИЧЕНО |
+| 21 | Warzone S1 Reel #21 | [https://www.instagram.com/kira.gyal/reel/DfeHeDOTYYu/](https://www.instagram.com/kira.gyal/reel/DfeHeDOTYYu/) | ✅ ЗАСАБМИЧЕНО |
+| 22 | Warzone S1 Reel #22 | [https://www.instagram.com/kira.gyal/reel/DfeINSrTbAO/](https://www.instagram.com/kira.gyal/reel/DfeINSrTbAO/) | ✅ ЗАСАБМИЧЕНО |
+| 23 | Warzone S1 Reel #23 | [https://www.instagram.com/kira.gyal/reel/DfeI8Yaz1YS/](https://www.instagram.com/kira.gyal/reel/DfeI8Yaz1YS/) | ✅ ЗАСАБМИЧЕНО |
+| 24 | Warzone S1 Reel #24 | [https://www.instagram.com/kira.gyal/reel/DfeJrn8z-FP/](https://www.instagram.com/kira.gyal/reel/DfeJrn8z-FP/) | ✅ ЗАСАБМИЧЕНО |
+| 25 | Warzone S1 Reel #25 | [https://www.instagram.com/kira.gyal/reel/DfeKbAMTCof/](https://www.instagram.com/kira.gyal/reel/DfeKbAMTCof/) | ✅ ЗАСАБМИЧЕНО |
