@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Опубликовано**: 8 / 30 роликов  
+**Опубликовано**: 9 / 30 роликов  
 
 ---
 
@@ -19,3 +19,4 @@
 | 06 | `50433.mp4` | Tell me you don't feel chills when this drops... | [https://www.instagram.com/reel/Dfh1BgrMYBN/](https://www.instagram.com/reel/Dfh1BgrMYBN/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 07 | `44555.mp4` | When the bass hits at 120 mph... | [https://www.instagram.com/reel/Dfh1dCFMlYz/](https://www.instagram.com/reel/Dfh1dCFMlYz/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 08 | `1230.mp4` | Night drives heal what words never could | [https://www.instagram.com/reel/Dfh15c2safI/](https://www.instagram.com/reel/Dfh15c2safI/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 09 | `1300.mp4` | POV: city lights in the rearview mirror... | [https://www.instagram.com/reel/Dfh2VzqshIk/](https://www.instagram.com/reel/Dfh2VzqshIk/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
