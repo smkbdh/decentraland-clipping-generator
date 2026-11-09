@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, Beautiful Models, Luxury Cars, Night City, Beat-Synced 142.9 BPM)  
-**Опубликовано**: 18 / 30 роликов  
+**Опубликовано**: 19 / 30 роликов  
 
 ---
 
@@ -29,3 +29,4 @@
 | 16 | Windows down, cold breeze, this track... | [https://www.instagram.com/reel/DfgaWHOMkBk/](https://www.instagram.com/reel/DfgaWHOMkBk/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 17 | The streets are empty for a reason | [https://www.instagram.com/reel/Dfga3oGsTW2/](https://www.instagram.com/reel/Dfga3oGsTW2/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 18 | This needs to be in a cyberpunk movie | [https://www.instagram.com/reel/DfgbWk1M641/](https://www.instagram.com/reel/DfgbWk1M641/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 19 | You just found your new favorite sound | [https://www.instagram.com/reel/Dfgb4K2s_Wq/](https://www.instagram.com/reel/Dfgb4K2s_Wq/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
