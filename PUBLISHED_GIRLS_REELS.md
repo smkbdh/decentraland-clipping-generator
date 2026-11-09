@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Опубликовано**: 16 / 30 роликов  
+**Опубликовано**: 17 / 30 роликов  
 
 ---
 
@@ -27,3 +27,4 @@
 | 14 | `44691.mp4` | When music matches the exact vibe of the road... | [https://www.instagram.com/reel/Dfh4jv3M5io/](https://www.instagram.com/reel/Dfh4jv3M5io/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 15 | `1299.mp4` | Close your eyes and listen to this flow... | [https://www.instagram.com/reel/Dfh4_gjMq2-/](https://www.instagram.com/reel/Dfh4_gjMq2-/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 16 | `50432.mp4` | Windows down, cold breeze, this track... | [https://www.instagram.com/reel/Dfh5ayOMJms/](https://www.instagram.com/reel/Dfh5ayOMJms/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 17 | `44552.mp4` | The streets are empty for a reason | [https://www.instagram.com/reel/Dfh53vGMvOJ/](https://www.instagram.com/reel/Dfh53vGMvOJ/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
