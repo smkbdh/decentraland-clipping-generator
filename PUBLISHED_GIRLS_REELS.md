@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Опубликовано**: 18 / 30 роликов  
+**Опубликовано**: 19 / 30 роликов  
 
 ---
 
@@ -29,3 +29,4 @@
 | 16 | `50432.mp4` | Windows down, cold breeze, this track... | [https://www.instagram.com/reel/Dfh5ayOMJms/](https://www.instagram.com/reel/Dfh5ayOMJms/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 17 | `44552.mp4` | The streets are empty for a reason | [https://www.instagram.com/reel/Dfh53vGMvOJ/](https://www.instagram.com/reel/Dfh53vGMvOJ/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 18 | `1234.mp4` | This needs to be in a cyberpunk movie | [https://www.instagram.com/reel/Dfh6iAysXh0/](https://www.instagram.com/reel/Dfh6iAysXh0/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 19 | `1302.mp4` | You just found your new favorite sound | [https://www.instagram.com/reel/Dfh6-tJMXS3/](https://www.instagram.com/reel/Dfh6-tJMXS3/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
