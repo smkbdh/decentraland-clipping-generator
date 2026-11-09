@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, Beautiful Models, Luxury Cars, Night City, Beat-Synced 142.9 BPM)  
-**Опубликовано**: 15 / 30 роликов  
+**Опубликовано**: 16 / 30 роликов  
 
 ---
 
@@ -26,3 +26,4 @@
 | 13 | Just me, the road, and this song... | [https://www.instagram.com/reel/DfgYx3CMuK7/](https://www.instagram.com/reel/DfgYx3CMuK7/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 14 | When music matches the exact vibe of the road... | [https://www.instagram.com/reel/DfgZTDGMLAP/](https://www.instagram.com/reel/DfgZTDGMLAP/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 15 | Close your eyes and listen to this flow... | [https://www.instagram.com/reel/DfgZynFsl5l/](https://www.instagram.com/reel/DfgZynFsl5l/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 16 | Windows down, cold breeze, this track... | [https://www.instagram.com/reel/DfgaWHOMkBk/](https://www.instagram.com/reel/DfgaWHOMkBk/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
