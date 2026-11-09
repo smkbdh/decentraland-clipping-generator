@@ -49,3 +49,19 @@
 | **32** | [32_Олдскул (Жека, Хам)](32_Олдскул%20(Жека,%20Хам)/README.md) | «Олдскул» (Жека, Хам) | 02:01 | 90 | -9.8 LUFS | -0.70 dBTP |
 | **33** | [33_Дебри (Хам DKT, protiVseh)](33_Дебри%20(Хам%20DKT,%20protiVseh)/README.md) | «Дебри» (Хам DKT, protiVseh) | 02:10 | 90 | -9.9 LUFS | -0.90 dBTP |
 | **34** | [34_Кулаки вверх (Хам DKT, ЖекаТанк DKT feat. Хиромант)](34_Кулаки%20вверх%20(Хам%20DKT,%20ЖекаТанк%20DKT%20feat.%20Хиромант)/README.md) | «Кулаки вверх» (Хам DKT, ЖекаТанк DKT feat. Хиромант) | 02:53 | 92 | -9.8 LUFS | -0.70 dBTP |
+| **35** | [35_Стратегия Войны (BlackCrew & aN-Dy)](35_Стратегия%20Войны%20(BlackCrew%20&%20aN-Dy)/README.md) | «Стратегия Войны (remake)» (BlackCrew & aN-Dy) [Lo-Fi Master] | 02:56 | — | -10.2 LUFS | -0.70 dBTP |
+| **36** | [36_Квант (DKT)](36_Квант%20(DKT)/README.md) | «Квант» (DKT) [Stereo Lo-Fi Master] | 02:02 | — | -9.8 LUFS | -0.70 dBTP |
+| **37** | [37_Абстракция (DKT & MadMorf)](37_Абстракция%20(DKT%20&%20MadMorf)/README.md) | «Абстракция» (DKT & MadMorf) [De-Ess Master] | 03:04 | — | -9.8 LUFS | -0.70 dBTP |
+| **38** | [38_Береги свои нервы (DKT)](38_Береги%20свои%20нервы%20(DKT)/README.md) | «Береги свои нервы» (DKT) [De-Clip Tape Master] | 03:01 | — | -9.9 LUFS | -0.70 dBTP |
+| **39** | [39_Крх (DKT)](39_Крх%20(DKT)/README.md) | «Крх» (DKT) [Tape Saturation Master] | 02:18 | — | -9.7 LUFS | -0.70 dBTP |
+| **40** | [40_Она одна такая (DKT)](40_Она%20одна%20такая%20(DKT)/README.md) | «Она одна такая» (DKT) [De-Ess Tape Master] | 02:16 | — | -9.9 LUFS | -0.70 dBTP |
+| **41** | [41_Пацанам ПТ (DKT)](41_Пацанам%20ПТ%20(DKT)/README.md) | «Пацанам ПТ» (DKT) [Stereo Punch Master] | 03:36 | — | -9.8 LUFS | -0.70 dBTP |
+| **42** | [42_Kham & 414](42_Kham%20&%20414/README.md) | «Kham & 414» (Хам DKT & 414) [Fat Bass & Kick Master] | 02:24 | — | -9.6 LUFS | -0.70 dBTP |
+| **43** | [43_Хип-Хоп На Закуску (Промо — Шумер, Хам, Бил Де)](43_Хип-Хоп%20На%20Закуску%20(Промо%20—%20Шумер,%20Хам,%20Бил%20Де)/README.md) | «Хип-Хоп На Закуску (Промо)» (Шумер, Хам DKT, Бил Де) | 06:19 | — | -9.3 LUFS | -0.70 dBTP |
+| **44** | [44_Поршня (Шмальбург ШМГ & Dakota)](44_Поршня%20(Шмальбург%20ШМГ%20&%20Dakota)/README.md) | «Поршня» (Шмальбург ШМГ & Dakota) [Level & Punch Master] | 05:37 | — | -10.7 LUFS | -0.70 dBTP |
+| **45** | [45_Остаток (Smoke Buddah feat. Yellow Flow)](45_Остаток%20(Smoke%20Buddah%20feat.%20Yellow%20Flow)/README.md) | «Остаток» (Smoke Buddah feat. Yellow Flow) [Fat Boom-Bap Master] | 01:47 | — | -9.7 LUFS | -0.70 dBTP |
+| **46** | [46_Lets Get It (Yellow Flow & Smoke Buddah)](46_Lets%20Get%20It%20(Yellow%20Flow%20&%20Smoke%20Buddah)/README.md) | «Lets Get It» (Yellow Flow & Smoke Buddah) [Sub-808 & De-Ess Master] | 02:14 | — | -9.3 LUFS | -0.70 dBTP |
+| **47** | [47_Чисто RAPрезент (Жека Честный feat. Хам DKT)](47_Чисто%20RAPрезент%20(Жека%20Честный%20feat.%20Хам%20DKT)/README.md) | «Чисто RAPрезент (Честный бит)» (Жека Честный feat. Хам DKT) [De-Ess & Fat Bass Master] | 04:35 | — | -9.9 LUFS | -0.70 dBTP |
+| **48** | [48_Облака (Тембр Звука)](48_Облака%20(Тембр%20Звука)/README.md) | «Облака» (Тембр Звука) [Kick & Atmosphere Master] | 01:12 | — | -10.2 LUFS | -0.70 dBTP |
+| **49** | [49_Понимание (Тембр Звука)](49_Понимание%20(Тембр%20Звука)/README.md) | «Понимание!» (Тембр Звука) [De-Ess & Tape Master] | 02:51 | — | -10.1 LUFS | -0.70 dBTP |
+| **50** | [50_Под Новый год тема (Хам DKT)](50_Под%20Новый%20год%20тема%20(Хам%20DKT)/README.md) | «Под Новый год тема» (Хам DKT) [Fat Winter Boom-Bap Master] | 01:09 | — | -9.5 LUFS | -0.70 dBTP |

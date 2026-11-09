@@ -25,75 +25,493 @@
     ]
   },
   "blacklisted_assets": {
-    "44557": { "reason": "Christmas tree room / holiday vibe - banned", "tags": ["christmas", "new_year"] },
-    "44562": { "reason": "Christmas tree with red ribbons and merry pillows - banned", "tags": ["christmas", "new_year"] },
-    "44563": { "reason": "Girl in winter beret decorating Christmas tree - banned", "tags": ["christmas", "new_year"] },
-    "44564": { "reason": "Little girl in sweater opening Christmas presents - banned", "tags": ["christmas", "new_year"] },
-    "44678": { "reason": "Christmas tree garland bokeh lights - banned", "tags": ["christmas", "bokeh"] },
-    "44665": { "reason": "Festive garland bokeh - banned", "tags": ["christmas", "bokeh"] },
-    "44669": { "reason": "Christmas light string bokeh - banned", "tags": ["christmas", "bokeh"] },
-    "44694": { "reason": "Festive holiday light orbs - banned", "tags": ["christmas", "bokeh"] },
-    "44699": { "reason": "Festive pattern - banned", "tags": ["holiday"] },
-    "49113": { "reason": "Bowling alley in daylight", "tags": ["sports", "bowling"] },
-    "49625": { "reason": "Taekwondo martial arts", "tags": ["karate", "martial_arts"] },
-    "49627": { "reason": "Karate fighter", "tags": ["karate"] },
-    "51184": { "reason": "Woman applying eye patches skincare", "tags": ["skincare"] },
-    "52276": { "reason": "Model with red splatter paint on face", "tags": ["paint", "weird"] },
-    "44314": { "reason": "Flashlight in dark house - spooky", "tags": ["spooky"] },
-    "42324": { "reason": "Cereal posters in background", "tags": ["cereal", "unrelated"] },
-    "1221": { "reason": "Daylight beach dress", "tags": ["daylight", "beach"] },
-    "1215": { "reason": "Daylight beach swimsuit", "tags": ["daylight", "beach"] },
-    "42454": { "reason": "Blurry black and white dancers", "tags": ["blurry", "bw"] },
-    "42460": { "reason": "Blurry black and white portrait", "tags": ["blurry", "bw"] },
-    "51149": { "reason": "Creepy hunchback / werewolf / Halloween monster posture", "tags": ["creepy", "monster"] },
-    "1238": { "reason": "Guy dancing in blue light - replaced with beautiful girls only", "tags": ["male_character"] },
-    "1240": { "reason": "Guy with purple neon light - replaced with beautiful girls only", "tags": ["male_character"] },
-    "1235": { "reason": "Guy in dark silhouette", "tags": ["male_character"] },
-    "50460": { "reason": "Guy with neon cyberpunk glasses", "tags": ["male_character"] },
-    "1303": { "reason": "Daylight drone near chimney", "tags": ["daylight"] },
-    "1304": { "reason": "Daylight beach aerial", "tags": ["daylight"] },
-    "1305": { "reason": "Daylight pier aerial", "tags": ["daylight"] },
-    "4243": { "reason": "Daylight LA street bus", "tags": ["daylight"] },
-    "50426": { "reason": "Woman applying facial cream skincare", "tags": ["skincare"] },
-    "50427": { "reason": "Woman applying forehead cream skincare", "tags": ["skincare"] }
+    "44557": {
+      "reason": "Christmas tree room / holiday vibe - banned",
+      "tags": [
+        "christmas",
+        "new_year"
+      ]
+    },
+    "44562": {
+      "reason": "Christmas tree with red ribbons and merry pillows - banned",
+      "tags": [
+        "christmas",
+        "new_year"
+      ]
+    },
+    "44563": {
+      "reason": "Girl in winter beret decorating Christmas tree - banned",
+      "tags": [
+        "christmas",
+        "new_year"
+      ]
+    },
+    "44564": {
+      "reason": "Little girl in sweater opening Christmas presents - banned",
+      "tags": [
+        "christmas",
+        "new_year"
+      ]
+    },
+    "44678": {
+      "reason": "Christmas tree garland bokeh lights - banned",
+      "tags": [
+        "christmas",
+        "bokeh"
+      ]
+    },
+    "44665": {
+      "reason": "Festive garland bokeh - banned",
+      "tags": [
+        "christmas",
+        "bokeh"
+      ]
+    },
+    "44669": {
+      "reason": "Christmas light string bokeh - banned",
+      "tags": [
+        "christmas",
+        "bokeh"
+      ]
+    },
+    "44694": {
+      "reason": "Festive holiday light orbs - banned",
+      "tags": [
+        "christmas",
+        "bokeh"
+      ]
+    },
+    "44699": {
+      "reason": "Festive pattern - banned",
+      "tags": [
+        "holiday"
+      ]
+    },
+    "49113": {
+      "reason": "Bowling alley in daylight",
+      "tags": [
+        "sports",
+        "bowling"
+      ]
+    },
+    "49625": {
+      "reason": "Taekwondo martial arts",
+      "tags": [
+        "karate",
+        "martial_arts"
+      ]
+    },
+    "49627": {
+      "reason": "Karate fighter",
+      "tags": [
+        "karate"
+      ]
+    },
+    "51184": {
+      "reason": "Woman applying eye patches skincare",
+      "tags": [
+        "skincare"
+      ]
+    },
+    "52276": {
+      "reason": "Model with red splatter paint on face",
+      "tags": [
+        "paint",
+        "weird"
+      ]
+    },
+    "44314": {
+      "reason": "Flashlight in dark house - spooky",
+      "tags": [
+        "spooky"
+      ]
+    },
+    "42324": {
+      "reason": "Cereal posters in background",
+      "tags": [
+        "cereal",
+        "unrelated"
+      ]
+    },
+    "1221": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "1215": {
+      "reason": "Daylight beach swimsuit",
+      "tags": [
+        "daylight",
+        "beach"
+      ]
+    },
+    "42454": {
+      "reason": "Blurry black and white dancers",
+      "tags": [
+        "blurry",
+        "bw"
+      ]
+    },
+    "42460": {
+      "reason": "Blurry black and white portrait",
+      "tags": [
+        "blurry",
+        "bw"
+      ]
+    },
+    "51149": {
+      "reason": "Creepy hunchback / werewolf / Halloween monster posture",
+      "tags": [
+        "creepy",
+        "monster"
+      ]
+    },
+    "1238": {
+      "reason": "Guy dancing in blue light - replaced with beautiful girls only",
+      "tags": [
+        "male_character"
+      ]
+    },
+    "1240": {
+      "reason": "Guy with purple neon light - replaced with beautiful girls only",
+      "tags": [
+        "male_character"
+      ]
+    },
+    "1235": {
+      "reason": "Guy in dark silhouette",
+      "tags": [
+        "male_character"
+      ]
+    },
+    "50460": {
+      "reason": "Guy with neon cyberpunk glasses",
+      "tags": [
+        "male_character"
+      ]
+    },
+    "1303": {
+      "reason": "Daylight drone near chimney",
+      "tags": [
+        "daylight"
+      ]
+    },
+    "1304": {
+      "reason": "Daylight beach aerial",
+      "tags": [
+        "daylight"
+      ]
+    },
+    "1305": {
+      "reason": "Daylight pier aerial",
+      "tags": [
+        "daylight"
+      ]
+    },
+    "4243": {
+      "reason": "Daylight LA street bus",
+      "tags": [
+        "daylight"
+      ]
+    },
+    "50426": {
+      "reason": "Woman applying facial cream skincare",
+      "tags": [
+        "skincare"
+      ]
+    },
+    "50427": {
+      "reason": "Woman applying forehead cream skincare",
+      "tags": [
+        "skincare"
+      ]
+    },
+    "44565": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "44566": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "44567": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "44568": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "44569": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "44570": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "44571": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "44572": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "1220": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "1222": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "1223": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "1224": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "1225": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    },
+    "1226": {
+      "reason": "Christmas tree / daylight beach banned by visual audit",
+      "tags": [
+        "christmas",
+        "daylight"
+      ]
+    }
   },
   "approved_assets": {
-    "49878": { "category": "city_skyline", "path": "scratch/fast_cuts/49878.mp4", "role": "tokyo_skyline_establishing" },
-    "40746": { "category": "city_skyline", "path": "scratch/fast_cuts/40746.mp4", "role": "tokyo_neon_skyscrapers" },
-    "40747": { "category": "car_cruise", "path": "scratch/fast_cuts/40747.mp4", "role": "red_sports_car_neon_avenue" },
-    "42048": { "category": "action_drone", "path": "scratch/fast_cuts/42048.mp4", "role": "aerial_highway_interchange" },
-    "44691": { "category": "car_cruise", "path": "scratch/native_vertical_pool/44691.mp4", "role": "highway_speed_tail_lights_mist" },
-    "1968": { "category": "smoke_plumes", "path": "scratch/curated_vertical_girls/1968.mp4", "role": "smoke_buddah_dark_smoke_void" },
-    "44550": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44550.mp4", "role": "blonde_model_sunglasses_car" },
-    "44551": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44551.mp4", "role": "girl_reflection_rearview_mirror" },
-    "44552": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44552.mp4", "role": "girl_inside_cockpit_sports_car" },
-    "44553": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44553.mp4", "role": "girl_reflection_side_mirror" },
-    "44554": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44554.mp4", "role": "girl_opening_car_door_neon" },
-    "44555": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44555.mp4", "role": "girl_sitting_on_hood_sports_car" },
-    "44556": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44556.mp4", "role": "girl_walking_past_sports_car" },
-    "44558": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44558.mp4", "role": "blonde_model_close_up_sunglasses" },
-    "44559": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44559.mp4", "role": "girl_driver_seat_sunglasses" },
-    "44560": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44560.mp4", "role": "girl_standing_by_car_neon_tube" },
-    "44561": { "category": "girl_car", "path": "scratch/girls_vertical_pool/44561.mp4", "role": "car_lights_girl_silhouette" },
-    "1227": { "category": "girl_neon", "path": "scratch/curated_vertical_girls/1227.mp4", "role": "brunette_girl_night_amusement_park" },
-    "1228": { "category": "girl_neon", "path": "scratch/curated_vertical_girls/1228.mp4", "role": "brunette_girl_night_dancing" },
-    "1229": { "category": "girl_neon", "path": "scratch/curated_vertical_girls/1229.mp4", "role": "tattooed_brunette_neon_window" },
-    "1230": { "category": "girl_neon", "path": "scratch/curated_vertical_girls/1230.mp4", "role": "tattooed_brunette_close_up_neon" },
-    "1231": { "category": "girl_neon", "path": "scratch/curated_vertical_girls/1231.mp4", "role": "brunette_girl_red_neon_sign" },
-    "1232": { "category": "girl_neon", "path": "scratch/curated_vertical_girls/1232.mp4", "role": "red_neon_atmosphere_glow" },
-    "1234": { "category": "girl_neon", "path": "scratch/curated_vertical_girls/1234.mp4", "role": "tattooed_brunette_stool_neon" },
-    "1299": { "category": "girl_ambient", "path": "scratch/curated_vertical_girls/1299.mp4", "role": "model_black_lingerie_leather_couch" },
-    "1300": { "category": "girl_neon", "path": "scratch/curated_vertical_girls/1300.mp4", "role": "urban_girl_portrait_green_neon" },
-    "1302": { "category": "girl_neon", "path": "scratch/curated_vertical_girls/1302.mp4", "role": "urban_girl_posing_dark_corridor" },
-    "51406": { "category": "girl_neon", "path": "scratch/native_vertical_pool/51406.mp4", "role": "girl_listening_headphones_night" },
-    "50428": { "category": "girl_laser", "path": "scratch/curated_vertical_girls/50428.mp4", "role": "model_dark_room_cyan_laser_ring" },
-    "50429": { "category": "girl_laser", "path": "scratch/curated_vertical_girls/50429.mp4", "role": "dancer_suspended_green_laser_column" },
-    "50430": { "category": "girl_laser", "path": "scratch/curated_vertical_girls/50430.mp4", "role": "model_silhouette_blue_laser_pillar" },
-    "50431": { "category": "girl_laser", "path": "scratch/curated_vertical_girls/50431.mp4", "role": "model_green_laser_glow" },
-    "50432": { "category": "girl_laser", "path": "scratch/curated_vertical_girls/50432.mp4", "role": "model_seated_blue_laser_portal" },
-    "50433": { "category": "girl_laser", "path": "scratch/curated_vertical_girls/50433.mp4", "role": "sensual_dancer_backbend_cyan_laser" },
-    "50434": { "category": "girl_laser", "path": "scratch/curated_vertical_girls/50434.mp4", "role": "face_close_up_cyber_laser_lines" },
-    "50435": { "category": "girl_laser", "path": "scratch/curated_vertical_girls/50435.mp4", "role": "dancer_purple_uv_laser_glow" },
-    "50436": { "category": "girl_laser", "path": "scratch/curated_vertical_girls/50436.mp4", "role": "full_body_dancer_vertical_laser_stream" }
+    "49878": {
+      "category": "city_skyline",
+      "path": "scratch/fast_cuts/49878.mp4",
+      "role": "tokyo_skyline_establishing"
+    },
+    "40746": {
+      "category": "city_skyline",
+      "path": "scratch/fast_cuts/40746.mp4",
+      "role": "tokyo_neon_skyscrapers"
+    },
+    "40747": {
+      "category": "car_cruise",
+      "path": "scratch/fast_cuts/40747.mp4",
+      "role": "red_sports_car_neon_avenue"
+    },
+    "42048": {
+      "category": "action_drone",
+      "path": "scratch/fast_cuts/42048.mp4",
+      "role": "aerial_highway_interchange"
+    },
+    "44691": {
+      "category": "car_cruise",
+      "path": "scratch/native_vertical_pool/44691.mp4",
+      "role": "highway_speed_tail_lights_mist"
+    },
+    "1968": {
+      "category": "smoke_plumes",
+      "path": "scratch/curated_vertical_girls/1968.mp4",
+      "role": "smoke_buddah_dark_smoke_void"
+    },
+    "44550": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44550.mp4",
+      "role": "blonde_model_sunglasses_car"
+    },
+    "44551": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44551.mp4",
+      "role": "girl_reflection_rearview_mirror"
+    },
+    "44552": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44552.mp4",
+      "role": "girl_inside_cockpit_sports_car"
+    },
+    "44553": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44553.mp4",
+      "role": "girl_reflection_side_mirror"
+    },
+    "44554": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44554.mp4",
+      "role": "girl_opening_car_door_neon"
+    },
+    "44555": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44555.mp4",
+      "role": "girl_sitting_on_hood_sports_car"
+    },
+    "44556": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44556.mp4",
+      "role": "girl_walking_past_sports_car"
+    },
+    "44558": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44558.mp4",
+      "role": "blonde_model_close_up_sunglasses"
+    },
+    "44559": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44559.mp4",
+      "role": "girl_driver_seat_sunglasses"
+    },
+    "44560": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44560.mp4",
+      "role": "girl_standing_by_car_neon_tube"
+    },
+    "44561": {
+      "category": "girl_car",
+      "path": "scratch/girls_vertical_pool/44561.mp4",
+      "role": "car_lights_girl_silhouette"
+    },
+    "1227": {
+      "category": "girl_neon",
+      "path": "scratch/curated_vertical_girls/1227.mp4",
+      "role": "brunette_girl_night_amusement_park"
+    },
+    "1228": {
+      "category": "girl_neon",
+      "path": "scratch/curated_vertical_girls/1228.mp4",
+      "role": "brunette_girl_night_dancing"
+    },
+    "1229": {
+      "category": "girl_neon",
+      "path": "scratch/curated_vertical_girls/1229.mp4",
+      "role": "tattooed_brunette_neon_window"
+    },
+    "1230": {
+      "category": "girl_neon",
+      "path": "scratch/curated_vertical_girls/1230.mp4",
+      "role": "tattooed_brunette_close_up_neon"
+    },
+    "1231": {
+      "category": "girl_neon",
+      "path": "scratch/curated_vertical_girls/1231.mp4",
+      "role": "brunette_girl_red_neon_sign"
+    },
+    "1232": {
+      "category": "girl_neon",
+      "path": "scratch/curated_vertical_girls/1232.mp4",
+      "role": "red_neon_atmosphere_glow"
+    },
+    "1234": {
+      "category": "girl_neon",
+      "path": "scratch/curated_vertical_girls/1234.mp4",
+      "role": "tattooed_brunette_stool_neon"
+    },
+    "1299": {
+      "category": "girl_ambient",
+      "path": "scratch/curated_vertical_girls/1299.mp4",
+      "role": "model_black_lingerie_leather_couch"
+    },
+    "1300": {
+      "category": "girl_neon",
+      "path": "scratch/curated_vertical_girls/1300.mp4",
+      "role": "urban_girl_portrait_green_neon"
+    },
+    "1302": {
+      "category": "girl_neon",
+      "path": "scratch/curated_vertical_girls/1302.mp4",
+      "role": "urban_girl_posing_dark_corridor"
+    },
+    "51406": {
+      "category": "girl_neon",
+      "path": "scratch/native_vertical_pool/51406.mp4",
+      "role": "girl_listening_headphones_night"
+    },
+    "50428": {
+      "category": "girl_laser",
+      "path": "scratch/curated_vertical_girls/50428.mp4",
+      "role": "model_dark_room_cyan_laser_ring"
+    },
+    "50429": {
+      "category": "girl_laser",
+      "path": "scratch/curated_vertical_girls/50429.mp4",
+      "role": "dancer_suspended_green_laser_column"
+    },
+    "50430": {
+      "category": "girl_laser",
+      "path": "scratch/curated_vertical_girls/50430.mp4",
+      "role": "model_silhouette_blue_laser_pillar"
+    },
+    "50431": {
+      "category": "girl_laser",
+      "path": "scratch/curated_vertical_girls/50431.mp4",
+      "role": "model_green_laser_glow"
+    },
+    "50432": {
+      "category": "girl_laser",
+      "path": "scratch/curated_vertical_girls/50432.mp4",
+      "role": "model_seated_blue_laser_portal"
+    },
+    "50433": {
+      "category": "girl_laser",
+      "path": "scratch/curated_vertical_girls/50433.mp4",
+      "role": "sensual_dancer_backbend_cyan_laser"
+    },
+    "50434": {
+      "category": "girl_laser",
+      "path": "scratch/curated_vertical_girls/50434.mp4",
+      "role": "face_close_up_cyber_laser_lines"
+    },
+    "50435": {
+      "category": "girl_laser",
+      "path": "scratch/curated_vertical_girls/50435.mp4",
+      "role": "dancer_purple_uv_laser_glow"
+    },
+    "50436": {
+      "category": "girl_laser",
+      "path": "scratch/curated_vertical_girls/50436.mp4",
+      "role": "full_body_dancer_vertical_laser_stream"
+    }
   }
 }
