@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, Beautiful Models, Luxury Cars, Night City, Beat-Synced 142.9 BPM)  
-**Опубликовано**: 13 / 30 роликов  
+**Опубликовано**: 14 / 30 роликов  
 
 ---
 
@@ -24,3 +24,4 @@
 | 11 | That one track you never skip... | [https://www.instagram.com/reel/DfgXwelsPYD/](https://www.instagram.com/reel/DfgXwelsPYD/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 12 | Lost in the city lights with this playing... | [https://www.instagram.com/reel/DfgYRbest5K/](https://www.instagram.com/reel/DfgYRbest5K/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 13 | Just me, the road, and this song... | [https://www.instagram.com/reel/DfgYx3CMuK7/](https://www.instagram.com/reel/DfgYx3CMuK7/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 14 | When music matches the exact vibe of the road... | [https://www.instagram.com/reel/DfgZTDGMLAP/](https://www.instagram.com/reel/DfgZTDGMLAP/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
