@@ -61,7 +61,21 @@ def update_markdown_report(state):
     with open(REPORT_MD, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
+def git_push_progress(idx, reel_url):
+    try:
+        subprocess.run(["git", "add", "PUBLISHED_GIRLS_REELS.md", "music_batch_30_girls_state.json"], cwd=str(BASE_DIR), capture_output=True)
+        subprocess.run(["git", "commit", "-m", f"chore(reels): published viral reel #{idx} - {reel_url}"], cwd=str(BASE_DIR), capture_output=True)
+        subprocess.run(["git", "-c", f"http.proxy={PROXIES}", "push", "origin", "master"], cwd=str(BASE_DIR), capture_output=True)
+        print(f"🚀 Изменения по Reel #{idx} запушены в GitHub!", flush=True)
+    except Exception as e:
+        print(f"⚠️ Ошибка git push: {e}", flush=True)
+
 def get_sessionid():
+    f = BASE_DIR / "scratch" / "active_sessionid.txt"
+    if f.exists():
+        sid = f.read_text(encoding="utf-8").strip()
+        if sid:
+            return sid
     sessionid = None
     with sync_playwright() as p:
         ctx = p.chromium.launch_persistent_context(user_data_dir=str(INSTA_PROFILE), channel="chrome", headless=True)
@@ -147,6 +161,7 @@ def run_batch_pipeline():
                 }
                 save_state(state)
                 update_markdown_report(state)
+                git_push_progress(idx, reel_url)
                 upload_success = True
                 break
             except Exception as e:

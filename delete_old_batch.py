@@ -12,6 +12,11 @@ PROXIES = "http://modeler_gZoM0l:01gngx0cg2f1@45.128.156.22:10641"
 STATE_FILE = BASE_DIR / "music_batch_30_girls_state.json"
 
 def get_sessionid():
+    f = BASE_DIR / "scratch" / "active_sessionid.txt"
+    if f.exists():
+        sid = f.read_text(encoding="utf-8").strip()
+        if sid:
+            return sid
     sessionid = None
     with sync_playwright() as p:
         ctx = p.chromium.launch_persistent_context(user_data_dir=str(INSTA_PROFILE), channel="chrome", headless=True)
