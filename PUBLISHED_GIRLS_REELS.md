@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, Beautiful Models, Luxury Cars, Night City, Beat-Synced 142.9 BPM)  
-**Опубликовано**: 11 / 30 роликов  
+**Опубликовано**: 12 / 30 роликов  
 
 ---
 
@@ -22,3 +22,4 @@
 | 9 | POV: city lights in the rearview mirror... | [https://www.instagram.com/reel/DfgWuSWsQtc/](https://www.instagram.com/reel/DfgWuSWsQtc/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 10 | Put this on your late night drive playlist | [https://www.instagram.com/reel/DfgXOlCsjlc/](https://www.instagram.com/reel/DfgXOlCsjlc/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 11 | That one track you never skip... | [https://www.instagram.com/reel/DfgXwelsPYD/](https://www.instagram.com/reel/DfgXwelsPYD/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 12 | Lost in the city lights with this playing... | [https://www.instagram.com/reel/DfgYRbest5K/](https://www.instagram.com/reel/DfgYRbest5K/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
