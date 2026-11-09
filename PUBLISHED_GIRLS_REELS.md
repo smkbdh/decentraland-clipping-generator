@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Опубликовано**: 5 / 30 роликов  
+**Опубликовано**: 6 / 30 роликов  
 
 ---
 
@@ -16,3 +16,4 @@
 | 03 | `1229.mp4` | Driving through the city with no destination... | [https://www.instagram.com/reel/Dfhzr6wMCko/](https://www.instagram.com/reel/Dfhzr6wMCko/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 04 | `1968.mp4` | This sound was made for empty highways | [https://www.instagram.com/reel/Dfh0ICwM34B/](https://www.instagram.com/reel/Dfh0ICwM34B/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 05 | `40747.mp4` | Underrated track that feels like a movie | [https://www.instagram.com/reel/Dfh0k2FMPOu/](https://www.instagram.com/reel/Dfh0k2FMPOu/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 06 | `50433.mp4` | Tell me you don't feel chills when this drops... | [https://www.instagram.com/reel/Dfh1BgrMYBN/](https://www.instagram.com/reel/Dfh1BgrMYBN/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
