@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Опубликовано**: 21 / 30 роликов  
+**Опубликовано**: 22 / 30 роликов  
 
 ---
 
@@ -32,3 +32,4 @@
 | 19 | `1302.mp4` | You just found your new favorite sound | [https://www.instagram.com/reel/Dfh6-tJMXS3/](https://www.instagram.com/reel/Dfh6-tJMXS3/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 20 | `42048.mp4` | Entering the tunnel right as the beat drops... | [https://www.instagram.com/reel/Dfh7Zyzseya/](https://www.instagram.com/reel/Dfh7Zyzseya/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 21 | `50429.mp4` | Cruising through the city at midnight... | [https://www.instagram.com/reel/Dfh73NfMla3/](https://www.instagram.com/reel/Dfh73NfMla3/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 22 | `44556.mp4` | Can't stop replaying this one take... | [https://www.instagram.com/reel/Dfh8SVnsSZE/](https://www.instagram.com/reel/Dfh8SVnsSZE/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
