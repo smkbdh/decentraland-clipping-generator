@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Опубликовано**: 24 / 30 роликов  
+**Опубликовано**: 25 / 30 роликов  
 
 ---
 
@@ -35,3 +35,4 @@
 | 22 | `44556.mp4` | Can't stop replaying this one take... | [https://www.instagram.com/reel/Dfh8SVnsSZE/](https://www.instagram.com/reel/Dfh8SVnsSZE/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 23 | `1232.mp4` | Driving home after 3 AM with this on... | [https://www.instagram.com/reel/Dfh8uaCsRqC/](https://www.instagram.com/reel/Dfh8uaCsRqC/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 24 | `51406.mp4` | Wet asphalt, neon reflections, and this sound... | [https://www.instagram.com/reel/Dfh9K2vskjn/](https://www.instagram.com/reel/Dfh9K2vskjn/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 25 | `40746.mp4` | Clearing my mind with the volume on 100 | [https://www.instagram.com/reel/Dfh9lnvsg0V/](https://www.instagram.com/reel/Dfh9lnvsg0V/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
