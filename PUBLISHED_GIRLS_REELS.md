@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Опубликовано**: 27 / 30 роликов  
+**Опубликовано**: 28 / 30 роликов  
 
 ---
 
@@ -38,3 +38,4 @@
 | 25 | `40746.mp4` | Clearing my mind with the volume on 100 | [https://www.instagram.com/reel/Dfh9lnvsg0V/](https://www.instagram.com/reel/Dfh9lnvsg0V/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 26 | `50435.mp4` | When the roads are yours and the music hits... | [https://www.instagram.com/reel/Dfh-CpqsJ50/](https://www.instagram.com/reel/Dfh-CpqsJ50/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 27 | `44559.mp4` | POV: finding that one song that gives you chills... | [https://www.instagram.com/reel/Dfh-ehsMbWM/](https://www.instagram.com/reel/Dfh-ehsMbWM/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 28 | `1227.mp4` | Nothing beats night highway drives with this... | [https://www.instagram.com/reel/Dfh-5_JMNwb/](https://www.instagram.com/reel/Dfh-5_JMNwb/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
