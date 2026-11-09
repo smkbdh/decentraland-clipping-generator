@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, Beautiful Models, Luxury Cars, Night City, Beat-Synced 142.9 BPM)  
-**Опубликовано**: 20 / 30 роликов  
+**Опубликовано**: 21 / 30 роликов  
 
 ---
 
@@ -31,3 +31,4 @@
 | 18 | This needs to be in a cyberpunk movie | [https://www.instagram.com/reel/DfgbWk1M641/](https://www.instagram.com/reel/DfgbWk1M641/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 19 | You just found your new favorite sound | [https://www.instagram.com/reel/Dfgb4K2s_Wq/](https://www.instagram.com/reel/Dfgb4K2s_Wq/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 20 | Entering the tunnel right as the beat drops... | [https://www.instagram.com/reel/DfgcYz6M2_n/](https://www.instagram.com/reel/DfgcYz6M2_n/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 21 | Cruising through the city at midnight... | [https://www.instagram.com/reel/Dfgc54bMVM7/](https://www.instagram.com/reel/Dfgc54bMVM7/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
