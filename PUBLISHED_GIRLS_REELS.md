@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Опубликовано**: 12 / 30 роликов  
+**Опубликовано**: 13 / 30 роликов  
 
 ---
 
@@ -23,3 +23,4 @@
 | 10 | `49878.mp4` | Put this on your late night drive playlist | [https://www.instagram.com/reel/Dfh2yHYMKvt/](https://www.instagram.com/reel/Dfh2yHYMKvt/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 11 | `50434.mp4` | That one track you never skip... | [https://www.instagram.com/reel/Dfh3PKtMS-3/](https://www.instagram.com/reel/Dfh3PKtMS-3/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 12 | `44558.mp4` | Lost in the city lights with this playing... | [https://www.instagram.com/reel/Dfh3tfqsu19/](https://www.instagram.com/reel/Dfh3tfqsu19/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 13 | `1231.mp4` | Just me, the road, and this song... | [https://www.instagram.com/reel/Dfh4IgMspGH/](https://www.instagram.com/reel/Dfh4IgMspGH/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
