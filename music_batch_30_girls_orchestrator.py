@@ -2,6 +2,7 @@ import sys
 import io
 import time
 import json
+import subprocess
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 from instagrapi import Client
