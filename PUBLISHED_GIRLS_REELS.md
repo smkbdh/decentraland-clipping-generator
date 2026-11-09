@@ -5,10 +5,11 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, Beautiful Models, Luxury Cars, Night City, Beat-Synced 142.9 BPM)  
-**Опубликовано**: 1 / 30 роликов  
+**Опубликовано**: 2 / 30 роликов  
 
 ---
 
 | # | Хук / Тематика | Ссылка на Instagram Reel | Статус звука |
 |---|---|---|---|
 | 1 | POV: 2 AM, city lights, feeling this vibe... | [https://www.instagram.com/reel/DfgS1xoMwAc/](https://www.instagram.com/reel/DfgS1xoMwAc/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 2 | Headphones on, world completely muted | [https://www.instagram.com/reel/DfgTLVZMBeT/](https://www.instagram.com/reel/DfgTLVZMBeT/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
