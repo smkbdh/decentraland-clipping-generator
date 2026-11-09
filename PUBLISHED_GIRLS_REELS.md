@@ -1,43 +1,14 @@
-# 🎧 PUBLISHED GIRLS & CARS REELS: Smoke Buddah — Paradise (One Take)
+# 🎧 PUBLISHED ZERO-REUSE REELS: Smoke Buddah — Paradise (One Take)
 
 **Артист**: Smoke Buddah  
 **Трек**: *Paradise (One Take)*  
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
-**Формат**: 1080x1920 (100% Native Vertical, Beautiful Models, Luxury Cars, Night City, Beat-Synced 142.9 BPM)  
-**Опубликовано**: 30 / 30 роликов  
+**Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
+**Опубликовано**: 1 / 30 роликов  
 
 ---
 
-| # | Хук / Тематика | Ссылка на Instagram Reel | Статус звука |
-|---|---|---|---|
-| 1 | POV: 2 AM, city lights, feeling this vibe... | [https://www.instagram.com/reel/DfgS1xoMwAc/](https://www.instagram.com/reel/DfgS1xoMwAc/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 2 | Headphones on, world completely muted | [https://www.instagram.com/reel/DfgTLVZMBeT/](https://www.instagram.com/reel/DfgTLVZMBeT/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 3 | Driving through the city with no destination... | [https://www.instagram.com/reel/DfgTr2RM7r9/](https://www.instagram.com/reel/DfgTr2RM7r9/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 4 | This sound was made for empty highways | [https://www.instagram.com/reel/DfgULjBsS-5/](https://www.instagram.com/reel/DfgULjBsS-5/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 5 | Underrated track that feels like a movie | [https://www.instagram.com/reel/DfgUsW3sdTZ/](https://www.instagram.com/reel/DfgUsW3sdTZ/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 6 | Tell me you don't feel chills when this drops... | [https://www.instagram.com/reel/DfgVO4psv0m/](https://www.instagram.com/reel/DfgVO4psv0m/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 7 | When the bass hits at 120 mph... | [https://www.instagram.com/reel/DfgVu5IspoT/](https://www.instagram.com/reel/DfgVu5IspoT/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 8 | Night drives heal what words never could | [https://www.instagram.com/reel/DfgWNqDsJqN/](https://www.instagram.com/reel/DfgWNqDsJqN/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 9 | POV: city lights in the rearview mirror... | [https://www.instagram.com/reel/DfgWuSWsQtc/](https://www.instagram.com/reel/DfgWuSWsQtc/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 10 | Put this on your late night drive playlist | [https://www.instagram.com/reel/DfgXOlCsjlc/](https://www.instagram.com/reel/DfgXOlCsjlc/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 11 | That one track you never skip... | [https://www.instagram.com/reel/DfgXwelsPYD/](https://www.instagram.com/reel/DfgXwelsPYD/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 12 | Lost in the city lights with this playing... | [https://www.instagram.com/reel/DfgYRbest5K/](https://www.instagram.com/reel/DfgYRbest5K/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 13 | Just me, the road, and this song... | [https://www.instagram.com/reel/DfgYx3CMuK7/](https://www.instagram.com/reel/DfgYx3CMuK7/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 14 | When music matches the exact vibe of the road... | [https://www.instagram.com/reel/DfgZTDGMLAP/](https://www.instagram.com/reel/DfgZTDGMLAP/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 15 | Close your eyes and listen to this flow... | [https://www.instagram.com/reel/DfgZynFsl5l/](https://www.instagram.com/reel/DfgZynFsl5l/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 16 | Windows down, cold breeze, this track... | [https://www.instagram.com/reel/DfgaWHOMkBk/](https://www.instagram.com/reel/DfgaWHOMkBk/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 17 | The streets are empty for a reason | [https://www.instagram.com/reel/Dfga3oGsTW2/](https://www.instagram.com/reel/Dfga3oGsTW2/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 18 | This needs to be in a cyberpunk movie | [https://www.instagram.com/reel/DfgbWk1M641/](https://www.instagram.com/reel/DfgbWk1M641/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 19 | You just found your new favorite sound | [https://www.instagram.com/reel/Dfgb4K2s_Wq/](https://www.instagram.com/reel/Dfgb4K2s_Wq/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 20 | Entering the tunnel right as the beat drops... | [https://www.instagram.com/reel/DfgcYz6M2_n/](https://www.instagram.com/reel/DfgcYz6M2_n/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 21 | Cruising through the city at midnight... | [https://www.instagram.com/reel/Dfgc54bMVM7/](https://www.instagram.com/reel/Dfgc54bMVM7/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 22 | Can't stop replaying this one take... | [https://www.instagram.com/reel/Dfgdb-wM9zZ/](https://www.instagram.com/reel/Dfgdb-wM9zZ/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 23 | Driving home after 3 AM with this on... | [https://www.instagram.com/reel/Dfgd9SXMHGk/](https://www.instagram.com/reel/Dfgd9SXMHGk/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 24 | Wet asphalt, neon reflections, and this sound... | [https://www.instagram.com/reel/Dfged_bsrDl/](https://www.instagram.com/reel/Dfged_bsrDl/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 25 | Clearing my mind with the volume on 100 | [https://www.instagram.com/reel/Dfge_fKMDEL/](https://www.instagram.com/reel/Dfge_fKMDEL/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 26 | When the roads are yours and the music hits... | [https://www.instagram.com/reel/DfgfiMSMIDc/](https://www.instagram.com/reel/DfgfiMSMIDc/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 27 | POV: finding that one song that gives you chills... | [https://www.instagram.com/reel/DfggDNsMn3-/](https://www.instagram.com/reel/DfggDNsMn3-/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 28 | Nothing beats night highway drives with this... | [https://www.instagram.com/reel/DfggkM8sm7S/](https://www.instagram.com/reel/DfggkM8sm7S/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 29 | Put this sound on and thank me later | [https://www.instagram.com/reel/DfghDqkM-4B/](https://www.instagram.com/reel/DfghDqkM-4B/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
-| 30 | Soundtrack to 3 AM drives alone in the city... | [https://www.instagram.com/reel/DfghlrJso1S/](https://www.instagram.com/reel/DfghlrJso1S/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| # | Исходник | Хук / Тематика | Ссылка на Instagram Reel | Статус звука |
+|---|---|---|---|---|
+| 01 | `50428.mp4` | POV: 2 AM, city lights, feeling this vibe... | [https://www.instagram.com/reel/Dfhy0DksaXA/](https://www.instagram.com/reel/Dfhy0DksaXA/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
