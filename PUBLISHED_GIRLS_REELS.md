@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, Beautiful Models, Luxury Cars, Night City, Beat-Synced 142.9 BPM)  
-**Опубликовано**: 26 / 30 роликов  
+**Опубликовано**: 27 / 30 роликов  
 
 ---
 
@@ -37,3 +37,4 @@
 | 24 | Wet asphalt, neon reflections, and this sound... | [https://www.instagram.com/reel/Dfged_bsrDl/](https://www.instagram.com/reel/Dfged_bsrDl/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 25 | Clearing my mind with the volume on 100 | [https://www.instagram.com/reel/Dfge_fKMDEL/](https://www.instagram.com/reel/Dfge_fKMDEL/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 26 | When the roads are yours and the music hits... | [https://www.instagram.com/reel/DfgfiMSMIDc/](https://www.instagram.com/reel/DfgfiMSMIDc/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 27 | POV: finding that one song that gives you chills... | [https://www.instagram.com/reel/DfggDNsMn3-/](https://www.instagram.com/reel/DfggDNsMn3-/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
