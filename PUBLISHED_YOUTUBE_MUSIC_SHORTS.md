@@ -4,7 +4,7 @@
 **Трек**: *Paradise (One Take)*  
 **Канал**: [Music for cafe](https://www.youtube.com/@Musicforcafe)  
 **Формат**: 1080x1920 Vertical Shorts (100% Уникальные Исходники, Zero Overlap, Эстетика девушек и ночного города)  
-**Всего опубликовано в YouTube Shorts**: 52 / 90 роликов  
+**Всего опубликовано в YouTube Shorts**: 53 / 90 роликов  
 
 ---
 
@@ -63,6 +63,7 @@
 | 49 | `girls_reel_49.mp4` | POV: the city is asleep but you're still driving... | [https://youtube.com/shorts/nMWyY5fVEug](https://youtube.com/shorts/nMWyY5fVEug) | 🟢 LIVE (Public) |
 | 50 | `girls_reel_50.mp4` | The bassline that cures everything | [https://youtube.com/shorts/1B4NxmSeQcM](https://youtube.com/shorts/1B4NxmSeQcM) | 🟢 LIVE (Public) |
 | 51 | `girls_reel_51.mp4` | Late night highway cruising hits different now | [https://youtube.com/shorts/RhQ2O2d4VKE](https://youtube.com/shorts/RhQ2O2d4VKE) | 🟢 LIVE (Public) |
+| 52 | `girls_reel_52.mp4` | You just unlocked your new favorite night drive song | [https://youtube.com/shorts/MLuhyh6CpSo](https://youtube.com/shorts/MLuhyh6CpSo) | 🟢 LIVE (Public) |
 | 61 | `girls_reel_61.mp4` | Late night drives feel unreal with this bass | [https://youtube.com/shorts/7rHJGRli2ro](https://youtube.com/shorts/7rHJGRli2ro) | 🟢 LIVE (Public) |
 
 ---
