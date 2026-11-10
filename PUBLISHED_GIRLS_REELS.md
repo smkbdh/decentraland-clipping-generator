@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 34 / 60 роликов (Партия 1: 30/30, Партия 2: 4/30)  
+**Всего опубликовано**: 35 / 60 роликов (Партия 1: 30/30, Партия 2: 5/30)  
 
 ---
 
@@ -17,6 +17,7 @@
 | 32 | `42451.mp4` | Nobody talks about how hard this drop is | [https://www.instagram.com/reel/Dfiv4x4shrp/](https://www.instagram.com/reel/Dfiv4x4shrp/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 33 | `42452.mp4` | POV: 3 AM, rain on the windshield, pure vibe... | [https://www.instagram.com/reel/DfiwUq8sDfT/](https://www.instagram.com/reel/DfiwUq8sDfT/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 34 | `42453.mp4` | This is what cruising in Tokyo feels like | [https://www.instagram.com/reel/DfiwyIFMgFE/](https://www.instagram.com/reel/DfiwyIFMgFE/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 35 | `42454.mp4` | Turn your volume up and close your eyes... | [https://www.instagram.com/reel/DfixN1TspHY/](https://www.instagram.com/reel/DfixN1TspHY/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
