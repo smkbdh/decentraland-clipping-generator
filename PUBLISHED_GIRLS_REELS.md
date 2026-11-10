@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 57 / 60 роликов (Партия 1: 30/30, Партия 2: 27/30)  
+**Всего опубликовано**: 58 / 60 роликов (Партия 1: 30/30, Партия 2: 28/30)  
 
 ---
 
@@ -40,6 +40,7 @@
 | 55 | `49872.mp4` | No lyrics needed, the flow speaks for itself | [https://www.instagram.com/reel/Dfi5_rmMF7E/](https://www.instagram.com/reel/Dfi5_rmMF7E/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 56 | `49873.mp4` | Cruising past neon signs at 2 AM with this... | [https://www.instagram.com/reel/Dfi6dgXMjA3/](https://www.instagram.com/reel/Dfi6dgXMjA3/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 57 | `49876.mp4` | This is your sign to go on a midnight drive | [https://www.instagram.com/reel/Dfi664MML0J/](https://www.instagram.com/reel/Dfi664MML0J/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 58 | `1965.mp4` | Driving alone with this on full blast hits different | [https://www.instagram.com/reel/Dfi7XKRsm5s/](https://www.instagram.com/reel/Dfi7XKRsm5s/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
