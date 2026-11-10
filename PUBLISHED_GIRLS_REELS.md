@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 59 / 60 роликов (Партия 1: 30/30, Партия 2: 29/30)  
+**Всего опубликовано**: 60 / 60 роликов (Партия 1: 30/30, Партия 2: 30/30)  
 
 ---
 
@@ -42,6 +42,7 @@
 | 57 | `49876.mp4` | This is your sign to go on a midnight drive | [https://www.instagram.com/reel/Dfi664MML0J/](https://www.instagram.com/reel/Dfi664MML0J/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 58 | `1965.mp4` | Driving alone with this on full blast hits different | [https://www.instagram.com/reel/Dfi7XKRsm5s/](https://www.instagram.com/reel/Dfi7XKRsm5s/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 59 | `1966.mp4` | The soundtrack to the best night of your life | [https://www.instagram.com/reel/Dfi7zRvsB53/](https://www.instagram.com/reel/Dfi7zRvsB53/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 60 | `1969.mp4` | Leave the world behind and turn this up | [https://www.instagram.com/reel/Dfi8OKjsDBu/](https://www.instagram.com/reel/Dfi8OKjsDBu/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
