@@ -4,7 +4,7 @@
 **Трек**: *Paradise (One Take)*  
 **Канал**: [Music for cafe](https://www.youtube.com/@Musicforcafe)  
 **Формат**: 1080x1920 Vertical Shorts (100% Уникальные Исходники, Zero Overlap, Эстетика девушек и ночного города)  
-**Всего опубликовано в YouTube Shorts**: 65 / 90 роликов  
+**Всего опубликовано в YouTube Shorts**: 66 / 90 роликов  
 
 ---
 
@@ -77,6 +77,7 @@
 | 63 | `girls_reel_63.mp4` | Nobody can duplicate this kind of flow in 2026 | [https://youtube.com/shorts/OFQwpMm5EUg](https://youtube.com/shorts/OFQwpMm5EUg) | 🟢 LIVE (Public) |
 | 64 | `girls_reel_64.mp4` | This is what aesthetic night drives are made of | [https://youtube.com/shorts/82JjCg_AWA0](https://youtube.com/shorts/82JjCg_AWA0) | 🟢 LIVE (Public) |
 | 65 | `girls_reel_65.mp4` | Your playlist is incomplete without this track | [https://youtube.com/shorts/m0TlaZVVWyg](https://youtube.com/shorts/m0TlaZVVWyg) | 🟢 LIVE (Public) |
+| 66 | `girls_reel_66.mp4` | When the bass drops right into your soul... | [https://youtube.com/shorts/bCb3BVrzDpU](https://youtube.com/shorts/bCb3BVrzDpU) | 🟢 LIVE (Public) |
 
 ---
 *Обновлено автоматически роботом публикации YouTube Shorts.*
