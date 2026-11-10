@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Headroom Text Plate, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 66 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 6/30)  
+**Всего опубликовано**: 67 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 7/30)  
 
 ---
 
@@ -19,6 +19,7 @@
 | 64 | `52275.mp4` | This is what aesthetic night drives are made of | [https://www.instagram.com/reel/DfjMbQGM2_3/](https://www.instagram.com/reel/DfjMbQGM2_3/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 65 | `52277.mp4` | Your playlist is incomplete without this track | [https://www.instagram.com/reel/DfjM3YVsfFK/](https://www.instagram.com/reel/DfjM3YVsfFK/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 66 | `52278.mp4` | When the bass drops right into your soul... | [https://www.instagram.com/reel/DfjNUNFsmpT/](https://www.instagram.com/reel/DfjNUNFsmpT/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 67 | `52279.mp4` | Found the ultimate track for midnight contemplation | [https://www.instagram.com/reel/DfjNvXMM0qQ/](https://www.instagram.com/reel/DfjNvXMM0qQ/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
