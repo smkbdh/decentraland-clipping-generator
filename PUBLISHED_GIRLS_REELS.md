@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Headroom Text Plate, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 71 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 11/30)  
+**Всего опубликовано**: 72 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 12/30)  
 
 ---
 
@@ -24,6 +24,7 @@
 | 69 | `52281.mp4` | Tell me this beat doesn't give you goosebumps | [https://www.instagram.com/reel/DfjOmhhMNZM/](https://www.instagram.com/reel/DfjOmhhMNZM/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 70 | `52282.mp4` | The rhythm that makes the entire world fade away | [https://www.instagram.com/reel/DfjPBrkM9sB/](https://www.instagram.com/reel/DfjPBrkM9sB/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 71 | `52283.mp4` | POV: you finally found that one song on repeat | [https://www.instagram.com/reel/DfjPeGNMfNl/](https://www.instagram.com/reel/DfjPeGNMfNl/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 72 | `42456.mp4` | This track was definitely built for high speeds | [https://www.instagram.com/reel/DfjP5EmMJoG/](https://www.instagram.com/reel/DfjP5EmMJoG/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
