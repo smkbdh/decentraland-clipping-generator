@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Headroom Text Plate, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 69 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 9/30)  
+**Всего опубликовано**: 70 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 10/30)  
 
 ---
 
@@ -22,6 +22,7 @@
 | 67 | `52279.mp4` | Found the ultimate track for midnight contemplation | [https://www.instagram.com/reel/DfjNvXMM0qQ/](https://www.instagram.com/reel/DfjNvXMM0qQ/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 68 | `52280.mp4` | Speeding past city lights with zero worries | [https://www.instagram.com/reel/DfjOLn5sZxV/](https://www.instagram.com/reel/DfjOLn5sZxV/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 69 | `52281.mp4` | Tell me this beat doesn't give you goosebumps | [https://www.instagram.com/reel/DfjOmhhMNZM/](https://www.instagram.com/reel/DfjOmhhMNZM/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 70 | `52282.mp4` | The rhythm that makes the entire world fade away | [https://www.instagram.com/reel/DfjPBrkM9sB/](https://www.instagram.com/reel/DfjPBrkM9sB/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
