@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 45 / 60 роликов (Партия 1: 30/30, Партия 2: 15/30)  
+**Всего опубликовано**: 46 / 60 роликов (Партия 1: 30/30, Партия 2: 16/30)  
 
 ---
 
@@ -28,6 +28,7 @@
 | 43 | `52263.mp4` | This sound belongs in an underground club | [https://www.instagram.com/reel/Dfi0u4ns-FM/](https://www.instagram.com/reel/Dfi0u4ns-FM/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 44 | `52264.mp4` | Night drives are 10x better with this track | [https://www.instagram.com/reel/Dfi1MClMB89/](https://www.instagram.com/reel/Dfi1MClMB89/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 45 | `52265.mp4` | If you know this track, your taste is top tier | [https://www.instagram.com/reel/Dfi1naas_CS/](https://www.instagram.com/reel/Dfi1naas_CS/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 46 | `52266.mp4` | Tunnel vision at 140 mph with this playing... | [https://www.instagram.com/reel/Dfi2E00MBHX/](https://www.instagram.com/reel/Dfi2E00MBHX/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
