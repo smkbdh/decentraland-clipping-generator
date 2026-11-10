@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 47 / 60 роликов (Партия 1: 30/30, Партия 2: 17/30)  
+**Всего опубликовано**: 48 / 60 роликов (Партия 1: 30/30, Партия 2: 18/30)  
 
 ---
 
@@ -30,6 +30,7 @@
 | 45 | `52265.mp4` | If you know this track, your taste is top tier | [https://www.instagram.com/reel/Dfi1naas_CS/](https://www.instagram.com/reel/Dfi1naas_CS/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 46 | `52266.mp4` | Tunnel vision at 140 mph with this playing... | [https://www.instagram.com/reel/Dfi2E00MBHX/](https://www.instagram.com/reel/Dfi2E00MBHX/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 47 | `52267.mp4` | This track was made for midnight contemplation | [https://www.instagram.com/reel/Dfi2fsssfPb/](https://www.instagram.com/reel/Dfi2fsssfPb/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 48 | `52268.mp4` | Once you hear this beat, you can't unhear it | [https://www.instagram.com/reel/Dfi27skM5Yj/](https://www.instagram.com/reel/Dfi27skM5Yj/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
