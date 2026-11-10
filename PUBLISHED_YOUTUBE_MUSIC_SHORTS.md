@@ -4,7 +4,7 @@
 **Трек**: *Paradise (One Take)*  
 **Канал**: [Music for cafe](https://www.youtube.com/@Musicforcafe)  
 **Формат**: 1080x1920 Vertical Shorts (100% Уникальные Исходники, Zero Overlap, Эстетика девушек и ночного города)  
-**Всего опубликовано в YouTube Shorts**: 48 / 90 роликов  
+**Всего опубликовано в YouTube Shorts**: 49 / 90 роликов  
 
 ---
 
@@ -59,6 +59,7 @@
 | 45 | `girls_reel_45.mp4` | If you know this track, your taste is top tier | [https://youtube.com/shorts/Tcmpu2cjT-w](https://youtube.com/shorts/Tcmpu2cjT-w) | 🟢 LIVE (Public) |
 | 46 | `girls_reel_46.mp4` | Tunnel vision at 140 mph with this playing... | [https://youtube.com/shorts/DH8NvXRnC9Y](https://youtube.com/shorts/DH8NvXRnC9Y) | 🟢 LIVE (Public) |
 | 47 | `girls_reel_47.mp4` | This track was made for midnight contemplation | [https://youtube.com/shorts/OjdITbKXFG4](https://youtube.com/shorts/OjdITbKXFG4) | 🟢 LIVE (Public) |
+| 48 | `girls_reel_48.mp4` | Once you hear this beat, you can't unhear it | [https://youtube.com/shorts/3chDtLehjyo](https://youtube.com/shorts/3chDtLehjyo) | 🟢 LIVE (Public) |
 | 61 | `girls_reel_61.mp4` | Late night drives feel unreal with this bass | [https://youtube.com/shorts/7rHJGRli2ro](https://youtube.com/shorts/7rHJGRli2ro) | 🟢 LIVE (Public) |
 
 ---
