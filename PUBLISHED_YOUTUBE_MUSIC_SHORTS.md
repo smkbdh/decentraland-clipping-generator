@@ -4,7 +4,7 @@
 **Трек**: *Paradise (One Take)*  
 **Канал**: [Music for cafe](https://www.youtube.com/@Musicforcafe)  
 **Формат**: 1080x1920 Vertical Shorts (100% Уникальные Исходники, Zero Overlap, Эстетика девушек и ночного города)  
-**Всего опубликовано в YouTube Shorts**: 18 / 90 роликов  
+**Всего опубликовано в YouTube Shorts**: 19 / 90 роликов  
 
 ---
 
@@ -29,6 +29,7 @@
 | 15 | `girls_reel_15.mp4` | Close your eyes and listen to this flow... | [https://youtube.com/shorts/fz_leVMMDhY](https://youtube.com/shorts/fz_leVMMDhY) | 🟢 LIVE (Public) |
 | 16 | `girls_reel_16.mp4` | Windows down, cold breeze, this track... | [https://youtube.com/shorts/Oe5jUJpxL-4](https://youtube.com/shorts/Oe5jUJpxL-4) | 🟢 LIVE (Public) |
 | 17 | `girls_reel_17.mp4` | The streets are empty for a reason | [https://youtube.com/shorts/-3_w7goY6oA](https://youtube.com/shorts/-3_w7goY6oA) | 🟢 LIVE (Public) |
+| 18 | `girls_reel_18.mp4` | This needs to be in a cyberpunk movie | [https://youtube.com/shorts/LLTPbYeuJ_I](https://youtube.com/shorts/LLTPbYeuJ_I) | 🟢 LIVE (Public) |
 | 61 | `girls_reel_61.mp4` | Late night drives feel unreal with this bass | [https://youtube.com/shorts/7rHJGRli2ro](https://youtube.com/shorts/7rHJGRli2ro) | 🟢 LIVE (Public) |
 
 ---
