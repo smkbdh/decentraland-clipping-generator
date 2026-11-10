@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 51 / 60 роликов (Партия 1: 30/30, Партия 2: 21/30)  
+**Всего опубликовано**: 52 / 60 роликов (Партия 1: 30/30, Партия 2: 22/30)  
 
 ---
 
@@ -34,6 +34,7 @@
 | 49 | `52269.mp4` | POV: the city is asleep but you're still driving... | [https://www.instagram.com/reel/Dfi3W34s-cd/](https://www.instagram.com/reel/Dfi3W34s-cd/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 50 | `52270.mp4` | The bassline that cures everything | [https://www.instagram.com/reel/Dfi3yWqMo0v/](https://www.instagram.com/reel/Dfi3yWqMo0v/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 51 | `52271.mp4` | Late night highway cruising hits different now | [https://www.instagram.com/reel/Dfi4NJGMlq_/](https://www.instagram.com/reel/Dfi4NJGMlq_/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 52 | `52276.mp4` | You just unlocked your new favorite night drive song | [https://www.instagram.com/reel/Dfi4pW5MV2O/](https://www.instagram.com/reel/Dfi4pW5MV2O/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
