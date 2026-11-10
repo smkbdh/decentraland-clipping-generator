@@ -4,8 +4,16 @@
 **Трек**: *Paradise (One Take)*  
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
-**Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 60 / 60 роликов (Партия 1: 30/30, Партия 2: 30/30)  
+**Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Headroom Text Plate, 0% Men, 0% Christmas)  
+**Всего опубликовано**: 61 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 1/30)  
+
+---
+
+### 🚀 ПАРТИЯ 3 (Ролики 61–90 — 100% Свежие Исходники & Поднятая Плашка)
+
+| # | Исходник | Хук / Тематика | Ссылка на Instagram Reel | Статус звука |
+|---|---|---|---|---|
+| 61 | `52272.mp4` | Late night drives feel unreal with this bass | [https://www.instagram.com/reel/DfjLGuMMrrM/](https://www.instagram.com/reel/DfjLGuMMrrM/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
