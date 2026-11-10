@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Headroom Text Plate, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 73 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 13/30)  
+**Всего опубликовано**: 74 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 14/30)  
 
 ---
 
@@ -26,6 +26,7 @@
 | 71 | `52283.mp4` | POV: you finally found that one song on repeat | [https://www.instagram.com/reel/DfjPeGNMfNl/](https://www.instagram.com/reel/DfjPeGNMfNl/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 72 | `42456.mp4` | This track was definitely built for high speeds | [https://www.instagram.com/reel/DfjP5EmMJoG/](https://www.instagram.com/reel/DfjP5EmMJoG/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 73 | `42457.mp4` | Underground rap at its absolute highest level | [https://www.instagram.com/reel/DfjQVqgsh72/](https://www.instagram.com/reel/DfjQVqgsh72/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 74 | `42458.mp4` | Volume at 100, windows rolled all the way down | [https://www.instagram.com/reel/DfjQwlgMakd/](https://www.instagram.com/reel/DfjQwlgMakd/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
