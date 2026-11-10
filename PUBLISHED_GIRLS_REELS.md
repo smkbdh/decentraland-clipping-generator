@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 39 / 60 роликов (Партия 1: 30/30, Партия 2: 9/30)  
+**Всего опубликовано**: 40 / 60 роликов (Партия 1: 30/30, Партия 2: 10/30)  
 
 ---
 
@@ -22,6 +22,7 @@
 | 37 | `52257.mp4` | That euphoric feeling when the bass drops... | [https://www.instagram.com/reel/DfiyHHqs_w1/](https://www.instagram.com/reel/DfiyHHqs_w1/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 38 | `52258.mp4` | Empty streets at midnight hit different with this | [https://www.instagram.com/reel/Dfiyi-2sVnf/](https://www.instagram.com/reel/Dfiyi-2sVnf/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 39 | `52259.mp4` | POV: you found the soundtrack to your life | [https://www.instagram.com/reel/Dfiy-jHMJeZ/](https://www.instagram.com/reel/Dfiy-jHMJeZ/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 40 | `52260.mp4` | Windows down, cold air, 100% volume | [https://www.instagram.com/reel/DfizaxLMK6B/](https://www.instagram.com/reel/DfizaxLMK6B/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
