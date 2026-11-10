@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Headroom Text Plate, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 64 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 4/30)  
+**Всего опубликовано**: 65 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 5/30)  
 
 ---
 
@@ -17,6 +17,7 @@
 | 62 | `52273.mp4` | POV: 4 AM cruising and this song comes on... | [https://www.instagram.com/reel/DfjLjcSs0be/](https://www.instagram.com/reel/DfjLjcSs0be/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 63 | `52274.mp4` | Nobody can duplicate this kind of flow in 2026 | [https://www.instagram.com/reel/DfjL_OwsfwB/](https://www.instagram.com/reel/DfjL_OwsfwB/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 64 | `52275.mp4` | This is what aesthetic night drives are made of | [https://www.instagram.com/reel/DfjMbQGM2_3/](https://www.instagram.com/reel/DfjMbQGM2_3/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 65 | `52277.mp4` | Your playlist is incomplete without this track | [https://www.instagram.com/reel/DfjM3YVsfFK/](https://www.instagram.com/reel/DfjM3YVsfFK/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
