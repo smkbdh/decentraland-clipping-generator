@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 32 / 60 роликов (Партия 1: 30/30, Партия 2: 2/30)  
+**Всего опубликовано**: 33 / 60 роликов (Партия 1: 30/30, Партия 2: 3/30)  
 
 ---
 
@@ -15,6 +15,7 @@
 |---|---|---|---|---|
 | 31 | `42450.mp4` | When the night hits differently with this beat... | [https://www.instagram.com/reel/DfivdTYMaPP/](https://www.instagram.com/reel/DfivdTYMaPP/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 32 | `42451.mp4` | Nobody talks about how hard this drop is | [https://www.instagram.com/reel/Dfiv4x4shrp/](https://www.instagram.com/reel/Dfiv4x4shrp/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 33 | `42452.mp4` | POV: 3 AM, rain on the windshield, pure vibe... | [https://www.instagram.com/reel/DfiwUq8sDfT/](https://www.instagram.com/reel/DfiwUq8sDfT/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
