@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 42 / 60 роликов (Партия 1: 30/30, Партия 2: 12/30)  
+**Всего опубликовано**: 43 / 60 роликов (Партия 1: 30/30, Партия 2: 13/30)  
 
 ---
 
@@ -25,6 +25,7 @@
 | 40 | `52260.mp4` | Windows down, cold air, 100% volume | [https://www.instagram.com/reel/DfizaxLMK6B/](https://www.instagram.com/reel/DfizaxLMK6B/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 41 | `52261.mp4` | Tell me this isn't the smoothest flow of 2026 | [https://www.instagram.com/reel/Dfiz1iHsz9y/](https://www.instagram.com/reel/Dfiz1iHsz9y/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 42 | `52262.mp4` | When the headlights cut through the dark... | [https://www.instagram.com/reel/Dfi0SQlMTiX/](https://www.instagram.com/reel/Dfi0SQlMTiX/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 43 | `52263.mp4` | This sound belongs in an underground club | [https://www.instagram.com/reel/Dfi0u4ns-FM/](https://www.instagram.com/reel/Dfi0u4ns-FM/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
