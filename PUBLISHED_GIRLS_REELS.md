@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 50 / 60 роликов (Партия 1: 30/30, Партия 2: 20/30)  
+**Всего опубликовано**: 51 / 60 роликов (Партия 1: 30/30, Партия 2: 21/30)  
 
 ---
 
@@ -33,6 +33,7 @@
 | 48 | `52268.mp4` | Once you hear this beat, you can't unhear it | [https://www.instagram.com/reel/Dfi27skM5Yj/](https://www.instagram.com/reel/Dfi27skM5Yj/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 49 | `52269.mp4` | POV: the city is asleep but you're still driving... | [https://www.instagram.com/reel/Dfi3W34s-cd/](https://www.instagram.com/reel/Dfi3W34s-cd/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 50 | `52270.mp4` | The bassline that cures everything | [https://www.instagram.com/reel/Dfi3yWqMo0v/](https://www.instagram.com/reel/Dfi3yWqMo0v/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 51 | `52271.mp4` | Late night highway cruising hits different now | [https://www.instagram.com/reel/Dfi4NJGMlq_/](https://www.instagram.com/reel/Dfi4NJGMlq_/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
