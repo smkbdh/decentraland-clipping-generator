@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Headroom Text Plate, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 77 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 17/30)  
+**Всего опубликовано**: 78 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 18/30)  
 
 ---
 
@@ -30,6 +30,7 @@
 | 75 | `42459.mp4` | The algorithm delivered the exact vibe you wanted | [https://www.instagram.com/reel/DfjRM1qsEsu/](https://www.instagram.com/reel/DfjRM1qsEsu/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 76 | `42460.mp4` | Nothing beats driving under neon signs with this | [https://www.instagram.com/reel/DfjRnamME5h/](https://www.instagram.com/reel/DfjRnamME5h/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 77 | `50443.mp4` | When a song sounds even better at 3 AM... | [https://www.instagram.com/reel/DfjSDq6srXM/](https://www.instagram.com/reel/DfjSDq6srXM/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 78 | `50444.mp4` | That euphoric drop you never knew you needed | [https://www.instagram.com/reel/DfjSg9nsCZI/](https://www.instagram.com/reel/DfjSg9nsCZI/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
