@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 37 / 60 роликов (Партия 1: 30/30, Партия 2: 7/30)  
+**Всего опубликовано**: 38 / 60 роликов (Партия 1: 30/30, Партия 2: 8/30)  
 
 ---
 
@@ -20,6 +20,7 @@
 | 35 | `42454.mp4` | Turn your volume up and close your eyes... | [https://www.instagram.com/reel/DfixN1TspHY/](https://www.instagram.com/reel/DfixN1TspHY/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 36 | `42455.mp4` | The algorithm finally brought you the right track | [https://www.instagram.com/reel/Dfixqe1sWpc/](https://www.instagram.com/reel/Dfixqe1sWpc/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 37 | `52257.mp4` | That euphoric feeling when the bass drops... | [https://www.instagram.com/reel/DfiyHHqs_w1/](https://www.instagram.com/reel/DfiyHHqs_w1/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 38 | `52258.mp4` | Empty streets at midnight hit different with this | [https://www.instagram.com/reel/Dfiyi-2sVnf/](https://www.instagram.com/reel/Dfiyi-2sVnf/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
