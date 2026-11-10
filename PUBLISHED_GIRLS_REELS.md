@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Headroom Text Plate, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 75 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 15/30)  
+**Всего опубликовано**: 76 / 90 роликов (Партия 1: 30/30, Партия 2: 30/30, Партия 3: 16/30)  
 
 ---
 
@@ -28,6 +28,7 @@
 | 73 | `42457.mp4` | Underground rap at its absolute highest level | [https://www.instagram.com/reel/DfjQVqgsh72/](https://www.instagram.com/reel/DfjQVqgsh72/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 74 | `42458.mp4` | Volume at 100, windows rolled all the way down | [https://www.instagram.com/reel/DfjQwlgMakd/](https://www.instagram.com/reel/DfjQwlgMakd/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 75 | `42459.mp4` | The algorithm delivered the exact vibe you wanted | [https://www.instagram.com/reel/DfjRM1qsEsu/](https://www.instagram.com/reel/DfjRM1qsEsu/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 76 | `42460.mp4` | Nothing beats driving under neon signs with this | [https://www.instagram.com/reel/DfjRnamME5h/](https://www.instagram.com/reel/DfjRnamME5h/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
