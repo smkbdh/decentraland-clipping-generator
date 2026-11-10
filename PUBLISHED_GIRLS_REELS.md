@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 53 / 60 роликов (Партия 1: 30/30, Партия 2: 23/30)  
+**Всего опубликовано**: 54 / 60 роликов (Партия 1: 30/30, Партия 2: 24/30)  
 
 ---
 
@@ -36,6 +36,7 @@
 | 51 | `52271.mp4` | Late night highway cruising hits different now | [https://www.instagram.com/reel/Dfi4NJGMlq_/](https://www.instagram.com/reel/Dfi4NJGMlq_/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 52 | `52276.mp4` | You just unlocked your new favorite night drive song | [https://www.instagram.com/reel/Dfi4pW5MV2O/](https://www.instagram.com/reel/Dfi4pW5MV2O/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 53 | `49870.mp4` | Pure aesthetic, pure sound, pure vibe | [https://www.instagram.com/reel/Dfi5F97MN4H/](https://www.instagram.com/reel/Dfi5F97MN4H/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 54 | `49871.mp4` | When the beat drops right as the light turns green... | [https://www.instagram.com/reel/Dfi5hOxM92n/](https://www.instagram.com/reel/Dfi5hOxM92n/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
