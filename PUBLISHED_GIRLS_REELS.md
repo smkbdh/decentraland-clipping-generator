@@ -5,7 +5,7 @@
 **Audio Asset ID**: `1181575584539647`  
 **Аккаунт**: [@kira.gyal](https://www.instagram.com/kira.gyal/)  
 **Формат**: 1080x1920 (100% Native Vertical, 100% Эксклюзивные Исходники — ZERO Footage Overlap, Dense Typography, 0% Men, 0% Christmas)  
-**Всего опубликовано**: 56 / 60 роликов (Партия 1: 30/30, Партия 2: 26/30)  
+**Всего опубликовано**: 57 / 60 роликов (Партия 1: 30/30, Партия 2: 27/30)  
 
 ---
 
@@ -39,6 +39,7 @@
 | 54 | `49871.mp4` | When the beat drops right as the light turns green... | [https://www.instagram.com/reel/Dfi5hOxM92n/](https://www.instagram.com/reel/Dfi5hOxM92n/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 55 | `49872.mp4` | No lyrics needed, the flow speaks for itself | [https://www.instagram.com/reel/Dfi5_rmMF7E/](https://www.instagram.com/reel/Dfi5_rmMF7E/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 | 56 | `49873.mp4` | Cruising past neon signs at 2 AM with this... | [https://www.instagram.com/reel/Dfi6dgXMjA3/](https://www.instagram.com/reel/Dfi6dgXMjA3/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
+| 57 | `49876.mp4` | This is your sign to go on a midnight drive | [https://www.instagram.com/reel/Dfi664MML0J/](https://www.instagram.com/reel/Dfi664MML0J/) | 🎵 ОФИЦИАЛЬНЫЙ ЗВУК |
 
 ---
 
