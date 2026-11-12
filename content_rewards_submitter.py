@@ -9,7 +9,7 @@ sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 BASE_DIR = Path(__file__).resolve().parent
 PROFILE_DIR = BASE_DIR / "rewards_browser_profile"
-CAMPAIGN_URL = "https://contentrewards.com/c/campaigns/78bd78e4-0ec3-44d7-9f56-122ff7c374bc"
+CAMPAIGN_URL = "https://contentrewards.com/c/campaigns/db285bc6-9a06-43ff-ae4b-4b5ebf149b8b"
 
 def launch_browser(p, headless=True):
     PROFILE_DIR.mkdir(parents=True, exist_ok=True)
@@ -49,7 +49,7 @@ def submit_single_url(page, clip_url):
     # 3. Fill URL
     print("3. Вводим ссылку в модальное окно...", flush=True)
     try:
-        inp = page.locator('input[placeholder*="tiktok.com"]').first
+        inp = page.locator('input[placeholder*="link"], input[placeholder*="Link"], input[placeholder*="tiktok.com"]').first
         inp.wait_for(state="visible", timeout=10000)
         inp.click()
         inp.fill("")
