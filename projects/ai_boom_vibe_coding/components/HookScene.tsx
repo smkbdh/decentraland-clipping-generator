@@ -5,8 +5,15 @@ import { BackgroundGrid } from "./BackgroundGrid";
 import { TweetCard, DealProofCard } from "./AuthenticVisuals";
 
 export const HookScene: React.FC = () => {
-  const frame = useCurrentFrame();
+  const timelineFrame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  // Align the existing shot/card sequence to the recorded narration's topic changes.
+  const frame = interpolate(
+    timelineFrame,
+    [0, 12.8, 22.4, 27.4, 34.4, 38.5, 53.3, 62.2, 79.5].map((s) => s * fps),
+    [0, 450, 780, 1080, 1380, 1560, 1860, 2160, 2385],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+  );
 
   // Act 0 Duration: 0 - 2385 frames (0 - 79.5s)
   // Dynamic Cut Timings:
@@ -209,7 +216,7 @@ export const HookScene: React.FC = () => {
       )}
 
       {/* Cut 9: Digital Glitch & System Failure (2160 - 2385f) */}
-      {frame >= 2160 && (
+      {frame >= 2160 && timelineFrame < 65.4 * fps && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:de38286f-c11b-46ff-9911-9f051670b212"
@@ -226,6 +233,13 @@ export const HookScene: React.FC = () => {
               transform: `scale(${interpolate(frame - 2160, [0, 225], [1.0, 1.08])})`,
             }}
           />
+        </div>
+      )}
+      {timelineFrame >= 65.4 * fps && (
+        <div style={{ position: "absolute", inset: 0, zIndex: 20, background: "rgba(7, 9, 14, 0.93)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 28, textAlign: "center" }}>
+          <div style={{ fontSize: 34, fontWeight: 700, color: "#38bdf8", letterSpacing: 4 }}>AI БУДДА</div>
+          <div style={{ fontSize: 82, fontWeight: 900, color: "#ffffff", maxWidth: 1400, lineHeight: 1.12 }}>Как строить AI-системы, которые работают?</div>
+          <div style={{ fontSize: 38, color: "#cbd5e1" }}>Экономика токенов · безопасность · агентная инженерия</div>
         </div>
       )}
 
@@ -375,7 +389,6 @@ export const HookScene: React.FC = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: 40,
             opacity: interpolate(frame, [1080, 1100, 1350, 1375], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
           }}
         >
@@ -384,34 +397,16 @@ export const HookScene: React.FC = () => {
               background: "rgba(15, 23, 42, 0.94)",
               border: "1.5px solid rgba(56, 189, 248, 0.5)",
               borderRadius: 24,
-              padding: "36px 40px",
+              padding: "60px 72px",
               boxShadow: "0 30px 60px rgba(0, 0, 0, 0.8)",
               backdropFilter: "blur(20px)",
-              width: 500,
+              width: 1160,
+              textAlign: "center",
             }}
           >
-            <div style={{ fontSize: 16, color: "#38bdf8", fontWeight: 800 }}>ИНСТРУМЕНТЫ РАЗРАБОТКИ</div>
-            <div style={{ fontSize: 42, fontWeight: 900, color: "#ffffff", marginTop: 8 }}>Cursor + Claude</div>
-            <div style={{ fontSize: 18, color: "#94a3b8", marginTop: 12, lineHeight: 1.5 }}>
-              3 месяца основатель вообще не писал интерфейсный код руками — всю фронтенд-логику генерировал ИИ.
-            </div>
-          </div>
-          <div
-            style={{
-              background: "rgba(15, 23, 42, 0.94)",
-              border: "1.5px solid rgba(168, 85, 247, 0.5)",
-              borderRadius: 24,
-              padding: "36px 40px",
-              boxShadow: "0 30px 60px rgba(0, 0, 0, 0.8)",
-              backdropFilter: "blur(20px)",
-              width: 500,
-            }}
-          >
-            <div style={{ fontSize: 16, color: "#c084fc", fontWeight: 800 }}>РЕЗУЛЬТАТ</div>
-            <div style={{ fontSize: 42, fontWeight: 900, color: "#ffffff", marginTop: 8 }}>0 Разработчиков</div>
-            <div style={{ fontSize: 18, color: "#94a3b8", marginTop: 12, lineHeight: 1.5 }}>
-              Один человек заменил целый отдел разработки и закрыл сделку с корпорацией Wix за $80,000,000.
-            </div>
+            <div style={{ fontSize: 32, color: "#38bdf8", fontWeight: 800, letterSpacing: 3 }}>ТРИ МЕСЯЦА РАБОТЫ</div>
+            <div style={{ fontSize: 88, fontWeight: 900, color: "#ffffff", marginTop: 20, lineHeight: 1.05 }}>Cursor + Claude</div>
+            <div style={{ fontSize: 42, color: "#e2e8f0", marginTop: 28, lineHeight: 1.2 }}>Фронтенд-код генерировал AI</div>
           </div>
         </div>
       )}
@@ -508,7 +503,7 @@ export const HookScene: React.FC = () => {
       )}
 
       {/* 8. Service Terminated Forever Card (2160 - 2385f) */}
-      {frame >= 2160 && (
+      {frame >= 2160 && timelineFrame < 65.4 * fps && (
         <div
           style={{
             position: "absolute",
@@ -540,7 +535,7 @@ export const HookScene: React.FC = () => {
           </div>
           <div
             style={{
-              width: 820,
+              width: 1120,
               background: "rgba(15, 23, 42, 0.94)",
               border: "1.5px solid rgba(239, 68, 68, 0.6)",
               borderRadius: 24,
@@ -550,11 +545,11 @@ export const HookScene: React.FC = () => {
               backdropFilter: "blur(20px)",
             }}
           >
-            <div style={{ fontSize: 36, fontWeight: 900, color: "#ffffff", marginBottom: 14 }}>
-              72 Часа: от эйфории до полной гибели
+            <div style={{ fontSize: 66, fontWeight: 900, color: "#ffffff", marginBottom: 20, lineHeight: 1.1 }}>
+              От запуска до закрытия — 72 часа
             </div>
-            <p style={{ fontSize: 20, color: "#94a3b8", lineHeight: 1.6, margin: 0 }}>
-              Ключи OpenAI утекли в клиентский JS-код. Злоумышленники за несколько часов сожгли лимиты, а проект был закрыт с гигантскими убытками.
+            <p style={{ fontSize: 34, color: "#e2e8f0", lineHeight: 1.3, margin: 0 }}>
+              Уязвимости в оплате и доступе остановили сервис.
             </p>
           </div>
         </div>

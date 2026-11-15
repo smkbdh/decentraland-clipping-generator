@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, spring, Img } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate, Img } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
@@ -8,8 +8,8 @@ export const FiveRulesScene: React.FC = () => {
   const { fps } = useVideoConfig();
 
   // Act 4 Phases:
-  // Phase 1: 0 - 1660f (0 - 55.33s) - 5 Rules of Agentic Engineering
-  // Phase 2: 1660 - 2394f (55.33 - 79.8s) - GEO Teaser (145M sessions, 4.5x Google conversion)
+  // Phase 1: 0 - 1720f - 5 Rules of Agentic Engineering
+  // Phase 2: 1720 - 2394f - GEO Teaser
   // Phase 3: 2394 - 2744f (79.8 - 91.46s) - Outro & Comments & Telegram CTA
 
   const rules = [
@@ -19,21 +19,23 @@ export const FiveRulesScene: React.FC = () => {
     { num: "04", title: "Серверная безопасность", desc: "API-ключи и проверка оплаты ТОЛЬКО на бэкенде" },
     { num: "05", title: "Монетизация и токены", desc: "Юнит-экономика токенов заложена в тарифы с первого дня" },
   ];
+  const ruleStarts = [10.9, 19.1, 28.3, 39.7, 49.1];
+  const activeRuleIndex = ruleStarts.reduce((idx, seconds, i) => frame >= seconds * fps ? i : idx, -1);
 
   // Dynamic Ken Burns Zoom for each video
-  const zoom1 = interpolate(frame, [0, 1660], [1.0, 1.08], { extrapolateRight: "clamp" });
-  const zoom2 = interpolate(frame, [1660, 2394], [1.0, 1.08], { extrapolateRight: "clamp" });
+  const zoom1 = interpolate(frame, [0, 1720], [1.0, 1.08], { extrapolateRight: "clamp" });
+  const zoom2 = interpolate(frame, [1720, 2394], [1.0, 1.08], { extrapolateRight: "clamp" });
   const zoom3 = interpolate(frame, [2394, 2744], [1.0, 1.08], { extrapolateRight: "clamp" });
 
   // GEO Counters (Phase 2)
   const geoSessions = Math.floor(
-    interpolate(frame - 1660, [15, 60], [10000000, 145000000], {
+    interpolate(frame - 1720, [15, 60], [10000000, 145000000], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     })
   ).toLocaleString("en-US");
 
-  const geoMultiplier = interpolate(frame - 1660, [20, 65], [1.0, 4.5], {
+  const geoMultiplier = interpolate(frame - 1720, [20, 65], [1.0, 4.5], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   }).toFixed(1);
@@ -45,7 +47,7 @@ export const FiveRulesScene: React.FC = () => {
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
       {/* 1. STOCK VIDEO: 5 Rules of Agentic Engineering Workspace (0 - 1660f) */}
-      {frame < 1660 && (
+      {frame < 1720 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:3a285b55-704f-429d-af3a-cc1bc481fe6b"
@@ -66,7 +68,7 @@ export const FiveRulesScene: React.FC = () => {
       )}
 
       {/* 2. STOCK VIDEO: GEO Teaser & Global AI Network Globe (1660 - 2394f) */}
-      {frame >= 1660 && frame < 2394 && (
+      {frame >= 1720 && frame < 2394 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:5737223f-d1f7-4e69-997b-25a0374f177c"
@@ -107,10 +109,10 @@ export const FiveRulesScene: React.FC = () => {
         </div>
       )}
 
-      <BackgroundGrid accentColor={frame > 2394 ? "#06b6d4" : frame > 1660 ? "#a855f7" : "#6366f1"} />
+      <BackgroundGrid accentColor={frame > 2394 ? "#06b6d4" : frame > 1720 ? "#a855f7" : "#6366f1"} />
 
       {/* PHASE 1: 5 Rules of Agentic Engineering (0 - 1670f) */}
-      {frame < 1675 && (
+      {frame < 1720 && (
         <div
           style={{
             position: "absolute",
@@ -119,7 +121,7 @@ export const FiveRulesScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            opacity: interpolate(frame, [0, 20, 1640, 1670], [0, 1, 1, 0], {
+            opacity: interpolate(frame, [0, 20, 1680, 1715], [0, 1, 1, 0], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             }),
@@ -143,64 +145,20 @@ export const FiveRulesScene: React.FC = () => {
             ЭПОХА АГЕНТНОЙ ИНЖЕНЕРИИ • 5 ПРАВИЛ
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 14, width: 1120 }}>
-            {rules.map((rule, idx) => {
-              const ruleStartFrame = idx * 280;
-              const isVisible = frame >= ruleStartFrame;
-              const isActive = frame >= ruleStartFrame && frame < (idx + 1) * 280 + 100;
-
-              const spr = spring({
-                frame: Math.max(0, frame - ruleStartFrame),
-                fps,
-                config: { damping: 14, stiffness: 120 },
-              });
-
-              return (
-                <div
-                  key={rule.num}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 24,
-                    background: isActive ? "rgba(99, 102, 241, 0.28)" : "rgba(15, 23, 42, 0.88)",
-                    border: `1px solid ${isActive ? "#818cf8" : "rgba(255, 255, 255, 0.12)"}`,
-                    borderRadius: 18,
-                    padding: "16px 28px",
-                    boxShadow: isActive ? "0 0 32px rgba(99, 102, 241, 0.45)" : "none",
-                    opacity: isVisible ? 1 : 0.4,
-                    transform: isVisible ? `scale(${interpolate(spr, [0, 1], [0.95, 1])})` : "scale(0.95)",
-                    backdropFilter: "blur(16px)",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: 28,
-                      fontWeight: 900,
-                      color: isActive ? "#38bdf8" : "#64748b",
-                      width: 50,
-                      fontVariantNumeric: "tabular-nums",
-                    }}
-                  >
-                    {rule.num}
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 24, fontWeight: 800, color: "#ffffff" }}>
-                      {rule.title}
-                    </div>
-                    <div style={{ fontSize: 18, color: "#94a3b8", marginTop: 4 }}>
-                      {rule.desc}
-                    </div>
-                  </div>
-                  {isActive && <span style={{ fontSize: 26, filter: "drop-shadow(0 0 8px #38bdf8)" }}>⚡</span>}
-                </div>
-              );
-            })}
-          </div>
+          {activeRuleIndex < 0 ? (
+            <div style={{ fontSize: 84, fontWeight: 900, color: "#ffffff", textAlign: "center", maxWidth: 1250, lineHeight: 1.1 }}>Человек — архитектор AI-системы</div>
+          ) : (
+            <div style={{ width: 1260, padding: "64px 76px", borderRadius: 26, background: "rgba(15, 23, 42, 0.94)", border: "2px solid rgba(129, 140, 248, 0.7)", boxShadow: "0 28px 70px rgba(0,0,0,0.7)" }}>
+              <div style={{ fontSize: 42, color: "#38bdf8", fontWeight: 900 }}>ПРАВИЛО {rules[activeRuleIndex].num} / 05</div>
+              <div style={{ fontSize: 78, color: "#ffffff", fontWeight: 900, lineHeight: 1.12, marginTop: 20 }}>{rules[activeRuleIndex].title}</div>
+              <div style={{ fontSize: 40, color: "#e2e8f0", lineHeight: 1.25, marginTop: 28 }}>{rules[activeRuleIndex].desc}</div>
+            </div>
+          )}
         </div>
       )}
 
       {/* PHASE 2: GEO Teaser 145M Sessions (1660 - 2400f) */}
-      {frame >= 1660 && frame < 2400 && (
+      {frame >= 1720 && frame < 2400 && (
         <div
           style={{
             position: "absolute",
@@ -209,7 +167,7 @@ export const FiveRulesScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            opacity: interpolate(frame, [1660, 1685, 2365, 2395], [0, 1, 1, 0], {
+            opacity: interpolate(frame, [1720, 1745, 2365, 2395], [0, 1, 1, 0], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             }),

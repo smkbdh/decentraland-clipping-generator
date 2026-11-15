@@ -34,14 +34,11 @@ export default function App() {
   // Total speech duration after intro
   const postIntroAudioDuration = Math.round((522.66 - 79.5) * fps);
 
-  // Key SFX Timestamps (in seconds)
-  const sfxWhooshes = [0.2, 25.0, 50.0, 93.5, 122.0, 148.0, 189.0, 221.5, 255.0, 279.0, 337.2, 370.0, 403.0, 426.0, 444.6, 500.0];
-  const sfxImpacts = [0, 93.34, 221.24, 369.94, 444.44];
-  const sfxCashes = [26.0, 123.0, 137.0];
-  const sfxGlitches = [52.0, 281.0];
+  // Reserve sound accents for chapter changes; narration carries the in-scene motion.
+  const chapterImpacts = [93.34, 221.24, 369.94, 444.44];
 
   return (
-    <div style={{ flex: 1, backgroundColor: "#07090e", width: "100%", height: "100%", position: "relative" }}>
+    <div style={{ flex: 1, backgroundColor: "#07090e", width: "100%", height: "100%", position: "relative", fontFamily: "Bahnschrift, Segoe UI, sans-serif" }}>
       {/* GLOBAL UI OVERLAYS */}
       <TopChapterBar />
       <CornerBranding />
@@ -94,27 +91,9 @@ export default function App() {
       </Sequence>
 
       {/* === SFX TRACKS === */}
-      {sfxWhooshes.map((sec, idx) => (
-        <Sequence key={`whoosh_${idx}`} from={Math.round(sec * fps)} durationInFrames={15} layout="none">
-          <Audio src="kino:8ec047a6-125f-473c-a12a-06dc83664cf4" volume={0.35} />
-        </Sequence>
-      ))}
-
-      {sfxImpacts.map((sec, idx) => (
-        <Sequence key={`impact_${idx}`} from={Math.round(sec * fps)} durationInFrames={30} layout="none">
-          <Audio src="kino:294ff0ee-27bf-469c-9460-e595776efdb2" volume={0.4} />
-        </Sequence>
-      ))}
-
-      {sfxCashes.map((sec, idx) => (
-        <Sequence key={`cash_${idx}`} from={Math.round(sec * fps)} durationInFrames={20} layout="none">
-          <Audio src="kino:cf9a317e-8931-4ff4-a97b-d1949ec3d373" volume={0.4} />
-        </Sequence>
-      ))}
-
-      {sfxGlitches.map((sec, idx) => (
-        <Sequence key={`glitch_${idx}`} from={Math.round(sec * fps)} durationInFrames={20} layout="none">
-          <Audio src="kino:67127907-51bd-4969-9fc0-cf7553699024" volume={0.4} />
+      {chapterImpacts.map((sec, idx) => (
+        <Sequence key={`chapter_impact_${idx}`} from={Math.round(sec * fps)} durationInFrames={30} layout="none">
+          <Audio src="kino:294ff0ee-27bf-469c-9460-e595776efdb2" volume={0.14} />
         </Sequence>
       ))}
 

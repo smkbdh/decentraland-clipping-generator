@@ -426,7 +426,15 @@ export const GoldRushScene: React.FC = () => {
             ⚠️ «ЛОВУШКА ВАЙБ-ВЫРУЧКИ»: ПОЧЕМУ 70% ТОНУТ В УБЫТКАХ
           </div>
 
-          <TokenInvoiceCard scale={interpolate(sprInvoice, [0, 1], [0.92, 1])} />
+          {frame < Math.round(80.46 * fps) ? (
+            <div style={{ width: 1160, padding: "54px 70px", borderRadius: 24, background: "rgba(10, 15, 30, 0.94)", border: "1px solid rgba(245, 158, 11, 0.55)", textAlign: "center" }}>
+              <div style={{ fontSize: 74, fontWeight: 900, color: "#ffffff", lineHeight: 1.12 }}>Подписка фиксированная.</div>
+              <div style={{ fontSize: 74, fontWeight: 900, color: "#fbbf24", lineHeight: 1.12, marginTop: 18 }}>Расход на AI — нет.</div>
+              <div style={{ fontSize: 34, color: "#e2e8f0", marginTop: 34 }}>Каждый запрос клиента расходует токены и деньги.</div>
+            </div>
+          ) : (
+            <TokenInvoiceCard scale={interpolate(sprInvoice, [0, 1], [0.92, 1])} />
+          )}
         </div>
       )}
 

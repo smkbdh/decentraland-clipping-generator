@@ -24,7 +24,6 @@ export const TweetCard: React.FC<TweetCardProps> = ({
   verified = true,
   date,
   content,
-  metrics = { views: "1.4M", likes: "5.2K", retweets: "892" },
   isAlert = false,
   alertBadge,
   scale = 1,
@@ -32,11 +31,11 @@ export const TweetCard: React.FC<TweetCardProps> = ({
   return (
     <div
       style={{
-        width: 780,
+        width: 1080,
         background: isAlert ? "rgba(25, 10, 15, 0.94)" : "rgba(10, 15, 26, 0.92)",
         border: `1.5px solid ${isAlert ? "rgba(239, 68, 68, 0.8)" : "rgba(56, 189, 248, 0.35)"}`,
         borderRadius: 24,
-        padding: "28px 32px",
+        padding: "38px 44px",
         boxShadow: isAlert
           ? "0 25px 60px rgba(239, 68, 68, 0.35), 0 0 30px rgba(239, 68, 68, 0.2)"
           : "0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(56, 189, 248, 0.15)",
@@ -85,14 +84,14 @@ export const TweetCard: React.FC<TweetCardProps> = ({
 
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <span style={{ fontSize: 20, fontWeight: 800, color: "#ffffff" }}>{name}</span>
-              {verified && (
+              <span style={{ fontSize: 32, fontWeight: 800, color: "#ffffff" }}>{name}</span>
+              {false && verified && (
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="#1d9bf0">
                   <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.79-4-4-4-.495 0-.965.084-1.4.238C14.55 2.475 13.18 1.6 11.6 1.6c-1.58 0-2.95.875-3.6 2.148-.435-.154-.905-.238-1.4-.238-2.21 0-4 1.79-4 4 0 .495.084.965.238 1.4C1.575 9.55.7 10.92.7 12.5c0 1.58.875 2.95 2.148 3.6-.154.435-.238.905-.238 1.4 0 2.21 1.79 4 4 4 .495 0 .965-.084 1.4-.238.65 1.273 2.02 2.148 3.6 2.148 1.58 0 2.95-.875 3.6-2.148.435.154.905.238 1.4.238 2.21 0 4-1.79 4-4 0-.495-.084-.965-.238-1.4 1.273-.65 2.148-2.02 2.148-3.6zm-12.72 4.22l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
                 </svg>
               )}
             </div>
-            <div style={{ fontSize: 15, color: "#64748b", fontWeight: 600 }}>
+            <div style={{ fontSize: 22, color: "#cbd5e1", fontWeight: 600 }}>
               {handle} · {date}
             </div>
           </div>
@@ -106,7 +105,7 @@ export const TweetCard: React.FC<TweetCardProps> = ({
               background: "rgba(239, 68, 68, 0.2)",
               border: "1px solid rgba(239, 68, 68, 0.6)",
               color: "#f87171",
-              fontSize: 13,
+              fontSize: 22,
               fontWeight: 800,
               letterSpacing: 1,
               textTransform: "uppercase",
@@ -122,7 +121,7 @@ export const TweetCard: React.FC<TweetCardProps> = ({
       {/* Body text */}
       <div
         style={{
-          fontSize: 22,
+          fontSize: 36,
           color: isAlert ? "#fecaca" : "#f1f5f9",
           lineHeight: 1.5,
           fontWeight: 600,
@@ -133,27 +132,8 @@ export const TweetCard: React.FC<TweetCardProps> = ({
         {content}
       </div>
 
-      {/* Footer Metrics */}
-      <div
-        style={{
-          display: "flex",
-          gap: 32,
-          paddingTop: 16,
-          borderTop: `1px solid ${isAlert ? "rgba(239, 68, 68, 0.2)" : "rgba(255, 255, 255, 0.08)"}`,
-          color: "#94a3b8",
-          fontSize: 15,
-          fontWeight: 600,
-        }}
-      >
-        <div>
-          <span style={{ color: "#ffffff", fontWeight: 800 }}>{metrics.views}</span> Просмотров
-        </div>
-        <div>
-          <span style={{ color: "#ffffff", fontWeight: 800 }}>{metrics.likes}</span> Лайков
-        </div>
-        <div>
-          <span style={{ color: "#ffffff", fontWeight: 800 }}>{metrics.retweets}</span> Репостов
-        </div>
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: 14, color: "#cbd5e1", fontSize: 22, fontWeight: 700 }}>
+        РЕКОНСТРУКЦИЯ · НЕ СКРИНШОТ ПОСТА
       </div>
     </div>
   );
@@ -164,7 +144,7 @@ export const DealProofCard: React.FC<{ scale?: number }> = ({ scale = 1 }) => {
   return (
     <div
       style={{
-        width: 820,
+        width: 1120,
         background: "rgba(10, 15, 30, 0.94)",
         border: "1.5px solid rgba(56, 189, 248, 0.4)",
         borderRadius: 24,
@@ -189,31 +169,30 @@ export const DealProofCard: React.FC<{ scale?: number }> = ({ scale = 1 }) => {
           >
             M&A ОФИЦИАЛЬНО
           </div>
-          <span style={{ color: "#94a3b8", fontSize: 16, fontWeight: 700 }}>GETLATKA • ИЮЛЬ 2025</span>
+          <span style={{ color: "#cbd5e1", fontSize: 22, fontWeight: 700 }}>WIX · 18 ИЮНЯ 2025</span>
         </div>
         <div style={{ color: "#10b981", fontSize: 18, fontWeight: 800 }}>✓ СДЕЛКА ПОДТВЕРЖДЕНА</div>
       </div>
 
-      <h3 style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", lineHeight: 1.25, margin: "0 0 14px 0" }}>
-        Wix покупает ИИ-стартап Base44 за $80,000,000 наличными
+      <h3 style={{ fontSize: 50, fontWeight: 900, color: "#ffffff", lineHeight: 1.15, margin: "0 0 14px 0" }}>
+        Wix покупает Base44: около $80 млн
       </h3>
-      <p style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.5, margin: "0 0 24px 0" }}>
-        Основатель Маор Шломо запустил сервис за 6 месяцев до продажи без инвесторов. 100% клиентского интерфейса
-        написали нейросети Cursor и Claude 3.5 Sonnet.
+      <p style={{ fontSize: 30, color: "#e2e8f0", lineHeight: 1.35, margin: "0 0 24px 0" }}>
+        Первоначальная сумма сделки; дополнительные выплаты зависят от результатов до 2029 года.
       </p>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
         <div style={{ background: "rgba(255, 255, 255, 0.05)", padding: "16px 20px", borderRadius: 16 }}>
-          <div style={{ fontSize: 13, color: "#64748b", fontWeight: 700 }}>СУММА СДЕЛКИ</div>
-          <div style={{ fontSize: 26, color: "#38bdf8", fontWeight: 900, marginTop: 4 }}>$80M CASH</div>
+          <div style={{ fontSize: 22, color: "#cbd5e1", fontWeight: 700 }}>ПЕРВОНАЧАЛЬНО</div>
+          <div style={{ fontSize: 38, color: "#38bdf8", fontWeight: 900, marginTop: 4 }}>~$80 млн</div>
         </div>
         <div style={{ background: "rgba(255, 255, 255, 0.05)", padding: "16px 20px", borderRadius: 16 }}>
-          <div style={{ fontSize: 13, color: "#64748b", fontWeight: 700 }}>СРОК РАЗРАБОТКИ</div>
-          <div style={{ fontSize: 26, color: "#a855f7", fontWeight: 900, marginTop: 4 }}>6 МЕСЯЦЕВ</div>
+          <div style={{ fontSize: 22, color: "#cbd5e1", fontWeight: 700 }}>ДОПОЛНИТЕЛЬНО</div>
+          <div style={{ fontSize: 38, color: "#a855f7", fontWeight: 900, marginTop: 4 }}>Earn-out</div>
         </div>
         <div style={{ background: "rgba(255, 255, 255, 0.05)", padding: "16px 20px", borderRadius: 16 }}>
-          <div style={{ fontSize: 13, color: "#64748b", fontWeight: 700 }}>ШТАТ КОДЕРОВ</div>
-          <div style={{ fontSize: 26, color: "#10b981", fontWeight: 900, marginTop: 4 }}>0 ЧЕЛОВЕК</div>
+          <div style={{ fontSize: 22, color: "#cbd5e1", fontWeight: 700 }}>ИСТОЧНИК</div>
+          <div style={{ fontSize: 38, color: "#10b981", fontWeight: 900, marginTop: 4 }}>Wix Newsroom</div>
         </div>
       </div>
     </div>
@@ -225,7 +204,7 @@ export const TokenInvoiceCard: React.FC<{ scale?: number }> = ({ scale = 1 }) =>
   return (
     <div
       style={{
-        width: 800,
+        width: 1120,
         background: "rgba(15, 23, 42, 0.95)",
         border: "1.5px solid rgba(239, 68, 68, 0.5)",
         borderRadius: 24,
@@ -253,7 +232,7 @@ export const TokenInvoiceCard: React.FC<{ scale?: number }> = ({ scale = 1 }) =>
           >
             ✦
           </div>
-          <span style={{ fontSize: 18, fontWeight: 800, color: "#ffffff" }}>OpenAI Platform • Billing & Usage</span>
+          <span style={{ fontSize: 30, fontWeight: 800, color: "#ffffff" }}>Astra AI · стоимость вычислений</span>
         </div>
         <div
           style={{
@@ -261,35 +240,31 @@ export const TokenInvoiceCard: React.FC<{ scale?: number }> = ({ scale = 1 }) =>
             borderRadius: 16,
             background: "rgba(239, 68, 68, 0.2)",
             color: "#f87171",
-            fontSize: 14,
+            fontSize: 23,
             fontWeight: 800,
             letterSpacing: 1,
           }}
         >
-          СЧЕТ К ОПЛАТЕ • ASTRA AI
+          ИЛЛЮСТРАЦИЯ · НЕ РЕАЛЬНЫЙ СЧЕТ
         </div>
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 24 }}>
         <div>
-          <div style={{ fontSize: 14, color: "#94a3b8", fontWeight: 700 }}>ИТОГО ЗА МЕСЯЦ (ТОКЕНЫ GPT-4o):</div>
-          <div style={{ fontSize: 52, fontWeight: 900, color: "#ef4444", marginTop: 4, fontVariantNumeric: "tabular-nums" }}>
-            $250,420.00
+          <div style={{ fontSize: 24, color: "#cbd5e1", fontWeight: 700 }}>РАСХОДЫ НА МОДЕЛИ ЗА МЕСЯЦ</div>
+          <div style={{ fontSize: 90, fontWeight: 900, color: "#ef4444", marginTop: 4, fontVariantNumeric: "tabular-nums" }}>
+            до $250 тыс.
           </div>
         </div>
         <div style={{ textAlign: "right" }}>
-          <div style={{ fontSize: 14, color: "#94a3b8", fontWeight: 700 }}>АКТИВНЫХ ЮЗЕРОВ:</div>
-          <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginTop: 4 }}>170,000</div>
+          <div style={{ fontSize: 24, color: "#cbd5e1", fontWeight: 700 }}>ПОЛЬЗОВАТЕЛЕЙ</div>
+          <div style={{ fontSize: 46, fontWeight: 900, color: "#ffffff", marginTop: 4 }}>170 тыс.</div>
         </div>
       </div>
 
       <div style={{ background: "rgba(0, 0, 0, 0.4)", borderRadius: 16, padding: "16px 20px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 16, color: "#cbd5e1", marginBottom: 8 }}>
-          <span>Расход на 1 юзера: <strong>$1.47 / месяц</strong></span>
-          <span style={{ color: "#f87171" }}>Подписка юзера: <strong>$15.00 / месяц</strong></span>
-        </div>
-        <div style={{ fontSize: 14, color: "#94a3b8" }}>
-          ⚠️ При активном использовании (heavy prompts) себестоимость вычислений превысила 85% всей выручки проекта!
+        <div style={{ fontSize: 30, color: "#e2e8f0", fontWeight: 700 }}>
+          Каждый запрос клиента увеличивает себестоимость сервиса.
         </div>
       </div>
     </div>
@@ -301,7 +276,7 @@ export const DevToolsExploitCard: React.FC<{ scale?: number }> = ({ scale = 1 })
   return (
     <div
       style={{
-        width: 820,
+        width: 1120,
         background: "#090d16",
         border: "1.5px solid rgba(239, 68, 68, 0.6)",
         borderRadius: 20,
@@ -325,14 +300,14 @@ export const DevToolsExploitCard: React.FC<{ scale?: number }> = ({ scale = 1 })
           <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ef4444" }} />
           <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#f59e0b" }} />
           <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#10b981" }} />
-          <span style={{ fontSize: 13, fontFamily: "monospace", color: "#94a3b8", marginLeft: 10 }}>
-            Chrome DevTools — Console (Взлом Enrichlead за 72 часа)
+          <span style={{ fontSize: 24, fontFamily: "monospace", color: "#cbd5e1", marginLeft: 10 }}>
+            Схема уязвимости · реконструкция
           </span>
         </div>
-        <div style={{ fontSize: 12, color: "#f87171", fontWeight: 800 }}>КРИТИЧЕСКАЯ УЯЗВИМОСТЬ</div>
+        <div style={{ fontSize: 22, color: "#f87171", fontWeight: 800 }}>КРИТИЧЕСКАЯ УЯЗВИМОСТЬ</div>
       </div>
 
-      <div style={{ padding: "24px 28px", fontFamily: "monospace", fontSize: 18, lineHeight: 1.7 }}>
+      <div style={{ padding: "30px 36px", fontFamily: "monospace", fontSize: 28, lineHeight: 1.55, overflowWrap: "anywhere" }}>
         <div style={{ color: "#94a3b8" }}>// Проблема «Счастливого пути»: ИИ оставил проверку в браузере</div>
         <div style={{ color: "#38bdf8", marginTop: 8 }}>
           &gt; window.localStorage.setItem('has_active_subscription', 'true');
@@ -346,7 +321,7 @@ export const DevToolsExploitCard: React.FC<{ scale?: number }> = ({ scale = 1 })
           &lt; "sk-proj-49a8f...942" — [СЕКРЕТНЫЙ КЛЮЧ СЛИТ В ОТКРЫТЫЙ ДОСТУП]
         </div>
 
-        <div style={{ marginTop: 18, color: "#fbbf24", fontSize: 15 }}>
+        <div style={{ marginTop: 18, color: "#fbbf24", fontSize: 25 }}>
           ⚠️ Злоумышленники подключили бота и за 3 часа сожгли баланс API до лимита в $10,000.
         </div>
       </div>

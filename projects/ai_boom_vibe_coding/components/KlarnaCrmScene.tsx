@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, spring, Img } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
@@ -112,50 +112,19 @@ export const KlarnaCrmScene: React.FC = () => {
             АКТ 3 • ОТРЕЗВЛЕНИЕ БИЗНЕСА: КЕЙС KLARNA
           </div>
 
-          <div style={{ display: "flex", gap: 50, alignItems: "center" }}>
-            {/* Image card */}
-            <div
-              style={{
-                width: 580,
-                borderRadius: 24,
-                overflow: "hidden",
-                border: "2px solid rgba(6, 182, 212, 0.5)",
-                boxShadow: "0 25px 50px rgba(0, 0, 0, 0.8)",
-              }}
-            >
-              <Img
-                src="kino:29aa1168-8c43-4450-bfb7-f4190ce552e5"
-                style={{ width: "100%", height: 320, objectFit: "cover" }}
-              />
-              <div style={{ padding: 24, background: "#0f172a" }}>
-                <div style={{ fontSize: 24, fontWeight: 800, color: "#ffffff" }}>
-                  Klarna заменила ИИ 700 операторов
-                </div>
-                <div style={{ fontSize: 16, color: "#94a3b8", marginTop: 8 }}>
-                  Отказались от Salesforce и Workday в пользу собственной базы
-                </div>
-              </div>
+          {frame < Math.round(15.96 * fps) ? (
+            <div style={{ width: 1160, padding: "62px 72px", borderRadius: 26, background: "rgba(15, 23, 42, 0.94)", border: "2px solid rgba(6, 182, 212, 0.65)", textAlign: "center" }}>
+              <div style={{ fontSize: 30, color: "#67e8f9", fontWeight: 800 }}>КЕЙС KLARNA · ПЕРВЫЙ ЭТАП</div>
+              <div style={{ fontSize: 112, color: "#ffffff", fontWeight: 900, lineHeight: 1.05, marginTop: 18 }}>700 операторов</div>
+              <div style={{ fontSize: 38, color: "#e2e8f0", lineHeight: 1.22, marginTop: 24 }}>Эквивалент объёма работы AI-ассистента, а не число уволенных людей.</div>
             </div>
-
-            {/* Bloomberg reality */}
-            <div style={{ width: 520 }}>
-              <div style={{ fontSize: 22, color: "#f59e0b", fontWeight: 800, textTransform: "uppercase" }}>
-                ИНТЕРВЬЮ BLOOMBERG:
-              </div>
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginTop: 12, lineHeight: 1.3 }}>
-                «Мы зашли слишком далеко и потеряли в качестве»
-              </div>
-              <p style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.6, marginTop: 16 }}>
-                Простые задачи бот решал мгновенно, но в сложных спорах клиенты бились о стену.
-              </p>
-              <div style={{ marginTop: 20, padding: 18, background: "rgba(16, 185, 129, 0.2)", borderRadius: 16, border: "1px solid rgba(16, 185, 129, 0.5)", backdropFilter: "blur(16px)" }}>
-                <div style={{ fontSize: 18, fontWeight: 800, color: "#34d399" }}>ИТОГ: ГИБРИДНАЯ МОДЕЛЬ</div>
-                <div style={{ fontSize: 16, color: "#e2e8f0", marginTop: 6 }}>
-                  Рутина — на ИИ, а сложные кейсы и эмпатия — только за людьми.
-                </div>
-              </div>
+          ) : (
+            <div style={{ width: 1160, padding: "62px 72px", borderRadius: 26, background: "rgba(15, 23, 42, 0.94)", border: "2px solid rgba(245, 158, 11, 0.65)", textAlign: "center" }}>
+              <div style={{ fontSize: 30, color: "#fbbf24", fontWeight: 800 }}>ОБРАТНАЯ СТОРОНА</div>
+              <div style={{ fontSize: 72, color: "#ffffff", fontWeight: 900, lineHeight: 1.12, marginTop: 20 }}>Скорость выросла. Качество сложных ответов просело.</div>
+              <div style={{ fontSize: 38, color: "#e2e8f0", marginTop: 28 }}>Итог: AI для рутины, человек для сложных случаев.</div>
             </div>
-          </div>
+          )}
         </div>
       )}
 
