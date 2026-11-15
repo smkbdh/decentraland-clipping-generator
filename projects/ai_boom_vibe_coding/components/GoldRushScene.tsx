@@ -1,22 +1,56 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, spring, Img } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate, spring } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
+import { TweetCard, TokenInvoiceCard } from "./AuthenticVisuals";
 
 export const GoldRushScene: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Act 1 Phases:
-  // Phase 1: 0 - 867f (0 - 28.9s) - Andrey Karpathy & $4.7B / 63% non-devs
-  // Phase 2: 867 - 1623f (28.9 - 54.1s) - Launch Fast ($22k) & Sabrina Matos ($38k)
-  // Phase 3: 1623 - 2874f (54.1 - 95.8s) - Astra AI Token Trap ($250k/mo bill)
-  // Phase 4: 2874 - 3837f (95.8 - 127.9s) - Base44 90% GPU costs & Wix $76M loss
+  // Act 1 Phases & Dynamic Video Cuts:
+  // Cut 1: 0 - 320f (0 - 10.6s) -> 22_silicon_valley_keynote.mp4 (Karpathy Keynote)
+  // Cut 2: 320 - 620f (10.6 - 20.6s) -> 04_act1_ai_network.mp4 (AI Synapse)
+  // Cut 3: 620 - 870f (20.6 - 29.0s) -> 04_act1_ai_network.mp4
+  // Cut 4: 870 - 1250f (29.0 - 41.6s) -> 23_amazon_warehouse_logistics.mp4 (Amazon / Launch Fast)
+  // Cut 5: 1250 - 1620f (41.6 - 54.0s) -> 05_act1_analytics_growth.mp4 (Sabrina Matos)
+  // Cut 6: 1620 - 2000f (54.0 - 66.6s) -> 24_credit_card_burn.mp4 (Credit card / Token Burn)
+  // Cut 7: 2000 - 2450f (66.6 - 81.6s) -> 06_act1_server_token_cost.mp4 (Server Racks)
+  // Cut 8: 2450 - 2870f (81.6 - 95.6s) -> 06_act1_server_token_cost.mp4
+  // Cut 9: 2870 - 3350f (95.6 - 111.6s) -> 07_act1_microchip_gpu.mp4 (Microchip CPU)
+  // Cut 10: 3350 - 3837f (111.6 - 127.9s) -> 05_act1_analytics_growth.mp4 (Wix -$76M Loss)
+
+  const sprTweetKarpathy = spring({ frame: Math.max(0, frame - 50), fps, config: { damping: 13, stiffness: 110 } });
+  const sprStats = spring({ frame: Math.max(0, frame - 340), fps, config: { damping: 13, stiffness: 110 } });
+  const sprInvoice = spring({ frame: Math.max(0, frame - 2000), fps, config: { damping: 12, stiffness: 100 } });
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
-      {/* 1. STOCK VIDEO: AI neural network digital brain (0 - 870f) */}
-      {frame < 870 && (
+      {/* === BACKGROUND VIDEO CUTS (ADHD Retention Pacing) === */}
+
+      {/* Cut 1: Silicon Valley Keynote Stage (0 - 320f) */}
+      {frame < 320 && (
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:bbc025c0-e82d-44b9-958d-839f996a3459"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.88,
+              transform: `scale(${interpolate(frame, [0, 320], [1.0, 1.07])})`,
+            }}
+          />
+        </div>
+      )}
+
+      {/* Cut 2: AI Neural Network Synapses (320 - 870f) */}
+      {frame >= 320 && frame < 870 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:8b6955c5-e85a-4b85-a46a-237ad825379d"
@@ -30,14 +64,35 @@ export const GoldRushScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame, [0, 870], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(frame - 320, [0, 550], [1.0, 1.07])})`,
             }}
           />
         </div>
       )}
 
-      {/* 2. STOCK VIDEO: Financial revenue analytics growth (870 - 1620f) */}
-      {frame >= 870 && frame < 1620 && (
+      {/* Cut 3: Amazon Automated Logistics (870 - 1250f) */}
+      {frame >= 870 && frame < 1250 && (
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:acc1c6d8-d4bb-485f-9fc0-7675b51f9951"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.88,
+              transform: `scale(${interpolate(frame - 870, [0, 380], [1.0, 1.07])})`,
+            }}
+          />
+        </div>
+      )}
+
+      {/* Cut 4: Revenue & Growth Analytics (1250 - 1620f) */}
+      {frame >= 1250 && frame < 1620 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:9ce31523-3176-4e9a-adc4-0c1da47cd205"
@@ -51,14 +106,35 @@ export const GoldRushScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 870, [0, 750], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(frame - 1250, [0, 370], [1.0, 1.07])})`,
             }}
           />
         </div>
       )}
 
-      {/* 3. STOCK VIDEO: Server room data center hardware cost (1620 - 2870f) */}
-      {frame >= 1620 && frame < 2870 && (
+      {/* Cut 5: Burning Money & Digital Card Payment (1620 - 2000f) */}
+      {frame >= 1620 && frame < 2000 && (
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:3a6e45a8-acd0-4eed-904b-113bdf770d48"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.88,
+              transform: `scale(${interpolate(frame - 1620, [0, 380], [1.0, 1.07])})`,
+            }}
+          />
+        </div>
+      )}
+
+      {/* Cut 6: Server Room Hardware & Fiber Lights (2000 - 2870f) */}
+      {frame >= 2000 && frame < 2870 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:9c721104-c22d-43fb-86af-fb5d37bf181b"
@@ -72,14 +148,14 @@ export const GoldRushScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 1620, [0, 1250], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(frame - 2000, [0, 870], [1.0, 1.07])})`,
             }}
           />
         </div>
       )}
 
-      {/* 4. STOCK VIDEO: Microchip processor & computation scale (2870+ f) */}
-      {frame >= 2870 && (
+      {/* Cut 7: Microchip Processor & GPU Scale (2870 - 3350f) */}
+      {frame >= 2870 && frame < 3350 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:1464ee73-c2a4-4904-b1cf-3c765330d068"
@@ -93,18 +169,65 @@ export const GoldRushScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 2870, [0, 967], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(frame - 2870, [0, 480], [1.0, 1.07])})`,
             }}
           />
         </div>
       )}
 
-      <BackgroundGrid accentColor={frame > 1623 ? "#f59e0b" : "#3b82f6"} />
+      {/* Cut 8: Wix Crash & Financial Report (3350 - 3837f) */}
+      {frame >= 3350 && (
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:9ce31523-3176-4e9a-adc4-0c1da47cd205"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.88,
+              transform: `scale(${interpolate(frame - 3350, [0, 487], [1.0, 1.07])})`,
+            }}
+          />
+        </div>
+      )}
 
-      {/* FOREGROUND CARDS (zIndex: 10) */}
+      <BackgroundGrid accentColor={frame > 1620 ? "#f59e0b" : "#3b82f6"} />
 
-      {/* PHASE 1: Karpathy & Market Stats (0 - 870f) */}
-      {frame < 890 && (
+      {/* === FOREGROUND ARTIFACTS === */}
+
+      {/* 1. Andrej Karpathy Tweet (0 - 320f) */}
+      {frame < 330 && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 10,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            opacity: interpolate(frame, [0, 20, 300, 325], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+          }}
+        >
+          <TweetCard
+            name="Andrej Karpathy"
+            handle="@karpathy"
+            avatarInitials="AK"
+            avatarColor="#10a37f"
+            date="15 февр. 2025"
+            content={`There is a new kind of coding I call 'vibe coding', where you fully give in to the vibes, embrace impatience, and let AI write all code.\n\nI just see stuff, say stuff, run stuff, copy paste stuff, and it mostly works.`}
+            metrics={{ views: "14.2M", likes: "68.4K", retweets: "9.2K" }}
+            scale={interpolate(sprTweetKarpathy, [0, 1], [0.92, 1])}
+          />
+        </div>
+      )}
+
+      {/* 2. Market Stats $4.7B & 63% Non-Coders (320 - 870f) */}
+      {frame >= 320 && frame < 870 && (
         <div
           style={{
             position: "absolute",
@@ -114,7 +237,8 @@ export const GoldRushScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            opacity: interpolate(frame, [0, 20, 840, 870], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+            opacity: interpolate(frame, [320, 340, 840, 865], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+            transform: `scale(${interpolate(sprStats, [0, 1], [0.92, 1])})`,
           }}
         >
           <div
@@ -129,18 +253,16 @@ export const GoldRushScene: React.FC = () => {
               letterSpacing: 2,
               marginBottom: 36,
               backdropFilter: "blur(16px)",
-              boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
           >
-            АКТ 1 • ЗОЛОТАЯ ЛИХОРАДКА ВАЙБ-КОДИНГА
+            ИССЛЕДОВАНИЕ TASKADE • РЫНОК 2026
           </div>
 
           <div style={{ display: "flex", gap: 50, alignItems: "center" }}>
-            {/* Stat Card 1: Market Size */}
             <div
               style={{
                 width: 480,
-                background: "rgba(15, 23, 42, 0.9)",
+                background: "rgba(15, 23, 42, 0.92)",
                 border: "1px solid rgba(255, 255, 255, 0.2)",
                 borderRadius: 24,
                 padding: 40,
@@ -149,24 +271,22 @@ export const GoldRushScene: React.FC = () => {
                 backdropFilter: "blur(20px)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 700, textTransform: "uppercase", letterSpacing: 1 }}>
-                Рынок вайб-кодинга 2026
+              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 700, textTransform: "uppercase" }}>
+                Объем рынка
               </div>
-              <div style={{ fontSize: 80, fontWeight: 900, color: "#38bdf8", margin: "16px 0", letterSpacing: "-0.03em", fontFamily: "monospace" }}>
-                ${(interpolate(frame, [0, 30], [0, 4.7], { extrapolateRight: "clamp" })).toFixed(1)}B
+              <div style={{ fontSize: 80, fontWeight: 900, color: "#38bdf8", margin: "16px 0", fontFamily: "monospace" }}>
+                $4.7B
               </div>
               <div style={{ fontSize: 20, color: "#cbd5e1" }}>
-                Термин Андрея Карпатого: <br />
-                <span style={{ color: "#93c5fd" }}>«Программы простыми словами в чате»</span>
+                Создание программ простыми словами в чате
               </div>
             </div>
 
-            {/* Stat Card 2: 63% Non-Coders */}
             <div
               style={{
                 width: 480,
-                background: "rgba(15, 23, 42, 0.9)",
-                border: "1px solid rgba(99, 102, 241, 0.5)",
+                background: "rgba(15, 23, 42, 0.92)",
+                border: "1px solid rgba(168, 85, 247, 0.5)",
                 borderRadius: 24,
                 padding: 40,
                 textAlign: "center",
@@ -174,23 +294,22 @@ export const GoldRushScene: React.FC = () => {
                 backdropFilter: "blur(20px)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 700, textTransform: "uppercase", letterSpacing: 1 }}>
-                Главная цифра индустрии
+              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 700, textTransform: "uppercase" }}>
+                Доля не-программистов
               </div>
-              <div style={{ fontSize: 80, fontWeight: 900, color: "#a855f7", margin: "16px 0", letterSpacing: "-0.03em", fontFamily: "monospace" }}>
-                {Math.round(interpolate(frame, [0, 30], [0, 63], { extrapolateRight: "clamp" }))}%
+              <div style={{ fontSize: 80, fontWeight: 900, color: "#a855f7", margin: "16px 0", fontFamily: "monospace" }}>
+                63%
               </div>
               <div style={{ fontSize: 20, color: "#cbd5e1" }}>
-                Вообще не являются программистами: <br />
-                <span style={{ color: "#c084fc" }}>предприниматели, маркетологи, менеджеры</span>
+                Предприниматели, маркетологи, продакты
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* PHASE 2: Launch Fast & Sabrina Matos (870 - 1630f) */}
-      {frame >= 860 && frame < 1640 && (
+      {/* 3. Launch Fast ($22k) & Sabrina Matos ($38k) (870 - 1620f) */}
+      {frame >= 870 && frame < 1620 && (
         <div
           style={{
             position: "absolute",
@@ -200,7 +319,7 @@ export const GoldRushScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            opacity: interpolate(frame, [860, 885, 1590, 1620], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+            opacity: interpolate(frame, [870, 890, 1590, 1615], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
           }}
         >
           <div
@@ -217,11 +336,10 @@ export const GoldRushScene: React.FC = () => {
               backdropFilter: "blur(16px)",
             }}
           >
-            РЕАЛЬНЫЕ УСПЕШНЫЕ КЕЙСЫ (БЕЗ КОМАНДЫ РАЗРАБОТКИ)
+            РЕАЛЬНЫЕ УСПЕШНЫЕ КЕЙСЫ (БЕЗ НАЙМА КОДЕРОВ)
           </div>
 
           <div style={{ display: "flex", gap: 50, alignItems: "center" }}>
-            {/* Case 1: Launch Fast */}
             <div
               style={{
                 width: 520,
@@ -241,14 +359,13 @@ export const GoldRushScene: React.FC = () => {
                 Аналитика для продавцов Amazon за 3 месяца
               </div>
               <div style={{ fontSize: 64, fontWeight: 900, color: "#10b981", margin: "24px 0 12px 0", fontFamily: "monospace" }}>
-                ${Math.round(interpolate(frame - 860, [0, 30], [0, 22], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }))},000<span style={{ fontSize: 24, color: "#94a3b8" }}>/мес</span>
+                ${Math.round(interpolate(frame - 870, [0, 30], [0, 22], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }))},000<span style={{ fontSize: 24, color: "#94a3b8" }}>/мес</span>
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>
-                Собрано соло-фаундером без найма программистов
+                Собрано соло-фаундером без команды разработки
               </div>
             </div>
 
-            {/* Case 2: Sabrina Matos */}
             <div
               style={{
                 width: 520,
@@ -268,7 +385,7 @@ export const GoldRushScene: React.FC = () => {
                 Приложение женской безопасности
               </div>
               <div style={{ fontSize: 64, fontWeight: 900, color: "#a855f7", margin: "24px 0 12px 0", fontFamily: "monospace" }}>
-                ${Math.round(interpolate(frame - 860, [0, 30], [0, 38], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }))},000<span style={{ fontSize: 24, color: "#94a3b8" }}>/мес</span>
+                ${Math.round(interpolate(frame - 870, [0, 30], [0, 38], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }))},000<span style={{ fontSize: 24, color: "#94a3b8" }}>/мес</span>
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>
                 Связка no-code конструктора и автоматизаций
@@ -278,8 +395,8 @@ export const GoldRushScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 3: The Token Trap & Astra AI (1620 - 2880f) */}
-      {frame >= 1610 && frame < 2890 && (
+      {/* 4. Token Trap & Astra AI Invoice Card (1620 - 2870f) */}
+      {frame >= 1620 && frame < 2870 && (
         <div
           style={{
             position: "absolute",
@@ -289,7 +406,7 @@ export const GoldRushScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            opacity: interpolate(frame, [1610, 1635, 2840, 2870], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+            opacity: interpolate(frame, [1620, 1640, 2840, 2865], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
           }}
         >
           <div
@@ -302,74 +419,19 @@ export const GoldRushScene: React.FC = () => {
               fontSize: 22,
               fontWeight: 900,
               letterSpacing: 2,
-              marginBottom: 36,
+              marginBottom: 30,
               backdropFilter: "blur(16px)",
             }}
           >
             ⚠️ «ЛОВУШКА ВАЙБ-ВЫРУЧКИ»: ПОЧЕМУ 70% ТОНУТ В УБЫТКАХ
           </div>
 
-          <div style={{ display: "flex", gap: 50, alignItems: "center" }}>
-            {/* The Trap concept */}
-            <div
-              style={{
-                width: 500,
-                background: "rgba(15, 23, 42, 0.92)",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
-                borderRadius: 24,
-                padding: 36,
-                backdropFilter: "blur(20px)",
-              }}
-            >
-              <div style={{ fontSize: 22, fontWeight: 800, color: "#f87171" }}>
-                Подписка $15/мес vs Реальные затраты
-              </div>
-              <p style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.6, marginTop: 16 }}>
-                Новичок делает обертку над нейросетью и радуется притоку пользователей.
-                Но каждое нажатие кнопки сжигает реальные деньги на API-токенах!
-              </p>
-              <div style={{ marginTop: 24, padding: 18, background: "rgba(239, 68, 68, 0.2)", borderRadius: 16, border: "1px solid rgba(239, 68, 68, 0.5)" }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: "#f87171" }}>Парадокс:</div>
-                <div style={{ fontSize: 17, color: "#cbd5e1", marginTop: 6 }}>
-                  Чем больше клиентов приходит — тем быстрее растет чистый убыток проекта.
-                </div>
-              </div>
-            </div>
-
-            {/* Case: Astra AI */}
-            <div
-              style={{
-                width: 560,
-                background: "rgba(20, 10, 15, 0.95)",
-                border: "2px solid #f59e0b",
-                borderRadius: 24,
-                padding: 36,
-                boxShadow: "0 0 50px rgba(245, 158, 11, 0.4)",
-                backdropFilter: "blur(20px)",
-              }}
-            >
-              <div style={{ fontSize: 20, color: "#fbbf24", fontWeight: 800, textTransform: "uppercase" }}>
-                КЕЙС: ASTRA AI
-              </div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: "#ffffff", marginTop: 8 }}>
-                170,000 пользователей
-              </div>
-              <div style={{ fontSize: 68, fontWeight: 900, color: "#ef4444", margin: "20px 0 10px 0", fontFamily: "monospace" }}>
-                ${Math.round(interpolate(frame - 1620, [0, 35], [0, 250], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }))},000<span style={{ fontSize: 24, color: "#94a3b8" }}>/мес</span>
-              </div>
-              <div style={{ fontSize: 20, color: "#fca5a5", fontWeight: 700 }}>
-                Счет только за OpenAI API!
-              </div>
-              <div style={{ fontSize: 16, color: "#94a3b8", marginTop: 12 }}>
-                Съедает львиную долю выручки еще до выплаты зарплат и закупки рекламы.
-              </div>
-            </div>
-          </div>
+          <TokenInvoiceCard scale={interpolate(sprInvoice, [0, 1], [0.92, 1])} />
         </div>
       )}
 
-      {/* PHASE 4: Maor Shlomo 90% Costs & Wix $76M Loss (2870 - 3837f) */}
-      {frame >= 2860 && (
+      {/* 5. Maor 90% GPU Costs & Wix -$76M Loss (2870 - 3837f) */}
+      {frame >= 2870 && (
         <div
           style={{
             position: "absolute",
@@ -379,7 +441,7 @@ export const GoldRushScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            opacity: interpolate(frame, [2860, 2885, 3800, 3830], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+            opacity: interpolate(frame, [2870, 2890, 3800, 3830], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
           }}
         >
           <div
@@ -400,7 +462,6 @@ export const GoldRushScene: React.FC = () => {
           </div>
 
           <div style={{ display: "flex", gap: 50, alignItems: "center" }}>
-            {/* Maor 90% */}
             <div
               style={{
                 width: 520,
@@ -425,7 +486,6 @@ export const GoldRushScene: React.FC = () => {
               </p>
             </div>
 
-            {/* Wix $76M */}
             <div
               style={{
                 width: 520,
@@ -440,7 +500,7 @@ export const GoldRushScene: React.FC = () => {
                 КОРПОРАЦИЯ WIX (ПОСЛЕ ПОКУПКИ)
               </div>
               <div style={{ fontSize: 64, fontWeight: 900, color: "#ef4444", margin: "16px 0", fontFamily: "monospace" }}>
-                -${Math.round(interpolate(frame - 2860, [0, 35], [0, 76], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }))}M
+                -${Math.round(interpolate(frame - 2870, [0, 35], [0, 76], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }))}M
               </div>
               <div style={{ fontSize: 20, color: "#ffffff", fontWeight: 700 }}>
                 Квартальный убыток при масштабировании

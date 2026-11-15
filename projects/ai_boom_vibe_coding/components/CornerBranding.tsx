@@ -12,7 +12,7 @@ export const CornerBranding: React.FC = () => {
     return null;
   }
 
-  // Pulsing glow animation for the green indicator
+  // Pulsing glow animation for the lime accent
   const pulseOpacity = 0.6 + 0.4 * Math.sin(frame / 12);
 
   return (
@@ -25,52 +25,41 @@ export const CornerBranding: React.FC = () => {
         display: "flex",
         alignItems: "center",
         gap: 12,
-        padding: "6px 14px",
-        borderRadius: 16,
-        backgroundColor: "rgba(15, 23, 42, 0.75)",
+        padding: "6px 16px 6px 10px",
+        borderRadius: 20,
+        backgroundColor: "rgba(15, 23, 42, 0.8)",
         backdropFilter: "blur(16px)",
-        border: "1px solid rgba(255, 255, 255, 0.12)",
-        boxShadow: "0 10px 25px rgba(0, 0, 0, 0.4)",
+        border: "1px solid rgba(163, 230, 53, 0.35)",
+        boxShadow: `0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(163, 230, 53, ${0.15 * pulseOpacity})`,
       }}
     >
-      {/* Live Online Pulse Dot */}
+      {/* Brand Neon Logo */}
       <div
         style={{
-          width: 8,
-          height: 8,
+          width: 36,
+          height: 36,
           borderRadius: "50%",
-          backgroundColor: "#22c55e",
-          boxShadow: `0 0 10px rgba(34, 197, 94, ${pulseOpacity})`,
-          opacity: pulseOpacity,
-        }}
-      />
-
-      {/* Mini QR Code Thumbnail */}
-      <div
-        style={{
-          width: 32,
-          height: 32,
-          borderRadius: 8,
           overflow: "hidden",
-          border: "1px solid rgba(255, 255, 255, 0.2)",
-          backgroundColor: "#ffffff",
+          border: "1.5px solid #a3e635",
+          backgroundColor: "#000000",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          boxShadow: `0 0 12px rgba(163, 230, 53, ${0.4 * pulseOpacity})`,
         }}
       >
         <Img
-          src="kino:e895e6ff-ffb9-4517-b7f2-f557228f34de"
+          src="kino:356ec00c-40df-49d6-886d-023544fb4d24"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
       </div>
 
-      {/* Channel Handle */}
+      {/* Channel Handle & Tag */}
       <div style={{ display: "flex", flexDirection: "column" }}>
         <span
           style={{
             color: "#f8fafc",
-            fontSize: 13,
+            fontSize: 14,
             fontWeight: 800,
             letterSpacing: 0.5,
             lineHeight: 1.2,
@@ -80,10 +69,10 @@ export const CornerBranding: React.FC = () => {
         </span>
         <span
           style={{
-            color: "#94a3b8",
+            color: "#a3e635",
             fontSize: 10,
-            fontWeight: 600,
-            letterSpacing: 1,
+            fontWeight: 700,
+            letterSpacing: 1.2,
             textTransform: "uppercase",
             lineHeight: 1.2,
           }}
