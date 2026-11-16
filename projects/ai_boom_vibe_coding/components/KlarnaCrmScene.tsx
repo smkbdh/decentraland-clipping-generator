@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate } from "remotion";
+import { Sequence, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
@@ -8,14 +8,14 @@ export const KlarnaCrmScene: React.FC = () => {
   const { fps } = useVideoConfig();
 
   // Act 3 Phases:
-  // Phase 1: 0 - 1002f (0 - 33.4s) - Klarna 700 agents replacement & Bloomberg reality check
-  // Phase 2: 1002 - 1695f (33.4 - 56.5s) - Attio vs Salesforce & 70% cold spam fail
-  // Phase 3: 1695 - 2235f (56.5 - 74.5s) - Real estate 8h vs 2min response time (+40% conversion)
+  // Phase 1: 0 - 1000f (0 - 33.3s) - Klarna 700 agents replacement & Bloomberg reality check
+  // Phase 2: 1000 - 1690f (33.3 - 56.3s) - Attio vs Salesforce & 70% cold spam fail
+  // Phase 3: 1690 - 2235f (56.3 - 74.5s) - Real estate 8h vs 2min response time (+40% conversion)
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
       {/* 1. Real Source Video: Klarna AI Assistant 700 Jobs Metrics (0 - 1000f) */}
-      {frame < 1000 && (
+      <Sequence from={0} durationInFrames={1000} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:18f8d087-6194-4ad8-a028-c2769ece206e"
@@ -29,14 +29,14 @@ export const KlarnaCrmScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.92,
-              transform: `scale(${interpolate(frame, [0, 1000], [1.0, 1.06])})`,
+              transform: `scale(${interpolate(frame, [0, 1000], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       {/* 2. STOCK VIDEO: Sales CRM Dashboard / Business Analytics (1000 - 1690f) */}
-      {frame >= 1000 && frame < 1690 && (
+      <Sequence from={1000} durationInFrames={690} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:285f8fc5-0d0f-44d5-8136-fa6f36166ac5"
@@ -50,14 +50,14 @@ export const KlarnaCrmScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 1000, [0, 690], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(frame - 1000, [0, 690], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       {/* 3. STOCK VIDEO: Real Estate Luxury Skyscraper City (1690+ f) */}
-      {frame >= 1690 && (
+      <Sequence from={1690} durationInFrames={545} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:7b6b4470-6fdc-4762-8d82-ccf8a0f04757"
@@ -71,11 +71,11 @@ export const KlarnaCrmScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 1690, [0, 545], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(frame - 1690, [0, 545], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       <BackgroundGrid accentColor={frame > 1695 ? "#10b981" : "#06b6d4"} />
 

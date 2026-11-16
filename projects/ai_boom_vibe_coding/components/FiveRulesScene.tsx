@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, Img } from "remotion";
+import { Sequence, useCurrentFrame, useVideoConfig, interpolate, Img } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
@@ -9,7 +9,7 @@ export const FiveRulesScene: React.FC = () => {
 
   // Act 4 Phases:
   // Phase 1: 0 - 1720f - 5 Rules of Agentic Engineering
-  // Phase 2: 1720 - 2394f - GEO Teaser
+  // Phase 2: 1720 - 2394f - GEO Teaser (AI Search network)
   // Phase 3: 2394 - 2744f (79.8 - 91.46s) - Outro & Comments & Telegram CTA
 
   const rules = [
@@ -46,8 +46,10 @@ export const FiveRulesScene: React.FC = () => {
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
-      {/* 1. STOCK VIDEO: 5 Rules of Agentic Engineering Workspace (0 - 1660f) */}
-      {frame < 1720 && (
+      {/* === BACKGROUND VIDEO CUTS (Wrapped in Sequence for reliable playback) === */}
+
+      {/* 1. STOCK VIDEO: 5 Rules of Agentic Engineering Workspace (0 - 1720f) */}
+      <Sequence from={0} durationInFrames={1720} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:3a285b55-704f-429d-af3a-cc1bc481fe6b"
@@ -65,13 +67,13 @@ export const FiveRulesScene: React.FC = () => {
             }}
           />
         </div>
-      )}
+      </Sequence>
 
-      {/* 2. Real Source Video: Live Perplexity AI Search Interface (1720 - 2394f) */}
-      {frame >= 1720 && frame < 2394 && (
+      {/* 2. STOCK VIDEO: Generative Engine Optimization / AI Search Network (1720 - 2394f) */}
+      <Sequence from={1720} durationInFrames={674} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src="kino:d8ea36d7-6809-428c-9033-322edfeb6ef4"
+            src="kino:5737223f-d1f7-4e69-997b-25a0374f177c"
             loop
             muted
             style={{
@@ -81,15 +83,15 @@ export const FiveRulesScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.92,
+              opacity: 0.9,
               transform: `scale(${zoom2})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       {/* 3. STOCK VIDEO: Channel Outro Futuristic Tech Ambiance (2394+ f) */}
-      {frame >= 2394 && (
+      <Sequence from={2394} durationInFrames={350} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:853aaa13-462a-4b06-8bed-6caa836da86c"
@@ -107,7 +109,7 @@ export const FiveRulesScene: React.FC = () => {
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       <BackgroundGrid accentColor={frame > 2394 ? "#06b6d4" : frame > 1720 ? "#a855f7" : "#6366f1"} />
 

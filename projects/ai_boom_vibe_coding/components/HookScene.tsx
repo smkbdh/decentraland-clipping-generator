@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, spring } from "remotion";
+import { Sequence, useCurrentFrame, useVideoConfig, interpolate, spring } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 import { TweetCard, DealProofCard } from "./AuthenticVisuals";
@@ -16,15 +16,15 @@ export const HookScene: React.FC = () => {
   );
 
   // Act 0 Duration: 0 - 2385 frames (0 - 79.5s)
-  // Dynamic Cut Timings:
+  // Dynamic Cut Timings (in timelineFrame):
   // Cut 1: 0 - 210f (0 - 7.0s) -> 01_hook_coding.mp4
-  // Cut 2: 210 - 450f (7.0 - 15.0s) -> 19_cursor_claude_ai.mp4
-  // Cut 3: 450 - 780f (15.0 - 26.0s) -> 02_hook_startup_deal.mp4
-  // Cut 4: 780 - 1080f (26.0 - 36.0s) -> 18_money_counting.mp4
-  // Cut 5: 1080 - 1380f (36.0 - 46.0s) -> 19_cursor_claude_ai.mp4
-  // Cut 6: 1380 - 1560f (46.0 - 52.0s) -> 20_red_alarm_alert.mp4
-  // Cut 7: 1560 - 1860f (52.0 - 62.0s) -> 02_hook_startup_deal.mp4
-  // Cut 8: 1860 - 2160f (62.0 - 72.0s) -> 03_hook_hacker_breach.mp4
+  // Cut 2: 210 - 384f (7.0 - 12.8s) -> 19_cursor_claude_ai.mp4
+  // Cut 3: 384 - 672f (12.8 - 22.4s) -> 02_hook_startup_deal.mp4
+  // Cut 4: 672 - 1032f (22.4 - 34.4s) -> Maor Shlomo Interview ($80M Base44)
+  // Cut 5: 1032 - 1380f (34.4 - 46.0s) -> 19_cursor_claude_ai.mp4
+  // Cut 6: 1380 - 1600f (46.0 - 53.3s) -> 20_red_alarm_alert.mp4
+  // Cut 7: 1600 - 1866f (53.3 - 62.2s) -> 02_hook_startup_deal.mp4
+  // Cut 8: 1866 - 2160f (62.2 - 72.0s) -> 03_hook_hacker_breach.mp4
   // Cut 9: 2160 - 2385f (72.0 - 79.5s) -> 21_system_error_glitch.mp4
 
   // Kinetic Counter for $80M
@@ -45,10 +45,10 @@ export const HookScene: React.FC = () => {
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
-      {/* === BACKGROUND VIDEO CUTS (Cuts every 6-10s for ADHD Retention) === */}
+      {/* === BACKGROUND VIDEO CUTS (Wrapped in Sequence for reliable playback) === */}
 
       {/* Cut 1: Coding in dark (0 - 210f) */}
-      {frame < 210 && (
+      <Sequence from={0} durationInFrames={210} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:5ed06774-ca93-4da1-95b8-c9eae24ea395"
@@ -62,14 +62,14 @@ export const HookScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame, [0, 210], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(timelineFrame, [0, 210], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
-      {/* Cut 2: Cursor & Claude AI generation (210 - 450f) */}
-      {frame >= 210 && frame < 450 && (
+      {/* Cut 2: Cursor & Claude AI generation (210 - 384f) */}
+      <Sequence from={210} durationInFrames={174} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:ddeadb81-5f52-4e53-8605-51596542b969"
@@ -83,14 +83,14 @@ export const HookScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 210, [0, 240], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(timelineFrame - 210, [0, 174], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
-      {/* Cut 3: Modern Tech Startup Office (450 - 780f) */}
-      {frame >= 450 && frame < 780 && (
+      {/* Cut 3: Modern Tech Startup Office (384 - 672f) */}
+      <Sequence from={384} durationInFrames={288} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:be3479bf-b082-4f45-9b24-cceaf9de8a69"
@@ -104,14 +104,14 @@ export const HookScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 450, [0, 330], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(timelineFrame - 384, [0, 288], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
-      {/* Cut 4: Real Interview - Maor Shlomo ($80M Base44 exit to Wix) (780 - 1080f) */}
-      {frame >= 780 && frame < 1080 && (
+      {/* Cut 4: Real Interview - Maor Shlomo ($80M Base44 exit to Wix) (672 - 1032f) */}
+      <Sequence from={672} durationInFrames={360} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:2236f9b8-78f8-4fb7-a36a-e414e77389ec"
@@ -125,14 +125,14 @@ export const HookScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.92,
-              transform: `scale(${interpolate(frame - 780, [0, 300], [1.0, 1.06])})`,
+              transform: `scale(${interpolate(timelineFrame - 672, [0, 360], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
-      {/* Cut 5: Claude & Cursor Code Architecture (1080 - 1380f) */}
-      {frame >= 1080 && frame < 1380 && (
+      {/* Cut 5: Claude & Cursor Code Architecture (1032 - 1380f) */}
+      <Sequence from={1032} durationInFrames={348} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:ddeadb81-5f52-4e53-8605-51596542b969"
@@ -146,14 +146,14 @@ export const HookScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 1080, [0, 300], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(timelineFrame - 1032, [0, 348], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
-      {/* Cut 6: Red Warning Alarm (1380 - 1560f) */}
-      {frame >= 1380 && frame < 1560 && (
+      {/* Cut 6: Red Warning Alarm (1380 - 1600f) */}
+      <Sequence from={1380} durationInFrames={220} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:06688666-3065-4f88-b018-fc86374f4f8b"
@@ -167,14 +167,14 @@ export const HookScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 1380, [0, 180], [1.0, 1.08])})`,
+              transform: `scale(${interpolate(timelineFrame - 1380, [0, 220], [1.0, 1.08], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
-      {/* Cut 7: Leo Acevedo Launch (1560 - 1860f) */}
-      {frame >= 1560 && frame < 1860 && (
+      {/* Cut 7: Leo Acevedo Launch (1600 - 1866f) */}
+      <Sequence from={1600} durationInFrames={266} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:be3479bf-b082-4f45-9b24-cceaf9de8a69"
@@ -188,14 +188,14 @@ export const HookScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 1560, [0, 300], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(timelineFrame - 1600, [0, 266], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
-      {/* Cut 8: Hacker Breach (1860 - 2160f) */}
-      {frame >= 1860 && frame < 2160 && (
+      {/* Cut 8: Hacker Breach (1866 - 2160f) */}
+      <Sequence from={1866} durationInFrames={294} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:c4d4f55d-3f6a-452a-9c46-9dca94c42485"
@@ -209,14 +209,14 @@ export const HookScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 1860, [0, 300], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(timelineFrame - 1866, [0, 294], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       {/* Cut 9: Digital Glitch & System Failure (2160 - 2385f) */}
-      {frame >= 2160 && timelineFrame < 65.4 * fps && (
+      <Sequence from={2160} durationInFrames={225} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:de38286f-c11b-46ff-9911-9f051670b212"
@@ -230,9 +230,43 @@ export const HookScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.9,
-              transform: `scale(${interpolate(frame - 2160, [0, 225], [1.0, 1.08])})`,
+              transform: `scale(${interpolate(timelineFrame - 2160, [0, 225], [1.0, 1.08], { extrapolateRight: "clamp" })})`,
             }}
           />
+        </div>
+      </Sequence>
+
+      {/* Maor Shlomo Interview Founder Badge (672 - 1032f) */}
+      {timelineFrame >= 672 && timelineFrame < 1032 && (
+        <div
+          style={{
+            position: "absolute",
+            top: 75,
+            left: 70,
+            zIndex: 8,
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+            padding: "10px 24px",
+            borderRadius: 30,
+            background: "rgba(15, 23, 42, 0.85)",
+            border: "1.5px solid #10b981",
+            boxShadow: "0 0 30px rgba(16, 185, 129, 0.35)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          <div
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: "50%",
+              background: "#10b981",
+              boxShadow: "0 0 10px #10b981",
+            }}
+          />
+          <span style={{ fontSize: 20, fontWeight: 900, color: "#ffffff", letterSpacing: 1.5 }}>
+            ЖИВОЕ ИНТЕРВЬЮ: МАОР ШЛОМО (СОЛО-ФАУНДЕР BASE44 · СДЕЛКА НА $80M С WIX)
+          </span>
         </div>
       )}
       {timelineFrame >= 65.4 * fps && (

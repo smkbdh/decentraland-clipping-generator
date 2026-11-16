@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, spring, Img } from "remotion";
+import { Sequence, useCurrentFrame, useVideoConfig, interpolate, spring, Img } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 import { DevToolsExploitCard, TweetCard } from "./AuthenticVisuals";
@@ -9,23 +9,21 @@ export const SecurityScene: React.FC = () => {
   const { fps } = useVideoConfig();
 
   // Act 2 Phases & Fast Visual Cuts (ADHD Pacing):
-  // Cut 1: 0 - 500f (0 - 16.6s) -> 08_act2_cyber_security_lock.mp4
-  // Cut 2: 500 - 1020f (16.6 - 34.0s) -> 08_act2_cyber_security_lock.mp4 + DevTools card
+  // Cut 1 & 2: 0 - 1020f (0 - 34.0s) -> 08_act2_cyber_security_lock.mp4
   // Cut 3: 1020 - 1400f (34.0 - 46.6s) -> 09_act2_cloud_storage_leak.mp4
   // Cut 4: 1400 - 1740f (46.6 - 58.0s) -> 20_red_alarm_alert.mp4 (Tea App 72k leak)
-  // Cut 5: 1740 - 2400f (58.0 - 80.0s) -> 25_database_drop_disaster.mp4 (DB Crash)
-  // Cut 6: 2400 - 2900f (80.0 - 96.6s) -> 10_act2_rogue_ai_glitch.mp4 (Jason Lemkin tweet)
-  // Cut 7: 2900 - 3474f (96.6 - 115.8s) -> 10_act2_rogue_ai_glitch.mp4 (Rule conclusion)
+  // Cut 5: 1740 - 2400f (58.0 - 80.0s) -> Replit Agent DB drop screencast
+  // Cut 6 & 7: 2400 - 3474f (80.0 - 115.8s) -> 10_act2_rogue_ai_glitch.mp4 (Rule conclusion)
 
   const sprExploit = spring({ frame: Math.max(0, frame - 480), fps, config: { damping: 13, stiffness: 110 } });
-  const sprLemkinTweet = spring({ frame: Math.max(0, frame - 2380), fps, config: { damping: 13, stiffness: 110 } });
+  const sprLemkinTweet = spring({ frame: Math.max(0, frame - 1810), fps, config: { damping: 13, stiffness: 110 } });
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
-      {/* === BACKGROUND VIDEO CUTS === */}
+      {/* === BACKGROUND VIDEO CUTS (Wrapped in Sequence for deterministic playback) === */}
 
       {/* Cut 1 & 2: Green Console Code Typing (0 - 1020f) */}
-      {frame < 1020 && (
+      <Sequence from={0} durationInFrames={1020} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:0e824e9e-cf63-40a8-b2cb-dcb3c61d38ef"
@@ -39,14 +37,14 @@ export const SecurityScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame, [0, 1020], [1.0, 1.08])})`,
+              transform: `scale(${interpolate(frame, [0, 1020], [1.0, 1.08], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       {/* Cut 3: Cloud Storage Network Leak (1020 - 1400f) */}
-      {frame >= 1020 && frame < 1400 && (
+      <Sequence from={1020} durationInFrames={380} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:5f2bf5c8-8482-4418-a024-cc1390973fb3"
@@ -60,14 +58,14 @@ export const SecurityScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 1020, [0, 380], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(frame - 1020, [0, 380], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       {/* Cut 4: Red Alarm Emergency Lights (1400 - 1740f) */}
-      {frame >= 1400 && frame < 1740 && (
+      <Sequence from={1400} durationInFrames={340} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:06688666-3065-4f88-b018-fc86374f4f8b"
@@ -81,14 +79,14 @@ export const SecurityScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.9,
-              transform: `scale(${interpolate(frame - 1400, [0, 340], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(frame - 1400, [0, 340], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       {/* Cut 5: Real Screencast - Replit AI Agent Database Deletion Incident (1740 - 2400f) */}
-      {frame >= 1740 && frame < 2400 && (
+      <Sequence from={1740} durationInFrames={660} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:1bef6152-147b-4441-824d-3f21f46248f0"
@@ -101,15 +99,15 @@ export const SecurityScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.92,
-              transform: `scale(${interpolate(frame - 1740, [0, 660], [1.0, 1.06])})`,
+              opacity: 0.94,
+              transform: `scale(${interpolate(frame - 1740, [0, 660], [1.0, 1.05], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
-      )}
+      </Sequence>
 
       {/* Cut 6 & 7: Red Password Decrypt & Rogue AI Glitch (2400+ f) */}
-      {frame >= 2400 && (
+      <Sequence from={2400} durationInFrames={1074} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src="kino:732343e8-ac40-4b20-894b-7ddd0efb1f54"
@@ -123,9 +121,43 @@ export const SecurityScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.88,
-              transform: `scale(${interpolate(frame - 2400, [0, 1074], [1.0, 1.07])})`,
+              transform: `scale(${interpolate(frame - 2400, [0, 1074], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
+        </div>
+      </Sequence>
+
+      {/* Replit Screencast Real Identifier Badge (1740 - 2400f) */}
+      {frame >= 1740 && frame < 2400 && (
+        <div
+          style={{
+            position: "absolute",
+            top: 75,
+            left: 70,
+            zIndex: 8,
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+            padding: "10px 24px",
+            borderRadius: 30,
+            background: "rgba(15, 23, 42, 0.85)",
+            border: "1.5px solid #ef4444",
+            boxShadow: "0 0 30px rgba(239, 68, 68, 0.4)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          <div
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: "50%",
+              background: "#ef4444",
+              boxShadow: "0 0 10px #ef4444",
+            }}
+          />
+          <span style={{ fontSize: 20, fontWeight: 900, color: "#ffffff", letterSpacing: 1.5 }}>
+            РЕАЛЬНЫЙ СКРИНКАСТ: ИНЦИДЕНТ В REPLIT (СНОС ПРОДАКШН-БАЗЫ ДАННЫХ)
+          </span>
         </div>
       )}
 
@@ -325,8 +357,8 @@ export const SecurityScene: React.FC = () => {
         </div>
       )}
 
-      {/* 4. Jason Lemkin / Replit DB deletion Tweet & Incident (1740 - 2900f) */}
-      {frame >= 1740 && frame < 2900 && (
+      {/* 4. Jason Lemkin / Replit DB deletion Tweet & Incident (1810 - 2650f) */}
+      {frame >= 1810 && frame < 2650 && (
         <div
           style={{
             position: "absolute",
@@ -335,7 +367,7 @@ export const SecurityScene: React.FC = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            opacity: interpolate(frame, [1740, 1760, 2870, 2895], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+            opacity: interpolate(frame, [1810, 1835, 2600, 2640], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
           }}
         >
           <TweetCard
@@ -346,9 +378,9 @@ export const SecurityScene: React.FC = () => {
             date="ИЮЛЬ 2025"
             isAlert
             alertBadge="⚠️ БУНТ ИИ-АГЕНТА"
-            content={`Our AI coding agent just dropped our ENTIRE production database with 1,200 executive contacts while trying to fix a CSS margin button.\n\nI told it 11 TIMES IN ALL CAPS not to touch the database. It panicked, lied, and said there was no backup. Never trust prompt rules without backend permissions!`}
+            content={`Наш ИИ-агент только что снёс ВСЮ продакшн-базу данных на 1 200 контактов директоров, пока пытался поправить отступ у кнопки.\n\nЯ 11 РАЗ ЗАГЛАВНЫМИ БУКВАМИ написал ему не трогать базу. Он запаниковал, соврал и заявил, что бэкапа нет. Запреты словами в промптах — это не защита!`}
             metrics={{ views: "3.8M", likes: "24.1K", retweets: "4.7K" }}
-            scale={interpolate(sprLemkinTweet, [0, 1], [0.92, 1])}
+            scale={interpolate(sprLemkinTweet, [0, 1], [0.88, 0.94])}
           />
         </div>
       )}
