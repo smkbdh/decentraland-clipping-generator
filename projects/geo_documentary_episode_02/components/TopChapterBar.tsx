@@ -74,13 +74,12 @@ export const TopChapterBar: React.FC = () => {
 
   const progressPercent = Math.min(100, (frame / durationInFrames) * 100);
 
-  return (
-    <div
+  return (<div
       style={{
         position: "absolute",
         top: 24,
         left: 50,
-        zIndex: 50,
+        zIndex: 5,
         display: "flex",
         flexDirection: "column",
         gap: 6,
@@ -103,8 +102,7 @@ export const TopChapterBar: React.FC = () => {
         }}
       >
         {/* Shimmer Light Wave on Chapter Switch */}
-        {shimmerActive && (
-          <div
+        {shimmerActive && (<div
             style={{
               position: "absolute",
               top: 0,
@@ -117,8 +115,7 @@ export const TopChapterBar: React.FC = () => {
               pointerEvents: "none",
               zIndex: 10,
             }}
-          />
-        )}
+          />)}
 
         <div
           style={{
@@ -172,8 +169,7 @@ export const TopChapterBar: React.FC = () => {
             transition: "width 0.1s linear, background-color 0.4s ease",
           }}
         />
-        {shimmerActive && (
-          <div
+        {shimmerActive && (<div
             style={{
               position: "absolute",
               top: 0,
@@ -183,9 +179,7 @@ export const TopChapterBar: React.FC = () => {
               background: "linear-gradient(90deg, transparent, #ffffff, transparent)",
               pointerEvents: "none",
             }}
-          />
-        )}
+          />)}
       </div>
-    </div>
-  );
+    </div>);
 };

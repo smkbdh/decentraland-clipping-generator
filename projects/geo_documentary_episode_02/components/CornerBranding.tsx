@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { useCurrentFrame, useVideoConfig, Img } from "remotion";
 
 export const CornerBranding: React.FC = () => {
@@ -8,13 +8,12 @@ export const CornerBranding: React.FC = () => {
   // Pulsing glow animation for the lime accent
   const pulseOpacity = 0.6 + 0.4 * Math.sin(frame / 12);
 
-  return (
-    <div
+  return (<div
       style={{
         position: "absolute",
         top: 24,
         right: 50,
-        zIndex: 50,
+        zIndex: 5,
         display: "flex",
         alignItems: "center",
         gap: 12,
@@ -73,6 +72,5 @@ export const CornerBranding: React.FC = () => {
           TELEGRAM КАНАЛ
         </span>
       </div>
-    </div>
-  );
+    </div>);
 };

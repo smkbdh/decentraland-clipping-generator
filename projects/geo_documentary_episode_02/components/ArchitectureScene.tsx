@@ -1,6 +1,5 @@
 ﻿import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";
-import { imgSiteGoogleAiFeatures } from "./imageAssets";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 

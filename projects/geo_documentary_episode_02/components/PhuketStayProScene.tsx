@@ -1,6 +1,5 @@
 ﻿import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";
-import { imgSitePhuketStayVivi, imgTgLeadDario, imgWaChatDario } from "./imageAssets";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
@@ -128,10 +127,7 @@ export const PhuketStayProScene: React.FC = () => {
               >
                 Р–РР’РћР™ РЎРљР РРќРЁРћРў Р‘РћРўРђ
               </div>
-              <Img
-                src={imgTgLeadDario}
-                style={{ width: "100%", height: "100%", objectFit: "contain" }}
-              />
+              
             </div>
 
             {/* Middle flow summary */}
@@ -205,10 +201,7 @@ export const PhuketStayProScene: React.FC = () => {
               >
                 Р Р•РђР›Р¬РќР«Р™ Р”РРђР›РћР“ WHATSAPP
               </div>
-              <Img
-                src={imgWaChatDario}
-                style={{ width: "100%", height: "100%", objectFit: "contain" }}
-              />
+              
             </div>
           </div>
         </div>

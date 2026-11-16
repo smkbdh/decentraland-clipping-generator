@@ -71,12 +71,11 @@ export const ChapterMicroTeaser: React.FC = () => {
         config: { damping: 14, stiffness: 120, mass: 0.8 },
       });
 
-      return (
-        <div
+      return (<div
           style={{
             position: "absolute",
             inset: 0,
-            zIndex: 90,
+            zIndex: 6,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -135,8 +134,7 @@ export const ChapterMicroTeaser: React.FC = () => {
               {t.question}
             </h2>
           </div>
-        </div>
-      );
+        </div>);
     }
   }
 

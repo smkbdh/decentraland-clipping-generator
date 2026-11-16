@@ -1,6 +1,5 @@
 ﻿import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";
-import { imgSiteOpenAiBots } from "./imageAssets";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
@@ -58,8 +57,10 @@ export const HookScene: React.FC = () => {
       {/* 48 - 74s: Real OpenAI Crawlers Docs Screenshot Background */}
       <Sequence from={Math.round(48 * fps)} durationInFrames={Math.round(26 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
-          <Img
-            src={imgSiteOpenAiBots}
+          <Video
+            src="kino:088c92c6-902c-491d-a8d4-3a24dbb9b44e"
+            loop
+            muted
             style={{
               position: "absolute",
               top: 0,
@@ -67,8 +68,7 @@ export const HookScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.25,
-              filter: "blur(4px)",
+              opacity: 0.35,
               transform: `scale(${interpolate(frame - 48 * fps, [0, 26 * fps], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
             }}
           />
