@@ -16,7 +16,7 @@ export const BenCarRentScene: React.FC = () => {
       <Sequence from={0} durationInFrames={Math.round(38 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
-            src={imgSiteBencarCars}
+            src={staticFile("site_bencar_cars.png")}
             style={{
               position: "absolute",
               top: 0,
@@ -36,7 +36,7 @@ export const BenCarRentScene: React.FC = () => {
       <Sequence from={Math.round(38 * fps)} durationInFrames={Math.round(40 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
-            src={imgSiteBencarHome}
+            src={staticFile("site_bencar_home.png")}
             style={{
               position: "absolute",
               top: 0,

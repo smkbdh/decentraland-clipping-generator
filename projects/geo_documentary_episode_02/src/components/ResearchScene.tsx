@@ -16,7 +16,7 @@ export const ResearchScene: React.FC = () => {
       <Sequence from={0} durationInFrames={Math.round(29 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
-            src={imgSiteMarieHaynes}
+            src={staticFile("site_mariehaynes_study.png")}
             style={{
               position: "absolute",
               top: 0,

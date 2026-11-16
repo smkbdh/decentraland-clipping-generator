@@ -58,7 +58,7 @@ export const ArchitectureScene: React.FC = () => {
       <Sequence from={Math.round(75 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
-            src={imgSiteGoogleAiFeatures}
+            src={staticFile("site_google_ai_features.png")}
             style={{
               position: "absolute",
               top: 0,

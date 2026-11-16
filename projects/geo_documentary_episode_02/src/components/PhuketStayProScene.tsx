@@ -16,7 +16,7 @@ export const PhuketStayProScene: React.FC = () => {
       <Sequence from={0} durationInFrames={Math.round(45 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
-            src={imgSitePhuketStayVivi}
+            src={staticFile("site_phuketstaypro_vivi.png")}
             style={{
               position: "absolute",
               top: 0,
