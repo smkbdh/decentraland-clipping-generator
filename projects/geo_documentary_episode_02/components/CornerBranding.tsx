@@ -1,16 +1,9 @@
-import React from "react";
-import { useCurrentFrame, useVideoConfig, Img, staticFile } from "remotion";
+﻿import React from "react";
+import { useCurrentFrame, useVideoConfig, Img } from "remotion";
 
 export const CornerBranding: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-
-  const currentTimeSec = frame / fps;
-
-  // Hide during intro video (79.5s to 93.34s)
-  if (currentTimeSec >= 79.5 && currentTimeSec < 93.34) {
-    return null;
-  }
 
   // Pulsing glow animation for the lime accent
   const pulseOpacity = 0.6 + 0.4 * Math.sin(frame / 12);
@@ -27,13 +20,13 @@ export const CornerBranding: React.FC = () => {
         gap: 12,
         padding: "6px 16px 6px 10px",
         borderRadius: 20,
-        backgroundColor: "rgba(15, 23, 42, 0.8)",
+        backgroundColor: "rgba(15, 23, 42, 0.85)",
         backdropFilter: "blur(16px)",
         border: "1px solid rgba(163, 230, 53, 0.35)",
         boxShadow: `0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(163, 230, 53, ${0.15 * pulseOpacity})`,
       }}
     >
-      {/* Brand Neon Logo */}
+      {/* Brand Neon Logo - native Kino asset from Episode 1 */}
       <div
         style={{
           width: 36,
@@ -49,7 +42,7 @@ export const CornerBranding: React.FC = () => {
         }}
       >
         <Img
-          src={staticFile("buddah_logo.png")}
+          src="kino:356ec00c-40df-49d6-886d-023544fb4d24"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
       </div>

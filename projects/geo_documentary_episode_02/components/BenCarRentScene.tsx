@@ -1,5 +1,5 @@
-import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img, staticFile } from "remotion";
+﻿import React from "react";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";`nimport { Video } from "@remotion/media";`nimport { imgSiteBencarCars, imgSiteBencarHome } from "./imageAssets";
 import { BackgroundGrid } from "./BackgroundGrid";
 
 export const BenCarRentScene: React.FC = () => {
@@ -15,7 +15,7 @@ export const BenCarRentScene: React.FC = () => {
       <Sequence from={0} durationInFrames={Math.round(38 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
-            src={staticFile("site_bencar_cars.png")}
+            src={imgSiteBencarCars}
             style={{
               position: "absolute",
               top: 0,
@@ -35,7 +35,7 @@ export const BenCarRentScene: React.FC = () => {
       <Sequence from={Math.round(38 * fps)} durationInFrames={Math.round(40 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
-            src={staticFile("site_bencar_home.png")}
+            src={imgSiteBencarHome}
             style={{
               position: "absolute",
               top: 0,
@@ -54,8 +54,8 @@ export const BenCarRentScene: React.FC = () => {
       {/* 78s+: Phuket Road & Cars B-Roll */}
       <Sequence from={Math.round(78 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
-          <Img
-            src={staticFile("b_roll_phuket_car.mp4")}
+          <Video
+            src="kino:18f8d087-6194-4ad8-a028-c2769ece206e" loop muted
             style={{
               position: "absolute",
               top: 0,
@@ -98,7 +98,7 @@ export const BenCarRentScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            КЛИЕНТСКИЙ КЕЙС 01 · АРЕНДА АВТО НА ПХУКЕТЕ
+            РљР›РР•РќРўРЎРљРР™ РљР•Р™РЎ 01 В· РђР Р•РќР”Рђ РђР’РўРћ РќРђ РџРҐРЈРљР•РўР•
           </div>
 
           <h2
@@ -111,7 +111,7 @@ export const BenCarRentScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            BENPHUKETCARRENT.COM: ЖИВЫЕ ЗАЯВКИ ИЗ CHATGPT
+            BENPHUKETCARRENT.COM: Р–РР’Р«Р• Р—РђРЇР’РљР РР— CHATGPT
           </h2>
 
           <div
@@ -132,13 +132,13 @@ export const BenCarRentScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
-                ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА
+                Р§РўРћ РњР« РџРћРЎРўР РћРР›Р Р”Р›РЇ РљР›РР•РќРўРђ
               </div>
               <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                Инженерная архитектура под поиск
+                РРЅР¶РµРЅРµСЂРЅР°СЏ Р°СЂС…РёС‚РµРєС‚СѓСЂР° РїРѕРґ РїРѕРёСЃРє
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                Страницы под каждую модель, прозрачные условия депозитов, страховка, локальные гиды и сквозная UTM-атрибуция.
+                РЎС‚СЂР°РЅРёС†С‹ РїРѕРґ РєР°Р¶РґСѓСЋ РјРѕРґРµР»СЊ, РїСЂРѕР·СЂР°С‡РЅС‹Рµ СѓСЃР»РѕРІРёСЏ РґРµРїРѕР·РёС‚РѕРІ, СЃС‚СЂР°С…РѕРІРєР°, Р»РѕРєР°Р»СЊРЅС‹Рµ РіРёРґС‹ Рё СЃРєРІРѕР·РЅР°СЏ UTM-Р°С‚СЂРёР±СѓС†РёСЏ.
               </div>
             </div>
 
@@ -153,13 +153,13 @@ export const BenCarRentScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 16, color: "#34d399", fontWeight: 700, marginBottom: 8 }}>
-                УВЕДОМЛЕНИЕ В БОТ КОМАНДЫ
+                РЈР’Р•Р”РћРњР›Р•РќРР• Р’ Р‘РћРў РљРћРњРђРќР”Р«
               </div>
               <div style={{ fontSize: 26, fontWeight: 900, color: "#10b981", marginBottom: 12 }}>
-                Источник: AI: ChatGPT
+                РСЃС‚РѕС‡РЅРёРє: AI: ChatGPT
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                Запрос мгновенно падает менеджерам с меткой <code style={{ color: "#38bdf8" }}>utm_source=chatgpt.com</code> и прямой ссылкой на выбранную машину.
+                Р—Р°РїСЂРѕСЃ РјРіРЅРѕРІРµРЅРЅРѕ РїР°РґР°РµС‚ РјРµРЅРµРґР¶РµСЂР°Рј СЃ РјРµС‚РєРѕР№ <code style={{ color: "#38bdf8" }}>utm_source=chatgpt.com</code> Рё РїСЂСЏРјРѕР№ СЃСЃС‹Р»РєРѕР№ РЅР° РІС‹Р±СЂР°РЅРЅСѓСЋ РјР°С€РёРЅСѓ.
               </div>
             </div>
           </div>
@@ -193,7 +193,7 @@ export const BenCarRentScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            ФАКТИЧЕСКИЕ ДАННЫЕ ЗА 2 МЕСЯЦА
+            Р¤РђРљРўРР§Р•РЎРљРР• Р”РђРќРќР«Р• Р—Рђ 2 РњР•РЎРЇР¦Рђ
           </div>
 
           <h2
@@ -206,7 +206,7 @@ export const BenCarRentScene: React.FC = () => {
               margin: "0 0 40px",
             }}
           >
-            ТОЧНЫЕ СЛЕДЫ ИЗ НЕЙРОСЕТИ В СИСТЕМЕ
+            РўРћР§РќР«Р• РЎР›Р•Р”Р« РР— РќР•Р™Р РћРЎР•РўР Р’ РЎРРЎРўР•РњР•
           </h2>
 
           <div style={{ display: "flex", gap: 40, maxWidth: 1100, width: "100%" }}>
@@ -222,13 +222,13 @@ export const BenCarRentScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#86efac", fontWeight: 800, marginBottom: 10 }}>
-                ПЕРЕХОДЫ В WHATSAPP
+                РџР•Р Р•РҐРћР”Р« Р’ WHATSAPP
               </div>
               <div style={{ fontSize: 96, fontWeight: 900, color: "#22c55e", letterSpacing: -2 }}>
                 38
               </div>
               <div style={{ fontSize: 20, color: "#f8fafc", fontWeight: 600 }}>
-                Клиенты с меткой ChatGPT
+                РљР»РёРµРЅС‚С‹ СЃ РјРµС‚РєРѕР№ ChatGPT
               </div>
             </div>
 
@@ -244,13 +244,13 @@ export const BenCarRentScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#7dd3fc", fontWeight: 800, marginBottom: 10 }}>
-                ПРЯМЫЕ ЗАПРОСЫ НА БРОНЬ
+                РџР РЇРњР«Р• Р—РђРџР РћРЎР« РќРђ Р‘Р РћРќР¬
               </div>
               <div style={{ fontSize: 96, fontWeight: 900, color: "#38bdf8", letterSpacing: -2 }}>
                 6
               </div>
               <div style={{ fontSize: 20, color: "#f8fafc", fontWeight: 600 }}>
-                Заполненные формы с датами
+                Р—Р°РїРѕР»РЅРµРЅРЅС‹Рµ С„РѕСЂРјС‹ СЃ РґР°С‚Р°РјРё
               </div>
             </div>
           </div>
@@ -284,7 +284,7 @@ export const BenCarRentScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            БИЗНЕС-РЕЗУЛЬТАТ В ДЕНЬГАХ
+            Р‘РР—РќР•РЎ-Р Р•Р—РЈР›Р¬РўРђРў Р’ Р”Р•РќР¬Р“РђРҐ
           </div>
 
           <h2
@@ -297,7 +297,7 @@ export const BenCarRentScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            ВЕСЬ АВТОПАРК КЛИЕНТА СДАН НА НЕДЕЛИ ВПЕРЁД
+            Р’Р•РЎР¬ РђР’РўРћРџРђР Рљ РљР›РР•РќРўРђ РЎР”РђРќ РќРђ РќР•Р”Р•Р›Р Р’РџР•Р РЃР”
           </h2>
 
           <div
@@ -312,10 +312,10 @@ export const BenCarRentScene: React.FC = () => {
             }}
           >
             <div style={{ fontSize: 28, color: "#f8fafc", fontWeight: 800, lineHeight: 1.35, marginBottom: 16 }}>
-              Спрос превысил физическую ёмкость парка. Новые заявки клиент передаёт партнёрским агентствам за комиссию.
+              РЎРїСЂРѕСЃ РїСЂРµРІС‹СЃРёР» С„РёР·РёС‡РµСЃРєСѓСЋ С‘РјРєРѕСЃС‚СЊ РїР°СЂРєР°. РќРѕРІС‹Рµ Р·Р°СЏРІРєРё РєР»РёРµРЅС‚ РїРµСЂРµРґР°С‘С‚ РїР°СЂС‚РЅС‘СЂСЃРєРёРј Р°РіРµРЅС‚СЃС‚РІР°Рј Р·Р° РєРѕРјРёСЃСЃРёСЋ.
             </div>
             <div style={{ fontSize: 22, color: "#38bdf8", fontWeight: 700 }}>
-              ➔ Разница между «нас просканировал бот» и полностью забитой сеткой броней
+              вћ” Р Р°Р·РЅРёС†Р° РјРµР¶РґСѓ В«РЅР°СЃ РїСЂРѕСЃРєР°РЅРёСЂРѕРІР°Р» Р±РѕС‚В» Рё РїРѕР»РЅРѕСЃС‚СЊСЋ Р·Р°Р±РёС‚РѕР№ СЃРµС‚РєРѕР№ Р±СЂРѕРЅРµР№
             </div>
           </div>
         </div>
@@ -323,3 +323,5 @@ export const BenCarRentScene: React.FC = () => {
     </div>
   );
 };
+
+

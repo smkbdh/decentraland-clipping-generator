@@ -1,5 +1,5 @@
-import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img, staticFile } from "remotion";
+﻿import React from "react";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";`nimport { imgSitePhuketStayVivi, imgTgLeadDario, imgWaChatDario } from "./imageAssets";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
@@ -16,7 +16,7 @@ export const PhuketStayProScene: React.FC = () => {
       <Sequence from={0} durationInFrames={Math.round(45 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
-            src={staticFile("site_phuketstaypro_vivi.png")}
+            src={imgSitePhuketStayVivi}
             style={{
               position: "absolute",
               top: 0,
@@ -81,7 +81,7 @@ export const PhuketStayProScene: React.FC = () => {
               marginBottom: 16,
             }}
           >
-            КЕЙС 02 · PHUKETSTAYPRO · СВЕЖИЙ ЛИД СЕГОДНЯ
+            РљР•Р™РЎ 02 В· PHUKETSTAYPRO В· РЎР’Р•Р–РР™ Р›РР” РЎР•Р“РћР”РќРЇ
           </div>
 
           <h2
@@ -94,7 +94,7 @@ export const PhuketStayProScene: React.FC = () => {
               margin: "0 0 24px",
             }}
           >
-            КЛИЕНТ ИЗ СИНГАПУРА С БЮДЖЕТОМ 4 МЛН БАТ (ИЗ CHATGPT)
+            РљР›РР•РќРў РР— РЎРРќР“РђРџРЈР Рђ РЎ Р‘Р®Р”Р–Р•РўРћРњ 4 РњР›Рќ Р‘РђРў (РР— CHATGPT)
           </h2>
 
           <div style={{ display: "flex", gap: 32, alignItems: "center", maxWidth: 1400 }}>
@@ -125,10 +125,10 @@ export const PhuketStayProScene: React.FC = () => {
                   fontWeight: 800,
                 }}
               >
-                ЖИВОЙ СКРИНШОТ БОТА
+                Р–РР’РћР™ РЎРљР РРќРЁРћРў Р‘РћРўРђ
               </div>
               <Img
-                src={staticFile("telegram_lead_dario_chatgpt_anonymized.png")}
+                src={imgTgLeadDario}
                 style={{ width: "100%", height: "100%", objectFit: "contain" }}
               />
             </div>
@@ -143,7 +143,7 @@ export const PhuketStayProScene: React.FC = () => {
                   padding: "16px 20px",
                 }}
               >
-                <div style={{ fontSize: 13, color: "#f472b6", fontWeight: 800 }}>ОБЪЕКТ И БЮДЖЕТ</div>
+                <div style={{ fontSize: 13, color: "#f472b6", fontWeight: 800 }}>РћР‘РЄР•РљРў Р Р‘Р®Р”Р–Р•Рў</div>
                 <div style={{ fontSize: 20, fontWeight: 900, color: "#ffffff" }}>The Title ViVi Bang Tao</div>
                 <div style={{ fontSize: 16, color: "#cbd5e1" }}>4 000 000 THB (~$115 000)</div>
               </div>
@@ -156,9 +156,9 @@ export const PhuketStayProScene: React.FC = () => {
                   padding: "16px 20px",
                 }}
               >
-                <div style={{ fontSize: 13, color: "#86efac", fontWeight: 800 }}>ИСТОЧНИК ПЕРЕХОДА</div>
-                <div style={{ fontSize: 20, fontWeight: 900, color: "#22c55e" }}>ai_referral · chatgpt.com</div>
-                <div style={{ fontSize: 14, color: "#94a3b8" }}>Рекомендация в ответе ChatGPT</div>
+                <div style={{ fontSize: 13, color: "#86efac", fontWeight: 800 }}>РРЎРўРћР§РќРРљ РџР•Р Р•РҐРћР”Рђ</div>
+                <div style={{ fontSize: 20, fontWeight: 900, color: "#22c55e" }}>ai_referral В· chatgpt.com</div>
+                <div style={{ fontSize: 14, color: "#94a3b8" }}>Р РµРєРѕРјРµРЅРґР°С†РёСЏ РІ РѕС‚РІРµС‚Рµ ChatGPT</div>
               </div>
 
               <div
@@ -169,9 +169,9 @@ export const PhuketStayProScene: React.FC = () => {
                   padding: "16px 20px",
                 }}
               >
-                <div style={{ fontSize: 13, color: "#38bdf8", fontWeight: 800 }}>РЕАКЦИЯ КОМАНДЫ</div>
-                <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>Диалог за 6 минут</div>
-                <div style={{ fontSize: 14, color: "#cbd5e1" }}>Отправка PDF брошюры в WhatsApp</div>
+                <div style={{ fontSize: 13, color: "#38bdf8", fontWeight: 800 }}>Р Р•РђРљР¦РРЇ РљРћРњРђРќР”Р«</div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>Р”РёР°Р»РѕРі Р·Р° 6 РјРёРЅСѓС‚</div>
+                <div style={{ fontSize: 14, color: "#cbd5e1" }}>РћС‚РїСЂР°РІРєР° PDF Р±СЂРѕС€СЋСЂС‹ РІ WhatsApp</div>
               </div>
             </div>
 
@@ -202,10 +202,10 @@ export const PhuketStayProScene: React.FC = () => {
                   fontWeight: 800,
                 }}
               >
-                РЕАЛЬНЫЙ ДИАЛОГ WHATSAPP
+                Р Р•РђР›Р¬РќР«Р™ Р”РРђР›РћР“ WHATSAPP
               </div>
               <Img
-                src={staticFile("whatsapp_chat_dario_singapore_anonymized.jpg")}
+                src={imgWaChatDario}
                 style={{ width: "100%", height: "100%", objectFit: "contain" }}
               />
             </div>
@@ -240,7 +240,7 @@ export const PhuketStayProScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            СИСТЕМНЫЙ ЭФФЕКТ: НЕДВИЖИМОСТЬ И ШКОЛА CHATTERBOX
+            РЎРРЎРўР•РњРќР«Р™ Р­Р¤Р¤Р•РљРў: РќР•Р”Р’РР–РРњРћРЎРўР¬ Р РЁРљРћР›Рђ CHATTERBOX
           </div>
 
           <h2
@@ -253,7 +253,7 @@ export const PhuketStayProScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            ОБЪЕКТЫ В УПРАВЛЕНИИ И ЗАЯВКИ С КАРТ
+            РћР‘РЄР•РљРўР« Р’ РЈРџР РђР’Р›Р•РќРР Р Р—РђРЇР’РљР РЎ РљРђР Рў
           </h2>
 
           <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
@@ -267,13 +267,13 @@ export const PhuketStayProScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#38bdf8", fontWeight: 800, marginBottom: 10 }}>
-                PHUKETSTAYPRO: ОБЪЕКТ
+                PHUKETSTAYPRO: РћР‘РЄР•РљРў
               </div>
               <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                Квартира на Камале
+                РљРІР°СЂС‚РёСЂР° РЅР° РљР°РјР°Р»Рµ
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                Собственник пришел через поисковую систему сайта и отдал объект в управление команде. Это реальная работа и прибыль.
+                РЎРѕР±СЃС‚РІРµРЅРЅРёРє РїСЂРёС€РµР» С‡РµСЂРµР· РїРѕРёСЃРєРѕРІСѓСЋ СЃРёСЃС‚РµРјСѓ СЃР°Р№С‚Р° Рё РѕС‚РґР°Р» РѕР±СЉРµРєС‚ РІ СѓРїСЂР°РІР»РµРЅРёРµ РєРѕРјР°РЅРґРµ. Р­С‚Рѕ СЂРµР°Р»СЊРЅР°СЏ СЂР°Р±РѕС‚Р° Рё РїСЂРёР±С‹Р»СЊ.
               </div>
             </div>
 
@@ -287,13 +287,13 @@ export const PhuketStayProScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#f59e0b", fontWeight: 800, marginBottom: 10 }}>
-                ЯЗЫКОВАЯ ШКОЛА CHATTERBOX
+                РЇР—Р«РљРћР’РђРЇ РЁРљРћР›Рђ CHATTERBOX
               </div>
               <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                Поток лидов с карт и SEO
+                РџРѕС‚РѕРє Р»РёРґРѕРІ СЃ РєР°СЂС‚ Рё SEO
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                Яндекс, 2ГИС и Google приводят учеников на бесплатный пробный урок и тестирование. SEO кормит всю эту экосистему.
+                РЇРЅРґРµРєСЃ, 2Р“РРЎ Рё Google РїСЂРёРІРѕРґСЏС‚ СѓС‡РµРЅРёРєРѕРІ РЅР° Р±РµСЃРїР»Р°С‚РЅС‹Р№ РїСЂРѕР±РЅС‹Р№ СѓСЂРѕРє Рё С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ. SEO РєРѕСЂРјРёС‚ РІСЃСЋ СЌС‚Сѓ СЌРєРѕСЃРёСЃС‚РµРјСѓ.
               </div>
             </div>
           </div>
@@ -302,3 +302,4 @@ export const PhuketStayProScene: React.FC = () => {
     </div>
   );
 };
+

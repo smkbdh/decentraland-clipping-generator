@@ -1,5 +1,5 @@
-import React from "react";
-import { Sequence, useVideoConfig, staticFile } from "remotion";
+﻿import React from "react";
+import { Sequence, useVideoConfig } from "remotion";
 import { Audio } from "@remotion/media";
 import { HookScene } from "./components/HookScene";
 import { ResearchScene } from "./components/ResearchScene";
@@ -11,12 +11,11 @@ import { OutroScene } from "./components/OutroScene";
 import { TopChapterBar } from "./components/TopChapterBar";
 import { ChapterMicroTeaser } from "./components/ChapterMicroTeaser";
 import { CornerBranding } from "./components/CornerBranding";
-import { DynamicCaptions } from "./components/DynamicCaptions";
 
 export default function App() {
   const { fps } = useVideoConfig();
 
-  // Timing markers in seconds (aligned with speech delivery)
+  // Timing markers in seconds (aligned with user's voiceover)
   const tHookEnd = 100.8;
   const tResearchEnd = 184.5;
   const tArchEnd = 304.5;
@@ -63,9 +62,6 @@ export default function App() {
       <ChapterMicroTeaser />
       <CornerBranding />
 
-      {/* 2. DYNAMIC KINEMATIC CAPTIONS (VOX / NETFLIX LOWER-THIRD) */}
-      <DynamicCaptions />
-
       {/* === SCENE SEQUENCES === */}
 
       {/* 01. Hook: Bots vs Clients (0 - 100.8s) */}
@@ -110,14 +106,14 @@ export default function App() {
         </Sequence>
       ))}
 
-      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1) === */}
+      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1: Neon Dreams) === */}
       <Sequence name="Music Bed: Neon Dreams" from={0} durationInFrames={fTotal} layout="none">
         <Audio src="kino:8eeba53a-7331-4dfe-bef2-add4aa5b4558" volume={0.11} loop />
       </Sequence>
 
-      {/* === MASTER VOICEOVER AUDIO TRACK === */}
+      {/* === MASTER VOICEOVER AUDIO (User's Voiceover) === */}
       <Sequence name="Master Voiceover" from={0} durationInFrames={fTotal} layout="none">
-        <Audio src="file:///D:/Buddah/ai%20seo%20geo%20cases%20aibuddah.mp3" volume={1.0} />
+        <Audio src="http://127.0.0.1:9876/ai%20seo%20geo%20cases%20aibuddah.mp3" volume={1.0} />
       </Sequence>
     </div>
   );

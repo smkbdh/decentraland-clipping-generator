@@ -1,5 +1,5 @@
-import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img, staticFile } from "remotion";
+﻿import React from "react";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
@@ -9,11 +9,11 @@ export const OutroScene: React.FC = () => {
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
-      {/* BACKGROUND FOOTAGE */}
+      {/* BACKGROUND FOOTAGE - Native Kino Tech Grid Video */}
       <Sequence from={0} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src="kino:e895e6ff-ffb9-4517-b7f2-f557228f34de"
+            src="kino:acd6a6ea-dbec-44d9-a5b1-f8e9c4a0b153"
             loop
             muted
             style={{
@@ -85,10 +85,11 @@ export const OutroScene: React.FC = () => {
             boxShadow: "0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(163, 230, 53, 0.2)",
           }}
         >
+          {/* Native Kino Telegram QR Code from Episode 1 */}
           <div
             style={{
-              width: 130,
-              height: 130,
+              width: 140,
+              height: 140,
               borderRadius: 16,
               overflow: "hidden",
               border: "2px solid #a3e635",
@@ -100,7 +101,7 @@ export const OutroScene: React.FC = () => {
             }}
           >
             <Img
-              src={staticFile("qr_buddah.png")}
+              src="kino:e895e6ff-ffb9-4517-b7f2-f557228f34de"
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />
           </div>

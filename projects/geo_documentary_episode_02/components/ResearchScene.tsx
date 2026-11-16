@@ -1,5 +1,5 @@
-import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img, staticFile } from "remotion";
+﻿import React from "react";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";`nimport { imgSiteMarieHaynes } from "./imageAssets";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
@@ -16,7 +16,7 @@ export const ResearchScene: React.FC = () => {
       <Sequence from={0} durationInFrames={Math.round(29 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
-            src={staticFile("site_mariehaynes_study.png")}
+            src={imgSiteMarieHaynes}
             style={{
               position: "absolute",
               top: 0,
@@ -102,7 +102,7 @@ export const ResearchScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            ИССЛЕДОВАНИЕ MARIE HAYNES · 12 МЕСЯЦЕВ
+            РРЎРЎР›Р•Р”РћР’РђРќРР• MARIE HAYNES В· 12 РњР•РЎРЇР¦Р•Р’
           </div>
 
           <h2
@@ -115,7 +115,7 @@ export const ResearchScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            РЕАЛЬНЫЙ ОБЪЁМ ТРАФИКА: МАСШТАБ GOOGLE
+            Р Р•РђР›Р¬РќР«Р™ РћР‘РЄРЃРњ РўР РђР¤РРљРђ: РњРђРЎРЁРўРђР‘ GOOGLE
           </h2>
 
           <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
@@ -137,7 +137,7 @@ export const ResearchScene: React.FC = () => {
                 0.62%
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1" }}>
-                Доля переходов от общего поискового объема
+                Р”РѕР»СЏ РїРµСЂРµС…РѕРґРѕРІ РѕС‚ РѕР±С‰РµРіРѕ РїРѕРёСЃРєРѕРІРѕРіРѕ РѕР±СЉРµРјР°
               </div>
             </div>
 
@@ -153,7 +153,7 @@ export const ResearchScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
-                ВСЕ НЕЙРОСЕТИ ВМЕСТЕ
+                Р’РЎР• РќР•Р™Р РћРЎР•РўР Р’РњР•РЎРўР•
               </div>
               <div style={{ fontSize: 80, fontWeight: 900, color: "#38bdf8", letterSpacing: -1 }}>
                 0.73%
@@ -165,7 +165,7 @@ export const ResearchScene: React.FC = () => {
           </div>
 
           <div style={{ marginTop: 28, fontSize: 17, color: "#64748b", fontWeight: 600 }}>
-            Выборка: 100 коммерческих сайтов · 145 000 000+ пользовательских сессий
+            Р’С‹Р±РѕСЂРєР°: 100 РєРѕРјРјРµСЂС‡РµСЃРєРёС… СЃР°Р№С‚РѕРІ В· 145 000 000+ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёС… СЃРµСЃСЃРёР№
           </div>
         </div>
       )}
@@ -197,7 +197,7 @@ export const ResearchScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            ПАРАДОКС КОНВЕРСИИ (55 САЙТОВ С ТРЕКИНГОМ)
+            РџРђР РђР”РћРљРЎ РљРћРќР’Р•Р РЎРР (55 РЎРђР™РўРћР’ РЎ РўР Р•РљРРќР“РћРњ)
           </div>
 
           <h2
@@ -210,7 +210,7 @@ export const ResearchScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            КОНВЕРСИЯ В 4.5 РАЗА ВЫШЕ ЧЕМ В ПОИСКЕ
+            РљРћРќР’Р•Р РЎРРЇ Р’ 4.5 Р РђР—Рђ Р’Р«РЁР• Р§Р•Рњ Р’ РџРћРРЎРљР•
           </h2>
 
           <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
@@ -232,7 +232,7 @@ export const ResearchScene: React.FC = () => {
                 13.8%
               </div>
               <div style={{ fontSize: 18, color: "#f8fafc", fontWeight: 600 }}>
-                Сверхвысокая мотивация и готовность к сделке
+                РЎРІРµСЂС…РІС‹СЃРѕРєР°СЏ РјРѕС‚РёРІР°С†РёСЏ Рё РіРѕС‚РѕРІРЅРѕСЃС‚СЊ Рє СЃРґРµР»РєРµ
               </div>
             </div>
 
@@ -253,7 +253,7 @@ export const ResearchScene: React.FC = () => {
                 3.02%
               </div>
               <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 600 }}>
-                Классический поисковый трафик
+                РљР»Р°СЃСЃРёС‡РµСЃРєРёР№ РїРѕРёСЃРєРѕРІС‹Р№ С‚СЂР°С„РёРє
               </div>
             </div>
           </div>
@@ -287,7 +287,7 @@ export const ResearchScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            ГЛАВНАЯ ЛОВУШКА АНАЛИТИКИ
+            Р“Р›РђР’РќРђРЇ Р›РћР’РЈРЁРљРђ РђРќРђР›РРўРРљР
           </div>
 
           <h2
@@ -300,7 +300,7 @@ export const ResearchScene: React.FC = () => {
               margin: "0 0 30px",
             }}
           >
-            45 ИЗ 100 САЙТОВ НЕ НАСТРОИЛИ KEY EVENTS
+            45 РР— 100 РЎРђР™РўРћР’ РќР• РќРђРЎРўР РћРР›Р KEY EVENTS
           </h2>
 
           <div
@@ -314,10 +314,10 @@ export const ResearchScene: React.FC = () => {
             }}
           >
             <div style={{ fontSize: 24, color: "#f8fafc", fontWeight: 700, lineHeight: 1.4, marginBottom: 20 }}>
-              Красивые графики визитов ничего не говорят о деньгах. Без событийной аналитики бизнес не знает, кто пришёл: бот или покупатель.
+              РљСЂР°СЃРёРІС‹Рµ РіСЂР°С„РёРєРё РІРёР·РёС‚РѕРІ РЅРёС‡РµРіРѕ РЅРµ РіРѕРІРѕСЂСЏС‚ Рѕ РґРµРЅСЊРіР°С…. Р‘РµР· СЃРѕР±С‹С‚РёР№РЅРѕР№ Р°РЅР°Р»РёС‚РёРєРё Р±РёР·РЅРµСЃ РЅРµ Р·РЅР°РµС‚, РєС‚Рѕ РїСЂРёС€С‘Р»: Р±РѕС‚ РёР»Рё РїРѕРєСѓРїР°С‚РµР»СЊ.
             </div>
             <div style={{ fontSize: 20, color: "#38bdf8", fontWeight: 800 }}>
-              ➔ Мы отслеживаем цепочку до уведомления бота, WhatsApp и договора
+              вћ” РњС‹ РѕС‚СЃР»РµР¶РёРІР°РµРј С†РµРїРѕС‡РєСѓ РґРѕ СѓРІРµРґРѕРјР»РµРЅРёСЏ Р±РѕС‚Р°, WhatsApp Рё РґРѕРіРѕРІРѕСЂР°
             </div>
           </div>
         </div>
@@ -325,3 +325,4 @@ export const ResearchScene: React.FC = () => {
     </div>
   );
 };
+
