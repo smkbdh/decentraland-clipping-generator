@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, Img } from "remotion";
+import { useCurrentFrame, useVideoConfig, Img, staticFile } from "remotion";
 
 export const CornerBranding: React.FC = () => {
   const frame = useCurrentFrame();
@@ -49,7 +49,7 @@ export const CornerBranding: React.FC = () => {
         }}
       >
         <Img
-          src="kino:356ec00c-40df-49d6-886d-023544fb4d24"
+          src={staticFile("buddah_logo.png")}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
       </div>
