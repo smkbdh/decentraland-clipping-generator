@@ -30,6 +30,7 @@ zhavdqwveqve/
 !mastered_releases/**/*.html
 *.txt
 *.wav
+!projects/**/public/*.wav
 
 
 

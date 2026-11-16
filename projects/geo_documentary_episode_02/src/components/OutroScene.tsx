@@ -76,46 +76,78 @@ export const OutroScene: React.FC = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 40,
-            backgroundColor: "rgba(15, 23, 42, 0.95)",
-            border: "2px solid rgba(163, 230, 53, 0.6)",
-            borderRadius: 24,
-            padding: "36px 48px",
-            maxWidth: 1150,
-            boxShadow: "0 20px 50px rgba(0,0,0,0.6), 0 0 35px rgba(163, 230, 53, 0.25)",
+            gap: 48,
+            backgroundColor: "rgba(15, 23, 42, 0.96)",
+            border: "2.5px solid rgba(163, 230, 53, 0.7)",
+            borderRadius: 28,
+            padding: "40px 54px",
+            maxWidth: 1320,
+            boxShadow: `0 25px 60px rgba(0,0,0,0.8), 0 0 ${25 + 15 * Math.sin(frame / 10)}px rgba(163, 230, 53, 0.35)`,
           }}
         >
-          {/* Native Kino Telegram QR Code from Episode 1 */}
-          <div
-            style={{
-              width: 160,
-              height: 160,
-              borderRadius: 18,
-              overflow: "hidden",
-              border: "2.5px solid #a3e635",
-              backgroundColor: "#ffffff",
-              padding: 6,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-            }}
-          >
-            <Img
-              src={staticFile("qr_buddah.png")}
-              style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            />
+          {/* Large High-Contrast Telegram QR Code with Glowing Pulse Ring */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+            <div
+              style={{
+                width: 240,
+                height: 240,
+                borderRadius: 24,
+                overflow: "hidden",
+                border: "3.5px solid #a3e635",
+                backgroundColor: "#ffffff",
+                padding: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+                boxShadow: `0 10px 30px rgba(0,0,0,0.6), 0 0 ${20 + 10 * Math.sin(frame / 10)}px rgba(163, 230, 53, 0.5)`,
+              }}
+            >
+              <Img
+                src={staticFile("qr_buddah.png")}
+                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              />
+            </div>
+            <div
+              style={{
+                padding: "4px 14px",
+                borderRadius: 12,
+                backgroundColor: "rgba(163, 230, 53, 0.2)",
+                color: "#a3e635",
+                fontSize: 14,
+                fontWeight: 900,
+                letterSpacing: 0.8,
+              }}
+            >
+              📲 НАВЕДИТЕ КАМЕРУ
+            </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            <div style={{ fontSize: 32, fontWeight: 900, color: "#f8fafc" }}>
-              Напишите в комментариях:
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            <div style={{ fontSize: 36, fontWeight: 900, color: "#f8fafc", lineHeight: 1.15 }}>
+              Напишите в комментариях под видео:
             </div>
             <div style={{ fontSize: 24, color: "#cbd5e1", lineHeight: 1.45 }}>
-              Какой у вас сайт и что вы считаете заявкой? Разберём вашу нишу в следующем выпуске.
+              Какой у вас сайт и что вы считаете заявкой? Разберём вашу нишу и структуру в следующем выпуске.
             </div>
-            <div style={{ fontSize: 20, color: "#a3e635", fontWeight: 800, marginTop: 4 }}>
-              Разборы и кейсы в Telegram: @BUDDAH_AI
+            <div
+              style={{
+                marginTop: 6,
+                padding: "14px 20px",
+                borderRadius: 16,
+                backgroundColor: "rgba(163, 230, 53, 0.12)",
+                border: "1px solid rgba(163, 230, 53, 0.4)",
+                display: "flex",
+                flexDirection: "column",
+                gap: 4,
+              }}
+            >
+              <div style={{ fontSize: 22, color: "#a3e635", fontWeight: 900 }}>
+                📌 Telegram-канал: @BUDDAH_AI
+              </div>
+              <div style={{ fontSize: 18, color: "#f1f5f9" }}>
+                Архитектура RAG-поиска, шаблоны промптов и чеклист внедрения GEO — в закрепе канала.
+              </div>
             </div>
           </div>
         </div>

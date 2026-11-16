@@ -38,6 +38,11 @@ export default function App() {
   const fTotalSpeech = Math.round(tTotal * fps);
   const fTotalWithIntro = fTotalSpeech + fIntro;
 
+  // 15-second YouTube End-Screen buffer (450 frames at 30 fps)
+  const tBuffer15s = 15.0;
+  const fBuffer15s = Math.round(tBuffer15s * fps);
+  const sBuffer = fTotalWithIntro;
+
   // Scene start frames
   const sHook = 0;
   const sIntro = fHook;
@@ -48,8 +53,9 @@ export default function App() {
   const sRules = sPhuket + fPhuket;
   const sOutro = sRules + fRules;
 
-  // Total speech duration after intro
+  // Total audio duration covering all acts + YouTube end buffer
   const postIntroAudioDuration = fTotalSpeech - fHook;
+  const postIntroMusicDuration = postIntroAudioDuration + fBuffer15s;
 
   // Chapter impact timestamps (for subtle sub-bass SFX, shifted by intro duration after hook)
   const chapterImpacts = [
@@ -59,6 +65,24 @@ export default function App() {
     tBenEnd + tIntroDuration,
     tPhuketEnd + tIntroDuration,
     tRulesEnd + tIntroDuration,
+  ];
+
+  // Delicate Micro-SFX cues (whisper quiet: volume 0.04 - 0.05)
+  // Perfectly aligned with key graphic pops and metric reveals
+  const microClickFrames = [
+    sHook + Math.round(7.2 * fps), // Hook 3 real cases appear
+    sBen + Math.round(28.0 * fps), // Metrics 38 WhatsApp & 6 Bookings pop in
+    sBen + Math.round(38.5 * fps), // Telegram bot screenshot spotlight zoom
+    sPhuket + Math.round(58.3 * fps), // Chatterbox site mockup opens
+    sPhuket + Math.round(64.5 * fps), // Aggregation diagram activates
+    sPhuket + Math.round(73.0 * fps), // 2GIS reviews card pops in
+  ];
+
+  const microWhooshFrames = [
+    sHook + Math.round(0.1 * fps), // Hook opening question
+    sArch + Math.round(36.0 * fps), // Query fan-out branches animate
+    sRules + Math.round(4.0 * fps), // Rule 1 appears
+    sOutro + Math.round(0.5 * fps), // Outro conclusion & QR code
   ];
 
   return (
@@ -126,10 +150,83 @@ export default function App() {
         <OutroScene />
       </Sequence>
 
+      {/* 09. YouTube End-Screen Safe Buffer (15 seconds clean ambient space for end cards) */}
+      <Sequence name="09. YouTube End-Screen Buffer" from={sBuffer} durationInFrames={fBuffer15s} layout="none">
+        <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
+          <Video
+            src={staticFile("intro_buddah.mp4")}
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.4,
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "radial-gradient(ellipse at center, rgba(7, 9, 14, 0.45) 0%, rgba(7, 9, 14, 0.9) 100%)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              pointerEvents: "none",
+            }}
+          >
+            <div
+              style={{
+                padding: "8px 24px",
+                borderRadius: 30,
+                backgroundColor: "rgba(163, 230, 53, 0.15)",
+                border: "1.5px solid rgba(163, 230, 53, 0.4)",
+                color: "#a3e635",
+                fontSize: 18,
+                fontWeight: 900,
+                letterSpacing: 2,
+                marginBottom: 16,
+              }}
+            >
+              AI БУДДА · DIGITAL STUDIO
+            </div>
+            <div style={{ fontSize: 44, fontWeight: 900, color: "#f8fafc", letterSpacing: -0.5 }}>
+              СПАСИБО ЗА ПРОСМОТР
+            </div>
+            <div style={{ fontSize: 22, color: "#94a3b8", marginTop: 8 }}>
+              Подписывайтесь на канал и переходите к следующим выпускам
+            </div>
+          </div>
+        </div>
+      </Sequence>
+
       {/* === SFX CHAPTER IMPACTS === */}
       {chapterImpacts.map((sec, idx) => (
         <Sequence key={`chapter_impact_${idx}`} from={Math.round(sec * fps)} durationInFrames={30} layout="none">
           <Audio src={staticFile("impact.wav")} volume={0.14} />
+        </Sequence>
+      ))}
+
+      {/* === SUBTLE MICRO-SFX (Whisper volume 0.04 - 0.05 on key pops) === */}
+      {microClickFrames.map((frameNum, idx) => (
+        <Sequence key={`micro_click_${idx}`} from={frameNum} durationInFrames={10} layout="none">
+          <Audio src={staticFile("micro_click.wav")} volume={0.045} />
+        </Sequence>
+      ))}
+
+      {microWhooshFrames.map((frameNum, idx) => (
+        <Sequence key={`micro_whoosh_${idx}`} from={frameNum} durationInFrames={15} layout="none">
+          <Audio src={staticFile("whoosh_subtle.wav")} volume={0.035} />
         </Sequence>
       ))}
 
@@ -139,8 +236,8 @@ export default function App() {
         <Audio src={staticFile("neon_dreams.mp3")} volume={0.07} loop />
       </Sequence>
 
-      {/* Music Part 2 (under Acts, muted during Intro) */}
-      <Sequence name="Music Bed: Main" from={sResearch} durationInFrames={postIntroAudioDuration} layout="none">
+      {/* Music Part 2 (under Acts + YouTube buffer, muted during Intro) */}
+      <Sequence name="Music Bed: Main" from={sResearch} durationInFrames={postIntroMusicDuration} layout="none">
         <Audio src={staticFile("neon_dreams.mp3")} volume={0.07} loop />
       </Sequence>
 

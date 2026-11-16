@@ -97,7 +97,7 @@ export const HookScene: React.FC = () => {
 
       <BackgroundGrid accentColor="#38bdf8" />
 
-      {/* SUB-PHASE 1 (0 - 24s): Gold Rush vs Reality */}
+      {/* SUB-PHASE 1 (0 - 24s): Provocative Question Hook & 3-Case Micro-Teaser */}
       {sec < 24 && (
         <div
           style={{
@@ -107,79 +107,261 @@ export const HookScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            padding: "0 80px 100px",
+            padding: "0 70px 90px",
             zIndex: 10,
           }}
         >
-          <div
-            style={{
-              padding: "6px 20px",
-              borderRadius: 30,
-              backgroundColor: "rgba(56, 189, 248, 0.15)",
-              border: "1px solid rgba(56, 189, 248, 0.4)",
-              color: "#38bdf8",
-              fontSize: 16,
-              fontWeight: 800,
-              letterSpacing: 2,
-              marginBottom: 24,
-            }}
-          >
-            ДОКУМЕНТАЛЬНОЕ РАССЛЕДОВАНИЕ
-          </div>
-
-          <h1
-            style={{
-              fontSize: 78,
-              fontWeight: 900,
-              color: "#f8fafc",
-              textAlign: "center",
-              lineHeight: 1.08,
-              margin: "0 0 30px",
-              maxWidth: 1400,
-              letterSpacing: -1,
-            }}
-          >
-            GEO И ТРАФИК ИЗ НЕЙРОСЕТЕЙ: <br />
-            <span style={{ color: "#38bdf8" }}>НОВАЯ ЗОЛОТАЯ ЖИЛА</span> ИЛИ БОТЫ?
-          </h1>
-
-          <div style={{ display: "flex", gap: 30, marginTop: 20 }}>
+          {/* Sub-phase 1A (0 - 7.2s): Provocative Hook Question */}
+          {sec < 7.2 ? (
             <div
               style={{
-                backgroundColor: "rgba(15, 23, 42, 0.85)",
-                border: "1px solid rgba(239, 68, 68, 0.4)",
-                borderRadius: 20,
-                padding: "24px 36px",
-                textAlign: "center",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                maxWidth: 1450,
+                width: "100%",
               }}
             >
-              <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
-                ЧТО ПОКАЗЫВАЮТ В ПРЕЗЕНТАЦИЯХ
+              <div
+                style={{
+                  padding: "8px 24px",
+                  borderRadius: 30,
+                  backgroundColor: "rgba(56, 189, 248, 0.2)",
+                  border: "1.5px solid rgba(56, 189, 248, 0.5)",
+                  color: "#38bdf8",
+                  fontSize: 18,
+                  fontWeight: 900,
+                  letterSpacing: 2,
+                  marginBottom: 20,
+                }}
+              >
+                🔥 РАССЛЕДОВАНИЕ НА 145 МИЛЛИОНОВ СЕССИЙ
               </div>
-              <div style={{ fontSize: 36, color: "#ef4444", fontWeight: 900 }}>
-                ТРАФИК КРАУЛЕРОВ
+
+              <h1
+                style={{
+                  fontSize: 68,
+                  fontWeight: 900,
+                  color: "#f8fafc",
+                  textAlign: "center",
+                  lineHeight: 1.12,
+                  margin: "0 0 32px",
+                  maxWidth: 1400,
+                  letterSpacing: -1,
+                }}
+              >
+                УБИВАЕТ ЛИ CHATGPT КЛАССИЧЕСКОЕ SEO, <br />
+                <span style={{ color: "#ef4444" }}>ИЛИ БИЗНЕС ТЕРЯЕТ ДЕНЬГИ</span> НА ПУСТЫХ ЛОГАХ БОТОВ?
+              </h1>
+
+              <div style={{ display: "flex", gap: 32, width: "100%", maxWidth: 1100 }}>
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(15, 23, 42, 0.92)",
+                    border: "2px solid rgba(239, 68, 68, 0.5)",
+                    borderRadius: 20,
+                    padding: "24px 32px",
+                    textAlign: "center",
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#f87171", fontWeight: 800, marginBottom: 6 }}>
+                    ЧТО ПОКАЗЫВАЮТ В ХАЙП-ПРЕЗЕНТАЦИЯХ
+                  </div>
+                  <div style={{ fontSize: 34, color: "#ef4444", fontWeight: 900 }}>
+                    🤖 Трафик краулеров в логах
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(15, 23, 42, 0.92)",
+                    border: "2px solid rgba(34, 197, 94, 0.5)",
+                    borderRadius: 20,
+                    padding: "24px 32px",
+                    textAlign: "center",
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#4ade80", fontWeight: 800, marginBottom: 6 }}>
+                    ЧТО НА САМОМ ДЕЛЕ НУЖНО БИЗНЕСУ
+                  </div>
+                  <div style={{ fontSize: 34, color: "#22c55e", fontWeight: 900 }}>
+                    💰 Реальные клиенты и сделки
+                  </div>
+                </div>
               </div>
             </div>
-
+          ) : (
+            /* Sub-phase 1B (7.2s - 24s): 3 Real Client Cases Micro-Teaser */
             <div
               style={{
-                backgroundColor: "rgba(15, 23, 42, 0.85)",
-                border: "1px solid rgba(34, 197, 94, 0.4)",
-                borderRadius: 20,
-                padding: "24px 36px",
-                textAlign: "center",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                maxWidth: 1450,
+                width: "100%",
               }}
             >
-              <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
-                ЧТО НУЖНО БИЗНЕСУ
+              <div
+                style={{
+                  padding: "8px 24px",
+                  borderRadius: 30,
+                  backgroundColor: "rgba(34, 197, 94, 0.2)",
+                  border: "1.5px solid rgba(34, 197, 94, 0.5)",
+                  color: "#4ade80",
+                  fontSize: 18,
+                  fontWeight: 900,
+                  letterSpacing: 2,
+                  marginBottom: 16,
+                }}
+              >
+                РЕАЛЬНЫЕ КЛИЕНТСКИЕ ПРОЕКТЫ ВМЕСТО ТЕОРИИ
               </div>
-              <div style={{ fontSize: 36, color: "#22c55e", fontWeight: 900 }}>
-                РЕАЛЬНЫЕ КЛИЕНТЫ И ДЕНЬГИ
+
+              <h2
+                style={{
+                  fontSize: 56,
+                  fontWeight: 900,
+                  color: "#f8fafc",
+                  textAlign: "center",
+                  lineHeight: 1.1,
+                  margin: "0 0 28px",
+                  letterSpacing: -0.5,
+                }}
+              >
+                РАЗБИРАЕМ, ГДЕ В GEO ХАЙП, А ГДЕ РЕАЛЬНЫЕ ДЕНЬГИ
+              </h2>
+
+              {/* 3 Real Cases Teaser Cards */}
+              <div style={{ display: "flex", gap: 24, width: "100%", maxWidth: 1350 }}>
+                {/* Case 1: BenPhuketCarRent */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(15, 23, 42, 0.94)",
+                    border: "2px solid #22c55e",
+                    borderRadius: 22,
+                    padding: "26px 22px",
+                    boxShadow: "0 15px 35px rgba(0,0,0,0.6), 0 0 25px rgba(34, 197, 94, 0.2)",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div>
+                    <div style={{ fontSize: 15, color: "#4ade80", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                      КЕЙС 01 · АРЕНДА АВТО (ПХУКЕТ)
+                    </div>
+                    <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", lineHeight: 1.25, marginBottom: 12 }}>
+                      38 WhatsApp-лидов из ChatGPT
+                    </div>
+                    <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
+                      Сквозные UTM-метки <code style={{ color: "#4ade80" }}>utm=chatgpt.com</code> и прямые брони автопарка.
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      marginTop: 18,
+                      padding: "8px 14px",
+                      borderRadius: 12,
+                      backgroundColor: "rgba(34, 197, 94, 0.15)",
+                      color: "#4ade80",
+                      fontSize: 16,
+                      fontWeight: 800,
+                      textAlign: "center",
+                    }}
+                  >
+                    100% занятость автопарка
+                  </div>
+                </div>
+
+                {/* Case 2: PhuketStayPro */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(15, 23, 42, 0.94)",
+                    border: "2px solid #ec4899",
+                    borderRadius: 22,
+                    padding: "26px 22px",
+                    boxShadow: "0 15px 35px rgba(0,0,0,0.6), 0 0 25px rgba(236, 72, 153, 0.2)",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div>
+                    <div style={{ fontSize: 15, color: "#f472b6", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                      КЕЙС 02 · НЕДВИЖИМОСТЬ
+                    </div>
+                    <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", lineHeight: 1.25, marginBottom: 12 }}>
+                      Сделка на 4 000 000 THB
+                    </div>
+                    <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
+                      Инвестор из Сингапура через ChatGPT Search нашел виллу и объект Oceana Kamala в управление.
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      marginTop: 18,
+                      padding: "8px 14px",
+                      borderRadius: 12,
+                      backgroundColor: "rgba(236, 72, 153, 0.15)",
+                      color: "#f472b6",
+                      fontSize: 16,
+                      fontWeight: 800,
+                      textAlign: "center",
+                    }}
+                  >
+                    Договор управления объектом
+                  </div>
+                </div>
+
+                {/* Case 3: Chatterbox School */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(15, 23, 42, 0.94)",
+                    border: "2px solid #38bdf8",
+                    borderRadius: 22,
+                    padding: "26px 22px",
+                    boxShadow: "0 15px 35px rgba(0,0,0,0.6), 0 0 25px rgba(56, 189, 248, 0.2)",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div>
+                    <div style={{ fontSize: 15, color: "#38bdf8", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                      КЕЙС 03 · ЯЗЫКОВАЯ ШКОЛА
+                    </div>
+                    <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", lineHeight: 1.25, marginBottom: 12 }}>
+                      Карты + Сайт-Агрегатор
+                    </div>
+                    <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
+                      2ГИС, Яндекс Карты и сайт: стабильный поток учеников на бесплатное тестирование и в группы.
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      marginTop: 18,
+                      padding: "8px 14px",
+                      borderRadius: 12,
+                      backgroundColor: "rgba(56, 189, 248, 0.15)",
+                      color: "#38bdf8",
+                      fontSize: 16,
+                      fontWeight: 800,
+                      textAlign: "center",
+                    }}
+                  >
+                    Единый центр захвата заявок
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       )}
 

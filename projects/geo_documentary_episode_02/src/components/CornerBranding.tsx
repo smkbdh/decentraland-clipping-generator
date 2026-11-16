@@ -7,7 +7,8 @@ export const CornerBranding: React.FC = () => {
   const currentTimeSec = frame / fps;
 
   // Hide branding during full-screen studio intro (95.47s to 109.31s)
-  if (currentTimeSec >= 95.467 && currentTimeSec < 109.307) {
+  // and during the final 15-second YouTube End-Screen safe buffer (>= 665.5s)
+  if ((currentTimeSec >= 95.467 && currentTimeSec < 109.307) || currentTimeSec >= 665.5) {
     return null;
   }
 
