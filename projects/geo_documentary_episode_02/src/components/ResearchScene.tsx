@@ -134,7 +134,7 @@ export const ResearchScene: React.FC = () => {
                 CHATGPT / GOOGLE ORGANIC
               </div>
               <div style={{ fontSize: 80, fontWeight: 900, color: "#f59e0b", letterSpacing: -1 }}>
-                0.62%
+                {interpolate(frame, [0, 24], [0, 0.62], { extrapolateRight: "clamp" }).toFixed(2)}%
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1" }}>
                 Доля переходов от общего поискового объема
@@ -156,7 +156,7 @@ export const ResearchScene: React.FC = () => {
                 ВСЕ НЕЙРОСЕТИ ВМЕСТЕ
               </div>
               <div style={{ fontSize: 80, fontWeight: 900, color: "#38bdf8", letterSpacing: -1 }}>
-                0.73%
+                {interpolate(frame, [6, 28], [0, 0.73], { extrapolateRight: "clamp" }).toFixed(2)}%
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1" }}>
                 ChatGPT + Perplexity + Claude + Copilot
@@ -229,7 +229,7 @@ export const ResearchScene: React.FC = () => {
                 CHATGPT CONVERSION RATE
               </div>
               <div style={{ fontSize: 88, fontWeight: 900, color: "#22c55e", letterSpacing: -1 }}>
-                13.8%
+                {interpolate(frame - 29 * fps, [0, 24], [0, 13.8], { extrapolateRight: "clamp" }).toFixed(1)}%
               </div>
               <div style={{ fontSize: 18, color: "#f8fafc", fontWeight: 600 }}>
                 Сверхвысокая мотивация и готовность к сделке
@@ -250,7 +250,7 @@ export const ResearchScene: React.FC = () => {
                 GOOGLE ORGANIC RATE
               </div>
               <div style={{ fontSize: 88, fontWeight: 900, color: "#94a3b8", letterSpacing: -1 }}>
-                3.02%
+                {interpolate(frame - 29 * fps, [6, 28], [0, 3.02], { extrapolateRight: "clamp" }).toFixed(2)}%
               </div>
               <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 600 }}>
                 Классический поисковый трафик

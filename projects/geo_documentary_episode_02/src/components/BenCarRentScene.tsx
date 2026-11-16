@@ -226,7 +226,7 @@ export const BenCarRentScene: React.FC = () => {
                 ПЕРЕХОДЫ В WHATSAPP
               </div>
               <div style={{ fontSize: 96, fontWeight: 900, color: "#22c55e", letterSpacing: -2 }}>
-                38
+                {Math.round(interpolate(frame - 38 * fps, [0, 24], [0, 38], { extrapolateRight: "clamp" }))}
               </div>
               <div style={{ fontSize: 20, color: "#f8fafc", fontWeight: 600 }}>
                 Клиенты с меткой ChatGPT
@@ -248,7 +248,7 @@ export const BenCarRentScene: React.FC = () => {
                 ПРЯМЫЕ ЗАПРОСЫ НА БРОНЬ
               </div>
               <div style={{ fontSize: 96, fontWeight: 900, color: "#38bdf8", letterSpacing: -2 }}>
-                6
+                {Math.round(interpolate(frame - 38 * fps, [8, 28], [0, 6], { extrapolateRight: "clamp" }))}
               </div>
               <div style={{ fontSize: 20, color: "#f8fafc", fontWeight: 600 }}>
                 Заполненные формы с датами

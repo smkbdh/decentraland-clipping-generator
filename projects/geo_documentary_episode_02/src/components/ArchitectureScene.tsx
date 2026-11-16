@@ -207,15 +207,18 @@ export const ArchitectureScene: React.FC = () => {
             ТОЧНЫЙ ОТВЕТ ПОБЕЖДАЕТ СЕО-ШУМ
           </h2>
 
-          <div style={{ display: "flex", gap: 30, maxWidth: 1300, width: "100%" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 20, maxWidth: 1350, width: "100%" }}>
             <div
               style={{
                 flex: 1,
                 backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1px solid rgba(255, 255, 255, 0.12)",
+                border: sec < 48 ? "2px solid #38bdf8" : "1px solid rgba(255, 255, 255, 0.12)",
                 borderRadius: 20,
                 padding: "26px",
                 textAlign: "center",
+                boxShadow: sec < 48 ? "0 0 35px rgba(56, 189, 248, 0.35)" : "none",
+                transform: sec < 48 ? "scale(1.02)" : "scale(1)",
+                transition: "all 0.3s ease",
               }}
             >
               <div style={{ fontSize: 28, marginBottom: 8 }}>🔍</div>
@@ -227,14 +230,19 @@ export const ArchitectureScene: React.FC = () => {
               </div>
             </div>
 
+            <div style={{ fontSize: 32, color: "#64748b", fontWeight: 900 }}>➔</div>
+
             <div
               style={{
                 flex: 1,
                 backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1px solid rgba(255, 255, 255, 0.12)",
+                border: (sec >= 48 && sec < 62) ? "2px solid #a855f7" : "1px solid rgba(255, 255, 255, 0.12)",
                 borderRadius: 20,
                 padding: "26px",
                 textAlign: "center",
+                boxShadow: (sec >= 48 && sec < 62) ? "0 0 35px rgba(168, 85, 247, 0.35)" : "none",
+                transform: (sec >= 48 && sec < 62) ? "scale(1.02)" : "scale(1)",
+                transition: "all 0.3s ease",
               }}
             >
               <div style={{ fontSize: 28, marginBottom: 8 }}>⚡</div>
@@ -246,15 +254,19 @@ export const ArchitectureScene: React.FC = () => {
               </div>
             </div>
 
+            <div style={{ fontSize: 32, color: "#64748b", fontWeight: 900 }}>➔</div>
+
             <div
               style={{
                 flex: 1,
                 backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1.5px solid rgba(34, 197, 94, 0.5)",
+                border: sec >= 62 ? "2px solid #22c55e" : "1.5px solid rgba(34, 197, 94, 0.3)",
                 borderRadius: 20,
                 padding: "26px",
                 textAlign: "center",
-                boxShadow: "0 0 25px rgba(34, 197, 94, 0.2)",
+                boxShadow: sec >= 62 ? "0 0 35px rgba(34, 197, 94, 0.35)" : "0 0 15px rgba(34, 197, 94, 0.1)",
+                transform: sec >= 62 ? "scale(1.02)" : "scale(1)",
+                transition: "all 0.3s ease",
               }}
             >
               <div style={{ fontSize: 28, marginBottom: 8 }}>🎯</div>

@@ -106,9 +106,31 @@ export default function App() {
         </Sequence>
       ))}
 
-      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1) === */}
+      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1) WITH INTELLIGENT DUCKING === */}
       <Sequence name="Music Bed: Neon Dreams" from={0} durationInFrames={fTotal} layout="none">
-        <Audio src={staticFile("neon_dreams.mp3")} volume={0.11} loop />
+        <Audio
+          src={staticFile("neon_dreams.mp3")}
+          volume={(f) => {
+            const sec = f / fps;
+            // Swell volume during chapter breaks (1.6s window around chapter markers)
+            for (const impactSec of chapterImpacts) {
+              if (Math.abs(sec - impactSec) < 1.6) {
+                return 0.18;
+              }
+            }
+            // First 2 seconds of the video (intro hook impact)
+            if (sec < 2.0) {
+              return 0.16;
+            }
+            // Outro final swell
+            if (sec > 640.0) {
+              return 0.18;
+            }
+            // Normal ducked volume under speech
+            return 0.08;
+          }}
+          loop
+        />
       </Sequence>
 
       {/* === MASTER VOICEOVER AUDIO TRACK (Native Kino Asset) === */}

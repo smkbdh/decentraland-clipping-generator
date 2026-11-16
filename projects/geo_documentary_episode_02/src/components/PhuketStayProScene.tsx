@@ -127,7 +127,15 @@ export const PhuketStayProScene: React.FC = () => {
               >
                 ЖИВОЙ СКРИНШОТ БОТА
               </div>
-              
+              <Img
+                src={staticFile("telegram_lead_dario_chatgpt_anonymized.png")}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  backgroundColor: "#0f172a",
+                }}
+              />
             </div>
 
             {/* Middle flow summary */}
@@ -201,7 +209,15 @@ export const PhuketStayProScene: React.FC = () => {
               >
                 РЕАЛЬНЫЙ ДИАЛОГ WHATSAPP
               </div>
-              
+              <Img
+                src={staticFile("whatsapp_chat_dario_singapore_anonymized.jpg")}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "top center",
+                }}
+              />
             </div>
           </div>
         </div>
