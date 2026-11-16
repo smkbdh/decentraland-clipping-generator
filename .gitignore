@@ -40,3 +40,7 @@ instagram_browser_profile_kiraa/
 
 youtube_browser_profile/
 *.mp3
+
+node_modules/
+*.jpg
+test_frame_*.jpg

@@ -1,0 +1,20 @@
+{
+  "name": "geo-documentary-episode-02",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion preview src/index.ts",
+    "render": "remotion render src/index.ts MainVideo out/episode_02_geo.mp4"
+  },
+  "dependencies": {
+    "@remotion/media": "^4.0.260",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.260"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.544",
+    "@types/react": "^18.3.12",
+    "typescript": "^5.6.3"
+  }
+}
