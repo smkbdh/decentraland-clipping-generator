@@ -74,12 +74,13 @@ export const TopChapterBar: React.FC = () => {
 
   const progressPercent = Math.min(100, (frame / durationInFrames) * 100);
 
-  return (<div
+  return (
+    <div
       style={{
         position: "absolute",
         top: 24,
         left: 50,
-        zIndex: 5,
+        zIndex: 100,
         display: "flex",
         flexDirection: "column",
         gap: 6,

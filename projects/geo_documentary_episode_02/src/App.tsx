@@ -56,10 +56,6 @@ export default function App() {
         fontFamily: "Bahnschrift, Segoe UI, -apple-system, sans-serif",
       }}
     >
-      {/* 1. GLOBAL BRANDING & NAVIGATION OVERLAYS */}
-      <TopChapterBar />
-      <CornerBranding />
-
       {/* === SCENE SEQUENCES === */}
 
       {/* 01. Hook: Bots vs Clients (0 - 100.8s) */}
@@ -117,6 +113,10 @@ export default function App() {
       <Sequence name="Master Voiceover" from={0} durationInFrames={fTotal} layout="none">
         <Audio src={staticFile("voiceover.mp3")} volume={1.0} />
       </Sequence>
+
+      {/* === 08. GLOBAL BRANDING & NAVIGATION OVERLAYS (ALWAYS ON TOP) === */}
+      <TopChapterBar />
+      <CornerBranding />
     </div>
   );
 }
