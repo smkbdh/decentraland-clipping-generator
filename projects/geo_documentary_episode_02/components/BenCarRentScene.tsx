@@ -1,5 +1,7 @@
 ﻿import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";`nimport { Video } from "@remotion/media";`nimport { imgSiteBencarCars, imgSiteBencarHome } from "./imageAssets";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";
+import { Video } from "@remotion/media";
+import { imgSiteBencarCars, imgSiteBencarHome } from "./imageAssets";
 import { BackgroundGrid } from "./BackgroundGrid";
 
 export const BenCarRentScene: React.FC = () => {

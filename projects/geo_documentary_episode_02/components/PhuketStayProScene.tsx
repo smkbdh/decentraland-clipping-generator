@@ -1,5 +1,6 @@
 ﻿import React from "react";
-import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";`nimport { imgSitePhuketStayVivi, imgTgLeadDario, imgWaChatDario } from "./imageAssets";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img } from "remotion";
+import { imgSitePhuketStayVivi, imgTgLeadDario, imgWaChatDario } from "./imageAssets";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
