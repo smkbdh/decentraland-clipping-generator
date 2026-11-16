@@ -12,11 +12,11 @@ export const HookScene: React.FC = () => {
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
       {/* 1. BACKGROUND B-ROLL VIDEO SEQUENCES (VOX / NETFLIX STANDARD) */}
       
-      {/* 0 - 24s: Developer Coding / Tech office */}
+      {/* 0 - 24s: Business Deal & Startup Pitch B-Roll */}
       <Sequence from={0} durationInFrames={Math.round(24 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src={staticFile("01_hook_coding.mp4")}
+            src={staticFile("02_hook_startup_deal.mp4")}
             loop
             muted
             style={{

@@ -12,11 +12,11 @@ export const ArchitectureScene: React.FC = () => {
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
       {/* 1. BACKGROUND B-ROLL & SCREENCAST */}
       
-      {/* 0 - 35s: Global Network Traffic */}
+      {/* 0 - 35s: Cyber Neon AI Data Search Stream */}
       <Sequence from={0} durationInFrames={Math.round(35 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src={staticFile("15_act4_agentic_engineering.mp4")}
+            src={staticFile("b_roll_ai_data_search.mp4")}
             loop
             muted
             style={{

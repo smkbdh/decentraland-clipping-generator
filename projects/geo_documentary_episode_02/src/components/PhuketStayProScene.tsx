@@ -12,11 +12,13 @@ export const PhuketStayProScene: React.FC = () => {
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
       {/* 1. BACKGROUND REAL ESTATE & VILLA FOOTAGE */}
       
-      {/* 0 - 35.3s: Luxury Phuket Villa & Pool B-Roll */}
+      {/* 0 - 35.3s: Luxury Phuket Villa & Pool Video B-Roll */}
       <Sequence from={0} durationInFrames={Math.round(35.3 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
-          <Img
-            src={staticFile("site_phuketstaypro_vivi.png")}
+          <Video
+            src={staticFile("b_roll_phuket_villa.mp4")}
+            loop
+            muted
             style={{
               position: "absolute",
               top: 0,
@@ -24,9 +26,8 @@ export const PhuketStayProScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.22,
-              filter: "blur(3px)",
-              transform: `scale(${interpolate(frame, [0, 35.3 * fps], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
+              opacity: 0.32,
+              transform: `scale(${interpolate(frame, [0, 35.3 * fps], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>

@@ -53,11 +53,11 @@ export const ResearchScene: React.FC = () => {
         </div>
       </Sequence>
 
-      {/* 58s+: Data Center Servers */}
+      {/* 58s+: Red Alert / Alarm Warning for Missing Tracking & Traps */}
       <Sequence from={Math.round(58 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src={staticFile("b_roll_classroom_study.mp4")}
+            src={staticFile("20_red_alarm_alert.mp4")}
             loop
             muted
             style={{
@@ -67,7 +67,8 @@ export const ResearchScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.35,
+              opacity: 0.38,
+              transform: `scale(${interpolate(frame - 58 * fps, [0, 24 * fps], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
