@@ -15,7 +15,9 @@ export default function App() {
   const { fps } = useVideoConfig();
 
   // Timing markers in seconds (aligned with exact speech delivery in transcript.json)
-  const tHookEnd = 95.7;
+  // Hook voiceover ends at 95.42s ("и статус сделки."), next sentence ("Марий Хейнс...") starts at 95.53s.
+  // 95.467s (frame 2864) falls dead in the natural pause between sentences.
+  const tHookEnd = 95.467;
   const tIntroDuration = 13.84;
   const tResearchEnd = 177.6;
   const tArchEnd = 286.6;

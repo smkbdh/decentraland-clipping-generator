@@ -7,15 +7,15 @@ export const TopChapterBar: React.FC = () => {
 
   const currentTimeSec = frame / fps;
 
-  // Hide TopChapterBar completely during full-screen studio intro (95.7s to 109.54s)
-  if (currentTimeSec >= 95.7 && currentTimeSec < 109.54) {
+  // Hide TopChapterBar completely during full-screen studio intro (95.47s to 109.31s)
+  if (currentTimeSec >= 95.467 && currentTimeSec < 109.307) {
     return null;
   }
 
   // Chapter boundaries (shifted by +13.84s intro duration for chapters 2-7):
-  // 0 - 95.7s: Act 1 (Bots vs Clients)
-  // [95.7s - 109.54s]: Channel Intro Video
-  // 109.54s - 191.44s: Act 2 (145M Sessions Research)
+  // 0 - 95.47s: Act 1 (Bots vs Clients)
+  // [95.47s - 109.31s]: Channel Intro Video
+  // 109.31s - 191.44s: Act 2 (145M Sessions Research)
   // 191.44s - 300.44s: Act 3 (SEO vs GEO Architecture)
   // 300.44s - 412.24s: Act 4 (Case 1: BenPhuketCarRent)
   // 412.24s - 504.64s: Act 5 (Case 2 & 3: PhuketStayPro Dario lead & Chatterbox)
@@ -26,7 +26,7 @@ export const TopChapterBar: React.FC = () => {
   let chapterTitle = "БОТЫ ИЛИ КЛИЕНТЫ? ХАЙП И РЕАЛЬНОСТЬ GEO";
   let chapterColor = "#38bdf8";
 
-  if (currentTimeSec >= 109.54 && currentTimeSec < 191.44) {
+  if (currentTimeSec >= 109.307 && currentTimeSec < 191.44) {
     chapterNum = "02";
     chapterTitle = "ИССЛЕДОВАНИЕ: 145 МЛН СЕССИЙ И КОНВЕРСИИ";
     chapterColor = "#f59e0b";

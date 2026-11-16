@@ -6,8 +6,8 @@ export const CornerBranding: React.FC = () => {
   const { fps } = useVideoConfig();
   const currentTimeSec = frame / fps;
 
-  // Hide branding during full-screen studio intro (95.7s to 109.54s)
-  if (currentTimeSec >= 95.7 && currentTimeSec < 109.54) {
+  // Hide branding during full-screen studio intro (95.47s to 109.31s)
+  if (currentTimeSec >= 95.467 && currentTimeSec < 109.307) {
     return null;
   }
 
