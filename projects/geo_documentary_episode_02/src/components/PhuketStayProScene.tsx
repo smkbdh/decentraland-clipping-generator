@@ -539,8 +539,8 @@ export const PhuketStayProScene: React.FC = () => {
             </div>
           )}
 
-          {/* Sub-phase 2C-2 (64.5s - 73.0s): Traffic Aggregation Architecture (Before vs Now) */}
-          {sec >= 64.5 && sec < 73.0 && (
+          {/* Sub-phase 2C-2 (64.5s - 71.0s): Traffic Aggregation Architecture (Before vs Now) */}
+          {sec >= 64.5 && sec < 71.0 && (
             <div
               style={{
                 display: "flex",
@@ -745,8 +745,8 @@ export const PhuketStayProScene: React.FC = () => {
             </div>
           )}
 
-          {/* Sub-phase 2C-3 (73.0s - 80.0s): Real 2GIS Social Proof & Fast Conversion */}
-          {sec >= 73.0 && sec < 80.0 && (
+          {/* Sub-phase 2C-3 (71.0s - 79.5s): Real Telegram Bot Lead Proof & 2GIS Attribution */}
+          {sec >= 71.0 && sec < 79.5 && (
             <div
               style={{
                 display: "flex",
@@ -758,142 +758,293 @@ export const PhuketStayProScene: React.FC = () => {
             >
               <div
                 style={{
-                  padding: "8px 24px",
-                  borderRadius: 30,
-                  backgroundColor: "rgba(245, 158, 11, 0.2)",
-                  border: "1.5px solid rgba(245, 158, 11, 0.5)",
-                  color: "#f59e0b",
-                  fontSize: 18,
-                  fontWeight: 900,
-                  letterSpacing: 2,
-                  marginBottom: 16,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 14,
+                  marginBottom: 14,
                 }}
               >
-                ДОВЕРИЕ И БЫСТРЫЙ ПЕРЕВОД В СДЕЛКУ
+                <div
+                  style={{
+                    padding: "6px 20px",
+                    borderRadius: 30,
+                    backgroundColor: "rgba(34, 197, 94, 0.2)",
+                    border: "1.5px solid rgba(34, 197, 94, 0.5)",
+                    color: "#4ade80",
+                    fontSize: 17,
+                    fontWeight: 900,
+                    letterSpacing: 1.5,
+                  }}
+                >
+                  🟢 РЕАЛЬНЫЕ ЛИДЫ В TELEGRAM-БОТЕ
+                </div>
+                <div
+                  style={{
+                    padding: "6px 18px",
+                    borderRadius: 20,
+                    backgroundColor: "rgba(245, 158, 11, 0.2)",
+                    border: "1.5px solid rgba(245, 158, 11, 0.5)",
+                    color: "#f59e0b",
+                    fontSize: 16,
+                    fontWeight: 800,
+                  }}
+                >
+                  СКВОЗНАЯ АТРИБУЦИЯ: ЯНДЕКС & 2ГИС
+                </div>
               </div>
 
               <h2
                 style={{
-                  fontSize: 54,
+                  fontSize: 50,
                   fontWeight: 900,
                   color: "#f8fafc",
                   textAlign: "center",
                   lineHeight: 1.1,
-                  margin: "0 0 28px",
+                  margin: "0 0 22px",
                 }}
               >
-                РЕАЛЬНЫЕ ОТЗЫВЫ 2ГИС И ЗАПИСЬ НА ТЕСТИРОВАНИЕ
+                ПОДТВЕРЖДЕНИЕ В CRM: ЗАЯВКИ С ЯНДЕКСА И 2ГИС НА САЙТ
               </h2>
 
-              <div style={{ display: "flex", gap: 36, width: "100%", maxWidth: 1380, alignItems: "stretch" }}>
-                {/* 2GIS Proof Card with Screenshot */}
+              <div style={{ display: "flex", gap: 32, width: "100%", maxWidth: 1400, alignItems: "stretch" }}>
+                {/* Real Telegram Bot Screenshot Card */}
                 <div
                   style={{
-                    flex: 1.1,
-                    backgroundColor: "rgba(15, 23, 42, 0.95)",
-                    border: "2px solid #f59e0b",
-                    borderRadius: 24,
-                    padding: "28px",
-                    boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+                    width: 560,
+                    backgroundColor: "#17212b",
+                    border: "2px solid #22c55e",
+                    borderRadius: 22,
+                    overflow: "hidden",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.85), 0 0 35px rgba(34, 197, 94, 0.3)",
                     display: "flex",
                     flexDirection: "column",
-                    gap: 16,
                   }}
                 >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <div style={{ fontSize: 20, color: "#f59e0b", fontWeight: 900 }}>⭐ РЕЙТИНГ 5.0 В 2ГИС</div>
-                    <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700 }}>59 проверенных оценок</div>
-                  </div>
-
+                  {/* Telegram Chat Header */}
                   <div
                     style={{
-                      borderRadius: 16,
-                      overflow: "hidden",
-                      border: "1px solid rgba(255,255,255,0.12)",
-                      backgroundColor: "#081c15",
-                      height: 250,
+                      height: 48,
+                      backgroundColor: "#0e1621",
+                      borderBottom: "1px solid rgba(255,255,255,0.08)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "0 18px",
                     }}
                   >
+                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <div
+                        style={{
+                          width: 28,
+                          height: 28,
+                          borderRadius: "50%",
+                          backgroundColor: "#2481cc",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontSize: 15,
+                        }}
+                      >
+                        🤖
+                      </div>
+                      <div>
+                        <div style={{ fontSize: 16, fontWeight: 800, color: "#ffffff", lineHeight: 1.1 }}>
+                          Chatterbox03_bot
+                        </div>
+                        <div style={{ fontSize: 12, color: "#708499" }}>бот оповещений о лидах</div>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        padding: "3px 10px",
+                        borderRadius: 12,
+                        backgroundColor: "rgba(34, 197, 94, 0.15)",
+                        border: "1px solid #22c55e",
+                        color: "#4ade80",
+                        fontSize: 12,
+                        fontWeight: 800,
+                      }}
+                    >
+                      LIVE CRM
+                    </div>
+                  </div>
+
+                  {/* Screenshot Viewport with gentle animation */}
+                  <div style={{ flex: 1, position: "relative", overflow: "hidden", backgroundColor: "#0e1621", maxHeight: 420 }}>
                     <Img
-                      src={staticFile("chatterbox_reviews.png")}
-                      style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 70%" }}
+                      src={staticFile("chatterbox_telegram_bot_lead.png")}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        display: "block",
+                        transform: `scale(${interpolate(frame - 71.0 * fps, [0, 8.5 * fps], [1.0, 1.04], { extrapolateRight: "clamp" })}) translateY(${interpolate(frame - 71.0 * fps, [0, 8.5 * fps], [0, -15], { extrapolateRight: "clamp" })}px)`,
+                        transformOrigin: "top center",
+                      }}
                     />
                   </div>
 
-                  <div style={{ fontSize: 20, color: "#e2e8f0", lineHeight: 1.45, fontStyle: "italic" }}>
-                    «Отличная школа английского языка, дочка посещает второй год, удобное расписание, хорошие преподаватели!»
+                  {/* Highlights Bar at Bottom of Card */}
+                  <div
+                    style={{
+                      padding: "14px 18px",
+                      backgroundColor: "#0b111a",
+                      borderTop: "1.5px solid rgba(255,255,255,0.1)",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 8,
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontSize: 15,
+                        color: "#4ade80",
+                        fontWeight: 800,
+                        backgroundColor: "rgba(34, 197, 94, 0.12)",
+                        border: "1px solid rgba(34, 197, 94, 0.35)",
+                        padding: "6px 12px",
+                        borderRadius: 10,
+                      }}
+                    >
+                      <span style={{ fontSize: 16 }}>🟢</span>
+                      <span>Технический канал: <strong>Яндекс · органика</strong> (referrer: yandex.ru)</span>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontSize: 15,
+                        color: "#fbbf24",
+                        fontWeight: 800,
+                        backgroundColor: "rgba(245, 158, 11, 0.12)",
+                        border: "1px solid rgba(245, 158, 11, 0.35)",
+                        padding: "6px 12px",
+                        borderRadius: 10,
+                      }}
+                    >
+                      <span style={{ fontSize: 16 }}>🟡</span>
+                      <span>Со слов клиента: <strong>2ГИС</strong> ➔ Посадочная: <strong>chatterboxschool.ru</strong></span>
+                    </div>
                   </div>
                 </div>
 
-                {/* 2-Step Funnel Card */}
-                <div
-                  style={{
-                    flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.95)",
-                    border: "2px solid #38bdf8",
-                    borderRadius: 24,
-                    padding: "32px",
-                    boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <div>
-                    <div style={{ fontSize: 20, color: "#38bdf8", fontWeight: 900, marginBottom: 16 }}>
-                      ВОРОНКА С КАРТ И ПОИСКА
+                {/* Right Stack: 2GIS Reviews & Conversion Funnel */}
+                <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 20 }}>
+                  {/* 2GIS Proof Card */}
+                  <div
+                    style={{
+                      flex: 1,
+                      backgroundColor: "rgba(15, 23, 42, 0.95)",
+                      border: "2px solid #f59e0b",
+                      borderRadius: 22,
+                      padding: "22px 26px",
+                      boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                      <div style={{ fontSize: 20, color: "#f59e0b", fontWeight: 900 }}>⭐ РЕЙТИНГ 5.0 В 2ГИС</div>
+                      <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700 }}>59 проверенных отзывов</div>
                     </div>
-                    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                      <div
-                        style={{
-                          backgroundColor: "rgba(56, 189, 248, 0.12)",
-                          borderLeft: "4px solid #38bdf8",
-                          padding: "16px 20px",
-                          borderRadius: 12,
-                        }}
-                      >
-                        <div style={{ fontSize: 22, fontWeight: 900, color: "#ffffff" }}>1. БЕСПЛАТНОЕ ТЕСТИРОВАНИЕ</div>
-                        <div style={{ fontSize: 18, color: "#cbd5e1", marginTop: 4 }}>
-                          Определение текущего уровня знаний и целей ученика
-                        </div>
-                      </div>
 
-                      <div
-                        style={{
-                          backgroundColor: "rgba(34, 197, 94, 0.12)",
-                          borderLeft: "4px solid #22c55e",
-                          padding: "16px 20px",
-                          borderRadius: 12,
-                        }}
-                      >
-                        <div style={{ fontSize: 22, fontWeight: 900, color: "#ffffff" }}>2. ПРОБНЫЙ УРОК И ГРУППА</div>
-                        <div style={{ fontSize: 18, color: "#cbd5e1", marginTop: 4 }}>
-                          Английский, китайский, корейский (офлайн в центре или онлайн)
-                        </div>
-                      </div>
+                    <div
+                      style={{
+                        borderRadius: 14,
+                        overflow: "hidden",
+                        border: "1px solid rgba(255,255,255,0.12)",
+                        backgroundColor: "#081c15",
+                        height: 140,
+                        marginBottom: 10,
+                      }}
+                    >
+                      <Img
+                        src={staticFile("chatterbox_reviews.png")}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 70%" }}
+                      />
+                    </div>
+
+                    <div style={{ fontSize: 18, color: "#e2e8f0", lineHeight: 1.4, fontStyle: "italic" }}>
+                      «Отличная школа английского языка, дочка посещает второй год, удобное расписание, хорошие преподаватели!»
                     </div>
                   </div>
 
+                  {/* 2-Step Funnel Card */}
                   <div
                     style={{
-                      padding: "16px 20px",
-                      borderRadius: 14,
-                      backgroundColor: "rgba(255, 255, 255, 0.05)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      fontSize: 18,
-                      color: "#94a3b8",
-                      textAlign: "center",
+                      flex: 1,
+                      backgroundColor: "rgba(15, 23, 42, 0.95)",
+                      border: "2px solid #38bdf8",
+                      borderRadius: 22,
+                      padding: "22px 26px",
+                      boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
                     }}
                   >
-                    Понятный следующий шаг устраняет трение при переходе с карт
+                    <div style={{ fontSize: 20, color: "#38bdf8", fontWeight: 900, marginBottom: 12 }}>
+                      🎯 2-ШАГОВАЯ ВОРОНКА ЗАПИСИ
+                    </div>
+
+                    <div style={{ display: "flex", gap: 16 }}>
+                      <div
+                        style={{
+                          flex: 1,
+                          backgroundColor: "rgba(56, 189, 248, 0.12)",
+                          borderLeft: "4px solid #38bdf8",
+                          padding: "12px 16px",
+                          borderRadius: 10,
+                        }}
+                      >
+                        <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>1. ТЕСТИРОВАНИЕ</div>
+                        <div style={{ fontSize: 15, color: "#cbd5e1", marginTop: 4 }}>
+                          Бесплатная проверка уровня и целей ученика
+                        </div>
+                      </div>
+
+                      <div
+                        style={{
+                          flex: 1,
+                          backgroundColor: "rgba(34, 197, 94, 0.12)",
+                          borderLeft: "4px solid #22c55e",
+                          padding: "12px 16px",
+                          borderRadius: 10,
+                        }}
+                      >
+                        <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>2. ПРОБНЫЙ УРОК</div>
+                        <div style={{ fontSize: 15, color: "#cbd5e1", marginTop: 4 }}>
+                          Подбор группы (английский, китайский, корейский)
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: 12,
+                        padding: "10px 16px",
+                        borderRadius: 12,
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        border: "1px solid rgba(255,255,255,0.1)",
+                        fontSize: 16,
+                        color: "#94a3b8",
+                        textAlign: "center",
+                      }}
+                    >
+                      Понятный шаг устраняет трение при переходе с поиска и карт
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* Sub-phase 2C-4 (80.0s+): Strategic Conclusion & GEO Synergy */}
-          {sec >= 80.0 && (
+          {/* Sub-phase 2C-4 (79.5s+): Strategic Conclusion & GEO Synergy */}
+          {sec >= 79.5 && (
             <div
               style={{
                 display: "flex",

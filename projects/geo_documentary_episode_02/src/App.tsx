@@ -76,7 +76,7 @@ export default function App() {
     sBen + Math.round(38.5 * fps), // Telegram bot screenshot spotlight zoom
     sPhuket + Math.round(58.3 * fps), // Chatterbox site mockup opens
     sPhuket + Math.round(64.5 * fps), // Aggregation diagram activates
-    sPhuket + Math.round(73.0 * fps), // 2GIS reviews card pops in
+    sPhuket + Math.round(71.0 * fps), // Chatterbox Telegram bot proof & 2GIS reviews pop in
   ];
 
   const microWhooshFrames = [
