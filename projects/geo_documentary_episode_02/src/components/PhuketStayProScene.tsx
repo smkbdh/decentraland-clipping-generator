@@ -65,19 +65,19 @@ export const PhuketStayProScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            padding: "0 60px 90px",
+            padding: "0 60px 80px",
             zIndex: 10,
           }}
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(236, 72, 153, 0.15)",
-              border: "1px solid rgba(236, 72, 153, 0.4)",
+              backgroundColor: "rgba(236, 72, 153, 0.2)",
+              border: "1.5px solid rgba(236, 72, 153, 0.5)",
               color: "#f472b6",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 16,
             }}
@@ -87,142 +87,166 @@ export const PhuketStayProScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 52,
+              fontSize: 58,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
               lineHeight: 1.1,
-              margin: "0 0 24px",
+              margin: "0 0 28px",
             }}
           >
             КЛИЕНТ ИЗ СИНГАПУРА С БЮДЖЕТОМ 4 МЛН БАТ (ИЗ CHATGPT)
           </h2>
 
-          <div style={{ display: "flex", gap: 28, alignItems: "center", maxWidth: 1600, width: "100%", justifyContent: "center" }}>
-            {/* Screenshot 1: Telegram Bot Lead */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              <div
-                style={{
-                  alignSelf: "flex-start",
-                  padding: "4px 12px",
-                  borderRadius: 10,
-                  backgroundColor: "rgba(56, 189, 248, 0.15)",
-                  border: "1px solid rgba(56, 189, 248, 0.4)",
-                  color: "#38bdf8",
-                  fontSize: 12,
-                  fontWeight: 800,
-                  letterSpacing: 0.5,
-                }}
-              >
-                ЖИВОЙ СКРИНШОТ БОТА
-              </div>
-              <div
-                style={{
-                  width: 420,
-                  height: 520,
-                  borderRadius: 20,
-                  overflow: "hidden",
-                  border: "2px solid rgba(56, 189, 248, 0.5)",
-                  boxShadow: "0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(56, 189, 248, 0.2)",
-                  position: "relative",
-                  backgroundColor: "#0d1117",
-                }}
-              >
-                <Img
-                  src={staticFile("telegram_lead_dario_chatgpt_anonymized.png")}
+          {/* Sub-phase 1 (0 - 14.0s): Telegram Lead Spotlight */}
+          {sec < 14.0 ? (
+            <div style={{ display: "flex", gap: 40, alignItems: "center", maxWidth: 1450, width: "100%", justifyContent: "center" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <div
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
+                    alignSelf: "flex-start",
+                    padding: "6px 16px",
+                    borderRadius: 12,
+                    backgroundColor: "rgba(56, 189, 248, 0.2)",
+                    border: "1px solid rgba(56, 189, 248, 0.6)",
+                    color: "#38bdf8",
+                    fontSize: 16,
+                    fontWeight: 900,
+                    letterSpacing: 0.8,
+                  }}
+                >
+                  ЖИВОЙ СКРИНШОТ БОТА КОМАНДЫ
+                </div>
+                <div
+                  style={{
+                    width: 540,
+                    height: 540,
+                    borderRadius: 24,
+                    overflow: "hidden",
+                    border: "2.5px solid rgba(56, 189, 248, 0.6)",
+                    boxShadow: "0 25px 60px rgba(0,0,0,0.85), 0 0 35px rgba(56, 189, 248, 0.25)",
+                    position: "relative",
                     backgroundColor: "#0d1117",
                   }}
-                />
-              </div>
-            </div>
-
-            {/* Middle flow summary */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 14, width: 320 }}>
-              <div
-                style={{
-                  backgroundColor: "rgba(15, 23, 42, 0.92)",
-                  border: "1px solid rgba(236, 72, 153, 0.35)",
-                  borderRadius: 16,
-                  padding: "16px 20px",
-                }}
-              >
-                <div style={{ fontSize: 13, color: "#f472b6", fontWeight: 800 }}>ОБЪЕКТ И БЮДЖЕТ</div>
-                <div style={{ fontSize: 20, fontWeight: 900, color: "#ffffff" }}>The Title ViVi Bang Tao</div>
-                <div style={{ fontSize: 16, color: "#cbd5e1" }}>4 000 000 THB (~$115 000)</div>
+                >
+                  <Img
+                    src={staticFile("telegram_lead_dario_chatgpt_anonymized.png")}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      backgroundColor: "#0d1117",
+                      transform: `scale(${interpolate(frame, [0, 14 * fps], [1.0, 1.05], { extrapolateRight: "clamp" })})`,
+                    }}
+                  />
+                </div>
               </div>
 
-              <div
-                style={{
-                  backgroundColor: "rgba(15, 23, 42, 0.92)",
-                  border: "1.5px solid #22c55e",
-                  borderRadius: 16,
-                  padding: "16px 20px",
-                }}
-              >
-                <div style={{ fontSize: 13, color: "#86efac", fontWeight: 800 }}>ИСТОЧНИК ПЕРЕХОДА</div>
-                <div style={{ fontSize: 20, fontWeight: 900, color: "#22c55e" }}>ai_referral · chatgpt.com</div>
-                <div style={{ fontSize: 14, color: "#94a3b8" }}>Рекомендация в ответе ChatGPT</div>
-              </div>
-
-              <div
-                style={{
-                  backgroundColor: "rgba(15, 23, 42, 0.92)",
-                  border: "1px solid rgba(56, 189, 248, 0.35)",
-                  borderRadius: 16,
-                  padding: "16px 20px",
-                }}
-              >
-                <div style={{ fontSize: 13, color: "#38bdf8", fontWeight: 800 }}>РЕАКЦИЯ КОМАНДЫ</div>
-                <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>Диалог за 6 минут</div>
-                <div style={{ fontSize: 14, color: "#cbd5e1" }}>Отправка PDF брошюры в WhatsApp</div>
-              </div>
-            </div>
-
-            {/* Screenshot 2: WhatsApp Chat */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              <div
-                style={{
-                  alignSelf: "flex-start",
-                  padding: "4px 12px",
-                  borderRadius: 10,
-                  backgroundColor: "rgba(34, 197, 94, 0.15)",
-                  border: "1px solid rgba(34, 197, 94, 0.4)",
-                  color: "#22c55e",
-                  fontSize: 12,
-                  fontWeight: 800,
-                  letterSpacing: 0.5,
-                }}
-              >
-                РЕАЛЬНЫЙ ДИАЛОГ WHATSAPP
-              </div>
-              <div
-                style={{
-                  width: 760,
-                  height: 520,
-                  borderRadius: 20,
-                  overflow: "hidden",
-                  border: "2px solid rgba(34, 197, 94, 0.5)",
-                  boxShadow: "0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(34, 197, 94, 0.2)",
-                  position: "relative",
-                  backgroundColor: "#0b141a",
-                }}
-              >
-                <Img
-                  src={staticFile("whatsapp_chat_dario_singapore_anonymized.jpg")}
+              <div style={{ display: "flex", flexDirection: "column", gap: 18, width: 560 }}>
+                <div
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
+                    backgroundColor: "rgba(15, 23, 42, 0.95)",
+                    border: "2px solid rgba(236, 72, 153, 0.5)",
+                    borderRadius: 20,
+                    padding: "24px 28px",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#f472b6", fontWeight: 800, marginBottom: 4 }}>БЮДЖЕТ КЛИЕНТА</div>
+                  <div style={{ fontSize: 38, fontWeight: 900, color: "#ffffff", letterSpacing: -0.5 }}>4 000 000 THB (~$115 000)</div>
+                  <div style={{ fontSize: 20, color: "#cbd5e1", marginTop: 4 }}>The Title ViVi Bang Tao (Freehold)</div>
+                </div>
+
+                <div
+                  style={{
+                    backgroundColor: "rgba(15, 23, 42, 0.95)",
+                    border: "2px solid #22c55e",
+                    borderRadius: 20,
+                    padding: "24px 28px",
+                    boxShadow: "0 0 30px rgba(34, 197, 94, 0.25)",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#86efac", fontWeight: 800, marginBottom: 4 }}>ТОЧНЫЙ ИСТОЧНИК И АТРИБУЦИЯ</div>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: "#22c55e" }}>ai_referral · chatgpt.com</div>
+                  <div style={{ fontSize: 20, color: "#94a3b8", marginTop: 4 }}>Прямая рекомендация в ответе ChatGPT Search</div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* Sub-phase 2 (14.0s - 35.3s): WhatsApp Inspection with Camera Zoom onto Chat */
+            <div style={{ display: "flex", gap: 36, alignItems: "center", maxWidth: 1550, width: "100%", justifyContent: "center" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <div
+                  style={{
+                    alignSelf: "flex-start",
+                    padding: "6px 16px",
+                    borderRadius: 12,
+                    backgroundColor: "rgba(34, 197, 94, 0.2)",
+                    border: "1px solid rgba(34, 197, 94, 0.6)",
+                    color: "#22c55e",
+                    fontSize: 16,
+                    fontWeight: 900,
+                    letterSpacing: 0.8,
+                  }}
+                >
+                  РЕАЛЬНЫЙ ДИАЛОГ WHATSAPP (ДЕТАЛЬНО)
+                </div>
+                <div
+                  style={{
+                    width: 880,
+                    height: 540,
+                    borderRadius: 24,
+                    overflow: "hidden",
+                    border: "2.5px solid rgba(34, 197, 94, 0.6)",
+                    boxShadow: "0 25px 60px rgba(0,0,0,0.85), 0 0 40px rgba(34, 197, 94, 0.3)",
+                    position: "relative",
                     backgroundColor: "#0b141a",
                   }}
-                />
+                >
+                  <Img
+                    src={staticFile("whatsapp_chat_dario_singapore_anonymized.jpg")}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      backgroundColor: "#0b141a",
+                      transformOrigin: "50% 40%",
+                      transform: `scale(${interpolate(frame - 14 * fps, [0, 3 * fps], [1.0, 1.28], { extrapolateRight: "clamp" })}) translate(${interpolate(frame - 14 * fps, [0, 3 * fps], [0, 30], { extrapolateRight: "clamp" })}px, ${interpolate(frame - 14 * fps, [0, 3 * fps], [0, -40], { extrapolateRight: "clamp" })}px)`,
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 16, width: 440 }}>
+                <div
+                  style={{
+                    backgroundColor: "rgba(15, 23, 42, 0.95)",
+                    border: "2px solid #22c55e",
+                    borderRadius: 20,
+                    padding: "24px 26px",
+                    boxShadow: "0 0 35px rgba(34, 197, 94, 0.25)",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#86efac", fontWeight: 800, marginBottom: 4 }}>РЕАКЦИЯ КОМАНДЫ</div>
+                  <div style={{ fontSize: 36, fontWeight: 900, color: "#22c55e" }}>Диалог за 6 минут</div>
+                  <div style={{ fontSize: 20, color: "#cbd5e1", marginTop: 4 }}>PDF брошюра сразу отправлена клиенту</div>
+                </div>
+
+                <div
+                  style={{
+                    backgroundColor: "rgba(15, 23, 42, 0.95)",
+                    border: "2px solid rgba(56, 189, 248, 0.5)",
+                    borderRadius: 20,
+                    padding: "24px 26px",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#38bdf8", fontWeight: 800, marginBottom: 4 }}>ВЫВОД ДЛЯ БИЗНЕСА</div>
+                  <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff" }}>Сделки выигрывает скорость</div>
+                  <div style={{ fontSize: 18, color: "#cbd5e1", marginTop: 4 }}>Горячий лид из AI остывает за 15 минут без ответа менеджера</div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       )}
 
@@ -255,45 +279,45 @@ export const PhuketStayProScene: React.FC = () => {
               position: "absolute",
               bottom: 65,
               left: 80,
-              maxWidth: 1200,
+              maxWidth: 1300,
               zIndex: 20,
             }}
           >
-            <div style={{ display: "flex", gap: 14, marginBottom: 14, alignItems: "center" }}>
+            <div style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "center" }}>
               <div
                 style={{
-                  padding: "6px 18px",
-                  borderRadius: 20,
-                  backgroundColor: "rgba(16, 185, 129, 0.92)",
+                  padding: "8px 22px",
+                  borderRadius: 24,
+                  backgroundColor: "rgba(16, 185, 129, 0.95)",
                   color: "#ffffff",
-                  fontSize: 14,
-                  fontWeight: 800,
+                  fontSize: 18,
+                  fontWeight: 900,
                   letterSpacing: 1,
-                  boxShadow: "0 0 25px rgba(16, 185, 129, 0.5)",
+                  boxShadow: "0 0 25px rgba(16, 185, 129, 0.6)",
                 }}
               >
                 📍 РЕАЛЬНЫЙ ОБЪЕКТ В УПРАВЛЕНИИ · КАМАЛА
               </div>
               <div
                 style={{
-                  padding: "6px 18px",
-                  borderRadius: 20,
-                  backgroundColor: "rgba(15, 23, 42, 0.9)",
-                  border: "1px solid rgba(56, 189, 248, 0.6)",
+                  padding: "8px 22px",
+                  borderRadius: 24,
+                  backgroundColor: "rgba(15, 23, 42, 0.92)",
+                  border: "1.5px solid rgba(56, 189, 248, 0.6)",
                   color: "#38bdf8",
-                  fontSize: 14,
-                  fontWeight: 700,
+                  fontSize: 18,
+                  fontWeight: 800,
                 }}
               >
                 phuketstaypro.com/en/property/oceana-kamala-a76
               </div>
             </div>
-            <h2 style={{ fontSize: 56, fontWeight: 900, color: "#ffffff", margin: "0 0 10px", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: 62, fontWeight: 900, color: "#ffffff", margin: "0 0 12px", lineHeight: 1.1 }}>
               OCEANA RESIDENCE KAMALA · A76
             </h2>
-            <div style={{ fontSize: 22, color: "#cbd5e1", fontWeight: 600, lineHeight: 1.4 }}>
+            <div style={{ fontSize: 26, color: "#f1f5f9", fontWeight: 700, lineHeight: 1.4 }}>
               Собственник нашел сайт в поиске и отдал квартиру в доверительное управление команде. <br />
-              <span style={{ color: "#34d399", fontWeight: 800 }}>➔ Реальный объект и прибыль, а не просто клики или краулеры в логах.</span>
+              <span style={{ color: "#34d399", fontWeight: 900 }}>➔ Реальный объект и прибыль, а не просто клики или краулеры в логах.</span>
             </div>
           </div>
         </div>
@@ -326,32 +350,32 @@ export const PhuketStayProScene: React.FC = () => {
               position: "absolute",
               bottom: 65,
               left: 80,
-              maxWidth: 1200,
+              maxWidth: 1300,
               zIndex: 20,
             }}
           >
-            <div style={{ display: "flex", gap: 14, marginBottom: 14, alignItems: "center" }}>
+            <div style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "center" }}>
               <div
                 style={{
-                  padding: "6px 18px",
-                  borderRadius: 20,
-                  backgroundColor: "rgba(245, 158, 11, 0.92)",
+                  padding: "8px 22px",
+                  borderRadius: 24,
+                  backgroundColor: "rgba(245, 158, 11, 0.95)",
                   color: "#ffffff",
-                  fontSize: 14,
-                  fontWeight: 800,
+                  fontSize: 18,
+                  fontWeight: 900,
                   letterSpacing: 1,
-                  boxShadow: "0 0 25px rgba(245, 158, 11, 0.5)",
+                  boxShadow: "0 0 25px rgba(245, 158, 11, 0.6)",
                 }}
               >
                 💎 ДОГОВОР ДОВЕРИТЕЛЬНОГО УПРАВЛЕНИЯ
               </div>
             </div>
-            <h2 style={{ fontSize: 52, fontWeight: 900, color: "#ffffff", margin: "0 0 10px", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: 62, fontWeight: 900, color: "#ffffff", margin: "0 0 12px", lineHeight: 1.1 }}>
               РЕЗУЛЬТАТ, КОТОРЫЙ ВАЖНЕЕ ЛЮБЫХ ГРАФИКОВ
             </h2>
-            <div style={{ fontSize: 22, color: "#cbd5e1", fontWeight: 600, lineHeight: 1.4 }}>
+            <div style={{ fontSize: 26, color: "#f1f5f9", fontWeight: 700, lineHeight: 1.4 }}>
               Это собственник, объект и новая работа для команды. <br />
-              <span style={{ color: "#38bdf8", fontWeight: 800 }}>➔ Сайты строятся не ради красивой SEO-таблички, а ради сделок, которые меняют бизнес.</span>
+              <span style={{ color: "#38bdf8", fontWeight: 900 }}>➔ Сайты строятся не ради красивой SEO-таблички, а ради сделок, которые меняют бизнес.</span>
             </div>
           </div>
         </div>
@@ -373,13 +397,13 @@ export const PhuketStayProScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(56, 189, 248, 0.15)",
-              border: "1px solid rgba(56, 189, 248, 0.4)",
+              backgroundColor: "rgba(56, 189, 248, 0.2)",
+              border: "1.5px solid rgba(56, 189, 248, 0.5)",
               color: "#38bdf8",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -389,7 +413,7 @@ export const PhuketStayProScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 62,
+              fontSize: 66,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
@@ -400,23 +424,24 @@ export const PhuketStayProScene: React.FC = () => {
             КЛАССИЧЕСКИЙ ПОИСК И КАРТЫ: ФУНДАМЕНТ ДЛЯ ЗАЯВОК
           </h2>
 
-          <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
+          <div style={{ display: "flex", gap: 36, maxWidth: 1250, width: "100%" }}>
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1.5px solid #38bdf8",
+                backgroundColor: "rgba(15, 23, 42, 0.94)",
+                border: "2px solid #38bdf8",
                 borderRadius: 24,
-                padding: "32px",
+                padding: "36px",
+                boxShadow: "0 0 30px rgba(56, 189, 248, 0.2)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#38bdf8", fontWeight: 800, marginBottom: 10 }}>
+              <div style={{ fontSize: 20, color: "#38bdf8", fontWeight: 900, marginBottom: 10 }}>
                 ИСТОЧНИКИ ТРАФИКА
               </div>
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
+              <div style={{ fontSize: 36, fontWeight: 900, color: "#ffffff", marginBottom: 14 }}>
                 Яндекс, 2ГИС, Google
               </div>
-              <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 24, color: "#cbd5e1", lineHeight: 1.45 }}>
                 Люди ищут школу в своем районе, записываются на бесплатный пробный урок и тестирование.
               </div>
             </div>
@@ -424,19 +449,20 @@ export const PhuketStayProScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1.5px solid #22c55e",
+                backgroundColor: "rgba(15, 23, 42, 0.94)",
+                border: "2px solid #22c55e",
                 borderRadius: 24,
-                padding: "32px",
+                padding: "36px",
+                boxShadow: "0 0 30px rgba(34, 197, 94, 0.2)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#22c55e", fontWeight: 800, marginBottom: 10 }}>
+              <div style={{ fontSize: 20, color: "#22c55e", fontWeight: 900, marginBottom: 10 }}>
                 ГЛАВНЫЙ ВЫВОД
               </div>
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
+              <div style={{ fontSize: 36, fontWeight: 900, color: "#ffffff", marginBottom: 14 }}>
                 SEO не умерло — оно кормит
               </div>
-              <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 24, color: "#cbd5e1", lineHeight: 1.45 }}>
                 Отвечать на вопросы людей, быть видимым там, где они ищут, и быстро доводить заявку до следующего шага.
               </div>
             </div>

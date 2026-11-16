@@ -92,13 +92,13 @@ export const ResearchScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(245, 158, 11, 0.15)",
-              border: "1px solid rgba(245, 158, 11, 0.4)",
+              backgroundColor: "rgba(245, 158, 11, 0.2)",
+              border: "1.5px solid rgba(245, 158, 11, 0.5)",
               color: "#f59e0b",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -119,25 +119,25 @@ export const ResearchScene: React.FC = () => {
             РЕАЛЬНЫЙ ОБЪЁМ ТРАФИКА: МАСШТАБ GOOGLE
           </h2>
 
-          <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
+          <div style={{ display: "flex", gap: 40, maxWidth: 1250, width: "100%" }}>
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
-                border: "1px solid rgba(245, 158, 11, 0.4)",
+                backgroundColor: "rgba(15, 23, 42, 0.94)",
+                border: "2px solid rgba(245, 158, 11, 0.5)",
                 borderRadius: 24,
-                padding: "32px",
+                padding: "36px",
                 textAlign: "center",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+                boxShadow: "0 20px 45px rgba(0,0,0,0.6)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
+              <div style={{ fontSize: 20, color: "#94a3b8", fontWeight: 800, marginBottom: 8 }}>
                 CHATGPT / GOOGLE ORGANIC
               </div>
-              <div style={{ fontSize: 80, fontWeight: 900, color: "#f59e0b", letterSpacing: -1 }}>
+              <div style={{ fontSize: 104, fontWeight: 900, color: "#f59e0b", letterSpacing: -2, lineHeight: 1.0, margin: "10px 0" }}>
                 {interpolate(frame, [0, 24], [0, 0.62], { extrapolateRight: "clamp" }).toFixed(2)}%
               </div>
-              <div style={{ fontSize: 18, color: "#cbd5e1" }}>
+              <div style={{ fontSize: 24, color: "#cbd5e1", fontWeight: 700 }}>
                 Доля переходов от общего поискового объема
               </div>
             </div>
@@ -145,27 +145,27 @@ export const ResearchScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
-                border: "1px solid rgba(255, 255, 255, 0.15)",
+                backgroundColor: "rgba(15, 23, 42, 0.94)",
+                border: "2px solid rgba(56, 189, 248, 0.5)",
                 borderRadius: 24,
-                padding: "32px",
+                padding: "36px",
                 textAlign: "center",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+                boxShadow: "0 20px 45px rgba(0,0,0,0.6)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
+              <div style={{ fontSize: 20, color: "#94a3b8", fontWeight: 800, marginBottom: 8 }}>
                 ВСЕ НЕЙРОСЕТИ ВМЕСТЕ
               </div>
-              <div style={{ fontSize: 80, fontWeight: 900, color: "#38bdf8", letterSpacing: -1 }}>
+              <div style={{ fontSize: 104, fontWeight: 900, color: "#38bdf8", letterSpacing: -2, lineHeight: 1.0, margin: "10px 0" }}>
                 {interpolate(frame, [6, 28], [0, 0.73], { extrapolateRight: "clamp" }).toFixed(2)}%
               </div>
-              <div style={{ fontSize: 18, color: "#cbd5e1" }}>
+              <div style={{ fontSize: 24, color: "#cbd5e1", fontWeight: 700 }}>
                 ChatGPT + Perplexity + Claude + Copilot
               </div>
             </div>
           </div>
 
-          <div style={{ marginTop: 28, fontSize: 17, color: "#64748b", fontWeight: 600 }}>
+          <div style={{ marginTop: 32, fontSize: 22, color: "#94a3b8", fontWeight: 700 }}>
             Выборка: 100 коммерческих сайтов · 145 000 000+ пользовательских сессий
           </div>
         </div>
@@ -187,13 +187,13 @@ export const ResearchScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(34, 197, 94, 0.15)",
-              border: "1px solid rgba(34, 197, 94, 0.4)",
+              backgroundColor: "rgba(34, 197, 94, 0.2)",
+              border: "1.5px solid rgba(34, 197, 94, 0.5)",
               color: "#22c55e",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -214,25 +214,25 @@ export const ResearchScene: React.FC = () => {
             КОНВЕРСИЯ В 4.5 РАЗА ВЫШЕ ЧЕМ В ПОИСКЕ
           </h2>
 
-          <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
+          <div style={{ display: "flex", gap: 40, maxWidth: 1250, width: "100%" }}>
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "2px solid #22c55e",
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                border: "2.5px solid #22c55e",
                 borderRadius: 24,
-                padding: "32px",
+                padding: "36px",
                 textAlign: "center",
-                boxShadow: "0 0 35px rgba(34, 197, 94, 0.25)",
+                boxShadow: "0 0 45px rgba(34, 197, 94, 0.3)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#86efac", fontWeight: 800, marginBottom: 8 }}>
+              <div style={{ fontSize: 20, color: "#86efac", fontWeight: 900, marginBottom: 8 }}>
                 CHATGPT CONVERSION RATE
               </div>
-              <div style={{ fontSize: 88, fontWeight: 900, color: "#22c55e", letterSpacing: -1 }}>
+              <div style={{ fontSize: 116, fontWeight: 900, color: "#22c55e", letterSpacing: -2, lineHeight: 1.0, margin: "10px 0" }}>
                 {interpolate(frame - 29 * fps, [0, 24], [0, 13.8], { extrapolateRight: "clamp" }).toFixed(1)}%
               </div>
-              <div style={{ fontSize: 18, color: "#f8fafc", fontWeight: 600 }}>
+              <div style={{ fontSize: 24, color: "#f8fafc", fontWeight: 700 }}>
                 Сверхвысокая мотивация и готовность к сделке
               </div>
             </div>
@@ -240,20 +240,21 @@ export const ResearchScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.88)",
-                border: "1px solid rgba(255, 255, 255, 0.15)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
+                border: "2px solid rgba(255, 255, 255, 0.2)",
                 borderRadius: 24,
-                padding: "32px",
+                padding: "36px",
                 textAlign: "center",
+                boxShadow: "0 15px 40px rgba(0,0,0,0.5)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 800, marginBottom: 8 }}>
+              <div style={{ fontSize: 20, color: "#94a3b8", fontWeight: 900, marginBottom: 8 }}>
                 GOOGLE ORGANIC RATE
               </div>
-              <div style={{ fontSize: 88, fontWeight: 900, color: "#94a3b8", letterSpacing: -1 }}>
+              <div style={{ fontSize: 116, fontWeight: 900, color: "#94a3b8", letterSpacing: -2, lineHeight: 1.0, margin: "10px 0" }}>
                 {interpolate(frame - 29 * fps, [6, 28], [0, 3.02], { extrapolateRight: "clamp" }).toFixed(2)}%
               </div>
-              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 600 }}>
+              <div style={{ fontSize: 24, color: "#94a3b8", fontWeight: 700 }}>
                 Классический поисковый трафик
               </div>
             </div>
@@ -277,13 +278,13 @@ export const ResearchScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(239, 68, 68, 0.15)",
-              border: "1px solid rgba(239, 68, 68, 0.4)",
+              backgroundColor: "rgba(239, 68, 68, 0.2)",
+              border: "1.5px solid rgba(239, 68, 68, 0.5)",
               color: "#ef4444",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -293,12 +294,12 @@ export const ResearchScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 64,
+              fontSize: 68,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
               lineHeight: 1.1,
-              margin: "0 0 30px",
+              margin: "0 0 32px",
             }}
           >
             45 ИЗ 100 САЙТОВ НЕ НАСТРОИЛИ KEY EVENTS
@@ -306,18 +307,19 @@ export const ResearchScene: React.FC = () => {
 
           <div
             style={{
-              backgroundColor: "rgba(15, 23, 42, 0.92)",
-              border: "1px solid rgba(239, 68, 68, 0.35)",
+              backgroundColor: "rgba(15, 23, 42, 0.94)",
+              border: "2px solid rgba(239, 68, 68, 0.5)",
               borderRadius: 24,
-              padding: "36px 50px",
-              maxWidth: 1000,
+              padding: "44px 60px",
+              maxWidth: 1150,
               textAlign: "center",
+              boxShadow: "0 0 45px rgba(239, 68, 68, 0.25)",
             }}
           >
-            <div style={{ fontSize: 24, color: "#f8fafc", fontWeight: 700, lineHeight: 1.4, marginBottom: 20 }}>
+            <div style={{ fontSize: 32, color: "#f8fafc", fontWeight: 800, lineHeight: 1.45, marginBottom: 22 }}>
               Красивые графики визитов ничего не говорят о деньгах. Без событийной аналитики бизнес не знает, кто пришёл: бот или покупатель.
             </div>
-            <div style={{ fontSize: 20, color: "#38bdf8", fontWeight: 800 }}>
+            <div style={{ fontSize: 26, color: "#38bdf8", fontWeight: 900 }}>
               ➔ Мы отслеживаем цепочку до уведомления бота, WhatsApp и договора
             </div>
           </div>

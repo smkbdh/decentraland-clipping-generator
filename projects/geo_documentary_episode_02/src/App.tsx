@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import { Sequence, useVideoConfig, staticFile } from "remotion";
-import { Audio } from "@remotion/media";
+import { Audio, Video } from "@remotion/media";
 import { HookScene } from "./components/HookScene";
 import { ResearchScene } from "./components/ResearchScene";
 import { ArchitectureScene } from "./components/ArchitectureScene";
@@ -16,6 +16,7 @@ export default function App() {
 
   // Timing markers in seconds (aligned with exact speech delivery in transcript.json)
   const tHookEnd = 95.7;
+  const tIntroDuration = 13.84;
   const tResearchEnd = 177.6;
   const tArchEnd = 286.6;
   const tBenEnd = 398.4;
@@ -25,25 +26,38 @@ export default function App() {
 
   // Frame counts
   const fHook = Math.round(tHookEnd * fps);
+  const fIntro = Math.round(tIntroDuration * fps);
   const fResearch = Math.round((tResearchEnd - tHookEnd) * fps);
   const fArch = Math.round((tArchEnd - tResearchEnd) * fps);
   const fBen = Math.round((tBenEnd - tArchEnd) * fps);
   const fPhuket = Math.round((tPhuketEnd - tBenEnd) * fps);
   const fRules = Math.round((tRulesEnd - tPhuketEnd) * fps);
   const fOutro = Math.round((tTotal - tRulesEnd) * fps);
-  const fTotal = Math.round(tTotal * fps);
+  const fTotalSpeech = Math.round(tTotal * fps);
+  const fTotalWithIntro = fTotalSpeech + fIntro;
 
   // Scene start frames
   const sHook = 0;
-  const sResearch = fHook;
+  const sIntro = fHook;
+  const sResearch = sIntro + fIntro;
   const sArch = sResearch + fResearch;
   const sBen = sArch + fArch;
   const sPhuket = sBen + fBen;
   const sRules = sPhuket + fPhuket;
   const sOutro = sRules + fRules;
 
-  // Chapter impact timestamps (for subtle sub-bass SFX)
-  const chapterImpacts = [95.7, 177.6, 286.6, 398.4, 490.8, 630.7];
+  // Total speech duration after intro
+  const postIntroAudioDuration = fTotalSpeech - fHook;
+
+  // Chapter impact timestamps (for subtle sub-bass SFX, shifted by intro duration after hook)
+  const chapterImpacts = [
+    tHookEnd + tIntroDuration,
+    tResearchEnd + tIntroDuration,
+    tArchEnd + tIntroDuration,
+    tBenEnd + tIntroDuration,
+    tPhuketEnd + tIntroDuration,
+    tRulesEnd + tIntroDuration,
+  ];
 
   return (
     <div
@@ -58,38 +72,55 @@ export default function App() {
     >
       {/* === SCENE SEQUENCES === */}
 
-      {/* 01. Hook: Bots vs Clients (0 - 100.8s) */}
+      {/* 01. Hook: Bots vs Clients (0 - 95.7s) */}
       <Sequence name="01. Hook: Bots vs Clients" from={sHook} durationInFrames={fHook} layout="none">
         <HookScene />
       </Sequence>
 
-      {/* 02. Research: 145M Sessions & Conversion (100.8s - 184.5s) */}
-      <Sequence name="02. Research: 145M Sessions" from={sResearch} durationInFrames={fResearch} layout="none">
+      {/* 02. Channel Intro: OM AI Digital Studio (95.7s - 109.54s) */}
+      <Sequence name="02. Channel Intro Video" from={sIntro} durationInFrames={fIntro} layout="none">
+        <div style={{ position: "absolute", inset: 0, width: "100%", height: "100%", overflow: "hidden", backgroundColor: "#000000", zIndex: 10 }}>
+          <Video
+            src={staticFile("intro_buddah.mp4")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+      </Sequence>
+
+      {/* 03. Research: 145M Sessions & Conversion */}
+      <Sequence name="03. Research: 145M Sessions" from={sResearch} durationInFrames={fResearch} layout="none">
         <ResearchScene />
       </Sequence>
 
-      {/* 03. Architecture: SEO vs GEO & RAG (184.5s - 304.5s) */}
-      <Sequence name="03. Architecture: SEO vs GEO" from={sArch} durationInFrames={fArch} layout="none">
+      {/* 04. Architecture: SEO vs GEO & RAG */}
+      <Sequence name="04. Architecture: SEO vs GEO" from={sArch} durationInFrames={fArch} layout="none">
         <ArchitectureScene />
       </Sequence>
 
-      {/* 04. Case 1: BenPhuketCarRent 38 WhatsApp (304.5s - 425.0s) */}
-      <Sequence name="04. Case 1: BenPhuketCarRent" from={sBen} durationInFrames={fBen} layout="none">
+      {/* 05. Case 1: BenPhuketCarRent 38 WhatsApp */}
+      <Sequence name="05. Case 1: BenPhuketCarRent" from={sBen} durationInFrames={fBen} layout="none">
         <BenCarRentScene />
       </Sequence>
 
-      {/* 05. Case 2 & 3: PhuketStayPro Dario Lead & Chatterbox (425.0s - 516.5s) */}
-      <Sequence name="05. Case 2 & 3: PhuketStayPro" from={sPhuket} durationInFrames={fPhuket} layout="none">
+      {/* 06. Case 2 & 3: PhuketStayPro Dario Lead & Chatterbox */}
+      <Sequence name="06. Case 2 & 3: PhuketStayPro" from={sPhuket} durationInFrames={fPhuket} layout="none">
         <PhuketStayProScene />
       </Sequence>
 
-      {/* 06. 4 Rules for Business (516.5s - 630.0s) */}
-      <Sequence name="06. 4 Rules for Business" from={sRules} durationInFrames={fRules} layout="none">
+      {/* 07. 4 Rules for Business */}
+      <Sequence name="07. 4 Rules for Business" from={sRules} durationInFrames={fRules} layout="none">
         <BusinessChecklistScene />
       </Sequence>
 
-      {/* 07. Outro & Real Deals (630.0s - 651.68s) */}
-      <Sequence name="07. Outro & Real Deals" from={sOutro} durationInFrames={fOutro} layout="none">
+      {/* 08. Outro & Real Deals */}
+      <Sequence name="08. Outro & Real Deals" from={sOutro} durationInFrames={fOutro} layout="none">
         <OutroScene />
       </Sequence>
 
@@ -100,21 +131,35 @@ export default function App() {
         </Sequence>
       ))}
 
-      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1) === */}
-      <Sequence name="Music Bed: Neon Dreams" from={0} durationInFrames={fTotal} layout="none">
-        <Audio
-          src={staticFile("neon_dreams.mp3")}
-          volume={0.07}
-          loop
-        />
+      {/* === BACKGROUND MUSIC BED (Neon Dreams) === */}
+      {/* Music Part 1 (under Hook) */}
+      <Sequence name="Music Bed: Hook" from={0} durationInFrames={fHook} layout="none">
+        <Audio src={staticFile("neon_dreams.mp3")} volume={0.07} loop />
+      </Sequence>
+
+      {/* Music Part 2 (under Acts, muted during Intro) */}
+      <Sequence name="Music Bed: Main" from={sResearch} durationInFrames={postIntroAudioDuration} layout="none">
+        <Audio src={staticFile("neon_dreams.mp3")} volume={0.07} loop />
       </Sequence>
 
       {/* === MASTER VOICEOVER AUDIO TRACK (Native Kino Asset) === */}
-      <Sequence name="Master Voiceover" from={0} durationInFrames={fTotal} layout="none">
+      {/* Voiceover Part 1 (Hook: 0 to 95.7s) */}
+      <Sequence name="Voiceover: Hook" from={0} durationInFrames={fHook} layout="none">
         <Audio src={staticFile("voiceover.mp3")} volume={1.0} />
       </Sequence>
 
-      {/* === 08. GLOBAL BRANDING & NAVIGATION OVERLAYS (ALWAYS ON TOP) === */}
+      {/* Voiceover Part 2 (Acts 1-6, starting after Intro) */}
+      <Sequence
+        name="Voiceover: Main Acts"
+        from={sResearch}
+        trimBefore={fHook}
+        durationInFrames={postIntroAudioDuration}
+        layout="none"
+      >
+        <Audio src={staticFile("voiceover.mp3")} volume={1.0} />
+      </Sequence>
+
+      {/* === 09. GLOBAL BRANDING & NAVIGATION OVERLAYS (ALWAYS ON TOP) === */}
       <TopChapterBar />
       <CornerBranding />
     </div>

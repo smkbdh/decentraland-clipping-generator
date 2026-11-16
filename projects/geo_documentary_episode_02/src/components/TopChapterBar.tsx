@@ -7,40 +7,46 @@ export const TopChapterBar: React.FC = () => {
 
   const currentTimeSec = frame / fps;
 
-  // Chapter boundaries:
-  // 0 - 100.8s: Act 1 (Bots vs Clients)
-  // 100.8s - 184.5s: Act 2 (145M Sessions Research)
-  // 184.5s - 304.5s: Act 3 (SEO vs GEO Architecture)
-  // 304.5s - 425.0s: Act 4 (Case 1: BenPhuketCarRent)
-  // 425.0s - 516.5s: Act 5 (Case 2 & 3: PhuketStayPro Dario lead & Chatterbox)
-  // 516.5s - 630.0s: Act 6 (4 Actionable Rules for Business)
-  // 630.0s - 651.68s: Outro (Summary & Real Deals)
+  // Hide TopChapterBar completely during full-screen studio intro (95.7s to 109.54s)
+  if (currentTimeSec >= 95.7 && currentTimeSec < 109.54) {
+    return null;
+  }
+
+  // Chapter boundaries (shifted by +13.84s intro duration for chapters 2-7):
+  // 0 - 95.7s: Act 1 (Bots vs Clients)
+  // [95.7s - 109.54s]: Channel Intro Video
+  // 109.54s - 191.44s: Act 2 (145M Sessions Research)
+  // 191.44s - 300.44s: Act 3 (SEO vs GEO Architecture)
+  // 300.44s - 412.24s: Act 4 (Case 1: BenPhuketCarRent)
+  // 412.24s - 504.64s: Act 5 (Case 2 & 3: PhuketStayPro Dario lead & Chatterbox)
+  // 504.64s - 644.54s: Act 6 (4 Actionable Rules for Business)
+  // 644.54s+: Outro (Summary & Real Deals)
 
   let chapterNum = "01";
   let chapterTitle = "БОТЫ ИЛИ КЛИЕНТЫ? ХАЙП И РЕАЛЬНОСТЬ GEO";
   let chapterColor = "#38bdf8";
 
-  if (currentTimeSec >= 95.7 && currentTimeSec < 177.6) {
+  if (currentTimeSec >= 109.54 && currentTimeSec < 191.44) {
     chapterNum = "02";
     chapterTitle = "ИССЛЕДОВАНИЕ: 145 МЛН СЕССИЙ И КОНВЕРСИИ";
     chapterColor = "#f59e0b";
-  } else if (currentTimeSec >= 177.6 && currentTimeSec < 286.6) {
+  } else if (currentTimeSec >= 191.44 && currentTimeSec < 300.44) {
     chapterNum = "03";
     chapterTitle = "АРХИТЕКТУРА GEO: RAG, ВЕКТОРЫ И QUERY FAN-OUT";
     chapterColor = "#8b5cf6";
-  } else if (currentTimeSec >= 286.6 && currentTimeSec < 398.4) {
+  } else if (currentTimeSec >= 300.44 && currentTimeSec < 412.24) {
     chapterNum = "04";
     chapterTitle = "КЕЙС 1: BENPHUKETCARRENT · ЛИДЫ И БРОНИ ИЗ CHATGPT";
     chapterColor = "#10b981";
-  } else if (currentTimeSec >= 398.4 && currentTimeSec < 490.8) {
+  } else if (currentTimeSec >= 412.24 && currentTimeSec < 504.64) {
     chapterNum = "05";
     chapterTitle = "КЕЙС 2 И 3: PHUKETSTAYPRO (ЛИД НА 4 МЛН БАТ) И CHATTERBOX";
     chapterColor = "#ec4899";
-  } else if (currentTimeSec >= 490.8 && currentTimeSec < 630.7) {
+  } else if (currentTimeSec >= 504.64 && currentTimeSec < 644.54) {
     chapterNum = "06";
     chapterTitle = "ИНЖЕНЕРНЫЙ ЧЕКЛИСТ: 4 ПРАВИЛА ДЛЯ БИЗНЕСА";
     chapterColor = "#06b6d4";
-  } else if (currentTimeSec >= 630.7) {
+  } else if (currentTimeSec >= 644.54) {
     chapterNum = "07";
     chapterTitle = "ИТОГ: СЧИТАЙТЕ СДЕЛКИ, А НЕ ОХВАТЫ";
     chapterColor = "#a3e635";
@@ -48,12 +54,12 @@ export const TopChapterBar: React.FC = () => {
 
   // Shimmer Windows: active when a chapter completes and switches
   const SHIMMER_WINDOWS = [
-    { start: 94.0, end: 97.5 },
-    { start: 176.0, end: 179.5 },
-    { start: 285.0, end: 288.5 },
-    { start: 396.5, end: 400.0 },
-    { start: 489.0, end: 492.5 },
-    { start: 629.0, end: 632.5 },
+    { start: 108.0, end: 111.5 },
+    { start: 190.0, end: 193.5 },
+    { start: 299.0, end: 302.5 },
+    { start: 410.5, end: 414.0 },
+    { start: 503.0, end: 506.5 },
+    { start: 643.0, end: 646.5 },
   ];
 
   let shimmerActive = false;
@@ -91,10 +97,10 @@ export const TopChapterBar: React.FC = () => {
         style={{
           display: "flex",
           alignItems: "center",
-          gap: 12,
-          padding: "6px 18px",
-          borderRadius: 20,
-          backgroundColor: "rgba(15, 23, 42, 0.8)",
+          gap: 14,
+          padding: "8px 22px",
+          borderRadius: 24,
+          backgroundColor: "rgba(15, 23, 42, 0.9)",
           backdropFilter: "blur(16px)",
           border: `1px solid ${chapterColor}44`,
           boxShadow: `0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px ${chapterColor}22`,
@@ -103,7 +109,8 @@ export const TopChapterBar: React.FC = () => {
         }}
       >
         {/* Shimmer Light Wave on Chapter Switch */}
-        {shimmerActive && (<div
+        {shimmerActive && (
+          <div
             style={{
               position: "absolute",
               top: 0,
@@ -116,19 +123,20 @@ export const TopChapterBar: React.FC = () => {
               pointerEvents: "none",
               zIndex: 10,
             }}
-          />)}
+          />
+        )}
 
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            width: 22,
-            height: 22,
+            width: 26,
+            height: 26,
             borderRadius: "50%",
             backgroundColor: `${chapterColor}22`,
             border: `1.5px solid ${chapterColor}`,
-            fontSize: 11,
+            fontSize: 13,
             fontWeight: 900,
             color: chapterColor,
           }}
@@ -138,8 +146,8 @@ export const TopChapterBar: React.FC = () => {
 
         <span
           style={{
-            fontSize: 12,
-            fontWeight: 800,
+            fontSize: 14,
+            fontWeight: 900,
             letterSpacing: 1.2,
             textTransform: "uppercase",
             color: "#f8fafc",
@@ -153,10 +161,10 @@ export const TopChapterBar: React.FC = () => {
       {/* Progress mini-bar */}
       <div
         style={{
-          width: 320,
-          height: 3,
+          width: 360,
+          height: 4,
           borderRadius: 2,
-          backgroundColor: "rgba(255, 255, 255, 0.1)",
+          backgroundColor: "rgba(255, 255, 255, 0.12)",
           overflow: "hidden",
           position: "relative",
         }}
@@ -166,11 +174,12 @@ export const TopChapterBar: React.FC = () => {
             height: "100%",
             width: `${progressPercent}%`,
             backgroundColor: chapterColor,
-            boxShadow: `0 0 8px ${chapterColor}`,
+            boxShadow: `0 0 10px ${chapterColor}`,
             transition: "width 0.1s linear, background-color 0.4s ease",
           }}
         />
-        {shimmerActive && (<div
+        {shimmerActive && (
+          <div
             style={{
               position: "absolute",
               top: 0,
@@ -180,7 +189,9 @@ export const TopChapterBar: React.FC = () => {
               background: "linear-gradient(90deg, transparent, #ffffff, transparent)",
               pointerEvents: "none",
             }}
-          />)}
+          />
+        )}
       </div>
-    </div>);
+    </div>
+  );
 };

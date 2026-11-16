@@ -92,13 +92,13 @@ export const ArchitectureScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(139, 92, 246, 0.15)",
-              border: "1px solid rgba(139, 92, 246, 0.4)",
+              backgroundColor: "rgba(139, 92, 246, 0.2)",
+              border: "1.5px solid rgba(139, 92, 246, 0.5)",
               color: "#c084fc",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -119,23 +119,24 @@ export const ArchitectureScene: React.FC = () => {
             10 СИНИХ ССЫЛОК VS ПРЯМОЙ ОТВЕТ С ИСТОЧНИКАМИ
           </h2>
 
-          <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
+          <div style={{ display: "flex", gap: 36, maxWidth: 1250, width: "100%" }}>
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.88)",
-                border: "1px solid rgba(255, 255, 255, 0.12)",
+                backgroundColor: "rgba(15, 23, 42, 0.94)",
+                border: "2px solid rgba(255, 255, 255, 0.2)",
                 borderRadius: 24,
-                padding: "32px",
+                padding: "36px",
+                boxShadow: "0 15px 40px rgba(0,0,0,0.5)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 800, marginBottom: 10 }}>
+              <div style={{ fontSize: 20, color: "#94a3b8", fontWeight: 800, marginBottom: 10 }}>
                 КЛАССИЧЕСКОЕ SEO
               </div>
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
+              <div style={{ fontSize: 38, fontWeight: 900, color: "#ffffff", marginBottom: 14 }}>
                 Борьба за позицию
               </div>
-              <div style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 24, color: "#94a3b8", lineHeight: 1.45 }}>
                 Пользователь вбивает ключевик, видит список сайтов и кликает по очереди.
               </div>
             </div>
@@ -143,20 +144,20 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.88)",
-                border: "1.5px solid rgba(139, 92, 246, 0.5)",
+                backgroundColor: "rgba(15, 23, 42, 0.94)",
+                border: "2.5px solid rgba(139, 92, 246, 0.6)",
                 borderRadius: 24,
-                padding: "32px",
-                boxShadow: "0 0 30px rgba(139, 92, 246, 0.2)",
+                padding: "36px",
+                boxShadow: "0 0 40px rgba(139, 92, 246, 0.3)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#c084fc", fontWeight: 800, marginBottom: 10 }}>
+              <div style={{ fontSize: 20, color: "#c084fc", fontWeight: 800, marginBottom: 10 }}>
                 GENERATIVE ENGINE (GEO)
               </div>
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#c084fc", marginBottom: 12 }}>
+              <div style={{ fontSize: 38, fontWeight: 900, color: "#c084fc", marginBottom: 14 }}>
                 Борьба за цитирование
               </div>
-              <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 24, color: "#cbd5e1", lineHeight: 1.45 }}>
                 Нейросеть агрегирует факты из лучших источников и сразу рекомендует решение.
               </div>
             </div>
@@ -180,13 +181,13 @@ export const ArchitectureScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(56, 189, 248, 0.15)",
-              border: "1px solid rgba(56, 189, 248, 0.4)",
+              backgroundColor: "rgba(56, 189, 248, 0.2)",
+              border: "1.5px solid rgba(56, 189, 248, 0.5)",
               color: "#38bdf8",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -196,7 +197,7 @@ export const ArchitectureScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 64,
+              fontSize: 66,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
@@ -207,73 +208,73 @@ export const ArchitectureScene: React.FC = () => {
             ТОЧНЫЙ ОТВЕТ ПОБЕЖДАЕТ СЕО-ШУМ
           </h2>
 
-          <div style={{ display: "flex", alignItems: "center", gap: 20, maxWidth: 1350, width: "100%" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 24, maxWidth: 1400, width: "100%" }}>
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: sec < 48 ? "2px solid #38bdf8" : "1px solid rgba(255, 255, 255, 0.12)",
-                borderRadius: 20,
-                padding: "26px",
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                border: sec < 48 ? "2.5px solid #38bdf8" : "1.5px solid rgba(255, 255, 255, 0.15)",
+                borderRadius: 24,
+                padding: "32px",
                 textAlign: "center",
-                boxShadow: sec < 48 ? "0 0 35px rgba(56, 189, 248, 0.35)" : "none",
-                transform: sec < 48 ? "scale(1.02)" : "scale(1)",
+                boxShadow: sec < 48 ? "0 0 40px rgba(56, 189, 248, 0.4)" : "none",
+                transform: sec < 48 ? "scale(1.03)" : "scale(1)",
                 transition: "all 0.3s ease",
               }}
             >
-              <div style={{ fontSize: 28, marginBottom: 8 }}>🔍</div>
-              <div style={{ fontSize: 22, fontWeight: 900, color: "#38bdf8", marginBottom: 8 }}>
+              <div style={{ fontSize: 34, marginBottom: 10 }}>🔍</div>
+              <div style={{ fontSize: 28, fontWeight: 900, color: "#38bdf8", marginBottom: 10 }}>
                 Query Fan-Out
               </div>
-              <div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 22, color: "#94a3b8", lineHeight: 1.45 }}>
                 Google делит вопрос пользователя на 3–5 связанных подзапросов в фоновом режиме.
               </div>
             </div>
 
-            <div style={{ fontSize: 32, color: "#64748b", fontWeight: 900 }}>➔</div>
+            <div style={{ fontSize: 36, color: "#64748b", fontWeight: 900 }}>➔</div>
 
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: (sec >= 48 && sec < 62) ? "2px solid #a855f7" : "1px solid rgba(255, 255, 255, 0.12)",
-                borderRadius: 20,
-                padding: "26px",
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                border: (sec >= 48 && sec < 62) ? "2.5px solid #a855f7" : "1.5px solid rgba(255, 255, 255, 0.15)",
+                borderRadius: 24,
+                padding: "32px",
                 textAlign: "center",
-                boxShadow: (sec >= 48 && sec < 62) ? "0 0 35px rgba(168, 85, 247, 0.35)" : "none",
-                transform: (sec >= 48 && sec < 62) ? "scale(1.02)" : "scale(1)",
+                boxShadow: (sec >= 48 && sec < 62) ? "0 0 40px rgba(168, 85, 247, 0.4)" : "none",
+                transform: (sec >= 48 && sec < 62) ? "scale(1.03)" : "scale(1)",
                 transition: "all 0.3s ease",
               }}
             >
-              <div style={{ fontSize: 28, marginBottom: 8 }}>⚡</div>
-              <div style={{ fontSize: 22, fontWeight: 900, color: "#a855f7", marginBottom: 8 }}>
-                RAG Векторный Поиск
+              <div style={{ fontSize: 34, marginBottom: 10 }}>⚡</div>
+              <div style={{ fontSize: 28, fontWeight: 900, color: "#a855f7", marginBottom: 10 }}>
+                RAG Поиск
               </div>
-              <div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 22, color: "#94a3b8", lineHeight: 1.45 }}>
                 В контекст попадают фрагменты страниц с четкими сущностями: цены, даты, адреса.
               </div>
             </div>
 
-            <div style={{ fontSize: 32, color: "#64748b", fontWeight: 900 }}>➔</div>
+            <div style={{ fontSize: 36, color: "#64748b", fontWeight: 900 }}>➔</div>
 
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: sec >= 62 ? "2px solid #22c55e" : "1.5px solid rgba(34, 197, 94, 0.3)",
-                borderRadius: 20,
-                padding: "26px",
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                border: sec >= 62 ? "2.5px solid #22c55e" : "1.5px solid rgba(34, 197, 94, 0.4)",
+                borderRadius: 24,
+                padding: "32px",
                 textAlign: "center",
-                boxShadow: sec >= 62 ? "0 0 35px rgba(34, 197, 94, 0.35)" : "0 0 15px rgba(34, 197, 94, 0.1)",
-                transform: sec >= 62 ? "scale(1.02)" : "scale(1)",
+                boxShadow: sec >= 62 ? "0 0 40px rgba(34, 197, 94, 0.4)" : "0 0 20px rgba(34, 197, 94, 0.15)",
+                transform: sec >= 62 ? "scale(1.03)" : "scale(1)",
                 transition: "all 0.3s ease",
               }}
             >
-              <div style={{ fontSize: 28, marginBottom: 8 }}>🎯</div>
-              <div style={{ fontSize: 22, fontWeight: 900, color: "#22c55e", marginBottom: 8 }}>
-                Готовый Источник
+              <div style={{ fontSize: 34, marginBottom: 10 }}>🎯</div>
+              <div style={{ fontSize: 28, fontWeight: 900, color: "#22c55e", marginBottom: 10 }}>
+                Источник
               </div>
-              <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.45 }}>
                 Нейросеть цитирует именно тот сайт, где есть конкретный и честный ответ.
               </div>
             </div>
@@ -297,13 +298,13 @@ export const ArchitectureScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(34, 197, 94, 0.15)",
-              border: "1px solid rgba(34, 197, 94, 0.4)",
+              backgroundColor: "rgba(34, 197, 94, 0.2)",
+              border: "1.5px solid rgba(34, 197, 94, 0.5)",
               color: "#22c55e",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -313,7 +314,7 @@ export const ArchitectureScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 64,
+              fontSize: 66,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
@@ -327,25 +328,26 @@ export const ArchitectureScene: React.FC = () => {
           <div
             style={{
               display: "flex",
-              gap: 30,
-              maxWidth: 1100,
+              gap: 36,
+              maxWidth: 1250,
               width: "100%",
             }}
           >
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1.5px solid #38bdf8",
-                borderRadius: 20,
-                padding: "30px",
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                border: "2px solid #38bdf8",
+                borderRadius: 24,
+                padding: "36px",
                 textAlign: "center",
+                boxShadow: "0 0 30px rgba(56, 189, 248, 0.2)",
               }}
             >
-              <div style={{ fontSize: 30, fontWeight: 900, color: "#38bdf8", marginBottom: 10 }}>
+              <div style={{ fontSize: 36, fontWeight: 900, color: "#38bdf8", marginBottom: 12 }}>
                 ДОСТУПЕН
               </div>
-              <div style={{ fontSize: 17, color: "#cbd5e1" }}>
+              <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.4 }}>
                 Индексация, чистый robots.txt, открытый OAI-SearchBot
               </div>
             </div>
@@ -353,17 +355,18 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1.5px solid #a855f7",
-                borderRadius: 20,
-                padding: "30px",
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                border: "2px solid #a855f7",
+                borderRadius: 24,
+                padding: "36px",
                 textAlign: "center",
+                boxShadow: "0 0 30px rgba(168, 85, 247, 0.2)",
               }}
             >
-              <div style={{ fontSize: 30, fontWeight: 900, color: "#a855f7", marginBottom: 10 }}>
+              <div style={{ fontSize: 36, fontWeight: 900, color: "#a855f7", marginBottom: 12 }}>
                 ПОНЯТЕН
               </div>
-              <div style={{ fontSize: 17, color: "#cbd5e1" }}>
+              <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.4 }}>
                 Логичная иерархия, микроразметка Schema.org, семантика
               </div>
             </div>
@@ -371,17 +374,18 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1.5px solid #22c55e",
-                borderRadius: 20,
-                padding: "30px",
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                border: "2px solid #22c55e",
+                borderRadius: 24,
+                padding: "36px",
                 textAlign: "center",
+                boxShadow: "0 0 30px rgba(34, 197, 94, 0.2)",
               }}
             >
-              <div style={{ fontSize: 30, fontWeight: 900, color: "#22c55e", marginBottom: 10 }}>
+              <div style={{ fontSize: 36, fontWeight: 900, color: "#22c55e", marginBottom: 12 }}>
                 ПОЛЕЗЕН
               </div>
-              <div style={{ fontSize: 17, color: "#cbd5e1" }}>
+              <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.4 }}>
                 Точные условия, реальные фото, цены и регламенты
               </div>
             </div>

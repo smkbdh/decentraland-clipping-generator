@@ -88,13 +88,13 @@ export const BenCarRentScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(16, 185, 129, 0.15)",
-              border: "1px solid rgba(16, 185, 129, 0.4)",
+              backgroundColor: "rgba(16, 185, 129, 0.2)",
+              border: "1.5px solid rgba(16, 185, 129, 0.5)",
               color: "#34d399",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -104,7 +104,7 @@ export const BenCarRentScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 64,
+              fontSize: 66,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
@@ -118,27 +118,28 @@ export const BenCarRentScene: React.FC = () => {
           <div
             style={{
               display: "flex",
-              gap: 30,
-              maxWidth: 1200,
+              gap: 36,
+              maxWidth: 1300,
               width: "100%",
             }}
           >
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1px solid rgba(255, 255, 255, 0.15)",
-                borderRadius: 20,
-                padding: "30px",
+                backgroundColor: "rgba(15, 23, 42, 0.94)",
+                border: "2px solid rgba(255, 255, 255, 0.2)",
+                borderRadius: 24,
+                padding: "36px",
+                boxShadow: "0 15px 40px rgba(0,0,0,0.5)",
               }}
             >
-              <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
+              <div style={{ fontSize: 20, color: "#94a3b8", fontWeight: 800, marginBottom: 10 }}>
                 ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА
               </div>
-              <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
+              <div style={{ fontSize: 34, fontWeight: 900, color: "#ffffff", marginBottom: 14 }}>
                 Инженерная архитектура под поиск
               </div>
-              <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 24, color: "#cbd5e1", lineHeight: 1.45 }}>
                 Страницы под каждую модель, прозрачные условия депозитов, страховка, локальные гиды и сквозная UTM-атрибуция.
               </div>
             </div>
@@ -146,21 +147,21 @@ export const BenCarRentScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1.5px solid #10b981",
-                borderRadius: 20,
-                padding: "30px",
-                boxShadow: "0 0 30px rgba(16, 185, 129, 0.25)",
+                backgroundColor: "rgba(15, 23, 42, 0.94)",
+                border: "2.5px solid #10b981",
+                borderRadius: 24,
+                padding: "36px",
+                boxShadow: "0 0 40px rgba(16, 185, 129, 0.3)",
               }}
             >
-              <div style={{ fontSize: 16, color: "#34d399", fontWeight: 700, marginBottom: 8 }}>
+              <div style={{ fontSize: 20, color: "#34d399", fontWeight: 800, marginBottom: 10 }}>
                 УВЕДОМЛЕНИЕ В БОТ КОМАНДЫ
               </div>
-              <div style={{ fontSize: 26, fontWeight: 900, color: "#10b981", marginBottom: 12 }}>
-                Источник: AI: ChatGPT
+              <div style={{ fontSize: 34, fontWeight: 900, color: "#10b981", marginBottom: 14 }}>
+                Источник: AI · ChatGPT
               </div>
-              <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                Запрос мгновенно падает менеджерам с меткой <code style={{ color: "#38bdf8" }}>utm_source=chatgpt.com</code> и прямой ссылкой на выбранную машину.
+              <div style={{ fontSize: 24, color: "#cbd5e1", lineHeight: 1.45 }}>
+                Запрос мгновенно падает менеджерам с меткой <code style={{ color: "#38bdf8", fontWeight: 900 }}>utm_source=chatgpt.com</code> и ссылкой на машину.
               </div>
             </div>
           </div>
@@ -183,13 +184,13 @@ export const BenCarRentScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(16, 185, 129, 0.15)",
-              border: "1px solid rgba(16, 185, 129, 0.4)",
+              backgroundColor: "rgba(16, 185, 129, 0.2)",
+              border: "1.5px solid rgba(16, 185, 129, 0.5)",
               color: "#34d399",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -210,25 +211,25 @@ export const BenCarRentScene: React.FC = () => {
             ТОЧНЫЕ СЛЕДЫ ИЗ НЕЙРОСЕТИ В СИСТЕМЕ
           </h2>
 
-          <div style={{ display: "flex", gap: 40, maxWidth: 1100, width: "100%" }}>
+          <div style={{ display: "flex", gap: 40, maxWidth: 1200, width: "100%" }}>
             <div
               style={{
                 flex: 1,
                 backgroundColor: "rgba(15, 23, 42, 0.95)",
-                border: "2px solid #22c55e",
+                border: "2.5px solid #22c55e",
                 borderRadius: 24,
-                padding: "36px",
+                padding: "40px",
                 textAlign: "center",
-                boxShadow: "0 0 40px rgba(34, 197, 94, 0.25)",
+                boxShadow: "0 0 45px rgba(34, 197, 94, 0.3)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#86efac", fontWeight: 800, marginBottom: 10 }}>
+              <div style={{ fontSize: 20, color: "#86efac", fontWeight: 900, marginBottom: 12 }}>
                 ПЕРЕХОДЫ В WHATSAPP
               </div>
-              <div style={{ fontSize: 96, fontWeight: 900, color: "#22c55e", letterSpacing: -2 }}>
+              <div style={{ fontSize: 112, fontWeight: 900, color: "#22c55e", letterSpacing: -2, lineHeight: 1.0, margin: "10px 0" }}>
                 {Math.round(interpolate(frame - 38 * fps, [0, 24], [0, 38], { extrapolateRight: "clamp" }))}
               </div>
-              <div style={{ fontSize: 20, color: "#f8fafc", fontWeight: 600 }}>
+              <div style={{ fontSize: 24, color: "#f8fafc", fontWeight: 700 }}>
                 Клиенты с меткой ChatGPT
               </div>
             </div>
@@ -237,20 +238,20 @@ export const BenCarRentScene: React.FC = () => {
               style={{
                 flex: 1,
                 backgroundColor: "rgba(15, 23, 42, 0.95)",
-                border: "2px solid #38bdf8",
+                border: "2.5px solid #38bdf8",
                 borderRadius: 24,
-                padding: "36px",
+                padding: "40px",
                 textAlign: "center",
-                boxShadow: "0 0 40px rgba(56, 189, 248, 0.25)",
+                boxShadow: "0 0 45px rgba(56, 189, 248, 0.3)",
               }}
             >
-              <div style={{ fontSize: 18, color: "#7dd3fc", fontWeight: 800, marginBottom: 10 }}>
+              <div style={{ fontSize: 20, color: "#7dd3fc", fontWeight: 900, marginBottom: 12 }}>
                 ПРЯМЫЕ ЗАПРОСЫ НА БРОНЬ
               </div>
-              <div style={{ fontSize: 96, fontWeight: 900, color: "#38bdf8", letterSpacing: -2 }}>
+              <div style={{ fontSize: 112, fontWeight: 900, color: "#38bdf8", letterSpacing: -2, lineHeight: 1.0, margin: "10px 0" }}>
                 {Math.round(interpolate(frame - 38 * fps, [8, 28], [0, 6], { extrapolateRight: "clamp" }))}
               </div>
-              <div style={{ fontSize: 20, color: "#f8fafc", fontWeight: 600 }}>
+              <div style={{ fontSize: 24, color: "#f8fafc", fontWeight: 700 }}>
                 Заполненные формы с датами
               </div>
             </div>
@@ -274,13 +275,13 @@ export const BenCarRentScene: React.FC = () => {
         >
           <div
             style={{
-              padding: "6px 20px",
+              padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(234, 179, 8, 0.15)",
-              border: "1px solid rgba(234, 179, 8, 0.4)",
+              backgroundColor: "rgba(234, 179, 8, 0.2)",
+              border: "1.5px solid rgba(234, 179, 8, 0.5)",
               color: "#facc15",
-              fontSize: 16,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 20,
             }}
@@ -290,7 +291,7 @@ export const BenCarRentScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 64,
+              fontSize: 66,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
@@ -303,19 +304,19 @@ export const BenCarRentScene: React.FC = () => {
 
           <div
             style={{
-              backgroundColor: "rgba(15, 23, 42, 0.92)",
-              border: "1.5px solid #facc15",
+              backgroundColor: "rgba(15, 23, 42, 0.94)",
+              border: "2px solid #facc15",
               borderRadius: 24,
-              padding: "36px 50px",
-              maxWidth: 1100,
+              padding: "44px 60px",
+              maxWidth: 1200,
               textAlign: "center",
-              boxShadow: "0 0 35px rgba(250, 204, 21, 0.25)",
+              boxShadow: "0 0 45px rgba(250, 204, 21, 0.3)",
             }}
           >
-            <div style={{ fontSize: 28, color: "#f8fafc", fontWeight: 800, lineHeight: 1.35, marginBottom: 16 }}>
+            <div style={{ fontSize: 34, color: "#f8fafc", fontWeight: 800, lineHeight: 1.4, marginBottom: 20 }}>
               Спрос превысил физическую ёмкость парка. Новые заявки клиент передаёт партнёрским агентствам за комиссию.
             </div>
-            <div style={{ fontSize: 22, color: "#38bdf8", fontWeight: 700 }}>
+            <div style={{ fontSize: 26, color: "#38bdf8", fontWeight: 800 }}>
               ➔ Разница между «нас просканировал бот» и полностью забитой сеткой броней
             </div>
           </div>

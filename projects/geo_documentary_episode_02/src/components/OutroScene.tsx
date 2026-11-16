@@ -45,13 +45,13 @@ export const OutroScene: React.FC = () => {
       >
         <div
           style={{
-            padding: "6px 20px",
+            padding: "8px 24px",
             borderRadius: 30,
-            backgroundColor: "rgba(163, 230, 53, 0.15)",
-            border: "1px solid rgba(163, 230, 53, 0.4)",
+            backgroundColor: "rgba(163, 230, 53, 0.2)",
+            border: "1.5px solid rgba(163, 230, 53, 0.5)",
             color: "#a3e635",
-            fontSize: 16,
-            fontWeight: 800,
+            fontSize: 18,
+            fontWeight: 900,
             letterSpacing: 2,
             marginBottom: 20,
           }}
@@ -77,27 +77,28 @@ export const OutroScene: React.FC = () => {
             display: "flex",
             alignItems: "center",
             gap: 40,
-            backgroundColor: "rgba(15, 23, 42, 0.92)",
-            border: "1.5px solid rgba(163, 230, 53, 0.5)",
+            backgroundColor: "rgba(15, 23, 42, 0.95)",
+            border: "2px solid rgba(163, 230, 53, 0.6)",
             borderRadius: 24,
-            padding: "28px 40px",
-            maxWidth: 1000,
-            boxShadow: "0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(163, 230, 53, 0.2)",
+            padding: "36px 48px",
+            maxWidth: 1150,
+            boxShadow: "0 20px 50px rgba(0,0,0,0.6), 0 0 35px rgba(163, 230, 53, 0.25)",
           }}
         >
           {/* Native Kino Telegram QR Code from Episode 1 */}
           <div
             style={{
-              width: 140,
-              height: 140,
-              borderRadius: 16,
+              width: 160,
+              height: 160,
+              borderRadius: 18,
               overflow: "hidden",
-              border: "2px solid #a3e635",
+              border: "2.5px solid #a3e635",
               backgroundColor: "#ffffff",
               padding: 6,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              flexShrink: 0,
             }}
           >
             <Img
@@ -106,14 +107,14 @@ export const OutroScene: React.FC = () => {
             />
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <div style={{ fontSize: 26, fontWeight: 900, color: "#f8fafc" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            <div style={{ fontSize: 32, fontWeight: 900, color: "#f8fafc" }}>
               Напишите в комментариях:
             </div>
-            <div style={{ fontSize: 20, color: "#cbd5e1", lineHeight: 1.4 }}>
+            <div style={{ fontSize: 24, color: "#cbd5e1", lineHeight: 1.45 }}>
               Какой у вас сайт и что вы считаете заявкой? Разберём вашу нишу в следующем выпуске.
             </div>
-            <div style={{ fontSize: 16, color: "#a3e635", fontWeight: 700, marginTop: 4 }}>
+            <div style={{ fontSize: 20, color: "#a3e635", fontWeight: 800, marginTop: 4 }}>
               Разборы и кейсы в Telegram: @BUDDAH_AI
             </div>
           </div>
