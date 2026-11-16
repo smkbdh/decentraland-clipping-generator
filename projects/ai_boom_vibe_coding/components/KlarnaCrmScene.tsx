@@ -100,7 +100,7 @@ export const KlarnaCrmScene: React.FC = () => {
             justifyContent: "space-between",
             backdropFilter: "blur(20px)",
             boxShadow: "0 25px 60px rgba(0, 0, 0, 0.85)",
-            opacity: interpolate(frame, [0, 20, 970, 995], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+            opacity: interpolate(frame, [45, 65, 970, 995], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
           }}
         >
           {frame < Math.round(15.96 * fps) ? (

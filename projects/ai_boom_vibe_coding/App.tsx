@@ -8,6 +8,7 @@ import { TelegramPitchScene } from "./components/TelegramPitchScene";
 import { KlarnaCrmScene } from "./components/KlarnaCrmScene";
 import { FiveRulesScene } from "./components/FiveRulesScene";
 import { TopChapterBar } from "./components/TopChapterBar";
+import { ChapterMicroTeaser } from "./components/ChapterMicroTeaser";
 import { CornerBranding } from "./components/CornerBranding";
 
 export default function App() {
@@ -41,6 +42,7 @@ export default function App() {
     <div style={{ flex: 1, backgroundColor: "#07090e", width: "100%", height: "100%", position: "relative", fontFamily: "Bahnschrift, Segoe UI, sans-serif" }}>
       {/* GLOBAL UI OVERLAYS */}
       <TopChapterBar />
+      <ChapterMicroTeaser />
       <CornerBranding />
 
       {/* 1. Hook Scene (0 - 79.5s) */}

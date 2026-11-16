@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate } from "remotion";
 
 export const TopChapterBar: React.FC = () => {
   const frame = useCurrentFrame();
@@ -45,6 +45,31 @@ export const TopChapterBar: React.FC = () => {
     chapterColor = "#a855f7";
   }
 
+  // Shimmer Windows: active when a chapter completes and switches
+  const SHIMMER_WINDOWS = [
+    { start: 77.8, end: 79.5 },    // Hook completing
+    { start: 93.34, end: 95.0 },   // Act 1 starting
+    { start: 219.74, end: 222.74 },// Act 1 completing & Act 2 transition
+    { start: 335.54, end: 338.54 },// Act 2 completing & Bible pitch transition
+    { start: 368.44, end: 371.44 },// Bible pitch completing & Act 3 transition
+    { start: 442.94, end: 445.94 },// Act 3 completing & Act 4 transition
+    { start: 534.5, end: 536.5 },  // Final completion
+  ];
+
+  let shimmerActive = false;
+  let shimmerPercent = -120;
+  let shimmerOpacity = 0;
+
+  for (const win of SHIMMER_WINDOWS) {
+    if (currentTimeSec >= win.start && currentTimeSec <= win.end) {
+      shimmerActive = true;
+      const progress = (currentTimeSec - win.start) / (win.end - win.start);
+      shimmerPercent = interpolate(progress, [0, 1], [-120, 240]);
+      shimmerOpacity = interpolate(progress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+      break;
+    }
+  }
+
   const progressPercent = (frame / durationInFrames) * 100;
 
   return (
@@ -59,10 +84,16 @@ export const TopChapterBar: React.FC = () => {
         gap: 16,
         padding: "8px 20px",
         borderRadius: 16,
-        backgroundColor: "rgba(15, 23, 42, 0.75)",
+        backgroundColor: "rgba(15, 23, 42, 0.78)",
         backdropFilter: "blur(16px)",
-        border: "1px solid rgba(255, 255, 255, 0.12)",
-        boxShadow: "0 10px 25px rgba(0, 0, 0, 0.4)",
+        border: shimmerActive
+          ? `1px solid rgba(255, 255, 255, 0.4)`
+          : "1px solid rgba(255, 255, 255, 0.12)",
+        boxShadow: shimmerActive
+          ? `0 10px 25px rgba(0, 0, 0, 0.4), 0 0 25px ${chapterColor}60, inset 0 0 15px ${chapterColor}30`
+          : "0 10px 25px rgba(0, 0, 0, 0.4)",
+        overflow: "hidden",
+        transition: "border 0.3s ease, box-shadow 0.3s ease",
       }}
     >
       {/* Chapter Number Badge */}
@@ -77,6 +108,8 @@ export const TopChapterBar: React.FC = () => {
           fontSize: 14,
           fontWeight: 900,
           letterSpacing: 1,
+          position: "relative",
+          zIndex: 2,
         }}
       >
         {chapterNum}
@@ -90,6 +123,8 @@ export const TopChapterBar: React.FC = () => {
           fontWeight: 700,
           letterSpacing: 1,
           textTransform: "uppercase",
+          position: "relative",
+          zIndex: 2,
         }}
       >
         {chapterTitle}
@@ -104,6 +139,8 @@ export const TopChapterBar: React.FC = () => {
           backgroundColor: "rgba(255, 255, 255, 0.1)",
           overflow: "hidden",
           marginLeft: 8,
+          position: "relative",
+          zIndex: 2,
         }}
       >
         <div
@@ -114,7 +151,41 @@ export const TopChapterBar: React.FC = () => {
             boxShadow: `0 0 8px ${chapterColor}`,
           }}
         />
+        {/* Shimmer on progress bar */}
+        {shimmerActive && (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              background: "linear-gradient(90deg, transparent, #ffffff, transparent)",
+              transform: `translateX(${shimmerPercent}%)`,
+              opacity: shimmerOpacity * 0.9,
+            }}
+          />
+        )}
       </div>
+
+      {/* Shimmer Light Sweep across the entire pill */}
+      {shimmerActive && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "55%",
+            height: "100%",
+            background: `linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 20%, ${chapterColor}bb 45%, #ffffff 50%, ${chapterColor}bb 55%, transparent 100%)`,
+            transform: `translateX(${shimmerPercent}%) skewX(-20deg)`,
+            opacity: shimmerOpacity,
+            pointerEvents: "none",
+            mixBlendMode: "screen",
+            zIndex: 3,
+          }}
+        />
+      )}
     </div>
   );
 };

@@ -123,7 +123,7 @@ export const FiveRulesScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            opacity: interpolate(frame, [0, 20, 1680, 1715], [0, 1, 1, 0], {
+            opacity: interpolate(frame, [45, 65, 1680, 1715], [0, 1, 1, 0], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             }),
