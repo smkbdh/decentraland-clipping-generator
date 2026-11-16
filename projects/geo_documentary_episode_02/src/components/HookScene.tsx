@@ -57,10 +57,8 @@ export const HookScene: React.FC = () => {
       {/* 48 - 74s: Real OpenAI Crawlers Docs Screenshot Background */}
       <Sequence from={Math.round(48 * fps)} durationInFrames={Math.round(26 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
-          <Video
+          <Img
             src={staticFile("site_openai_bots.png")}
-            loop
-            muted
             style={{
               position: "absolute",
               top: 0,
