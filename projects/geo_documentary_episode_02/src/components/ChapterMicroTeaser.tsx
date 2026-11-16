@@ -11,35 +11,35 @@ interface TeaserDef {
 
 const TEASERS: TeaserDef[] = [
   {
-    startSec: 100.8,
+    startSec: 95.7,
     durationSec: 1.5,
     chapter: "ГЛАВА 2 • ИССЛЕДОВАНИЕ 145 МЛН СЕССИЙ",
     question: "Почему до 99% трафика из нейросетей в отчётах — это боты-парсильщики, а не покупатели?",
     color: "#f59e0b",
   },
   {
-    startSec: 184.5,
+    startSec: 177.6,
     durationSec: 1.5,
     chapter: "ГЛАВА 3 • АРХИТЕКТУРА GEO",
     question: "Как устроен генеративный ответ: почему спам словом GEO проиграет точной структуре?",
     color: "#8b5cf6",
   },
   {
-    startSec: 304.5,
+    startSec: 286.6,
     durationSec: 1.5,
     chapter: "ГЛАВА 4 • ПРАКТИЧЕСКИЙ КЕЙС · АВТО",
     question: "Как аренда авто на Пхукете получила заявки с меткой ChatGPT и забила весь автопарк?",
     color: "#10b981",
   },
   {
-    startSec: 425.0,
+    startSec: 398.4,
     durationSec: 1.5,
     chapter: "ГЛАВА 5 • НЕДВИЖИМОСТЬ И ШКОЛА",
     question: "Лид из Сингапура на покупку за 4 млн бат: реальный след рекомендации ChatGPT",
     color: "#ec4899",
   },
   {
-    startSec: 516.5,
+    startSec: 490.8,
     durationSec: 1.5,
     chapter: "ГЛАВА 6 • ИНЖЕНЕРНЫЙ ЧЕКЛИСТ",
     question: "Что делать бизнесу: покупать «секретный GEO-пакет» или строить системный RAG?",

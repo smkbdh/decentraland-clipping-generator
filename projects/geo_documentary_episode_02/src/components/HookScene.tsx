@@ -73,8 +73,8 @@ export const HookScene: React.FC = () => {
         </div>
       </Sequence>
 
-      {/* 74 - 100.8s: Server Token Cost Rack */}
-      <Sequence from={Math.round(74 * fps)} durationInFrames={Math.round(26.8 * fps)} layout="none">
+      {/* 74s+: Server Token Cost Rack */}
+      <Sequence from={Math.round(74 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src={staticFile("06_act1_server_token_cost.mp4")}

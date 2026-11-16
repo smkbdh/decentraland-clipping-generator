@@ -20,27 +20,27 @@ export const TopChapterBar: React.FC = () => {
   let chapterTitle = "БОТЫ ИЛИ КЛИЕНТЫ? ХАЙП И РЕАЛЬНОСТЬ GEO";
   let chapterColor = "#38bdf8";
 
-  if (currentTimeSec >= 100.8 && currentTimeSec < 184.5) {
+  if (currentTimeSec >= 95.7 && currentTimeSec < 177.6) {
     chapterNum = "02";
     chapterTitle = "ИССЛЕДОВАНИЕ: 145 МЛН СЕССИЙ И КОНВЕРСИИ";
     chapterColor = "#f59e0b";
-  } else if (currentTimeSec >= 184.5 && currentTimeSec < 304.5) {
+  } else if (currentTimeSec >= 177.6 && currentTimeSec < 286.6) {
     chapterNum = "03";
     chapterTitle = "АРХИТЕКТУРА GEO: RAG, ВЕКТОРЫ И QUERY FAN-OUT";
     chapterColor = "#8b5cf6";
-  } else if (currentTimeSec >= 304.5 && currentTimeSec < 425.0) {
+  } else if (currentTimeSec >= 286.6 && currentTimeSec < 398.4) {
     chapterNum = "04";
     chapterTitle = "КЕЙС 1: BENPHUKETCARRENT · ЛИДЫ И БРОНИ ИЗ CHATGPT";
     chapterColor = "#10b981";
-  } else if (currentTimeSec >= 425.0 && currentTimeSec < 516.5) {
+  } else if (currentTimeSec >= 398.4 && currentTimeSec < 490.8) {
     chapterNum = "05";
     chapterTitle = "КЕЙС 2 И 3: PHUKETSTAYPRO (ЛИД НА 4 МЛН БАТ) И CHATTERBOX";
     chapterColor = "#ec4899";
-  } else if (currentTimeSec >= 516.5 && currentTimeSec < 630.0) {
+  } else if (currentTimeSec >= 490.8 && currentTimeSec < 630.7) {
     chapterNum = "06";
     chapterTitle = "ИНЖЕНЕРНЫЙ ЧЕКЛИСТ: 4 ПРАВИЛА ДЛЯ БИЗНЕСА";
     chapterColor = "#06b6d4";
-  } else if (currentTimeSec >= 630.0) {
+  } else if (currentTimeSec >= 630.7) {
     chapterNum = "07";
     chapterTitle = "ИТОГ: СЧИТАЙТЕ СДЕЛКИ, А НЕ ОХВАТЫ";
     chapterColor = "#a3e635";
@@ -48,12 +48,12 @@ export const TopChapterBar: React.FC = () => {
 
   // Shimmer Windows: active when a chapter completes and switches
   const SHIMMER_WINDOWS = [
-    { start: 99.0, end: 102.5 },
-    { start: 183.0, end: 186.5 },
-    { start: 303.0, end: 306.5 },
-    { start: 423.5, end: 427.0 },
-    { start: 515.0, end: 518.5 },
-    { start: 628.5, end: 632.0 },
+    { start: 94.0, end: 97.5 },
+    { start: 176.0, end: 179.5 },
+    { start: 285.0, end: 288.5 },
+    { start: 396.5, end: 400.0 },
+    { start: 489.0, end: 492.5 },
+    { start: 629.0, end: 632.5 },
   ];
 
   let shimmerActive = false;

@@ -15,13 +15,13 @@ import { CornerBranding } from "./components/CornerBranding";
 export default function App() {
   const { fps } = useVideoConfig();
 
-  // Timing markers in seconds (aligned with speech delivery)
-  const tHookEnd = 100.8;
-  const tResearchEnd = 184.5;
-  const tArchEnd = 304.5;
-  const tBenEnd = 425.0;
-  const tPhuketEnd = 516.5;
-  const tRulesEnd = 630.0;
+  // Timing markers in seconds (aligned with exact speech delivery in transcript.json)
+  const tHookEnd = 95.7;
+  const tResearchEnd = 177.6;
+  const tArchEnd = 286.6;
+  const tBenEnd = 398.4;
+  const tPhuketEnd = 490.8;
+  const tRulesEnd = 630.7;
   const tTotal = 651.68;
 
   // Frame counts
@@ -44,7 +44,7 @@ export default function App() {
   const sOutro = sRules + fRules;
 
   // Chapter impact timestamps (for subtle sub-bass SFX)
-  const chapterImpacts = [100.8, 184.5, 304.5, 425.0, 516.5, 630.0];
+  const chapterImpacts = [95.7, 177.6, 286.6, 398.4, 490.8, 630.7];
 
   return (
     <div
@@ -106,29 +106,11 @@ export default function App() {
         </Sequence>
       ))}
 
-      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1) WITH INTELLIGENT DUCKING === */}
+      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1) === */}
       <Sequence name="Music Bed: Neon Dreams" from={0} durationInFrames={fTotal} layout="none">
         <Audio
           src={staticFile("neon_dreams.mp3")}
-          volume={(f) => {
-            const sec = f / fps;
-            // Swell volume during chapter breaks (1.6s window around chapter markers)
-            for (const impactSec of chapterImpacts) {
-              if (Math.abs(sec - impactSec) < 1.6) {
-                return 0.18;
-              }
-            }
-            // First 2 seconds of the video (intro hook impact)
-            if (sec < 2.0) {
-              return 0.16;
-            }
-            // Outro final swell
-            if (sec > 640.0) {
-              return 0.18;
-            }
-            // Normal ducked volume under speech
-            return 0.08;
-          }}
+          volume={0.07}
           loop
         />
       </Sequence>

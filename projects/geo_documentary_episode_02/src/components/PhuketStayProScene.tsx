@@ -12,8 +12,8 @@ export const PhuketStayProScene: React.FC = () => {
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
       {/* 1. BACKGROUND REAL ESTATE & VILLA FOOTAGE */}
       
-      {/* 0 - 45s: Luxury Phuket Villa & Pool B-Roll */}
-      <Sequence from={0} durationInFrames={Math.round(45 * fps)} layout="none">
+      {/* 0 - 35.3s: Luxury Phuket Villa & Pool B-Roll */}
+      <Sequence from={0} durationInFrames={Math.round(35.3 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
             src={staticFile("site_phuketstaypro_vivi.png")}
@@ -26,17 +26,17 @@ export const PhuketStayProScene: React.FC = () => {
               objectFit: "cover",
               opacity: 0.22,
               filter: "blur(3px)",
-              transform: `scale(${interpolate(frame, [0, 45 * fps], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
+              transform: `scale(${interpolate(frame, [0, 35.3 * fps], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
       </Sequence>
 
-      {/* 45s+: Real Estate City & Offplan Catalog */}
-      <Sequence from={Math.round(45 * fps)} layout="none">
+      {/* 58.3s+: Language Classroom B-Roll for Chatterbox */}
+      <Sequence from={Math.round(58.3 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src={staticFile("b_roll_phuket_villa.mp4")}
+            src={staticFile("b_roll_classroom_study.mp4")}
             loop
             muted
             style={{
@@ -54,8 +54,8 @@ export const PhuketStayProScene: React.FC = () => {
 
       <BackgroundGrid accentColor="#ec4899" />
 
-      {/* PHASE 1 (0 - 45s): Live ChatGPT Lead Dario (4M THB) */}
-      {sec < 45 && (
+      {/* PHASE 1 (0 - 35.3s): Live ChatGPT Lead Dario (4M THB) */}
+      {sec < 35.3 && (
         <div
           style={{
             position: "absolute",
@@ -225,8 +225,8 @@ export const PhuketStayProScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 2A (45s - 55.5s): Real Kamala Property Showcase - Shot 1 Panoramic View */}
-      {sec >= 45 && sec < 55.5 && (
+      {/* PHASE 2A (35.3s - 46.5s): Real Kamala Property Showcase - Shot 1 Panoramic View */}
+      {sec >= 35.3 && sec < 46.5 && (
         <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 10 }}>
           <Img
             src={staticFile("oceana_kamala_view_01.jpg")}
@@ -237,7 +237,7 @@ export const PhuketStayProScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              transform: `scale(${interpolate(frame - 45 * fps, [0, 10.5 * fps], [1.0, 1.07], { extrapolateRight: "clamp" })}) translate(${interpolate(frame - 45 * fps, [0, 10.5 * fps], [0, -12], { extrapolateRight: "clamp" })}px, 0)`,
+              transform: `scale(${interpolate(frame - 35.3 * fps, [0, 11.2 * fps], [1.0, 1.07], { extrapolateRight: "clamp" })}) translate(${interpolate(frame - 35.3 * fps, [0, 11.2 * fps], [0, -12], { extrapolateRight: "clamp" })}px, 0)`,
             }}
           />
           {/* Subtle gradient vignette for lower-third legibility */}
@@ -298,8 +298,8 @@ export const PhuketStayProScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 2B (55.5s - 66s): Real Kamala Property Showcase - Shot 2 Master Bedroom & Balcony */}
-      {sec >= 55.5 && sec < 66 && (
+      {/* PHASE 2B (46.5s - 58.3s): Real Kamala Property Showcase - Shot 2 Master Bedroom & Balcony */}
+      {sec >= 46.5 && sec < 58.3 && (
         <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 10 }}>
           <Img
             src={staticFile("oceana_kamala_view_02.jpg")}
@@ -310,7 +310,7 @@ export const PhuketStayProScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              transform: `scale(${interpolate(frame - 55.5 * fps, [0, 10.5 * fps], [1.07, 1.0], { extrapolateRight: "clamp" })}) translate(${interpolate(frame - 55.5 * fps, [0, 10.5 * fps], [-10, 0], { extrapolateRight: "clamp" })}px, 0)`,
+              transform: `scale(${interpolate(frame - 46.5 * fps, [0, 11.8 * fps], [1.07, 1.0], { extrapolateRight: "clamp" })}) translate(${interpolate(frame - 46.5 * fps, [0, 11.8 * fps], [-10, 0], { extrapolateRight: "clamp" })}px, 0)`,
             }}
           />
           <div
@@ -356,8 +356,8 @@ export const PhuketStayProScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 2C (66s+): Chatterbox Case & Final Synthesis */}
-      {sec >= 66 && (
+      {/* PHASE 2C (58.3s+): Chatterbox Case & Final Synthesis */}
+      {sec >= 58.3 && (
         <div
           style={{
             position: "absolute",
