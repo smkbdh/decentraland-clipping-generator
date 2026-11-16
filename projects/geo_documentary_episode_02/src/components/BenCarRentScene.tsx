@@ -13,8 +13,8 @@ export const BenCarRentScene: React.FC = () => {
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
       {/* 1. BACKGROUND B-ROLL & REAL WEBSITE SCREENSHOTS */}
       
-      {/* 0 - 20s: Real Website Screenshot benphuketcarrent.com */}
-      <Sequence from={0} durationInFrames={Math.round(20 * fps)} layout="none">
+      {/* 0 - 28s: Real Website Screenshot benphuketcarrent.com */}
+      <Sequence from={0} durationInFrames={Math.round(28 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Img
             src={staticFile("site_bencar_cars.png")}
@@ -27,14 +27,34 @@ export const BenCarRentScene: React.FC = () => {
               objectFit: "cover",
               opacity: 0.25,
               filter: "blur(3px)",
-              transform: `scale(${interpolate(frame, [0, 20 * fps], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
+              transform: `scale(${interpolate(frame, [0, 28 * fps], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
       </Sequence>
 
-      {/* 20 - 58s: High-tech Data Stream background for Telegram proof */}
-      <Sequence from={Math.round(20 * fps)} durationInFrames={Math.round((58 - 20) * fps)} layout="none">
+      {/* 28 - 38.5s: Real Home Page Screenshot for Metrics */}
+      <Sequence from={Math.round(28 * fps)} durationInFrames={Math.round((38.5 - 28) * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Img
+            src={staticFile("site_bencar_home.png")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.25,
+              filter: "blur(4px)",
+              transform: `scale(${interpolate(frame - 28 * fps, [0, 10.5 * fps], [1.0, 1.05], { extrapolateRight: "clamp" })})`,
+            }}
+          />
+        </div>
+      </Sequence>
+
+      {/* 38.5 - 55.5s: High-tech Data Stream background for Telegram proof */}
+      <Sequence from={Math.round(38.5 * fps)} durationInFrames={Math.round((55.5 - 38.5) * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src={staticFile("16_act4_geo_ai_search.mp4")}
@@ -48,34 +68,14 @@ export const BenCarRentScene: React.FC = () => {
               height: "100%",
               objectFit: "cover",
               opacity: 0.28,
-              transform: `scale(${interpolate(frame - 20 * fps, [0, 38 * fps], [1.03, 1.0], { extrapolateRight: "clamp" })})`,
+              transform: `scale(${interpolate(frame - 38.5 * fps, [0, 17 * fps], [1.03, 1.0], { extrapolateRight: "clamp" })})`,
             }}
           />
         </div>
       </Sequence>
 
-      {/* 58 - 85s: Real Home Page Screenshot */}
-      <Sequence from={Math.round(58 * fps)} durationInFrames={Math.round((85 - 58) * fps)} layout="none">
-        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
-          <Img
-            src={staticFile("site_bencar_home.png")}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              opacity: 0.25,
-              filter: "blur(4px)",
-              transform: `scale(${interpolate(frame - 58 * fps, [0, 27 * fps], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
-            }}
-          />
-        </div>
-      </Sequence>
-
-      {/* 85s+: Phuket Road & Cars B-Roll */}
-      <Sequence from={Math.round(85 * fps)} layout="none">
+      {/* 55.5s+: Phuket Road & Cars B-Roll */}
+      <Sequence from={Math.round(55.5 * fps)} layout="none">
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
             src={staticFile("b_roll_phuket_car.mp4")}
@@ -97,9 +97,11 @@ export const BenCarRentScene: React.FC = () => {
       <BackgroundGrid accentColor="#10b981" />
 
       {/* =========================================================================
-          PHASE 1 (0 - 20s): ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА
+          PHASE 1 (0 - 28s): ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА
+          0 - 15s: Введение в кейс и архитектуру
+          15 - 28s: Уведомление в бот со всеми UTM метками
           ========================================================================= */}
-      {sec < 20 && (
+      {sec < 28 && (
         <div
           style={{
             position: "absolute",
@@ -195,10 +197,112 @@ export const BenCarRentScene: React.FC = () => {
       )}
 
       {/* =========================================================================
-          PHASE 2 (20 - 58s): REAL TELEGRAM BOT SCREENSHOT WITH SPOTLIGHT ZOOM
-          «Посмотрите на экран: даты, машины и источник!»
+          PHASE 2 (28 - 38.5s): 38 WHATSAPP + 6 DIRECT BOOKINGS
+          Диктор: «За два месяца бот зафиксировал для клиента 38 переходов в WhatsApp
+          с меткой chat GPT и еще шесть прямых запросов на бронирование...»
           ========================================================================= */}
-      {sec >= 20 && sec < 58 && (
+      {sec >= 28 && sec < 38.5 && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: "85px 70px 110px",
+            zIndex: 10,
+            boxSizing: "border-box",
+          }}
+        >
+          <div
+            style={{
+              padding: "8px 24px",
+              borderRadius: 30,
+              backgroundColor: "rgba(16, 185, 129, 0.2)",
+              border: "1.5px solid rgba(16, 185, 129, 0.5)",
+              color: "#34d399",
+              fontSize: 18,
+              fontWeight: 900,
+              letterSpacing: 2,
+              marginBottom: 14,
+            }}
+          >
+            ФАКТИЧЕСКИЕ ДАННЫЕ ЗА 2 МЕСЯЦА
+          </div>
+
+          <h2
+            style={{
+              fontSize: 58,
+              fontWeight: 900,
+              color: "#f8fafc",
+              textAlign: "center",
+              lineHeight: 1.1,
+              margin: "0 0 28px",
+            }}
+          >
+            ТОЧНЫЕ СЛЕДЫ ИЗ НЕЙРОСЕТИ В СИСТЕМЕ
+          </h2>
+
+          <div style={{ display: "flex", gap: 36, maxWidth: 1350, width: "100%" }}>
+            <div
+              style={{
+                flex: 1,
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                border: "2.5px solid #22c55e",
+                borderRadius: 24,
+                padding: "36px",
+                textAlign: "center",
+                boxShadow: "0 0 45px rgba(34, 197, 94, 0.3)",
+              }}
+            >
+              <div style={{ fontSize: 18, color: "#86efac", fontWeight: 900, marginBottom: 8 }}>
+                ПЕРЕХОДЫ В WHATSAPP
+              </div>
+              <div style={{ fontSize: 112, fontWeight: 900, color: "#22c55e", letterSpacing: -2, lineHeight: 1.0, margin: "6px 0" }}>
+                {Math.round(interpolate(frame - 28 * fps, [0, 20], [0, 38], { extrapolateRight: "clamp" }))}
+              </div>
+              <div style={{ fontSize: 24, color: "#f8fafc", fontWeight: 700, marginBottom: 6 }}>
+                Клиенты с меткой ChatGPT
+              </div>
+              <div style={{ fontSize: 17, color: "#94a3b8" }}>
+                Прямой переход с сайта в мессенджер к отделу бронирования
+              </div>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                border: "2.5px solid #38bdf8",
+                borderRadius: 24,
+                padding: "36px",
+                textAlign: "center",
+                boxShadow: "0 0 45px rgba(56, 189, 248, 0.3)",
+              }}
+            >
+              <div style={{ fontSize: 18, color: "#7dd3fc", fontWeight: 900, marginBottom: 8 }}>
+                ПРЯМЫЕ ЗАПРОСЫ НА БРОНЬ
+              </div>
+              <div style={{ fontSize: 112, fontWeight: 900, color: "#38bdf8", letterSpacing: -2, lineHeight: 1.0, margin: "6px 0" }}>
+                {Math.round(interpolate(frame - 28 * fps, [4, 24], [0, 6], { extrapolateRight: "clamp" }))}
+              </div>
+              <div style={{ fontSize: 24, color: "#f8fafc", fontWeight: 700, marginBottom: 6 }}>
+                Оформленные заявки на авто
+              </div>
+              <div style={{ fontSize: 17, color: "#94a3b8" }}>
+                С конкретными датами, моделью машины и локацией доставки
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================================================
+          PHASE 3 (38.5 - 55.5s): REAL TELEGRAM BOT SCREENSHOT WITH SPOTLIGHT ZOOM
+          Диктор: «Посмотрите на экран, даты, машины и источник! Это не абстрактная
+          видимость в ответах нейросети. Люди доходят до выбора конкретной машины...»
+          ========================================================================= */}
+      {sec >= 38.5 && sec < 55.5 && (
         <div
           style={{
             position: "absolute",
@@ -387,7 +491,7 @@ export const BenCarRentScene: React.FC = () => {
                     height: "100%",
                     objectFit: "contain",
                     transformOrigin: "35% 58%",
-                    transform: `scale(${interpolate(frame - 20 * fps, [0, 38 * fps], [1.02, 1.36], { extrapolateRight: "clamp" })})`,
+                    transform: `scale(${interpolate(frame - 38.5 * fps, [0, 17 * fps], [1.02, 1.36], { extrapolateRight: "clamp" })})`,
                   }}
                 />
               </div>
@@ -418,108 +522,11 @@ export const BenCarRentScene: React.FC = () => {
       )}
 
       {/* =========================================================================
-          PHASE 3 (58 - 85s): 38 WHATSAPP + 6 DIRECT BOOKINGS
+          PHASE 4 (55.5s+): ВЕСЬ АВТОПАРК КЛИЕНТА СДАН
+          Диктор: «А теперь главный результат для бизнеса: весь автопарк клиента
+          сдан и занят на недели вперед...»
           ========================================================================= */}
-      {sec >= 58 && sec < 85 && (
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: "85px 70px 110px",
-            zIndex: 10,
-            boxSizing: "border-box",
-          }}
-        >
-          <div
-            style={{
-              padding: "8px 24px",
-              borderRadius: 30,
-              backgroundColor: "rgba(16, 185, 129, 0.2)",
-              border: "1.5px solid rgba(16, 185, 129, 0.5)",
-              color: "#34d399",
-              fontSize: 18,
-              fontWeight: 900,
-              letterSpacing: 2,
-              marginBottom: 14,
-            }}
-          >
-            ФАКТИЧЕСКИЕ ДАННЫЕ ЗА 2 МЕСЯЦА
-          </div>
-
-          <h2
-            style={{
-              fontSize: 58,
-              fontWeight: 900,
-              color: "#f8fafc",
-              textAlign: "center",
-              lineHeight: 1.1,
-              margin: "0 0 28px",
-            }}
-          >
-            ТОЧНЫЕ СЛЕДЫ ИЗ НЕЙРОСЕТИ В СИСТЕМЕ
-          </h2>
-
-          <div style={{ display: "flex", gap: 36, maxWidth: 1350, width: "100%" }}>
-            <div
-              style={{
-                flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.95)",
-                border: "2.5px solid #22c55e",
-                borderRadius: 24,
-                padding: "36px",
-                textAlign: "center",
-                boxShadow: "0 0 45px rgba(34, 197, 94, 0.3)",
-              }}
-            >
-              <div style={{ fontSize: 18, color: "#86efac", fontWeight: 900, marginBottom: 8 }}>
-                ПЕРЕХОДЫ В WHATSAPP
-              </div>
-              <div style={{ fontSize: 112, fontWeight: 900, color: "#22c55e", letterSpacing: -2, lineHeight: 1.0, margin: "6px 0" }}>
-                {Math.round(interpolate(frame - 58 * fps, [0, 24], [0, 38], { extrapolateRight: "clamp" }))}
-              </div>
-              <div style={{ fontSize: 24, color: "#f8fafc", fontWeight: 700, marginBottom: 6 }}>
-                Клиенты с меткой ChatGPT
-              </div>
-              <div style={{ fontSize: 17, color: "#94a3b8" }}>
-                Прямой переход с сайта в мессенджер к отделу бронирования
-              </div>
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.95)",
-                border: "2.5px solid #38bdf8",
-                borderRadius: 24,
-                padding: "36px",
-                textAlign: "center",
-                boxShadow: "0 0 45px rgba(56, 189, 248, 0.3)",
-              }}
-            >
-              <div style={{ fontSize: 18, color: "#7dd3fc", fontWeight: 900, marginBottom: 8 }}>
-                ПРЯМЫЕ ЗАПРОСЫ НА БРОНЬ
-              </div>
-              <div style={{ fontSize: 112, fontWeight: 900, color: "#38bdf8", letterSpacing: -2, lineHeight: 1.0, margin: "6px 0" }}>
-                {Math.round(interpolate(frame - 58 * fps, [6, 28], [0, 6], { extrapolateRight: "clamp" }))}
-              </div>
-              <div style={{ fontSize: 24, color: "#f8fafc", fontWeight: 700, marginBottom: 6 }}>
-                Оформленные заявки на авто
-              </div>
-              <div style={{ fontSize: 17, color: "#94a3b8" }}>
-                С конкретными датами, моделью машины и локацией доставки
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* =========================================================================
-          PHASE 4 (85s+): ВЕСЬ АВТОПАРК КЛИЕНТА СДАН
-          ========================================================================= */}
-      {sec >= 85 && (
+      {sec >= 55.5 && (
         <div
           style={{
             position: "absolute",
@@ -585,7 +592,7 @@ export const BenCarRentScene: React.FC = () => {
       {/* =========================================================================
           DYNAMIC TECH GLOSSARY FOOTNOTE (TIMED TO VOICE-OVER)
           ========================================================================= */}
-      {sec < 58 && (
+      {sec < 28 && (
         <TechGlossaryFootnote
           term="High-Intent Query"
           englishTitle="Целевой запрос с условиями"
@@ -594,11 +601,20 @@ export const BenCarRentScene: React.FC = () => {
         />
       )}
 
-      {sec >= 58 && (
+      {sec >= 28 && sec < 55.5 && (
         <TechGlossaryFootnote
           term="Direct WhatsApp Lead"
           englishTitle="Прямая конверсия в мессенджер"
           russianExplanation="Переход из ответа ChatGPT сразу в диалог WhatsApp. Клиент уже прогрет и готов вносить предоплату без долгого блуждания по сайту."
+          accentColor="#22c55e"
+        />
+      )}
+
+      {sec >= 55.5 && (
+        <TechGlossaryFootnote
+          term="Fleet Occupancy"
+          englishTitle="Заполняемость автопарка"
+          russianExplanation="Полная загрузка коммерческого парка целевыми клиентами из поиска без затрат на платную контекстную рекламу."
           accentColor="#facc15"
         />
       )}
