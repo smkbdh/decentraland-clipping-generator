@@ -2,6 +2,7 @@ import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img , staticFile } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
+import { TechGlossaryFootnote } from "./TechGlossaryFootnote";
 
 export const PhuketStayProScene: React.FC = () => {
   const frame = useCurrentFrame();
@@ -468,6 +469,36 @@ export const PhuketStayProScene: React.FC = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {/* =========================================================================
+          DYNAMIC TECH GLOSSARY FOOTNOTE (TIMED TO VOICE-OVER)
+          ========================================================================= */}
+      {sec < 35.3 && (
+        <TechGlossaryFootnote
+          term="WhatsApp Lead Workflow"
+          englishTitle="Сквозная обработка лида"
+          russianExplanation="Запрос из бота или ChatGPT передается менеджеру с готовым бюджетом и параметрами, ускоряя отправку брошюры до 6 минут."
+          accentColor="#10b981"
+        />
+      )}
+
+      {sec >= 35.3 && sec < 58.3 && (
+        <TechGlossaryFootnote
+          term="Entity-Based Search"
+          englishTitle="Поиск по точным сущностям"
+          russianExplanation="Нейросеть связывает геолокацию (Камала), цену (3.49M THB) и доходность (ROI 9.2%), рекомендуя конкретную квартиру под запрос инвестора."
+          accentColor="#38bdf8"
+        />
+      )}
+
+      {sec >= 58.3 && (
+        <TechGlossaryFootnote
+          term="Local SEO & GEO Synergy"
+          englishTitle="Синергия карт и нейропоиска"
+          russianExplanation="Для локального бизнеса GEO усиливает карты Google и Яндекс: ИИ сверяет рейтинг, отзывы и адрес для прямого ответа жителю района."
+          accentColor="#f59e0b"
+        />
       )}
     </div>
   );

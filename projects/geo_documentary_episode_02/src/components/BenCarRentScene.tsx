@@ -2,6 +2,7 @@ import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img , staticFile } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
+import { TechGlossaryFootnote } from "./TechGlossaryFootnote";
 
 export const BenCarRentScene: React.FC = () => {
   const frame = useCurrentFrame();
@@ -321,6 +322,27 @@ export const BenCarRentScene: React.FC = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {/* =========================================================================
+          DYNAMIC TECH GLOSSARY FOOTNOTE (TIMED TO VOICE-OVER)
+          ========================================================================= */}
+      {sec < 50 && (
+        <TechGlossaryFootnote
+          term="High-Intent Query"
+          englishTitle="Целевой запрос с условиями"
+          russianExplanation="Запрос с точными критериями («без залога паспорта», «со страховкой»). Модель цитирует сайт, где эти условия прописаны открыто и честно."
+          accentColor="#10b981"
+        />
+      )}
+
+      {sec >= 50 && (
+        <TechGlossaryFootnote
+          term="Direct WhatsApp Lead"
+          englishTitle="Прямая конверсия в мессенджер"
+          russianExplanation="Переход из ответа ChatGPT сразу в диалог WhatsApp. Клиент уже прогрет и готов вносить предоплату без долгого блуждания по сайту."
+          accentColor="#facc15"
+        />
       )}
     </div>
   );

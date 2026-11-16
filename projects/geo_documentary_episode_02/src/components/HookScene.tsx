@@ -2,6 +2,7 @@ import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img , staticFile } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
+import { TechGlossaryFootnote } from "./TechGlossaryFootnote";
 
 export const HookScene: React.FC = () => {
   const frame = useCurrentFrame();
@@ -487,6 +488,27 @@ export const HookScene: React.FC = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {/* =========================================================================
+          DYNAMIC TECH GLOSSARY FOOTNOTE (TIMED TO VOICE-OVER)
+          ========================================================================= */}
+      {sec < 48 && (
+        <TechGlossaryFootnote
+          term="GEO"
+          englishTitle="Generative Engine Optimization"
+          russianExplanation="Новый стандарт продвижения: оптимизация контента сайта для прямого цитирования в ответах ИИ (ChatGPT, Perplexity, Claude), а не просто кликов в Google."
+          accentColor="#38bdf8"
+        />
+      )}
+
+      {sec >= 48 && (
+        <TechGlossaryFootnote
+          term="AI Crawlers"
+          englishTitle="Роботы OpenAI и поисковых нейросетей"
+          russianExplanation="Боты (GPTBot, OAI-SearchBot), которые в фоновом режиме читают ваш сайт, собирают факты и проверяют актуальность цен для формирования ответов пользователю."
+          accentColor="#22c55e"
+        />
       )}
     </div>
   );
