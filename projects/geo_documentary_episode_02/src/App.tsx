@@ -9,7 +9,6 @@ import { PhuketStayProScene } from "./components/PhuketStayProScene";
 import { BusinessChecklistScene } from "./components/BusinessChecklistScene";
 import { OutroScene } from "./components/OutroScene";
 import { TopChapterBar } from "./components/TopChapterBar";
-import { ChapterMicroTeaser } from "./components/ChapterMicroTeaser";
 import { CornerBranding } from "./components/CornerBranding";
 
 export default function App() {
@@ -59,7 +58,6 @@ export default function App() {
     >
       {/* 1. GLOBAL BRANDING & NAVIGATION OVERLAYS */}
       <TopChapterBar />
-      <ChapterMicroTeaser />
       <CornerBranding />
 
       {/* === SCENE SEQUENCES === */}
