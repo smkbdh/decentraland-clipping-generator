@@ -110,11 +110,11 @@ export const HookScene: React.FC = () => {
         </div>
       )}
 
-      {/* Cut 4: Counting $80M Cash Flow (780 - 1080f) */}
+      {/* Cut 4: Real Interview - Maor Shlomo ($80M Base44 exit to Wix) (780 - 1080f) */}
       {frame >= 780 && frame < 1080 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src="kino:0f72d6e7-abc8-4e53-ad94-47e9be9ed7ab"
+            src="kino:2236f9b8-78f8-4fb7-a36a-e414e77389ec"
             loop
             muted
             style={{
@@ -124,8 +124,8 @@ export const HookScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.88,
-              transform: `scale(${interpolate(frame - 780, [0, 300], [1.0, 1.08])})`,
+              opacity: 0.92,
+              transform: `scale(${interpolate(frame - 780, [0, 300], [1.0, 1.06])})`,
             }}
           />
         </div>

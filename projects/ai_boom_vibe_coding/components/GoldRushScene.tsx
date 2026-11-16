@@ -28,11 +28,11 @@ export const GoldRushScene: React.FC = () => {
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
       {/* === BACKGROUND VIDEO CUTS (ADHD Retention Pacing) === */}
 
-      {/* Cut 1: Silicon Valley Keynote Stage (0 - 320f) */}
+      {/* Cut 1: Real Talk - Andrej Karpathy on Vibe Coding (0 - 320f) */}
       {frame < 320 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src="kino:bbc025c0-e82d-44b9-958d-839f996a3459"
+            src="kino:ba2a1911-33c4-42cc-ae01-9b485a066c3e"
             loop
             muted
             style={{
@@ -42,8 +42,8 @@ export const GoldRushScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.88,
-              transform: `scale(${interpolate(frame, [0, 320], [1.0, 1.07])})`,
+              opacity: 0.92,
+              transform: `scale(${interpolate(frame, [0, 320], [1.0, 1.06])})`,
             }}
           />
         </div>

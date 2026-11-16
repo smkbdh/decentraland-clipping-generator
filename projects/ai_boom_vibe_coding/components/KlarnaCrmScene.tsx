@@ -14,11 +14,11 @@ export const KlarnaCrmScene: React.FC = () => {
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
-      {/* 1. STOCK VIDEO: Klarna Customer Support Call Center (0 - 1000f) */}
+      {/* 1. Real Source Video: Klarna AI Assistant 700 Jobs Metrics (0 - 1000f) */}
       {frame < 1000 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src="kino:1fc88e7b-d2b9-4897-aefa-ae5e8d22deb5"
+            src="kino:18f8d087-6194-4ad8-a028-c2769ece206e"
             loop
             muted
             style={{
@@ -28,8 +28,8 @@ export const KlarnaCrmScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.88,
-              transform: `scale(${interpolate(frame, [0, 1000], [1.0, 1.07])})`,
+              opacity: 0.92,
+              transform: `scale(${interpolate(frame, [0, 1000], [1.0, 1.06])})`,
             }}
           />
         </div>

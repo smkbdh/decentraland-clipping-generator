@@ -67,11 +67,11 @@ export const FiveRulesScene: React.FC = () => {
         </div>
       )}
 
-      {/* 2. STOCK VIDEO: GEO Teaser & Global AI Network Globe (1660 - 2394f) */}
+      {/* 2. Real Source Video: Live Perplexity AI Search Interface (1720 - 2394f) */}
       {frame >= 1720 && frame < 2394 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src="kino:5737223f-d1f7-4e69-997b-25a0374f177c"
+            src="kino:d8ea36d7-6809-428c-9033-322edfeb6ef4"
             loop
             muted
             style={{
@@ -81,7 +81,7 @@ export const FiveRulesScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.88,
+              opacity: 0.92,
               transform: `scale(${zoom2})`,
             }}
           />

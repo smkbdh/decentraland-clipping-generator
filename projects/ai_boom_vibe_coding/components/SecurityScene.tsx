@@ -87,11 +87,11 @@ export const SecurityScene: React.FC = () => {
         </div>
       )}
 
-      {/* Cut 5: Database Server Emergency Crash (1740 - 2400f) */}
+      {/* Cut 5: Real Screencast - Replit AI Agent Database Deletion Incident (1740 - 2400f) */}
       {frame >= 1740 && frame < 2400 && (
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
           <Video
-            src="kino:06e92a51-e8a9-4aa4-875f-761803f601d8"
+            src="kino:1bef6152-147b-4441-824d-3f21f46248f0"
             loop
             muted
             style={{
@@ -101,8 +101,8 @@ export const SecurityScene: React.FC = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.88,
-              transform: `scale(${interpolate(frame - 1740, [0, 660], [1.0, 1.08])})`,
+              opacity: 0.92,
+              transform: `scale(${interpolate(frame - 1740, [0, 660], [1.0, 1.06])})`,
             }}
           />
         </div>
