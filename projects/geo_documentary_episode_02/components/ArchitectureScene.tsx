@@ -1,5 +1,6 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img, staticFile } from "remotion";
+import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
 export const ArchitectureScene: React.FC = () => {
@@ -9,9 +10,73 @@ export const ArchitectureScene: React.FC = () => {
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
+      {/* 1. BACKGROUND B-ROLL & SCREENCAST */}
+      
+      {/* 0 - 35s: Global Network Traffic */}
+      <Sequence from={0} durationInFrames={Math.round(35 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:babf7448-40a1-4fcd-8e2e-bb90c7e40801"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.35,
+              transform: `scale(${interpolate(frame, [0, 35 * fps], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
+            }}
+          />
+        </div>
+      </Sequence>
+
+      {/* 35 - 75s: AI Data Search flow */}
+      <Sequence from={Math.round(35 * fps)} durationInFrames={Math.round(40 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:3a285b55-704f-429d-af3a-cc1bc481fe6b"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.35,
+              transform: `scale(${interpolate(frame - 35 * fps, [0, 40 * fps], [1.04, 1.0], { extrapolateRight: "clamp" })})`,
+            }}
+          />
+        </div>
+      </Sequence>
+
+      {/* 75s+: Real Google Search Central Screenshot */}
+      <Sequence from={Math.round(75 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Img
+            src={staticFile("site_google_ai_features.png")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.22,
+              filter: "blur(3px)",
+              transform: `scale(${interpolate(frame - 75 * fps, [0, 45 * fps], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
+            }}
+          />
+        </div>
+      </Sequence>
+
       <BackgroundGrid accentColor="#8b5cf6" />
 
-      {/* SUB-PHASE 1 (0 - 35s / 184.5s - 220s): Search vs Generative Answer */}
+      {/* SUB-PHASE 1 (0 - 35s): Search vs Generative Answer */}
       {sec < 35 && (
         <div
           style={{
@@ -43,7 +108,7 @@ export const ArchitectureScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 68,
+              fontSize: 66,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
@@ -58,19 +123,19 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.85)",
+                backgroundColor: "rgba(15, 23, 42, 0.88)",
                 border: "1px solid rgba(255, 255, 255, 0.12)",
                 borderRadius: 24,
                 padding: "32px",
               }}
             >
-              <div style={{ fontSize: 20, color: "#94a3b8", fontWeight: 800, marginBottom: 12 }}>
+              <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 800, marginBottom: 10 }}>
                 КЛАССИЧЕСКОЕ SEO
               </div>
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 14 }}>
+              <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
                 Борьба за позицию
               </div>
-              <div style={{ fontSize: 20, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.4 }}>
                 Пользователь вбивает ключевик, видит список сайтов и кликает по очереди.
               </div>
             </div>
@@ -78,20 +143,20 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.85)",
-                border: "1px solid rgba(139, 92, 246, 0.4)",
+                backgroundColor: "rgba(15, 23, 42, 0.88)",
+                border: "1.5px solid rgba(139, 92, 246, 0.5)",
                 borderRadius: 24,
                 padding: "32px",
-                boxShadow: "0 0 30px rgba(139, 92, 246, 0.15)",
+                boxShadow: "0 0 30px rgba(139, 92, 246, 0.2)",
               }}
             >
-              <div style={{ fontSize: 20, color: "#c084fc", fontWeight: 800, marginBottom: 12 }}>
+              <div style={{ fontSize: 18, color: "#c084fc", fontWeight: 800, marginBottom: 10 }}>
                 GENERATIVE ENGINE (GEO)
               </div>
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#c084fc", marginBottom: 14 }}>
+              <div style={{ fontSize: 32, fontWeight: 900, color: "#c084fc", marginBottom: 12 }}>
                 Борьба за цитирование
               </div>
-              <div style={{ fontSize: 20, color: "#cbd5e1", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
                 Нейросеть агрегирует факты из лучших источников и сразу рекомендует решение.
               </div>
             </div>
@@ -99,7 +164,7 @@ export const ArchitectureScene: React.FC = () => {
         </div>
       )}
 
-      {/* SUB-PHASE 2 (35 - 75s / 220s - 260s): RAG & Query Fan-Out */}
+      {/* SUB-PHASE 2 (35 - 75s): RAG & Query Fan-Out */}
       {sec >= 35 && sec < 75 && (
         <div
           style={{
@@ -146,8 +211,8 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
+                border: "1px solid rgba(255, 255, 255, 0.12)",
                 borderRadius: 20,
                 padding: "26px",
                 textAlign: "center",
@@ -165,8 +230,8 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
+                border: "1px solid rgba(255, 255, 255, 0.12)",
                 borderRadius: 20,
                 padding: "26px",
                 textAlign: "center",
@@ -184,19 +249,19 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
-                border: "1px solid rgba(34, 197, 94, 0.4)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
+                border: "1.5px solid rgba(34, 197, 94, 0.5)",
                 borderRadius: 20,
                 padding: "26px",
                 textAlign: "center",
-                boxShadow: "0 0 25px rgba(34, 197, 94, 0.15)",
+                boxShadow: "0 0 25px rgba(34, 197, 94, 0.2)",
               }}
             >
               <div style={{ fontSize: 28, marginBottom: 8 }}>🎯</div>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#22c55e", marginBottom: 8 }}>
                 Готовый Источник
               </div>
-              <div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.4 }}>
                 Нейросеть цитирует именно тот сайт, где есть конкретный и честный ответ.
               </div>
             </div>
@@ -204,7 +269,7 @@ export const ArchitectureScene: React.FC = () => {
         </div>
       )}
 
-      {/* SUB-PHASE 3 (75s+ / 260s - 304.5s): Google Standard */}
+      {/* SUB-PHASE 3 (75s+): Google Standard */}
       {sec >= 75 && (
         <div
           style={{
@@ -258,17 +323,17 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
                 border: "1.5px solid #38bdf8",
                 borderRadius: 20,
                 padding: "30px",
                 textAlign: "center",
               }}
             >
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#38bdf8", marginBottom: 10 }}>
+              <div style={{ fontSize: 30, fontWeight: 900, color: "#38bdf8", marginBottom: 10 }}>
                 ДОСТУПЕН
               </div>
-              <div style={{ fontSize: 18, color: "#94a3b8" }}>
+              <div style={{ fontSize: 17, color: "#cbd5e1" }}>
                 Индексация, чистый robots.txt, открытый OAI-SearchBot
               </div>
             </div>
@@ -276,17 +341,17 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
                 border: "1.5px solid #a855f7",
                 borderRadius: 20,
                 padding: "30px",
                 textAlign: "center",
               }}
             >
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#a855f7", marginBottom: 10 }}>
+              <div style={{ fontSize: 30, fontWeight: 900, color: "#a855f7", marginBottom: 10 }}>
                 ПОНЯТЕН
               </div>
-              <div style={{ fontSize: 18, color: "#94a3b8" }}>
+              <div style={{ fontSize: 17, color: "#cbd5e1" }}>
                 Логичная иерархия, микроразметка Schema.org, семантика
               </div>
             </div>
@@ -294,17 +359,17 @@ export const ArchitectureScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
                 border: "1.5px solid #22c55e",
                 borderRadius: 20,
                 padding: "30px",
                 textAlign: "center",
               }}
             >
-              <div style={{ fontSize: 32, fontWeight: 900, color: "#22c55e", marginBottom: 10 }}>
+              <div style={{ fontSize: 30, fontWeight: 900, color: "#22c55e", marginBottom: 10 }}>
                 ПОЛЕЗЕН
               </div>
-              <div style={{ fontSize: 18, color: "#94a3b8" }}>
+              <div style={{ fontSize: 17, color: "#cbd5e1" }}>
                 Точные условия, реальные фото, цены и регламенты
               </div>
             </div>

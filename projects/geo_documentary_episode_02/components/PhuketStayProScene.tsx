@@ -1,5 +1,6 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, Img, staticFile } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img, staticFile } from "remotion";
+import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
 export const PhuketStayProScene: React.FC = () => {
@@ -9,9 +10,51 @@ export const PhuketStayProScene: React.FC = () => {
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
+      {/* 1. BACKGROUND REAL ESTATE & VILLA FOOTAGE */}
+      
+      {/* 0 - 45s: Luxury Phuket Villa & Pool B-Roll */}
+      <Sequence from={0} durationInFrames={Math.round(45 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Img
+            src={staticFile("site_phuketstaypro_vivi.png")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.22,
+              filter: "blur(3px)",
+              transform: `scale(${interpolate(frame, [0, 45 * fps], [1.0, 1.06], { extrapolateRight: "clamp" })})`,
+            }}
+          />
+        </div>
+      </Sequence>
+
+      {/* 45s+: Real Estate City & Offplan Catalog */}
+      <Sequence from={Math.round(45 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:1464ee73-c2a4-4904-b1cf-3c765330d068"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.35,
+            }}
+          />
+        </div>
+      </Sequence>
+
       <BackgroundGrid accentColor="#ec4899" />
 
-      {/* PHASE 1 (0 - 45s / 425.0s - 470.0s): Live ChatGPT Lead Dario (4M THB) */}
+      {/* PHASE 1 (0 - 45s): Live ChatGPT Lead Dario (4M THB) */}
       {sec < 45 && (
         <div
           style={{
@@ -43,12 +86,12 @@ export const PhuketStayProScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 54,
+              fontSize: 52,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
               lineHeight: 1.1,
-              margin: "0 0 25px",
+              margin: "0 0 24px",
             }}
           >
             КЛИЕНТ ИЗ СИНГАПУРА С БЮДЖЕТОМ 4 МЛН БАТ (ИЗ CHATGPT)
@@ -90,12 +133,12 @@ export const PhuketStayProScene: React.FC = () => {
               />
             </div>
 
-            {/* Middle arrow / flow summary */}
+            {/* Middle flow summary */}
             <div style={{ display: "flex", flexDirection: "column", gap: 14, width: 340 }}>
               <div
                 style={{
-                  backgroundColor: "rgba(15, 23, 42, 0.9)",
-                  border: "1px solid rgba(236, 72, 153, 0.3)",
+                  backgroundColor: "rgba(15, 23, 42, 0.92)",
+                  border: "1px solid rgba(236, 72, 153, 0.35)",
                   borderRadius: 16,
                   padding: "16px 20px",
                 }}
@@ -107,7 +150,7 @@ export const PhuketStayProScene: React.FC = () => {
 
               <div
                 style={{
-                  backgroundColor: "rgba(15, 23, 42, 0.9)",
+                  backgroundColor: "rgba(15, 23, 42, 0.92)",
                   border: "1.5px solid #22c55e",
                   borderRadius: 16,
                   padding: "16px 20px",
@@ -120,15 +163,15 @@ export const PhuketStayProScene: React.FC = () => {
 
               <div
                 style={{
-                  backgroundColor: "rgba(15, 23, 42, 0.9)",
-                  border: "1px solid rgba(56, 189, 248, 0.3)",
+                  backgroundColor: "rgba(15, 23, 42, 0.92)",
+                  border: "1px solid rgba(56, 189, 248, 0.35)",
                   borderRadius: 16,
                   padding: "16px 20px",
                 }}
               >
                 <div style={{ fontSize: 13, color: "#38bdf8", fontWeight: 800 }}>РЕАКЦИЯ КОМАНДЫ</div>
                 <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>Диалог за 6 минут</div>
-                <div style={{ fontSize: 14, color: "#94a3b8" }}>Отправка PDF брошюры в WhatsApp</div>
+                <div style={{ fontSize: 14, color: "#cbd5e1" }}>Отправка PDF брошюры в WhatsApp</div>
               </div>
             </div>
 
@@ -170,7 +213,7 @@ export const PhuketStayProScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 2 (45s+ / 470.0s - 516.5s): Kamala Flat & Chatterbox Case */}
+      {/* PHASE 2 (45s+): Kamala Flat & Chatterbox Case */}
       {sec >= 45 && (
         <div
           style={{
@@ -217,7 +260,7 @@ export const PhuketStayProScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
                 border: "1.5px solid #38bdf8",
                 borderRadius: 24,
                 padding: "32px",
@@ -229,7 +272,7 @@ export const PhuketStayProScene: React.FC = () => {
               <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
                 Квартира на Камале
               </div>
-              <div style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
                 Собственник пришел через поисковую систему сайта и отдал объект в управление команде. Это реальная работа и прибыль.
               </div>
             </div>
@@ -237,7 +280,7 @@ export const PhuketStayProScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
                 border: "1.5px solid #f59e0b",
                 borderRadius: 24,
                 padding: "32px",
@@ -249,7 +292,7 @@ export const PhuketStayProScene: React.FC = () => {
               <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
                 Поток лидов с карт и SEO
               </div>
-              <div style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
                 Яндекс, 2ГИС и Google приводят учеников на бесплатный пробный урок и тестирование. SEO кормит всю эту экосистему.
               </div>
             </div>

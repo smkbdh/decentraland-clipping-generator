@@ -1,5 +1,6 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img, staticFile } from "remotion";
+import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
 export const ResearchScene: React.FC = () => {
@@ -9,9 +10,72 @@ export const ResearchScene: React.FC = () => {
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
+      {/* BACKGROUND FOOTAGE & REAL SCREENCAST */}
+
+      {/* 0 - 29s: Real Marie Haynes Article Screenshot in Motion */}
+      <Sequence from={0} durationInFrames={Math.round(29 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Img
+            src={staticFile("site_mariehaynes_study.png")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.22,
+              filter: "blur(3px)",
+              transform: `scale(${interpolate(frame, [0, 29 * fps], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
+            }}
+          />
+        </div>
+      </Sequence>
+
+      {/* 29 - 58s: High-tech Financial & Analytics Growth Video */}
+      <Sequence from={Math.round(29 * fps)} durationInFrames={Math.round(29 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:acc1c6d8-d4bb-485f-9fc0-7675b51f9951"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.35,
+              transform: `scale(${interpolate(frame - 29 * fps, [0, 29 * fps], [1.04, 1.0], { extrapolateRight: "clamp" })})`,
+            }}
+          />
+        </div>
+      </Sequence>
+
+      {/* 58s+: Data Center Servers */}
+      <Sequence from={Math.round(58 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:9ce31523-3176-4e9a-adc4-0c1da47cd205"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.35,
+            }}
+          />
+        </div>
+      </Sequence>
+
       <BackgroundGrid accentColor="#f59e0b" />
 
-      {/* PHASE 1 (0 - 29s / 100.8s - 130s): Marie Haynes 145M Sessions */}
+      {/* PHASE 1 (0 - 29s): Marie Haynes 145M Sessions */}
       {sec < 29 && (
         <div
           style={{
@@ -43,7 +107,7 @@ export const ResearchScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 68,
+              fontSize: 66,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
@@ -58,7 +122,7 @@ export const ResearchScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.85)",
+                backgroundColor: "rgba(15, 23, 42, 0.9)",
                 border: "1px solid rgba(245, 158, 11, 0.4)",
                 borderRadius: 24,
                 padding: "32px",
@@ -80,7 +144,7 @@ export const ResearchScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.85)",
+                backgroundColor: "rgba(15, 23, 42, 0.9)",
                 border: "1px solid rgba(255, 255, 255, 0.15)",
                 borderRadius: 24,
                 padding: "32px",
@@ -106,7 +170,7 @@ export const ResearchScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 2 (29 - 58s / 130s - 159s): The Conversion Paradox */}
+      {/* PHASE 2 (29 - 58s): The Conversion Paradox */}
       {sec >= 29 && sec < 58 && (
         <div
           style={{
@@ -153,12 +217,12 @@ export const ResearchScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
-                border: "1.5px solid #22c55e",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
+                border: "2px solid #22c55e",
                 borderRadius: 24,
                 padding: "32px",
                 textAlign: "center",
-                boxShadow: "0 0 35px rgba(34, 197, 94, 0.2)",
+                boxShadow: "0 0 35px rgba(34, 197, 94, 0.25)",
               }}
             >
               <div style={{ fontSize: 18, color: "#86efac", fontWeight: 800, marginBottom: 8 }}>
@@ -175,7 +239,7 @@ export const ResearchScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.85)",
+                backgroundColor: "rgba(15, 23, 42, 0.88)",
                 border: "1px solid rgba(255, 255, 255, 0.15)",
                 borderRadius: 24,
                 padding: "32px",
@@ -196,7 +260,7 @@ export const ResearchScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 3 (58s+ / 159s - 184.5s): Analytics Trap */}
+      {/* PHASE 3 (58s+): Analytics Trap */}
       {sec >= 58 && (
         <div
           style={{
@@ -241,8 +305,8 @@ export const ResearchScene: React.FC = () => {
 
           <div
             style={{
-              backgroundColor: "rgba(15, 23, 42, 0.9)",
-              border: "1px solid rgba(239, 68, 68, 0.3)",
+              backgroundColor: "rgba(15, 23, 42, 0.92)",
+              border: "1px solid rgba(239, 68, 68, 0.35)",
               borderRadius: 24,
               padding: "36px 50px",
               maxWidth: 1000,

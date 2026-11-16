@@ -1,5 +1,6 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, Img, staticFile } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img, staticFile } from "remotion";
+import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
 
 export const OutroScene: React.FC = () => {
@@ -8,6 +9,26 @@ export const OutroScene: React.FC = () => {
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
+      {/* BACKGROUND FOOTAGE */}
+      <Sequence from={0} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Video
+            src="kino:e895e6ff-ffb9-4517-b7f2-f557228f34de"
+            loop
+            muted
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.35,
+            }}
+          />
+        </div>
+      </Sequence>
+
       <BackgroundGrid accentColor="#a3e635" />
 
       <div
@@ -56,12 +77,12 @@ export const OutroScene: React.FC = () => {
             display: "flex",
             alignItems: "center",
             gap: 40,
-            backgroundColor: "rgba(15, 23, 42, 0.9)",
-            border: "1.5px solid rgba(163, 230, 53, 0.4)",
+            backgroundColor: "rgba(15, 23, 42, 0.92)",
+            border: "1.5px solid rgba(163, 230, 53, 0.5)",
             borderRadius: 24,
             padding: "28px 40px",
             maxWidth: 1000,
-            boxShadow: "0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(163, 230, 53, 0.15)",
+            boxShadow: "0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(163, 230, 53, 0.2)",
           }}
         >
           <div

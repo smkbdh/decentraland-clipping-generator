@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img, staticFile } from "remotion";
 import { BackgroundGrid } from "./BackgroundGrid";
 
 export const BenCarRentScene: React.FC = () => {
@@ -9,9 +9,69 @@ export const BenCarRentScene: React.FC = () => {
 
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", backgroundColor: "#07090e" }}>
+      {/* 1. BACKGROUND B-ROLL & REAL WEBSITE SCREENSHOTS */}
+      
+      {/* 0 - 38s: Real Website Screenshot benphuketcarrent.com */}
+      <Sequence from={0} durationInFrames={Math.round(38 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Img
+            src={staticFile("site_bencar_cars.png")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.28,
+              filter: "blur(3px)",
+              transform: `scale(${interpolate(frame, [0, 38 * fps], [1.0, 1.07], { extrapolateRight: "clamp" })})`,
+            }}
+          />
+        </div>
+      </Sequence>
+
+      {/* 38 - 78s: Real Home Page Screenshot & Bot UTM Notification */}
+      <Sequence from={Math.round(38 * fps)} durationInFrames={Math.round(40 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Img
+            src={staticFile("site_bencar_home.png")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.25,
+              filter: "blur(4px)",
+              transform: `scale(${interpolate(frame - 38 * fps, [0, 40 * fps], [1.04, 1.0], { extrapolateRight: "clamp" })})`,
+            }}
+          />
+        </div>
+      </Sequence>
+
+      {/* 78s+: Phuket Road & Cars B-Roll */}
+      <Sequence from={Math.round(78 * fps)} layout="none">
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <Img
+            src={staticFile("b_roll_phuket_car.mp4")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.35,
+            }}
+          />
+        </div>
+      </Sequence>
+
       <BackgroundGrid accentColor="#10b981" />
 
-      {/* PHASE 1 (0 - 38s / 304.5s - 342.5s): System Intro & Live UTM Chat */}
+      {/* PHASE 1 (0 - 38s): System Intro & Live UTM Chat */}
       {sec < 38 && (
         <div
           style={{
@@ -43,7 +103,7 @@ export const BenCarRentScene: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 66,
+              fontSize: 64,
               fontWeight: 900,
               color: "#f8fafc",
               textAlign: "center",
@@ -65,7 +125,7 @@ export const BenCarRentScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
                 border: "1px solid rgba(255, 255, 255, 0.15)",
                 borderRadius: 20,
                 padding: "30px",
@@ -77,7 +137,7 @@ export const BenCarRentScene: React.FC = () => {
               <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
                 Инженерная архитектура под поиск
               </div>
-              <div style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
                 Страницы под каждую модель, прозрачные условия депозитов, страховка, локальные гиды и сквозная UTM-атрибуция.
               </div>
             </div>
@@ -85,11 +145,11 @@ export const BenCarRentScene: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
+                backgroundColor: "rgba(15, 23, 42, 0.92)",
                 border: "1.5px solid #10b981",
                 borderRadius: 20,
                 padding: "30px",
-                boxShadow: "0 0 30px rgba(16, 185, 129, 0.2)",
+                boxShadow: "0 0 30px rgba(16, 185, 129, 0.25)",
               }}
             >
               <div style={{ fontSize: 16, color: "#34d399", fontWeight: 700, marginBottom: 8 }}>
@@ -106,7 +166,7 @@ export const BenCarRentScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 2 (38 - 78s / 342.5s - 382.5s): 38 WhatsApp + 6 Direct Bookings */}
+      {/* PHASE 2 (38 - 78s): 38 WhatsApp + 6 Direct Bookings */}
       {sec >= 38 && sec < 78 && (
         <div
           style={{
@@ -197,7 +257,7 @@ export const BenCarRentScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 3 (78s+ / 382.5s - 425.0s): 100% Fleet Booked */}
+      {/* PHASE 3 (78s+): 100% Fleet Booked */}
       {sec >= 78 && (
         <div
           style={{
@@ -242,13 +302,13 @@ export const BenCarRentScene: React.FC = () => {
 
           <div
             style={{
-              backgroundColor: "rgba(15, 23, 42, 0.9)",
+              backgroundColor: "rgba(15, 23, 42, 0.92)",
               border: "1.5px solid #facc15",
               borderRadius: 24,
               padding: "36px 50px",
               maxWidth: 1100,
               textAlign: "center",
-              boxShadow: "0 0 35px rgba(250, 204, 21, 0.2)",
+              boxShadow: "0 0 35px rgba(250, 204, 21, 0.25)",
             }}
           >
             <div style={{ fontSize: 28, color: "#f8fafc", fontWeight: 800, lineHeight: 1.35, marginBottom: 16 }}>

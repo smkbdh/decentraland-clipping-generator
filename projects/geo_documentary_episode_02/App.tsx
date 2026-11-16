@@ -44,6 +44,9 @@ export default function App() {
   const sRules = sPhuket + fPhuket;
   const sOutro = sRules + fRules;
 
+  // Chapter impact timestamps (for subtle sub-bass SFX)
+  const chapterImpacts = [100.8, 184.5, 304.5, 425.0, 516.5, 630.0];
+
   return (
     <div
       style={{
@@ -100,9 +103,21 @@ export default function App() {
         <OutroScene />
       </Sequence>
 
+      {/* === SFX CHAPTER IMPACTS === */}
+      {chapterImpacts.map((sec, idx) => (
+        <Sequence key={`chapter_impact_${idx}`} from={Math.round(sec * fps)} durationInFrames={30} layout="none">
+          <Audio src="kino:294ff0ee-27bf-469c-9460-e595776efdb2" volume={0.14} />
+        </Sequence>
+      ))}
+
+      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1) === */}
+      <Sequence name="Music Bed: Neon Dreams" from={0} durationInFrames={fTotal} layout="none">
+        <Audio src="kino:8eeba53a-7331-4dfe-bef2-add4aa5b4558" volume={0.11} loop />
+      </Sequence>
+
       {/* === MASTER VOICEOVER AUDIO TRACK === */}
       <Sequence name="Master Voiceover" from={0} durationInFrames={fTotal} layout="none">
-        <Audio src={staticFile("voiceover.mp3")} volume={1.0} />
+        <Audio src="file:///D:/Buddah/ai%20seo%20geo%20cases%20aibuddah.mp3" volume={1.0} />
       </Sequence>
     </div>
   );
