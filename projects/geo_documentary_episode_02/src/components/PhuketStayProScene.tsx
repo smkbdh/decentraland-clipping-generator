@@ -225,8 +225,139 @@ export const PhuketStayProScene: React.FC = () => {
         </div>
       )}
 
-      {/* PHASE 2 (45s+): Kamala Flat & Chatterbox Case */}
-      {sec >= 45 && (
+      {/* PHASE 2A (45s - 55.5s): Real Kamala Property Showcase - Shot 1 Panoramic View */}
+      {sec >= 45 && sec < 55.5 && (
+        <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 10 }}>
+          <Img
+            src={staticFile("oceana_kamala_view_01.jpg")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transform: `scale(${interpolate(frame - 45 * fps, [0, 10.5 * fps], [1.0, 1.07], { extrapolateRight: "clamp" })}) translate(${interpolate(frame - 45 * fps, [0, 10.5 * fps], [0, -12], { extrapolateRight: "clamp" })}px, 0)`,
+            }}
+          />
+          {/* Subtle gradient vignette for lower-third legibility */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to top, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.35) 45%, transparent 75%)",
+            }}
+          />
+          {/* Vox/Netflix Lower-Third Card */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 65,
+              left: 80,
+              maxWidth: 1200,
+              zIndex: 20,
+            }}
+          >
+            <div style={{ display: "flex", gap: 14, marginBottom: 14, alignItems: "center" }}>
+              <div
+                style={{
+                  padding: "6px 18px",
+                  borderRadius: 20,
+                  backgroundColor: "rgba(16, 185, 129, 0.92)",
+                  color: "#ffffff",
+                  fontSize: 14,
+                  fontWeight: 800,
+                  letterSpacing: 1,
+                  boxShadow: "0 0 25px rgba(16, 185, 129, 0.5)",
+                }}
+              >
+                📍 РЕАЛЬНЫЙ ОБЪЕКТ В УПРАВЛЕНИИ · КАМАЛА
+              </div>
+              <div
+                style={{
+                  padding: "6px 18px",
+                  borderRadius: 20,
+                  backgroundColor: "rgba(15, 23, 42, 0.9)",
+                  border: "1px solid rgba(56, 189, 248, 0.6)",
+                  color: "#38bdf8",
+                  fontSize: 14,
+                  fontWeight: 700,
+                }}
+              >
+                phuketstaypro.com/en/property/oceana-kamala-a76
+              </div>
+            </div>
+            <h2 style={{ fontSize: 56, fontWeight: 900, color: "#ffffff", margin: "0 0 10px", lineHeight: 1.1 }}>
+              OCEANA RESIDENCE KAMALA · A76
+            </h2>
+            <div style={{ fontSize: 22, color: "#cbd5e1", fontWeight: 600, lineHeight: 1.4 }}>
+              Собственник нашел сайт в поиске и отдал квартиру в доверительное управление команде. <br />
+              <span style={{ color: "#34d399", fontWeight: 800 }}>➔ Реальный объект и прибыль, а не просто клики или краулеры в логах.</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* PHASE 2B (55.5s - 66s): Real Kamala Property Showcase - Shot 2 Master Bedroom & Balcony */}
+      {sec >= 55.5 && sec < 66 && (
+        <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 10 }}>
+          <Img
+            src={staticFile("oceana_kamala_view_02.jpg")}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transform: `scale(${interpolate(frame - 55.5 * fps, [0, 10.5 * fps], [1.07, 1.0], { extrapolateRight: "clamp" })}) translate(${interpolate(frame - 55.5 * fps, [0, 10.5 * fps], [-10, 0], { extrapolateRight: "clamp" })}px, 0)`,
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to top, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.35) 45%, transparent 75%)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: 65,
+              left: 80,
+              maxWidth: 1200,
+              zIndex: 20,
+            }}
+          >
+            <div style={{ display: "flex", gap: 14, marginBottom: 14, alignItems: "center" }}>
+              <div
+                style={{
+                  padding: "6px 18px",
+                  borderRadius: 20,
+                  backgroundColor: "rgba(245, 158, 11, 0.92)",
+                  color: "#ffffff",
+                  fontSize: 14,
+                  fontWeight: 800,
+                  letterSpacing: 1,
+                  boxShadow: "0 0 25px rgba(245, 158, 11, 0.5)",
+                }}
+              >
+                💎 ДОГОВОР ДОВЕРИТЕЛЬНОГО УПРАВЛЕНИЯ
+              </div>
+            </div>
+            <h2 style={{ fontSize: 52, fontWeight: 900, color: "#ffffff", margin: "0 0 10px", lineHeight: 1.1 }}>
+              РЕЗУЛЬТАТ, КОТОРЫЙ ВАЖНЕЕ ЛЮБЫХ ГРАФИКОВ
+            </h2>
+            <div style={{ fontSize: 22, color: "#cbd5e1", fontWeight: 600, lineHeight: 1.4 }}>
+              Это собственник, объект и новая работа для команды. <br />
+              <span style={{ color: "#38bdf8", fontWeight: 800 }}>➔ Сайты строятся не ради красивой SEO-таблички, а ради сделок, которые меняют бизнес.</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* PHASE 2C (66s+): Chatterbox Case & Final Synthesis */}
+      {sec >= 66 && (
         <div
           style={{
             position: "absolute",
@@ -252,7 +383,7 @@ export const PhuketStayProScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            СИСТЕМНЫЙ ЭФФЕКТ: НЕДВИЖИМОСТЬ И ШКОЛА CHATTERBOX
+            КЕЙС 03 · ЯЗЫКОВАЯ ШКОЛА CHATTERBOX
           </div>
 
           <h2
@@ -265,7 +396,7 @@ export const PhuketStayProScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            ОБЪЕКТЫ В УПРАВЛЕНИИ И ЗАЯВКИ С КАРТ
+            КЛАССИЧЕСКИЙ ПОИСК И КАРТЫ: ФУНДАМЕНТ ДЛЯ ЗАЯВОК
           </h2>
 
           <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
@@ -279,13 +410,13 @@ export const PhuketStayProScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#38bdf8", fontWeight: 800, marginBottom: 10 }}>
-                PHUKETSTAYPRO: ОБЪЕКТ
+                ИСТОЧНИКИ ТРАФИКА
               </div>
               <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                Квартира на Камале
+                Яндекс, 2ГИС, Google
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                Собственник пришел через поисковую систему сайта и отдал объект в управление команде. Это реальная работа и прибыль.
+                Люди ищут школу в своем районе, записываются на бесплатный пробный урок и тестирование.
               </div>
             </div>
 
@@ -293,19 +424,19 @@ export const PhuketStayProScene: React.FC = () => {
               style={{
                 flex: 1,
                 backgroundColor: "rgba(15, 23, 42, 0.92)",
-                border: "1.5px solid #f59e0b",
+                border: "1.5px solid #22c55e",
                 borderRadius: 24,
                 padding: "32px",
               }}
             >
-              <div style={{ fontSize: 18, color: "#f59e0b", fontWeight: 800, marginBottom: 10 }}>
-                ЯЗЫКОВАЯ ШКОЛА CHATTERBOX
+              <div style={{ fontSize: 18, color: "#22c55e", fontWeight: 800, marginBottom: 10 }}>
+                ГЛАВНЫЙ ВЫВОД
               </div>
               <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                Поток лидов с карт и SEO
+                SEO не умерло — оно кормит
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                Яндекс, 2ГИС и Google приводят учеников на бесплатный пробный урок и тестирование. SEO кормит всю эту экосистему.
+                Отвечать на вопросы людей, быть видимым там, где они ищут, и быстро доводить заявку до следующего шага.
               </div>
             </div>
           </div>

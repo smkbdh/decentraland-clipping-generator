@@ -25,6 +25,7 @@ session.json
 .omc/
 zhavdqwveqve/
 *.png
+!projects/**/public/*.png
 *.html
 !mastered_releases/**/*.html
 *.txt
@@ -43,4 +44,6 @@ youtube_browser_profile/
 
 node_modules/
 *.jpg
+!projects/**/public/*.jpg
 test_frame_*.jpg
+!projects/**/public/*.jpg
