@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img , staticFile } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
@@ -99,7 +99,7 @@ export const BenCarRentScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            РљР›РР•РќРўРЎРљРР™ РљР•Р™РЎ 01 В· РђР Р•РќР”Рђ РђР’РўРћ РќРђ РџРҐРЈРљР•РўР•
+            КЛИЕНТСКИЙ КЕЙС 01 · АРЕНДА АВТО НА ПХУКЕТЕ
           </div>
 
           <h2
@@ -112,7 +112,7 @@ export const BenCarRentScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            BENPHUKETCARRENT.COM: Р–РР’Р«Р• Р—РђРЇР’РљР РР— CHATGPT
+            BENPHUKETCARRENT.COM: ЖИВЫЕ ЗАЯВКИ ИЗ CHATGPT
           </h2>
 
           <div
@@ -133,13 +133,13 @@ export const BenCarRentScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
-                Р§РўРћ РњР« РџРћРЎРўР РћРР›Р Р”Р›РЇ РљР›РР•РќРўРђ
+                ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА
               </div>
               <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                РРЅР¶РµРЅРµСЂРЅР°СЏ Р°СЂС…РёС‚РµРєС‚СѓСЂР° РїРѕРґ РїРѕРёСЃРє
+                Инженерная архитектура под поиск
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                РЎС‚СЂР°РЅРёС†С‹ РїРѕРґ РєР°Р¶РґСѓСЋ РјРѕРґРµР»СЊ, РїСЂРѕР·СЂР°С‡РЅС‹Рµ СѓСЃР»РѕРІРёСЏ РґРµРїРѕР·РёС‚РѕРІ, СЃС‚СЂР°С…РѕРІРєР°, Р»РѕРєР°Р»СЊРЅС‹Рµ РіРёРґС‹ Рё СЃРєРІРѕР·РЅР°СЏ UTM-Р°С‚СЂРёР±СѓС†РёСЏ.
+                Страницы под каждую модель, прозрачные условия депозитов, страховка, локальные гиды и сквозная UTM-атрибуция.
               </div>
             </div>
 
@@ -154,13 +154,13 @@ export const BenCarRentScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 16, color: "#34d399", fontWeight: 700, marginBottom: 8 }}>
-                РЈР’Р•Р”РћРњР›Р•РќРР• Р’ Р‘РћРў РљРћРњРђРќР”Р«
+                УВЕДОМЛЕНИЕ В БОТ КОМАНДЫ
               </div>
               <div style={{ fontSize: 26, fontWeight: 900, color: "#10b981", marginBottom: 12 }}>
-                РСЃС‚РѕС‡РЅРёРє: AI: ChatGPT
+                Источник: AI: ChatGPT
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                Р—Р°РїСЂРѕСЃ РјРіРЅРѕРІРµРЅРЅРѕ РїР°РґР°РµС‚ РјРµРЅРµРґР¶РµСЂР°Рј СЃ РјРµС‚РєРѕР№ <code style={{ color: "#38bdf8" }}>utm_source=chatgpt.com</code> Рё РїСЂСЏРјРѕР№ СЃСЃС‹Р»РєРѕР№ РЅР° РІС‹Р±СЂР°РЅРЅСѓСЋ РјР°С€РёРЅСѓ.
+                Запрос мгновенно падает менеджерам с меткой <code style={{ color: "#38bdf8" }}>utm_source=chatgpt.com</code> и прямой ссылкой на выбранную машину.
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@ export const BenCarRentScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            Р¤РђРљРўРР§Р•РЎРљРР• Р”РђРќРќР«Р• Р—Рђ 2 РњР•РЎРЇР¦Рђ
+            ФАКТИЧЕСКИЕ ДАННЫЕ ЗА 2 МЕСЯЦА
           </div>
 
           <h2
@@ -207,7 +207,7 @@ export const BenCarRentScene: React.FC = () => {
               margin: "0 0 40px",
             }}
           >
-            РўРћР§РќР«Р• РЎР›Р•Р”Р« РР— РќР•Р™Р РћРЎР•РўР Р’ РЎРРЎРўР•РњР•
+            ТОЧНЫЕ СЛЕДЫ ИЗ НЕЙРОСЕТИ В СИСТЕМЕ
           </h2>
 
           <div style={{ display: "flex", gap: 40, maxWidth: 1100, width: "100%" }}>
@@ -223,13 +223,13 @@ export const BenCarRentScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#86efac", fontWeight: 800, marginBottom: 10 }}>
-                РџР•Р Р•РҐРћР”Р« Р’ WHATSAPP
+                ПЕРЕХОДЫ В WHATSAPP
               </div>
               <div style={{ fontSize: 96, fontWeight: 900, color: "#22c55e", letterSpacing: -2 }}>
                 38
               </div>
               <div style={{ fontSize: 20, color: "#f8fafc", fontWeight: 600 }}>
-                РљР»РёРµРЅС‚С‹ СЃ РјРµС‚РєРѕР№ ChatGPT
+                Клиенты с меткой ChatGPT
               </div>
             </div>
 
@@ -245,13 +245,13 @@ export const BenCarRentScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#7dd3fc", fontWeight: 800, marginBottom: 10 }}>
-                РџР РЇРњР«Р• Р—РђРџР РћРЎР« РќРђ Р‘Р РћРќР¬
+                ПРЯМЫЕ ЗАПРОСЫ НА БРОНЬ
               </div>
               <div style={{ fontSize: 96, fontWeight: 900, color: "#38bdf8", letterSpacing: -2 }}>
                 6
               </div>
               <div style={{ fontSize: 20, color: "#f8fafc", fontWeight: 600 }}>
-                Р—Р°РїРѕР»РЅРµРЅРЅС‹Рµ С„РѕСЂРјС‹ СЃ РґР°С‚Р°РјРё
+                Заполненные формы с датами
               </div>
             </div>
           </div>
@@ -285,7 +285,7 @@ export const BenCarRentScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            Р‘РР—РќР•РЎ-Р Р•Р—РЈР›Р¬РўРђРў Р’ Р”Р•РќР¬Р“РђРҐ
+            БИЗНЕС-РЕЗУЛЬТАТ В ДЕНЬГАХ
           </div>
 
           <h2
@@ -298,7 +298,7 @@ export const BenCarRentScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            Р’Р•РЎР¬ РђР’РўРћРџРђР Рљ РљР›РР•РќРўРђ РЎР”РђРќ РќРђ РќР•Р”Р•Р›Р Р’РџР•Р РЃР”
+            ВЕСЬ АВТОПАРК КЛИЕНТА СДАН НА НЕДЕЛИ ВПЕРЁД
           </h2>
 
           <div
@@ -313,10 +313,10 @@ export const BenCarRentScene: React.FC = () => {
             }}
           >
             <div style={{ fontSize: 28, color: "#f8fafc", fontWeight: 800, lineHeight: 1.35, marginBottom: 16 }}>
-              РЎРїСЂРѕСЃ РїСЂРµРІС‹СЃРёР» С„РёР·РёС‡РµСЃРєСѓСЋ С‘РјРєРѕСЃС‚СЊ РїР°СЂРєР°. РќРѕРІС‹Рµ Р·Р°СЏРІРєРё РєР»РёРµРЅС‚ РїРµСЂРµРґР°С‘С‚ РїР°СЂС‚РЅС‘СЂСЃРєРёРј Р°РіРµРЅС‚СЃС‚РІР°Рј Р·Р° РєРѕРјРёСЃСЃРёСЋ.
+              Спрос превысил физическую ёмкость парка. Новые заявки клиент передаёт партнёрским агентствам за комиссию.
             </div>
             <div style={{ fontSize: 22, color: "#38bdf8", fontWeight: 700 }}>
-              вћ” Р Р°Р·РЅРёС†Р° РјРµР¶РґСѓ В«РЅР°СЃ РїСЂРѕСЃРєР°РЅРёСЂРѕРІР°Р» Р±РѕС‚В» Рё РїРѕР»РЅРѕСЃС‚СЊСЋ Р·Р°Р±РёС‚РѕР№ СЃРµС‚РєРѕР№ Р±СЂРѕРЅРµР№
+              ➔ Разница между «нас просканировал бот» и полностью забитой сеткой броней
             </div>
           </div>
         </div>

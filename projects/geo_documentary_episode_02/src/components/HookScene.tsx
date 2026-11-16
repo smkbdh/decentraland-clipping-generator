@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img , staticFile } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
@@ -125,7 +125,7 @@ export const HookScene: React.FC = () => {
               marginBottom: 24,
             }}
           >
-            Р”РћРљРЈРњР•РќРўРђР›Р¬РќРћР• Р РђРЎРЎР›Р•Р”РћР’РђРќРР•
+            ДОКУМЕНТАЛЬНОЕ РАССЛЕДОВАНИЕ
           </div>
 
           <h1
@@ -140,8 +140,8 @@ export const HookScene: React.FC = () => {
               letterSpacing: -1,
             }}
           >
-            GEO Р РўР РђР¤РРљ РР— РќР•Р™Р РћРЎР•РўР•Р™: <br />
-            <span style={{ color: "#38bdf8" }}>РќРћР’РђРЇ Р—РћР›РћРўРђРЇ Р–РР›Рђ</span> РР›Р Р‘РћРўР«?
+            GEO И ТРАФИК ИЗ НЕЙРОСЕТЕЙ: <br />
+            <span style={{ color: "#38bdf8" }}>НОВАЯ ЗОЛОТАЯ ЖИЛА</span> ИЛИ БОТЫ?
           </h1>
 
           <div style={{ display: "flex", gap: 30, marginTop: 20 }}>
@@ -156,10 +156,10 @@ export const HookScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
-                Р§РўРћ РџРћРљРђР—Р«Р’РђР®Рў Р’ РџР Р•Р—Р•РќРўРђР¦РРЇРҐ
+                ЧТО ПОКАЗЫВАЮТ В ПРЕЗЕНТАЦИЯХ
               </div>
               <div style={{ fontSize: 36, color: "#ef4444", fontWeight: 900 }}>
-                РўР РђР¤РРљ РљР РђРЈР›Р•Р РћР’
+                ТРАФИК КРАУЛЕРОВ
               </div>
             </div>
 
@@ -174,10 +174,10 @@ export const HookScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700, marginBottom: 8 }}>
-                Р§РўРћ РќРЈР–РќРћ Р‘РР—РќР•РЎРЈ
+                ЧТО НУЖНО БИЗНЕСУ
               </div>
               <div style={{ fontSize: 36, color: "#22c55e", fontWeight: 900 }}>
-                Р Р•РђР›Р¬РќР«Р• РљР›РР•РќРўР« Р Р”Р•РќР¬Р“Р
+                РЕАЛЬНЫЕ КЛИЕНТЫ И ДЕНЬГИ
               </div>
             </div>
           </div>
@@ -211,7 +211,7 @@ export const HookScene: React.FC = () => {
               marginBottom: 24,
             }}
           >
-            Р¤РЈРќР”РђРњР•РќРўРђР›Р¬РќРђРЇ Р РђР—РќРР¦Рђ
+            ФУНДАМЕНТАЛЬНАЯ РАЗНИЦА
           </div>
 
           <h2
@@ -225,7 +225,7 @@ export const HookScene: React.FC = () => {
               letterSpacing: -0.5,
             }}
           >
-            РњРђРЎРЎРћР’Р«Р™ РўР РђР¤РРљ VS Р“РћРўРћР’Р«Р™ РљР›РР•РќРў
+            МАССОВЫЙ ТРАФИК VS ГОТОВЫЙ КЛИЕНТ
           </h2>
 
           <div style={{ display: "flex", gap: 40, maxWidth: 1200, width: "100%" }}>
@@ -242,10 +242,10 @@ export const HookScene: React.FC = () => {
                 GOOGLE SEARCH (SEO)
               </div>
               <div style={{ fontSize: 40, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                РћРіСЂРѕРјРЅС‹Р№ РѕР±СЉС‘Рј
+                Огромный объём
               </div>
               <div style={{ fontSize: 20, color: "#94a3b8", lineHeight: 1.4 }}>
-                РњРёР»Р»РёРѕРЅС‹ Р·Р°РїСЂРѕСЃРѕРІ, СЃСЂР°РІРЅРµРЅРёРµ РІР°СЂРёР°РЅС‚РѕРІ, РґР»РёС‚РµР»СЊРЅС‹Р№ СЃРµСЂС„РёРЅРі РїРѕ СЃСЃС‹Р»РєР°Рј.
+                Миллионы запросов, сравнение вариантов, длительный серфинг по ссылкам.
               </div>
             </div>
 
@@ -263,10 +263,10 @@ export const HookScene: React.FC = () => {
                 CHATGPT & AI (GEO)
               </div>
               <div style={{ fontSize: 40, fontWeight: 900, color: "#c084fc", marginBottom: 12 }}>
-                Р’С‹СЃРѕРєР°СЏ РєРѕРЅРІРµСЂСЃРёСЏ
+                Высокая конверсия
               </div>
               <div style={{ fontSize: 20, color: "#cbd5e1", lineHeight: 1.4 }}>
-                РўРѕС‡РµС‡РЅС‹Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»Рё СЃ РїСЂСЏРјС‹Рј РЅР°РјРµСЂРµРЅРёРµРј Р±СЂРѕРЅРёСЂРѕРІР°РЅРёСЏ Рё РїРѕРєСѓРїРєРё.
+                Точечные пользователи с прямым намерением бронирования и покупки.
               </div>
             </div>
           </div>
@@ -300,7 +300,7 @@ export const HookScene: React.FC = () => {
               marginBottom: 16,
             }}
           >
-            Р Р•РђР›Р¬РќРђРЇ Р’РћР РћРќРљРђ Р—РђРџР РћРЎРћР’
+            РЕАЛЬНАЯ ВОРОНКА ЗАПРОСОВ
           </div>
 
           <h2
@@ -312,7 +312,7 @@ export const HookScene: React.FC = () => {
               margin: "0 0 45px",
             }}
           >
-            Р“Р›РђР’РќР«Р™ РўР Р®Рљ Р’ РћРўР§РЃРўРђРҐ: 3 Р РђР—РќР«РҐ Р­РўРђРџРђ
+            ГЛАВНЫЙ ТРЮК В ОТЧЁТАХ: 3 РАЗНЫХ ЭТАПА
           </h2>
 
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
@@ -326,16 +326,16 @@ export const HookScene: React.FC = () => {
                 width: 320,
               }}
             >
-              <div style={{ fontSize: 32, marginBottom: 8 }}>рџ¤–</div>
+              <div style={{ fontSize: 32, marginBottom: 8 }}>🤖</div>
               <div style={{ fontSize: 26, fontWeight: 900, color: "#ef4444", marginBottom: 8 }}>
-                1. РљР РђРЈР›Р•Р 
+                1. КРАУЛЕР
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.35 }}>
-                РЎРєР°РЅРёСЂСѓРµС‚ СЃС‚СЂР°РЅРёС†Сѓ РґР»СЏ РёРЅРґРµРєСЃР° Рё РѕР±СѓС‡РµРЅРёСЏ РјРѕРґРµР»РµР№
+                Сканирует страницу для индекса и обучения моделей
               </div>
             </div>
 
-            <div style={{ fontSize: 36, color: "#64748b", fontWeight: 900 }}>вћ”</div>
+            <div style={{ fontSize: 36, color: "#64748b", fontWeight: 900 }}>➔</div>
 
             <div
               style={{
@@ -347,16 +347,16 @@ export const HookScene: React.FC = () => {
                 width: 320,
               }}
             >
-              <div style={{ fontSize: 32, marginBottom: 8 }}>рџ‘†</div>
+              <div style={{ fontSize: 32, marginBottom: 8 }}>👆</div>
               <div style={{ fontSize: 26, fontWeight: 900, color: "#f59e0b", marginBottom: 8 }}>
-                2. РџР•Р Р•РҐРћР”
+                2. ПЕРЕХОД
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.35 }}>
-                Р§РµР»РѕРІРµРє РїРµСЂРµС…РѕРґРёС‚ РїРѕ СЃСЃС‹Р»РєРµ-СЂРµРєРѕРјРµРЅРґР°С†РёРё РЅРµР№СЂРѕСЃРµС‚Рё
+                Человек переходит по ссылке-рекомендации нейросети
               </div>
             </div>
 
-            <div style={{ fontSize: 36, color: "#64748b", fontWeight: 900 }}>вћ”</div>
+            <div style={{ fontSize: 36, color: "#64748b", fontWeight: 900 }}>➔</div>
 
             <div
               style={{
@@ -369,12 +369,12 @@ export const HookScene: React.FC = () => {
                 boxShadow: "0 0 35px rgba(34, 197, 94, 0.25)",
               }}
             >
-              <div style={{ fontSize: 32, marginBottom: 8 }}>рџ’°</div>
+              <div style={{ fontSize: 32, marginBottom: 8 }}>💰</div>
               <div style={{ fontSize: 26, fontWeight: 900, color: "#22c55e", marginBottom: 8 }}>
-                3. РљР›РР•РќРў
+                3. КЛИЕНТ
               </div>
               <div style={{ fontSize: 16, color: "#f8fafc", lineHeight: 1.35 }}>
-                РџРёС€РµС‚ РІ WhatsApp, РѕСЃС‚Р°РІР»СЏРµС‚ Р±СЂРѕРЅСЊ, РїРѕРєСѓРїР°РµС‚
+                Пишет в WhatsApp, оставляет бронь, покупает
               </div>
             </div>
           </div>
@@ -408,7 +408,7 @@ export const HookScene: React.FC = () => {
               marginBottom: 16,
             }}
           >
-            РЎРџР•Р¦РР¤РРљРђР¦РРЇ OPENAI CRAWLERS
+            СПЕЦИФИКАЦИЯ OPENAI CRAWLERS
           </div>
 
           <h2
@@ -420,7 +420,7 @@ export const HookScene: React.FC = () => {
               margin: "0 0 36px",
             }}
           >
-            Р‘РћРўР« Р‘Р«Р’РђР®Рў Р РђР—РќР«РњР: РљРўРћ Р•РЎРўР¬ РљРўРћ?
+            БОТЫ БЫВАЮТ РАЗНЫМИ: КТО ЕСТЬ КТО?
           </h2>
 
           <div style={{ display: "flex", gap: 30, maxWidth: 1300, width: "100%" }}>
@@ -437,10 +437,10 @@ export const HookScene: React.FC = () => {
                 GPTBot
               </div>
               <div style={{ fontSize: 18, color: "#f8fafc", fontWeight: 700, marginBottom: 8 }}>
-                РћР±СѓС‡РµРЅРёРµ РјРѕРґРµР»РµР№
+                Обучение моделей
               </div>
               <div style={{ fontSize: 15, color: "#94a3b8", lineHeight: 1.4 }}>
-                РћР±С…РѕРґРёС‚ РјРёР»Р»РёРѕРЅС‹ СЃС‚СЂР°РЅРёС† РґР»СЏ РґР°С‚Р°СЃРµС‚РѕРІ LLM. Р­С‚Рѕ С‡РёСЃС‚С‹Рµ СЃРµСЂРІРµСЂРЅС‹Рµ Р·Р°РїСЂРѕСЃС‹, РЅРµ РєР»РёРµРЅС‚С‹.
+                Обходит миллионы страниц для датасетов LLM. Это чистые серверные запросы, не клиенты.
               </div>
             </div>
 
@@ -458,10 +458,10 @@ export const HookScene: React.FC = () => {
                 OAI-SearchBot
               </div>
               <div style={{ fontSize: 18, color: "#f8fafc", fontWeight: 700, marginBottom: 8 }}>
-                РџРѕРёСЃРє РІ ChatGPT Search
+                Поиск в ChatGPT Search
               </div>
               <div style={{ fontSize: 15, color: "#cbd5e1", lineHeight: 1.4 }}>
-                РРЅРґРµРєСЃРёСЂСѓРµС‚ СЃРІРµР¶РёР№ РєРѕРЅС‚РµРЅС‚ СЃРїРµС†РёР°Р»СЊРЅРѕ РґР»СЏ РіРµРЅРµСЂР°С‚РёРІРЅС‹С… РѕС‚РІРµС‚РѕРІ СЃ РёСЃС‚РѕС‡РЅРёРєР°РјРё.
+                Индексирует свежий контент специально для генеративных ответов с источниками.
               </div>
             </div>
 
@@ -479,10 +479,10 @@ export const HookScene: React.FC = () => {
                 ChatGPT-User
               </div>
               <div style={{ fontSize: 18, color: "#f8fafc", fontWeight: 700, marginBottom: 8 }}>
-                Р”РµР№СЃС‚РІРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+                Действие пользователя
               </div>
               <div style={{ fontSize: 15, color: "#cbd5e1", lineHeight: 1.4 }}>
-                РћС‚РєСЂС‹РІР°РµС‚ СЃС‚СЂР°РЅРёС†Сѓ РІ СЂРµР°Р»СЊРЅРѕРј РІСЂРµРјРµРЅРё, РєРѕРіРґР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїСЂРѕСЃРёС‚ РїСЂРѕС‡РёС‚Р°С‚СЊ СЃСЃС‹Р»РєСѓ.
+                Открывает страницу в реальном времени, когда пользователь просит прочитать ссылку.
               </div>
             </div>
           </div>

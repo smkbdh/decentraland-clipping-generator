@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img , staticFile } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
@@ -103,7 +103,7 @@ export const ArchitectureScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            Р­Р’РћР›Р®Р¦РРЇ РџРћРРЎРљРћР’РћР“Рћ РРќРўР•Р Р¤Р•Р™РЎРђ
+            ЭВОЛЮЦИЯ ПОИСКОВОГО ИНТЕРФЕЙСА
           </div>
 
           <h2
@@ -116,7 +116,7 @@ export const ArchitectureScene: React.FC = () => {
               margin: "0 0 40px",
             }}
           >
-            10 РЎРРќРРҐ РЎРЎР«Р›РћРљ VS РџР РЇРњРћР™ РћРўР’Р•Рў РЎ РРЎРўРћР§РќРРљРђРњР
+            10 СИНИХ ССЫЛОК VS ПРЯМОЙ ОТВЕТ С ИСТОЧНИКАМИ
           </h2>
 
           <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
@@ -130,13 +130,13 @@ export const ArchitectureScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 800, marginBottom: 10 }}>
-                РљР›РђРЎРЎРР§Р•РЎРљРћР• SEO
+                КЛАССИЧЕСКОЕ SEO
               </div>
               <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                Р‘РѕСЂСЊР±Р° Р·Р° РїРѕР·РёС†РёСЋ
+                Борьба за позицию
               </div>
               <div style={{ fontSize: 18, color: "#94a3b8", lineHeight: 1.4 }}>
-                РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІР±РёРІР°РµС‚ РєР»СЋС‡РµРІРёРє, РІРёРґРёС‚ СЃРїРёСЃРѕРє СЃР°Р№С‚РѕРІ Рё РєР»РёРєР°РµС‚ РїРѕ РѕС‡РµСЂРµРґРё.
+                Пользователь вбивает ключевик, видит список сайтов и кликает по очереди.
               </div>
             </div>
 
@@ -154,10 +154,10 @@ export const ArchitectureScene: React.FC = () => {
                 GENERATIVE ENGINE (GEO)
               </div>
               <div style={{ fontSize: 32, fontWeight: 900, color: "#c084fc", marginBottom: 12 }}>
-                Р‘РѕСЂСЊР±Р° Р·Р° С†РёС‚РёСЂРѕРІР°РЅРёРµ
+                Борьба за цитирование
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                РќРµР№СЂРѕСЃРµС‚СЊ Р°РіСЂРµРіРёСЂСѓРµС‚ С„Р°РєС‚С‹ РёР· Р»СѓС‡С€РёС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Рё СЃСЂР°Р·Сѓ СЂРµРєРѕРјРµРЅРґСѓРµС‚ СЂРµС€РµРЅРёРµ.
+                Нейросеть агрегирует факты из лучших источников и сразу рекомендует решение.
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@ export const ArchitectureScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            РњР•РҐРђРќРРљРђ RAG & QUERY FAN-OUT
+            МЕХАНИКА RAG & QUERY FAN-OUT
           </div>
 
           <h2
@@ -204,7 +204,7 @@ export const ArchitectureScene: React.FC = () => {
               margin: "0 0 40px",
             }}
           >
-            РўРћР§РќР«Р™ РћРўР’Р•Рў РџРћР‘Р•Р–Р”РђР•Рў РЎР•Рћ-РЁРЈРњ
+            ТОЧНЫЙ ОТВЕТ ПОБЕЖДАЕТ СЕО-ШУМ
           </h2>
 
           <div style={{ display: "flex", gap: 30, maxWidth: 1300, width: "100%" }}>
@@ -218,12 +218,12 @@ export const ArchitectureScene: React.FC = () => {
                 textAlign: "center",
               }}
             >
-              <div style={{ fontSize: 28, marginBottom: 8 }}>рџ”Ќ</div>
+              <div style={{ fontSize: 28, marginBottom: 8 }}>🔍</div>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#38bdf8", marginBottom: 8 }}>
                 Query Fan-Out
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.4 }}>
-                Google РґРµР»РёС‚ РІРѕРїСЂРѕСЃ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅР° 3вЂ“5 СЃРІСЏР·Р°РЅРЅС‹С… РїРѕРґР·Р°РїСЂРѕСЃРѕРІ РІ С„РѕРЅРѕРІРѕРј СЂРµР¶РёРјРµ.
+                Google делит вопрос пользователя на 3–5 связанных подзапросов в фоновом режиме.
               </div>
             </div>
 
@@ -237,12 +237,12 @@ export const ArchitectureScene: React.FC = () => {
                 textAlign: "center",
               }}
             >
-              <div style={{ fontSize: 28, marginBottom: 8 }}>вљЎ</div>
+              <div style={{ fontSize: 28, marginBottom: 8 }}>⚡</div>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#a855f7", marginBottom: 8 }}>
-                RAG Р’РµРєС‚РѕСЂРЅС‹Р№ РџРѕРёСЃРє
+                RAG Векторный Поиск
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.4 }}>
-                Р’ РєРѕРЅС‚РµРєСЃС‚ РїРѕРїР°РґР°СЋС‚ С„СЂР°РіРјРµРЅС‚С‹ СЃС‚СЂР°РЅРёС† СЃ С‡РµС‚РєРёРјРё СЃСѓС‰РЅРѕСЃС‚СЏРјРё: С†РµРЅС‹, РґР°С‚С‹, Р°РґСЂРµСЃР°.
+                В контекст попадают фрагменты страниц с четкими сущностями: цены, даты, адреса.
               </div>
             </div>
 
@@ -257,12 +257,12 @@ export const ArchitectureScene: React.FC = () => {
                 boxShadow: "0 0 25px rgba(34, 197, 94, 0.2)",
               }}
             >
-              <div style={{ fontSize: 28, marginBottom: 8 }}>рџЋЇ</div>
+              <div style={{ fontSize: 28, marginBottom: 8 }}>🎯</div>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#22c55e", marginBottom: 8 }}>
-                Р“РѕС‚РѕРІС‹Р№ РСЃС‚РѕС‡РЅРёРє
+                Готовый Источник
               </div>
               <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.4 }}>
-                РќРµР№СЂРѕСЃРµС‚СЊ С†РёС‚РёСЂСѓРµС‚ РёРјРµРЅРЅРѕ С‚РѕС‚ СЃР°Р№С‚, РіРґРµ РµСЃС‚СЊ РєРѕРЅРєСЂРµС‚РЅС‹Р№ Рё С‡РµСЃС‚РЅС‹Р№ РѕС‚РІРµС‚.
+                Нейросеть цитирует именно тот сайт, где есть конкретный и честный ответ.
               </div>
             </div>
           </div>
@@ -296,7 +296,7 @@ export const ArchitectureScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            РћР¤РР¦РРђР›Р¬РќРђРЇ РџРћР—РР¦РРЇ GOOGLE
+            ОФИЦИАЛЬНАЯ ПОЗИЦИЯ GOOGLE
           </div>
 
           <h2
@@ -309,7 +309,7 @@ export const ArchitectureScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            РЎРџР•Р¦РРђР›Р¬РќР«РҐ GEO-РўР•Р“РћР’ РќР• РЎРЈР©Р•РЎРўР’РЈР•Рў
+            СПЕЦИАЛЬНЫХ GEO-ТЕГОВ НЕ СУЩЕСТВУЕТ
           </h2>
 
           <div
@@ -331,10 +331,10 @@ export const ArchitectureScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 30, fontWeight: 900, color: "#38bdf8", marginBottom: 10 }}>
-                Р”РћРЎРўРЈРџР•Рќ
+                ДОСТУПЕН
               </div>
               <div style={{ fontSize: 17, color: "#cbd5e1" }}>
-                РРЅРґРµРєСЃР°С†РёСЏ, С‡РёСЃС‚С‹Р№ robots.txt, РѕС‚РєСЂС‹С‚С‹Р№ OAI-SearchBot
+                Индексация, чистый robots.txt, открытый OAI-SearchBot
               </div>
             </div>
 
@@ -349,10 +349,10 @@ export const ArchitectureScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 30, fontWeight: 900, color: "#a855f7", marginBottom: 10 }}>
-                РџРћРќРЇРўР•Рќ
+                ПОНЯТЕН
               </div>
               <div style={{ fontSize: 17, color: "#cbd5e1" }}>
-                Р›РѕРіРёС‡РЅР°СЏ РёРµСЂР°СЂС…РёСЏ, РјРёРєСЂРѕСЂР°Р·РјРµС‚РєР° Schema.org, СЃРµРјР°РЅС‚РёРєР°
+                Логичная иерархия, микроразметка Schema.org, семантика
               </div>
             </div>
 
@@ -367,10 +367,10 @@ export const ArchitectureScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 30, fontWeight: 900, color: "#22c55e", marginBottom: 10 }}>
-                РџРћР›Р•Р—Р•Рќ
+                ПОЛЕЗЕН
               </div>
               <div style={{ fontSize: 17, color: "#cbd5e1" }}>
-                РўРѕС‡РЅС‹Рµ СѓСЃР»РѕРІРёСЏ, СЂРµР°Р»СЊРЅС‹Рµ С„РѕС‚Рѕ, С†РµРЅС‹ Рё СЂРµРіР»Р°РјРµРЅС‚С‹
+                Точные условия, реальные фото, цены и регламенты
               </div>
             </div>
           </div>

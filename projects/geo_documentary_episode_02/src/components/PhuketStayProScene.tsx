@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { useCurrentFrame, useVideoConfig, interpolate, Sequence, Img , staticFile } from "remotion";
 import { Video } from "@remotion/media";
 import { BackgroundGrid } from "./BackgroundGrid";
@@ -81,7 +81,7 @@ export const PhuketStayProScene: React.FC = () => {
               marginBottom: 16,
             }}
           >
-            РљР•Р™РЎ 02 В· PHUKETSTAYPRO В· РЎР’Р•Р–РР™ Р›РР” РЎР•Р“РћР”РќРЇ
+            КЕЙС 02 · PHUKETSTAYPRO · СВЕЖИЙ ЛИД СЕГОДНЯ
           </div>
 
           <h2
@@ -94,7 +94,7 @@ export const PhuketStayProScene: React.FC = () => {
               margin: "0 0 24px",
             }}
           >
-            РљР›РР•РќРў РР— РЎРРќР“РђРџРЈР Рђ РЎ Р‘Р®Р”Р–Р•РўРћРњ 4 РњР›Рќ Р‘РђРў (РР— CHATGPT)
+            КЛИЕНТ ИЗ СИНГАПУРА С БЮДЖЕТОМ 4 МЛН БАТ (ИЗ CHATGPT)
           </h2>
 
           <div style={{ display: "flex", gap: 32, alignItems: "center", maxWidth: 1400 }}>
@@ -125,7 +125,7 @@ export const PhuketStayProScene: React.FC = () => {
                   fontWeight: 800,
                 }}
               >
-                Р–РР’РћР™ РЎРљР РРќРЁРћРў Р‘РћРўРђ
+                ЖИВОЙ СКРИНШОТ БОТА
               </div>
               
             </div>
@@ -140,7 +140,7 @@ export const PhuketStayProScene: React.FC = () => {
                   padding: "16px 20px",
                 }}
               >
-                <div style={{ fontSize: 13, color: "#f472b6", fontWeight: 800 }}>РћР‘РЄР•РљРў Р Р‘Р®Р”Р–Р•Рў</div>
+                <div style={{ fontSize: 13, color: "#f472b6", fontWeight: 800 }}>ОБЪЕКТ И БЮДЖЕТ</div>
                 <div style={{ fontSize: 20, fontWeight: 900, color: "#ffffff" }}>The Title ViVi Bang Tao</div>
                 <div style={{ fontSize: 16, color: "#cbd5e1" }}>4 000 000 THB (~$115 000)</div>
               </div>
@@ -153,9 +153,9 @@ export const PhuketStayProScene: React.FC = () => {
                   padding: "16px 20px",
                 }}
               >
-                <div style={{ fontSize: 13, color: "#86efac", fontWeight: 800 }}>РРЎРўРћР§РќРРљ РџР•Р Р•РҐРћР”Рђ</div>
-                <div style={{ fontSize: 20, fontWeight: 900, color: "#22c55e" }}>ai_referral В· chatgpt.com</div>
-                <div style={{ fontSize: 14, color: "#94a3b8" }}>Р РµРєРѕРјРµРЅРґР°С†РёСЏ РІ РѕС‚РІРµС‚Рµ ChatGPT</div>
+                <div style={{ fontSize: 13, color: "#86efac", fontWeight: 800 }}>ИСТОЧНИК ПЕРЕХОДА</div>
+                <div style={{ fontSize: 20, fontWeight: 900, color: "#22c55e" }}>ai_referral · chatgpt.com</div>
+                <div style={{ fontSize: 14, color: "#94a3b8" }}>Рекомендация в ответе ChatGPT</div>
               </div>
 
               <div
@@ -166,9 +166,9 @@ export const PhuketStayProScene: React.FC = () => {
                   padding: "16px 20px",
                 }}
               >
-                <div style={{ fontSize: 13, color: "#38bdf8", fontWeight: 800 }}>Р Р•РђРљР¦РРЇ РљРћРњРђРќР”Р«</div>
-                <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>Р”РёР°Р»РѕРі Р·Р° 6 РјРёРЅСѓС‚</div>
-                <div style={{ fontSize: 14, color: "#cbd5e1" }}>РћС‚РїСЂР°РІРєР° PDF Р±СЂРѕС€СЋСЂС‹ РІ WhatsApp</div>
+                <div style={{ fontSize: 13, color: "#38bdf8", fontWeight: 800 }}>РЕАКЦИЯ КОМАНДЫ</div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>Диалог за 6 минут</div>
+                <div style={{ fontSize: 14, color: "#cbd5e1" }}>Отправка PDF брошюры в WhatsApp</div>
               </div>
             </div>
 
@@ -199,7 +199,7 @@ export const PhuketStayProScene: React.FC = () => {
                   fontWeight: 800,
                 }}
               >
-                Р Р•РђР›Р¬РќР«Р™ Р”РРђР›РћР“ WHATSAPP
+                РЕАЛЬНЫЙ ДИАЛОГ WHATSAPP
               </div>
               
             </div>
@@ -234,7 +234,7 @@ export const PhuketStayProScene: React.FC = () => {
               marginBottom: 20,
             }}
           >
-            РЎРРЎРўР•РњРќР«Р™ Р­Р¤Р¤Р•РљРў: РќР•Р”Р’РР–РРњРћРЎРўР¬ Р РЁРљРћР›Рђ CHATTERBOX
+            СИСТЕМНЫЙ ЭФФЕКТ: НЕДВИЖИМОСТЬ И ШКОЛА CHATTERBOX
           </div>
 
           <h2
@@ -247,7 +247,7 @@ export const PhuketStayProScene: React.FC = () => {
               margin: "0 0 35px",
             }}
           >
-            РћР‘РЄР•РљРўР« Р’ РЈРџР РђР’Р›Р•РќРР Р Р—РђРЇР’РљР РЎ РљРђР Рў
+            ОБЪЕКТЫ В УПРАВЛЕНИИ И ЗАЯВКИ С КАРТ
           </h2>
 
           <div style={{ display: "flex", gap: 36, maxWidth: 1200, width: "100%" }}>
@@ -261,13 +261,13 @@ export const PhuketStayProScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#38bdf8", fontWeight: 800, marginBottom: 10 }}>
-                PHUKETSTAYPRO: РћР‘РЄР•РљРў
+                PHUKETSTAYPRO: ОБЪЕКТ
               </div>
               <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                РљРІР°СЂС‚РёСЂР° РЅР° РљР°РјР°Р»Рµ
+                Квартира на Камале
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                РЎРѕР±СЃС‚РІРµРЅРЅРёРє РїСЂРёС€РµР» С‡РµСЂРµР· РїРѕРёСЃРєРѕРІСѓСЋ СЃРёСЃС‚РµРјСѓ СЃР°Р№С‚Р° Рё РѕС‚РґР°Р» РѕР±СЉРµРєС‚ РІ СѓРїСЂР°РІР»РµРЅРёРµ РєРѕРјР°РЅРґРµ. Р­С‚Рѕ СЂРµР°Р»СЊРЅР°СЏ СЂР°Р±РѕС‚Р° Рё РїСЂРёР±С‹Р»СЊ.
+                Собственник пришел через поисковую систему сайта и отдал объект в управление команде. Это реальная работа и прибыль.
               </div>
             </div>
 
@@ -281,13 +281,13 @@ export const PhuketStayProScene: React.FC = () => {
               }}
             >
               <div style={{ fontSize: 18, color: "#f59e0b", fontWeight: 800, marginBottom: 10 }}>
-                РЇР—Р«РљРћР’РђРЇ РЁРљРћР›Рђ CHATTERBOX
+                ЯЗЫКОВАЯ ШКОЛА CHATTERBOX
               </div>
               <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                РџРѕС‚РѕРє Р»РёРґРѕРІ СЃ РєР°СЂС‚ Рё SEO
+                Поток лидов с карт и SEO
               </div>
               <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                РЇРЅРґРµРєСЃ, 2Р“РРЎ Рё Google РїСЂРёРІРѕРґСЏС‚ СѓС‡РµРЅРёРєРѕРІ РЅР° Р±РµСЃРїР»Р°С‚РЅС‹Р№ РїСЂРѕР±РЅС‹Р№ СѓСЂРѕРє Рё С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ. SEO РєРѕСЂРјРёС‚ РІСЃСЋ СЌС‚Сѓ СЌРєРѕСЃРёСЃС‚РµРјСѓ.
+                Яндекс, 2ГИС и Google приводят учеников на бесплатный пробный урок и тестирование. SEO кормит всю эту экосистему.
               </div>
             </div>
           </div>
