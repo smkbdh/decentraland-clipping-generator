@@ -274,49 +274,55 @@ export const PhuketStayProScene: React.FC = () => {
               background: "linear-gradient(to top, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.35) 45%, transparent 75%)",
             }}
           />
-          {/* Vox/Netflix Lower-Third Card */}
+          {/* Vox/Netflix Lower-Third Glass Card (Positioned safely above TechGlossaryFootnote dock) */}
           <div
             style={{
               position: "absolute",
-              bottom: 65,
-              left: 80,
-              maxWidth: 1300,
+              bottom: 135,
+              left: 70,
+              maxWidth: 1180,
               zIndex: 20,
+              backgroundColor: "rgba(10, 15, 29, 0.92)",
+              backdropFilter: "blur(16px)",
+              border: "1.5px solid rgba(255, 255, 255, 0.12)",
+              borderRadius: 24,
+              padding: "24px 32px",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.85)",
             }}
           >
-            <div style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "center" }}>
+            <div style={{ display: "flex", gap: 14, marginBottom: 12, alignItems: "center" }}>
               <div
                 style={{
-                  padding: "8px 22px",
-                  borderRadius: 24,
+                  padding: "6px 18px",
+                  borderRadius: 20,
                   backgroundColor: "rgba(16, 185, 129, 0.95)",
                   color: "#ffffff",
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: 900,
                   letterSpacing: 1,
-                  boxShadow: "0 0 25px rgba(16, 185, 129, 0.6)",
+                  boxShadow: "0 0 20px rgba(16, 185, 129, 0.5)",
                 }}
               >
                 📍 РЕАЛЬНЫЙ ОБЪЕКТ В УПРАВЛЕНИИ · КАМАЛА
               </div>
               <div
                 style={{
-                  padding: "8px 22px",
-                  borderRadius: 24,
+                  padding: "6px 18px",
+                  borderRadius: 20,
                   backgroundColor: "rgba(15, 23, 42, 0.92)",
                   border: "1.5px solid rgba(56, 189, 248, 0.6)",
                   color: "#38bdf8",
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: 800,
                 }}
               >
                 phuketstaypro.com/en/property/oceana-kamala-a76
               </div>
             </div>
-            <h2 style={{ fontSize: 62, fontWeight: 900, color: "#ffffff", margin: "0 0 12px", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: 50, fontWeight: 900, color: "#ffffff", margin: "0 0 10px", lineHeight: 1.1 }}>
               OCEANA RESIDENCE KAMALA · A76
             </h2>
-            <div style={{ fontSize: 26, color: "#f1f5f9", fontWeight: 700, lineHeight: 1.4 }}>
+            <div style={{ fontSize: 24, color: "#f1f5f9", fontWeight: 700, lineHeight: 1.4 }}>
               Собственник нашел сайт в поиске и отдал квартиру в доверительное управление команде. <br />
               <span style={{ color: "#34d399", fontWeight: 900 }}>➔ Реальный объект и прибыль, а не просто клики или краулеры в логах.</span>
             </div>
@@ -346,35 +352,42 @@ export const PhuketStayProScene: React.FC = () => {
               background: "linear-gradient(to top, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.35) 45%, transparent 75%)",
             }}
           />
+          {/* Vox/Netflix Lower-Third Glass Card (Positioned safely above TechGlossaryFootnote dock) */}
           <div
             style={{
               position: "absolute",
-              bottom: 65,
-              left: 80,
-              maxWidth: 1300,
+              bottom: 135,
+              left: 70,
+              maxWidth: 1180,
               zIndex: 20,
+              backgroundColor: "rgba(10, 15, 29, 0.92)",
+              backdropFilter: "blur(16px)",
+              border: "1.5px solid rgba(255, 255, 255, 0.12)",
+              borderRadius: 24,
+              padding: "24px 32px",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.85)",
             }}
           >
-            <div style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "center" }}>
+            <div style={{ display: "flex", gap: 14, marginBottom: 12, alignItems: "center" }}>
               <div
                 style={{
-                  padding: "8px 22px",
-                  borderRadius: 24,
+                  padding: "6px 18px",
+                  borderRadius: 20,
                   backgroundColor: "rgba(245, 158, 11, 0.95)",
                   color: "#ffffff",
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: 900,
                   letterSpacing: 1,
-                  boxShadow: "0 0 25px rgba(245, 158, 11, 0.6)",
+                  boxShadow: "0 0 20px rgba(245, 158, 11, 0.5)",
                 }}
               >
                 💎 ДОГОВОР ДОВЕРИТЕЛЬНОГО УПРАВЛЕНИЯ
               </div>
             </div>
-            <h2 style={{ fontSize: 62, fontWeight: 900, color: "#ffffff", margin: "0 0 12px", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: 50, fontWeight: 900, color: "#ffffff", margin: "0 0 10px", lineHeight: 1.1 }}>
               РЕЗУЛЬТАТ, КОТОРЫЙ ВАЖНЕЕ ЛЮБЫХ ГРАФИКОВ
             </h2>
-            <div style={{ fontSize: 26, color: "#f1f5f9", fontWeight: 700, lineHeight: 1.4 }}>
+            <div style={{ fontSize: 24, color: "#f1f5f9", fontWeight: 700, lineHeight: 1.4 }}>
               Это собственник, объект и новая работа для команды. <br />
               <span style={{ color: "#38bdf8", fontWeight: 900 }}>➔ Сайты строятся не ради красивой SEO-таблички, а ради сделок, которые меняют бизнес.</span>
             </div>

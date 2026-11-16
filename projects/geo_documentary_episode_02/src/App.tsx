@@ -71,6 +71,7 @@ export default function App() {
   // Perfectly aligned with key graphic pops and metric reveals
   const microClickFrames = [
     sHook + Math.round(7.2 * fps), // Hook 3 real cases appear
+    sHook + Math.round(21.8 * fps), // Loud headline: 145M Sessions pop
     sBen + Math.round(28.0 * fps), // Metrics 38 WhatsApp & 6 Bookings pop in
     sBen + Math.round(38.5 * fps), // Telegram bot screenshot spotlight zoom
     sPhuket + Math.round(58.3 * fps), // Chatterbox site mockup opens
@@ -80,6 +81,7 @@ export default function App() {
 
   const microWhooshFrames = [
     sHook + Math.round(0.1 * fps), // Hook opening question
+    sHook + Math.round(25.5 * fps), // Reality vs illusion contrast stamp
     sArch + Math.round(36.0 * fps), // Query fan-out branches animate
     sRules + Math.round(4.0 * fps), // Rule 1 appears
     sOutro + Math.round(0.5 * fps), // Outro conclusion & QR code

@@ -97,8 +97,8 @@ export const HookScene: React.FC = () => {
 
       <BackgroundGrid accentColor="#38bdf8" />
 
-      {/* SUB-PHASE 1 (0 - 24s): Provocative Question Hook & 3-Case Micro-Teaser */}
-      {sec < 24 && (
+      {/* SUB-PHASE 1 (0 - 21.6s): Provocative Question Hook & 3-Case Micro-Teaser */}
+      {sec < 21.6 && (
         <div
           style={{
             position: "absolute",
@@ -195,7 +195,7 @@ export const HookScene: React.FC = () => {
               </div>
             </div>
           ) : (
-            /* Sub-phase 1B (7.2s - 24s): 3 Real Client Cases Micro-Teaser */
+            /* Sub-phase 1B (7.2s - 21.6s): 3 Real Client Cases Micro-Teaser */
             <div
               style={{
                 display: "flex",
@@ -365,8 +365,8 @@ export const HookScene: React.FC = () => {
         </div>
       )}
 
-      {/* SUB-PHASE 2 (24 - 48s): Traffic vs Motivated Clients */}
-      {sec >= 24 && sec < 48 && (
+      {/* SUB-PHASE 2 (21.6s - 45.0s): Loud Headline 145M Sessions & Real High-Intent Customers */}
+      {sec >= 21.6 && sec < 45.0 && (
         <div
           style={{
             position: "absolute",
@@ -375,87 +375,313 @@ export const HookScene: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            padding: "0 80px 100px",
+            padding: "0 70px 90px",
             zIndex: 10,
           }}
         >
-          <div
-            style={{
-              padding: "6px 20px",
-              borderRadius: 30,
-              backgroundColor: "rgba(245, 158, 11, 0.15)",
-              border: "1px solid rgba(245, 158, 11, 0.4)",
-              color: "#f59e0b",
-              fontSize: 16,
-              fontWeight: 800,
-              letterSpacing: 2,
-              marginBottom: 24,
-            }}
-          >
-            ФУНДАМЕНТАЛЬНАЯ РАЗНИЦА
-          </div>
-
-          <h2
-            style={{
-              fontSize: 68,
-              fontWeight: 900,
-              color: "#f8fafc",
-              textAlign: "center",
-              lineHeight: 1.1,
-              margin: "0 0 40px",
-              letterSpacing: -0.5,
-            }}
-          >
-            МАССОВЫЙ ТРАФИК VS ГОТОВЫЙ КЛИЕНТ
-          </h2>
-
-          <div style={{ display: "flex", gap: 40, maxWidth: 1200, width: "100%" }}>
+          {/* 2A (21.6s - 25.5s): Breaking Media Headline - 145,000,000 Sessions */}
+          {sec < 25.5 && (
             <div
               style={{
-                flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
-                border: "1px solid rgba(255, 255, 255, 0.15)",
-                borderRadius: 24,
-                padding: "36px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                maxWidth: 1450,
+                width: "100%",
+                animation: "fadeIn 0.3s ease-out",
               }}
             >
-              <div style={{ fontSize: 20, color: "#38bdf8", fontWeight: 800, marginBottom: 10 }}>
-                GOOGLE SEARCH (SEO)
+              <div
+                style={{
+                  padding: "8px 24px",
+                  borderRadius: 30,
+                  backgroundColor: "rgba(239, 68, 68, 0.2)",
+                  border: "1.5px solid rgba(239, 68, 68, 0.6)",
+                  color: "#f87171",
+                  fontSize: 18,
+                  fontWeight: 900,
+                  letterSpacing: 2,
+                  marginBottom: 16,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                }}
+              >
+                <span>⚡</span> ГРОМКИЙ ЗАГОЛОВОК ИССЛЕДОВАНИЯ · ХАЙП В СМИ
               </div>
-              <div style={{ fontSize: 44, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
-                Огромный объём
+
+              {/* Giant 145,000,000 Headline Callout */}
+              <div
+                style={{
+                  fontSize: 92,
+                  fontWeight: 900,
+                  letterSpacing: -2,
+                  color: "#ffffff",
+                  lineHeight: 1,
+                  margin: "0 0 16px",
+                  textShadow: "0 0 40px rgba(239, 68, 68, 0.4)",
+                }}
+              >
+                145 000 000 <span style={{ color: "#ef4444" }}>СЕССИЙ</span>
               </div>
-              <div style={{ fontSize: 24, color: "#94a3b8", lineHeight: 1.45 }}>
-                Миллионы запросов, сравнение вариантов, длительный серфинг по ссылкам.
+
+              {/* Media Breaking Banner Style */}
+              <div
+                style={{
+                  backgroundColor: "rgba(15, 23, 42, 0.95)",
+                  border: "2.5px solid #ef4444",
+                  borderRadius: 24,
+                  padding: "30px 48px",
+                  textAlign: "center",
+                  maxWidth: 1250,
+                  boxShadow: "0 25px 60px rgba(0,0,0,0.85), 0 0 40px rgba(239, 68, 68, 0.3)",
+                }}
+              >
+                <div style={{ fontSize: 44, fontWeight: 900, color: "#f8fafc", lineHeight: 1.2, marginBottom: 16 }}>
+                  «ИЗ CHATGPT ПРИХОДИТ МЕНЕЕ 1% ТРАФИКА: GEO БЕСПОЛЕЗНО?»
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: 30,
+                    alignItems: "center",
+                    marginTop: 18,
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: "8px 20px",
+                      borderRadius: 14,
+                      backgroundColor: "rgba(56, 189, 248, 0.15)",
+                      border: "1px solid #38bdf8",
+                      color: "#38bdf8",
+                      fontSize: 22,
+                      fontWeight: 800,
+                    }}
+                  >
+                    Google: 99.27% трафика
+                  </div>
+                  <div style={{ fontSize: 26, color: "#64748b" }}>vs</div>
+                  <div
+                    style={{
+                      padding: "8px 20px",
+                      borderRadius: 14,
+                      backgroundColor: "rgba(239, 68, 68, 0.2)",
+                      border: "1px solid #ef4444",
+                      color: "#f87171",
+                      fontSize: 22,
+                      fontWeight: 900,
+                    }}
+                  >
+                    AI-поиск: 0.73% трафика
+                  </div>
+                </div>
               </div>
             </div>
+          )}
 
+          {/* 2B (25.5s - 32.2s): Reality of Conversions vs Illusion of Traffic */}
+          {sec >= 25.5 && sec < 32.2 && (
             <div
               style={{
-                flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.9)",
-                border: "2px solid rgba(168, 85, 247, 0.5)",
-                borderRadius: 24,
-                padding: "36px",
-                boxShadow: "0 0 35px rgba(168, 85, 247, 0.25)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                maxWidth: 1450,
+                width: "100%",
               }}
             >
-              <div style={{ fontSize: 20, color: "#c084fc", fontWeight: 800, marginBottom: 10 }}>
-                CHATGPT & AI (GEO)
+              <div
+                style={{
+                  padding: "8px 24px",
+                  borderRadius: 30,
+                  backgroundColor: "rgba(245, 158, 11, 0.2)",
+                  border: "1.5px solid rgba(245, 158, 11, 0.6)",
+                  color: "#fbbf24",
+                  fontSize: 18,
+                  fontWeight: 900,
+                  letterSpacing: 2,
+                  marginBottom: 16,
+                }}
+              >
+                РЕАЛЬНОСТЬ КОНВЕРСИЙ VS ИЛЛЮЗИЯ ТРАФИКА
               </div>
-              <div style={{ fontSize: 44, fontWeight: 900, color: "#c084fc", marginBottom: 12 }}>
-                Высокая конверсия
-              </div>
-              <div style={{ fontSize: 24, color: "#cbd5e1", lineHeight: 1.45 }}>
-                Точечные пользователи с прямым намерением бронирования и покупки.
+
+              <h2
+                style={{
+                  fontSize: 54,
+                  fontWeight: 900,
+                  color: "#f8fafc",
+                  textAlign: "center",
+                  lineHeight: 1.12,
+                  margin: "0 0 26px",
+                }}
+              >
+                ОШИБКА АНАЛИТИКОВ: СМОТРЕТЬ НА ОБЪЕМ КЛИКОВ, А НЕ НА СДЕЛКИ
+              </h2>
+
+              <div style={{ display: "flex", gap: 36, width: "100%", maxWidth: 1300 }}>
+                {/* Google Box */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(15, 23, 42, 0.94)",
+                    border: "2px solid rgba(56, 189, 248, 0.5)",
+                    borderRadius: 24,
+                    padding: "32px 36px",
+                    boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+                  }}
+                >
+                  <div style={{ fontSize: 18, color: "#38bdf8", fontWeight: 900, marginBottom: 8 }}>
+                    GOOGLE ПОИСК (99.27%)
+                  </div>
+                  <div style={{ fontSize: 34, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
+                    Огромный шум и серфинг
+                  </div>
+                  <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.45 }}>
+                    Миллионы людей кликают по синим ссылкам, читают общие статьи, собирают рефераты и закрывают вкладки без покупок.
+                  </div>
+                </div>
+
+                {/* ChatGPT Box */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(15, 23, 42, 0.94)",
+                    border: "2.5px solid #22c55e",
+                    borderRadius: 24,
+                    padding: "32px 36px",
+                    boxShadow: "0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(34, 197, 94, 0.25)",
+                  }}
+                >
+                  <div style={{ fontSize: 18, color: "#4ade80", fontWeight: 900, marginBottom: 8 }}>
+                    CHATGPT & GEO (0.73%)
+                  </div>
+                  <div style={{ fontSize: 34, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
+                    Сформированная потребность
+                  </div>
+                  <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.45 }}>
+                    Микро-поток, но каждый перешедший уже уточнил параметры, выбрал авто или квартиру и готов сразу писать в WhatsApp.
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
+
+          {/* 2C (32.2s - 45.0s): High-Intent Customers Showcase */}
+          {sec >= 32.2 && (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                maxWidth: 1450,
+                width: "100%",
+              }}
+            >
+              <div
+                style={{
+                  padding: "8px 24px",
+                  borderRadius: 30,
+                  backgroundColor: "rgba(56, 189, 248, 0.2)",
+                  border: "1.5px solid rgba(56, 189, 248, 0.6)",
+                  color: "#38bdf8",
+                  fontSize: 18,
+                  fontWeight: 900,
+                  letterSpacing: 2,
+                  marginBottom: 16,
+                }}
+              >
+                🎯 HIGH-INTENT: ВЫСОКОТОЧНЫЙ СПРОС
+              </div>
+
+              <h2
+                style={{
+                  fontSize: 54,
+                  fontWeight: 900,
+                  color: "#f8fafc",
+                  textAlign: "center",
+                  lineHeight: 1.12,
+                  margin: "0 0 26px",
+                }}
+              >
+                МАЛЕНЬКИЙ ПОТОК ПРИВОДИТ САМЫХ ПЛАТЕЖЕСПОСОБНЫХ КЛИЕНТОВ
+              </h2>
+
+              <div style={{ display: "flex", gap: 36, width: "100%", maxWidth: 1300 }}>
+                {/* Generic Query */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(15, 23, 42, 0.94)",
+                    border: "1.5px solid rgba(239, 68, 68, 0.4)",
+                    borderRadius: 24,
+                    padding: "30px 32px",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#f87171", fontWeight: 800, marginBottom: 8 }}>
+                    ОБЫЧНЫЙ ПОИСКОВЫЙ ЗАПРОС (ПУСТОЙ ТРАФИК)
+                  </div>
+                  <div
+                    style={{
+                      backgroundColor: "rgba(0,0,0,0.4)",
+                      borderRadius: 14,
+                      padding: "16px 20px",
+                      fontSize: 22,
+                      color: "#94a3b8",
+                      fontStyle: "italic",
+                      marginBottom: 14,
+                      border: "1px solid rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    «какие машины в аренду на пхукете отзывы туристов форум»
+                  </div>
+                  <div style={{ fontSize: 18, color: "#64748b" }}>
+                    ➔ Читает 20 сайтов, сравнивает воду, покупка откладывается на месяцы.
+                  </div>
+                </div>
+
+                {/* AI High-Intent Query */}
+                <div
+                  style={{
+                    flex: 1.15,
+                    backgroundColor: "rgba(15, 23, 42, 0.96)",
+                    border: "2.5px solid #10b981",
+                    borderRadius: 24,
+                    padding: "30px 32px",
+                    boxShadow: "0 15px 40px rgba(0,0,0,0.6), 0 0 35px rgba(16, 185, 129, 0.25)",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#34d399", fontWeight: 900, marginBottom: 8 }}>
+                    ЦЕЛЕВОЙ ДИАЛОГ В CHATGPT (ПРЯМАЯ СДЕЛКА)
+                  </div>
+                  <div
+                    style={{
+                      backgroundColor: "rgba(16, 185, 129, 0.12)",
+                      borderRadius: 14,
+                      padding: "16px 20px",
+                      fontSize: 22,
+                      color: "#ffffff",
+                      fontWeight: 700,
+                      marginBottom: 14,
+                      border: "1px solid rgba(16, 185, 129, 0.4)",
+                    }}
+                  >
+                    «Найди Toyota Yaris на Патонге с 16 по 20 ноября с доставкой в отель до 1000฿/день»
+                  </div>
+                  <div style={{ fontSize: 19, color: "#34d399", fontWeight: 800 }}>
+                    ➔ Прямой переход по ссылке в WhatsApp и мгновенная оплата брони.
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
-      {/* SUB-PHASE 3 (48 - 74s): 3 Stages Funnel with Real Bot Documentation */}
-      {sec >= 48 && sec < 74 && (
+      {/* SUB-PHASE 3 (45 - 74s): 3 Stages Funnel with Real Bot Documentation */}
+      {sec >= 45.0 && sec < 74 && (
         <div
           style={{
             position: "absolute",
