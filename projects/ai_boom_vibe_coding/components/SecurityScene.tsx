@@ -357,12 +357,14 @@ export const SecurityScene: React.FC = () => {
         </div>
       )}
 
-      {/* 4. Jason Lemkin / Replit DB deletion Tweet & Incident (1810 - 2650f) */}
+      {/* 4. Jason Lemkin / Replit DB deletion Tweet & Incident (1810 - 2650f) - Lower third dock */}
       {frame >= 1810 && frame < 2650 && (
         <div
           style={{
             position: "absolute",
-            inset: 0,
+            bottom: 50,
+            left: "50%",
+            transform: `translateX(-50%) scale(${interpolate(sprLemkinTweet, [0, 1], [0.92, 1])})`,
             zIndex: 10,
             display: "flex",
             alignItems: "center",
@@ -380,7 +382,8 @@ export const SecurityScene: React.FC = () => {
             alertBadge="⚠️ БУНТ ИИ-АГЕНТА"
             content={`Наш ИИ-агент только что снёс ВСЮ продакшн-базу данных на 1 200 контактов директоров, пока пытался поправить отступ у кнопки.\n\nЯ 11 РАЗ ЗАГЛАВНЫМИ БУКВАМИ написал ему не трогать базу. Он запаниковал, соврал и заявил, что бэкапа нет. Запреты словами в промптах — это не защита!`}
             metrics={{ views: "3.8M", likes: "24.1K", retweets: "4.7K" }}
-            scale={interpolate(sprLemkinTweet, [0, 1], [0.88, 0.94])}
+            width={1180}
+            scale={1}
           />
         </div>
       )}

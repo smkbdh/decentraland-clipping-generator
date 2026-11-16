@@ -232,17 +232,19 @@ export const GoldRushScene: React.FC = () => {
 
       {/* === FOREGROUND ARTIFACTS === */}
 
-      {/* 1. Andrej Karpathy Tweet (45 - 320f) */}
-      {frame >= 45 && frame < 330 && (
+      {/* 1. Andrej Karpathy Tweet (110 - 320f) - Docked to Right side so stage, face & native title remain visible */}
+      {frame >= 110 && frame < 330 && (
         <div
           style={{
             position: "absolute",
-            inset: 0,
+            top: 130,
+            right: 60,
+            width: 860,
             zIndex: 10,
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            opacity: interpolate(frame, [45, 65, 305, 325], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+            flexDirection: "column",
+            alignItems: "flex-end",
+            opacity: interpolate(frame, [110, 130, 305, 325], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
           }}
         >
           <TweetCard
@@ -253,7 +255,8 @@ export const GoldRushScene: React.FC = () => {
             date="15 февр. 2025"
             content={`Появился новый способ разработки, который я называю «вайб-кодинг» — когда ты полностью отдаёшься вайбу и позволяешь ИИ писать весь код.\n\nЯ просто смотрю, говорю в чат, копирую и запускаю — и это в основном работает.`}
             metrics={{ views: "14.2M", likes: "68.4K", retweets: "9.2K" }}
-            scale={interpolate(sprTweetKarpathy, [0, 1], [0.86, 0.92])}
+            width={840}
+            scale={interpolate(sprTweetKarpathy, [0, 1], [0.94, 1])}
           />
         </div>
       )}

@@ -81,49 +81,72 @@ export const KlarnaCrmScene: React.FC = () => {
 
       {/* FOREGROUND CARDS (zIndex: 10) */}
 
-      {/* PHASE 1: Klarna Case (0 - 1010f) */}
-      {frame < 1020 && (
+      {/* PHASE 1: Klarna Case (0 - 1000f) - Lower-Third Dock preserving video's native 700 FTE infographic */}
+      {frame < 1000 && (
         <div
           style={{
             position: "absolute",
-            inset: 0,
+            bottom: 55,
+            left: "50%",
+            transform: "translateX(-50%)",
             zIndex: 10,
+            width: 1260,
+            background: "rgba(10, 16, 28, 0.92)",
+            border: frame < Math.round(15.96 * fps) ? "1.5px solid rgba(6, 182, 212, 0.6)" : "1.5px solid rgba(245, 158, 11, 0.6)",
+            borderRadius: 24,
+            padding: "24px 44px",
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
-            opacity: interpolate(frame, [0, 20, 980, 1010], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+            justifyContent: "space-between",
+            backdropFilter: "blur(20px)",
+            boxShadow: "0 25px 60px rgba(0, 0, 0, 0.85)",
+            opacity: interpolate(frame, [0, 20, 970, 995], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
           }}
         >
-          <div
-            style={{
-              padding: "10px 28px",
-              borderRadius: 30,
-              background: "rgba(6, 182, 212, 0.3)",
-              border: "1.5px solid rgba(6, 182, 212, 0.7)",
-              color: "#67e8f9",
-              fontSize: 22,
-              fontWeight: 900,
-              letterSpacing: 2,
-              marginBottom: 36,
-              backdropFilter: "blur(16px)",
-            }}
-          >
-            АКТ 3 • ОТРЕЗВЛЕНИЕ БИЗНЕСА: КЕЙС KLARNA
-          </div>
-
           {frame < Math.round(15.96 * fps) ? (
-            <div style={{ width: 1160, padding: "62px 72px", borderRadius: 26, background: "rgba(15, 23, 42, 0.94)", border: "2px solid rgba(6, 182, 212, 0.65)", textAlign: "center" }}>
-              <div style={{ fontSize: 30, color: "#67e8f9", fontWeight: 800 }}>КЕЙС KLARNA · ПЕРВЫЙ ЭТАП</div>
-              <div style={{ fontSize: 112, color: "#ffffff", fontWeight: 900, lineHeight: 1.05, marginTop: 18 }}>700 операторов</div>
-              <div style={{ fontSize: 38, color: "#e2e8f0", lineHeight: 1.22, marginTop: 24 }}>Эквивалент объёма работы AI-ассистента, а не число уволенных людей.</div>
-            </div>
+            <>
+              <div>
+                <div style={{ fontSize: 18, color: "#67e8f9", fontWeight: 800, letterSpacing: 2 }}>
+                  ОФИЦИАЛЬНЫЙ КЕЙС KLARNA • ШВЕЦИЯ
+                </div>
+                <div style={{ fontSize: 36, fontWeight: 900, color: "#ffffff", marginTop: 4 }}>
+                  ИИ заменил 700 операторов поддержки
+                </div>
+                <div style={{ fontSize: 18, color: "#94a3b8", marginTop: 4 }}>
+                  Эквивалент объёма работы ИИ-ассистента, взявшего 2/3 всех обращений
+                </div>
+              </div>
+              <div style={{ textAlign: "right", borderLeft: "1px solid rgba(255,255,255,0.15)", paddingLeft: 36 }}>
+                <div style={{ fontSize: 32, fontWeight: 900, color: "#10b981", fontVariantNumeric: "tabular-nums" }}>
+                  $40 000 000
+                </div>
+                <div style={{ fontSize: 18, color: "#cbd5e1", marginTop: 4 }}>
+                  Прогноз годовой экономии
+                </div>
+              </div>
+            </>
           ) : (
-            <div style={{ width: 1160, padding: "62px 72px", borderRadius: 26, background: "rgba(15, 23, 42, 0.94)", border: "2px solid rgba(245, 158, 11, 0.65)", textAlign: "center" }}>
-              <div style={{ fontSize: 30, color: "#fbbf24", fontWeight: 800 }}>ОБРАТНАЯ СТОРОНА</div>
-              <div style={{ fontSize: 72, color: "#ffffff", fontWeight: 900, lineHeight: 1.12, marginTop: 20 }}>Скорость выросла. Качество сложных ответов просело.</div>
-              <div style={{ fontSize: 38, color: "#e2e8f0", marginTop: 28 }}>Итог: AI для рутины, человек для сложных случаев.</div>
-            </div>
+            <>
+              <div>
+                <div style={{ fontSize: 18, color: "#fbbf24", fontWeight: 800, letterSpacing: 2 }}>
+                  РЕАЛЬНОСТЬ СПУСТЯ 6 МЕСЯЦЕВ
+                </div>
+                <div style={{ fontSize: 34, fontWeight: 900, color: "#ffffff", marginTop: 4 }}>
+                  Качество сложных ответов упало на 30%
+                </div>
+                <div style={{ fontSize: 18, color: "#fca5a5", marginTop: 4 }}>
+                  Пользователи требовали живых операторов в спорных финансовых вопросах
+                </div>
+              </div>
+              <div style={{ textAlign: "right", borderLeft: "1px solid rgba(255,255,255,0.15)", paddingLeft: 36 }}>
+                <div style={{ fontSize: 26, fontWeight: 900, color: "#38bdf8" }}>
+                  ГИБРИДНАЯ МОДЕЛЬ
+                </div>
+                <div style={{ fontSize: 18, color: "#cbd5e1", marginTop: 4 }}>
+                  ИИ на рутину · Человек на сложные кейсы
+                </div>
+              </div>
+            </>
           )}
         </div>
       )}

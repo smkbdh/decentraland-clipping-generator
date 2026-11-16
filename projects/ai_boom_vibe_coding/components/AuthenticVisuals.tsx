@@ -14,6 +14,8 @@ interface TweetCardProps {
   isAlert?: boolean;
   alertBadge?: string;
   scale?: number;
+  width?: number | string;
+  style?: React.CSSProperties;
 }
 
 export const TweetCard: React.FC<TweetCardProps> = ({
@@ -27,11 +29,13 @@ export const TweetCard: React.FC<TweetCardProps> = ({
   isAlert = false,
   alertBadge,
   scale = 1,
+  width = 1080,
+  style = {},
 }) => {
   return (
     <div
       style={{
-        width: 1080,
+        width,
         background: isAlert ? "rgba(25, 10, 15, 0.94)" : "rgba(10, 15, 26, 0.92)",
         border: `1.5px solid ${isAlert ? "rgba(239, 68, 68, 0.8)" : "rgba(56, 189, 248, 0.35)"}`,
         borderRadius: 24,
@@ -43,6 +47,7 @@ export const TweetCard: React.FC<TweetCardProps> = ({
         transform: `scale(${scale})`,
         position: "relative",
         overflow: "hidden",
+        ...style,
       }}
     >
       {/* Top Banner if Alert */}

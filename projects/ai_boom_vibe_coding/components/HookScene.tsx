@@ -364,83 +364,97 @@ export const HookScene: React.FC = () => {
         </div>
       )}
 
-      {/* 3. Massive $80,000,000 Cash Counter (780 - 1080f) */}
+      {/* 3. Massive $80,000,000 Cash Counter (780 - 1080f) - Lower Dock preserving Forbes/Maginative headlines */}
       {frame >= 780 && frame < 1080 && (
         <div
           style={{
             position: "absolute",
-            inset: 0,
+            bottom: 50,
+            left: "50%",
+            transform: `translateX(-50%) scale(${interpolate(sprMoney, [0, 1], [0.94, 1])})`,
             zIndex: 10,
+            width: 1260,
+            background: "rgba(10, 16, 28, 0.9)",
+            border: "1.5px solid rgba(16, 185, 129, 0.6)",
+            borderRadius: 24,
+            padding: "24px 44px",
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "space-between",
+            backdropFilter: "blur(20px)",
+            boxShadow: "0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.2)",
             opacity: interpolate(frame, [780, 800, 1050, 1075], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
-            transform: `scale(${interpolate(sprMoney, [0, 1], [0.92, 1])})`,
           }}
         >
-          <div
-            style={{
-              padding: "8px 24px",
-              borderRadius: 30,
-              background: "rgba(16, 185, 129, 0.25)",
-              border: "1.5px solid rgba(16, 185, 129, 0.6)",
-              color: "#34d399",
-              fontSize: 22,
-              fontWeight: 800,
-              letterSpacing: 2,
-              marginBottom: 20,
-              backdropFilter: "blur(12px)",
-            }}
-          >
-            СДЕЛКА ГОДА • ПОЛНАЯ ВЫПЛАТА НАЛИЧНЫМИ
+          <div>
+            <div style={{ fontSize: 18, color: "#34d399", fontWeight: 800, letterSpacing: 2, marginBottom: 4 }}>
+              СДЕЛКА ГОДА • ПОЛНАЯ ВЫПЛАТА НАЛИЧНЫМИ
+            </div>
+            <div
+              style={{
+                fontSize: 78,
+                fontWeight: 900,
+                color: "#10b981",
+                fontVariantNumeric: "tabular-nums",
+                textShadow: "0 0 35px rgba(16, 185, 129, 0.5)",
+                lineHeight: 1,
+              }}
+            >
+              ${base44Val}
+            </div>
           </div>
-          <div
-            style={{
-              fontSize: 92,
-              fontWeight: 900,
-              color: "#10b981",
-              fontVariantNumeric: "tabular-nums",
-              textShadow: "0 0 50px rgba(16, 185, 129, 0.5), 0 0 100px rgba(16, 185, 129, 0.2)",
-              marginBottom: 16,
-            }}
-          >
-            ${base44Val}
-          </div>
-          <div style={{ fontSize: 26, fontWeight: 700, color: "#f8fafc", textAlign: "center", maxWidth: 900, lineHeight: 1.4 }}>
-            Маор Шломо запустил сервис за полгода до продажи • Без инвесторов и платной рекламы
+          <div style={{ maxWidth: 640, textAlign: "right" }}>
+            <div style={{ fontSize: 24, fontWeight: 800, color: "#f8fafc", lineHeight: 1.3 }}>
+              Стартап Base44 куплен корпорацией Wix
+            </div>
+            <div style={{ fontSize: 18, color: "#94a3b8", marginTop: 6, lineHeight: 1.4 }}>
+              Соло-фаундер запустил сервис за полгода до продажи • Без инвесторов и платной рекламы
+            </div>
           </div>
         </div>
       )}
 
-      {/* 4. Claude 3.5 Sonnet & Cursor Zero-Code Stat (1080 - 1380f) */}
+      {/* 4. Maor Shlomo Documentary Lower-Third (1080 - 1380f) - Face is 100% visible */}
       {frame >= 1080 && frame < 1380 && (
         <div
           style={{
             position: "absolute",
-            inset: 0,
+            bottom: 55,
+            left: "50%",
+            transform: "translateX(-50%)",
             zIndex: 10,
+            width: 1260,
+            background: "rgba(10, 16, 28, 0.92)",
+            border: "1.5px solid rgba(56, 189, 248, 0.5)",
+            borderRadius: 24,
+            padding: "24px 44px",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "space-between",
+            backdropFilter: "blur(20px)",
+            boxShadow: "0 25px 60px rgba(0, 0, 0, 0.85), 0 0 30px rgba(56, 189, 248, 0.2)",
             opacity: interpolate(frame, [1080, 1100, 1350, 1375], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
           }}
         >
-          <div
-            style={{
-              background: "rgba(15, 23, 42, 0.94)",
-              border: "1.5px solid rgba(56, 189, 248, 0.5)",
-              borderRadius: 24,
-              padding: "60px 72px",
-              boxShadow: "0 30px 60px rgba(0, 0, 0, 0.8)",
-              backdropFilter: "blur(20px)",
-              width: 1160,
-              textAlign: "center",
-            }}
-          >
-            <div style={{ fontSize: 32, color: "#38bdf8", fontWeight: 800, letterSpacing: 3 }}>ТРИ МЕСЯЦА РАБОТЫ</div>
-            <div style={{ fontSize: 88, fontWeight: 900, color: "#ffffff", marginTop: 20, lineHeight: 1.05 }}>Cursor + Claude</div>
-            <div style={{ fontSize: 42, color: "#e2e8f0", marginTop: 28, lineHeight: 1.2 }}>Фронтенд-код генерировал AI</div>
+          <div>
+            <div style={{ fontSize: 18, color: "#38bdf8", fontWeight: 800, letterSpacing: 2 }}>
+              МАОР ШЛОМО · СОЛО-ФАУНДЕР BASE44
+            </div>
+            <div style={{ fontSize: 38, fontWeight: 900, color: "#ffffff", marginTop: 4, letterSpacing: 1 }}>
+              Cursor + Claude 3.5 Sonnet
+            </div>
+            <div style={{ fontSize: 20, color: "#cbd5e1", marginTop: 4 }}>
+              Весь фронтенд и бэкенд написан с помощью ИИ
+            </div>
+          </div>
+
+          <div style={{ textAlign: "right", borderLeft: "1px solid rgba(255,255,255,0.15)", paddingLeft: 36 }}>
+            <div style={{ fontSize: 28, fontWeight: 900, color: "#10b981" }}>
+              3 МЕСЯЦА ДО СДЕЛКИ
+            </div>
+            <div style={{ fontSize: 18, color: "#94a3b8", marginTop: 4 }}>
+              Заменил собой команду из 20 инженеров
+            </div>
           </div>
         </div>
       )}
