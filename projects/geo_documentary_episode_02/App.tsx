@@ -15,7 +15,7 @@ import { CornerBranding } from "./components/CornerBranding";
 export default function App() {
   const { fps } = useVideoConfig();
 
-  // Timing markers in seconds (aligned with user's voiceover)
+  // Timing markers in seconds (aligned with speech delivery)
   const tHookEnd = 100.8;
   const tResearchEnd = 184.5;
   const tArchEnd = 304.5;
@@ -106,14 +106,14 @@ export default function App() {
         </Sequence>
       ))}
 
-      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1: Neon Dreams) === */}
+      {/* === BACKGROUND MUSIC BED (FROM EPISODE 1) === */}
       <Sequence name="Music Bed: Neon Dreams" from={0} durationInFrames={fTotal} layout="none">
         <Audio src="kino:8eeba53a-7331-4dfe-bef2-add4aa5b4558" volume={0.11} loop />
       </Sequence>
 
-      {/* === MASTER VOICEOVER AUDIO (User's Voiceover) === */}
+      {/* === MASTER VOICEOVER AUDIO TRACK (Native Kino Asset) === */}
       <Sequence name="Master Voiceover" from={0} durationInFrames={fTotal} layout="none">
-        <Audio src="http://127.0.0.1:9876/ai%20seo%20geo%20cases%20aibuddah.mp3" volume={1.0} />
+        <Audio src="kino:9c9fd639-9f17-4878-bb51-348319a2bda4" volume={1.0} />
       </Sequence>
     </div>
   );
