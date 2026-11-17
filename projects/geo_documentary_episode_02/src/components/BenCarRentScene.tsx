@@ -198,6 +198,45 @@ export const BenCarRentScene: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Below 2 cards: Full-Width Results Banner (Zero Dead Space) */}
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: 1350,
+                  backgroundColor: "rgba(248, 250, 252, 0.98)",
+                  border: "1px solid rgba(226, 232, 240, 0.9)",
+                  borderTop: "4px solid #10b981",
+                  borderRadius: 22,
+                  padding: "18px 30px",
+                  marginTop: 22,
+                  boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 24,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <span style={{ fontSize: 26 }}>⚡</span>
+                  <div>
+                    <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                      ИТОГ ВНЕДРЕНИЯ GEO: ПОЛНАЯ АТРИБУЦИЯ ОТ ПОИСКА ДО КАССЫ
+                    </div>
+                    <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                      Все 100% лидов приходят с готовыми вводными и закрываются менеджером в WhatsApp за 3 минуты.
+                    </div>
+                  </div>
+                </div>
+                <div style={{ display: "flex", gap: 12 }}>
+                  <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#047857", fontSize: 14, fontWeight: 900 }}>
+                    🚗 100% занятость парка
+                  </div>
+                  <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#e0f2fe", border: "1px solid #bae6fd", color: "#0284c7", fontSize: 14, fontWeight: 900 }}>
+                    0 ₽ на рекламу
+                  </div>
+                </div>
+              </div>
             </>
           ) : (
             /* Phase 1B (9.5s - 28s / 5:10 in video): Animated Customer Journey Flowchart */
@@ -472,21 +511,21 @@ export const BenCarRentScene: React.FC = () => {
                 border: "1px solid rgba(226, 232, 240, 0.9)",
                 borderTop: "4px solid #059669",
                 borderRadius: 24,
-                padding: "36px",
+                padding: "24px 32px",
                 textAlign: "center",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
-              <div style={{ fontSize: 16, color: "#047857", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+              <div style={{ fontSize: 16, color: "#047857", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>
                 ПЕРЕХОДЫ В WHATSAPP
               </div>
-              <div style={{ fontSize: 112, fontWeight: 900, color: "#059669", letterSpacing: -2, lineHeight: 1.0, margin: "6px 0" }}>
+              <div style={{ fontSize: 96, fontWeight: 900, color: "#059669", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
                 {Math.round(interpolate(frame - 28 * fps, [0, 20], [0, 38], { extrapolateRight: "clamp" }))}
               </div>
-              <div style={{ fontSize: 24, color: "#0f172a", fontWeight: 900, marginBottom: 6 }}>
+              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 900, marginBottom: 4 }}>
                 Клиенты с меткой ChatGPT
               </div>
-              <div style={{ fontSize: 17, color: "#475569", fontWeight: 600 }}>
+              <div style={{ fontSize: 16, color: "#475569", fontWeight: 600 }}>
                 Прямой переход с сайта в мессенджер к отделу бронирования
               </div>
             </div>
@@ -498,22 +537,121 @@ export const BenCarRentScene: React.FC = () => {
                 border: "1px solid rgba(226, 232, 240, 0.9)",
                 borderTop: "4px solid #0284c7",
                 borderRadius: 24,
-                padding: "36px",
+                padding: "24px 32px",
                 textAlign: "center",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
-              <div style={{ fontSize: 16, color: "#0369a1", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+              <div style={{ fontSize: 16, color: "#0369a1", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>
                 ПРЯМЫЕ ЗАПРОСЫ НА БРОНЬ
               </div>
-              <div style={{ fontSize: 112, fontWeight: 900, color: "#0284c7", letterSpacing: -2, lineHeight: 1.0, margin: "6px 0" }}>
+              <div style={{ fontSize: 96, fontWeight: 900, color: "#0284c7", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
                 {Math.round(interpolate(frame - 28 * fps, [4, 24], [0, 6], { extrapolateRight: "clamp" }))}
               </div>
-              <div style={{ fontSize: 24, color: "#0f172a", fontWeight: 900, marginBottom: 6 }}>
+              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 900, marginBottom: 4 }}>
                 Оформленные заявки на авто
               </div>
-              <div style={{ fontSize: 17, color: "#475569", fontWeight: 600 }}>
+              <div style={{ fontSize: 16, color: "#475569", fontWeight: 600 }}>
                 С конкретными датами, моделью машины и локацией доставки
+              </div>
+            </div>
+          </div>
+
+          {/* Below 2 metric cards: Full-Width Conversion Impact Dashboard (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1350,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #10b981",
+              borderRadius: 22,
+              padding: "20px 32px",
+              marginTop: 20,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              flexDirection: "column",
+              gap: 12,
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ fontSize: 20 }}>📊</span>
+                <span style={{ fontSize: 18, fontWeight: 900, color: "#0f172a", letterSpacing: 0.5 }}>
+                  БИЗНЕС-РЕЗУЛЬТАТ ЗА 60 ДНЕЙ РАБОТЫ GEO-СИСТЕМЫ
+                </span>
+              </div>
+              <div
+                style={{
+                  padding: "4px 14px",
+                  borderRadius: 10,
+                  backgroundColor: "#dcfce7",
+                  border: "1px solid #86efac",
+                  color: "#059669",
+                  fontSize: 13,
+                  fontWeight: 900,
+                }}
+              >
+                ✓ СВЕРХВЫСОКИЙ ROI ПРИ 0 ₽ ЗАТРАТ НА КЛИКИ
+              </div>
+            </div>
+
+            <div style={{ display: "flex", gap: 18, marginTop: 2 }}>
+              <div
+                style={{
+                  flex: 1,
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: 14,
+                  padding: "12px 18px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                }}
+              >
+                <span style={{ fontSize: 26 }}>💰</span>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 900, color: "#0f172a" }}>44 обращения в WhatsApp</div>
+                  <div style={{ fontSize: 13, color: "#64748b", fontWeight: 600 }}>Прямые запросы на бронь автопарка</div>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  flex: 1,
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: 14,
+                  padding: "12px 18px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                }}
+              >
+                <span style={{ fontSize: 26 }}>🎯</span>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 900, color: "#0f172a" }}>Горячий интент</div>
+                  <div style={{ fontSize: 13, color: "#64748b", fontWeight: 600 }}>Клиент уже выбрал даты и модель в ИИ</div>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  flex: 1,
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: 14,
+                  padding: "12px 18px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                }}
+              >
+                <span style={{ fontSize: 26 }}>⚡</span>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 900, color: "#0f172a" }}>0 ₽ бюджета рекламы</div>
+                  <div style={{ fontSize: 13, color: "#64748b", fontWeight: 600 }}>Органика поисковых нейросетей</div>
+                </div>
               </div>
             </div>
           </div>

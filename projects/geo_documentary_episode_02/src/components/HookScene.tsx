@@ -583,6 +583,35 @@ export const HookScene: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Below 2 cards: Bottom Strategic Takeaway Strip (Zero Dead Space) */}
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: 1300,
+                  backgroundColor: "rgba(248, 250, 252, 0.98)",
+                  border: "1px solid rgba(226, 232, 240, 0.9)",
+                  borderTop: "3.5px solid #059669",
+                  borderRadius: 18,
+                  padding: "16px 26px",
+                  marginTop: 20,
+                  boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 20,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 22 }}>⚡</span>
+                  <div style={{ fontSize: 17, fontWeight: 900, color: "#0f172a" }}>
+                    КЛЮЧЕВОЙ ПАРАДОКС GEO: 1 целевой клиент из диалога с ИИ конвертируется быстрее и дороже, чем 100 случайных кликов в поисковике
+                  </div>
+                </div>
+                <div style={{ padding: "6px 14px", borderRadius: 10, backgroundColor: "#dcfce7", color: "#047857", fontSize: 13, fontWeight: 900, whiteSpace: "nowrap" }}>
+                  x4.5 ВЫШЕ КОНВЕРСИЯ
+                </div>
+              </div>
             </div>
           )}
 
@@ -693,6 +722,35 @@ export const HookScene: React.FC = () => {
                   <div style={{ fontSize: 19, color: "#047857", fontWeight: 900 }}>
                     ➔ Прямой переход по ссылке в WhatsApp и мгновенная оплата брони.
                   </div>
+                </div>
+              </div>
+
+              {/* Below 2 query cards: Bottom Action Strip (Zero Dead Space) */}
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: 1300,
+                  backgroundColor: "rgba(248, 250, 252, 0.98)",
+                  border: "1px solid rgba(226, 232, 240, 0.9)",
+                  borderTop: "3.5px solid #059669",
+                  borderRadius: 18,
+                  padding: "16px 26px",
+                  marginTop: 20,
+                  boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 20,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 22 }}>🎯</span>
+                  <div style={{ fontSize: 17, fontWeight: 900, color: "#0f172a" }}>
+                    ВЫСОКОТОЧНЫЙ СПРОС: Пользователь приходит в WhatsApp не «узнать подробности», а оплатить бронь на согласованных с ИИ условиях
+                  </div>
+                </div>
+                <div style={{ padding: "6px 14px", borderRadius: 10, backgroundColor: "#dcfce7", color: "#047857", fontSize: 13, fontWeight: 900, whiteSpace: "nowrap" }}>
+                  ⚡ СДЕЛКА ЗА 3 МИНУТЫ
                 </div>
               </div>
             </div>

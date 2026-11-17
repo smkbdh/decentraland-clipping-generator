@@ -621,6 +621,109 @@ export const ArchitectureScene: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Below 3 cards: Full-Width Architectural Telemetry Card (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1380,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #059669",
+              borderRadius: 22,
+              padding: "20px 32px",
+              marginTop: 22,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              flexDirection: "column",
+              gap: 12,
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ fontSize: 20 }}>⚡</span>
+                <span style={{ fontSize: 18, fontWeight: 900, color: "#0f172a", letterSpacing: 0.5 }}>
+                  ЗОЛОТОЕ ПРАВИЛО GEO ДЛЯ БИЗНЕСА
+                </span>
+              </div>
+              <div
+                style={{
+                  padding: "4px 14px",
+                  borderRadius: 10,
+                  backgroundColor: "#dcfce7",
+                  border: "1px solid #86efac",
+                  color: "#059669",
+                  fontSize: 13,
+                  fontWeight: 900,
+                }}
+              >
+                ✓ ПОДТВЕРЖДЕНО GOOGLE & OPENAI
+              </div>
+            </div>
+
+            <div style={{ fontSize: 16, color: "#334155", fontWeight: 700, lineHeight: 1.4 }}>
+              То, что удобно и понятно живому человеку — идеально считывается поисковыми нейросетями:
+            </div>
+
+            <div style={{ display: "flex", gap: 18 }}>
+              <div
+                style={{
+                  flex: 1,
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: 14,
+                  padding: "12px 18px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                }}
+              >
+                <span style={{ fontSize: 24, color: "#059669" }}>✓</span>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 900, color: "#0f172a" }}>Прозрачные цены</div>
+                  <div style={{ fontSize: 13, color: "#64748b", fontWeight: 600 }}>Без скрытых сборов и звездочек</div>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  flex: 1,
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: 14,
+                  padding: "12px 18px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                }}
+              >
+                <span style={{ fontSize: 24, color: "#0284c7" }}>✓</span>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 900, color: "#0f172a" }}>Реальные фото</div>
+                  <div style={{ fontSize: 13, color: "#64748b", fontWeight: 600 }}>Подтверждение подлинности бизнеса</div>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  flex: 1,
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: 14,
+                  padding: "12px 18px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                }}
+              >
+                <span style={{ fontSize: 24, color: "#7c3aed" }}>✓</span>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 900, color: "#0f172a" }}>Прямой контакт</div>
+                  <div style={{ fontSize: 13, color: "#64748b", fontWeight: 600 }}>Ссылка на WhatsApp / CRM-чат</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
