@@ -809,20 +809,37 @@ export const BusinessChecklistScene: React.FC = () => {
                 </div>
               </div>
 
-              {/* Action points */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 16, color: "#334155", fontWeight: 600 }}>
-                  <span style={{ color: "#059669", fontWeight: 900 }}>✓</span>
-                  <span><strong>Живой диалог в WhatsApp:</strong> клиент держит телефон в руках и ждет.</span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 16, color: "#334155", fontWeight: 600 }}>
-                  <span style={{ color: "#059669", fontWeight: 900 }}>✓</span>
-                  <span><strong>Альтернатива наготове:</strong> если модель занята — сразу предложить 2 похожих.</span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 16, color: "#334155", fontWeight: 600 }}>
-                  <span style={{ color: "#059669", fontWeight: 900 }}>✓</span>
-                  <span><strong>Мгновенная бронь:</strong> ссылка на залог без длинных опросников и анкет.</span>
-                </div>
+              {/* Animated Action points with Staggered Slide-In */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
+                {(() => {
+                  const p1 = interpolate(frame - 87.5 * fps, [0, 8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p1, transform: `translateX(${(1 - p1) * -20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #bbf7d0", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#059669", fontWeight: 900, fontSize: 20 }}>✓</span>
+                      <span style={{ fontSize: 18, color: "#0f172a", fontWeight: 700 }}><strong>Живой диалог в WhatsApp:</strong> клиент держит телефон в руках и ждет.</span>
+                    </div>
+                  );
+                })()}
+
+                {(() => {
+                  const p2 = interpolate(frame - 88.3 * fps, [0, 8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p2, transform: `translateX(${(1 - p2) * -20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #bbf7d0", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#059669", fontWeight: 900, fontSize: 20 }}>✓</span>
+                      <span style={{ fontSize: 18, color: "#0f172a", fontWeight: 700 }}><strong>Альтернатива наготове:</strong> если модель занята — сразу предложить 2 похожих.</span>
+                    </div>
+                  );
+                })()}
+
+                {(() => {
+                  const p3 = interpolate(frame - 89.1 * fps, [0, 8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p3, transform: `translateX(${(1 - p3) * -20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #bbf7d0", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#059669", fontWeight: 900, fontSize: 20 }}>✓</span>
+                      <span style={{ fontSize: 18, color: "#0f172a", fontWeight: 700 }}><strong>Мгновенная бронь:</strong> ссылка на залог без длинных опросников и анкет.</span>
+                    </div>
+                  );
+                })()}
               </div>
 
               <div style={{ marginTop: 12, fontSize: 15, color: "#059669", fontWeight: 800, textAlign: "center" }}>
@@ -863,24 +880,80 @@ export const BusinessChecklistScene: React.FC = () => {
                 </div>
               </div>
 
-              {/* Negative points */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "#64748b", fontWeight: 600 }}>
-                  <span style={{ color: "#dc2626", fontWeight: 900 }}>✗</span>
-                  <span><strong>Клиент ушел:</strong> уже написал следующему контакту из списка ChatGPT.</span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "#64748b", fontWeight: 600 }}>
-                  <span style={{ color: "#dc2626", fontWeight: 900 }}>✗</span>
-                  <span><strong>Потеря контекста:</strong> через 2 часа человек забыл, что именно искал.</span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 15, color: "#64748b", fontWeight: 600 }}>
-                  <span style={{ color: "#dc2626", fontWeight: 900 }}>✗</span>
-                  <span><strong>Обесценивание GEO:</strong> первое место в цитировании не спасает от лени.</span>
-                </div>
+              {/* Animated Negative points with Staggered Slide-In */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
+                {(() => {
+                  const p4 = interpolate(frame - 89.8 * fps, [0, 8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p4, transform: `translateX(${(1 - p4) * 20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #fecaca", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#dc2626", fontWeight: 900, fontSize: 20 }}>✗</span>
+                      <span style={{ fontSize: 18, color: "#7f1d1d", fontWeight: 700 }}><strong>Клиент ушел:</strong> уже написал следующему контакту из списка ChatGPT.</span>
+                    </div>
+                  );
+                })()}
+
+                {(() => {
+                  const p5 = interpolate(frame - 90.6 * fps, [0, 8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p5, transform: `translateX(${(1 - p5) * 20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #fecaca", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#dc2626", fontWeight: 900, fontSize: 20 }}>✗</span>
+                      <span style={{ fontSize: 18, color: "#7f1d1d", fontWeight: 700 }}><strong>Потеря контекста:</strong> через 2 часа человек забыл, что именно искал.</span>
+                    </div>
+                  );
+                })()}
+
+                {(() => {
+                  const p6 = interpolate(frame - 91.4 * fps, [0, 8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p6, transform: `translateX(${(1 - p6) * 20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #fecaca", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#dc2626", fontWeight: 900, fontSize: 20 }}>✗</span>
+                      <span style={{ fontSize: 18, color: "#7f1d1d", fontWeight: 700 }}><strong>Обесценивание GEO:</strong> первое место в цитировании не спасает от лени.</span>
+                    </div>
+                  );
+                })()}
               </div>
 
               <div style={{ marginTop: 12, fontSize: 15, color: "#b91c1c", fontWeight: 800, textAlign: "center" }}>
                 ⚠️ Можно выиграть позицию в ИИ, но проиграть клиенту на звонке
+              </div>
+            </div>
+          </div>
+
+          {/* Below 2 cards: Speed Impact Telemetry Bar (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1400,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #10b981",
+              borderRadius: 22,
+              padding: "18px 30px",
+              marginTop: 20,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 24,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ fontSize: 26 }}>⚡</span>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                  ПРАВИЛО 4: СКОРОСТЬ ОБРАБОТКИ ОПРЕДЕЛЯЕТ ВЫРУЧКУ БИЗНЕСА
+                </div>
+                <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                  Ответ за 15 минут увеличивает конверсию почти в 10 раз — нейросеть дает горячих клиентов, но закрывает их живой сервис.
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 12 }}>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#047857", fontSize: 14, fontWeight: 900 }}>
+                🟢 15 мин = 78% оплаты
+              </div>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#fee2e2", border: "1px solid #fecaca", color: "#b91c1c", fontSize: 14, fontWeight: 900 }}>
+                🔴 2 часа = 8% оплаты
               </div>
             </div>
           </div>

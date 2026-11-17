@@ -123,7 +123,7 @@ export const ResearchScene: React.FC = () => {
           </h2>
 
           {/* Metric Cards (Editorial Dossier) */}
-          <div style={{ display: "flex", gap: 36, maxWidth: 1350, width: "100%", marginBottom: 24 }}>
+          <div style={{ display: "flex", gap: 36, maxWidth: 1350, width: "100%", marginBottom: 20 }}>
             <div
               style={{
                 flex: 1,
@@ -131,18 +131,18 @@ export const ResearchScene: React.FC = () => {
                 border: "1px solid rgba(226, 232, 240, 0.9)",
                 borderTop: "4px solid #d97706",
                 borderRadius: 24,
-                padding: "26px 32px",
+                padding: "24px 34px",
                 textAlign: "center",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
-              <div style={{ fontSize: 17, color: "#92400e", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>
+              <div style={{ fontSize: 18, color: "#92400e", fontWeight: 900, marginBottom: 4, letterSpacing: 1.2 }}>
                 CHATGPT / ПОИСК GOOGLE
               </div>
-              <div style={{ fontSize: 96, fontWeight: 900, color: "#d97706", letterSpacing: -2, lineHeight: 1.0, margin: "6px 0" }}>
+              <div style={{ fontSize: 104, fontWeight: 900, color: "#d97706", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
                 {interpolate(frame, [0, 24], [0, 0.62], { extrapolateRight: "clamp" }).toFixed(2)}%
               </div>
-              <div style={{ fontSize: 20, color: "#0f172a", fontWeight: 800 }}>
+              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 900 }}>
                 Доля переходов от общего поискового объема
               </div>
             </div>
@@ -154,18 +154,18 @@ export const ResearchScene: React.FC = () => {
                 border: "1px solid rgba(226, 232, 240, 0.9)",
                 borderTop: "4px solid #0284c7",
                 borderRadius: 24,
-                padding: "26px 32px",
+                padding: "24px 34px",
                 textAlign: "center",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
-              <div style={{ fontSize: 17, color: "#0369a1", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>
+              <div style={{ fontSize: 18, color: "#0369a1", fontWeight: 900, marginBottom: 4, letterSpacing: 1.2 }}>
                 ВСЕ НЕЙРОСЕТИ ВМЕСТЕ
               </div>
-              <div style={{ fontSize: 96, fontWeight: 900, color: "#0284c7", letterSpacing: -2, lineHeight: 1.0, margin: "6px 0" }}>
+              <div style={{ fontSize: 104, fontWeight: 900, color: "#0284c7", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
                 {interpolate(frame, [6, 28], [0, 0.73], { extrapolateRight: "clamp" }).toFixed(2)}%
               </div>
-              <div style={{ fontSize: 20, color: "#0f172a", fontWeight: 800 }}>
+              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 900 }}>
                 ChatGPT + Perplexity + Claude + Copilot
               </div>
             </div>
@@ -178,25 +178,64 @@ export const ResearchScene: React.FC = () => {
               maxWidth: 1350,
               backgroundColor: "rgba(248, 250, 252, 0.98)",
               border: "1px solid rgba(226, 232, 240, 0.9)",
-              borderRadius: 20,
-              padding: "18px 28px",
+              borderRadius: 22,
+              padding: "20px 32px",
               boxShadow: "0 15px 35px rgba(0,0,0,0.5)",
             }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 16, fontWeight: 900, marginBottom: 10 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 17, fontWeight: 900, marginBottom: 12 }}>
               <span style={{ color: "#1d4ed8" }}>🌐 ОРГАНИЧЕСКИЙ ПОИСК GOOGLE: 99.27% (143 900 000+ визитов)</span>
               <span style={{ color: "#d97706" }}>⚡ AI-РЕФЕРАЛЫ: 0.73%</span>
             </div>
 
             {/* Scale Bar */}
-            <div style={{ height: 26, width: "100%", backgroundColor: "#e2e8f0", borderRadius: 13, overflow: "hidden", display: "flex", position: "relative" }}>
-              <div style={{ width: "97.5%", height: "100%", backgroundColor: "#2563eb", borderRadius: "13px 0 0 13px" }} />
-              <div style={{ width: "2.5%", height: "100%", backgroundColor: "#f59e0b", boxShadow: "0 0 15px #f59e0b", borderRadius: "0 13px 13px 0" }} />
+            <div style={{ height: 30, width: "100%", backgroundColor: "#e2e8f0", borderRadius: 15, overflow: "hidden", display: "flex", position: "relative" }}>
+              <div style={{ width: "97.5%", height: "100%", backgroundColor: "#2563eb", borderRadius: "15px 0 0 15px" }} />
+              <div style={{ width: "2.5%", height: "100%", backgroundColor: "#f59e0b", boxShadow: "0 0 15px #f59e0b", borderRadius: "0 15px 15px 0" }} />
             </div>
 
-            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14, color: "#475569", marginTop: 8, fontWeight: 700 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 15, color: "#334155", marginTop: 10, fontWeight: 700 }}>
               <span>Выборка: 100 коммерческих сайтов за 12 месяцев исследования</span>
-              <span>Классический поиск по-прежнему генерирует 99%+ кликов в интернете</span>
+              <span>Классический поиск генерирует 99%+ кликов, но AI дает клиентов с максимальным чеком</span>
+            </div>
+          </div>
+
+          {/* Below Scale Bar: Strategic Takeaway Strip (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1350,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #d97706",
+              borderRadius: 20,
+              padding: "18px 30px",
+              marginTop: 18,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 24,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ fontSize: 26 }}>📊</span>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                  СТРАТЕГИЧЕСКИЙ ПАРАДОКС: ОБЪЕМ VS КАЧЕСТВО
+                </div>
+                <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                  Google дает 99%+ кликов, но AI-рефералы приводят людей, которые уже знают, что хотят купить.
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 12 }}>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#eff6ff", border: "1px solid #bfdbfe", color: "#1d4ed8", fontSize: 14, fontWeight: 900 }}>
+                🌐 Google: 143.9M кликов
+              </div>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#fef3c7", border: "1px solid #fde68a", color: "#b45309", fontSize: 14, fontWeight: 900 }}>
+                ⚡ AI: 1.0M горячих лидов
+              </div>
             </div>
           </div>
         </div>
@@ -213,7 +252,7 @@ export const ResearchScene: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "85px 70px 110px",
+            padding: "90px 70px 110px",
             zIndex: 10,
             boxSizing: "border-box",
           }}
@@ -256,26 +295,26 @@ export const ResearchScene: React.FC = () => {
                 border: "1px solid rgba(226, 232, 240, 0.9)",
                 borderTop: "4px solid #059669",
                 borderRadius: 24,
-                padding: "24px 32px",
+                padding: "26px 34px",
                 textAlign: "center",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 4 }}>
-                <span style={{ fontSize: 16, color: "#047857", fontWeight: 900, letterSpacing: 1 }}>
+                <span style={{ fontSize: 18, color: "#047857", fontWeight: 900, letterSpacing: 1.2 }}>
                   CHATGPT CONVERSION RATE
                 </span>
-                <span style={{ fontSize: 12, color: "#047857", fontWeight: 900, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", padding: "2px 8px", borderRadius: 8 }}>
+                <span style={{ fontSize: 13, color: "#047857", fontWeight: 900, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", padding: "3px 10px", borderRadius: 8 }}>
                   ⚡ В 4.5 РАЗА ВЫШЕ
                 </span>
               </div>
-              <div style={{ fontSize: 96, fontWeight: 900, color: "#059669", letterSpacing: -3, lineHeight: 1.0, margin: "4px 0" }}>
+              <div style={{ fontSize: 104, fontWeight: 900, color: "#059669", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
                 {interpolate(frame - 29 * fps, [0, 24], [0, 13.8], { extrapolateRight: "clamp" }).toFixed(1)}%
               </div>
-              <div style={{ fontSize: 20, color: "#0f172a", fontWeight: 900, marginBottom: 6 }}>
+              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 900, marginBottom: 6 }}>
                 Готовые клиенты с высоким чеком
               </div>
-              <div style={{ fontSize: 15, color: "#475569", lineHeight: 1.35, fontWeight: 600 }}>
+              <div style={{ fontSize: 16, color: "#475569", lineHeight: 1.35, fontWeight: 600 }}>
                 Пользователь уже получил ответ от ИИ и приходит только подтвердить бронь или сделку.
               </div>
             </div>
@@ -288,21 +327,21 @@ export const ResearchScene: React.FC = () => {
                 border: "1px solid rgba(226, 232, 240, 0.9)",
                 borderTop: "4px solid #64748b",
                 borderRadius: 24,
-                padding: "24px 32px",
+                padding: "26px 34px",
                 textAlign: "center",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
-              <div style={{ fontSize: 16, color: "#64748b", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>
+              <div style={{ fontSize: 18, color: "#64748b", fontWeight: 900, marginBottom: 4, letterSpacing: 1.2 }}>
                 GOOGLE ORGANIC RATE
               </div>
-              <div style={{ fontSize: 96, fontWeight: 900, color: "#475569", letterSpacing: -3, lineHeight: 1.0, margin: "4px 0" }}>
+              <div style={{ fontSize: 104, fontWeight: 900, color: "#475569", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
                 {interpolate(frame - 29 * fps, [6, 28], [0, 3.02], { extrapolateRight: "clamp" }).toFixed(2)}%
               </div>
-              <div style={{ fontSize: 20, color: "#0f172a", fontWeight: 800, marginBottom: 6 }}>
+              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 800, marginBottom: 6 }}>
                 Классический поисковый трафик
               </div>
-              <div style={{ fontSize: 15, color: "#64748b", lineHeight: 1.35, fontWeight: 600 }}>
+              <div style={{ fontSize: 16, color: "#64748b", lineHeight: 1.35, fontWeight: 600 }}>
                 Холодные визиты: человек переходит по 5-10 вкладкам и часто закрывает сайт без действия.
               </div>
             </div>
@@ -462,7 +501,7 @@ export const ResearchScene: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "85px 70px 110px",
+            padding: "98px 70px 120px",
             zIndex: 10,
             boxSizing: "border-box",
           }}
@@ -505,24 +544,24 @@ export const ResearchScene: React.FC = () => {
                 background: "linear-gradient(180deg, rgba(24, 27, 34, 0.98) 0%, rgba(12, 14, 18, 0.98) 100%)",
                 border: "1px solid rgba(255, 255, 255, 0.1)",
                 borderTop: "1.5px solid rgba(239, 68, 68, 0.6)",
-                borderRadius: 22,
-                padding: "22px 26px",
+                borderRadius: 24,
+                padding: "24px 28px",
                 display: "flex",
                 flexDirection: "column",
                 boxShadow: "0 25px 60px rgba(0,0,0,0.75), 0 0 35px rgba(239, 68, 68, 0.2)",
               }}
             >
               {/* Terminal Title Bar */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div style={{ width: 11, height: 11, borderRadius: 6, backgroundColor: "#ef4444" }} />
-                  <div style={{ width: 11, height: 11, borderRadius: 6, backgroundColor: "#eab308" }} />
-                  <div style={{ width: 11, height: 11, borderRadius: 6, backgroundColor: "#22c55e" }} />
-                  <span style={{ fontSize: 13, color: "#94a3b8", fontFamily: "monospace", marginLeft: 6 }}>
+                  <div style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: "#ef4444" }} />
+                  <div style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: "#eab308" }} />
+                  <div style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: "#22c55e" }} />
+                  <span style={{ fontSize: 14, color: "#94a3b8", fontFamily: "monospace", marginLeft: 8 }}>
                     tail -f /var/log/nginx/access.log
                   </span>
                 </div>
-                <span style={{ fontSize: 12, color: "#f87171", fontWeight: 800, backgroundColor: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.3)", padding: "3px 8px", borderRadius: 8 }}>
+                <span style={{ fontSize: 13, color: "#f87171", fontWeight: 800, backgroundColor: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.3)", padding: "4px 10px", borderRadius: 8 }}>
                   ❌ ШУМ БОТОВ
                 </span>
               </div>
@@ -533,12 +572,12 @@ export const ResearchScene: React.FC = () => {
                   backgroundColor: "rgba(0, 0, 0, 0.55)",
                   border: "1px solid rgba(255,255,255,0.08)",
                   borderRadius: 14,
-                  padding: "14px 18px",
+                  padding: "16px 20px",
                   fontFamily: "monospace",
-                  fontSize: 14,
+                  fontSize: 16,
                   color: "#94a3b8",
                   lineHeight: 1.6,
-                  marginBottom: 14,
+                  marginBottom: 16,
                 }}
               >
                 <div>[14:22:01] GET /pricing &quot;OAI-SearchBot/1.0&quot; <span style={{ color: "#4ade80" }}>200 OK</span></div>
@@ -546,7 +585,7 @@ export const ResearchScene: React.FC = () => {
                 <div>[14:22:09] GET /robots.txt &quot;ClaudeBot/1.0&quot; <span style={{ color: "#4ade80" }}>200 OK</span></div>
               </div>
 
-              <div style={{ fontSize: 17, color: "#f87171", fontWeight: 800, lineHeight: 1.35 }}>
+              <div style={{ fontSize: 18, color: "#f87171", fontWeight: 800, lineHeight: 1.35 }}>
                 10 000 заходов поисковых роботов создают видимость бума трафика. Но боты не покупают товары.
               </div>
             </div>
@@ -558,18 +597,18 @@ export const ResearchScene: React.FC = () => {
                 backgroundColor: "rgba(248, 250, 252, 0.98)",
                 border: "1px solid rgba(226, 232, 240, 0.9)",
                 borderTop: "4px solid #059669",
-                borderRadius: 22,
-                padding: "22px 28px",
+                borderRadius: 24,
+                padding: "24px 30px",
                 display: "flex",
                 flexDirection: "column",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
-                <span style={{ fontSize: 16, fontWeight: 900, color: "#047857", letterSpacing: 1 }}>
+                <span style={{ fontSize: 17, fontWeight: 900, color: "#047857", letterSpacing: 1 }}>
                   ✅ РЕАЛЬНЫЙ РЕЗУЛЬТАТ ДЛЯ БИЗНЕСА
                 </span>
-                <span style={{ fontSize: 12, color: "#047857", fontWeight: 900, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", padding: "3px 8px", borderRadius: 8 }}>
+                <span style={{ fontSize: 13, color: "#047857", fontWeight: 900, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", padding: "4px 10px", borderRadius: 8 }}>
                   ВЫРУЧКА В КАССУ
                 </span>
               </div>
@@ -579,25 +618,25 @@ export const ResearchScene: React.FC = () => {
                   backgroundColor: "#ffffff",
                   border: "1px solid #e2e8f0",
                   borderRadius: 14,
-                  padding: "16px 20px",
+                  padding: "18px 22px",
                   display: "flex",
                   flexDirection: "column",
-                  gap: 10,
+                  gap: 12,
                   marginBottom: 14,
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 16, color: "#0f172a", fontWeight: 800 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 18, color: "#0f172a", fontWeight: 800 }}>
                   <span>🎯 1 целевой переход из ответа ChatGPT Search</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 16, color: "#0369a1", fontWeight: 800 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 18, color: "#0369a1", fontWeight: 800 }}>
                   <span>💬 Клиент сразу пишет в WhatsApp с готовым запросом</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 16, color: "#059669", fontWeight: 900 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 18, color: "#059669", fontWeight: 900 }}>
                   <span>💰 Подтвержденная бронь на 4 000 000 THB</span>
                 </div>
               </div>
 
-              <div style={{ fontSize: 17, color: "#334155", fontWeight: 700, lineHeight: 1.35 }}>
+              <div style={{ fontSize: 18, color: "#334155", fontWeight: 700, lineHeight: 1.35 }}>
                 Сквозной трекинг отсекает шум ботов и фиксирует факт поступления реальных денег.
               </div>
             </div>
@@ -611,9 +650,9 @@ export const ResearchScene: React.FC = () => {
               backgroundColor: "rgba(248, 250, 252, 0.98)",
               border: "1px solid rgba(226, 232, 240, 0.9)",
               borderLeft: "6px solid #ef4444",
-              borderRadius: 20,
-              padding: "18px 28px",
-              marginTop: 18,
+              borderRadius: 22,
+              padding: "20px 32px",
+              marginTop: 22,
               boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               display: "flex",
               alignItems: "center",
@@ -621,25 +660,25 @@ export const ResearchScene: React.FC = () => {
               gap: 28,
             }}
           >
-            <div style={{ display: "flex", flexDirection: "column", gap: 5, flex: 1 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span style={{ fontSize: 13, color: "#dc2626", fontWeight: 900, backgroundColor: "#fee2e2", border: "1px solid #fecaca", padding: "3px 10px", borderRadius: 8 }}>
+                <span style={{ fontSize: 14, color: "#dc2626", fontWeight: 900, backgroundColor: "#fee2e2", border: "1px solid #fecaca", padding: "4px 12px", borderRadius: 8 }}>
                   ⚠️ СТРАТЕГИЧЕСКИЙ ВЫВОД ИССЛЕДОВАНИЯ
                 </span>
-                <span style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                <span style={{ fontSize: 20, fontWeight: 900, color: "#0f172a" }}>
                   ПАРАДОКС МЕТРИК: 10 000 ЗАПРОСОВ КРАУЛЕРОВ = 0 ₽ В КАССЕ
                 </span>
               </div>
-              <div style={{ fontSize: 15, color: "#334155", fontWeight: 600, lineHeight: 1.4 }}>
+              <div style={{ fontSize: 16, color: "#334155", fontWeight: 600, lineHeight: 1.45 }}>
                 45% сайтов смотрят в логи сервера Nginx, видят всплеск запросов OAI-SearchBot и ошибочно празднуют успех. Но боты не платят деньги. Без сквозных UTM и настроенных Key Events в GA4 бизнес слеп к реальным продажам.
               </div>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 8, flexShrink: 0 }}>
-              <div style={{ padding: "6px 14px", borderRadius: 10, backgroundColor: "#fee2e2", border: "1px solid #fecaca", color: "#b91c1c", fontSize: 13, fontWeight: 900, textAlign: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10, flexShrink: 0 }}>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#fee2e2", border: "1px solid #fecaca", color: "#b91c1c", fontSize: 14, fontWeight: 900, textAlign: "center" }}>
                 ❌ Ошибка: считать ботов за трафик
               </div>
-              <div style={{ padding: "6px 14px", borderRadius: 10, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#15803d", fontSize: 13, fontWeight: 900, textAlign: "center" }}>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#15803d", fontSize: 14, fontWeight: 900, textAlign: "center" }}>
                 ✅ Решение: считать сделки в CRM
               </div>
             </div>

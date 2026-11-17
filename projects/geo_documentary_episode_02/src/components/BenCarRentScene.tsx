@@ -451,6 +451,45 @@ export const BenCarRentScene: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Below 4 steps: Full-Width Journey Telemetry Strip (Zero Dead Space) */}
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: 1420,
+                  backgroundColor: "rgba(248, 250, 252, 0.98)",
+                  border: "1px solid rgba(226, 232, 240, 0.9)",
+                  borderTop: "4px solid #059669",
+                  borderRadius: 22,
+                  padding: "18px 30px",
+                  marginTop: 22,
+                  boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 24,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <span style={{ fontSize: 26 }}>⚡</span>
+                  <div>
+                    <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                      МЕХАНИКА В ДЕЙСТВИИ: ПОЧЕМУ GEO КОНВЕРТИРУЕТ В 4.5 РАЗА ВЫШЕ
+                    </div>
+                    <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                      Клиент не блуждает по сайту и не заполняет формы — он переходит сразу в WhatsApp с готовым решением.
+                    </div>
+                  </div>
+                </div>
+                <div style={{ display: "flex", gap: 12 }}>
+                  <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#047857", fontSize: 14, fontWeight: 900 }}>
+                    ⚡ 3 минуты до брони
+                  </div>
+                  <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#e0f2fe", border: "1px solid #bae6fd", color: "#0284c7", fontSize: 14, fontWeight: 900 }}>
+                    100% готовность к оплате
+                  </div>
+                </div>
+              </div>
             </>
           )}
         </div>
@@ -469,7 +508,7 @@ export const BenCarRentScene: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "85px 70px 110px",
+            padding: "98px 70px 120px",
             zIndex: 10,
             boxSizing: "border-box",
           }}
@@ -511,7 +550,7 @@ export const BenCarRentScene: React.FC = () => {
                 border: "1px solid rgba(226, 232, 240, 0.9)",
                 borderTop: "4px solid #059669",
                 borderRadius: 24,
-                padding: "24px 32px",
+                padding: "26px 34px",
                 textAlign: "center",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
@@ -519,13 +558,13 @@ export const BenCarRentScene: React.FC = () => {
               <div style={{ fontSize: 16, color: "#047857", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>
                 ПЕРЕХОДЫ В WHATSAPP
               </div>
-              <div style={{ fontSize: 96, fontWeight: 900, color: "#059669", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
+              <div style={{ fontSize: 104, fontWeight: 900, color: "#059669", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
                 {Math.round(interpolate(frame - 28 * fps, [0, 20], [0, 38], { extrapolateRight: "clamp" }))}
               </div>
-              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 900, marginBottom: 4 }}>
+              <div style={{ fontSize: 24, color: "#0f172a", fontWeight: 900, marginBottom: 4 }}>
                 Клиенты с меткой ChatGPT
               </div>
-              <div style={{ fontSize: 16, color: "#475569", fontWeight: 600 }}>
+              <div style={{ fontSize: 17, color: "#475569", fontWeight: 600 }}>
                 Прямой переход с сайта в мессенджер к отделу бронирования
               </div>
             </div>
@@ -537,7 +576,7 @@ export const BenCarRentScene: React.FC = () => {
                 border: "1px solid rgba(226, 232, 240, 0.9)",
                 borderTop: "4px solid #0284c7",
                 borderRadius: 24,
-                padding: "24px 32px",
+                padding: "26px 34px",
                 textAlign: "center",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
@@ -545,13 +584,13 @@ export const BenCarRentScene: React.FC = () => {
               <div style={{ fontSize: 16, color: "#0369a1", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>
                 ПРЯМЫЕ ЗАПРОСЫ НА БРОНЬ
               </div>
-              <div style={{ fontSize: 96, fontWeight: 900, color: "#0284c7", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
+              <div style={{ fontSize: 104, fontWeight: 900, color: "#0284c7", letterSpacing: -2, lineHeight: 1.0, margin: "4px 0" }}>
                 {Math.round(interpolate(frame - 28 * fps, [4, 24], [0, 6], { extrapolateRight: "clamp" }))}
               </div>
-              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 900, marginBottom: 4 }}>
+              <div style={{ fontSize: 24, color: "#0f172a", fontWeight: 900, marginBottom: 4 }}>
                 Оформленные заявки на авто
               </div>
-              <div style={{ fontSize: 16, color: "#475569", fontWeight: 600 }}>
+              <div style={{ fontSize: 17, color: "#475569", fontWeight: 600 }}>
                 С конкретными датами, моделью машины и локацией доставки
               </div>
             </div>

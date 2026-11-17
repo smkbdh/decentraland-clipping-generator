@@ -411,7 +411,7 @@ export const ArchitectureScene: React.FC = () => {
           </div>
 
           {/* Fan-Out Branches (4 Rays) */}
-          <div style={{ display: "flex", gap: 18, width: "100%", maxWidth: 1400, marginBottom: 24 }}>
+          <div style={{ display: "flex", gap: 18, width: "100%", maxWidth: 1400, marginBottom: 20 }}>
             {[
               { title: "ЦЕНЫ И БЮДЖЕТ", desc: "Кондо до 4 000 000 THB", color: "#0284c7", icon: "💰" },
               { title: "ДОХОДНОСТЬ", desc: "Реальный ROI аренды 8%+", color: "#059669", icon: "📈" },
@@ -425,8 +425,8 @@ export const ArchitectureScene: React.FC = () => {
                   backgroundColor: "rgba(248, 250, 252, 0.98)",
                   border: "1px solid rgba(226, 232, 240, 0.9)",
                   borderTop: `4px solid ${branch.color}`,
-                  borderRadius: 18,
-                  padding: "16px 20px",
+                  borderRadius: 20,
+                  padding: "18px 20px",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
@@ -435,14 +435,14 @@ export const ArchitectureScene: React.FC = () => {
                   transform: `scale(${interpolate(frame - (32 * fps + i * 4), [0, 8], [0.92, 1.0], { extrapolateRight: "clamp" })})`,
                 }}
               >
-                <div style={{ fontSize: 24, marginBottom: 4 }}>{branch.icon}</div>
+                <div style={{ fontSize: 28, marginBottom: 4 }}>{branch.icon}</div>
                 <div style={{ fontSize: 14, fontWeight: 900, color: branch.color, letterSpacing: 1 }}>
                   ПОДЗАПРОС #{i + 1}
                 </div>
-                <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a", marginTop: 4 }}>
+                <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a", marginTop: 4 }}>
                   {branch.title}
                 </div>
-                <div style={{ fontSize: 15, color: "#475569", fontWeight: 600, marginTop: 2 }}>
+                <div style={{ fontSize: 16, color: "#475569", fontWeight: 700, marginTop: 2 }}>
                   {branch.desc}
                 </div>
               </div>
@@ -457,8 +457,8 @@ export const ArchitectureScene: React.FC = () => {
                 flex: 1,
                 backgroundColor: "rgba(254, 242, 242, 0.98)",
                 border: "1.5px solid #fecaca",
-                borderRadius: 20,
-                padding: "20px 26px",
+                borderRadius: 22,
+                padding: "22px 28px",
                 display: "flex",
                 alignItems: "center",
                 gap: 18,
@@ -467,7 +467,7 @@ export const ArchitectureScene: React.FC = () => {
             >
               <div style={{ fontSize: 36, color: "#dc2626" }}>❌</div>
               <div>
-                <div style={{ fontSize: 18, fontWeight: 900, color: "#991b1b" }}>
+                <div style={{ fontSize: 19, fontWeight: 900, color: "#991b1b" }}>
                   ОТКЛОНЕНО RAG-ФИЛЬТРОМ: SEO-СПАМ
                 </div>
                 <div style={{ fontSize: 16, color: "#475569", fontWeight: 600, lineHeight: 1.35, marginTop: 4 }}>
@@ -483,8 +483,8 @@ export const ArchitectureScene: React.FC = () => {
                 background: "linear-gradient(180deg, rgba(24, 27, 34, 0.98) 0%, rgba(12, 14, 18, 0.98) 100%)",
                 border: "1px solid rgba(255, 255, 255, 0.1)",
                 borderTop: "2px solid #22c55e",
-                borderRadius: 20,
-                padding: "20px 26px",
+                borderRadius: 22,
+                padding: "22px 28px",
                 display: "flex",
                 alignItems: "center",
                 gap: 18,
@@ -493,12 +493,51 @@ export const ArchitectureScene: React.FC = () => {
             >
               <div style={{ fontSize: 36, color: "#22c55e" }}>⚡</div>
               <div>
-                <div style={{ fontSize: 18, fontWeight: 900, color: "#4ade80" }}>
+                <div style={{ fontSize: 19, fontWeight: 900, color: "#4ade80" }}>
                   ПРИНЯТО В КОНТЕКСТ МОДЕЛИ: ТОЧНЫЕ ФАКТЫ
                 </div>
                 <div style={{ fontSize: 16, color: "#e2e8f0", fontWeight: 600, lineHeight: 1.35, marginTop: 4 }}>
                   Объект Oceana Kamala: 3.49M THB, 350м до пляжа, 9.2% ROI, планировка и условия аренды.
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Below RAG Filter: Full-Width Result Strip (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1400,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #0284c7",
+              borderRadius: 20,
+              padding: "18px 30px",
+              marginTop: 18,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 24,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ fontSize: 26 }}>⚡</span>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                  ПРИНЦИП ОТБОРА RAG: 90% ВОДЫ ОТСЕИВАЕТСЯ ДО ГЕНЕРАЦИИ ОТВЕТА
+                </div>
+                <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                  Поисковый ИИ цитирует сайт, только если находит конкретные цифры цен, планировок и условий.
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 12 }}>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#fee2e2", border: "1px solid #fecaca", color: "#b91c1c", fontSize: 14, fontWeight: 900 }}>
+                ❌ 0 фактов ➔ Игнор
+              </div>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#15803d", fontSize: 14, fontWeight: 900 }}>
+                ✅ Цифры и цены ➔ Цитата [1]
               </div>
             </div>
           </div>
