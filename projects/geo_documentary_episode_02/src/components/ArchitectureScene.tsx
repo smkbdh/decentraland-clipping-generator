@@ -342,6 +342,45 @@ export const ArchitectureScene: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Below 2 cards: Paradigm Shift Telemetry Strip (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1400,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #8b5cf6",
+              borderRadius: 22,
+              padding: "18px 30px",
+              marginTop: 22,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 24,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ fontSize: 26 }}>⚡</span>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                  ПАРАДИГМА GEO: ОТ ИНДЕКСАЦИИ ССЫЛОК К СИНТЕЗУ ОТВЕТОВ
+                </div>
+                <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                  В Google побеждал тот, кто набил больше ссылок. В GEO побеждает тот, чьи факты и цены модель может процитировать без сомнений.
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 12 }}>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#eff6ff", border: "1px solid #bfdbfe", color: "#1d4ed8", fontSize: 14, fontWeight: 900 }}>
+                🌐 Google = 10 ссылок
+              </div>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#f3e8ff", border: "1px solid #d8b4fe", color: "#7c3aed", fontSize: 14, fontWeight: 900 }}>
+                🤖 ChatGPT = 1 точный ответ
+              </div>
+            </div>
+          </div>
         </div>
       )}
 

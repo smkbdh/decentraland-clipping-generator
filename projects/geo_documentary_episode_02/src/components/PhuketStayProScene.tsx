@@ -279,20 +279,20 @@ export const PhuketStayProScene: React.FC = () => {
               background: "linear-gradient(to top, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.35) 45%, transparent 75%)",
             }}
           />
-          {/* Vox/Netflix Lower-Third Glass Card (Positioned safely above TechGlossaryFootnote dock) */}
+          {/* Vox/Netflix Lower-Third Editorial Studio Card (Positioned safely above TechGlossaryFootnote dock) */}
           <div
             style={{
               position: "absolute",
-              bottom: 135,
+              bottom: 130,
               left: 70,
-              maxWidth: 1180,
+              maxWidth: 1220,
               zIndex: 20,
-              backgroundColor: "rgba(10, 15, 29, 0.92)",
-              backdropFilter: "blur(16px)",
-              border: "1.5px solid rgba(255, 255, 255, 0.12)",
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #059669",
               borderRadius: 24,
-              padding: "24px 32px",
-              boxShadow: "0 20px 50px rgba(0,0,0,0.85)",
+              padding: "26px 36px",
+              boxShadow: "0 25px 60px rgba(0,0,0,0.75), 0 6px 18px rgba(0,0,0,0.4)",
             }}
           >
             <div style={{ display: "flex", gap: 14, marginBottom: 12, alignItems: "center" }}>
@@ -300,12 +300,12 @@ export const PhuketStayProScene: React.FC = () => {
                 style={{
                   padding: "6px 18px",
                   borderRadius: 20,
-                  backgroundColor: "rgba(16, 185, 129, 0.95)",
-                  color: "#ffffff",
+                  backgroundColor: "#dcfce7",
+                  border: "1.5px solid #86efac",
+                  color: "#059669",
                   fontSize: 16,
                   fontWeight: 900,
                   letterSpacing: 1,
-                  boxShadow: "0 0 20px rgba(16, 185, 129, 0.5)",
                 }}
               >
                 📍 РЕАЛЬНЫЙ ОБЪЕКТ В УПРАВЛЕНИИ · КАМАЛА
@@ -314,23 +314,22 @@ export const PhuketStayProScene: React.FC = () => {
                 style={{
                   padding: "6px 18px",
                   borderRadius: 20,
-                  backgroundColor: "rgba(248, 250, 252, 0.95)",
-                  border: "1.5px solid rgba(2, 132, 199, 0.5)",
+                  backgroundColor: "#eff6ff",
+                  border: "1.5px solid #bfdbfe",
                   color: "#0284c7",
                   fontSize: 16,
                   fontWeight: 900,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
                 }}
               >
                 phuketstaypro.com/en/property/oceana-kamala-a76
               </div>
             </div>
-            <h2 style={{ fontSize: 50, fontWeight: 900, color: "#ffffff", margin: "0 0 10px", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: 48, fontWeight: 900, color: "#0f172a", margin: "0 0 10px", lineHeight: 1.1 }}>
               OCEANA RESIDENCE KAMALA · A76
             </h2>
-            <div style={{ fontSize: 24, color: "#f1f5f9", fontWeight: 700, lineHeight: 1.4 }}>
+            <div style={{ fontSize: 22, color: "#334155", fontWeight: 700, lineHeight: 1.4 }}>
               Собственник нашел сайт в поиске и отдал квартиру в доверительное управление команде. <br />
-              <span style={{ color: "#34d399", fontWeight: 900 }}>➔ Реальный объект и прибыль, а не просто клики или краулеры в логах.</span>
+              <span style={{ color: "#059669", fontWeight: 900 }}>➔ Реальный объект и прибыль, а не просто клики или краулеры в логах.</span>
             </div>
           </div>
         </div>
@@ -358,20 +357,20 @@ export const PhuketStayProScene: React.FC = () => {
               background: "linear-gradient(to top, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.35) 45%, transparent 75%)",
             }}
           />
-          {/* Vox/Netflix Lower-Third Glass Card (Positioned safely above TechGlossaryFootnote dock) */}
+          {/* Vox/Netflix Lower-Third Editorial Studio Card (Positioned safely above TechGlossaryFootnote dock) */}
           <div
             style={{
               position: "absolute",
-              bottom: 135,
+              bottom: 130,
               left: 70,
-              maxWidth: 1180,
+              maxWidth: 1220,
               zIndex: 20,
-              backgroundColor: "rgba(10, 15, 29, 0.92)",
-              backdropFilter: "blur(16px)",
-              border: "1.5px solid rgba(255, 255, 255, 0.12)",
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #d97706",
               borderRadius: 24,
-              padding: "24px 32px",
-              boxShadow: "0 20px 50px rgba(0,0,0,0.85)",
+              padding: "26px 36px",
+              boxShadow: "0 25px 60px rgba(0,0,0,0.75), 0 6px 18px rgba(0,0,0,0.4)",
             }}
           >
             <div style={{ display: "flex", gap: 14, marginBottom: 12, alignItems: "center" }}>
@@ -379,23 +378,23 @@ export const PhuketStayProScene: React.FC = () => {
                 style={{
                   padding: "6px 18px",
                   borderRadius: 20,
-                  backgroundColor: "rgba(245, 158, 11, 0.95)",
-                  color: "#ffffff",
+                  backgroundColor: "#fef3c7",
+                  border: "1.5px solid #fde68a",
+                  color: "#b45309",
                   fontSize: 16,
                   fontWeight: 900,
                   letterSpacing: 1,
-                  boxShadow: "0 0 20px rgba(245, 158, 11, 0.5)",
                 }}
               >
                 💎 ДОГОВОР ДОВЕРИТЕЛЬНОГО УПРАВЛЕНИЯ
               </div>
             </div>
-            <h2 style={{ fontSize: 50, fontWeight: 900, color: "#ffffff", margin: "0 0 10px", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: 48, fontWeight: 900, color: "#0f172a", margin: "0 0 10px", lineHeight: 1.1 }}>
               РЕЗУЛЬТАТ, КОТОРЫЙ ВАЖНЕЕ ЛЮБЫХ ГРАФИКОВ
             </h2>
-            <div style={{ fontSize: 24, color: "#f1f5f9", fontWeight: 700, lineHeight: 1.4 }}>
+            <div style={{ fontSize: 22, color: "#334155", fontWeight: 700, lineHeight: 1.4 }}>
               Это собственник, объект и новая работа для команды. <br />
-              <span style={{ color: "#38bdf8", fontWeight: 900 }}>➔ Сайты строятся не ради красивой SEO-таблички, а ради сделок, которые меняют бизнес.</span>
+              <span style={{ color: "#0284c7", fontWeight: 900 }}>➔ Сайты строятся не ради красивой SEO-таблички, а ради сделок, которые меняют бизнес.</span>
             </div>
           </div>
         </div>
@@ -1142,6 +1141,44 @@ export const PhuketStayProScene: React.FC = () => {
                   </div>
                   <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.5, fontWeight: 600 }}>
                     Сайт строится не ради красивой таблички или графика трафика, а чтобы быстро доводить каждого пришедшего до записи и сделки.
+                  </div>
+                </div>
+              </div>
+
+              {/* Below 2 cards: Strategic Synergy Telemetry Strip (Zero Dead Space) */}
+              <div
+                style={{
+                  width: "100%",
+                  backgroundColor: "rgba(248, 250, 252, 0.98)",
+                  border: "1px solid rgba(226, 232, 240, 0.9)",
+                  borderTop: "4px solid #10b981",
+                  borderRadius: 22,
+                  padding: "18px 30px",
+                  marginTop: 22,
+                  boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 24,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <span style={{ fontSize: 26 }}>⚡</span>
+                  <div>
+                    <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                      СТРАТЕГИЧЕСКИЙ ВЫВОД: СИСТЕМА ВМЕСТО РАЗОРИТЕЛЬНОЙ РЕКЛАМЫ
+                    </div>
+                    <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                      Понятный сайт с честными ценами и отзывами аккумулирует трафик со всех каналов и превращает поисковый интерес в прибыль.
+                    </div>
+                  </div>
+                </div>
+                <div style={{ display: "flex", gap: 12 }}>
+                  <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#eff6ff", border: "1px solid #bfdbfe", color: "#1d4ed8", fontSize: 14, fontWeight: 900 }}>
+                    🌐 Карты + Органика
+                  </div>
+                  <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#15803d", fontSize: 14, fontWeight: 900 }}>
+                    🤖 AI-Справки = Сделки
                   </div>
                 </div>
               </div>

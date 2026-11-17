@@ -868,6 +868,45 @@ export const HookScene: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Below 3 cards: Strategic Takeaway Strip (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1200,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #059669",
+              borderRadius: 22,
+              padding: "18px 30px",
+              marginTop: 26,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 24,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ fontSize: 26 }}>⚡</span>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                  СТРАТЕГИЧЕСКИЙ ВЫВОД: ПОЧЕМУ МЕТРИКИ ВВОДЯТ В ЗАБЛУЖДЕНИЕ
+                </div>
+                <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                  Боты сканируют сайт сотнями тысяч запросов, но реальную выручку бизнесу приносят только целевые клиенты.
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 12 }}>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#fee2e2", border: "1px solid #fecaca", color: "#b91c1c", fontSize: 14, fontWeight: 900 }}>
+                ❌ Краулеры = 0 ₽
+              </div>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#15803d", fontSize: 14, fontWeight: 900 }}>
+                ✅ Клиенты = Выручка
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
@@ -1001,6 +1040,48 @@ export const HookScene: React.FC = () => {
               </div>
               <div style={{ fontSize: 18, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                 Открывает страницу в реальном времени, когда пользователь просит прочитать ссылку.
+              </div>
+            </div>
+          </div>
+
+          {/* Below 3 cards: OpenAI Crawlers Telemetry Strip (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1350,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #0284c7",
+              borderRadius: 22,
+              padding: "18px 30px",
+              marginTop: 24,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 24,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ fontSize: 26 }}>🤖</span>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                  РАЗНИЦА ДЛЯ БИЗНЕСА: КТО РЕАЛЬНО ПРИНОСИТ ДЕНЬГИ В КАССУ
+                </div>
+                <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                  GPTBot обучает базовые модели, OAI-SearchBot находит вас в поиске, а ChatGPT-User — это готовый покупатель.
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 12 }}>
+              <div style={{ padding: "8px 14px", borderRadius: 12, backgroundColor: "#f1f5f9", border: "1px solid #cbd5e1", color: "#475569", fontSize: 14, fontWeight: 900 }}>
+                🤖 GPTBot = Индекс
+              </div>
+              <div style={{ padding: "8px 14px", borderRadius: 12, backgroundColor: "#e0f2fe", border: "1px solid #bae6fd", color: "#0369a1", fontSize: 14, fontWeight: 900 }}>
+                🔍 SearchBot = Выдача
+              </div>
+              <div style={{ padding: "8px 14px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#15803d", fontSize: 14, fontWeight: 900 }}>
+                ⚡ ChatGPT-User = Клиент
               </div>
             </div>
           </div>

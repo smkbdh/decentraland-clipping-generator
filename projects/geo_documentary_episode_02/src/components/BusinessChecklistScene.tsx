@@ -326,6 +326,45 @@ export const BusinessChecklistScene: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Below 2 cards: Content Quality Telemetry Strip (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1400,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #0284c7",
+              borderRadius: 22,
+              padding: "18px 30px",
+              marginTop: 20,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 24,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ fontSize: 26 }}>💎</span>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                  ПРАВИЛО 1: ЧЕМ БОЛЬШЕ ТОЧНЫХ ЦИФР И ФАКТОВ — ТЕМ ВЫШЕ ВЕРОЯТНОСТЬ ЦИТИРОВАНИЯ
+                </div>
+                <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                  Нейросеть не способна выдумать за вас депозит, страховку или модель авто — она цитирует то, что открыто указано на странице.
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 12 }}>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#047857", fontSize: 14, fontWeight: 900 }}>
+                ✓ 100% Фактов = Цитата в ИИ
+              </div>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#fee2e2", border: "1px solid #fecaca", color: "#b91c1c", fontSize: 14, fontWeight: 900 }}>
+                ✗ 0% Фактов = Спам-фильтр
+              </div>
+            </div>
+          </div>
         </div>
       )}
 

@@ -1111,6 +1111,45 @@ export const BenCarRentScene: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Below 2 columns: Fleet Monetization Telemetry Strip (Zero Dead Space) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 1400,
+              backgroundColor: "rgba(248, 250, 252, 0.98)",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              borderTop: "4px solid #10b981",
+              borderRadius: 22,
+              padding: "18px 30px",
+              marginTop: 20,
+              boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 24,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ fontSize: 26 }}>⚡</span>
+              <div>
+                <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                  ИТОГ КЕЙСА: КАК ИНЖЕНЕРНОЕ GEO ВЛИЯЕТ НА ПРИБЫЛЬ БИЗНЕСА
+                </div>
+                <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                  Когда сайт отвечает на реальные критерии клиентов, запросы из нейросетей закрываются в брони без скидок и возражений.
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 12 }}>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", color: "#047857", fontSize: 14, fontWeight: 900 }}>
+                🚗 100% Загрузка автопарка
+              </div>
+              <div style={{ padding: "8px 16px", borderRadius: 12, backgroundColor: "#fef3c7", border: "1px solid #fde68a", color: "#b45309", fontSize: 14, fontWeight: 900 }}>
+                📈 Доход на суб-аренде
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
