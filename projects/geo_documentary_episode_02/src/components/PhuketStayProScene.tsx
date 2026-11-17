@@ -314,11 +314,12 @@ export const PhuketStayProScene: React.FC = () => {
                 style={{
                   padding: "6px 18px",
                   borderRadius: 20,
-                  backgroundColor: "rgba(15, 23, 42, 0.92)",
-                  border: "1.5px solid rgba(56, 189, 248, 0.6)",
-                  color: "#38bdf8",
+                  backgroundColor: "rgba(248, 250, 252, 0.95)",
+                  border: "1.5px solid rgba(2, 132, 199, 0.5)",
+                  color: "#0284c7",
                   fontSize: 16,
-                  fontWeight: 800,
+                  fontWeight: 900,
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
                 }}
               >
                 phuketstaypro.com/en/property/oceana-kamala-a76
@@ -452,11 +453,12 @@ export const PhuketStayProScene: React.FC = () => {
                   style={{
                     padding: "8px 22px",
                     borderRadius: 24,
-                    backgroundColor: "rgba(15, 23, 42, 0.92)",
-                    border: "1.5px solid rgba(34, 197, 94, 0.6)",
-                    color: "#4ade80",
+                    backgroundColor: "rgba(248, 250, 252, 0.95)",
+                    border: "1.5px solid rgba(5, 150, 105, 0.5)",
+                    color: "#047857",
                     fontSize: 18,
-                    fontWeight: 800,
+                    fontWeight: 900,
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
                   🌐 chatterboxschool.ru · ОФЛАЙН И ОНЛАЙН
@@ -600,78 +602,82 @@ export const PhuketStayProScene: React.FC = () => {
                 <div style={{ display: "flex", flexDirection: "column", gap: 14, width: 440 }}>
                   <div
                     style={{
-                      backgroundColor: "rgba(15, 23, 42, 0.95)",
-                      border: "2px solid #22c55e",
+                      backgroundColor: "rgba(248, 250, 252, 0.98)",
+                      border: "1px solid rgba(226, 232, 240, 0.9)",
+                      borderLeft: "5px solid #22c55e",
                       borderRadius: 18,
                       padding: "16px 22px",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.5)",
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
                     }}
                   >
                     <div>
-                      <div style={{ fontSize: 22, fontWeight: 900, color: "#ffffff" }}>📍 2ГИС Справочник</div>
-                      <div style={{ fontSize: 16, color: "#cbd5e1" }}>Рейтинг 5.0 · 59 проверенных отзывов</div>
+                      <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a" }}>📍 2ГИС Справочник</div>
+                      <div style={{ fontSize: 15, color: "#475569", fontWeight: 600 }}>Рейтинг 5.0 · 59 проверенных отзывов</div>
                     </div>
-                    <div style={{ fontSize: 28, color: "#22c55e" }}>➔</div>
+                    <div style={{ fontSize: 26, color: "#22c55e", fontWeight: 900 }}>➔</div>
                   </div>
 
                   <div
                     style={{
-                      backgroundColor: "rgba(15, 23, 42, 0.95)",
-                      border: "2px solid #f59e0b",
+                      backgroundColor: "rgba(248, 250, 252, 0.98)",
+                      border: "1px solid rgba(226, 232, 240, 0.9)",
+                      borderLeft: "5px solid #f59e0b",
                       borderRadius: 18,
                       padding: "16px 22px",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.5)",
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
                     }}
                   >
                     <div>
-                      <div style={{ fontSize: 22, fontWeight: 900, color: "#ffffff" }}>🗺️ Яндекс Карты & Поиск</div>
-                      <div style={{ fontSize: 16, color: "#cbd5e1" }}>Запросы: «школа английского рядом»</div>
+                      <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a" }}>🗺️ Яндекс Карты & Поиск</div>
+                      <div style={{ fontSize: 15, color: "#475569", fontWeight: 600 }}>Запросы: «школа английского рядом»</div>
                     </div>
-                    <div style={{ fontSize: 28, color: "#f59e0b" }}>➔</div>
+                    <div style={{ fontSize: 26, color: "#f59e0b", fontWeight: 900 }}>➔</div>
                   </div>
 
                   <div
                     style={{
-                      backgroundColor: "rgba(15, 23, 42, 0.95)",
-                      border: "2px solid #38bdf8",
+                      backgroundColor: "rgba(248, 250, 252, 0.98)",
+                      border: "1px solid rgba(226, 232, 240, 0.9)",
+                      borderLeft: "5px solid #0284c7",
                       borderRadius: 18,
                       padding: "16px 22px",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.5)",
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
                     }}
                   >
                     <div>
-                      <div style={{ fontSize: 22, fontWeight: 900, color: "#ffffff" }}>🔍 Google Органический Поиск</div>
-                      <div style={{ fontSize: 16, color: "#cbd5e1" }}>Программы, цены, отзывы родителей</div>
+                      <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a" }}>🔍 Google Органический Поиск</div>
+                      <div style={{ fontSize: 15, color: "#475569", fontWeight: 600 }}>Программы, цены, отзывы родителей</div>
                     </div>
-                    <div style={{ fontSize: 28, color: "#38bdf8" }}>➔</div>
+                    <div style={{ fontSize: 26, color: "#0284c7", fontWeight: 900 }}>➔</div>
                   </div>
 
                   <div
                     style={{
-                      backgroundColor: "rgba(15, 23, 42, 0.95)",
-                      border: "2px solid #8b5cf6",
+                      backgroundColor: "rgba(248, 250, 252, 0.98)",
+                      border: "1px solid rgba(226, 232, 240, 0.9)",
+                      borderLeft: "5px solid #8b5cf6",
                       borderRadius: 18,
                       padding: "16px 22px",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.5)",
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
                     }}
                   >
                     <div>
-                      <div style={{ fontSize: 22, fontWeight: 900, color: "#ffffff" }}>💬 VK Сообщество & Рекомендации</div>
-                      <div style={{ fontSize: 16, color: "#cbd5e1" }}>Фото с уроков и сарафанное радио</div>
+                      <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a" }}>💬 VK Сообщество & Рекомендации</div>
+                      <div style={{ fontSize: 15, color: "#475569", fontWeight: 600 }}>Фото с уроков и сарафанное радио</div>
                     </div>
-                    <div style={{ fontSize: 28, color: "#8b5cf6" }}>➔</div>
+                    <div style={{ fontSize: 26, color: "#8b5cf6", fontWeight: 900 }}>➔</div>
                   </div>
                 </div>
 
@@ -683,11 +689,12 @@ export const PhuketStayProScene: React.FC = () => {
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: "rgba(15, 23, 42, 0.96)",
-                    border: "3px solid #10b981",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "5px solid #059669",
                     borderRadius: 24,
                     padding: "36px 30px",
-                    boxShadow: "0 0 50px rgba(16, 185, 129, 0.35)",
+                    boxShadow: "0 25px 60px rgba(0,0,0,0.65), 0 0 40px rgba(5, 150, 105, 0.25)",
                     position: "relative",
                   }}
                 >
@@ -695,10 +702,10 @@ export const PhuketStayProScene: React.FC = () => {
                     style={{
                       padding: "6px 18px",
                       borderRadius: 20,
-                      backgroundColor: "rgba(16, 185, 129, 0.2)",
-                      border: "1px solid #10b981",
-                      color: "#34d399",
-                      fontSize: 16,
+                      backgroundColor: "#dcfce7",
+                      border: "1px solid #bbf7d0",
+                      color: "#047857",
+                      fontSize: 15,
                       fontWeight: 900,
                       marginBottom: 12,
                     }}
@@ -706,11 +713,11 @@ export const PhuketStayProScene: React.FC = () => {
                     ЕДИНЫЙ ЦЕНТР АГРЕГАЦИИ ЛИДОВ
                   </div>
 
-                  <div style={{ fontSize: 44, fontWeight: 900, color: "#ffffff", marginBottom: 8, textAlign: "center" }}>
+                  <div style={{ fontSize: 44, fontWeight: 900, color: "#0f172a", marginBottom: 8, textAlign: "center" }}>
                     chatterboxschool.ru
                   </div>
 
-                  <div style={{ fontSize: 22, color: "#94a3b8", textAlign: "center", marginBottom: 24 }}>
+                  <div style={{ fontSize: 22, color: "#475569", textAlign: "center", marginBottom: 24, fontWeight: 600 }}>
                     Все каналы сходятся в прозрачную посадочную воронку
                   </div>
 
@@ -942,27 +949,28 @@ export const PhuketStayProScene: React.FC = () => {
                   <div
                     style={{
                       flex: 1,
-                      backgroundColor: "rgba(15, 23, 42, 0.95)",
-                      border: "2px solid #f59e0b",
+                      backgroundColor: "rgba(248, 250, 252, 0.98)",
+                      border: "1px solid rgba(226, 232, 240, 0.9)",
+                      borderTop: "5px solid #d97706",
                       borderRadius: 22,
                       padding: "22px 26px",
-                      boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+                      boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between",
                     }}
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                      <div style={{ fontSize: 20, color: "#f59e0b", fontWeight: 900 }}>⭐ РЕЙТИНГ 5.0 В 2ГИС</div>
-                      <div style={{ fontSize: 16, color: "#94a3b8", fontWeight: 700 }}>59 проверенных отзывов</div>
+                      <div style={{ fontSize: 20, color: "#d97706", fontWeight: 900 }}>⭐ РЕЙТИНГ 5.0 В 2ГИС</div>
+                      <div style={{ fontSize: 15, color: "#475569", fontWeight: 700 }}>59 проверенных отзывов</div>
                     </div>
 
                     <div
                       style={{
                         borderRadius: 14,
                         overflow: "hidden",
-                        border: "1px solid rgba(255,255,255,0.12)",
-                        backgroundColor: "#081c15",
+                        border: "1px solid #e2e8f0",
+                        backgroundColor: "#f8fafc",
                         height: 140,
                         marginBottom: 10,
                       }}
@@ -973,7 +981,7 @@ export const PhuketStayProScene: React.FC = () => {
                       />
                     </div>
 
-                    <div style={{ fontSize: 18, color: "#e2e8f0", lineHeight: 1.4, fontStyle: "italic" }}>
+                    <div style={{ fontSize: 17, color: "#334155", lineHeight: 1.4, fontStyle: "italic", fontWeight: 600 }}>
                       «Отличная школа английского языка, дочка посещает второй год, удобное расписание, хорошие преподаватели!»
                     </div>
                   </div>
@@ -982,17 +990,18 @@ export const PhuketStayProScene: React.FC = () => {
                   <div
                     style={{
                       flex: 1,
-                      backgroundColor: "rgba(15, 23, 42, 0.95)",
-                      border: "2px solid #38bdf8",
+                      backgroundColor: "rgba(248, 250, 252, 0.98)",
+                      border: "1px solid rgba(226, 232, 240, 0.9)",
+                      borderTop: "5px solid #0284c7",
                       borderRadius: 22,
                       padding: "22px 26px",
-                      boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+                      boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between",
                     }}
                   >
-                    <div style={{ fontSize: 20, color: "#38bdf8", fontWeight: 900, marginBottom: 12 }}>
+                    <div style={{ fontSize: 20, color: "#0284c7", fontWeight: 900, marginBottom: 12 }}>
                       🎯 2-ШАГОВАЯ ВОРОНКА ЗАПИСИ
                     </div>
 
@@ -1000,14 +1009,15 @@ export const PhuketStayProScene: React.FC = () => {
                       <div
                         style={{
                           flex: 1,
-                          backgroundColor: "rgba(56, 189, 248, 0.12)",
-                          borderLeft: "4px solid #38bdf8",
+                          backgroundColor: "#f0f9ff",
+                          borderLeft: "4px solid #0284c7",
                           padding: "12px 16px",
                           borderRadius: 10,
+                          border: "1px solid #bae6fd",
                         }}
                       >
-                        <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>1. ТЕСТИРОВАНИЕ</div>
-                        <div style={{ fontSize: 15, color: "#cbd5e1", marginTop: 4 }}>
+                        <div style={{ fontSize: 17, fontWeight: 900, color: "#0369a1" }}>1. ТЕСТИРОВАНИЕ</div>
+                        <div style={{ fontSize: 14, color: "#334155", marginTop: 4, fontWeight: 600 }}>
                           Бесплатная проверка уровня и целей ученика
                         </div>
                       </div>
@@ -1015,15 +1025,16 @@ export const PhuketStayProScene: React.FC = () => {
                       <div
                         style={{
                           flex: 1,
-                          backgroundColor: "rgba(34, 197, 94, 0.12)",
-                          borderLeft: "4px solid #22c55e",
+                          backgroundColor: "#f0fdf4",
+                          borderLeft: "4px solid #16a34a",
                           padding: "12px 16px",
                           borderRadius: 10,
+                          border: "1px solid #bbf7d0",
                         }}
                       >
-                        <div style={{ fontSize: 18, fontWeight: 900, color: "#ffffff" }}>2. ПРОБНЫЙ УРОК</div>
-                        <div style={{ fontSize: 15, color: "#cbd5e1", marginTop: 4 }}>
-                          Подбор группы (английский, китайский, корейский)
+                        <div style={{ fontSize: 17, fontWeight: 900, color: "#15803d" }}>2. ПРОБНЫЙ УРОК</div>
+                        <div style={{ fontSize: 14, color: "#334155", marginTop: 4, fontWeight: 600 }}>
+                          Подбор группы (английский, китайский)
                         </div>
                       </div>
                     </div>
@@ -1033,11 +1044,12 @@ export const PhuketStayProScene: React.FC = () => {
                         marginTop: 12,
                         padding: "10px 16px",
                         borderRadius: 12,
-                        backgroundColor: "rgba(255, 255, 255, 0.05)",
-                        border: "1px solid rgba(255,255,255,0.1)",
-                        fontSize: 16,
-                        color: "#94a3b8",
+                        backgroundColor: "#f8fafc",
+                        border: "1px solid #e2e8f0",
+                        fontSize: 15,
+                        color: "#475569",
                         textAlign: "center",
+                        fontWeight: 600,
                       }}
                     >
                       Понятный шаг устраняет трение при переходе с поиска и карт
@@ -1092,20 +1104,21 @@ export const PhuketStayProScene: React.FC = () => {
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.95)",
-                    border: "2px solid #38bdf8",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "5px solid #0284c7",
                     borderRadius: 24,
                     padding: "36px",
-                    boxShadow: "0 15px 40px rgba(56, 189, 248, 0.2)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 20, color: "#38bdf8", fontWeight: 900, marginBottom: 12 }}>
+                  <div style={{ fontSize: 16, color: "#0369a1", fontWeight: 900, marginBottom: 10, letterSpacing: 1 }}>
                     ФУНДАМЕНТ ДЛЯ GEO И AI-ПОИСКА
                   </div>
-                  <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 14 }}>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: "#0f172a", marginBottom: 14 }}>
                     Отвечать на реальные вопросы
                   </div>
-                  <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.5 }}>
+                  <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.5, fontWeight: 600 }}>
                     Быть видимым там, где люди ищут (карты, органика, ИИ-справки), и иметь прозрачный сайт с ценами, адресом и отзывами.
                   </div>
                 </div>
@@ -1113,20 +1126,21 @@ export const PhuketStayProScene: React.FC = () => {
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.95)",
-                    border: "2px solid #22c55e",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "5px solid #059669",
                     borderRadius: 24,
                     padding: "36px",
-                    boxShadow: "0 15px 40px rgba(34, 197, 94, 0.2)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 20, color: "#22c55e", fontWeight: 900, marginBottom: 12 }}>
+                  <div style={{ fontSize: 16, color: "#047857", fontWeight: 900, marginBottom: 10, letterSpacing: 1 }}>
                     РОЛЬ САЙТА В БИЗНЕСЕ
                   </div>
-                  <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", marginBottom: 14 }}>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: "#0f172a", marginBottom: 14 }}>
                     Центр захвата и конверсии
                   </div>
-                  <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.5 }}>
+                  <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.5, fontWeight: 600 }}>
                     Сайт строится не ради красивой таблички или графика трафика, а чтобы быстро доводить каждого пришедшего до записи и сделки.
                   </div>
                 </div>

@@ -441,7 +441,7 @@ export const BusinessChecklistScene: React.FC = () => {
                 flex: 0.95,
                 backgroundColor: "rgba(248, 250, 252, 0.98)",
                 border: "1px solid rgba(226, 232, 240, 0.9)",
-                borderTop: "4px solid #d97706",
+                borderTop: "5px solid #d97706",
                 borderRadius: 24,
                 padding: "26px 30px",
                 display: "flex",
@@ -449,37 +449,57 @@ export const BusinessChecklistScene: React.FC = () => {
                 boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
                 <span style={{ fontSize: 16, color: "#d97706", fontWeight: 900, letterSpacing: 1 }}>
                   МИФ О «ВОЛШЕБНОМ» LLMS.TXT
                 </span>
                 <span style={{ fontSize: 13, color: "#92400e", fontWeight: 900, backgroundColor: "#fef3c7", border: "1px solid #fde68a", padding: "4px 12px", borderRadius: 12 }}>
-                  0% ВЛИЯНИЯ НА ВЫДАЧУ
+                  0% ВЛИЯНИЯ НА РАНЖИРОВАНИЕ
                 </span>
               </div>
 
-              <div style={{ fontSize: 24, fontWeight: 900, color: "#0f172a", marginBottom: 12, lineHeight: 1.25 }}>
-                Файл не заменит продукт и работающий сайт
+              <div style={{ fontSize: 26, fontWeight: 900, color: "#0f172a", marginBottom: 12, lineHeight: 1.2 }}>
+                Файл не заменит продукт, цены и реальный сайт
               </div>
 
-              <div style={{ fontSize: 16, color: "#334155", lineHeight: 1.45, marginBottom: 16, fontWeight: 600 }}>
-                Ни Google, ни OpenAI не дают приоритетных позиций за наличие <code style={{ color: "#b45309", backgroundColor: "#fef3c7", padding: "2px 6px", borderRadius: 6, fontWeight: 800 }}>llms.txt</code>. Это удобная шпаргалка, но не волшебная кнопка продаж.
+              <div style={{ fontSize: 19, color: "#334155", lineHeight: 1.45, marginBottom: 14, fontWeight: 600 }}>
+                Ни Google, ни OpenAI не дают приоритетных позиций за наличие <code style={{ color: "#b45309", backgroundColor: "#fef3c7", padding: "2px 8px", borderRadius: 6, fontWeight: 800 }}>llms.txt</code>. Это шпаргалка, но не волшебная кнопка продаж.
+              </div>
+
+              {/* Animated Visual Comparison Diagram: Real Crawler vs llms.txt */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
+                <div style={{ backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #e2e8f0", display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 22 }}>🤖</span>
+                  <div>
+                    <div style={{ fontSize: 16, fontWeight: 900, color: "#0f172a" }}>OAI-SearchBot (Реальная индексация)</div>
+                    <div style={{ fontSize: 14, color: "#059669", fontWeight: 700 }}>Сканирует HTML, цены, Schema.org и реальный контент сайта</div>
+                  </div>
+                </div>
+
+                <div style={{ backgroundColor: "#fffbeb", padding: "12px 16px", borderRadius: 14, border: "1px solid #fde68a", display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 22 }}>📄</span>
+                  <div>
+                    <div style={{ fontSize: 16, fontWeight: 900, color: "#92400e" }}>llms.txt (Экспериментальная сводка)</div>
+                    <div style={{ fontSize: 14, color: "#b45309", fontWeight: 700 }}>Игнорируется, если на сайте нет доверия и структурированных данных</div>
+                  </div>
+                </div>
               </div>
 
               <div
                 style={{
-                  marginTop: "auto",
-                  backgroundColor: "#fffbeb",
+                  marginTop: 12,
+                  backgroundColor: "#fef3c7",
                   border: "1px solid #fde68a",
                   borderRadius: 14,
-                  padding: "14px 18px",
+                  padding: "12px 18px",
                   fontSize: 15,
                   color: "#92400e",
-                  fontWeight: 700,
+                  fontWeight: 800,
                   lineHeight: 1.35,
+                  textAlign: "center",
                 }}
               >
-                ⚠️ Не превращайте техническую гипотезу в замену работающего продукта, прозрачных цен и понятной посадочной страницы.
+                ⚠️ Модель рекомендует вас за понятные условия и честные цены, а не за текстовый файл в корне сервера.
               </div>
             </div>
           </div>
@@ -868,7 +888,9 @@ export const BusinessChecklistScene: React.FC = () => {
       )}
 
       {/* =========================================================================
-          PHASE 5 (110.0s+): FINAL SYNTHESIS BEFORE OUTRO
+          PHASE 5 (110.0s+ / 10:41 in video): FINAL SYNTHESIS BEFORE OUTRO
+          Диктор: «Не культ нового файла, а полезный сайт...»
+          Интерактивное поочерёдное выкатывание тезисов (Staggered Animations)
           ========================================================================= */}
       {sec >= 110.0 && (
         <div
@@ -896,7 +918,7 @@ export const BusinessChecklistScene: React.FC = () => {
               marginBottom: 14,
             }}
           >
-            ИТОГ РАЗДЕЛА · РАБОЧАЯ СТРАТЕГИЯ
+            ИТОГ РАЗДЕЛА · СТРАТЕГИЯ 2026
           </div>
 
           <h2
@@ -912,29 +934,75 @@ export const BusinessChecklistScene: React.FC = () => {
             НЕ КУЛЬТ НОВОГО ФАЙЛА, А ПОЛЕЗНЫЙ САЙТ
           </h2>
 
-          {/* Side-by-side Editorial Dossier Comparison Cards */}
-          <div style={{ display: "flex", gap: 28, maxWidth: 1400, width: "100%", marginBottom: 18 }}>
+          {/* Side-by-side Editorial Dossier Comparison Cards with Staggered Slide-In */}
+          <div style={{ display: "flex", gap: 32, maxWidth: 1420, width: "100%", marginBottom: 18, flex: 1, maxHeight: 490 }}>
             {/* Left: What does NOT work */}
             <div
               style={{
                 flex: 1,
                 backgroundColor: "rgba(254, 242, 242, 0.98)",
-                border: "1.5px solid #fecaca",
-                borderRadius: 22,
-                padding: "22px 28px",
+                border: "1px solid rgba(254, 202, 202, 0.9)",
+                borderTop: "5px solid #dc2626",
+                borderRadius: 24,
+                padding: "26px 30px",
                 display: "flex",
                 flexDirection: "column",
-                boxShadow: "0 15px 35px rgba(0,0,0,0.5)",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
-              <div style={{ fontSize: 17, fontWeight: 900, color: "#991b1b", marginBottom: 12 }}>
-                ❌ СУЕТА И ХАЙП (ЧТО НЕ РАБОТАЕТ)
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+                <span style={{ fontSize: 18, fontWeight: 900, color: "#991b1b", letterSpacing: 0.8 }}>
+                  ❌ СУЕТА И ХАЙП (ЧТО НЕ РАБОТАЕТ)
+                </span>
+                <span style={{ fontSize: 12, fontWeight: 900, color: "#b91c1c", backgroundColor: "#fee2e2", padding: "4px 10px", borderRadius: 8 }}>
+                  СЛИВ РЕСУРСОВ
+                </span>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, fontSize: 16, color: "#64748b", fontWeight: 600 }}>
-                <div>• Паника и крики о «похоронах классического SEO»</div>
-                <div>• Слепая вера в волшебные файлы llms.txt без доработки сайта</div>
-                <div>• Накрутка краулеров ботами ради пустых графиков в логах</div>
-                <div>• Игнорирование скорости ответа в мессенджерах</div>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
+                {/* Item 1 */}
+                {(() => {
+                  const p1 = interpolate(frame - 110.2 * fps, [0, 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p1, transform: `translateX(${(1 - p1) * -20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #fecaca", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#dc2626", fontWeight: 900, fontSize: 20 }}>✗</span>
+                      <span style={{ fontSize: 19, color: "#7f1d1d", fontWeight: 700 }}>Паника и крики о «похоронах классического SEO»</span>
+                    </div>
+                  );
+                })()}
+
+                {/* Item 2 */}
+                {(() => {
+                  const p2 = interpolate(frame - 110.9 * fps, [0, 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p2, transform: `translateX(${(1 - p2) * -20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #fecaca", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#dc2626", fontWeight: 900, fontSize: 20 }}>✗</span>
+                      <span style={{ fontSize: 19, color: "#7f1d1d", fontWeight: 700 }}>Слепая вера в «волшебный» llms.txt без доработки сайта</span>
+                    </div>
+                  );
+                })()}
+
+                {/* Item 3 */}
+                {(() => {
+                  const p3 = interpolate(frame - 111.6 * fps, [0, 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p3, transform: `translateX(${(1 - p3) * -20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #fecaca", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#dc2626", fontWeight: 900, fontSize: 20 }}>✗</span>
+                      <span style={{ fontSize: 19, color: "#7f1d1d", fontWeight: 700 }}>Накрутка краулеров ботами ради пустых логов на сервере</span>
+                    </div>
+                  );
+                })()}
+
+                {/* Item 4 */}
+                {(() => {
+                  const p4 = interpolate(frame - 112.3 * fps, [0, 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p4, transform: `translateX(${(1 - p4) * -20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #fecaca", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#dc2626", fontWeight: 900, fontSize: 20 }}>✗</span>
+                      <span style={{ fontSize: 19, color: "#7f1d1d", fontWeight: 700 }}>Игнорирование скорости ответа менеджера в мессенджере</span>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
 
@@ -944,43 +1012,96 @@ export const BusinessChecklistScene: React.FC = () => {
                 flex: 1.15,
                 backgroundColor: "rgba(248, 250, 252, 0.98)",
                 border: "1px solid rgba(226, 232, 240, 0.9)",
-                borderTop: "4px solid #059669",
-                borderRadius: 22,
-                padding: "22px 28px",
+                borderTop: "5px solid #059669",
+                borderRadius: 24,
+                padding: "26px 30px",
                 display: "flex",
                 flexDirection: "column",
-                boxShadow: "0 20px 45px rgba(0,0,0,0.6)",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
-              <div style={{ fontSize: 17, fontWeight: 900, color: "#047857", marginBottom: 12 }}>
-                ✅ РАБОЧАЯ GEO-СТРАТЕГИЯ 2026 (ЧТО ДАЕТ ДЕНЬГИ)
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+                <span style={{ fontSize: 18, fontWeight: 900, color: "#047857", letterSpacing: 0.8 }}>
+                  ✅ РАБОЧАЯ GEO-СТРАТЕГИЯ (ЧТО ДАЕТ ДЕНЬГИ)
+                </span>
+                <span style={{ fontSize: 12, fontWeight: 900, color: "#065f46", backgroundColor: "#dcfce7", padding: "4px 10px", borderRadius: 8 }}>
+                  РЕАЛЬНЫЙ ДОХОД
+                </span>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, fontSize: 16, color: "#334155", fontWeight: 700 }}>
-                <div>✓ Понятный сайт для людей с точными ценами, депозитами и условиями</div>
-                <div>✓ Открытый robots.txt для краулеров OAI-SearchBot и Google-Extended</div>
-                <div>✓ Сквозная UTM-аналитика до реальной сделки в WhatsApp и CRM</div>
-                <div>✓ Ответ менеджера за 5-15 минут с готовой альтернативой</div>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
+                {/* Item 1 */}
+                {(() => {
+                  const p1 = interpolate(frame - 113.2 * fps, [0, 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p1, transform: `translateX(${(1 - p1) * 20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #bbf7d0", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#059669", fontWeight: 900, fontSize: 20 }}>✓</span>
+                      <span style={{ fontSize: 19, color: "#0f172a", fontWeight: 700 }}>Сайт для людей: точные цены, условия, залог и страховка</span>
+                    </div>
+                  );
+                })()}
+
+                {/* Item 2 */}
+                {(() => {
+                  const p2 = interpolate(frame - 113.9 * fps, [0, 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p2, transform: `translateX(${(1 - p2) * 20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #bbf7d0", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#059669", fontWeight: 900, fontSize: 20 }}>✓</span>
+                      <span style={{ fontSize: 19, color: "#0f172a", fontWeight: 700 }}>Открытый robots.txt для OAI-SearchBot и Google-Extended</span>
+                    </div>
+                  );
+                })()}
+
+                {/* Item 3 */}
+                {(() => {
+                  const p3 = interpolate(frame - 114.6 * fps, [0, 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p3, transform: `translateX(${(1 - p3) * 20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #bbf7d0", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#059669", fontWeight: 900, fontSize: 20 }}>✓</span>
+                      <span style={{ fontSize: 19, color: "#0f172a", fontWeight: 700 }}>Сквозная UTM-аналитика до сделки в WhatsApp и CRM</span>
+                    </div>
+                  );
+                })()}
+
+                {/* Item 4 */}
+                {(() => {
+                  const p4 = interpolate(frame - 115.3 * fps, [0, 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+                  return (
+                    <div style={{ opacity: p4, transform: `translateX(${(1 - p4) * 20}px)`, backgroundColor: "#ffffff", padding: "12px 16px", borderRadius: 14, border: "1px solid #bbf7d0", display: "flex", alignItems: "center", gap: 12 }}>
+                      <span style={{ color: "#059669", fontWeight: 900, fontSize: 20 }}>✓</span>
+                      <span style={{ fontSize: 19, color: "#0f172a", fontWeight: 700 }}>Ответ менеджера за 5-15 минут с готовой альтернативой</span>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
           </div>
 
           {/* Bottom Summary Strip */}
-          <div
-            style={{
-              maxWidth: 1400,
-              width: "100%",
-              backgroundColor: "rgba(248, 250, 252, 0.98)",
-              border: "1px solid rgba(226, 232, 240, 0.9)",
-              borderRadius: 18,
-              padding: "16px 32px",
-              textAlign: "center",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
-            }}
-          >
-            <span style={{ fontSize: 22, color: "#0f172a", fontWeight: 900 }}>
-              ➔ Считайте сделки и деньги в кассе, а не пустые краулеры в логах серверов.
-            </span>
-          </div>
+          {(() => {
+            const pSummary = interpolate(frame - 116.2 * fps, [0, 12], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+            return (
+              <div
+                style={{
+                  maxWidth: 1420,
+                  width: "100%",
+                  backgroundColor: "rgba(248, 250, 252, 0.98)",
+                  border: "1px solid rgba(226, 232, 240, 0.9)",
+                  borderLeft: "6px solid #84cc16",
+                  borderRadius: 20,
+                  padding: "16px 36px",
+                  textAlign: "center",
+                  boxShadow: "0 15px 40px rgba(0,0,0,0.5)",
+                  opacity: pSummary,
+                  transform: `scale(${0.97 + 0.03 * pSummary})`,
+                }}
+              >
+                <span style={{ fontSize: 24, color: "#0f172a", fontWeight: 900 }}>
+                  ➔ Считайте сделки и прибыль в кассе, а не пустых краулеров в серверных логах!
+                </span>
+              </div>
+            );
+          })()}
         </div>
       )}
 

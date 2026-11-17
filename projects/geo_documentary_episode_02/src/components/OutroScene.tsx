@@ -77,12 +77,13 @@ export const OutroScene: React.FC = () => {
             display: "flex",
             alignItems: "center",
             gap: 48,
-            backgroundColor: "rgba(15, 23, 42, 0.96)",
-            border: "2.5px solid rgba(163, 230, 53, 0.7)",
+            backgroundColor: "rgba(248, 250, 252, 0.98)",
+            border: "1px solid rgba(226, 232, 240, 0.9)",
+            borderLeft: "6px solid #84cc16",
             borderRadius: 28,
             padding: "40px 54px",
             maxWidth: 1320,
-            boxShadow: `0 25px 60px rgba(0,0,0,0.8), 0 0 ${25 + 15 * Math.sin(frame / 10)}px rgba(163, 230, 53, 0.35)`,
+            boxShadow: `0 25px 60px rgba(0,0,0,0.7), 0 0 ${25 + 15 * Math.sin(frame / 10)}px rgba(132, 204, 22, 0.35)`,
           }}
         >
           {/* Large High-Contrast Telegram QR Code with Glowing Pulse Ring */}
@@ -93,14 +94,14 @@ export const OutroScene: React.FC = () => {
                 height: 240,
                 borderRadius: 24,
                 overflow: "hidden",
-                border: "3.5px solid #a3e635",
+                border: "3.5px solid #84cc16",
                 backgroundColor: "#ffffff",
                 padding: 10,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 flexShrink: 0,
-                boxShadow: `0 10px 30px rgba(0,0,0,0.6), 0 0 ${20 + 10 * Math.sin(frame / 10)}px rgba(163, 230, 53, 0.5)`,
+                boxShadow: `0 10px 30px rgba(0,0,0,0.3), 0 0 ${20 + 10 * Math.sin(frame / 10)}px rgba(132, 204, 22, 0.4)`,
               }}
             >
               <Img
@@ -110,10 +111,11 @@ export const OutroScene: React.FC = () => {
             </div>
             <div
               style={{
-                padding: "4px 14px",
-                borderRadius: 12,
-                backgroundColor: "rgba(163, 230, 53, 0.2)",
-                color: "#a3e635",
+                padding: "6px 16px",
+                borderRadius: 14,
+                backgroundColor: "#ecfdf5",
+                border: "1px solid #bbf7d0",
+                color: "#15803d",
                 fontSize: 14,
                 fontWeight: 900,
                 letterSpacing: 0.8,
@@ -124,28 +126,28 @@ export const OutroScene: React.FC = () => {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-            <div style={{ fontSize: 36, fontWeight: 900, color: "#f8fafc", lineHeight: 1.15 }}>
+            <div style={{ fontSize: 36, fontWeight: 900, color: "#0f172a", lineHeight: 1.15 }}>
               Напишите в комментариях под видео:
             </div>
-            <div style={{ fontSize: 24, color: "#cbd5e1", lineHeight: 1.45 }}>
+            <div style={{ fontSize: 24, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
               Какой у вас сайт и что вы считаете заявкой? Разберём вашу нишу и структуру в следующем выпуске.
             </div>
             <div
               style={{
                 marginTop: 6,
-                padding: "14px 20px",
+                padding: "16px 22px",
                 borderRadius: 16,
-                backgroundColor: "rgba(163, 230, 53, 0.12)",
-                border: "1px solid rgba(163, 230, 53, 0.4)",
+                backgroundColor: "#f0fdf4",
+                border: "1.5px solid #bbf7d0",
                 display: "flex",
                 flexDirection: "column",
                 gap: 4,
               }}
             >
-              <div style={{ fontSize: 22, color: "#a3e635", fontWeight: 900 }}>
+              <div style={{ fontSize: 22, color: "#15803d", fontWeight: 900 }}>
                 📌 Telegram-канал: @BUDDAH_AI
               </div>
-              <div style={{ fontSize: 18, color: "#f1f5f9" }}>
+              <div style={{ fontSize: 18, color: "#166534", fontWeight: 600 }}>
                 Архитектура RAG-поиска, шаблоны промптов и чеклист внедрения GEO — в закрепе канала.
               </div>
             </div>

@@ -97,9 +97,9 @@ export const BenCarRentScene: React.FC = () => {
       <BackgroundGrid accentColor="#10b981" />
 
       {/* =========================================================================
-          PHASE 1 (0 - 28s): ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА
-          0 - 15s: Введение в кейс и архитектуру
-          15 - 28s: Уведомление в бот со всеми UTM метками
+          PHASE 1 (0 - 28s): ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА & ПУТЬ КЛИЕНТА (5:10)
+          0 - 9.5s: Архитектура проекта и сайта
+          9.5 - 28s: Интерактивная анимированная цепочка Customer Journey
           ========================================================================= */}
       {sec < 28 && (
         <div
@@ -114,87 +114,306 @@ export const BenCarRentScene: React.FC = () => {
             boxSizing: "border-box",
           }}
         >
-          <div
-            style={{
-              padding: "8px 24px",
-              borderRadius: 30,
-              backgroundColor: "rgba(16, 185, 129, 0.2)",
-              border: "1.5px solid rgba(16, 185, 129, 0.5)",
-              color: "#34d399",
-              fontSize: 18,
-              fontWeight: 900,
-              letterSpacing: 2,
-              marginBottom: 14,
-            }}
-          >
-            КЛИЕНТСКИЙ КЕЙС 01 · АРЕНДА АВТО НА ПХУКЕТЕ
-          </div>
+          {sec < 9.5 ? (
+            /* Phase 1A (0 - 9.5s): Project Architecture */
+            <>
+              <div
+                style={{
+                  padding: "8px 24px",
+                  borderRadius: 30,
+                  backgroundColor: "rgba(16, 185, 129, 0.2)",
+                  border: "1.5px solid rgba(16, 185, 129, 0.5)",
+                  color: "#34d399",
+                  fontSize: 18,
+                  fontWeight: 900,
+                  letterSpacing: 2,
+                  marginBottom: 14,
+                }}
+              >
+                КЛИЕНТСКИЙ КЕЙС 01 · АРЕНДА АВТО НА ПХУКЕТЕ
+              </div>
 
-          <h2
-            style={{
-              fontSize: 58,
-              fontWeight: 900,
-              color: "#f8fafc",
-              textAlign: "center",
-              lineHeight: 1.1,
-              margin: "0 0 28px",
-            }}
-          >
-            BENPHUKETCARRENT.COM: ЖИВЫЕ ЗАЯВКИ ИЗ CHATGPT
-          </h2>
+              <h2
+                style={{
+                  fontSize: 58,
+                  fontWeight: 900,
+                  color: "#f8fafc",
+                  textAlign: "center",
+                  lineHeight: 1.1,
+                  margin: "0 0 28px",
+                }}
+              >
+                BENPHUKETCARRENT.COM: ЖИВЫЕ ЗАЯВКИ ИЗ CHATGPT
+              </h2>
 
-          <div
-            style={{
-              display: "flex",
-              gap: 32,
-              maxWidth: 1350,
-              width: "100%",
-            }}
-          >
-            <div
-              style={{
-                flex: 1,
-                backgroundColor: "rgba(248, 250, 252, 0.98)",
-                border: "1px solid rgba(226, 232, 240, 0.9)",
-                borderTop: "4px solid #0284c7",
-                borderRadius: 24,
-                padding: "32px 36px",
-                boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
-              }}
-            >
-              <div style={{ fontSize: 16, color: "#0369a1", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
-                ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА
-              </div>
-              <div style={{ fontSize: 30, fontWeight: 900, color: "#0f172a", marginBottom: 12 }}>
-                Инженерная архитектура под поиск
-              </div>
-              <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
-                Страницы под каждую модель, прозрачные условия депозитов, страховка, локальные гиды и сквозная UTM-атрибуция.
-              </div>
-            </div>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 32,
+                  maxWidth: 1350,
+                  width: "100%",
+                }}
+              >
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #0284c7",
+                    borderRadius: 24,
+                    padding: "32px 36px",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#0369a1", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                    ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА
+                  </div>
+                  <div style={{ fontSize: 30, fontWeight: 900, color: "#0f172a", marginBottom: 12 }}>
+                    Инженерная архитектура под поиск
+                  </div>
+                  <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
+                    Страницы под каждую модель, прозрачные условия депозитов, страховка, локальные гиды и сквозная UTM-атрибуция.
+                  </div>
+                </div>
 
-            <div
-              style={{
-                flex: 1,
-                backgroundColor: "rgba(248, 250, 252, 0.98)",
-                border: "1px solid rgba(226, 232, 240, 0.9)",
-                borderTop: "4px solid #059669",
-                borderRadius: 24,
-                padding: "32px 36px",
-                boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
-              }}
-            >
-              <div style={{ fontSize: 16, color: "#047857", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
-                УВЕДОМЛЕНИЕ В БОТ КОМАНДЫ
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #059669",
+                    borderRadius: 24,
+                    padding: "32px 36px",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+                  }}
+                >
+                  <div style={{ fontSize: 16, color: "#047857", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                    УВЕДОМЛЕНИЕ В БОТ КОМАНДЫ
+                  </div>
+                  <div style={{ fontSize: 30, fontWeight: 900, color: "#059669", marginBottom: 12 }}>
+                    Источник: AI · ChatGPT
+                  </div>
+                  <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
+                    Запрос мгновенно падает менеджерам с меткой <code style={{ color: "#0369a1", backgroundColor: "#e0f2fe", padding: "2px 6px", borderRadius: 6, fontWeight: 900 }}>utm_source=chatgpt.com</code> и прямой ссылкой на машину.
+                  </div>
+                </div>
               </div>
-              <div style={{ fontSize: 30, fontWeight: 900, color: "#059669", marginBottom: 12 }}>
-                Источник: AI · ChatGPT
+            </>
+          ) : (
+            /* Phase 1B (9.5s - 28s / 5:10 in video): Animated Customer Journey Flowchart */
+            <>
+              <div
+                style={{
+                  padding: "8px 24px",
+                  borderRadius: 30,
+                  backgroundColor: "rgba(56, 189, 248, 0.2)",
+                  border: "1.5px solid rgba(56, 189, 248, 0.5)",
+                  color: "#38bdf8",
+                  fontSize: 18,
+                  fontWeight: 900,
+                  letterSpacing: 2,
+                  marginBottom: 14,
+                }}
+              >
+                ПУТЬ КЛИЕНТА В GEO · ОТ ПОИСКА ДО СДЕЛКИ
               </div>
-              <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
-                Запрос мгновенно падает менеджерам с меткой <code style={{ color: "#0369a1", backgroundColor: "#e0f2fe", padding: "2px 6px", borderRadius: 6, fontWeight: 900 }}>utm_source=chatgpt.com</code> и прямой ссылкой на машину.
+
+              <h2
+                style={{
+                  fontSize: 54,
+                  fontWeight: 900,
+                  color: "#f8fafc",
+                  textAlign: "center",
+                  lineHeight: 1.1,
+                  margin: "0 0 24px",
+                }}
+              >
+                КАК ТУРИСТ СТАНОВИТСЯ РЕАЛЬНЫМ КЛИЕНТОМ АВТОПАРКА
+              </h2>
+
+              {/* 4-Step Animated Customer Journey */}
+              <div style={{ display: "flex", gap: 18, maxWidth: 1420, width: "100%", alignItems: "stretch" }}>
+                {/* Step 1: Query in ChatGPT */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: sec < 13.5 ? "5px solid #0284c7" : "4px solid #cbd5e1",
+                    borderRadius: 22,
+                    padding: "20px 20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    boxShadow: sec < 13.5 ? "0 20px 50px rgba(2, 132, 199, 0.4)" : "0 15px 35px rgba(0,0,0,0.5)",
+                    transform: sec < 13.5 ? "scale(1.02)" : "scale(1.0)",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                    <span style={{ fontSize: 13, color: "#0284c7", fontWeight: 900, letterSpacing: 0.8 }}>ШАГ 1 · ВОПРОС</span>
+                    <span style={{ fontSize: 20 }}>💬</span>
+                  </div>
+                  <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a", marginBottom: 8 }}>
+                    Запрос в ChatGPT
+                  </div>
+                  <div
+                    style={{
+                      backgroundColor: "#f1f5f9",
+                      borderRadius: 12,
+                      padding: "10px 12px",
+                      fontSize: 14,
+                      color: "#334155",
+                      fontStyle: "italic",
+                      marginBottom: 10,
+                      border: "1px solid #e2e8f0",
+                      lineHeight: 1.35,
+                    }}
+                  >
+                    «Посоветуй надежную аренду авто на Пхукете без залога паспорта»
+                  </div>
+                  <div style={{ fontSize: 14, color: "#64748b", fontWeight: 600, marginTop: "auto" }}>
+                    🎯 Горячий спрос с конкретными условиями
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center", fontSize: 24, color: "#94a3b8", fontWeight: 900 }}>➔</div>
+
+                {/* Step 2: AI Quotes Website */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: sec >= 13.5 && sec < 18.0 ? "5px solid #8b5cf6" : "4px solid #cbd5e1",
+                    borderRadius: 22,
+                    padding: "20px 20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    boxShadow: sec >= 13.5 && sec < 18.0 ? "0 20px 50px rgba(139, 92, 246, 0.4)" : "0 15px 35px rgba(0,0,0,0.5)",
+                    transform: sec >= 13.5 && sec < 18.0 ? "scale(1.02)" : "scale(1.0)",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                    <span style={{ fontSize: 13, color: "#7c3aed", fontWeight: 900, letterSpacing: 0.8 }}>ШАГ 2 · ЦИТИРОВАНИЕ</span>
+                    <span style={{ fontSize: 20 }}>🤖</span>
+                  </div>
+                  <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a", marginBottom: 8 }}>
+                    Ответ нейросети
+                  </div>
+                  <div
+                    style={{
+                      backgroundColor: "#f5f3ff",
+                      borderRadius: 12,
+                      padding: "10px 12px",
+                      fontSize: 14,
+                      color: "#5b21b6",
+                      fontWeight: 700,
+                      marginBottom: 10,
+                      border: "1px solid #ddd6fe",
+                      lineHeight: 1.35,
+                    }}
+                  >
+                    «Рекомендую BenPhuketCarRent: прозрачные цены, депозит наличными, страховка 1-го класса»
+                  </div>
+                  <div style={{ fontSize: 14, color: "#64748b", fontWeight: 600, marginTop: "auto" }}>
+                    ⭐ Модель цитирует сайт за точные факты
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center", fontSize: 24, color: "#94a3b8", fontWeight: 900 }}>➔</div>
+
+                {/* Step 3: Transition to WhatsApp */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: sec >= 18.0 && sec < 22.5 ? "5px solid #059669" : "4px solid #cbd5e1",
+                    borderRadius: 22,
+                    padding: "20px 20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    boxShadow: sec >= 18.0 && sec < 22.5 ? "0 20px 50px rgba(5, 150, 105, 0.4)" : "0 15px 35px rgba(0,0,0,0.5)",
+                    transform: sec >= 18.0 && sec < 22.5 ? "scale(1.02)" : "scale(1.0)",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                    <span style={{ fontSize: 13, color: "#047857", fontWeight: 900, letterSpacing: 0.8 }}>ШАГ 3 · ПЕРЕХОД</span>
+                    <span style={{ fontSize: 20 }}>📲</span>
+                  </div>
+                  <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a", marginBottom: 8 }}>
+                    Клик в WhatsApp
+                  </div>
+                  <div
+                    style={{
+                      backgroundColor: "#dcfce7",
+                      borderRadius: 12,
+                      padding: "10px 12px",
+                      fontSize: 13,
+                      color: "#065f46",
+                      fontWeight: 800,
+                      marginBottom: 10,
+                      border: "1px solid #86efac",
+                      lineHeight: 1.35,
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    utm_source=chatgpt.com &car=toyota_yaris_ativ
+                  </div>
+                  <div style={{ fontSize: 14, color: "#64748b", fontWeight: 600, marginTop: "auto" }}>
+                    🔗 Сквозная UTM-метка передана в диалог
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center", fontSize: 24, color: "#94a3b8", fontWeight: 900 }}>➔</div>
+
+                {/* Step 4: Instant Booking in Telegram Bot */}
+                <div
+                  style={{
+                    flex: 1,
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: sec >= 22.5 ? "5px solid #16a34a" : "4px solid #cbd5e1",
+                    borderRadius: 22,
+                    padding: "20px 20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    boxShadow: sec >= 22.5 ? "0 25px 60px rgba(22, 163, 74, 0.45)" : "0 15px 35px rgba(0,0,0,0.5)",
+                    transform: sec >= 22.5 ? "scale(1.03)" : "scale(1.0)",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                    <span style={{ fontSize: 13, color: "#15803d", fontWeight: 900, letterSpacing: 0.8 }}>ШАГ 4 · БРОНЬ</span>
+                    <span style={{ fontSize: 20 }}>💰</span>
+                  </div>
+                  <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a", marginBottom: 8 }}>
+                    Сделка за 3 минуты
+                  </div>
+                  <div
+                    style={{
+                      backgroundColor: "#ecfdf5",
+                      borderRadius: 12,
+                      padding: "10px 12px",
+                      fontSize: 14,
+                      color: "#166534",
+                      fontWeight: 800,
+                      marginBottom: 10,
+                      border: "1px solid #bbf7d0",
+                      lineHeight: 1.35,
+                    }}
+                  >
+                    Бот фиксирует дату, модель и отель. Клиент вносит залог.
+                  </div>
+                  <div style={{ fontSize: 14, color: "#16a34a", fontWeight: 900, marginTop: "auto" }}>
+                    ✓ 100% реальный результат в кассе
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </>
+          )}
         </div>
       )}
 
@@ -532,9 +751,10 @@ export const BenCarRentScene: React.FC = () => {
       )}
 
       {/* =========================================================================
-          PHASE 4 (55.5s+): ВЕСЬ АВТОПАРК КЛИЕНТА СДАН
+          PHASE 4 (55.5s+ / 5:57 in video): ВЕСЬ АВТОПАРК КЛИЕНТА СДАН
           Диктор: «А теперь главный результат для бизнеса: весь автопарк клиента
-          сдан и занят на недели вперед...»
+          сдан и занят на недели вперед. Новые запросы приходится передавать
+          дружественным агентствам...»
           ========================================================================= */}
       {sec >= 55.5 && (
         <div
@@ -553,16 +773,16 @@ export const BenCarRentScene: React.FC = () => {
             style={{
               padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(250, 204, 21, 0.2)",
-              border: "1.5px solid rgba(250, 204, 21, 0.5)",
-              color: "#facc15",
+              backgroundColor: "rgba(245, 158, 11, 0.2)",
+              border: "1.5px solid rgba(245, 158, 11, 0.5)",
+              color: "#fbbf24",
               fontSize: 18,
               fontWeight: 900,
               letterSpacing: 2,
               marginBottom: 14,
             }}
           >
-            БИЗНЕС-РЕЗУЛЬТАТ · ЗАПОЛНЯЕМОСТЬ
+            БИЗНЕС-РЕЗУЛЬТАТ · 100% ЗАПОЛНЯЕМОСТЬ
           </div>
 
           <h2
@@ -572,28 +792,146 @@ export const BenCarRentScene: React.FC = () => {
               color: "#f8fafc",
               textAlign: "center",
               lineHeight: 1.1,
-              margin: "0 0 28px",
+              margin: "0 0 24px",
             }}
           >
             ВЕСЬ АВТОПАРК КЛИЕНТА СДАН НА НЕДЕЛИ ВПЕРЁД
           </h2>
 
-          <div
-            style={{
-              backgroundColor: "rgba(15, 23, 42, 0.94)",
-              border: "2.5px solid #facc15",
-              borderRadius: 24,
-              padding: "40px 54px",
-              maxWidth: 1300,
-              textAlign: "center",
-              boxShadow: "0 0 45px rgba(250, 204, 21, 0.3)",
-            }}
-          >
-            <div style={{ fontSize: 30, color: "#f8fafc", fontWeight: 800, lineHeight: 1.4, marginBottom: 20 }}>
-              Спрос превысил физическую ёмкость парка. Новые заявки клиент передаёт партнёрским агентствам за комиссию.
+          {/* 2-Column High-Density Editorial Dossier Dashboard */}
+          <div style={{ display: "flex", gap: 32, maxWidth: 1400, width: "100%", flex: 1, maxHeight: 520 }}>
+            {/* Left Column: Fleet Occupancy & Breakdown */}
+            <div
+              style={{
+                flex: 1.15,
+                backgroundColor: "rgba(248, 250, 252, 0.98)",
+                border: "1px solid rgba(226, 232, 240, 0.9)",
+                borderTop: "5px solid #059669",
+                borderRadius: 24,
+                padding: "26px 32px",
+                display: "flex",
+                flexDirection: "column",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                <span style={{ fontSize: 16, color: "#047857", fontWeight: 900, letterSpacing: 1 }}>
+                  СЕТКА БРОНЕЙ АВТОПАРКА
+                </span>
+                <span style={{ fontSize: 13, color: "#065f46", fontWeight: 900, backgroundColor: "#dcfce7", border: "1px solid #bbf7d0", padding: "4px 12px", borderRadius: 12 }}>
+                  ● 0 СВОБОДНЫХ МАШИН
+                </span>
+              </div>
+
+              {/* Big Occupancy Meter */}
+              <div style={{ display: "flex", alignItems: "baseline", gap: 14, margin: "4px 0 12px" }}>
+                <div style={{ fontSize: 88, fontWeight: 900, color: "#059669", letterSpacing: -3, lineHeight: 0.95 }}>
+                  {Math.round(interpolate(frame - 55.5 * fps, [0, 20], [80, 100], { extrapolateRight: "clamp" }))}%
+                </div>
+                <div>
+                  <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 900 }}>
+                    Загрузка парка на недели вперёд
+                  </div>
+                  <div style={{ fontSize: 15, color: "#64748b", fontWeight: 600 }}>
+                    Все 26 автомобилей сданы реальным туристам
+                  </div>
+                </div>
+              </div>
+
+              {/* Fleet Models Breakdown List */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 8, flex: 1 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", backgroundColor: "#ffffff", padding: "10px 16px", borderRadius: 12, border: "1px solid #e2e8f0" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ fontSize: 20 }}>🚗</span>
+                    <span style={{ fontSize: 16, fontWeight: 800, color: "#0f172a" }}>Toyota Yaris Ativ (12 авто)</span>
+                  </div>
+                  <span style={{ fontSize: 14, fontWeight: 900, color: "#059669", backgroundColor: "#dcfce7", padding: "3px 10px", borderRadius: 8 }}>
+                    100% ЗАНЯТО
+                  </span>
+                </div>
+
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", backgroundColor: "#ffffff", padding: "10px 16px", borderRadius: 12, border: "1px solid #e2e8f0" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ fontSize: 20 }}>🚙</span>
+                    <span style={{ fontSize: 16, fontWeight: 800, color: "#0f172a" }}>Toyota Fortuner 4x4 (6 авто)</span>
+                  </div>
+                  <span style={{ fontSize: 14, fontWeight: 900, color: "#059669", backgroundColor: "#dcfce7", padding: "3px 10px", borderRadius: 8 }}>
+                    100% ЗАНЯТО
+                  </span>
+                </div>
+
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", backgroundColor: "#ffffff", padding: "10px 16px", borderRadius: 12, border: "1px solid #e2e8f0" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ fontSize: 20 }}>🚘</span>
+                    <span style={{ fontSize: 16, fontWeight: 800, color: "#0f172a" }}>Honda City Hatchback (8 авто)</span>
+                  </div>
+                  <span style={{ fontSize: 14, fontWeight: 900, color: "#059669", backgroundColor: "#dcfce7", padding: "3px 10px", borderRadius: 8 }}>
+                    100% ЗАНЯТО
+                  </span>
+                </div>
+              </div>
             </div>
-            <div style={{ fontSize: 24, color: "#38bdf8", fontWeight: 800 }}>
-              ➔ Разница между «нас просканировал бот» и полностью забитой сеткой броней
+
+            {/* Right Column: Demand Overflow & Partner Monetization */}
+            <div
+              style={{
+                flex: 0.95,
+                backgroundColor: "rgba(248, 250, 252, 0.98)",
+                border: "1px solid rgba(226, 232, 240, 0.9)",
+                borderTop: "5px solid #d97706",
+                borderRadius: 24,
+                padding: "26px 30px",
+                display: "flex",
+                flexDirection: "column",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                <span style={{ fontSize: 16, color: "#d97706", fontWeight: 900, letterSpacing: 1 }}>
+                  МОНЕТИЗАЦИЯ ПЕРЕЛИВА СПРОСА
+                </span>
+                <span style={{ fontSize: 13, color: "#92400e", fontWeight: 900, backgroundColor: "#fef3c7", border: "1px solid #fde68a", padding: "4px 12px", borderRadius: 12 }}>
+                  +15-20% КОМИССИЯ
+                </span>
+              </div>
+
+              <div style={{ fontSize: 24, fontWeight: 900, color: "#0f172a", marginBottom: 12, lineHeight: 1.25 }}>
+                Свои машины закончились — новые заявки передаются партнёрам
+              </div>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 16, color: "#334155", fontWeight: 600 }}>
+                  <span style={{ color: "#d97706", fontWeight: 900, fontSize: 18 }}>✓</span>
+                  <span><strong>Непрерывный поток обращений:</strong> отдел бронирования загружен работой на полную мощность.</span>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 16, color: "#334155", fontWeight: 600 }}>
+                  <span style={{ color: "#d97706", fontWeight: 900, fontSize: 18 }}>✓</span>
+                  <span><strong>Суб-аренда без простоя:</strong> избыточные лиды передаются надежным дружественным сервисам за комиссию.</span>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 16, color: "#334155", fontWeight: 600 }}>
+                  <span style={{ color: "#d97706", fontWeight: 900, fontSize: 18 }}>✓</span>
+                  <span><strong>Чистая монетизация:</strong> бизнес зарабатывает даже тогда, когда собственный гараж полон на 100%.</span>
+                </div>
+              </div>
+
+              {/* Contrast Bottom Badge */}
+              <div
+                style={{
+                  marginTop: 14,
+                  backgroundColor: "#fffbeb",
+                  border: "1px solid #fde68a",
+                  borderRadius: 14,
+                  padding: "12px 16px",
+                  fontSize: 16,
+                  color: "#92400e",
+                  fontWeight: 800,
+                  textAlign: "center",
+                }}
+              >
+                ➔ Разница между «нас просканировал бот» и забитой сеткой броней
+              </div>
             </div>
           </div>
         </div>

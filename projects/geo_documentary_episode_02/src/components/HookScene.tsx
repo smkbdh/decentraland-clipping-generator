@@ -158,38 +158,46 @@ export const HookScene: React.FC = () => {
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.92)",
-                    border: "2px solid rgba(239, 68, 68, 0.5)",
-                    borderRadius: 20,
-                    padding: "24px 32px",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #dc2626",
+                    borderRadius: 24,
+                    padding: "26px 32px",
                     textAlign: "center",
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#f87171", fontWeight: 800, marginBottom: 6 }}>
+                  <div style={{ fontSize: 15, color: "#dc2626", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                     ЧТО ПОКАЗЫВАЮТ В ХАЙП-ПРЕЗЕНТАЦИЯХ
                   </div>
-                  <div style={{ fontSize: 34, color: "#ef4444", fontWeight: 900 }}>
+                  <div style={{ fontSize: 32, color: "#0f172a", fontWeight: 900, marginBottom: 6 }}>
                     🤖 Трафик краулеров в логах
+                  </div>
+                  <div style={{ fontSize: 16, color: "#64748b", fontWeight: 600 }}>
+                    Миллионы серверных хитов ботов без единой заявки
                   </div>
                 </div>
 
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.92)",
-                    border: "2px solid rgba(34, 197, 94, 0.5)",
-                    borderRadius: 20,
-                    padding: "24px 32px",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #059669",
+                    borderRadius: 24,
+                    padding: "26px 32px",
                     textAlign: "center",
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#4ade80", fontWeight: 800, marginBottom: 6 }}>
+                  <div style={{ fontSize: 15, color: "#047857", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                     ЧТО НА САМОМ ДЕЛЕ НУЖНО БИЗНЕСУ
                   </div>
-                  <div style={{ fontSize: 34, color: "#22c55e", fontWeight: 900 }}>
+                  <div style={{ fontSize: 32, color: "#059669", fontWeight: 900, marginBottom: 6 }}>
                     💰 Реальные клиенты и сделки
+                  </div>
+                  <div style={{ fontSize: 16, color: "#334155", fontWeight: 600 }}>
+                    Живые брони, переходы в WhatsApp и оплаты в кассе
                   </div>
                 </div>
               </div>
@@ -623,30 +631,32 @@ export const HookScene: React.FC = () => {
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.94)",
-                    border: "1.5px solid rgba(239, 68, 68, 0.4)",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #dc2626",
                     borderRadius: 24,
                     padding: "30px 32px",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#f87171", fontWeight: 800, marginBottom: 8 }}>
+                  <div style={{ fontSize: 15, color: "#dc2626", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                     ОБЫЧНЫЙ ПОИСКОВЫЙ ЗАПРОС (ПУСТОЙ ТРАФИК)
                   </div>
                   <div
                     style={{
-                      backgroundColor: "rgba(0,0,0,0.4)",
+                      backgroundColor: "#f1f5f9",
                       borderRadius: 14,
                       padding: "16px 20px",
-                      fontSize: 22,
-                      color: "#94a3b8",
+                      fontSize: 21,
+                      color: "#475569",
                       fontStyle: "italic",
                       marginBottom: 14,
-                      border: "1px solid rgba(255,255,255,0.08)",
+                      border: "1px solid #cbd5e1",
                     }}
                   >
                     «какие машины в аренду на пхукете отзывы туристов форум»
                   </div>
-                  <div style={{ fontSize: 18, color: "#64748b" }}>
+                  <div style={{ fontSize: 18, color: "#64748b", fontWeight: 600 }}>
                     ➔ Читает 20 сайтов, сравнивает воду, покупка откладывается на месяцы.
                   </div>
                 </div>
@@ -655,31 +665,32 @@ export const HookScene: React.FC = () => {
                 <div
                   style={{
                     flex: 1.15,
-                    backgroundColor: "rgba(15, 23, 42, 0.96)",
-                    border: "2.5px solid #10b981",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #059669",
                     borderRadius: 24,
                     padding: "30px 32px",
-                    boxShadow: "0 15px 40px rgba(0,0,0,0.6), 0 0 35px rgba(16, 185, 129, 0.25)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 0 30px rgba(5, 150, 105, 0.25)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#34d399", fontWeight: 900, marginBottom: 8 }}>
+                  <div style={{ fontSize: 15, color: "#047857", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                     ЦЕЛЕВОЙ ДИАЛОГ В CHATGPT (ПРЯМАЯ СДЕЛКА)
                   </div>
                   <div
                     style={{
-                      backgroundColor: "rgba(16, 185, 129, 0.12)",
+                      backgroundColor: "#dcfce7",
                       borderRadius: 14,
                       padding: "16px 20px",
-                      fontSize: 22,
-                      color: "#ffffff",
-                      fontWeight: 700,
+                      fontSize: 21,
+                      color: "#065f46",
+                      fontWeight: 800,
                       marginBottom: 14,
-                      border: "1px solid rgba(16, 185, 129, 0.4)",
+                      border: "1.5px solid #86efac",
                     }}
                   >
                     «Найди Toyota Yaris на Патонге с 16 по 20 ноября с доставкой в отель до 1000฿/день»
                   </div>
-                  <div style={{ fontSize: 19, color: "#34d399", fontWeight: 800 }}>
+                  <div style={{ fontSize: 19, color: "#047857", fontWeight: 900 }}>
                     ➔ Прямой переход по ссылке в WhatsApp и мгновенная оплата брони.
                   </div>
                 </div>
@@ -689,8 +700,8 @@ export const HookScene: React.FC = () => {
         </div>
       )}
 
-      {/* SUB-PHASE 3 (45 - 74s): 3 Stages Funnel with Real Bot Documentation */}
-      {sec >= 45.0 && sec < 74 && (
+      {/* SUB-PHASE 3 (45 - 69.2s): 3 Stages Funnel with Real Bot Documentation */}
+      {sec >= 45.0 && sec < 69.2 && (
         <div
           style={{
             position: "absolute",
@@ -734,20 +745,21 @@ export const HookScene: React.FC = () => {
           <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
             <div
               style={{
-                backgroundColor: "rgba(15, 23, 42, 0.95)",
-                border: "2px solid rgba(239, 68, 68, 0.6)",
+                backgroundColor: "rgba(248, 250, 252, 0.98)",
+                border: "1px solid rgba(226, 232, 240, 0.9)",
+                borderTop: "4px solid #dc2626",
                 borderRadius: 24,
                 padding: "32px 36px",
                 textAlign: "center",
                 width: 360,
-                boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
               <div style={{ fontSize: 38, marginBottom: 10 }}>🤖</div>
-              <div style={{ fontSize: 30, fontWeight: 900, color: "#ef4444", marginBottom: 10 }}>
+              <div style={{ fontSize: 28, fontWeight: 900, color: "#dc2626", marginBottom: 10 }}>
                 1. КРАУЛЕР
               </div>
-              <div style={{ fontSize: 22, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                 Сканирует страницу для индекса и обучения моделей
               </div>
             </div>
@@ -756,20 +768,21 @@ export const HookScene: React.FC = () => {
 
             <div
               style={{
-                backgroundColor: "rgba(15, 23, 42, 0.95)",
-                border: "2px solid rgba(245, 158, 11, 0.6)",
+                backgroundColor: "rgba(248, 250, 252, 0.98)",
+                border: "1px solid rgba(226, 232, 240, 0.9)",
+                borderTop: "4px solid #d97706",
                 borderRadius: 24,
                 padding: "32px 36px",
                 textAlign: "center",
                 width: 360,
-                boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
               }}
             >
               <div style={{ fontSize: 38, marginBottom: 10 }}>👆</div>
-              <div style={{ fontSize: 30, fontWeight: 900, color: "#f59e0b", marginBottom: 10 }}>
+              <div style={{ fontSize: 28, fontWeight: 900, color: "#d97706", marginBottom: 10 }}>
                 2. ПЕРЕХОД
               </div>
-              <div style={{ fontSize: 22, color: "#94a3b8", lineHeight: 1.4 }}>
+              <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                 Человек переходит по ссылке-рекомендации нейросети
               </div>
             </div>
@@ -778,20 +791,21 @@ export const HookScene: React.FC = () => {
 
             <div
               style={{
-                backgroundColor: "rgba(15, 23, 42, 0.95)",
-                border: "2px solid rgba(34, 197, 94, 0.6)",
+                backgroundColor: "rgba(248, 250, 252, 0.98)",
+                border: "1px solid rgba(226, 232, 240, 0.9)",
+                borderTop: "4px solid #059669",
                 borderRadius: 24,
                 padding: "32px 36px",
                 textAlign: "center",
                 width: 360,
-                boxShadow: "0 0 40px rgba(34, 197, 94, 0.3)",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 0 40px rgba(5, 150, 105, 0.3)",
               }}
             >
               <div style={{ fontSize: 38, marginBottom: 10 }}>💰</div>
-              <div style={{ fontSize: 30, fontWeight: 900, color: "#22c55e", marginBottom: 10 }}>
+              <div style={{ fontSize: 28, fontWeight: 900, color: "#059669", marginBottom: 10 }}>
                 3. КЛИЕНТ
               </div>
-              <div style={{ fontSize: 22, color: "#f8fafc", lineHeight: 1.4, fontWeight: 600 }}>
+              <div style={{ fontSize: 20, color: "#0f172a", lineHeight: 1.45, fontWeight: 700 }}>
                 Пишет в WhatsApp, оставляет бронь, покупает
               </div>
             </div>
@@ -799,8 +813,8 @@ export const HookScene: React.FC = () => {
         </div>
       )}
 
-      {/* SUB-PHASE 4 (74 - 100.8s): OpenAI Crawlers Table */}
-      {sec >= 74 && (
+      {/* SUB-PHASE 4 (69.2 - 95.5s): OpenAI Crawlers Table (Starts precisely at 1:10 voiceover) */}
+      {sec >= 69.2 && (
         <div
           style={{
             position: "absolute",
@@ -817,9 +831,9 @@ export const HookScene: React.FC = () => {
             style={{
               padding: "8px 24px",
               borderRadius: 30,
-              backgroundColor: "rgba(255, 255, 255, 0.1)",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
-              color: "#f8fafc",
+              backgroundColor: "rgba(56, 189, 248, 0.2)",
+              border: "1.5px solid rgba(56, 189, 248, 0.5)",
+              color: "#38bdf8",
               fontSize: 16,
               fontWeight: 800,
               letterSpacing: 2,
@@ -842,64 +856,92 @@ export const HookScene: React.FC = () => {
           </h2>
 
           <div style={{ display: "flex", gap: 32, maxWidth: 1350, width: "100%" }}>
+            {/* Card 1: GPTBot */}
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.94)",
-                border: "1.5px solid rgba(148, 163, 184, 0.35)",
+                backgroundColor: "rgba(248, 250, 252, 0.98)",
+                border: "1px solid rgba(226, 232, 240, 0.9)",
+                borderTop: sec < 73.5 ? "5px solid #64748b" : "4px solid #94a3b8",
                 borderRadius: 24,
                 padding: "32px",
+                boxShadow: sec < 73.5 ? "0 25px 60px rgba(0,0,0,0.7), 0 0 30px rgba(100, 116, 139, 0.4)" : "0 20px 50px rgba(0,0,0,0.65)",
+                transform: sec < 73.5 ? "scale(1.03)" : "scale(1.0)",
+                transition: "all 0.3s ease",
               }}
             >
-              <div style={{ fontFamily: "monospace", fontSize: 28, fontWeight: 900, color: "#94a3b8", marginBottom: 10 }}>
-                GPTBot
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                <span style={{ fontFamily: "monospace", fontSize: 28, fontWeight: 900, color: "#334155" }}>
+                  GPTBot
+                </span>
+                <span style={{ fontSize: 12, fontWeight: 900, color: "#64748b", backgroundColor: "#f1f5f9", padding: "4px 10px", borderRadius: 8 }}>
+                  CRAWLER
+                </span>
               </div>
-              <div style={{ fontSize: 22, color: "#f8fafc", fontWeight: 800, marginBottom: 10 }}>
+              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 800, marginBottom: 10 }}>
                 Обучение моделей
               </div>
-              <div style={{ fontSize: 20, color: "#94a3b8", lineHeight: 1.45 }}>
+              <div style={{ fontSize: 18, color: "#475569", lineHeight: 1.45, fontWeight: 600 }}>
                 Обходит миллионы страниц для датасетов LLM. Это чистые серверные запросы, не клиенты.
               </div>
             </div>
 
+            {/* Card 2: OAI-SearchBot */}
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.94)",
-                border: "2px solid rgba(56, 189, 248, 0.6)",
+                backgroundColor: "rgba(248, 250, 252, 0.98)",
+                border: "1px solid rgba(226, 232, 240, 0.9)",
+                borderTop: sec >= 73.5 && sec < 78.0 ? "5px solid #0284c7" : "4px solid #0284c7",
                 borderRadius: 24,
                 padding: "32px",
-                boxShadow: "0 0 35px rgba(56, 189, 248, 0.25)",
+                boxShadow: sec >= 73.5 && sec < 78.0 ? "0 25px 60px rgba(0,0,0,0.7), 0 0 35px rgba(2, 132, 199, 0.4)" : "0 20px 50px rgba(0,0,0,0.65)",
+                transform: sec >= 73.5 && sec < 78.0 ? "scale(1.03)" : "scale(1.0)",
+                transition: "all 0.3s ease",
               }}
             >
-              <div style={{ fontFamily: "monospace", fontSize: 28, fontWeight: 900, color: "#38bdf8", marginBottom: 10 }}>
-                OAI-SearchBot
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                <span style={{ fontFamily: "monospace", fontSize: 28, fontWeight: 900, color: "#0284c7" }}>
+                  OAI-SearchBot
+                </span>
+                <span style={{ fontSize: 12, fontWeight: 900, color: "#0369a1", backgroundColor: "#e0f2fe", padding: "4px 10px", borderRadius: 8 }}>
+                  SEARCH
+                </span>
               </div>
-              <div style={{ fontSize: 22, color: "#f8fafc", fontWeight: 800, marginBottom: 10 }}>
+              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 800, marginBottom: 10 }}>
                 Поиск в ChatGPT Search
               </div>
-              <div style={{ fontSize: 20, color: "#cbd5e1", lineHeight: 1.45 }}>
+              <div style={{ fontSize: 18, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                 Индексирует свежий контент специально для генеративных ответов с источниками.
               </div>
             </div>
 
+            {/* Card 3: ChatGPT-User */}
             <div
               style={{
                 flex: 1,
-                backgroundColor: "rgba(15, 23, 42, 0.94)",
-                border: "2px solid rgba(34, 197, 94, 0.6)",
+                backgroundColor: "rgba(248, 250, 252, 0.98)",
+                border: "1px solid rgba(226, 232, 240, 0.9)",
+                borderTop: sec >= 78.0 ? "5px solid #059669" : "4px solid #059669",
                 borderRadius: 24,
                 padding: "32px",
-                boxShadow: "0 0 35px rgba(34, 197, 94, 0.25)",
+                boxShadow: sec >= 78.0 ? "0 25px 60px rgba(0,0,0,0.7), 0 0 35px rgba(5, 150, 105, 0.4)" : "0 20px 50px rgba(0,0,0,0.65)",
+                transform: sec >= 78.0 ? "scale(1.03)" : "scale(1.0)",
+                transition: "all 0.3s ease",
               }}
             >
-              <div style={{ fontFamily: "monospace", fontSize: 28, fontWeight: 900, color: "#22c55e", marginBottom: 10 }}>
-                ChatGPT-User
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                <span style={{ fontFamily: "monospace", fontSize: 28, fontWeight: 900, color: "#059669" }}>
+                  ChatGPT-User
+                </span>
+                <span style={{ fontSize: 12, fontWeight: 900, color: "#047857", backgroundColor: "#dcfce7", padding: "4px 10px", borderRadius: 8 }}>
+                  USER ACTION
+                </span>
               </div>
-              <div style={{ fontSize: 22, color: "#f8fafc", fontWeight: 800, marginBottom: 10 }}>
+              <div style={{ fontSize: 22, color: "#0f172a", fontWeight: 800, marginBottom: 10 }}>
                 Действие пользователя
               </div>
-              <div style={{ fontSize: 20, color: "#cbd5e1", lineHeight: 1.45 }}>
+              <div style={{ fontSize: 18, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                 Открывает страницу в реальном времени, когда пользователь просит прочитать ссылку.
               </div>
             </div>
