@@ -146,30 +146,32 @@ export const PhuketStayProScene: React.FC = () => {
               <div style={{ display: "flex", flexDirection: "column", gap: 18, width: 560 }}>
                 <div
                   style={{
-                    backgroundColor: "rgba(15, 23, 42, 0.95)",
-                    border: "2px solid rgba(236, 72, 153, 0.5)",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #db2777",
                     borderRadius: 20,
                     padding: "24px 28px",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#f472b6", fontWeight: 800, marginBottom: 4 }}>БЮДЖЕТ КЛИЕНТА</div>
-                  <div style={{ fontSize: 38, fontWeight: 900, color: "#ffffff", letterSpacing: -0.5 }}>4 000 000 THB (~$115 000)</div>
-                  <div style={{ fontSize: 20, color: "#cbd5e1", marginTop: 4 }}>The Title ViVi Bang Tao (Freehold)</div>
+                  <div style={{ fontSize: 14, color: "#be185d", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>БЮДЖЕТ КЛИЕНТА</div>
+                  <div style={{ fontSize: 38, fontWeight: 900, color: "#0f172a", letterSpacing: -0.5 }}>4 000 000 THB (~$115 000)</div>
+                  <div style={{ fontSize: 18, color: "#334155", fontWeight: 600, marginTop: 4 }}>The Title ViVi Bang Tao (Freehold)</div>
                 </div>
 
                 <div
                   style={{
-                    backgroundColor: "rgba(15, 23, 42, 0.95)",
-                    border: "2px solid #22c55e",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #059669",
                     borderRadius: 20,
                     padding: "24px 28px",
-                    boxShadow: "0 0 30px rgba(34, 197, 94, 0.25)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#86efac", fontWeight: 800, marginBottom: 4 }}>ТОЧНЫЙ ИСТОЧНИК И АТРИБУЦИЯ</div>
-                  <div style={{ fontSize: 32, fontWeight: 900, color: "#22c55e" }}>ai_referral · chatgpt.com</div>
-                  <div style={{ fontSize: 20, color: "#94a3b8", marginTop: 4 }}>Прямая рекомендация в ответе ChatGPT Search</div>
+                  <div style={{ fontSize: 14, color: "#047857", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>ТОЧНЫЙ ИСТОЧНИК И АТРИБУЦИЯ</div>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: "#059669" }}>ai_referral · chatgpt.com</div>
+                  <div style={{ fontSize: 18, color: "#475569", fontWeight: 600, marginTop: 4 }}>Прямая рекомендация в ответе ChatGPT Search</div>
                 </div>
               </div>
             </div>
@@ -221,29 +223,32 @@ export const PhuketStayProScene: React.FC = () => {
               <div style={{ display: "flex", flexDirection: "column", gap: 16, width: 440 }}>
                 <div
                   style={{
-                    backgroundColor: "rgba(15, 23, 42, 0.95)",
-                    border: "2px solid #22c55e",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #059669",
                     borderRadius: 20,
                     padding: "24px 26px",
-                    boxShadow: "0 0 35px rgba(34, 197, 94, 0.25)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#86efac", fontWeight: 800, marginBottom: 4 }}>РЕАКЦИЯ КОМАНДЫ</div>
-                  <div style={{ fontSize: 36, fontWeight: 900, color: "#22c55e" }}>Диалог за 6 минут</div>
-                  <div style={{ fontSize: 20, color: "#cbd5e1", marginTop: 4 }}>PDF брошюра сразу отправлена клиенту</div>
+                  <div style={{ fontSize: 14, color: "#047857", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>РЕАКЦИЯ КОМАНДЫ</div>
+                  <div style={{ fontSize: 36, fontWeight: 900, color: "#059669" }}>Диалог за 6 минут</div>
+                  <div style={{ fontSize: 18, color: "#334155", fontWeight: 600, marginTop: 4 }}>PDF брошюра сразу отправлена клиенту</div>
                 </div>
 
                 <div
                   style={{
-                    backgroundColor: "rgba(15, 23, 42, 0.95)",
-                    border: "2px solid rgba(56, 189, 248, 0.5)",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #0284c7",
                     borderRadius: 20,
                     padding: "24px 26px",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#38bdf8", fontWeight: 800, marginBottom: 4 }}>ВЫВОД ДЛЯ БИЗНЕСА</div>
-                  <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff" }}>Сделки выигрывает скорость</div>
-                  <div style={{ fontSize: 18, color: "#cbd5e1", marginTop: 4 }}>Горячий лид из AI остывает за 15 минут без ответа менеджера</div>
+                  <div style={{ fontSize: 14, color: "#0369a1", fontWeight: 900, marginBottom: 4, letterSpacing: 1 }}>ВЫВОД ДЛЯ БИЗНЕСА</div>
+                  <div style={{ fontSize: 26, fontWeight: 900, color: "#0f172a" }}>Сделки выигрывает скорость</div>
+                  <div style={{ fontSize: 17, color: "#475569", fontWeight: 600, marginTop: 4 }}>Горячий лид из AI остывает за 15 минут без ответа менеджера</div>
                 </div>
               </div>
             </div>

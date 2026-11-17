@@ -235,31 +235,32 @@ export const HookScene: React.FC = () => {
                 РАЗБИРАЕМ, ГДЕ В GEO ХАЙП, А ГДЕ РЕАЛЬНЫЕ ДЕНЬГИ
               </h2>
 
-              {/* 3 Real Cases Teaser Cards */}
-              <div style={{ display: "flex", gap: 24, width: "100%", maxWidth: 1350 }}>
+              {/* 3 Real Cases Teaser Cards (Editorial Dossier) */}
+              <div style={{ display: "flex", gap: 24, width: "100%", maxWidth: 1380 }}>
                 {/* Case 1: BenPhuketCarRent */}
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.94)",
-                    border: "2px solid #22c55e",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #059669",
                     borderRadius: 22,
                     padding: "26px 22px",
-                    boxShadow: "0 15px 35px rgba(0,0,0,0.6), 0 0 25px rgba(34, 197, 94, 0.2)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
                   }}
                 >
                   <div>
-                    <div style={{ fontSize: 15, color: "#4ade80", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                    <div style={{ fontSize: 14, color: "#047857", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                       КЕЙС 01 · АРЕНДА АВТО (ПХУКЕТ)
                     </div>
-                    <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", lineHeight: 1.25, marginBottom: 12 }}>
+                    <div style={{ fontSize: 26, fontWeight: 900, color: "#0f172a", lineHeight: 1.25, marginBottom: 12 }}>
                       38 WhatsApp-лидов из ChatGPT
                     </div>
-                    <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
-                      Сквозные UTM-метки <code style={{ color: "#4ade80" }}>utm=chatgpt.com</code> и прямые брони автопарка.
+                    <div style={{ fontSize: 16, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
+                      Сквозные UTM-метки <code style={{ color: "#047857", backgroundColor: "#dcfce7", padding: "2px 6px", borderRadius: 6, fontWeight: 800 }}>utm=chatgpt.com</code> и прямые брони автопарка.
                     </div>
                   </div>
                   <div
@@ -267,14 +268,15 @@ export const HookScene: React.FC = () => {
                       marginTop: 18,
                       padding: "8px 14px",
                       borderRadius: 12,
-                      backgroundColor: "rgba(34, 197, 94, 0.15)",
-                      color: "#4ade80",
-                      fontSize: 16,
-                      fontWeight: 800,
+                      backgroundColor: "#dcfce7",
+                      border: "1px solid #bbf7d0",
+                      color: "#047857",
+                      fontSize: 15,
+                      fontWeight: 900,
                       textAlign: "center",
                     }}
                   >
-                    100% занятость автопарка
+                    ● 100% занятость автопарка
                   </div>
                 </div>
 
@@ -282,24 +284,25 @@ export const HookScene: React.FC = () => {
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.94)",
-                    border: "2px solid #ec4899",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #db2777",
                     borderRadius: 22,
                     padding: "26px 22px",
-                    boxShadow: "0 15px 35px rgba(0,0,0,0.6), 0 0 25px rgba(236, 72, 153, 0.2)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
                   }}
                 >
                   <div>
-                    <div style={{ fontSize: 15, color: "#f472b6", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                    <div style={{ fontSize: 14, color: "#be185d", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                       КЕЙС 02 · НЕДВИЖИМОСТЬ
                     </div>
-                    <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", lineHeight: 1.25, marginBottom: 12 }}>
+                    <div style={{ fontSize: 26, fontWeight: 900, color: "#0f172a", lineHeight: 1.25, marginBottom: 12 }}>
                       Сделка на 4 000 000 THB
                     </div>
-                    <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
+                    <div style={{ fontSize: 16, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                       Инвестор из Сингапура через ChatGPT Search нашел виллу и объект Oceana Kamala в управление.
                     </div>
                   </div>
@@ -308,14 +311,15 @@ export const HookScene: React.FC = () => {
                       marginTop: 18,
                       padding: "8px 14px",
                       borderRadius: 12,
-                      backgroundColor: "rgba(236, 72, 153, 0.15)",
-                      color: "#f472b6",
-                      fontSize: 16,
-                      fontWeight: 800,
+                      backgroundColor: "#fce7f3",
+                      border: "1px solid #fbcfe8",
+                      color: "#be185d",
+                      fontSize: 15,
+                      fontWeight: 900,
                       textAlign: "center",
                     }}
                   >
-                    Договор управления объектом
+                    ● Договор управления объектом
                   </div>
                 </div>
 
@@ -323,24 +327,25 @@ export const HookScene: React.FC = () => {
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.94)",
-                    border: "2px solid #38bdf8",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #0284c7",
                     borderRadius: 22,
                     padding: "26px 22px",
-                    boxShadow: "0 15px 35px rgba(0,0,0,0.6), 0 0 25px rgba(56, 189, 248, 0.2)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
                   }}
                 >
                   <div>
-                    <div style={{ fontSize: 15, color: "#38bdf8", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                    <div style={{ fontSize: 14, color: "#0369a1", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                       КЕЙС 03 · ЯЗЫКОВАЯ ШКОЛА
                     </div>
-                    <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", lineHeight: 1.25, marginBottom: 12 }}>
+                    <div style={{ fontSize: 26, fontWeight: 900, color: "#0f172a", lineHeight: 1.25, marginBottom: 12 }}>
                       Карты + Сайт-Агрегатор
                     </div>
-                    <div style={{ fontSize: 18, color: "#cbd5e1", lineHeight: 1.4 }}>
+                    <div style={{ fontSize: 16, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                       2ГИС, Яндекс Карты и сайт: стабильный поток учеников на бесплатное тестирование и в группы.
                     </div>
                   </div>
@@ -349,14 +354,15 @@ export const HookScene: React.FC = () => {
                       marginTop: 18,
                       padding: "8px 14px",
                       borderRadius: 12,
-                      backgroundColor: "rgba(56, 189, 248, 0.15)",
-                      color: "#38bdf8",
-                      fontSize: 16,
-                      fontWeight: 800,
+                      backgroundColor: "#e0f2fe",
+                      border: "1px solid #bae6fd",
+                      color: "#0369a1",
+                      fontSize: 15,
+                      fontWeight: 900,
                       textAlign: "center",
                     }}
                   >
-                    Единый центр захвата заявок
+                    ● Единый центр захвата заявок
                   </div>
                 </div>
               </div>
@@ -425,19 +431,20 @@ export const HookScene: React.FC = () => {
                 145 000 000 <span style={{ color: "#ef4444" }}>СЕССИЙ</span>
               </div>
 
-              {/* Media Breaking Banner Style */}
+              {/* Media Breaking Banner Style (Editorial Dossier) */}
               <div
                 style={{
-                  backgroundColor: "rgba(15, 23, 42, 0.95)",
-                  border: "2.5px solid #ef4444",
+                  backgroundColor: "rgba(248, 250, 252, 0.98)",
+                  border: "1px solid rgba(226, 232, 240, 0.9)",
+                  borderTop: "4px solid #dc2626",
                   borderRadius: 24,
                   padding: "30px 48px",
                   textAlign: "center",
                   maxWidth: 1250,
-                  boxShadow: "0 25px 60px rgba(0,0,0,0.85), 0 0 40px rgba(239, 68, 68, 0.3)",
+                  boxShadow: "0 25px 60px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.3)",
                 }}
               >
-                <div style={{ fontSize: 44, fontWeight: 900, color: "#f8fafc", lineHeight: 1.2, marginBottom: 16 }}>
+                <div style={{ fontSize: 44, fontWeight: 900, color: "#0f172a", lineHeight: 1.2, marginBottom: 16 }}>
                   «ИЗ CHATGPT ПРИХОДИТ МЕНЕЕ 1% ТРАФИКА: GEO БЕСПОЛЕЗНО?»
                 </div>
                 <div
@@ -453,23 +460,23 @@ export const HookScene: React.FC = () => {
                     style={{
                       padding: "8px 20px",
                       borderRadius: 14,
-                      backgroundColor: "rgba(56, 189, 248, 0.15)",
-                      border: "1px solid #38bdf8",
-                      color: "#38bdf8",
+                      backgroundColor: "#e0f2fe",
+                      border: "1px solid #bae6fd",
+                      color: "#0369a1",
                       fontSize: 22,
-                      fontWeight: 800,
+                      fontWeight: 900,
                     }}
                   >
                     Google: 99.27% трафика
                   </div>
-                  <div style={{ fontSize: 26, color: "#64748b" }}>vs</div>
+                  <div style={{ fontSize: 26, color: "#94a3b8", fontWeight: 800 }}>vs</div>
                   <div
                     style={{
                       padding: "8px 20px",
                       borderRadius: 14,
-                      backgroundColor: "rgba(239, 68, 68, 0.2)",
-                      border: "1px solid #ef4444",
-                      color: "#f87171",
+                      backgroundColor: "#fee2e2",
+                      border: "1px solid #fecaca",
+                      color: "#b91c1c",
                       fontSize: 22,
                       fontWeight: 900,
                     }}
@@ -522,46 +529,48 @@ export const HookScene: React.FC = () => {
               </h2>
 
               <div style={{ display: "flex", gap: 36, width: "100%", maxWidth: 1300 }}>
-                {/* Google Box */}
+                {/* Google Box (Editorial Dossier) */}
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.94)",
-                    border: "2px solid rgba(56, 189, 248, 0.5)",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #0284c7",
                     borderRadius: 24,
                     padding: "32px 36px",
-                    boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 18, color: "#38bdf8", fontWeight: 900, marginBottom: 8 }}>
+                  <div style={{ fontSize: 16, color: "#0369a1", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                     GOOGLE ПОИСК (99.27%)
                   </div>
-                  <div style={{ fontSize: 34, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: "#0f172a", marginBottom: 12 }}>
                     Огромный шум и серфинг
                   </div>
-                  <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.45 }}>
+                  <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                     Миллионы людей кликают по синим ссылкам, читают общие статьи, собирают рефераты и закрывают вкладки без покупок.
                   </div>
                 </div>
 
-                {/* ChatGPT Box */}
+                {/* ChatGPT Box (Editorial Dossier) */}
                 <div
                   style={{
                     flex: 1,
-                    backgroundColor: "rgba(15, 23, 42, 0.94)",
-                    border: "2.5px solid #22c55e",
+                    backgroundColor: "rgba(248, 250, 252, 0.98)",
+                    border: "1px solid rgba(226, 232, 240, 0.9)",
+                    borderTop: "4px solid #059669",
                     borderRadius: 24,
                     padding: "32px 36px",
-                    boxShadow: "0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(34, 197, 94, 0.25)",
+                    boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 18, color: "#4ade80", fontWeight: 900, marginBottom: 8 }}>
+                  <div style={{ fontSize: 16, color: "#047857", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                     CHATGPT & GEO (0.73%)
                   </div>
-                  <div style={{ fontSize: 34, fontWeight: 900, color: "#ffffff", marginBottom: 12 }}>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: "#0f172a", marginBottom: 12 }}>
                     Сформированная потребность
                   </div>
-                  <div style={{ fontSize: 22, color: "#cbd5e1", lineHeight: 1.45 }}>
+                  <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                     Микро-поток, но каждый перешедший уже уточнил параметры, выбрал авто или квартиру и готов сразу писать в WhatsApp.
                   </div>
                 </div>
