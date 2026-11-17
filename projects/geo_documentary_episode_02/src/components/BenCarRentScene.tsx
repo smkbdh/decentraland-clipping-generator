@@ -109,7 +109,8 @@ export const BenCarRentScene: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "85px 70px 110px",
+            justifyContent: "center",
+            padding: "55px 70px 115px",
             zIndex: 10,
             boxSizing: "border-box",
           }}
@@ -127,7 +128,7 @@ export const BenCarRentScene: React.FC = () => {
                   fontSize: 18,
                   fontWeight: 900,
                   letterSpacing: 2,
-                  marginBottom: 14,
+                  marginBottom: 16,
                 }}
               >
                 КЛИЕНТСКИЙ КЕЙС 01 · АРЕНДА АВТО НА ПХУКЕТЕ
@@ -135,12 +136,12 @@ export const BenCarRentScene: React.FC = () => {
 
               <h2
                 style={{
-                  fontSize: 58,
+                  fontSize: 60,
                   fontWeight: 900,
                   color: "#f8fafc",
                   textAlign: "center",
                   lineHeight: 1.1,
-                  margin: "0 0 28px",
+                  margin: "0 0 32px",
                 }}
               >
                 BENPHUKETCARRENT.COM: ЖИВЫЕ ЗАЯВКИ ИЗ CHATGPT
@@ -150,7 +151,7 @@ export const BenCarRentScene: React.FC = () => {
                 style={{
                   display: "flex",
                   gap: 32,
-                  maxWidth: 1350,
+                  maxWidth: 1380,
                   width: "100%",
                 }}
               >
@@ -161,17 +162,17 @@ export const BenCarRentScene: React.FC = () => {
                     border: "1px solid rgba(226, 232, 240, 0.9)",
                     borderTop: "4px solid #0284c7",
                     borderRadius: 24,
-                    padding: "32px 36px",
+                    padding: "36px 40px",
                     boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#0369a1", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                  <div style={{ fontSize: 17, color: "#0369a1", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                     ЧТО МЫ ПОСТРОИЛИ ДЛЯ КЛИЕНТА
                   </div>
-                  <div style={{ fontSize: 30, fontWeight: 900, color: "#0f172a", marginBottom: 12 }}>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: "#0f172a", marginBottom: 14 }}>
                     Инженерная архитектура под поиск
                   </div>
-                  <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
+                  <div style={{ fontSize: 21, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                     Страницы под каждую модель, прозрачные условия депозитов, страховка, локальные гиды и сквозная UTM-атрибуция.
                   </div>
                 </div>
@@ -183,17 +184,17 @@ export const BenCarRentScene: React.FC = () => {
                     border: "1px solid rgba(226, 232, 240, 0.9)",
                     borderTop: "4px solid #059669",
                     borderRadius: 24,
-                    padding: "32px 36px",
+                    padding: "36px 40px",
                     boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <div style={{ fontSize: 16, color: "#047857", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
+                  <div style={{ fontSize: 17, color: "#047857", fontWeight: 900, marginBottom: 8, letterSpacing: 1 }}>
                     УВЕДОМЛЕНИЕ В БОТ КОМАНДЫ
                   </div>
-                  <div style={{ fontSize: 30, fontWeight: 900, color: "#059669", marginBottom: 12 }}>
+                  <div style={{ fontSize: 32, fontWeight: 900, color: "#059669", marginBottom: 14 }}>
                     Источник: AI · ChatGPT
                   </div>
-                  <div style={{ fontSize: 20, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
+                  <div style={{ fontSize: 21, color: "#334155", lineHeight: 1.45, fontWeight: 600 }}>
                     Запрос мгновенно падает менеджерам с меткой <code style={{ color: "#0369a1", backgroundColor: "#e0f2fe", padding: "2px 6px", borderRadius: 6, fontWeight: 900 }}>utm_source=chatgpt.com</code> и прямой ссылкой на машину.
                   </div>
                 </div>
@@ -203,13 +204,13 @@ export const BenCarRentScene: React.FC = () => {
               <div
                 style={{
                   width: "100%",
-                  maxWidth: 1350,
+                  maxWidth: 1380,
                   backgroundColor: "rgba(248, 250, 252, 0.98)",
                   border: "1px solid rgba(226, 232, 240, 0.9)",
                   borderTop: "4px solid #10b981",
                   borderRadius: 22,
-                  padding: "18px 30px",
-                  marginTop: 22,
+                  padding: "20px 32px",
+                  marginTop: 24,
                   boxShadow: "0 20px 50px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.3)",
                   display: "flex",
                   alignItems: "center",
@@ -220,10 +221,10 @@ export const BenCarRentScene: React.FC = () => {
                 <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                   <span style={{ fontSize: 26 }}>⚡</span>
                   <div>
-                    <div style={{ fontSize: 18, fontWeight: 900, color: "#0f172a" }}>
+                    <div style={{ fontSize: 19, fontWeight: 900, color: "#0f172a" }}>
                       ИТОГ ВНЕДРЕНИЯ GEO: ПОЛНАЯ АТРИБУЦИЯ ОТ ПОИСКА ДО КАССЫ
                     </div>
-                    <div style={{ fontSize: 15, color: "#334155", fontWeight: 600 }}>
+                    <div style={{ fontSize: 16, color: "#334155", fontWeight: 600 }}>
                       Все 100% лидов приходят с готовыми вводными и закрываются менеджером в WhatsApp за 3 минуты.
                     </div>
                   </div>
@@ -508,7 +509,8 @@ export const BenCarRentScene: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "98px 70px 120px",
+            justifyContent: "center",
+            padding: "55px 70px 115px",
             zIndex: 10,
             boxSizing: "border-box",
           }}
@@ -941,7 +943,8 @@ export const BenCarRentScene: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "85px 70px 110px",
+            justifyContent: "center",
+            padding: "55px 70px 115px",
             zIndex: 10,
             boxSizing: "border-box",
           }}

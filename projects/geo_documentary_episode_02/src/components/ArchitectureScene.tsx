@@ -88,7 +88,8 @@ export const ArchitectureScene: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "90px 70px 110px",
+            justifyContent: "center",
+            padding: "55px 70px 115px",
             zIndex: 10,
             boxSizing: "border-box",
           }}
@@ -395,7 +396,8 @@ export const ArchitectureScene: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "85px 70px 110px",
+            justifyContent: "center",
+            padding: "55px 70px 115px",
             zIndex: 10,
             boxSizing: "border-box",
           }}
@@ -594,7 +596,8 @@ export const ArchitectureScene: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "90px 70px 110px",
+            justifyContent: "center",
+            padding: "55px 70px 115px",
             zIndex: 10,
             boxSizing: "border-box",
           }}
