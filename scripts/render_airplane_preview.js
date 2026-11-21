@@ -11,13 +11,12 @@ scene.render.resolution_y = 540
 scene.render.resolution_percentage = 100
 scene.render.image_settings.file_format = 'PNG'
 
-# Render 5 key moments
 frames_to_render = [
-    (25, "D:/Buddah/airplane_01_exterior.png"),
-    (75, "D:/Buddah/airplane_02_window_breach.png"),
-    (130, "D:/Buddah/airplane_03_cabin_aisle.png"),
-    (180, "D:/Buddah/airplane_04_turbulence.png"),
-    (275, "D:/Buddah/airplane_05_cockpit_fight.png")
+    (30, "D:/Buddah/reality_to_digital_01_clouds.png"),
+    (115, "D:/Buddah/reality_to_digital_02_cabin.png"),
+    (168, "D:/Buddah/reality_to_digital_03_shatter.png"),
+    (185, "D:/Buddah/reality_to_digital_04_tunnel.png"),
+    (290, "D:/Buddah/reality_to_digital_05_blender_ui.png")
 ]
 
 for frame_num, out_path in frames_to_render:
@@ -26,12 +25,11 @@ for frame_num, out_path in frames_to_render:
     bpy.ops.render.render(write_still=True)
     print(f"Rendered frame {frame_num} -> {out_path}")
 
-print(">>> ALL 5 AIRLINER PREVIEW FRAMES RENDERED SUCCESSFULLY <<<")
+print(">>> ALL 5 DEFINITIVE PREVIEW FRAMES RENDERED SUCCESSFULLY <<<")
 `;
 
 const client = new net.Socket();
 client.connect(9876, '127.0.0.1', () => {
-  console.log('Sending render preview script to Blender...');
   client.write(JSON.stringify({
     type: 'execute_code',
     params: { code: renderScript }
