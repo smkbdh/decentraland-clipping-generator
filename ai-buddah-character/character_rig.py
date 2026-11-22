@@ -9,6 +9,8 @@ Builds:
 """
 
 import bpy
+if bpy.data.objects.get("Head turn") and bpy.data.objects.get("Head"):
+    raise RuntimeError("This procedural builder targets the legacy blockout. Open the portrait master to animate it.")
 import math
 from mathutils import Vector
 
