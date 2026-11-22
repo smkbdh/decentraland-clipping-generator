@@ -41,6 +41,7 @@
   - **Визмы:** `viseme_aa`, `viseme_oh`, `viseme_ee`, `viseme_ch`, `viseme_mbp`, `viseme_fv`, `viseme_th_l` (+ `viseme_sil` = нейтральный закрытый рот, своего shape key нет).
   - **Эмоции:** только `emotion_skeptic` и `emotion_surprise`. Smile / serious в портрете не вылеплены.
   - **Веки:** `blink_L`, `blink_R` (раздельно). Объекты `Eyelid.L/R` построены по реальному контуру глаз скриптом `ai-buddah-character/build_eyelids.py` (веко цвета кожи + линия ресниц по нижнему контуру; при 0 схлопнуто и невидимо). Перезапускать его после любых изменений текстуры или формы головы.
+  - **Кисти:** `Hand.L/R` (привязаны к костям `Hand_*`) — расслабленный полукулак как на арт-листе, генерируются `ai-buddah-character/build_hands.py` (лофт → воксельный ремеш → запечённая тень, кожа откалибрована по лицу; основа — версия GPT от 2026-11-23).
   - **Рот:** `jaw_open` — простое открытие (зубы + язык).
   - **Взгляд:** `gaze_x`, `gaze_z` (−1..1). Костей `Eye_Target_*` и DAMPED_TRACK нет.
 - **Программный API (`BuddahController`):** файл `ai-buddah-character\character_control.py`, проверен на мастере.
