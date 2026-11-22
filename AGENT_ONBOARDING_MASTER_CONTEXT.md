@@ -34,27 +34,34 @@
   - Чётки из 24 бирюзовых бусин с круглым золотым медальоном Ом (`ॐ`).
   - Капюшон на спине и светящийся 8-лепестковый цветок лотоса на спине худи.
   - Парящий золотой нимб-аура за головой.
-  - Парящий спутник AI Cat-Bot (золотой дроид с кошачьими ушками и светящимся цифровым лицом).
-- **Риг и анимация (`Armature_Buddah`):**
-  - Полный гуманоидный скелет (Root, Spine, Chest, Neck, Head, руки, ноги).
-  - Констрейнты `DAMPED_TRACK` для глаз — взгляд автоматически следит за таргетом `Eye_Target_Master`.
-  - **8 базовых визем для аудио-липсинка:** `viseme_sil`, `viseme_aa`, `viseme_oh`, `viseme_ee`, `viseme_ch`, `viseme_mbp`, `viseme_fv`, `viseme_th_l`.
-  - **Эмоциональные драйверы:** `emotion_smile`, `emotion_surprise`, `emotion_skeptic`, `emotion_serious`, `blink_L`, `blink_R`, `brow_up`, `brow_furrow`.
-- **Программный API (`BuddahController`):**
-  Файл: `ai-buddah-character\character_control.py`.
-  Позволяет любой нейросети или скрипту управлять персонажем:
+  - Спутник AI Cat-Bot есть только на арт-листе — в 3D-мастере его пока нет.
+- **Как устроена готовая модель:** портрет из `D:\Buddah\character-portrait-detail-v2\` (формы по силуэтам арт-листа, текстуры спроецированы с него). Отлично держит фронт и 3/4; в чистом профиле видны растяжки текстур — облёт камерой на 360° не делать.
+- **Риг (`Armature_Buddah`, 20 костей):** Root, Pelvis, Spine, Chest, Neck, Head, Clavicle/UpperArm/Forearm/Hand ×2, Thigh/Shin/Foot ×2.
+  Все лицевые контролы — кастомные свойства кости `Root`, драйверы переводят их в shape keys:
+  - **Визмы:** `viseme_aa`, `viseme_oh`, `viseme_ee`, `viseme_ch`, `viseme_mbp`, `viseme_fv`, `viseme_th_l` (+ `viseme_sil` = нейтральный закрытый рот, своего shape key нет).
+  - **Эмоции:** только `emotion_skeptic` и `emotion_surprise`. Smile / serious в портрете не вылеплены.
+  - **Веки:** `blink_L`, `blink_R` (раздельно). При полном закрытии в Workbench у век видна грубая форма — моргание держать коротким (2–3 кадра).
+  - **Рот:** `jaw_open` — простое открытие (зубы + язык).
+  - **Взгляд:** `gaze_x`, `gaze_z` (−1..1). Костей `Eye_Target_*` и DAMPED_TRACK нет.
+- **Программный API (`BuddahController`):** файл `ai-buddah-character\character_control.py`, проверен на мастере.
   ```python
   from character_control import BuddahController
-  buddah = BuddahController()
-  buddah.set_viseme("aa", weight=0.85)  # липсинк под звук
-  buddah.set_emotion("skeptic", weight=1.0)  # эмоция
-  buddah.look_at((0, 2.5, 1.2))  # взгляд в камеру
-  buddah.set_pose("namaste")  # жесты: "namaste", "present", "point", "neutral"
+  b = BuddahController()
+  b.set_viseme("aa", 0.85)           # липсинк; остаток веса уходит в viseme_sil
+  b.set_visemes({"aa": .6, "oh": .4}) # коартикуляция
+  b.set_emotion("skeptic")            # neutral | skeptic | surprise
+  b.blink("BOTH")                     # 'L' | 'R' | 'BOTH'
+  b.open_jaw(0.5)
+  b.look_at((0.4, -3.0, 2.3))         # взгляд + поворот головы
+  b.turn_head(yaw=0.3, nod=-0.1)
+  b.set_pose("point_right")           # neutral | explain | point_left | point_right
+  b.key(frame=12)                     # ключи на все контролы
   ```
 - **Файлы персонажа:**
-  - `D:\Buddah\AI_BUDDAH_MASTER.blend` — изолированный мастер-файл для подключения через `Collection Linking` в любые видео.
-  - `D:\Buddah\character-portrait-detail-v2\AI_BUDDAH_PORTRAIT.blend` — детализированный портретный меш высокой плотности (numpy-пиксельный сэмплинг).
-  - `d:\APP BOTS WEBSITES DEVELOPMENT\test antigravity\ai-buddah-character\` — скрипты сборки, рига и контроллера.
+  - `D:\Buddah\AI_BUDDAH_MASTER.blend` — единственный мастер: коллекция `AI_BUDDAH_CHARACTER` → `AI_BUDDAH_PORTRAIT` (+ `HALO`). Подключается в ролики через `Collection Linking` / Library Override. Перед правками — копия в `D:\Buddah\master-backups\`.
+  - `D:\Buddah\character-portrait-detail-v2\` — исходник портрета (`build.py`, `AI_BUDDAH_PORTRAIT.blend`, контрольные рендеры). Без рига.
+  - `ai-buddah-character\` (в репо) — `character_control.py`, пайплайн эпизодов: `animate_from_audio.py` → `buddah_character_director.py` → `build_linked_episode.py` → `assemble_episode.py`.
+  - Старый процедурный greybox (`character_build.py`, `character_rig.py`, `ai_buddah_v1.blend`) удалён — не восстанавливать и не ссылаться.
 
 ---
 
@@ -87,8 +94,10 @@
 - **CLI-рендер без GUI:**
   `& "C:\Program Files\Blender Foundation\Blender 5.3\blender.exe" -b "D:\Buddah\AI_BUDDAH_MASTER.blend" -S "Scene" -s 1 -e 270 -a`
 
-### 2. Kino Desktop MCP
-- Подключение к таймлайну видеоредактора Kino для сборки длинных выпусков (видеодорожки, B-roll, аудиомикс).
+### 2. Remotion в браузере (монтаж выпусков)
+- Kino Desktop **больше не используется** (MCP отключён, `kino_bridge.py` удалён). Не подключать Kino и не использовать ссылки `kino:<uuid>`.
+- Монтаж: проект Remotion, превью в браузерном Remotion Studio (`npx remotion studio`), проверка кадров `npx remotion still`, финал `npx remotion render`.
+- Медиа — в `public/` проекта через `staticFile(...)`. Старые проекты в `projects\` ещё содержат `kino:`-ссылки: перед рендером их надо заменить на `staticFile`.
 
 ### 3. FFmpeg CLI
 - Установлен и доступен глобально: `ffmpeg.exe`. Используется для сборки секвенций кадров в MP4 и обработки аудио.
@@ -124,11 +133,11 @@
     - Очистка визуалов от шаблонного "нейросетевого мусора" (vibecoding tells) в сторону строгого стильного дизайна.
 
 ### Глобальные скиллы монтажа и рендера:
-- `AppData\Roaming\Kino\skills\remotion\SKILL.md`: Продакшн Remotion-композиций в React.
-- `.gemini\skills\kino-youtube-production\SKILL.md`: Гайдлайн YouTube-выпусков.
-- `.gemini\skills\hyperframes\SKILL.md`: HyperFrames движок компоузинга.
-- `AppData\Roaming\Kino\skills\color-grading\SKILL.md`: Цветокоррекция, LUT, стилизация.
-- `AppData\Roaming\Kino\skills\audio-mixing\SKILL.md`: Балансировка громкости и сведение.
+- `.gemini\skills\remotion-youtube-production\SKILL.md`: Гайдлайн YouTube-выпусков на Remotion (бывший `kino-youtube-production`).
+- `.claude\skills\remotion-official` / `.claude\skills\remotion`: Продакшн Remotion-композиций в React.
+- `.gemini\skills\hyperframes\SKILL.md` (и `.claude\skills\hyperframes*`): HyperFrames движок компоузинга.
+- `.claude\skills\hyperframes-audio`, `media-use`: сведение звука, цветокоррекция/LUT, медиа-ассеты.
+- Скиллы в `AppData\Roaming\Kino\skills\` — наследие Kino, не использовать.
 
 ---
 
@@ -140,7 +149,7 @@
 | **Media & Asset Drive** | `D:\Buddah\` | Все тяжёлые ассеты, рендеры, аудио, blend-файлы |
 | **Character Sheet** | `D:\Buddah\AI Будда v1.0 Character Sheet.png` | Главный дизайн-документ персонажа |
 | **Character Master Blend** | `D:\Buddah\AI_BUDDAH_MASTER.blend` | Чистый персонаж для линковки в ролики |
-| **Character Code** | `ai-buddah-character\` | `character_build.py`, `character_rig.py`, `character_control.py` |
+| **Character Code** | `ai-buddah-character\` | `character_control.py` + скрипты пайплайна эпизодов |
 | **Master Animation Video** | `D:\Buddah\AI_BUDDAH_MASTER_ANIMATION.mp4` | 9-секундный вертикальный 9:16 Reel (Full HD) |
 | **Render Scripts** | `scripts\` | `build_hybrid_jet_reel.js`, `render_and_encode_video.ps1` |
 | **Audio & SFX** | `D:\Buddah\ai boom.mp3`, `ai boom.flp` | Озвучка, музыкальные проекты |

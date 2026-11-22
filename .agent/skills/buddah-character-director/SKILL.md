@@ -5,7 +5,7 @@ description: Подключать постоянного AI Будду к вып
 
 # Ведущий AI Будда
 
-Единый мастер находится в `D:\Buddah\AI_BUDDAH_MASTER.blend`. Выпуск использует связанную коллекцию `AI_BUDDAH_CHARACTER` и Library Override. Для изменений мастера сначала делайте проверенную резервную копию и сравнивайте нейтральный кадр. Скрипты character_build.py и character_rig.py относятся к старому blockout.
+Единый мастер находится в `D:\Buddah\AI_BUDDAH_MASTER.blend`. Выпуск использует связанную коллекцию `AI_BUDDAH_CHARACTER` и Library Override. Для изменений мастера сначала делайте проверенную резервную копию и сравнивайте нейтральный кадр. Управление лицом и позами — через `ai-buddah-character/character_control.py` (`BuddahController`): контролы на кости `Root` (визмы, `emotion_skeptic`/`emotion_surprise`, `blink_L`/`blink_R`, `jaw_open`, `gaze_x`/`gaze_z`). Эмоций smile/serious в портрете нет. Старый процедурный blockout удалён.
 
 ## Запуск выпуска
 
