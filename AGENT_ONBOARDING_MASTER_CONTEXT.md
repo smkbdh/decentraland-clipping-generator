@@ -40,7 +40,7 @@
   Все лицевые контролы — кастомные свойства кости `Root`, драйверы переводят их в shape keys:
   - **Визмы:** `viseme_aa`, `viseme_oh`, `viseme_ee`, `viseme_ch`, `viseme_mbp`, `viseme_fv`, `viseme_th_l` (+ `viseme_sil` = нейтральный закрытый рот, своего shape key нет).
   - **Эмоции:** только `emotion_skeptic` и `emotion_surprise`. Smile / serious в портрете не вылеплены.
-  - **Веки:** `blink_L`, `blink_R` (раздельно). При полном закрытии в Workbench у век видна грубая форма — моргание держать коротким (2–3 кадра).
+  - **Веки:** `blink_L`, `blink_R` (раздельно). Объекты `Eyelid.L/R` построены по реальному контуру глаз скриптом `ai-buddah-character/build_eyelids.py` (веко цвета кожи + линия ресниц по нижнему контуру; при 0 схлопнуто и невидимо). Перезапускать его после любых изменений текстуры или формы головы.
   - **Рот:** `jaw_open` — простое открытие (зубы + язык).
   - **Взгляд:** `gaze_x`, `gaze_z` (−1..1). Костей `Eye_Target_*` и DAMPED_TRACK нет.
 - **Программный API (`BuddahController`):** файл `ai-buddah-character\character_control.py`, проверен на мастере.
