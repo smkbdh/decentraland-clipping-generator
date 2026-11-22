@@ -4,6 +4,9 @@ import bpy, json, math, sys
 from pathlib import Path
 from mathutils import Vector
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import hand_gestures as hg  # noqa: E402
+
 project, master, fps = sys.argv[sys.argv.index("--") + 1 :]
 project = Path(project)
 folder = project.parent
@@ -128,7 +131,7 @@ for i in range(1, int(duration / 3.7) + 1):
         for side in "LR":
             prop("blink_" + side, v, t + dt)
 finish(a)
-for layer in ["Expression", "Eye tracking", "Head aim", "Gesture"]:
+for layer in ["Expression", "Eye tracking", "Head aim"]:
     a = action(layer)
     for e in plan["events"]:
         start, end = e["start"], e["end"]
@@ -154,21 +157,32 @@ for layer in ["Expression", "Eye tracking", "Head aim", "Gesture"]:
                 )
                 rot("Head", 1, angle * v, t)
                 rot("Neck", 0, (-0.18 if e["gesture"] == "nod" else 0.06) * v, t)
-            if layer == "Gesture" and e["gesture"] in (
-                "point_left",
-                "point_right",
-                "explain",
-            ):
-                side = "L" if e["gesture"] == "point_left" else "R"
-                sign = -1 if side == "L" else 1
-                rot(
-                    "UpperArm_" + side,
-                    2,
-                    -sign * (0.95 if e["gesture"].startswith("point") else 0.38) * v,
-                    t,
-                )
-                rot("Forearm_" + side, 0, -0.6 * v, t)
     finish(a)
+# Gestures: arms are solved to hand targets, fingers posed from hand_gestures.py (full strength, eased in/out).
+a = action("Gesture")
+neutral = hg.gesture_values(arm, "neutral")
+hg.key_values(arm, neutral, frame(0))
+solved = {}
+for e in plan["events"]:
+    if e["gesture"] in ("neutral", "nod"):
+        continue
+    name = hg.resolve(e["gesture"])
+    vals = solved.setdefault(name, hg.gesture_values(arm, name))
+    start, end = e["start"], e["end"]
+    ramp = min(0.4, (end - start) * 0.3)
+    hg.key_values(arm, neutral, frame(start))
+    hg.key_values(arm, vals, frame(start + ramp))
+    if name in hg.HOLD_MOTION:
+        base, axis, amp, period = hg.HOLD_MOTION[name]
+        sides = [sd for sd in "RL" if sd in hg.GESTURES[name]]
+        t, sign = start + ramp + period / 2, 1
+        while t < end - ramp - period / 4:
+            extra = {(f"{base}_{sd}", "rotation_euler"): (axis, sign * amp * (1 if sd == "R" else -1)) for sd in sides}
+            hg.key_values(arm, vals, frame(t), extra=extra)
+            t += period / 2; sign = -sign
+    hg.key_values(arm, vals, frame(end - ramp))
+    hg.key_values(arm, neutral, frame(end))
+finish(a)
 specs = {
     "CLOSE_UP": (2.30, 1.88, 8, 0),
     "MEDIUM_SHOT": (1.96, 2.60, 10, 0),

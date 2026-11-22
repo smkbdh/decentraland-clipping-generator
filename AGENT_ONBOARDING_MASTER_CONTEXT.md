@@ -36,12 +36,13 @@
   - Парящий золотой нимб-аура за головой.
   - Спутник AI Cat-Bot есть только на арт-листе — в 3D-мастере его пока нет.
 - **Как устроена готовая модель:** портрет из `D:\Buddah\character-portrait-detail-v2\` (формы по силуэтам арт-листа, текстуры спроецированы с него). Отлично держит фронт и 3/4; в чистом профиле видны растяжки текстур — облёт камерой на 360° не делать.
-- **Риг (`Armature_Buddah`, 20 костей):** Root, Pelvis, Spine, Chest, Neck, Head, Clavicle/UpperArm/Forearm/Hand ×2, Thigh/Shin/Foot ×2.
+- **Риг (`Armature_Buddah`, 52 кости):** Root, Pelvis, Spine, Chest, Neck, Head, Clavicle/UpperArm/Forearm/Hand ×2, Thigh/Shin/Foot ×2, пальцы `Thumb1..3_*`, `Index1..3_*`, `Middle1..3_*`, `Ring1..3_*`, `Pinky1..3_*` ×2, `SleeveEnd_*` (сужает раструб рукава при поднятой руке).
   Все лицевые контролы — кастомные свойства кости `Root`, драйверы переводят их в shape keys:
   - **Визмы:** `viseme_aa`, `viseme_oh`, `viseme_ee`, `viseme_ch`, `viseme_mbp`, `viseme_fv`, `viseme_th_l` (+ `viseme_sil` = нейтральный закрытый рот, своего shape key нет).
   - **Эмоции:** только `emotion_skeptic` и `emotion_surprise`. Smile / serious в портрете не вылеплены.
   - **Веки:** `blink_L`, `blink_R` (раздельно). Объекты `Eyelid.L/R` построены по реальному контуру глаз скриптом `ai-buddah-character/build_eyelids.py` (веко цвета кожи + линия ресниц по нижнему контуру; при 0 схлопнуто и невидимо). Перезапускать его после любых изменений текстуры или формы головы.
-  - **Кисти:** `Hand.L/R` (привязаны к костям `Hand_*`) — расслабленный полукулак как на арт-листе, генерируются `ai-buddah-character/build_hands.py` (лофт → воксельный ремеш → запечённая тень, кожа откалибрована по лицу; основа — версия GPT от 2026-11-23).
+  - **Кисти (v3, 2026-11-23):** `Hand.L/R` — игрушечные чиби-кисти со скелетом пальцев (модификатор Armature). Генерирует `ai-buddah-character/build_hands.py`: ладонь + 5 пальцев отдельными гладкими частями (суставы — сферы, сгиб не рвётся), текстура нарисована в координатах самих пальцев (светлая спинка, тёплые тени по бокам, розовая ладонь, кончики, складки), поэтому при FLAT-рендере жест читается в любой позе. Перезапуск скрипта пересобирает кисти, кости пальцев и веса рукавов (идемпотентно).
+  - **Жесты:** `ai-buddah-character/hand_gestures.py` — формы кисти `SHAPES` (fist, point, peace, ok, rock, call_me, pinch, pinched, finger_heart, crossed, vulcan, thumbs_up, open, spread, flat, cupped, heart_half, middle) и жесты `GESTURES` = форма + положение руки (руки решаются IK-решателем к цели кисти). Жест можно указать эмодзи: ☝👆🫵👈👉👍✌🤘🤙👌🤌🤏🫰🤞🖖🖕✋🖐👋🫸🫴🫳🫱🤷👐🙌🙏👏🫶🤲✊ (таблица `EMOJI`), плюс `explain`, `think`, `double_thumbs`, `point_across_*`. `👋`/`👏` при удержании качаются (`HOLD_MOTION`). Контактный лист всех жестов: `D:\Buddah\master-qa\gestures-v3\`.
   - **Рот:** `jaw_open` — простое открытие (зубы + язык).
   - **Взгляд:** `gaze_x`, `gaze_z` (−1..1). Костей `Eye_Target_*` и DAMPED_TRACK нет.
 - **Программный API (`BuddahController`):** файл `ai-buddah-character\character_control.py`, проверен на мастере.
@@ -55,8 +56,9 @@
   b.open_jaw(0.5)
   b.look_at((0.4, -3.0, 2.3))         # взгляд + поворот головы
   b.turn_head(yaw=0.3, nod=-0.1)
-  b.set_pose("point_right")           # neutral | explain | point_left | point_right
-  b.key(frame=12)                     # ключи на все контролы
+  b.set_gesture("👍")                  # любой жест из hand_gestures.GESTURES или эмодзи
+  b.set_hand("R", "peace")            # только пальцы одной кисти
+  b.key(frame=12)                     # ключи на все контролы, руки и пальцы
   ```
 - **Файлы персонажа:**
   - `D:\Buddah\AI_BUDDAH_MASTER.blend` — единственный мастер: коллекция `AI_BUDDAH_CHARACTER` → `AI_BUDDAH_PORTRAIT` (+ `HALO`). Подключается в ролики через `Collection Linking` / Library Override. Перед правками — копия в `D:\Buddah\master-backups\`.
@@ -64,7 +66,7 @@
   - `ai-buddah-character\` (в репо) — `character_control.py`, пайплайн эпизодов: `animate_from_audio.py` → `buddah_character_director.py` → `build_linked_episode.py` → `assemble_episode.py`.
 - **Конвейер рилса с говорящим ведущим (проверен 2026-11-22, пример: `D:\Buddah\reel_02_buddah_80m\`):**
   1. Голос → `animate_from_audio.py <voice> --project <reel>\character\episode.blend --aspect 9:16` (запускать `D:\Buddah\tools\speech-env\Scripts\python.exe`; faster-whisper заблокирован политикой Windows, срабатывает фолбэк на `whisper` CLI).
-  2. Режиссура: агент пишет `direction.json` (`events`: камера/эмоция/жест/взгляд на каждую фразу) → `buddah_character_director.direct` → пересборка `build_linked_episode.py`. Для 9:16 камеры уже кадрируют ведущего в нижние ~60% кадра.
+  2. Режиссура: агент пишет `direction.json` (`events`: камера/эмоция/жест/взгляд на каждую фразу; `gesture` — имя или эмодзи, жест держится на всю фразу, вход/выход по 0.4 с; для жестов у пояса не ставить CLOSE_UP — кисти у лица видны и в нём; пример `D:\Buddah\reel_02_buddah_80m\direction_v4.json`) → `buddah_character_director.direct` → пересборка `build_linked_episode.py`. Для 9:16 камеры уже кадрируют ведущего в нижние ~60% кадра.
   3. Кадры: `blender -b episode.blend -a` → `rgba/frame_####.png` (прозрачный фон).
   4. `reel.json` (правки субтитров, B-roll, карточки title/badge/counter/chips/logos, SFX, музыка с дакингом) → `assemble_reel.py reel.json [--still 12.5]` → Remotion-композиция `projects/geo_documentary_episode_02/src/reels/BuddahReel.tsx`. Шаблон: `ai-buddah-character/examples/reel_80m.json`.
   - Старый процедурный greybox (`character_build.py`, `character_rig.py`, `ai_buddah_v1.blend`) удалён — не восстанавливать и не ссылаться.

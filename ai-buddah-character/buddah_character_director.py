@@ -3,6 +3,8 @@
 import math
 import numpy as np
 
+import hand_gestures as hg
+
 CAMERAS = (
     "CLOSE_UP",
     "MEDIUM_SHOT",
@@ -11,7 +13,7 @@ CAMERAS = (
     "PRESENTATION_LEFT",
     "PRESENTATION_RIGHT",
 )
-GESTURES = ("neutral", "explain", "point_left", "point_right", "nod")
+GESTURES = tuple(hg.GESTURES) + ("nod",)  # names or emoji (👍 🙏 🫶 ...) — see hand_gestures.EMOJI
 EMOTIONS = ("neutral", "skeptic", "surprise")
 
 
@@ -104,6 +106,8 @@ def direct(segments, samples, rate, duration, context, preset, aspect):
         ):
             raise ValueError("Invalid or overlapping direction times")
         last_end = end
+        if e["gesture"] != "nod":
+            e["gesture"] = hg.resolve(e["gesture"])
         if (
             e["camera"] not in CAMERAS
             or e["emotion"] not in EMOTIONS

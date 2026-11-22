@@ -13,7 +13,12 @@ AI Будда — контроллер мастер-персонажа (D:\\Budd
   jaw_open                            — простое открытие рта (зубы + язык), без формы визмы
   gaze_x, gaze_z                      — смещение зрачков/области глаз
 
-Кости для поз: Head, Neck, Spine, Chest, Clavicle_*, UpperArm_*, Forearm_*, Hand_*.
+Кости для поз: Head, Neck, Spine, Chest, Clavicle_*, UpperArm_*, Forearm_*, Hand_*,
+пальцы Thumb1..3_*, Index1..3_*, Middle1..3_*, Ring1..3_*, Pinky1..3_* (build_hands.py),
+SleeveEnd_* (сужает рукав, когда рука поднята).
+
+Жесты рук — hand_gestures.py: set_gesture("thumbs_up") или эмодзи set_gesture("🙏");
+формы кисти отдельно — set_hand("R", "peace"). Полный список: hand_gestures.GESTURES / SHAPES.
 
 Пример (внутри Blender, в т.ч. через Blender MCP):
     from character_control import BuddahController
@@ -21,18 +26,23 @@ AI Будда — контроллер мастер-персонажа (D:\\Budd
     b.set_viseme("aa", 0.8)
     b.set_emotion("skeptic")
     b.look_at((0.4, -3.0, 2.3))
-    b.set_pose("point_right")
+    b.set_gesture("👍")
     b.key(frame=12)
 """
 
 import math
+import os
+import sys
 
 import bpy
 from mathutils import Vector
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import hand_gestures as hg  # noqa: E402
+
 VISEMES = ("sil", "aa", "oh", "ee", "ch", "mbp", "fv", "th_l")
 EMOTIONS = ("neutral", "skeptic", "surprise")
-POSES = ("neutral", "explain", "point_left", "point_right")
+POSES = ("neutral", "explain", "point_left", "point_right")  # старые имена, теперь это жесты hand_gestures
 GAZE_HEIGHT = 2.2  # высота глаз в локальных координатах арматуры, как в build_linked_episode.py
 POSE_BONES = ("Head", "Neck", "Spine", "Chest",
               "Clavicle_L", "UpperArm_L", "Forearm_L", "Hand_L",
@@ -157,21 +167,28 @@ class BuddahController:
 
     # --- тело ------------------------------------------------------------
     def set_pose(self, name="neutral", amount=1.0):
-        """neutral | explain | point_left | point_right (те же жесты, что в build_linked_episode.py)."""
+        """Совместимость: neutral | explain | point_left | point_right -> set_gesture."""
         if name not in POSES:
             raise ValueError(f"Позы '{name}' нет. Доступны: {', '.join(POSES)}")
-        for bn in POSE_BONES:
-            if bn in ("Head", "Neck"):
-                continue
-            b = self.arm.pose.bones[bn]
-            b.rotation_mode = "XYZ"
-            b.rotation_euler = (0.0, 0.0, 0.0)
-        if name != "neutral":
-            side = "L" if name == "point_left" else "R"
-            sign = -1 if side == "L" else 1
-            lift = 0.95 if name.startswith("point") else 0.38
-            self.arm.pose.bones[f"UpperArm_{side}"].rotation_euler[2] = -sign * lift * amount
-            self.arm.pose.bones[f"Forearm_{side}"].rotation_euler[0] = -0.6 * amount
+        self.set_gesture(name, amount)
+
+    def set_gesture(self, name="neutral", amount=1.0):
+        """Жест обеими руками: имя из hand_gestures.GESTURES или эмодзи (👍 ✌ 🙏 🫶 🤷 ...).
+        amount < 1 смешивает с нейтральной позой."""
+        vals = hg.gesture_values(self.arm, name)
+        base = hg.gesture_values(self.arm, "neutral") if amount < 1 else None
+        for (b, p), v in vals.items():
+            if base is not None:
+                v = tuple(x + (y - x) * amount for x, y in zip(base[(b, p)], v))
+            setattr(self.arm.pose.bones[b], p, v)
+        self._refresh()
+
+    def set_hand(self, side, shape, amount=1.0):
+        """Только пальцы одной кисти: side 'L'/'R', shape из hand_gestures.SHAPES (fist, point, peace, ok...)."""
+        side = side.upper()
+        if side not in ("L", "R") or shape not in hg.SHAPES:
+            raise ValueError(f"side L/R, shape одна из: {', '.join(hg.SHAPES)}")
+        hg.apply_shape(self.arm, side, shape, amount)
         self._refresh()
 
     # --- анимация --------------------------------------------------------
@@ -180,12 +197,14 @@ class BuddahController:
         f = bpy.context.scene.frame_current if frame is None else frame
         for k in self.controls():
             self.root.keyframe_insert(data_path=f'["{k}"]', frame=f)
-        for bn in POSE_BONES:
+        for bn in ("Head", "Neck", "Spine", "Chest"):
             self.arm.pose.bones[bn].keyframe_insert(data_path="rotation_euler", frame=f)
+        for bn, path in hg.channels(self.arm):
+            self.arm.pose.bones[bn].keyframe_insert(data_path=path, frame=f)
 
     def reset_all(self):
         for k in self.controls():
             self._set(k, 0.0)
         self._set("viseme_sil", 1.0)
         self.turn_head(0.0, 0.0)
-        self.set_pose("neutral")
+        self.set_gesture("neutral")
