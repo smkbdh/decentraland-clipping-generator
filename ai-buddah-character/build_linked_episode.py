@@ -177,12 +177,25 @@ specs = {
     "PRESENTATION_LEFT": (1.57, 4.05, 8, 0.22),
     "PRESENTATION_RIGHT": (1.57, 4.05, -8, -0.22),
 }
+vertical = plan["aspect"] == "9:16"
+if vertical:
+    # Рилс: сверху карточки и субтитры, ведущий в нижней части кадра, голова целиком в ширину 9:16.
+    specs = {
+        "CLOSE_UP": (2.25, 2.7, 8, 0),
+        "MEDIUM_SHOT": (1.95, 3.4, 10, 0),
+        "FULL_BODY": (1.57, 4.4, 8, 0),
+        "THREE_QUARTER": (1.75, 3.9, 30, 0),
+        "PRESENTATION_LEFT": (1.6, 4.4, 8, 0.22),
+        "PRESENTATION_RIGHT": (1.6, 4.4, -8, -0.22),
+    }
 for name, (z, scale, angle, shift) in specs.items():
     data = bpy.data.cameras.new(name)
     cam = bpy.data.objects.new(name, data)
     s.collection.objects.link(cam)
     data.type = "ORTHO"
     data.ortho_scale = scale * max(1, s.render.resolution_x / s.render.resolution_y)
+    if vertical:
+        data.shift_y = 0.17
     target = Vector((shift, 0, z))
     angle = math.radians(angle)
     cam.location = target + Vector((6 * math.sin(angle), -6 * math.cos(angle), 0))

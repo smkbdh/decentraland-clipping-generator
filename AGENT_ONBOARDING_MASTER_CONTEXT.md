@@ -61,6 +61,11 @@
   - `D:\Buddah\AI_BUDDAH_MASTER.blend` — единственный мастер: коллекция `AI_BUDDAH_CHARACTER` → `AI_BUDDAH_PORTRAIT` (+ `HALO`). Подключается в ролики через `Collection Linking` / Library Override. Перед правками — копия в `D:\Buddah\master-backups\`.
   - `D:\Buddah\character-portrait-detail-v2\` — исходник портрета (`build.py`, `AI_BUDDAH_PORTRAIT.blend`, контрольные рендеры). Без рига.
   - `ai-buddah-character\` (в репо) — `character_control.py`, пайплайн эпизодов: `animate_from_audio.py` → `buddah_character_director.py` → `build_linked_episode.py` → `assemble_episode.py`.
+- **Конвейер рилса с говорящим ведущим (проверен 2026-11-22, пример: `D:\Buddah\reel_02_buddah_80m\`):**
+  1. Голос → `animate_from_audio.py <voice> --project <reel>\character\episode.blend --aspect 9:16` (запускать `D:\Buddah\tools\speech-env\Scripts\python.exe`; faster-whisper заблокирован политикой Windows, срабатывает фолбэк на `whisper` CLI).
+  2. Режиссура: агент пишет `direction.json` (`events`: камера/эмоция/жест/взгляд на каждую фразу) → `buddah_character_director.direct` → пересборка `build_linked_episode.py`. Для 9:16 камеры уже кадрируют ведущего в нижние ~60% кадра.
+  3. Кадры: `blender -b episode.blend -a` → `rgba/frame_####.png` (прозрачный фон).
+  4. `reel.json` (правки субтитров, B-roll, карточки title/badge/counter/chips/logos, SFX, музыка с дакингом) → `assemble_reel.py reel.json [--still 12.5]` → Remotion-композиция `projects/geo_documentary_episode_02/src/reels/BuddahReel.tsx`. Шаблон: `ai-buddah-character/examples/reel_80m.json`.
   - Старый процедурный greybox (`character_build.py`, `character_rig.py`, `ai_buddah_v1.blend`) удалён — не восстанавливать и не ссылаться.
 
 ---

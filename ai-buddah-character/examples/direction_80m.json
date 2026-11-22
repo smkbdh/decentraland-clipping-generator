@@ -1,0 +1,15 @@
+{
+  "objects": {
+    "SCREEN_MAIN": [1.5, -1, 1.7]
+  },
+  "default_camera": "CLOSE_UP",
+  "events": [
+    {"start": 0.0,   "end": 3.66,  "camera": "CLOSE_UP",      "emotion": "skeptic",  "gesture": "explain",     "look_target": "CAMERA", "intensity": 0.75},
+    {"start": 4.08,  "end": 8.40,  "camera": "MEDIUM_SHOT",   "emotion": "skeptic",  "gesture": "nod",         "look_target": "CAMERA", "intensity": 0.5},
+    {"start": 8.72,  "end": 12.54, "camera": "CLOSE_UP",      "emotion": "neutral",  "gesture": "point_right", "look_target": "SCREEN_MAIN", "intensity": 0.6},
+    {"start": 12.90, "end": 22.10, "camera": "THREE_QUARTER", "emotion": "surprise", "gesture": "explain",     "look_target": "CAMERA", "intensity": 0.85},
+    {"start": 22.34, "end": 27.38, "camera": "MEDIUM_SHOT",   "emotion": "neutral",  "gesture": "explain",     "look_target": "CAMERA", "intensity": 0.55},
+    {"start": 27.38, "end": 31.10, "camera": "FULL_BODY",     "emotion": "skeptic",  "gesture": "point_left",  "look_target": "CAMERA", "intensity": 0.6},
+    {"start": 31.22, "end": 32.90, "camera": "CLOSE_UP",      "emotion": "surprise", "gesture": "point_right", "look_target": "SCREEN_MAIN", "intensity": 0.7}
+  ]
+}

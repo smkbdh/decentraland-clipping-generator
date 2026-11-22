@@ -1,0 +1,63 @@
+{
+  "episode": "character",
+  "voice": "voice_80m.wav",
+  "category": "МИФЫ ИИ #1",
+  "handle": "@BUDDAH_AI",
+  "character": {"scale": 1.0, "y": 0},
+  "music": {"src": "D:/APP BOTS WEBSITES DEVELOPMENT/test antigravity/projects/geo_documentary_episode_02/public/neon_dreams.mp3", "volume": 0.14, "duckTo": 0.05},
+  "caption_fixes": [
+    {"find": ["нерасеть"], "to": ["нейросеть"]},
+    {"find": ["25"], "to": ["2025"]},
+    {"find": ["Маур"], "to": ["Маор"]},
+    {"find": ["Шлома"], "to": ["Шломо"]},
+    {"find": ["Викс,"], "to": ["Wix,"]},
+    {"find": ["Base", "-Fot", "-Efo,"], "to": ["Base44,"]},
+    {"find": ["80", "миллионов", "долларов"], "to": ["$80", "миллионов"]},
+    {"find": ["наличенными."], "to": ["наличными."]},
+    {"find": ["пол", "года"], "to": ["полгода"]},
+    {"find": ["на", "котурками."], "to": ["руками."]},
+    {"find": ["лекурсор"], "to": ["Cursor"]},
+    {"find": ["клото."], "to": ["Claude."]}
+  ],
+  "broll": [
+    {"src": "D:/Buddah/ai_boom_assets/stock_videos/01_hook_coding.mp4", "start": 0, "end": 4.08, "from": 2},
+    {"src": "D:/Buddah/ai_boom_assets/stock_videos/19_cursor_claude_ai.mp4", "start": 4.08, "end": 8.72, "from": 1},
+    {"src": "D:/Buddah/ai_boom_assets/stock_videos/04_act1_ai_network.mp4", "start": 8.72, "end": 12.9, "from": 10},
+    {"src": "D:/Buddah/ai_boom_assets/real_sources/maor_shlomo_base44.mp4", "start": 12.9, "end": 22.34, "from": 20, "label": "ЖИВОЕ ИНТЕРВЬЮ · МАОР ШЛОМО, BASE44"},
+    {"src": "D:/Buddah/ai_boom_assets/stock_videos/02_hook_startup_deal.mp4", "start": 22.34, "end": 27.38, "from": 3},
+    {"src": "D:/Buddah/ai_boom_assets/broll_v2/broll_claude_agent.mp4", "start": 27.38, "end": 33.4, "from": 4}
+  ],
+  "cards": [
+    {"type": "title", "start": 0.1, "end": 3.95, "kicker": "МИФЫ ИИ", "text": "ПРОГРАММИСТЫ БОЛЬШЕ НЕ НУЖНЫ?"},
+    {"type": "badge", "start": 5.4, "end": 8.6, "text": "1 ВЕЧЕР → $1 000 000 ?", "tone": "gold"},
+    {"type": "badge", "start": 10.5, "end": 12.8, "text": "ТАКИЕ ПРИМЕРЫ ЕСТЬ", "tone": "green"},
+    {"type": "counter", "start": 13.0, "end": 22.3, "countAt": 19.6, "to": 80000000, "prefix": "$", "label": "WIX КУПИЛ BASE44 · ЛЕТО 2025 · НАЛИЧНЫМИ"},
+    {"type": "chips", "start": 22.4, "end": 27.35, "items": [
+      {"text": "6 МЕСЯЦЕВ ДО СДЕЛКИ", "at": 23.7, "tone": "gold"},
+      {"text": "0 ИНВЕСТОРОВ", "at": 25.6, "tone": "teal"},
+      {"text": "$0 НА РЕКЛАМУ", "at": 26.6, "tone": "teal"}
+    ]},
+    {"type": "title", "start": 27.45, "end": 31.15, "kicker": "3 МЕСЯЦА ДО СДЕЛКИ", "text": "ИНТЕРФЕЙС РУКАМИ: 0 СТРОК", "sub": "Весь фронтенд и бэкенд написан с помощью ИИ"},
+    {"type": "logos", "start": 31.2, "end": 33.4, "items": [
+      {"src": "D:/Buddah/ai_boom_assets/cursor_logo.png", "name": "Cursor", "at": 31.8},
+      {"src": "D:/Buddah/ai_boom_assets/claude_logo.png", "name": "Claude", "at": 32.55}
+    ]}
+  ],
+  "sfx": [
+    {"src": "D:/Buddah/ai_boom_assets/sfx/glitch.wav", "at": 0.0, "volume": 0.25},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/whoosh.wav", "at": 3.95, "volume": 0.22},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/pop.wav", "at": 5.4, "volume": 0.3},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/whoosh.wav", "at": 8.6, "volume": 0.22},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/pop.wav", "at": 10.5, "volume": 0.3},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/whoosh.wav", "at": 12.8, "volume": 0.22},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/impact.wav", "at": 19.9, "volume": 0.45},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/cash.wav", "at": 20.2, "volume": 0.25},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/whoosh.wav", "at": 22.25, "volume": 0.22},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/pop.wav", "at": 23.7, "volume": 0.3},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/pop.wav", "at": 25.6, "volume": 0.3},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/pop.wav", "at": 26.6, "volume": 0.3},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/whoosh.wav", "at": 27.3, "volume": 0.22},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/pop.wav", "at": 31.8, "volume": 0.3},
+    {"src": "D:/Buddah/ai_boom_assets/sfx/pop.wav", "at": 32.55, "volume": 0.3}
+  ]
+}
