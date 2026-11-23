@@ -164,7 +164,7 @@ def hand_bones(side):
 
 ARM_CHAIN = ("Clavicle", "UpperArm", "Forearm", "Hand")
 HAND_EXT = .035  # gestures slide the hand out of the wide sleeve along the wrist (cartoon cheat)
-SLEEVE_NARROW = .50  # lifted arms narrow the sleeve opening (cloth would fall back along the arm)
+SLEEVE_NARROW = .92  # lifted arms narrow the sleeve opening (cloth would fall back along the arm)
 
 # ---------------------------------------------------------------- arm placements
 # wrist: wrist centre (m); fingers: direction wrist->knuckles; palm: direction the palm faces.
@@ -468,9 +468,10 @@ def _rest_spec(arm):
 
 
 def _blend_spec(a, b, t):
-    lerp = lambda x, y: tuple(p + (q - p) * t for p, q in zip(x, y))
-    return dict(wrist=lerp(a["wrist"], b["wrist"]), fingers=lerp(a["fingers"], b["fingers"]),
-                palm=lerp(a["palm"], b["palm"]), ext=a.get("ext", HAND_EXT) + (b.get("ext", HAND_EXT) - a.get("ext", HAND_EXT)) * t,
+    lerp = lambda x, y, k=t: tuple(p + (q - p) * k for p, q in zip(x, y))
+    turn = min(1.0, t * 1.6)          # the hand turns toward the gesture before the arm arrives (no limp hand)
+    return dict(wrist=lerp(a["wrist"], b["wrist"]), fingers=lerp(a["fingers"], b["fingers"], turn),
+                palm=lerp(a["palm"], b["palm"], turn), ext=a.get("ext", HAND_EXT) + (b.get("ext", HAND_EXT) - a.get("ext", HAND_EXT)) * t,
                 sleeve=a.get("sleeve", SLEEVE_NARROW) + (b.get("sleeve", SLEEVE_NARROW) - a.get("sleeve", SLEEVE_NARROW)) * t)
 
 

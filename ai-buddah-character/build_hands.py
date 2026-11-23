@@ -47,7 +47,7 @@ def side_frame(sign):
     across = np.array([.70 * sign, .714, 0]); across /= np.linalg.norm(across)
     dorsal = np.array([.714 * sign, -.70, 0]); dorsal /= np.linalg.norm(dorsal)
     up = np.array([0., 0., 1.])
-    wrist = np.array([sign * .528, -.215, 1.012])
+    wrist = np.array([sign * .538, -.172, 1.002])  # centre of the sleeve opening, so the hand never meets its wall
     return across, dorsal, up, wrist
 
 
