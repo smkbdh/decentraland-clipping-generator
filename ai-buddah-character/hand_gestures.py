@@ -13,9 +13,9 @@ the left side is mirrored automatically (x -> -x).
 import math
 
 try:  # the tables below are also read outside Blender (director, docs)
-    from mathutils import Euler, Matrix, Vector
+    from mathutils import Euler, Matrix, Quaternion, Vector
 except ImportError:  # pragma: no cover
-    Euler = Matrix = Vector = None
+    Euler = Matrix = Quaternion = Vector = None
 
 DIGITS = ("Thumb", "Index", "Middle", "Ring", "Pinky")
 CURL_SIGN = -1.0  # bone local X: negative rotation bends toward the palm
@@ -172,8 +172,8 @@ SLEEVE_NARROW = .64  # lifted arms narrow the sleeve opening (cloth would fall b
 PLACEMENTS = {
     "down": None,  # rest arms, only fingers change
     "chest": dict(wrist=(.30, -.50, 1.18), fingers=(-.55, -.35, .55), palm=(-.45, .55, -.1)),
-    "front_up": dict(wrist=(.40, -.44, 1.28), fingers=(-.15, -.25, 1), palm=(-.2, -1, 0)),
-    "beside_face": dict(wrist=(.44, -.48, 1.50), fingers=(-.12, -.15, 1), palm=(0, -1, 0)),
+    "front_up": dict(wrist=(.42, -.34, 1.30), fingers=(-.15, -.25, 1), palm=(-.2, -1, 0)),
+    "beside_face": dict(wrist=(.47, -.34, 1.48), fingers=(-.12, -.15, 1), palm=(0, -1, 0)),
     "thumb_up": dict(wrist=(.32, -.56, 1.20), fingers=(-1, -.30, .10), palm=(0, 1, 0)),
     "point_fwd": dict(wrist=(.34, -.55, 1.30), fingers=(-.25, -1, .05), palm=(-.1, 0, -1)),
     "point_side": dict(wrist=(.66, -.32, 1.30), fingers=(1, -.25, .05), palm=(0, 0, -1)),
@@ -181,17 +181,17 @@ PLACEMENTS = {
     "palm_up": dict(wrist=(.40, -.50, 1.12), fingers=(-.25, -1, .05), palm=(0, 0, 1)),
     "shrug": dict(wrist=(.50, -.46, 1.14), fingers=(.45, -.88, .12), palm=(0, -.1, 1)),
     "palm_down": dict(wrist=(.36, -.52, 1.14), fingers=(-.3, -1, -.05), palm=(0, 0, -1)),
-    "push": dict(wrist=(.30, -.58, 1.32), fingers=(0, -.15, 1), palm=(0, -1, 0)),
+    "push": dict(wrist=(.36, -.40, 1.36), fingers=(0, -.15, 1), palm=(0, -1, 0)),
     "raise": dict(wrist=(.55, -.25, 1.80), fingers=(.1, -.1, 1), palm=(0, -1, 0)),
     "pray": dict(wrist=(.046, -.56, 1.34), fingers=(0, -.2, 1), palm=(-1, 0, 0)),
-    "heart": dict(wrist=(.17, -.57, 1.34), fingers=(-.85, -.05, .5), palm=(0, -1, 0)),
+    "heart": dict(wrist=(.19, -.46, 1.36), fingers=(-.85, -.05, .5), palm=(0, -1, 0)),
     "clap": dict(wrist=(.045, -.54, 1.30), fingers=(0, -.55, 1), palm=(-1, 0, 0)),
     "cup": dict(wrist=(.07, -.52, 1.12), fingers=(-.15, -1, .1), palm=(-.35, 0, 1)),
     "open_both": dict(wrist=(.52, -.46, 1.16), fingers=(.45, -.75, .45), palm=(-.2, -.9, .3)),
     "handshake": dict(wrist=(.34, -.56, 1.15), fingers=(-.2, -1, 0), palm=(-1, 0, 0)),
     "at_viewer": dict(wrist=(.30, -.56, 1.30), fingers=(-.2, -1, .15), palm=(0, 0, -1)),
-    "side_face": dict(wrist=(.43, -.50, 1.47), fingers=(-.12, -.15, 1), palm=(-.88, -.48, 0), ext=.025, sleeve=.8),
-    "chin": dict(wrist=(.20, -.56, 1.40), fingers=(-.35, -.3, .9), palm=(-.3, -.5, .3)),
+    "side_face": dict(wrist=(.45, -.36, 1.46), fingers=(-.12, -.15, 1), palm=(-.88, -.48, 0), ext=.025, sleeve=.8),
+    "chin": dict(wrist=(.24, -.44, 1.40), fingers=(-.35, -.3, .9), palm=(-.3, -.5, .3)),
 }
 
 # gesture: per side (shape, placement); "L" missing -> relaxed hand down
@@ -277,6 +277,32 @@ def _side_vec(v, side):
     return Vector((v[0] if side == "R" else -v[0], v[1], v[2]))
 
 
+WRIST_BACK, WRIST_PALM, WRIST_SIDE, WRIST_TWIST = (math.radians(a) for a in (22, 55, 35, 70))
+WRIST_W = .05
+WRIST_TWIST_MAX = math.radians(100)
+
+
+def _clamp_wrist(rel):
+    """Limit a hand rotation relative to the straight wrist: swing (back/palm/side) and twist about the forearm.
+    When the target can't be reached comfortably the hand tilts instead of breaking at the wrist."""
+    q = rel.to_quaternion()
+    if q.w < 0:
+        q.negate()
+    qt = Quaternion((q.w, 0, q.y, 0)).normalized()
+    qs = q @ qt.inverted()
+    tw = 2 * math.atan2(qt.y, qt.w)
+    tw = (tw + math.pi) % (2 * math.pi) - math.pi
+    tw = max(-WRIST_TWIST_MAX, min(WRIST_TWIST_MAX, tw))
+    y = qs @ Vector((0, 1, 0))
+    back = math.atan2(y.z, max(y.y, 1e-3))
+    lat = math.atan2(y.x, max(y.y, 1e-3))
+    back = max(-WRIST_PALM, min(WRIST_BACK, back))
+    lat = max(-WRIST_SIDE, min(WRIST_SIDE, lat))
+    y2 = Vector((math.tan(lat), 1, math.tan(back))).normalized()
+    swing = Vector((0, 1, 0)).rotation_difference(y2)
+    return (swing @ Quaternion((0, 1, 0), tw)).to_matrix()
+
+
 def solve_arm(arm, side, wrist, fingers, palm, iterations=60, ext=HAND_EXT):
     """Return eulers for Clavicle/UpperArm/Forearm/Hand so the wrist reaches `wrist` with that orientation."""
     target = _side_vec(wrist, side)
@@ -285,6 +311,28 @@ def solve_arm(arm, side, wrist, fingers, palm, iterations=60, ext=HAND_EXT):
     slots = [(0, 0), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 2)]
     weight = [6.0, 6.0, .25, .6, .25, .15, .8]
     x = [0.0] * len(slots)
+    # wrist comfort: keep the hand within a cartoon-safe range of the forearm (a hand bent back past
+    # ~20 deg or twisted past the forearm reads as a broken wrist); the arm moves instead of the wrist
+    f_t = _side_vec(fingers, side).normalized()
+    p_t = _side_vec(palm, side)
+    p_t = (p_t - f_t * p_t.dot(f_t)).normalized()
+    rest = _rest(arm, f"Hand_{side}").to_3x3()
+    f_r = rest.col[1].normalized()          # bone Y: wrist -> knuckles
+    p_r = -rest.col[2].normalized()         # bone Z is the back of the hand
+    src = Matrix((f_r, p_r, f_r.cross(p_r))).transposed()
+    dst = Matrix((f_t, p_t, f_t.cross(p_t))).transposed()
+    want = dst @ src.inverted() @ rest     # desired armature-space rotation of the hand bone
+    local = _rest(arm, f"Forearm_{side}").to_3x3().inverted() @ rest
+
+    def wrist_strain(mats):
+        rel = ((mats[f"Forearm_{side}"].to_3x3() @ local).inverted() @ want).to_quaternion()
+        twist = abs(2 * math.atan2(rel.y, rel.w))
+        twist = min(twist, 2 * math.pi - twist)
+        y = rel.to_matrix().col[1]               # fingers in the straight-wrist frame
+        back = math.atan2(y.z, max(y.y, 1e-3)) if y.y > 0 else math.copysign(math.pi / 2 + (1 - y.y), y.z)
+        lateral = abs(math.atan2(y.x, max(abs(y.y), 1e-3)))
+        return [max(0.0, back - WRIST_BACK), max(0.0, -back - WRIST_PALM),
+                max(0.0, lateral - WRIST_SIDE), max(0.0, twist - WRIST_TWIST)]
 
     def angles_of(p):
         ang = {n: [0.0, 0.0, 0.0] for n in names}
@@ -296,6 +344,7 @@ def solve_arm(arm, side, wrist, fingers, palm, iterations=60, ext=HAND_EXT):
         mats = _fk(arm, side, angles_of(p), ext)
         wrist_now = mats[f"Hand_{side}"].translation
         r = list(wrist_now - target)
+        r += [WRIST_W * s for s in wrist_strain(mats)]
         r += [w * .05 * v for w, v in zip(weight, p)]
         return r
 
@@ -322,20 +371,8 @@ def solve_arm(arm, side, wrist, fingers, palm, iterations=60, ext=HAND_EXT):
     ang = angles_of(x)
     mats = _fk(arm, side, ang, ext)
     # hand orientation: rotate rest hand frame so (fingers, palm) match the targets
-    f_t = _side_vec(fingers, side).normalized()
-    p_t = _side_vec(palm, side)
-    p_t = (p_t - f_t * p_t.dot(f_t)).normalized()
-    rest = _rest(arm, f"Hand_{side}").to_3x3()
-    f_r = rest.col[1].normalized()          # bone Y: wrist -> knuckles
-    p_r = -rest.col[2].normalized()         # bone Z is the back of the hand
-    src = Matrix((f_r, p_r, f_r.cross(p_r))).transposed()
-    dst = Matrix((f_t, p_t, f_t.cross(p_t))).transposed()
-    want = dst @ src.inverted() @ rest     # desired armature-space rotation of the hand bone
-    parent = mats[f"Forearm_{side}"].to_3x3()
-    parent_rest = _rest(arm, f"Forearm_{side}").to_3x3()
-    local = parent_rest.inverted() @ rest
-    basis = (parent @ local).inverted() @ want
-    ang[f"Hand_{side}"] = list(basis.to_euler("XYZ"))
+    basis = (mats[f"Forearm_{side}"].to_3x3() @ local).inverted() @ want
+    ang[f"Hand_{side}"] = list(_clamp_wrist(basis).to_euler("XYZ"))
     err = (mats[f"Hand_{side}"].translation - target).length
     return ang, err
 
