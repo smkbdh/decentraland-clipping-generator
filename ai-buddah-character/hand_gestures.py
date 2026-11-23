@@ -164,7 +164,7 @@ def hand_bones(side):
 
 ARM_CHAIN = ("Clavicle", "UpperArm", "Forearm", "Hand")
 HAND_EXT = .035  # gestures slide the hand out of the wide sleeve along the wrist (cartoon cheat)
-SLEEVE_NARROW = .64  # lifted arms narrow the sleeve opening (cloth would fall back along the arm)
+SLEEVE_NARROW = .50  # lifted arms narrow the sleeve opening (cloth would fall back along the arm)
 
 # ---------------------------------------------------------------- arm placements
 # wrist: wrist centre (m); fingers: direction wrist->knuckles; palm: direction the palm faces.
@@ -397,7 +397,7 @@ def apply_placement(arm, side, placement):
 def _sleeve(arm, side, s):
     pb = arm.pose.bones.get(f"SleeveEnd_{side}")
     if pb:
-        pb.scale = (s, 1 - (1 - s) * .35, s)
+        pb.scale = (s, s, s)
 
 
 def apply_gesture(arm, name):

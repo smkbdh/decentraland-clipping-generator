@@ -11,7 +11,7 @@ What it does:
     with the flat, unlit render;
   * sets the "relaxed" shape from hand_gestures.py as the default pose.
 """
-import bpy, sys, math, os
+import bpy, bmesh, sys, math, os
 import numpy as np
 from mathutils import Vector, Matrix
 
@@ -230,12 +230,36 @@ def restore_sleeve_groups(sl, side):
     sl.vertex_groups.remove(end)
 
 
+def recess_cuff(sl):
+    """The sleeve opening was closed by a flat dark lid; a lifted arm showed it as a flat oval with the hand
+    poking through. Inset it into a short dark lining tube so the opening reads as depth (run once)."""
+    if sl.get("cuff_recessed"):
+        return
+    bm = bmesh.new(); bm.from_mesh(sl.data); bm.faces.ensure_lookup_table()
+    cap = max(bm.faces, key=lambda f: len(f.verts))
+    if len(cap.verts) < 32:
+        bm.free(); return
+    rim = [v.co.copy() for v in cap.verts]
+    c = sum(rim, Vector()) / len(rim)
+    r = sum((v - c).length for v in rim) / len(rim)
+    res = bmesh.ops.inset_individual(bm, faces=[cap], thickness=r * .10, depth=-.05, use_even_offset=True)
+    for f in res["faces"]:
+        f.material_index = cap.material_index
+    for v in cap.verts:                       # narrow the bottom of the lining a little more
+        v.co = c + (v.co - c) * .85 + (cap.normal * -.05) * .0
+    bm.to_mesh(sl.data); bm.free(); sl.data.update()
+    sl["cuff_recessed"] = True
+
+
 def sleeve_weights(axes):
     """The opening half of each sleeve follows SleeveEnd_*, which gestures narrow when the arm lifts."""
     for side in ("R", "L"):
         sl = bpy.data.objects["Sleeve." + side]
-        mid, end = axes[side]
-        axis = end - mid; length = axis.length; axis.normalize()
+        mid, _end = axes[side]
+        sign = 1 if side == "R" else -1
+        across, dorsal, up, wrist = side_frame(sign)
+        hand_head = Vector(wrist + SCALE * (-.002 * dorsal + .004 * up))
+        axis = hand_head - mid; length = axis.length; axis.normalize()
         fore = sl.vertex_groups["Forearm_" + side]
         grp = sl.vertex_groups.new(name="SleeveEnd_" + side)
         for v in sl.data.vertices:
@@ -243,7 +267,7 @@ def sleeve_weights(axes):
             if wf <= 0:
                 continue
             tt = ((sl.matrix_world @ v.co) - mid).dot(axis) / length
-            we = wf * float(sstep(-.15, .85, tt))
+            we = wf * float(sstep(-.2, .8, tt))
             if we > 1e-4:
                 grp.add([v.index], we, "REPLACE")
                 fore.add([v.index], wf - we, "REPLACE")
@@ -273,7 +297,10 @@ def set_bones(axes):
                 parent = b; pos = pos + d * l
         mid, end = axes[side]
         sb = eb.get("SleeveEnd_" + side) or eb.new("SleeveEnd_" + side)
-        sb.head = mid; sb.tail = end; sb.align_roll(Vector((0, -1, 0)))
+        # SleeveEnd sits at the wrist: scaling it gathers the opening (and the long back flap of the
+        # bell) in around the wrist, so a lifted sleeve hugs the hand instead of gaping beside it
+        d = (hand.head - mid).normalized()
+        sb.head = hand.head.copy(); sb.tail = hand.head + d * .08; sb.align_roll(Vector((0, -1, 0)))
         sb.parent = eb["Forearm_" + side]; sb.use_connect = False; sb.use_deform = True
     bpy.ops.object.mode_set(mode="OBJECT")
 
@@ -349,6 +376,8 @@ def build_side(side, sign, infos):
 
 
 def main():
+    for sd in ("R", "L"):
+        recess_cuff(bpy.data.objects["Sleeve." + sd])
     axes = sleeve_axes()
     set_bones(axes)
     sleeve_weights(axes)
