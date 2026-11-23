@@ -516,6 +516,8 @@ def body_offsets(name):
 # small living drift while a gesture holds (period s, [(bone base, axis, amplitude, mirror)])
 HOLD_DRIFT = (1.7, [("Forearm", 0, .035, False), ("Hand", 2, .03, True)])
 OVERSHOOT = .10     # the arm passes its target by this fraction of the last travel, then settles
+FREE_HAND_BEND = -.22   # forearm X: the idle hand lifts a little while the other one gestures
+BEAT_NOD, BEAT_ARM, BEAT_HAND = .07, .07, .10   # speech downbeat: head nod and a short hand stroke
 
 
 def channels(arm, sides=("R", "L")):
@@ -546,18 +548,29 @@ def _blend_spec(a, b, t):
                 sleeve=a.get("sleeve", SLEEVE_NARROW) + (b.get("sleeve", SLEEVE_NARROW) - a.get("sleeve", SLEEVE_NARROW)) * t)
 
 
-def transition_values(arm, name, t):
-    """In-between of neutral -> gesture at fraction t, solved by IK along the hand's path (not by blending joint
-    angles, which swings the hand through odd orientations). Returns {(bone, path): values}."""
+def transition_values(arm, name, t, from_name=None):
+    """In-between of `from_name` (default: hanging arms) -> `name` at fraction t, solved by IK along the hand's
+    path (not by blending joint angles, which swings the hand through odd orientations). Fingers blend from the
+    previous hand shape. Returns {(bone, path): values}."""
     name = resolve(name)
     g = GESTURES[name]
+    gf = GESTURES[resolve(from_name)] if from_name else {}
     keep = {(b, p): tuple(getattr(arm.pose.bones[b], p)) for b, p in channels(arm)}
     rest = _rest_spec(arm)
+
+    def spec_of(placement):
+        sp = PLACEMENTS.get(placement) if isinstance(placement, str) else placement
+        return sp
+
     for side in ("R", "L"):
-        shape, placement = g.get(side, ("relaxed", "down"))
-        spec = PLACEMENTS.get(placement) if isinstance(placement, str) else placement
-        apply_placement(arm, side, _blend_spec(rest, spec, t) if spec else None)
-        apply_shape(arm, side, shape, t)
+        shape_b, place_b = g.get(side, ("relaxed", "down"))
+        shape_a, place_a = gf.get(side, ("relaxed", "down"))
+        sa, sb = spec_of(place_a), spec_of(place_b)
+        if sa is None and sb is None:
+            apply_placement(arm, side, None)
+        else:
+            apply_placement(arm, side, _blend_spec(sa or rest, sb or rest, t))
+        apply_shape(arm, side, shape_b, t, base=shape_a)
     vals = {(b, p): tuple(getattr(arm.pose.bones[b], p)) for b, p in channels(arm)}
     for (b, p), v in keep.items():
         setattr(arm.pose.bones[b], p, v)

@@ -122,15 +122,36 @@ for f in range(s.frame_end):
         prop("viseme_" + n, v, t)
 finish(a)
 a = action("Idle")
+import random
+_rng = random.Random(7)
 for i in range(math.ceil(duration / 0.45) + 1):
     t = min(duration, i * 0.45)
     rot("Spine", 1, 0.012 * math.sin(2 * math.pi * t / 4.8), t)
-    rot("Chest", 0, 0.009 * math.sin(2 * math.pi * t / 3.6), t)
-for i in range(1, int(duration / 3.7) + 1):
-    t = i * 3.7 - 0.24
-    for dt, v in [(0, 0), (0.08, 1), (0.19, 0)]:
+    rot("Spine", 2, 0.014 * math.sin(2 * math.pi * t / 6.3 + 1.1), t)     # slow weight shift
+    rot("Chest", 0, 0.009 * math.sin(2 * math.pi * t / 3.6), t)           # breathing
+    rot("Chest", 2, -0.008 * math.sin(2 * math.pi * t / 6.3 + 1.1), t)    # counter-sway keeps the head steady
+# Blinks: irregular intervals, the odd double blink, and a blink whenever the gaze target changes
+blinks = []
+t = _rng.uniform(.8, 2.0)
+while t < duration - .3:
+    blinks.append(t)
+    if _rng.random() < .18:
+        blinks.append(t + .32)
+    t += _rng.uniform(2.2, 5.2)
+last_target = None
+for e in plan["events"]:
+    if last_target is not None and e["look_target"] != last_target:
+        blinks.append(e["start"] + .02)
+    last_target = e["look_target"]
+blinks.sort()
+kept = []
+for b in blinks:
+    if not kept or b - kept[-1] > .3:
+        kept.append(b)
+for t in kept:
+    for dt, v in [(0, 0), (0.07, 1), (0.17, 0)]:
         for side in "LR":
-            prop("blink_" + side, v, t + dt)
+            prop("blink_" + side, v, min(duration, t + dt))
 finish(a)
 for layer in ["Expression", "Eye tracking", "Head aim"]:
     a = action(layer)
@@ -159,67 +180,232 @@ for layer in ["Expression", "Eye tracking", "Head aim"]:
                 rot("Head", 1, angle * v, t)
                 rot("Neck", 0, (-0.18 if e["gesture"] == "nod" else 0.06) * v, t)
     finish(a)
-# Gestures: arms are solved to hand targets, fingers posed from hand_gestures.py (full strength, eased in/out).
+# ---------------------------------------------------------------- gestures
+# Arms are solved to hand targets (hand_gestures.py). Consecutive gestures flow straight into each other;
+# the arms only drop to rest in a real pause. Each arrival overshoots a touch and settles.
 a = action("Gesture")
 neutral = hg.gesture_values(arm, "neutral")
 hg.key_values(arm, neutral, frame(0))
-solved = {}
-for e in plan["events"]:
-    if e["gesture"] in ("neutral", "nod"):
-        continue
-    name = hg.resolve(e["gesture"])
-    vals = solved.setdefault(name, hg.gesture_values(arm, name))
-    half = solved.setdefault(name + "@half", hg.transition_values(arm, name, .5))
-    start, end = e["start"], e["end"]
+_cache = {}
+
+
+def g_vals(name):
+    if name not in _cache:
+        _cache[name] = hg.gesture_values(arm, name)
+    return _cache[name]
+
+
+def g_between(name, frm):
+    if (name, frm) not in _cache:
+        _cache[(name, frm)] = hg.transition_values(arm, name, .5, frm)
+    return _cache[(name, frm)]
+
+
+CHAIN_GAP = 0.6
+gev = [dict(e, name=hg.resolve(e["gesture"])) for e in plan["events"] if e["gesture"] not in ("neutral", "nod")]
+arrivals = []          # (time, gesture) for the cloth layer
+holds = []             # (start, end, gesture) while the hand is in place, for speech beats
+for i, e in enumerate(gev):
+    name, start, end = e["name"], e["start"], e["end"]
+    prev = gev[i - 1] if i > 0 and start - gev[i - 1]["end"] < CHAIN_GAP else None
+    nxt = gev[i + 1] if i + 1 < len(gev) and gev[i + 1]["start"] - end < CHAIN_GAP else None
     ramp = min(0.4, (end - start) * 0.3)
-    hg.key_values(arm, neutral, frame(start))
-    hg.key_values(arm, half, frame(start + ramp * .45))   # IK in-between: the hand travels, joints follow
-    settle = 0.16
-    if end - start - 2 * ramp > settle + 0.2:
-        over = {k: tuple(v + (v - h) * hg.OVERSHOOT for v, h in zip(vals[k], half[k])) if k[1] == "rotation_euler" else vals[k]
-                for k in vals}
-        hg.key_values(arm, over, frame(start + ramp))     # overshoot a touch, then settle
-        hg.key_values(arm, vals, frame(start + ramp + settle))
+    vals = g_vals(name)
+    if prev is not None and prev["name"] == name:
+        arrive = start                                   # same gesture continues: keep holding
     else:
-        hg.key_values(arm, vals, frame(start + ramp))
-        settle = 0.0
+        frm = prev["name"] if prev is not None else None
+        half = g_between(name, frm)
+        if prev is None:
+            hg.key_values(arm, neutral, frame(start))
+            t_half = start + ramp * .45
+        else:
+            p_ramp = min(0.4, (prev["end"] - prev["start"]) * 0.3)
+            t_half = (prev["end"] - p_ramp + start + ramp) / 2
+        hg.key_values(arm, half, frame(t_half))
+        arrive = start + ramp
+        settle = 0.16
+        if end - arrive - ramp > settle + 0.2:
+            over = {k: tuple(v + (v - h) * hg.OVERSHOOT for v, h in zip(vals[k], half[k]))
+                    if k[1] == "rotation_euler" else vals[k] for k in vals}
+            hg.key_values(arm, over, frame(arrive))
+            hg.key_values(arm, vals, frame(arrive + settle))
+            arrive += settle
+        else:
+            hg.key_values(arm, vals, frame(arrive))
+        arrivals.append((start + ramp, name))
     sides = [sd for sd in "RL" if sd in hg.GESTURES[name]]
     period, moves = hg.HOLD_MOTION.get(name, hg.HOLD_DRIFT)
-    t, sign = start + ramp + settle + period / 2, 1
-    while t < end - ramp - period / 4:
+    hold_end = end - ramp if nxt is None else end
+    t, sign = arrive + period / 2, 1
+    while t < hold_end - period / 4:
         extra = {(f"{base}_{sd}", "rotation_euler"): (axis, sign * amp * (-1 if mirror and sd == "L" else 1))
                  for sd in sides for base, axis, amp, mirror in moves}
         hg.key_values(arm, vals, frame(t), extra=extra)
-        t += period / 2; sign = -sign
+        t += period / 2
+        sign = -sign
     hg.key_values(arm, vals, frame(end - ramp))
-    hg.key_values(arm, half, frame(end - ramp * .45))
-    hg.key_values(arm, neutral, frame(end))
+    holds.append((arrive, end - ramp, name))
+    if nxt is None:
+        hg.key_values(arm, g_between(name, None), frame(end - ramp * .45))
+        hg.key_values(arm, neutral, frame(end))
 finish(a)
-# Body: torso and shoulders take part in each gesture (additive over idle breathing and the arm poses).
-# The torso leads the arm a little on the way in and lags on the way out (overlap), never snapping.
+
+# ---------------------------------------------------------------- body
+# Torso and shoulders take part in each gesture (additive over idle breathing and the arm poses); the free
+# hand comes along a little. Leads the arm in, lags it out; chained gestures blend without dropping to 0.
 a = action("Body")
-body_bones = ("Chest", "Spine", "Clavicle_R", "Clavicle_L")
+body_bones = ("Chest", "Spine", "Clavicle_R", "Clavicle_L", "Forearm_R", "Forearm_L")
 for bn in body_bones:
     arm.pose.bones[bn].rotation_mode = "XYZ"
     arm.pose.bones[bn].rotation_euler = (0, 0, 0)
     arm.pose.bones[bn].keyframe_insert("rotation_euler", frame=frame(0))
-gest_events = [e for e in plan["events"] if e["gesture"] not in ("neutral", "nod")]
-for i, e in enumerate(gest_events):
-    nxt = gest_events[i + 1]["start"] if i + 1 < len(gest_events) else duration
-    offs = hg.body_offsets(e["gesture"])
+
+
+def key_body(offs, t, k):
+    for bn in body_bones:
+        v = offs.get((bn, "rotation_euler"), (0, 0, 0))
+        arm.pose.bones[bn].rotation_euler = tuple(c * k for c in v)
+        arm.pose.bones[bn].keyframe_insert("rotation_euler", frame=frame(t))
+
+
+for i, e in enumerate(gev):
+    offs = dict(hg.body_offsets(e["name"]))
+    sides = set(hg.GESTURES[e["name"]])
+    if len(sides) == 1:                          # the free hand lifts a little instead of hanging dead
+        free = "L" if "R" in sides else "R"
+        offs[(f"Forearm_{free}", "rotation_euler")] = (hg.FREE_HAND_BEND, 0, 0)
     start, end = e["start"], e["end"]
     ramp = min(0.4, (end - start) * 0.3)
-
-    def key_body(t, k):
-        for bn in body_bones:
-            v = offs.get((bn, "rotation_euler"), (0, 0, 0))
-            arm.pose.bones[bn].rotation_euler = tuple(c * k for c in v)
-            arm.pose.bones[bn].keyframe_insert("rotation_euler", frame=frame(t))
-    key_body(start, 0.0)
-    key_body(start + ramp * .8, 1.0)
-    key_body(max(start + ramp * .8 + .05, end - ramp), .8)
-    key_body(min(end + .15, nxt, duration), 0.0)
+    chained_in = i > 0 and start - gev[i - 1]["end"] < CHAIN_GAP
+    chained_out = i + 1 < len(gev) and gev[i + 1]["start"] - end < CHAIN_GAP
+    if not chained_in:
+        key_body(offs, start, 0.0)
+    key_body(offs, start + ramp * .8, 1.0)
+    key_body(offs, max(start + ramp * .8 + .05, end - ramp), .85)
+    if not chained_out:
+        nxt_t = gev[i + 1]["start"] if i + 1 < len(gev) else duration
+        key_body(offs, min(end + .15, nxt_t, duration), 0.0)
 finish(a, "ADD")
+
+# ---------------------------------------------------------------- speech beats
+# On stressed words (the loudest syllables) the active hand gives a short downbeat and the head nods with it.
+import wave
+import numpy as np
+
+
+def word_list():
+    out = []
+    for seg in read("transcript")["segments"]:
+        for w in seg.get("words", []):
+            out.append((w["start"], w["end"], w["word"].strip()))
+    return out
+
+
+def loudness():
+    wav = folder / "voice.wav"
+    if not wav.exists():
+        return None, 1
+    with wave.open(str(wav)) as f:
+        sr, n, ch, sw = f.getframerate(), f.getnframes(), f.getnchannels(), f.getsampwidth()
+        data = np.frombuffer(f.readframes(n), dtype={2: np.int16, 4: np.int32}.get(sw, np.int16)).astype(np.float32)
+    if ch > 1:
+        data = data.reshape(-1, ch).mean(axis=1)
+    hop = max(1, sr // 100)
+    frames = data[: len(data) // hop * hop].reshape(-1, hop)
+    rms = np.sqrt((frames ** 2).mean(axis=1) + 1e-9)
+    return rms / (rms.max() + 1e-9), 100
+
+
+rms, rate = loudness()
+cands = []
+for w0, w1, txt in word_list():
+    if w1 - w0 < .12 or not any(ch.isalnum() for ch in txt):
+        continue
+    if rms is not None:
+        seg = rms[int(w0 * rate):max(int(w1 * rate), int(w0 * rate) + 1)]
+        peak = float(seg.max()) if len(seg) else 0.0
+    else:
+        peak = .5
+    score = peak * (1.25 if any(ch.isdigit() for ch in txt) else 1.0) * (1 + min(len(txt), 10) / 20)
+    cands.append((w0 + min(.08, (w1 - w0) * .3), score))
+cands.sort(key=lambda b: -b[1])
+chosen = []
+for t, sc in cands:
+    if sc < .45 * cands[0][1]:
+        break
+    if all(abs(t - c) > 1.1 for c in chosen):
+        chosen.append(t)
+chosen.sort()
+a = action("Beats")
+beat_bones = ("Forearm_R", "Forearm_L", "Hand_R", "Hand_L", "Neck", "Chest")
+for bn in beat_bones:
+    arm.pose.bones[bn].rotation_mode = "XYZ"
+    arm.pose.bones[bn].rotation_euler = (0, 0, 0)
+    arm.pose.bones[bn].keyframe_insert("rotation_euler", frame=frame(0))
+
+
+def key_beat(t, k, sides):
+    for bn in beat_bones:
+        v = [0.0, 0.0, 0.0]
+        if bn == "Neck":
+            v[0] = hg.BEAT_NOD * k
+        elif bn == "Chest":
+            v[0] = hg.BEAT_NOD * .35 * k
+        elif bn[-1] in sides and bn.startswith("Forearm"):
+            v[0] = hg.BEAT_ARM * k
+        elif bn[-1] in sides and bn.startswith("Hand"):
+            v[0] = hg.BEAT_HAND * k
+        arm.pose.bones[bn].rotation_euler = v
+        arm.pose.bones[bn].keyframe_insert("rotation_euler", frame=frame(t))
+
+
+for t in chosen:
+    hold = next((h for h in holds if h[0] + .05 <= t <= h[1] - .1), None)
+    sides = set(hg.GESTURES[hold[2]]) if hold and hold[2] not in hg.HOLD_MOTION else set()
+    key_beat(max(0, t - .14), 0, sides)
+    key_beat(t, 1, sides)
+    key_beat(t + .12, -.25, sides)
+    key_beat(t + .34, 0, sides)
+finish(a, "ADD")
+
+# ---------------------------------------------------------------- cloth inertia
+# When an arm arrives, the loose bell keeps going: it drops further, bounces back and settles.
+a = action("Cloth")
+for sd in "RL":
+    pb = arm.pose.bones.get(f"SleeveEnd_{sd}")
+    if pb:
+        pb.location = (0, 0, 0)
+        pb.keyframe_insert("location", frame=frame(0))
+for t0, name in arrivals:
+    vals = g_vals(name)
+    for sd in "RL":
+        sag = Vector(vals.get((f"SleeveEnd_{sd}", "location"), (0, 0, 0)))
+        if sd not in hg.GESTURES[name] or sag.length < 1e-4:
+            continue
+        pb = arm.pose.bones[f"SleeveEnd_{sd}"]
+        for dt, k in ((-.06, 0), (.10, .75), (.26, -.30), (.44, .10), (.62, 0)):
+            pb.location = sag * k
+            pb.keyframe_insert("location", frame=frame(t0 + dt))
+finish(a, "ADD")
+
+# Eye life: small saccades on top of the gaze target (additive); a living eye never holds perfectly still.
+a = action("Eye life")
+_rng2 = random.Random(11)
+t = 0.0
+gx = gz = 0.0
+prop("gaze_x", 0.0, 0.0)
+prop("gaze_z", 0.0, 0.0)
+while t < duration - .2:
+    hold = _rng2.uniform(.45, 1.5)
+    prop("gaze_x", gx, t + hold - .04)        # hold, then a quick jump (40 ms) to the next fixation
+    prop("gaze_z", gz, t + hold - .04)
+    gx, gz = _rng2.uniform(-.06, .06), _rng2.uniform(-.035, .035)
+    t += hold
+    prop("gaze_x", gx, min(duration, t))
+    prop("gaze_z", gz, min(duration, t))
+finish(a, "ADD")
+
 specs = {
     "CLOSE_UP": (2.30, 1.88, 8, 0),
     "MEDIUM_SHOT": (1.96, 2.60, 10, 0),
@@ -262,6 +448,35 @@ for name, coords in plan["objects"].items():
 s.sequence_editor_create().strips.new_sound(
     "Narration", str(folder / "voice.wav"), 1, 1
 )
+# Screen tracks for the reel compositor: where the hands are (captions dodge them) and where the feet stand
+# (a soft contact shadow is drawn there). Pixel coordinates of the rendered character frame.
+from bpy_extras.object_utils import world_to_camera_view
+
+W, H = s.render.resolution_x, s.render.resolution_y
+tracks = dict(width=W, height=H, shadow=[], hands=[])
+mw = arm.matrix_world
+
+
+def to_px(cam, p):
+    co = world_to_camera_view(s, cam, p)
+    return co.x * W, (1 - co.y) * H
+
+
+for f in range(1, s.frame_end + 1):
+    s.frame_set(f)
+    cam = s.camera
+    feet = [mw @ arm.pose.bones[f"Foot_{sd}"].head for sd in "LR"]
+    c = (feet[0] + feet[1]) / 2
+    c.z = 0.0
+    half = abs(feet[1].x - feet[0].x) / 2 + .22
+    p0, pxx, pyy = to_px(cam, c), to_px(cam, c + Vector((half, 0, 0))), to_px(cam, c + Vector((0, .17, 0)))
+    tracks["shadow"].append([round(p0[0]), round(p0[1]), round(abs(pxx[0] - p0[0])), round(max(6, abs(pyy[1] - p0[1])))])
+    pts = []
+    for sd in "LR":
+        pts.append(to_px(cam, mw @ arm.pose.bones[f"Hand_{sd}"].head))
+        pts.append(to_px(cam, mw @ arm.pose.bones[f"Middle3_{sd}"].tail))
+    tracks["hands"].append([[round(x), round(y)] for x, y in pts])
+(folder / "tracks.json").write_text(json.dumps(tracks), encoding="utf8")
 s.frame_set(1)
 bpy.ops.wm.save_as_mainfile(filepath=str(project), relative_remap=True)
 (folder / "animation_report.json").write_text(

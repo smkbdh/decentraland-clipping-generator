@@ -39,6 +39,8 @@ export type ReelProps = {
   broll: Broll[];
   cards: Card[];
   sfx: Sfx[];
+  // screen tracks from the episode build (character frame pixels): hands per frame, feet shadow per frame
+  tracks?: { width: number; height: number; hands: number[][][]; shadow: number[][] };
 };
 
 const C = {
@@ -97,14 +99,20 @@ const BrollClip: React.FC<{ b: Broll; dur: number }> = ({ b, dur }) => {
 };
 
 // ---------- ведущий ----------
-const Host: React.FC<{ frameCount: number; scale: number; y: number }> = ({ frameCount, scale, y }) => {
+const Host: React.FC<{ frameCount: number; scale: number; y: number; shadow?: number[][] }> = ({ frameCount, scale, y, shadow }) => {
   const f = useCurrentFrame();
   const n = String(Math.min(frameCount, f + 1)).padStart(4, "0");
+  const sh = shadow?.[Math.min(frameCount - 1, f)];
   const enter = spring({ frame: f, fps: 30, config: { damping: 18, stiffness: 120 } });
   return (
     <AbsoluteFill style={{ transform: `translateY(${y + (1 - enter) * 220}px) scale(${scale})`, transformOrigin: "50% 100%" }}>
       <div style={{ position: "absolute", left: "50%", top: "52%", width: 900, height: 900, marginLeft: -450, marginTop: -450,
         borderRadius: "50%", background: `radial-gradient(circle, ${C.saffron}55 0%, ${C.saffron}18 40%, transparent 70%)` }} />
+      {sh && sh[1] < 1950 && (
+        // soft contact shadow under the feet so the character stands on the ground
+        <div style={{ position: "absolute", left: sh[0] - sh[2], top: sh[1] - Math.max(sh[3], sh[2] * .18), width: sh[2] * 2, height: Math.max(sh[3], sh[2] * .18) * 2,
+          borderRadius: "50%", background: "radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0.25) 60%, transparent)" }} />
+      )}
       <Img src={staticFile(`frames/frame_${n}.png`)} style={{ width: "100%", height: "100%",
         filter: "drop-shadow(0 30px 40px rgba(0,0,0,0.65))" }} />
     </AbsoluteFill>
@@ -127,16 +135,36 @@ function chunk(words: Word[]) {
   if (cur.length) out.push(cur);
   return out;
 }
-const Captions: React.FC<{ words: Word[] }> = ({ words }) => {
+// Caption bands (top y of the line, composition px). The default sits under the chest; when the hands are in
+// that band during a phrase, the phrase moves to a band the hands are not in (decided once per phrase).
+const BANDS = [1600, 1420, 1740];
+const BAND_H = 110;
+function bandFor(c: Word[], fps: number, hands?: number[][][], character?: { scale: number; y: number }) {
+  if (!hands || !character) return BANDS[0];
+  const f0 = Math.max(0, Math.floor((c[0].start - 0.1) * fps));
+  const f1 = Math.min(hands.length - 1, Math.ceil((c[c.length - 1].end + 0.3) * fps));
+  const ys: number[] = [];
+  for (let f = f0; f <= f1; f += 2) {
+    for (const [x, y] of hands[f] ?? []) {
+      const X = 540 + (x - 540) * character.scale;
+      if (X < 40 || X > 1040) continue;
+      ys.push(1920 - (1920 - y) * character.scale + character.y);
+    }
+  }
+  return BANDS.find((b) => !ys.some((y) => y > b - 40 && y < b + BAND_H + 20)) ?? BANDS[0];
+}
+const Captions: React.FC<{ words: Word[]; hands?: number[][][]; character?: { scale: number; y: number } }> = ({ words, hands, character }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = f / fps;
   const chunks = React.useMemo(() => chunk(words), [words]);
-  const active = chunks.find((c, i) => t >= c[0].start - 0.05 && t < (chunks[i + 1]?.[0].start ?? c[c.length - 1].end + 0.4));
+  const bands = React.useMemo(() => chunks.map((c) => bandFor(c, fps, hands, character)), [chunks, fps, hands, character]);
+  const idx = chunks.findIndex((c, i) => t >= c[0].start - 0.05 && t < (chunks[i + 1]?.[0].start ?? c[c.length - 1].end + 0.4));
+  const active = idx >= 0 ? chunks[idx] : undefined;
   if (!active) return null;
   const pop = spring({ frame: f - Math.round(active[0].start * fps), fps, config: { damping: 14, stiffness: 220 } });
   return (
-    <div style={{ position: "absolute", top: 1570, left: 50, right: 50, display: "flex", justifyContent: "center",
+    <div style={{ position: "absolute", top: bands[idx], left: 50, right: 50, display: "flex", justifyContent: "center",
       flexWrap: "wrap", gap: "0 18px", transform: `scale(${0.85 + pop * 0.15})`, zIndex: 50 }}>
       {active.map((w, i) => {
         const on = t >= w.start && t < w.end + 0.05;
@@ -256,13 +284,13 @@ const Reel: React.FC<ReelProps> = (p) => {
     <AbsoluteFill style={{ backgroundColor: C.ink, overflow: "hidden" }}>
       <BrollLayer items={p.broll} />
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(11,13,18,0.85) 0%, rgba(11,13,18,0.1) 30%, rgba(11,13,18,0.1) 70%, rgba(11,13,18,0.9) 100%)" }} />
-      <Host frameCount={p.frameCount} scale={p.character.scale} y={p.character.y} />
+      <Host frameCount={p.frameCount} scale={p.character.scale} y={p.character.y} shadow={p.tracks?.shadow} />
       {p.cards.map((c, i) => (
         <Sequence key={i} from={Math.round(c.start * fps)} durationInFrames={Math.max(1, Math.round((c.end - c.start) * fps))} layout="none">
           <CardView card={c} />
         </Sequence>
       ))}
-      <Captions words={p.captions} />
+      <Captions words={p.captions} hands={p.tracks?.hands} character={p.character} />
       <Header category={p.category} handle={p.handle} total={p.durationInFrames} />
       <Audio src={staticFile(p.voice)} />
       {p.music && <Audio src={staticFile(p.music.src)} loop

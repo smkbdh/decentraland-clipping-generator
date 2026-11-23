@@ -84,6 +84,9 @@ def main():
                    if "items" in c else c for c in cfg.get("cards", [])],
             sfx=[dict(s, src=stage(s["src"])) for s in cfg.get("sfx", [])],
         )
+        tracks_file = episode / "tracks.json"
+        if tracks_file.exists():
+            props["tracks"] = json.loads(tracks_file.read_text(encoding="utf8"))
         if cfg.get("music"):
             props["music"] = dict(cfg["music"], src=stage(cfg["music"]["src"]))
         (base / "reel_props.json").write_text(json.dumps(props, ensure_ascii=False, indent=1), encoding="utf8")
