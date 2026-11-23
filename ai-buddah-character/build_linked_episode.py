@@ -173,11 +173,12 @@ for e in plan["events"]:
     hg.key_values(arm, neutral, frame(start))
     hg.key_values(arm, vals, frame(start + ramp))
     if name in hg.HOLD_MOTION:
-        base, axis, amp, period = hg.HOLD_MOTION[name]
+        period, moves = hg.HOLD_MOTION[name]
         sides = [sd for sd in "RL" if sd in hg.GESTURES[name]]
         t, sign = start + ramp + period / 2, 1
         while t < end - ramp - period / 4:
-            extra = {(f"{base}_{sd}", "rotation_euler"): (axis, sign * amp * (1 if sd == "R" else -1)) for sd in sides}
+            extra = {(f"{base}_{sd}", "rotation_euler"): (axis, sign * amp * (-1 if mirror and sd == "L" else 1))
+                     for sd in sides for base, axis, amp, mirror in moves}
             hg.key_values(arm, vals, frame(t), extra=extra)
             t += period / 2; sign = -sign
     hg.key_values(arm, vals, frame(end - ramp))

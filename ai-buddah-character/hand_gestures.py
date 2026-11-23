@@ -171,25 +171,25 @@ SLEEVE_NARROW = .50  # lifted arms narrow the sleeve opening (cloth would fall b
 # All for the right hand (character's right = +X, camera looks from -Y).
 PLACEMENTS = {
     "down": None,  # rest arms, only fingers change
-    "chest": dict(wrist=(.30, -.50, 1.18), fingers=(-.55, -.35, .55), palm=(-.45, .55, -.1)),
+    "chest": dict(wrist=(.311, -.411, 1.240), fingers=(-.55, -.35, .55), palm=(-.45, .55, -.1)),
     "front_up": dict(wrist=(.42, -.34, 1.30), fingers=(-.15, -.25, 1), palm=(-.2, -1, 0)),
     "beside_face": dict(wrist=(.47, -.34, 1.48), fingers=(-.12, -.15, 1), palm=(0, -1, 0)),
-    "thumb_up": dict(wrist=(.32, -.56, 1.20), fingers=(-1, -.30, .10), palm=(0, 1, 0)),
-    "point_fwd": dict(wrist=(.34, -.55, 1.30), fingers=(-.25, -1, .05), palm=(-.1, 0, -1)),
+    "thumb_up": dict(wrist=(.30, -.45, 1.24), fingers=(-.3, -1, .05), palm=(-1, .15, 0)),
+    "point_fwd": dict(wrist=(.341, -.520, 1.312), fingers=(-.25, -1, .05), palm=(-.1, 0, -1)),
     "point_side": dict(wrist=(.66, -.32, 1.30), fingers=(1, -.25, .05), palm=(0, 0, -1)),
-    "point_cross": dict(wrist=(.06, -.55, 1.28), fingers=(-1, -.3, .05), palm=(0, .2, -1)),
-    "palm_up": dict(wrist=(.40, -.50, 1.12), fingers=(-.25, -1, .05), palm=(0, 0, 1)),
-    "shrug": dict(wrist=(.50, -.46, 1.14), fingers=(.45, -.88, .12), palm=(0, -.1, 1)),
-    "palm_down": dict(wrist=(.36, -.52, 1.14), fingers=(-.3, -1, -.05), palm=(0, 0, -1)),
+    "point_cross": dict(wrist=(.06, -.46, 1.30), fingers=(-1, -.3, .05), palm=(0, .2, -1)),
+    "palm_up": dict(wrist=(.391, -.390, 1.208), fingers=(-.25, -1, .05), palm=(0, 0, 1)),
+    "shrug": dict(wrist=(.474, -.375, 1.210), fingers=(.45, -.88, .12), palm=(0, -.1, 1)),
+    "palm_down": dict(wrist=(.360, -.404, 1.225), fingers=(-.3, -1, -.05), palm=(0, 0, -1)),
     "push": dict(wrist=(.36, -.40, 1.36), fingers=(0, -.15, 1), palm=(0, -1, 0)),
     "raise": dict(wrist=(.62, -.30, 1.60), fingers=(.35, -.15, 1), palm=(.1, -1, 0)),
-    "pray": dict(wrist=(.046, -.56, 1.34), fingers=(0, -.2, 1), palm=(-1, 0, 0)),
-    "heart": dict(wrist=(.19, -.46, 1.36), fingers=(-.85, -.05, .5), palm=(0, -1, 0)),
-    "clap": dict(wrist=(.045, -.54, 1.30), fingers=(0, -.55, 1), palm=(-1, 0, 0)),
-    "cup": dict(wrist=(.07, -.52, 1.12), fingers=(-.15, -1, .1), palm=(-.35, 0, 1)),
-    "open_both": dict(wrist=(.52, -.46, 1.16), fingers=(.45, -.75, .45), palm=(-.2, -.9, .3)),
-    "handshake": dict(wrist=(.34, -.56, 1.15), fingers=(-.2, -1, 0), palm=(-1, 0, 0)),
-    "at_viewer": dict(wrist=(.30, -.56, 1.30), fingers=(-.2, -1, .15), palm=(0, 0, -1)),
+    "pray": dict(wrist=(.046, -.42, 1.40), fingers=(0, -.2, 1), palm=(-1, 0, 0)),
+    "heart": dict(wrist=(.190, -.442, 1.360), fingers=(-.85, -.05, .5), palm=(0, -1, 0)),
+    "clap": dict(wrist=(.045, -.42, 1.36), fingers=(0, -.55, 1), palm=(-1, 0, 0)),
+    "cup": dict(wrist=(.07, -.40, 1.26), fingers=(-.15, -1, .1), palm=(-.35, 0, 1)),
+    "open_both": dict(wrist=(.492, -.380, 1.223), fingers=(.45, -.75, .45), palm=(-.2, -.9, .3)),
+    "handshake": dict(wrist=(.345, -.417, 1.244), fingers=(-.2, -1, 0), palm=(-1, 0, 0)),
+    "at_viewer": dict(wrist=(.304, -.519, 1.316), fingers=(-.2, -1, .15), palm=(0, 0, -1)),
     "side_face": dict(wrist=(.45, -.36, 1.46), fingers=(-.12, -.15, 1), palm=(-.88, -.48, 0), ext=.025, sleeve=.8),
     "chin": dict(wrist=(.24, -.44, 1.40), fingers=(-.35, -.3, .9), palm=(-.3, -.5, .3)),
 }
@@ -421,8 +421,11 @@ def key_gesture(arm, name, frame, sides=("R", "L")):
             arm.pose.bones[f"SleeveEnd_{side}"].keyframe_insert("scale", frame=frame)
 
 
-# hold motions: gesture -> (bone base, euler axis, amplitude rad, period s); played while the gesture holds
-HOLD_MOTION = {"wave": ("Hand", 2, .38, .46), "clap": ("Forearm", 2, .10, .32)}
+# hold motions played while the gesture holds: gesture -> (period s, [(bone base, euler axis, amplitude rad,
+# mirror on L)]). A wave swings the forearm from the elbow like a pendulum (bone X) with the hand trailing a
+# little; rocking the hand alone at the wrist read as a broken wrist.
+HOLD_MOTION = {"wave": (.62, [("Forearm", 0, .24, False), ("Hand", 2, .07, True)]),
+               "clap": (.32, [("Forearm", 2, .10, True)])}
 
 
 def channels(arm, sides=("R", "L")):
