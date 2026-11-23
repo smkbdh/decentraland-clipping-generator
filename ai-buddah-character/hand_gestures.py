@@ -518,6 +518,9 @@ HOLD_DRIFT = (1.7, [("Forearm", 0, .035, False), ("Hand", 2, .03, True)])
 OVERSHOOT = .10     # the arm passes its target by this fraction of the last travel, then settles
 FREE_HAND_BEND = -.22   # forearm X: the idle hand lifts a little while the other one gestures
 BEAT_NOD, BEAT_ARM, BEAT_HAND = .07, .07, .10   # speech downbeat: head nod and a short hand stroke
+WEIGHT_SHIFT, WEIGHT_TILT, WEIGHT_KNEE = .028, .060, .26   # contrapposto: pelvis slide (m), tilt, free knee
+SKIRT_FREQ, SKIRT_DAMP, SKIRT_INERTIA, SKIRT_WIND = .85, .18, 6.0, .7
+SKIRT_SWAY = .025   # the hem never hangs dead: slow idle sway (rad)   # hem pendulum (cartoon-tuned)
 
 
 def channels(arm, sides=("R", "L")):

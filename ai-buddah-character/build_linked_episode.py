@@ -448,6 +448,114 @@ for name, coords in plan["objects"].items():
 s.sequence_editor_create().strips.new_sound(
     "Narration", str(folder / "voice.wav"), 1, 1
 )
+# ---------------------------------------------------------------- lower body: weight shift
+# Every few seconds the weight moves to the other leg: the pelvis shifts and tilts over the standing leg, the
+# free leg relaxes at the knee, and both feet stay planted (thighs are solved so the feet do not slide).
+if arm.pose.bones.get("Skirt"):
+    a = action("Weight")
+    _rng3 = random.Random(5)
+    leg_bones = [f"{b}_{sd}" for sd in "LR" for b in ("Thigh", "Shin")]
+    for bn in ["Pelvis"] + leg_bones:
+        arm.pose.bones[bn].rotation_mode = "XYZ"
+
+    def foot_pos(sd):
+        bpy.context.view_layer.update()
+        return arm.matrix_world @ arm.pose.bones[f"Foot_{sd}"].head
+
+    for bn in ["Pelvis"] + leg_bones:
+        arm.pose.bones[bn].rotation_euler = (0, 0, 0)
+        arm.pose.bones[bn].location = (0, 0, 0)
+    planted = {sd: foot_pos(sd).copy() for sd in "LR"}
+
+    def solve_leg(sd, knee):
+        th, sh = arm.pose.bones[f"Thigh_{sd}"], arm.pose.bones[f"Shin_{sd}"]
+        sh.rotation_euler = (knee, 0, 0)
+        x = [-knee * .45, 0.0]
+        for _ in range(6):
+            th.rotation_euler = (x[0], 0, x[1])
+            p = foot_pos(sd)
+            r = [p.x - planted[sd].x, p.y - planted[sd].y]
+            if abs(r[0]) + abs(r[1]) < 1e-4:
+                break
+            J = []
+            for j in range(2):
+                xp = list(x); xp[j] += 1e-3
+                th.rotation_euler = (xp[0], 0, xp[1])
+                q = foot_pos(sd)
+                J.append([(q.x - p.x) / 1e-3, (q.y - p.y) / 1e-3])
+            det = J[0][0] * J[1][1] - J[1][0] * J[0][1]
+            if abs(det) < 1e-9:
+                break
+            # solve [J0 J1] d = -r  (columns are the partials)
+            d0 = (-r[0] * J[1][1] + r[1] * J[1][0]) / det
+            d1 = (-r[1] * J[0][0] + r[0] * J[0][1]) / det
+            x = [x[0] + max(-.2, min(.2, d0)), x[1] + max(-.2, min(.2, d1))]
+        th.rotation_euler = (x[0], 0, x[1])
+
+    def key_weight(t, side_k):
+        """side_k in -1..1: -1 weight on L, +1 on R, 0 centred."""
+        pel = arm.pose.bones["Pelvis"]
+        pel.location = (hg.WEIGHT_SHIFT * side_k, 0, -abs(side_k) * .006)
+        pel.rotation_euler = (0, 0, hg.WEIGHT_TILT * side_k)
+        for sd in "LR":
+            free = (side_k > 0 and sd == "L") or (side_k < 0 and sd == "R")
+            solve_leg(sd, hg.WEIGHT_KNEE * abs(side_k) if free else 0.0)
+        for bn in ["Pelvis"] + leg_bones:
+            arm.pose.bones[bn].keyframe_insert("rotation_euler", frame=frame(t))
+        arm.pose.bones["Pelvis"].keyframe_insert("location", frame=frame(t))
+
+    t, side = 0.0, _rng3.choice((-1, 1))
+    key_weight(0.0, side * .9)
+    while t < duration:
+        hold = _rng3.uniform(3.5, 6.5)
+        key_weight(min(duration, t + hold - .7), side * .9)
+        side = -side
+        t += hold
+        key_weight(min(duration, t), side * .9)
+    finish(a)
+
+    # ------------------------------------------------------------ skirt follow-through (pendulum)
+    # The hem is a damped pendulum hanging from the waist: it lags behind every move of the hips, swings back
+    # and settles; a torso turn winds it up a little. Simulated over the finished body animation.
+    sk = arm.pose.bones["Skirt"]
+    sk.rotation_mode = "XYZ"
+    L = (arm.data.bones["Skirt"].tail_local - arm.data.bones["Skirt"].head_local).length
+    n_frames = s.frame_end
+    piv, tip, spine_turn = [], [], []
+    for f in range(1, n_frames + 1):
+        s.frame_set(f)
+        m = arm.matrix_world @ sk.matrix
+        piv.append(m.translation.copy())
+        tip.append((arm.matrix_world @ sk.tail).copy())
+        spine_turn.append(arm.pose.bones["Spine"].rotation_euler[1] + arm.pose.bones["Chest"].rotation_euler[1])
+    dt = 1 / fps
+    w0 = (9.81 / L) ** .5 * hg.SKIRT_FREQ
+    th = [0.0, 0.0]; vel = [0.0, 0.0]; tw = 0.0; tw_v = 0.0
+    a = action("Skirt")
+    for f in range(n_frames):
+        if f >= 2:
+            acc = (piv[f] - 2 * piv[f - 1] + piv[f - 2]) / (dt * dt)
+        else:
+            acc = Vector((0, 0, 0))
+        for k, comp in ((0, acc.x), (1, acc.y)):
+            force = -w0 * w0 * th[k] - 2 * hg.SKIRT_DAMP * w0 * vel[k] - comp / L * hg.SKIRT_INERTIA
+            vel[k] += force * dt
+            th[k] += vel[k] * dt
+        tw_target = spine_turn[f] * hg.SKIRT_WIND
+        tw_v += (-(w0 * .8) ** 2 * (tw - tw_target) - 2 * hg.SKIRT_DAMP * w0 * .8 * tw_v) * dt
+        tw += tw_v * dt
+        if f % 2 == 0 or f == n_frames - 1:
+            # where the hem hangs without the skirt bone, and where the pendulum says it should be
+            down = piv[f] + Vector((0, 0, -L))
+            tt = f / fps
+            sway_x = hg.SKIRT_SWAY * math.sin(2 * math.pi * tt / 3.9)
+            sway_y = hg.SKIRT_SWAY * .7 * math.sin(2 * math.pi * tt / 5.3 + 1.3)
+            want = Vector((down.x + L * (th[0] + sway_x), down.y + L * (th[1] + sway_y), down.z))
+            delta = want - tip[f]
+            sk.rotation_euler = (max(-.35, min(.35, delta.y / L)), tw, max(-.35, min(.35, -delta.x / L)))
+            sk.keyframe_insert("rotation_euler", frame=f + 1)
+    finish(a)
+
 # Screen tracks for the reel compositor: where the hands are (captions dodge them) and where the feet stand
 # (a soft contact shadow is drawn there). Pixel coordinates of the rendered character frame.
 from bpy_extras.object_utils import world_to_camera_view
