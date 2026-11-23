@@ -183,9 +183,9 @@ PLACEMENTS = {
     "palm_down": dict(wrist=(.360, -.404, 1.225), fingers=(-.3, -1, -.05), palm=(0, 0, -1)),
     "push": dict(wrist=(.36, -.40, 1.36), fingers=(0, -.15, 1), palm=(0, -1, 0)),
     "raise": dict(wrist=(.62, -.30, 1.60), fingers=(.35, -.15, 1), palm=(.1, -1, 0)),
-    "pray": dict(wrist=(.046, -.42, 1.40), fingers=(0, -.2, 1), palm=(-1, 0, 0)),
+    "pray": dict(wrist=(.046, -.48, 1.38), fingers=(0, -.2, 1), palm=(-1, 0, 0)),
     "heart": dict(wrist=(.190, -.442, 1.360), fingers=(-.85, -.05, .5), palm=(0, -1, 0)),
-    "clap": dict(wrist=(.045, -.42, 1.36), fingers=(0, -.55, 1), palm=(-1, 0, 0)),
+    "clap": dict(wrist=(.045, -.48, 1.34), fingers=(0, -.55, 1), palm=(-1, 0, 0)),
     "cup": dict(wrist=(.07, -.40, 1.26), fingers=(-.15, -1, .1), palm=(-.35, 0, 1)),
     "open_both": dict(wrist=(.492, -.380, 1.223), fingers=(.45, -.75, .45), palm=(-.2, -.9, .3)),
     "handshake": dict(wrist=(.345, -.417, 1.244), fingers=(-.2, -1, 0), palm=(-1, 0, 0)),
@@ -379,13 +379,18 @@ def solve_arm(arm, side, wrist, fingers, palm, iterations=60, ext=HAND_EXT):
 
 def apply_placement(arm, side, placement):
     names = [f"{b}_{side}" for b in ARM_CHAIN]
-    if placement in (None, "down") or PLACEMENTS.get(placement) is None:
+    if isinstance(placement, dict):
+        spec = placement
+    elif placement in (None, "down") or PLACEMENTS.get(placement) is None:
+        spec = None
+    else:
+        spec = PLACEMENTS[placement]
+    if spec is None:
         for n in names:
             pb = arm.pose.bones[n]; pb.rotation_mode = "XYZ"; pb.rotation_euler = (0, 0, 0)
         arm.pose.bones[f"Hand_{side}"].location = (0, 0, 0)
         _sleeve(arm, side, 1.0)
         return 0.0
-    spec = PLACEMENTS[placement]
     ang, err = solve_arm(arm, side, spec["wrist"], spec["fingers"], spec["palm"], ext=spec.get("ext", HAND_EXT))
     for n, e in ang.items():
         pb = arm.pose.bones[n]; pb.rotation_mode = "XYZ"; pb.rotation_euler = e
@@ -438,6 +443,38 @@ def channels(arm, sides=("R", "L")):
         if arm.pose.bones.get(f"SleeveEnd_{side}"):
             out.append((f"SleeveEnd_{side}", "scale"))
     return out
+
+
+def _rest_spec(arm):
+    """The hanging hand as a placement (right-hand space), so transitions can be solved like gestures."""
+    m = _rest(arm, "Hand_R")
+    return dict(wrist=tuple(m.translation), fingers=tuple(m.to_3x3().col[1]), palm=tuple(-m.to_3x3().col[2]),
+                ext=0.0, sleeve=1.0)
+
+
+def _blend_spec(a, b, t):
+    lerp = lambda x, y: tuple(p + (q - p) * t for p, q in zip(x, y))
+    return dict(wrist=lerp(a["wrist"], b["wrist"]), fingers=lerp(a["fingers"], b["fingers"]),
+                palm=lerp(a["palm"], b["palm"]), ext=a.get("ext", HAND_EXT) + (b.get("ext", HAND_EXT) - a.get("ext", HAND_EXT)) * t,
+                sleeve=a.get("sleeve", SLEEVE_NARROW) + (b.get("sleeve", SLEEVE_NARROW) - a.get("sleeve", SLEEVE_NARROW)) * t)
+
+
+def transition_values(arm, name, t):
+    """In-between of neutral -> gesture at fraction t, solved by IK along the hand's path (not by blending joint
+    angles, which swings the hand through odd orientations). Returns {(bone, path): values}."""
+    name = resolve(name)
+    g = GESTURES[name]
+    keep = {(b, p): tuple(getattr(arm.pose.bones[b], p)) for b, p in channels(arm)}
+    rest = _rest_spec(arm)
+    for side in ("R", "L"):
+        shape, placement = g.get(side, ("relaxed", "down"))
+        spec = PLACEMENTS.get(placement) if isinstance(placement, str) else placement
+        apply_placement(arm, side, _blend_spec(rest, spec, t) if spec else None)
+        apply_shape(arm, side, shape, t)
+    vals = {(b, p): tuple(getattr(arm.pose.bones[b], p)) for b, p in channels(arm)}
+    for (b, p), v in keep.items():
+        setattr(arm.pose.bones[b], p, v)
+    return vals
 
 
 def gesture_values(arm, name):

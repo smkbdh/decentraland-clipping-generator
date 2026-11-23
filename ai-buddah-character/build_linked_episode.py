@@ -168,9 +168,11 @@ for e in plan["events"]:
         continue
     name = hg.resolve(e["gesture"])
     vals = solved.setdefault(name, hg.gesture_values(arm, name))
+    half = solved.setdefault(name + "@half", hg.transition_values(arm, name, .5))
     start, end = e["start"], e["end"]
     ramp = min(0.4, (end - start) * 0.3)
     hg.key_values(arm, neutral, frame(start))
+    hg.key_values(arm, half, frame(start + ramp * .45))   # IK in-between: the hand travels, joints follow
     hg.key_values(arm, vals, frame(start + ramp))
     if name in hg.HOLD_MOTION:
         period, moves = hg.HOLD_MOTION[name]
@@ -182,6 +184,7 @@ for e in plan["events"]:
             hg.key_values(arm, vals, frame(t), extra=extra)
             t += period / 2; sign = -sign
     hg.key_values(arm, vals, frame(end - ramp))
+    hg.key_values(arm, half, frame(end - ramp * .45))
     hg.key_values(arm, neutral, frame(end))
 finish(a)
 specs = {
