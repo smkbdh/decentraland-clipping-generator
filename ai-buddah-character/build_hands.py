@@ -92,8 +92,8 @@ def digit_rings(spec):
 
 
 PALM_KNOTS = [  # z, half-width, half-thickness, y offset of the centre
-    (.170, .000, .000, -.002), (.165, .040, .030, -.002), (.155, .055, .038, -.002), (.125, .060, .039, -.002),
-    (.085, .061, .038, -.002), (.045, .062, .036, -.002), (.020, .063, .034, -.002), (.000, .064, .033, -.002), (-.025, .064, .034, -.003), (-.050, .071, .036, -.004),
+    (.105, .000, .000, -.002), (.100, .040, .030, -.002), (.092, .055, .038, -.002), (.075, .060, .039, -.002),
+    (.045, .062, .036, -.002), (.020, .063, .034, -.002), (.000, .064, .033, -.002), (-.025, .064, .034, -.003), (-.050, .071, .036, -.004),
     (-.072, .074, .035, -.003), (-.086, .073, .032, -.001), (-.097, .068, .027, .001), (-.104, .058, .021, .002),
     (-.109, .044, .014, .003), (-.112, .025, .007, .003), (-.113, .000, .000, .003),
 ]
@@ -160,7 +160,7 @@ def paint_palm(theta, z):
     c = c * (1 - .6 * palmy) + PALM * .6 * palmy
     hollow = (np.exp(-((z + .055) / .025) ** 2) * ventral ** 3 * (1 - sideways) ** 2)[..., None] * .22
     c = c * (1 - hollow) + MID * hollow
-    cuff = (sstep(.0, .06, z) * .3 + sstep(.06, .16, z) * .45)[..., None]  # wrist stub darkens into the sleeve
+    cuff = (sstep(.0, .05, z) * .3 + sstep(.05, .10, z) * .45)[..., None]  # wrist stub darkens into the sleeve
     c = c * (1 - cuff) + DEEP * cuff
     knuckle = (np.exp(-((z + .094) / .006) ** 2) * (1 - ventral) ** 4)[..., None] * .10
     c = c * (1 - knuckle) + SHADOW * knuckle
@@ -342,7 +342,7 @@ def build_side(side, sign, infos):
         y = yc + b * np.sign(cs) * np.abs(cs) ** (2 / p)
         y = y - .004 * np.clip(-cs, 0, 1) * np.exp(-((z + .06) / .03) ** 2)  # fuller palm pad
         pts = np.stack([x, y, np.full(N, z)], 1)
-        wf = float(sstep(.09, .165, z))  # the wrist stub bends with the forearm
+        wf = float(sstep(.055, .10, z))  # the wrist stub bends with the forearm
         rings.append(W(pts)); wts.append({"Hand_" + side: 1 - wf, "Forearm_" + side: wf}); svals.append(z)
     zs = [k[0] for k in PALM_KNOTS]
     add_tube(rings, RECTS["Palm"], wts, svals, (zs[0], zs[-1]))

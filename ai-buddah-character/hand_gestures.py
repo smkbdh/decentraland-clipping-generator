@@ -279,6 +279,7 @@ def _side_vec(v, side):
 
 WRIST_BACK, WRIST_PALM, WRIST_SIDE, WRIST_TWIST = (math.radians(a) for a in (22, 55, 35, 70))
 WRIST_W = .05
+WRIST_ALIGN = .035   # metres of wrist-position error worth one radian of forearm/hand misalignment
 WRIST_TWIST_MAX = math.radians(100)
 
 
@@ -331,8 +332,10 @@ def solve_arm(arm, side, wrist, fingers, palm, iterations=60, ext=HAND_EXT):
         y = rel.to_matrix().col[1]               # fingers in the straight-wrist frame
         back = math.atan2(y.z, max(y.y, 1e-3)) if y.y > 0 else math.copysign(math.pi / 2 + (1 - y.y), y.z)
         lateral = abs(math.atan2(y.x, max(abs(y.y), 1e-3)))
+        # always prefer the forearm pointing where the hand points: the wrist then stays inside the cuff
+        align = mats[f"Forearm_{side}"].to_3x3().col[1].normalized().angle(f_t)
         return [max(0.0, back - WRIST_BACK), max(0.0, -back - WRIST_PALM),
-                max(0.0, lateral - WRIST_SIDE), max(0.0, twist - WRIST_TWIST)]
+                max(0.0, lateral - WRIST_SIDE), max(0.0, twist - WRIST_TWIST), align * WRIST_ALIGN / WRIST_W]
 
     def angles_of(p):
         ang = {n: [0.0, 0.0, 0.0] for n in names}
