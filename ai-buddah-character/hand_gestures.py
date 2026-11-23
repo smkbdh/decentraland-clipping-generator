@@ -176,7 +176,7 @@ PLACEMENTS = {
     "beside_face": dict(wrist=(.47, -.34, 1.48), fingers=(-.12, -.15, 1), palm=(0, -1, 0)),
     "thumb_up": dict(wrist=(.30, -.45, 1.24), fingers=(-.3, -1, .05), palm=(-1, .15, 0)),
     "point_fwd": dict(wrist=(.341, -.520, 1.312), fingers=(-.25, -1, .05), palm=(-.1, 0, -1)),
-    "point_side": dict(wrist=(.66, -.32, 1.30), fingers=(1, -.25, .05), palm=(0, 0, -1)),
+    "point_side": dict(wrist=(.80, -.16, 1.36), fingers=(1, -.25, .05), palm=(0, 0, -1)),
     "point_cross": dict(wrist=(.06, -.46, 1.30), fingers=(-1, -.3, .05), palm=(0, .2, -1)),
     "palm_up": dict(wrist=(.391, -.390, 1.208), fingers=(-.25, -1, .05), palm=(0, 0, 1)),
     "shrug": dict(wrist=(.474, -.375, 1.210), fingers=(.45, -.88, .12), palm=(0, -.1, 1)),
@@ -279,6 +279,7 @@ def _side_vec(v, side):
 
 WRIST_BACK, WRIST_PALM, WRIST_SIDE, WRIST_TWIST = (math.radians(a) for a in (22, 55, 35, 70))
 WRIST_W = .05
+ELBOW_W = .03
 WRIST_ALIGN = .035   # metres of wrist-position error worth one radian of forearm/hand misalignment
 WRIST_TWIST_MAX = math.radians(100)
 
@@ -337,6 +338,8 @@ def solve_arm(arm, side, wrist, fingers, palm, iterations=60, ext=HAND_EXT):
         return [max(0.0, back - WRIST_BACK), max(0.0, -back - WRIST_PALM),
                 max(0.0, lateral - WRIST_SIDE), max(0.0, twist - WRIST_TWIST), align * WRIST_ALIGN / WRIST_W]
 
+    elbow_pref = _side_vec((.35, .30, -1), side).normalized()
+
     def angles_of(p):
         ang = {n: [0.0, 0.0, 0.0] for n in names}
         for (bi, ai), val in zip(slots, p):
@@ -349,6 +352,15 @@ def solve_arm(arm, side, wrist, fingers, palm, iterations=60, ext=HAND_EXT):
         r = list(wrist_now - target)
         r += [WRIST_W * s for s in wrist_strain(mats)]
         r += [w * .05 * v for w, v in zip(weight, p)]
+        # natural elbow: it hangs down and a little out/back from the shoulder-wrist line, never up or forward
+        sh = mats[f"UpperArm_{side}"].translation
+        el = mats[f"Forearm_{side}"].translation
+        line = wrist_now - sh
+        off = (el - sh) - line * ((el - sh).dot(line) / max(line.length_squared, 1e-6))
+        if off.length > .005:
+            r.append(ELBOW_W * (1 - off.normalized().dot(elbow_pref)))
+        else:
+            r.append(0.0)
         return r
 
     import numpy as np
