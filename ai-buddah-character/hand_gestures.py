@@ -405,13 +405,32 @@ def apply_placement(arm, side, placement):
             pb = arm.pose.bones[n]; pb.rotation_mode = "XYZ"; pb.rotation_euler = (0, 0, 0)
         arm.pose.bones[f"Hand_{side}"].location = (0, 0, 0)
         _sleeve(arm, side, 1.0)
+        _sag(arm, side, None)
         return 0.0
     ang, err = solve_arm(arm, side, spec["wrist"], spec["fingers"], spec["palm"], ext=spec.get("ext", HAND_EXT))
     for n, e in ang.items():
         pb = arm.pose.bones[n]; pb.rotation_mode = "XYZ"; pb.rotation_euler = e
     arm.pose.bones[f"Hand_{side}"].location = (0, spec.get("ext", HAND_EXT), 0)
     _sleeve(arm, side, spec.get("sleeve", SLEEVE_NARROW))
+    _sag(arm, side, _fk(arm, side, ang, spec.get("ext", HAND_EXT)))
     return err
+
+
+SLEEVE_SAG = .045   # metres the loose bell drops under gravity once the forearm is lifted
+
+
+def _sag(arm, side, mats):
+    """Let the bell of a lifted sleeve hang: move SleeveEnd straight down in armature space."""
+    pb = arm.pose.bones.get(f"SleeveEnd_{side}")
+    if not pb:
+        return
+    if mats is None:
+        pb.location = (0, 0, 0)
+        return
+    fdir = mats[f"Forearm_{side}"].to_3x3().col[1].normalized()
+    k = max(0.0, min(1.0, (fdir.z + .75) / 1.25))          # hanging arm 0 .. raised forearm 1
+    m = (mats[f"Forearm_{side}"] @ _rest(arm, f"Forearm_{side}").inverted() @ _rest(arm, f"SleeveEnd_{side}")).to_3x3()
+    pb.location = m.inverted() @ Vector((0, 0, -SLEEVE_SAG * k))
 
 
 def _sleeve(arm, side, s):
@@ -448,6 +467,57 @@ HOLD_MOTION = {"wave": (.62, [("Forearm", 0, .24, False), ("Hand", 2, .07, True)
                "clap": (.32, [("Forearm", 2, .10, True)])}
 
 
+# ---------------------------------------------------------------- the body takes part
+# Offsets added on top of idle/breathing while a gesture holds (euler radians). Written for a right-hand
+# gesture; a left-hand gesture is mirrored (y and z flip, clavicles swap). Chest: x leans forward,
+# y turns toward the right hand, z leans to the left. Clavicle: x shoulder forward, z shoulder up.
+BODY = {
+    "_one": {"Chest": (.02, .07, -.03), "Spine": (0, .03, 0)},
+    "_both": {"Chest": (.03, 0, 0)},
+    "point_side": {"Chest": (0, .15, -.05), "Spine": (0, .07, -.02), "Clavicle_R": (0, .06, 0)},
+    "point_viewer": {"Chest": (.07, .05, 0), "Clavicle_R": (.08, 0, 0)},
+    "point_across": {"Chest": (.02, -.13, .02), "Spine": (0, -.05, 0)},
+    "point_up": {"Chest": (-.02, .05, -.03), "Clavicle_R": (0, 0, .06)},
+    "wave": {"Chest": (-.02, .06, -.06), "Spine": (0, .02, -.03), "Clavicle_R": (0, 0, .08)},
+    "stop": {"Chest": (-.06, .05, 0), "Clavicle_R": (.06, 0, 0)},
+    "fist": {"Chest": (.07, .06, 0), "Clavicle_R": (.05, 0, .04)},
+    "think": {"Chest": (.05, .05, .04)},
+    "thumbs_up": {"Chest": (.05, .06, -.02)},
+    "double_thumbs": {"Chest": (.06, 0, 0), "Clavicle_R": (.04, 0, .04), "Clavicle_L": (.04, 0, -.04)},
+    "shrug": {"Chest": (-.05, 0, 0), "Clavicle_R": (0, 0, .20), "Clavicle_L": (0, 0, -.20)},
+    "raise_hands": {"Chest": (-.09, 0, 0), "Clavicle_R": (0, 0, .12), "Clavicle_L": (0, 0, -.12)},
+    "open_hands": {"Chest": (.03, 0, 0), "Clavicle_R": (0, 0, .06), "Clavicle_L": (0, 0, -.06)},
+    "pray": {"Chest": (.11, 0, 0), "Spine": (.04, 0, 0)},
+    "clap": {"Chest": (.05, 0, 0)},
+    "heart_hands": {"Chest": (.05, 0, .03)},
+    "cupped_hands": {"Chest": (.08, 0, 0)},
+}
+BODY_ALIASES = {"point_left": "point_side", "point_right": "point_side", "point_across_left": "point_across",
+                "point_across_right": "point_across", "hand_raise": "wave"}
+
+
+def body_offsets(name):
+    """{(bone, 'rotation_euler'): (x, y, z)} to add while `name` holds."""
+    name = resolve(name)
+    sides = set(GESTURES[name])
+    spec = BODY.get(name) or BODY.get(BODY_ALIASES.get(name, ""))
+    if spec is None:
+        spec = BODY["_both"] if sides == {"R", "L"} else BODY["_one"] if sides else {}
+    mirror = sides == {"L"}
+    out = {}
+    for bone, (x, y, z) in spec.items():
+        if mirror:
+            bone = bone.replace("_R", "_tmp").replace("_L", "_R").replace("_tmp", "_L")
+            y, z = -y, -z
+        out[(bone, "rotation_euler")] = (x, y, z)
+    return out
+
+
+# small living drift while a gesture holds (period s, [(bone base, axis, amplitude, mirror)])
+HOLD_DRIFT = (1.7, [("Forearm", 0, .035, False), ("Hand", 2, .03, True)])
+OVERSHOOT = .10     # the arm passes its target by this fraction of the last travel, then settles
+
+
 def channels(arm, sides=("R", "L")):
     """Every animated channel a gesture touches: (bone, data_path)."""
     out = []
@@ -457,6 +527,7 @@ def channels(arm, sides=("R", "L")):
         out.append((f"Hand_{side}", "location"))
         if arm.pose.bones.get(f"SleeveEnd_{side}"):
             out.append((f"SleeveEnd_{side}", "scale"))
+            out.append((f"SleeveEnd_{side}", "location"))
     return out
 
 

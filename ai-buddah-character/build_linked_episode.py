@@ -61,7 +61,7 @@ def action(name):
     return a
 
 
-def finish(a):
+def finish(a, blend="REPLACE"):
     ad = arm.animation_data
     if not a.slots:
         ad.action = None
@@ -74,6 +74,7 @@ def finish(a):
     strip = track.strips.new(a.name, int(a.frame_range[0]), a)
     strip.action_slot = slot
     strip.extrapolation = "NOTHING"
+    strip.blend_type = blend
     a.asset_mark()
 
 
@@ -173,20 +174,52 @@ for e in plan["events"]:
     ramp = min(0.4, (end - start) * 0.3)
     hg.key_values(arm, neutral, frame(start))
     hg.key_values(arm, half, frame(start + ramp * .45))   # IK in-between: the hand travels, joints follow
-    hg.key_values(arm, vals, frame(start + ramp))
-    if name in hg.HOLD_MOTION:
-        period, moves = hg.HOLD_MOTION[name]
-        sides = [sd for sd in "RL" if sd in hg.GESTURES[name]]
-        t, sign = start + ramp + period / 2, 1
-        while t < end - ramp - period / 4:
-            extra = {(f"{base}_{sd}", "rotation_euler"): (axis, sign * amp * (-1 if mirror and sd == "L" else 1))
-                     for sd in sides for base, axis, amp, mirror in moves}
-            hg.key_values(arm, vals, frame(t), extra=extra)
-            t += period / 2; sign = -sign
+    settle = 0.16
+    if end - start - 2 * ramp > settle + 0.2:
+        over = {k: tuple(v + (v - h) * hg.OVERSHOOT for v, h in zip(vals[k], half[k])) if k[1] == "rotation_euler" else vals[k]
+                for k in vals}
+        hg.key_values(arm, over, frame(start + ramp))     # overshoot a touch, then settle
+        hg.key_values(arm, vals, frame(start + ramp + settle))
+    else:
+        hg.key_values(arm, vals, frame(start + ramp))
+        settle = 0.0
+    sides = [sd for sd in "RL" if sd in hg.GESTURES[name]]
+    period, moves = hg.HOLD_MOTION.get(name, hg.HOLD_DRIFT)
+    t, sign = start + ramp + settle + period / 2, 1
+    while t < end - ramp - period / 4:
+        extra = {(f"{base}_{sd}", "rotation_euler"): (axis, sign * amp * (-1 if mirror and sd == "L" else 1))
+                 for sd in sides for base, axis, amp, mirror in moves}
+        hg.key_values(arm, vals, frame(t), extra=extra)
+        t += period / 2; sign = -sign
     hg.key_values(arm, vals, frame(end - ramp))
     hg.key_values(arm, half, frame(end - ramp * .45))
     hg.key_values(arm, neutral, frame(end))
 finish(a)
+# Body: torso and shoulders take part in each gesture (additive over idle breathing and the arm poses).
+# The torso leads the arm a little on the way in and lags on the way out (overlap), never snapping.
+a = action("Body")
+body_bones = ("Chest", "Spine", "Clavicle_R", "Clavicle_L")
+for bn in body_bones:
+    arm.pose.bones[bn].rotation_mode = "XYZ"
+    arm.pose.bones[bn].rotation_euler = (0, 0, 0)
+    arm.pose.bones[bn].keyframe_insert("rotation_euler", frame=frame(0))
+gest_events = [e for e in plan["events"] if e["gesture"] not in ("neutral", "nod")]
+for i, e in enumerate(gest_events):
+    nxt = gest_events[i + 1]["start"] if i + 1 < len(gest_events) else duration
+    offs = hg.body_offsets(e["gesture"])
+    start, end = e["start"], e["end"]
+    ramp = min(0.4, (end - start) * 0.3)
+
+    def key_body(t, k):
+        for bn in body_bones:
+            v = offs.get((bn, "rotation_euler"), (0, 0, 0))
+            arm.pose.bones[bn].rotation_euler = tuple(c * k for c in v)
+            arm.pose.bones[bn].keyframe_insert("rotation_euler", frame=frame(t))
+    key_body(start, 0.0)
+    key_body(start + ramp * .8, 1.0)
+    key_body(max(start + ramp * .8 + .05, end - ramp), .8)
+    key_body(min(end + .15, nxt, duration), 0.0)
+finish(a, "ADD")
 specs = {
     "CLOSE_UP": (2.30, 1.88, 8, 0),
     "MEDIUM_SHOT": (1.96, 2.60, 10, 0),
