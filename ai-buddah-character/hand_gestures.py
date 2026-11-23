@@ -163,7 +163,7 @@ def hand_bones(side):
 
 
 ARM_CHAIN = ("Clavicle", "UpperArm", "Forearm", "Hand")
-HAND_EXT = .055  # gestures slide the hand out of the wide sleeve along the wrist (cartoon cheat)
+HAND_EXT = .035  # gestures slide the hand out of the wide sleeve along the wrist (cartoon cheat)
 SLEEVE_NARROW = .64  # lifted arms narrow the sleeve opening (cloth would fall back along the arm)
 
 # ---------------------------------------------------------------- arm placements
@@ -182,7 +182,7 @@ PLACEMENTS = {
     "shrug": dict(wrist=(.50, -.46, 1.14), fingers=(.45, -.88, .12), palm=(0, -.1, 1)),
     "palm_down": dict(wrist=(.36, -.52, 1.14), fingers=(-.3, -1, -.05), palm=(0, 0, -1)),
     "push": dict(wrist=(.36, -.40, 1.36), fingers=(0, -.15, 1), palm=(0, -1, 0)),
-    "raise": dict(wrist=(.55, -.25, 1.80), fingers=(.1, -.1, 1), palm=(0, -1, 0)),
+    "raise": dict(wrist=(.62, -.30, 1.60), fingers=(.35, -.15, 1), palm=(.1, -1, 0)),
     "pray": dict(wrist=(.046, -.56, 1.34), fingers=(0, -.2, 1), palm=(-1, 0, 0)),
     "heart": dict(wrist=(.19, -.46, 1.36), fingers=(-.85, -.05, .5), palm=(0, -1, 0)),
     "clap": dict(wrist=(.045, -.54, 1.30), fingers=(0, -.55, 1), palm=(-1, 0, 0)),
