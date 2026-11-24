@@ -461,8 +461,9 @@ def upload_reel(page, item):
     time.sleep(4)
     reel_url = None
     try:
-        print("🔍 Открываем страницу Reels профиля для получения прямой ссылки...")
-        page.goto("https://www.instagram.com/kira.gyal/reels/", wait_until="domcontentloaded")
+        ig_username = "om_ai_digital" if "ai" in str(PROFILE_DIR) else "kira.gyal"
+        print(f"🔍 Открываем страницу Reels профиля ({ig_username}) для получения прямой ссылки...")
+        page.goto(f"https://www.instagram.com/{ig_username}/reels/", wait_until="domcontentloaded")
         time.sleep(5)
         reels = page.eval_on_selector_all('a[href*="/reel/"]', 'els => els.map(e => e.href)')
         if reels:

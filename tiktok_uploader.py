@@ -89,11 +89,11 @@ VIDEOS_QUEUE = [
 ]
 
 
-def launch_browser(p):
+def launch_browser(p, headless=True):
     PROFILE_DIR.mkdir(parents=True, exist_ok=True)
     context = p.chromium.launch_persistent_context(
         user_data_dir=str(PROFILE_DIR),
-        headless=False,
+        headless=headless,
         viewport={"width": 1400, "height": 900},
         args=[
             "--disable-blink-features=AutomationControlled",
